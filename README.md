@@ -25,19 +25,3 @@ El proyecto consta de lo siguiente:
 - Panel con estadísticas de mercado.
 
 Con esto vamos a desarrollar, en un mismo panel, que el usuario pueda visualizar con estadísticas de manera rápida el estado del mercado de coches de segunda mano, usando filtros y con las implementaciones anteriormente mencionadas, para poder estimar cuál es el precio de venta más óptimo para vender su coche o coches.
-
-## 2. Obtención de datos.
-
-## 3. Limpieza de datos (eliminación de nulos y datos erróneos, etc.) Descripción de los datos.
-
-## 4. Exploración y visualización de los datos.
-
-## 5. Preparación de los datos para los algoritmos de Machine Learning.
-
-## 6. Entrenamiento del modelo y comprobación del rendimiento
-
-## 7. NLP (Procesamiento de Lenguaje Natural)
-
-## 8. Aplicación
-
-## 9. Conclusiones
