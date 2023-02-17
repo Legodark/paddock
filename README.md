@@ -1,6 +1,4 @@
-# Titulo
-
-## Paddok
+# Paddok
 
 *TFM realizado por **Oscar Pörtner Ostos** y **Juan Cerezo Serrano** del Master IA y Bigdata del Malaga Tech Park*
 
@@ -20,8 +18,12 @@ Nosotros queremos ayudar al particular o empresario a que con un simple vistazo 
 
 El proyecto consta de lo siguiente:
 
-- Un modelo de predicción de precios de coches de segunda mano para el mercado Español, 
+- Un modelo de predicción de precios de coches de segunda mano para el mercado Español. 
 - Un chatbot que es capaz de orientar al usuario (particular o profesional) en los precios que hay en el mercado y sobre el coche o coches que quiera vender.
 - Panel con estadísticas de mercado.
 
 Con esto vamos a desarrollar, en un mismo panel, que el usuario pueda visualizar con estadísticas de manera rápida el estado del mercado de coches de segunda mano, usando filtros y con las implementaciones anteriormente mencionadas, para poder estimar cuál es el precio de venta más óptimo para vender su coche o coches.
+
+---
+
+## 2. Obtención de los datos
