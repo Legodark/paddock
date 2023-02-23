@@ -9,13 +9,13 @@
 
 ## Índice
 
-* [Justificación y descripción del proyecto](#justificación-y-descripción-del-proyecto)
-* [Obtención de los datos](#obtención-de-los-datos)
-* [Limpieza de datos (Preprocesado)](#limpieza-de-datos-(preprocesado))
-* [Exploración y visualización de los datos](#exploración-y-visualización-de-los-datos)
-* [Preparación de los datos para Machine Learning](#preparación-de-los-datos-para-machine-learning)
+* [Justificación y descripción del proyecto](#id1)
+* [Obtención de los datos](#id2)
+* [Limpieza de datos (Preprocesado)](#id3)
+* [Exploración y visualización de los datos](#id4)
+* [Preparación de los datos para Machine Learning](#id5)
 
-## 1. Justificación y descripción del proyecto.
+## 1. Justificación y descripción del proyecto.<a name="id1"></a>
 
 ### :black_nib: Justificación
 
@@ -59,7 +59,7 @@ Con esto vamos a desarrollar, en un mismo panel, que el usuario pueda visualizar
 [![Selenium](https://img.shields.io/badge/Selenium-black?style=for-the-badge&logo=Selenium&logoColor=green&labelColor=101010)]()
 [![Beatifulsoup](https://img.shields.io/badge/Beatifulsoup-black?style=for-the-badge&logo=Python&logoColor=orange&labelColor=101010)]()
 
-## 2. Obtención de los datos
+## 2. Obtención de los datos.<a name="id2"></a>
 
 Puedes ver el desarrollo en el siguiente enlace:
 
@@ -71,7 +71,7 @@ El proceso consistio en tener mas de una araña haciendo el scraping a diferente
 
 Luego se guardaron los resultados en varios csv y se terminaron uniendo dichos csv hasta tener el csv final con el que se entrenaría poco despues el modelo.
 
-## 3. Limpieza de datos (Preprocesado)
+## 3. Limpieza de datos (Preprocesado).<a name="id3"></a>
 
 Puedes ver el desarrollo en el siguiente enlace:
 
@@ -133,7 +133,7 @@ Por último genero los siguientes diccionarios para poder trabajar comodamente c
 Y exporto en nuevo DataFrame a drive para poder tratarlo en las visualizaciones y en el machine learning
 
 
-## 4. Exploración y visualización de los datos
+## 4. Exploración y visualización de los datos.<a name="id4"></a>
 
 Puedes ver el desarrollo en el siguiente enlace
 
@@ -252,7 +252,7 @@ Otra gráfica que muestro es la correlación del precio respecto al motor(KW), y
 
 Debo de limitar el $\color{orange}{precio}$ a $\color{orange}{80.000€}$, los $\color{orange}{kilometros}$ a $\color{orange}{500.000km}$ y $\color{red}{quitar}$ las $\color{orange}{marcas}$ con cantidad de coches $\color{orange}{inferior}$ a $\color{orange}{10}$.
 
-## 5. Preparación de los datos para Machine Learning
+## 5. Preparación de los datos para Machine Learning.<a name="id5"></a>
 
 Puedes ver el desarrollo en el siguiente enlace:
 
