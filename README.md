@@ -6,6 +6,15 @@
 
 ![Logo-prototipo](images/prototipo_logo.png)
 
+
+## Índice
+
+* [Justificación y descripción del proyecto](#justificación-y-descripción-del-proyecto)
+* [Obtención de los datos](#obtención-de-los-datos)
+* [Limpieza de datos (Preprocesado)](#limpieza-de-datos-(preprocesado))
+* [Exploración y visualización de los datos](#exploración-y-visualización-de-los-datos)
+* [Preparación de los datos para Machine Learning](#preparación-de-los-datos-para-machine-learning)
+
 ## 1. Justificación y descripción del proyecto.
 
 ### :black_nib: Justificación
@@ -241,7 +250,7 @@ Otra gráfica que muestro es la correlación del precio respecto al motor(KW), y
 
 ### Clonclusión de la visualización
 
-Debo de limitar el $\color{orange}{precio}$ a $\color{orange}{80.000€}$, los $\color{orange}{kilometros}$ a $\color{orange}{500.000km}$ y $\color{red}{quitar}$ las $\color{orange}{marcas}$ con cantidad de $\color{orange}{coches~inferior~a~10}$.
+Debo de limitar el $\color{orange}{precio}$ a $\color{orange}{80.000€}$, los $\color{orange}{kilometros}$ a $\color{orange}{500.000km}$ y $\color{red}{quitar}$ las $\color{orange}{marcas}$ con cantidad de coches $\color{orange}{inferior}$ a $\color{orange}{10}$.
 
 ## 5. Preparación de los datos para Machine Learning
 
