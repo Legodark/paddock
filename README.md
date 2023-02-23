@@ -7,6 +7,14 @@
 ![Logo-prototipo](images/prototipo_logo.png)
 
 
+## Índice
+
+* [Justificación y descripción del proyecto](#justificación-y-descripción-del-proyecto)
+* [Obtención de los datos](#obtención-de-los-datos)
+* [Limpieza de datos (Preprocesado)](#limpieza-de-datos-(preprocesado))
+* [Exploración y visualización de los datos](#exploración-y-visualización-de-los-datos)
+* [Preparación de los datos para Machine Learning](#preparación-de-los-datos-para-machine-learning)
+
 ## 1. Justificación y descripción del proyecto.
 
 ### :black_nib: Justificación
