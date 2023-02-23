@@ -82,10 +82,6 @@ Como se puede ver, gracias a una buena adquisición de los datos no tenemos ning
 
 #### 2. **Visualización de correlaciones**
 
-Puedes ver el desarrollo en el siguiente enlace
-
-[![colab](https://img.shields.io/badge/Preprocesado-black?style=for-the-badge&logo=Google-Colab&logoColor=orange&labelColor=101010)](https://colab.research.google.com/drive/1vD99iTHA803n28a4mzBp8H0fgAPTsd_n?usp=sharing)
-
 Ahora vamos a explicar un poco las correlaciones.
 
 En este caso el foco prinpipal lo vamos a poner en la parte del precio, puesto que es la variable target y queremos ver que otras variables pueden afectarle en menor o mayor medida a la hora de predecir un precio.
@@ -125,6 +121,10 @@ Y exporto en nuevo DataFrame a drive para poder tratarlo en las visualizaciones 
 
 
 ## 4. Exploración y visualización de los datos
+
+Puedes ver el desarrollo en el siguiente enlace
+
+[![colab](https://img.shields.io/badge/Preprocesado-black?style=for-the-badge&logo=Google-Colab&logoColor=orange&labelColor=101010)](https://colab.research.google.com/drive/1vD99iTHA803n28a4mzBp8H0fgAPTsd_n?usp=sharing)
 
 En este apartado hemos realizado lo siguiente:
 
