@@ -52,6 +52,10 @@ Con esto vamos a desarrollar, en un mismo panel, que el usuario pueda visualizar
 
 ## 2. Obtención de los datos
 
+Puedes ver el desarrollo en el siguiente enlace:
+
+[![colab](https://img.shields.io/badge/Scraping-black?style=for-the-badge&logo=Google-Colab&logoColor=orange&labelColor=101010)](https://github.com/Legodark/paddok/blob/main/notebooks/extraccion/Scraping_Coches.ipynb)
+
 La obtenición de los datos se ha realizado mediante Scraping de X página de coches donde hemos conseguido sacar unos 179000 coches de diferentes marcas y modelos con sus caracteristicas.
 
 El proceso consistio en tener mas de una araña haciendo el scraping a diferentes marcas lo que ayuda a agilizar el proceso del scraping y tambien para controlar las perdidas de información.
@@ -60,7 +64,7 @@ Luego se guardaron los resultados en varios csv y se terminaron uniendo dichos c
 
 ## 3. Limpieza de datos (Preprocesado)
 
-Puedes ver el desarrollo en el siguiente enlace
+Puedes ver el desarrollo en el siguiente enlace:
 
 [![colab](https://img.shields.io/badge/Preprocesado-black?style=for-the-badge&logo=Google-Colab&logoColor=orange&labelColor=101010)](https://colab.research.google.com/drive/14CdROaZuniafhFfBusH0nw_SfA0l_OW7?usp=sharing)
 
@@ -124,7 +128,7 @@ Y exporto en nuevo DataFrame a drive para poder tratarlo en las visualizaciones 
 
 Puedes ver el desarrollo en el siguiente enlace
 
-[![colab](https://img.shields.io/badge/Preprocesado-black?style=for-the-badge&logo=Google-Colab&logoColor=orange&labelColor=101010)](https://colab.research.google.com/drive/1vD99iTHA803n28a4mzBp8H0fgAPTsd_n?usp=sharing)
+[![colab](https://img.shields.io/badge/Visualización-black?style=for-the-badge&logo=Google-Colab&logoColor=orange&labelColor=101010)](https://colab.research.google.com/drive/1vD99iTHA803n28a4mzBp8H0fgAPTsd_n?usp=sharing)
 
 En este apartado hemos realizado lo siguiente:
 
@@ -237,4 +241,31 @@ Otra gráfica que muestro es la correlación del precio respecto al motor(KW), y
 
 ### Clonclusión de la visualización
 
-Debo de limitar el precio a 80.000€, los kilometros a 500.000km y quitar las marcas con cantidad de coches inferior a 10.
+Debo de limitar el $\color{orange}{precio}$ a $\color{orange}{80.000€}$, los $\color{orange}{kilometros}$ a $\color{orange}{500.000km}$ y $\color{red}{quitar}$ las $\color{orange}{marcas}$ con cantidad de $\color{orange}{coches~inferior~a~10}$.
+
+## 5. Preparación de los datos para Machine Learning
+
+Puedes ver el desarrollo en el siguiente enlace:
+
+[![colab](https://img.shields.io/badge/Machine--Learning-black?style=for-the-badge&logo=Google-Colab&logoColor=orange&labelColor=101010)](https://colab.research.google.com/drive/1nTlGhCdBcAk0hhBRoaWzkcYxJmQlm2qo?usp=sharing)
+
+En este apartado vamos a realizar lo siguiente:
+
+1. Pasar las columnas a nombres en ingles, esto es importante puesto que letras como la `ñ` pueden provocar errores en los algoritmos de TensorFlow.
+
+2. Eliminar columnas no relevantes, revisando con las correlaciones, por ejemplo, para pasarlos a los algoritmos de TensorFlow debo de eliminar las columnas numericas de las ids, para que no haya datos redundantes.
+
+3. Preparar el datasets de diferentes maneras para pasarselo a los algoritmos de ML.
+
+Esta preparación se va a hacer concretamente para 3 algoritmos (2 de TensorFlow y 1 de Sklearn), y hay que prepararlos de diferente forma, ya que para TensorFlow podemos pasarle valores categorios y numericos, pero para Sklean solo podemos pasar numerios.
+
+Dicho lo anterior voy a preparar el dataset que creamos en el punto 3 ***Limpieza de datos (Preprocesado)*** tanto para TensorFlow como para Sklearn.
+
+Los datasets a preparar son los siguientes:
+
+- Dataset completo
+- Dataset limitando el precio y los kilometros
+- Dataset limitando el precio, los kilometros y las marcas con coches con cantidad inferior a 10
+- Dataset limitando el precio, los kilometros, las marcas con coches con cantidad inferior a 10 y dejando solo mas columas de `mark`, `model`, `year`, `horses`, `km`, `fuel`, `gearbox`, `price`, `displacement_engine`, `marches`
+
+Gracias a que pase variables categoricas a numéricas, como, marca, modelo, cambio, combustiable, a la hora de tratar los datasets para Sklearn será mas rápido.
