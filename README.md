@@ -117,5 +117,55 @@ Por último genero los siguientes diccionarios para poder trabajar comodamente c
 
 ![Diccionarios](images/images_preprocesado/diccionarios.png)
 
+Y exporto en nuevo DataFrame a drive para poder tratarlo en las visualizaciones y en el machine learning
+
 
 ## 4. Exploración y visualización de los datos
+
+En este apartado hemos realizado lo siguiente:
+
+1. Visualización de los datos por cantidad de coches por localidad y modelo en general
+2. Visualización de los datos de las marcas con mas de 10.000 coches:
+    - Por cantidad mayor de 10.000 coches
+    - Por cantidad mayor de 10.000 coches mas limitación de precio a 80.000€ y y kilometros a 500.000Km
+        - Visualización por precio/año
+        - Visualización por kilometro/año
+3. Visualización de los datos de las marcas con menos de 10.000 coches:
+    - Por cantidad menor de 10.000 coches
+    - Por cantidad menor de 10.000 coches mas limitación de precio a 80.000€ y y kilometros a 500.000Km
+        - Visualización por precio/año
+        - Visualización por kilometro/año
+
+#### 1. **Visualización de los datos por cantidad de coches por localidad y modelo en general**
+
+![](images/images_preprocesado/localidad.png)
+
+#### 2. **Visualización de los datos de las marcas con mas de 10.000 coches**
+
+Lo primero que mostramos aquí son las marcas donde hay mas de 10000 coches
+
+![](images/images_preprocesado/10000_no_limit.png)
+
+En la siguiente gráfica se puede ver un ejemplo de la cantidad de modelos en relación año/precio sin limitar el precio, como veremos mas adelante.
+
+![](images/images_preprocesado/citroen_no_limit.png)
+
+La gráfica anterior la genere con el siguiente bucle `for`, para poder mostrar la cantidad de modelos por marca para las marcas que estamos analizando.
+
+![](images/images_preprocesado/for_no_limit_10k.png)
+
+Cosas interesante que descubrimos aquí son distintos outlayers, en este caso en relación al precio, lo que me hace pensar que si limito el precio a una cantidad mas baja puedo quitarme este tipo de outlayers, aunque también tengo en contra que elimino coches de gama alta, lo que también nos hace plantearnos que en principio nos centremos en el mercado de media-alta gama.
+
+Aquí la visualización que nos hace plantearnos el filtro:
+
+Outlayer detectado
+
+![](images/images_preprocesado/outlayer.png)
+
+Con el outlayer:
+![](images/images_preprocesado/t_roc_no_limit.png)
+
+Sin el outlayer:
+![](images/images_preprocesado/t_roc_quit.png)
+
+#### 3. **Visualización de los datos de las marcas con menos de 10.000 coches**
