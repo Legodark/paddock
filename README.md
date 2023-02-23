@@ -138,8 +138,9 @@ En este apartado hemos realizado lo siguiente:
     - Por cantidad menor de 10.000 coches mas limitación de precio a 80.000€ y y kilometros a 500.000Km
         - Visualización por precio/año
         - Visualización por kilometro/año
+4. Conclusiones
 
-#### 1. **Visualización de los datos por cantidad de coches por localidad y modelo en general**
+### 1. **Visualización de los datos por cantidad de coches por localidad y modelo en general**
 
 ![](images/images_preprocesado/localidad.png)
 
@@ -148,7 +149,7 @@ Otra forma de mostrarlo sería con barras:
 ![](images/images_preprocesado/bars_cuantity.png)
 
 
-#### 2. **Visualización de los datos de las marcas con mas de 10.000 coches**
+### 2. **Visualización de los datos de las marcas con mas de 10.000 coches**
 
 Lo primero que mostramos aquí son las marcas donde hay mas de 10000 coches
 
@@ -208,7 +209,7 @@ Limitación por kilometros.
 
 Como se puede ver los datos que mas uniformes, por que en los siguientes pasos voy aplicar lo mismo pero para el resto de coches.
 
-#### 3. **Visualización de los datos de las marcas con menos de 10.000 coches**
+### 3. **Visualización de los datos de las marcas con menos de 10.000 coches**
 
 Empezamos mostrando la cantidad de marcas y de modelos que tenemos en el resto de coches.
 
@@ -233,3 +234,7 @@ La primera incluye un slider que permite seleccionar el año, esto es util para 
 Otra gráfica que muestro es la correlación del precio respecto al motor(KW), ya que en las correlaciones salian bastante relacionadas
 
 ![](images/images_preprocesado/engine_power.png)
+
+### Clonclusión de la visualización
+
+Debo de limitar el precio a 80.000€, los kilometros a 500.000km y quitar las marcas con cantidad de coches inferior a 10.
