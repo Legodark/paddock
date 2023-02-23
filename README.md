@@ -82,6 +82,10 @@ Como se puede ver, gracias a una buena adquisición de los datos no tenemos ning
 
 #### 2. **Visualización de correlaciones**
 
+Puedes ver el desarrollo en el siguiente enlace
+
+[![colab](https://img.shields.io/badge/Preprocesado-black?style=for-the-badge&logo=Google-Colab&logoColor=orange&labelColor=101010)](https://colab.research.google.com/drive/1vD99iTHA803n28a4mzBp8H0fgAPTsd_n?usp=sharing)
+
 Ahora vamos a explicar un poco las correlaciones.
 
 En este caso el foco prinpipal lo vamos a poner en la parte del precio, puesto que es la variable target y queremos ver que otras variables pueden afectarle en menor o mayor medida a la hora de predecir un precio.
@@ -140,6 +144,11 @@ En este apartado hemos realizado lo siguiente:
 
 ![](images/images_preprocesado/localidad.png)
 
+Otra forma de mostrarlo sería con barras:
+
+![](images/images_preprocesado/bars_cuantity.png)
+
+
 #### 2. **Visualización de los datos de las marcas con mas de 10.000 coches**
 
 Lo primero que mostramos aquí son las marcas donde hay mas de 10000 coches
@@ -168,4 +177,25 @@ Con el outlayer:
 Sin el outlayer:
 ![](images/images_preprocesado/t_roc_quit.png)
 
+Ahora bien, la limitación de kilometros la hago por que al revisar el `describe` que el máximo de kilometros es casi 3.000.000Km, por lo que creo que me puede distorsionar los datos en la parte del machine learning, pero antes de realizarlo veo a ver cuantos coches pueden ser afectados con el siguiente código:
+
+![](images/images_preprocesado/cars_up_500000.png)
+
+Como se puede ver solo están afectados 34 coches, por lo que decido limitar el kilometraje a 500.000km.
+
+**Limitación de precio a 80.000€ y y kilometros a 500.000Km**
+
+Una vez limitados los datos del DataFrame los resultados son los siguientes:
+
+Limitación por precio.
+
+![limitacion_precio](images/images_preprocesado/audi_limit.png)
+
+Limitación por kilometros.
+
+![limitacion_kilometros](images/images_preprocesado/audi_km_limit.png)
+
+Como se puede ver los datos que mas uniformes, por que en los siguientes pasos voy aplicar lo mismo pero para el resto de coches.
+
 #### 3. **Visualización de los datos de las marcas con menos de 10.000 coches**
+
