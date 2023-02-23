@@ -111,7 +111,7 @@ Algunas las quito por lógica y otras por que veo en las correlaciones que no in
 
 A este DataFrame sin las antiguas columnas lo voy a llamar `cars_pre`
 
-#### 4. **Añadir columnas con las ids para las marcas, modelos, combustible y caja de cambios.**
+#### 4. **Añadir columnas con las ids para las marcas, modelos, combustible, caja de cambios y localidad**
 
 ![Funciones-transformadoras](images/images_preprocesado/transform.png)
 
@@ -135,7 +135,6 @@ En este apartado hemos realizado lo siguiente:
         - Visualización por precio/año
         - Visualización por kilometro/año
 3. Visualización de los datos de las marcas con menos de 10.000 coches:
-    - Por cantidad menor de 10.000 coches
     - Por cantidad menor de 10.000 coches mas limitación de precio a 80.000€ y y kilometros a 500.000Km
         - Visualización por precio/año
         - Visualización por kilometro/año
@@ -183,6 +182,18 @@ Ahora bien, la limitación de kilometros la hago por que al revisar el `describe
 
 Como se puede ver solo están afectados 34 coches, por lo que decido limitar el kilometraje a 500.000km.
 
+Ahora voy a realizar algo similar pero con las marcas que contienen menos de 10 coches
+
+Primero saco la cantidad de coches que se verian afectados:
+
+![](images/images_preprocesado/less_cars_filter.png)
+
+Y ahora lo muestro graficamente
+
+![](images/images_preprocesado/less_cars.png)
+
+Viendo que la cantidad de coches afectada no es muy grande decido quitar estas marcas en la parte de preparación de los datos para machine learning que veremos mas adelante
+
 **Limitación de precio a 80.000€ y y kilometros a 500.000Km**
 
 Una vez limitados los datos del DataFrame los resultados son los siguientes:
@@ -199,3 +210,26 @@ Como se puede ver los datos que mas uniformes, por que en los siguientes pasos v
 
 #### 3. **Visualización de los datos de las marcas con menos de 10.000 coches**
 
+Empezamos mostrando la cantidad de marcas y de modelos que tenemos en el resto de coches.
+
+![](images/images_preprocesado/rest_cars.png)
+
+A continuación muestro 2 gráficas para marcas inferiores a 10000 coches y con la limitación de precio y kilometros ya establecida.
+
+Gráfica con limitación de precio
+
+![](images/images_preprocesado/dif_cars_year.png)
+
+Gráfica con limitación de kilometros
+
+![](images/images_preprocesado/dif_less_km.png)
+
+Ya para cerrar el apartado de la visualización voy a exponer 2 gráficas que he includo en el colab:
+
+La primera incluye un slider que permite seleccionar el año, esto es util para mostrar la cantidad de coches por año de todas las marcas
+
+![](images/images_preprocesado/slider_price_km.png)
+
+Otra gráfica que muestro es la correlación del precio respecto al motor(KW), ya que en las correlaciones salian bastante relacionadas
+
+![](images/images_preprocesado/engine_power.png)
