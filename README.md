@@ -52,5 +52,9 @@ Con esto vamos a desarrollar, en un mismo panel, que el usuario pueda visualizar
 
 ## 2. Obtención de los datos
 
-La obtenición de los datos se ha realizado mediante Scraping de X página de coches donde hemos conseguido sacar unos 179000 coches de direfentes marcas y modelos con sus caracteristicas.
+La obtenición de los datos se ha realizado mediante Scraping de X página de coches donde hemos conseguido sacar unos 179000 coches de diferentes marcas y modelos con sus caracteristicas.
+
+El proceso consistio en tener mas de una araña haciendo el scraping a diferentes marcas lo que ayuda a agilizar el proceso del scraping y tambien para controlar las perdidas de información.
+
+Luego se guardaron los resultados en varios csv y se terminaron uniendo dichos csv hasta tener el csv final con el que se entrenaría poco despues el modelo.
 
