@@ -278,3 +278,57 @@ Los datasets a preparar son los siguientes:
 - Dataset limitando el precio, los kilometros, las marcas con coches con cantidad inferior a 10 y dejando solo mas columas de `mark`, `model`, `year`, `horses`, `km`, `fuel`, `gearbox`, `price`, `displacement_engine`, `marches`
 
 Gracias a que pase variables categoricas a numéricas, como, marca, modelo, cambio, combustiable, a la hora de tratar los datasets para Sklearn será mas rápido.
+
+Para realizar todos los puntos anteriores establezco la siguiente clase:
+
+![](images/images_preprocesado/clase_prepare.png)
+
+A continuación cree un diccionario el cual alberca por separado los DataFrames para trabajarlos con mas rapidez en los algoritmos de ML:
+
+![](images/images_preprocesado/diccionario_prepare.png)
+
+Dando para cada DataFrame los siguientes resultados:
+
+***TensorFlow***
+---
+
+Para `dict_dataframes['tensorflow']['complete']`
+
+![](images/images_preprocesado/complete_tf.png)
+
+Para `dict_dataframes['tensorflow']['limit']`
+
+![](images/images_preprocesado/limit_tf.png)
+
+Para `dict_dataframes['tensorflow']['less_limit']`
+
+![](images/images_preprocesado/less_limit_tf.png)
+
+Para `dict_dataframes['tensorflow']['less_columns']`
+
+![](images/images_preprocesado/less_columns_tf.png)
+
+***Sklearn***
+---
+
+Para `dict_dataframes['sklearn']['complete']`
+
+![](images/images_preprocesado/complete_sk.png)
+
+Para `dict_dataframes['sklearn']['limit']`
+
+![](images/images_preprocesado/limit_sk.png)
+
+Para `dict_dataframes['sklearn']['less_limit']`
+
+![](images/images_preprocesado/less_limit_sk.png)
+
+Para `dict_dataframes['sklearn']['less_columns']`
+
+![](images/images_preprocesado/less_columns_sk.png)
+
+También creo visualizaciones de correlaciones, estas se pueden ver en el colab en lazado al principio de este punto.
+
+
+
+    
