@@ -334,6 +334,10 @@ También creo visualizaciones de correlaciones, estas se pueden ver en el colab 
 
 ## 6. Entrenamiento del modelo y comprobación del rendimiento<a name="id6"></a>
 
+Puedes ver el desarrollo en el siguiente enlace:
+
+[![colab](https://img.shields.io/badge/Machine--Learning-black?style=for-the-badge&logo=Google-Colab&logoColor=orange&labelColor=101010)](https://colab.research.google.com/drive/1nTlGhCdBcAk0hhBRoaWzkcYxJmQlm2qo?usp=sharing)
+
 En este punto lo mas importante es saber que algoritmo de machine learning se va a utilizar, en nuestro caso vamos a trabajar con arboles de decisión en vez de regresiones lineales.
 
 **¿Por que arboles de decisión?**
@@ -350,17 +354,147 @@ Una vez dicho esto y como se vio en el punto 5, vamos a trabajar con 3 algoritmo
 
 [*`GradientBoostedTreesModel`*](https://www.tensorflow.org/decision_forests/api_docs/python/tfdf/keras/GradientBoostedTreesModel) de **TensoFlow**
 
-[*`RandomForestModel `*](https://www.tensorflow.org/decision_forests/api_docs/python/tfdf/keras/RandomForestModel) de **TensoFlow**
+[*`RandomForestModel`*](https://www.tensorflow.org/decision_forests/api_docs/python/tfdf/keras/RandomForestModel) de **TensoFlow**
 
 [*`RandomForestRegressor`*](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html) de **Sklearn**
 
-Una vez expuesto esto pasamos a detallar el código utilizado y el rendimiento obtenido para todos los DataFrames que creamos en el punto 5.
-
-### Código utilizado
+Una vez expuesto esto pasamos a detallar el código utilizado, el rendimiento obtenido y las predicciones para todos los DataFrames que creamos en el punto 5.
 
 **TensoFlow**
 ---
 
-### Código utilizado para *`GradientBoostedTreesModel`* y *`RandomForestRegressor`*
+### Código utilizado para **GradientBoostedTreesModel** y **RandomForestModel**
 
-    
+Empezamos creando una clase para poder llamar comodamente a los algoritmos
+
+![Clase_algoritmos_TensorFlow](images/ML/TensorFlow/clase_selector_tf.png)
+
+En la imagen anterior se puede ver como están configurados los algoritmos para trabajar con regresión donde cada parametro significa lo siguiente:
+
+En **GradientBoostedTreesModel**:
+
+`task=tfdf.keras.Task.REGRESSION`: indica que el modelo de árbol aleatorio se utilizará para un problema de regresión.
+
+`validation_ratio=0.1`: el 10% de los datos de entrenamiento se utilizarán para la validación durante el ajuste del modelo.
+
+`num_trees=100`: el número de árboles en el bosque aleatorio será de 100.
+
+`max_depth=10`: establece la profundidad máxima de cada árbol del bosque en 10.
+
+`l1_regularization=0.01`: la regularización L1 (Lasso) se aplicará al modelo con una fuerza de 0.01. Esta regularización ayuda a evitar el sobreajuste y mejora la generalización del modelo.
+
+`l2_regularization=0.01`: la regularización L2 (Ridge) se aplicará al modelo con una fuerza de 0.01. Esta regularización también ayuda a evitar el sobreajuste y mejora la generalización del modelo.
+
+`early_stopping='LOSS_INCREASE'`: el entrenamiento del modelo se detendrá si el error de validación aumenta durante varias iteraciones consecutivas.
+
+`loss="SQUARED_ERROR"`: se utilizará la función de pérdida de error cuadrático medio (MSE) para medir la discrepancia entre las predicciones del modelo y los valores reales.
+
+En **RandomForestModel**:
+
+`split_axis="AXIS_ALIGNED"`: indica que se utilizará el algoritmo de división de nodos "AXIS_ALIGNED", que divide los datos a lo largo de un eje específico para cada característica.
+
+`categorical_algorithm="CART"`: indica que se utilizará el algoritmo "CART" para manejar variables categóricas. CART es un algoritmo que se utiliza para construir árboles de decisión que manejan tanto variables numéricas como categóricas.
+
+El siguiente código lo que realiza es una preparación y entrenamiento de todos los dataframes, guardando los modelos el google drive y en `dict_tr_ts` los datos de test para poder hacer predicciones despues.
+
+![](images/ML/TensorFlow/entrenamiento_tf.png)
+
+Una vez realizado esto lo que hago es cargar los modelos desde Google drive, esto me permite que cada vez que quiera hacer una predicción no tener que entrenar los modelos.
+
+Para los modelos de `GradientBoostedTreesModel`:
+
+![](images/ML/TensorFlow/gb_tf.png)
+
+Para los modelos de `RandomForestRegressor`:
+
+![](images/ML/TensorFlow/rf_tf.png)
+
+Una vez hecho esto, lo que se realiza es la creación de 2 funciones, una para la representación gráfica del rendimiento de los modelos con las predicciones y otra donde se prueban las predicciones y se muestran dichas gráficas.
+
+**Función para la generación de gráficas**
+
+![](images/ML/TensorFlow/grafic_rf_gb.png)
+
+**Función para probar predicciones y pintar las gráficas**
+
+![](images/ML/TensorFlow/rendimiento_tf.png)
+
+Ahora pasamos a detallar los resultados de las rendimiento y predicciones con los datos de test
+
+### Rendimiento y predicciones utilizado para **GradientBoostedTreesModel** y **RandomForestModel**
+
+Lo primero que se hace aquí es llamar dentro de un for a la función para probar predicciones y pintar las gráficas que hemos descrito en el apartado anterior.
+
+![](images/ML/TensorFlow/rendimiento_tf_llamada.png)
+
+Ahora se pasa a analizar los resultados obtenidos en las predicciones, para no extender mucho la documentación solo aportare el peor resultado y el mejor para ambos algoritmos, si se desea ver mas resultados puede usar el colab expuesto al comienzo de este punto.
+
+Resultado obtenido en el dataset `completo` en **GradientBoostedTreesModel**, sin realizar ningún tipo de limpieza en el dataframe:
+
+Resultados:
+
+![](images/ML/TensorFlow/pre_gb_complete.png)
+
+Gráfica:
+![](images/ML/TensorFlow/gb_complete.png)
+
+Resultado obtenido en el dataset `less_limit` en **GradientBoostedTreesModel**, con tratamiento en el dataframe:
+
+Resultados:
+
+![](images/ML/TensorFlow/pre_gb_less_limit.png)
+
+Gráfica:
+
+![](images/ML/TensorFlow/gb_less_limit.png)
+
+Como se puede ver, gracias a tratar el dataframe se nota una mejora importante, en este caso la mejora es del $\color{green}{11}$%, donde también queda demostrado en las predicciones, en donde se puede ver que los precios predecidosb se ajustan mas a los datos reales.
+
+Resultado obtenido en el dataset `completo` en **RandomForestModel**, sin realizar ningún tipo de limpieza en el dataframe:
+
+Resultados:
+
+![](images/ML/TensorFlow/pre_rf_complete.png)
+
+Gráfica:
+
+![](images/ML/TensorFlow/rf_complete.png)
+
+Resultado obtenido en el dataset `less_columns` en **RandomForestModel**, con tratamiento en el dataframe:
+
+Resultados:
+
+![](images/ML/TensorFlow/pre_rf_less_columns.png)
+
+Gráfica:
+
+![](images/ML/TensorFlow/rf_less_columns.png)
+
+En el **RandomForestModel** lo que se puede apreciar que su rendimiento es inferior a **GradientBoostedTreesModel** en parte por que este último permite parametros que mejorar su rendimiento ademas de que de por si es una mejora del **RandomForestModel**.
+
+Lo que podemos ver es que en este caso la mejora entre pasar el dataset completo a uno tratado es de un $\color{green}{8}$%, lo que supone un $\color{red}{3}$% por ciento menos que usando **GradientBoostedTreesModel**.
+
+Por último hacemos una predicción de un coche que esta fuera del dataset, para ello se realiza lo siguiente:
+
+Muestro la tabla de coches de referencia, primero para saber que necesitamos pasar y segundo para saber los precios.
+
+![](images/ML/TensorFlow/tabla_saab.png)
+
+A continuación hacemos el procedimiento para poder predecir el coche con los modelos:
+
+![](images/ML/TensorFlow/saab_test.png)
+
+Por último realizamos la predicción:
+
+![](images/ML/TensorFlow/saab_test_pre.png)
+
+donde obtenemos el siguiente resultado:
+
+![](images/ML/TensorFlow/pre_saab_result.png)
+
+**Sklearn**
+---
+
+### Código utilizado para **RandomForestRegressor**
+
+### Rendimiento y predicciones utilizado para **RandomForestRegressor**
