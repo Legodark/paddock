@@ -488,7 +488,7 @@ Por último realizamos la predicción:
 
 ![](images/ML/TensorFlow/saab_test_pre.png)
 
-donde obtenemos el siguiente resultado:
+donde obtenemos el siguiente resultado, y si miramos la tabla anteriormente expuesta la predicción da una diferencia con un precio de un coche similar de 100€:
 
 ![](images/ML/TensorFlow/pre_saab_result.png)
 
