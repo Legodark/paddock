@@ -14,6 +14,7 @@
 * [Limpieza de datos (Preprocesado)](#id3)
 * [Exploración y visualización de los datos](#id4)
 * [Preparación de los datos para Machine Learning](#id5)
+* [Entrenamiento del modelo y comprobación del rendimiento](#id6)
 
 ## 1. Justificación y descripción del proyecto.<a name="id1"></a>
 
@@ -40,9 +41,11 @@ Con esto vamos a desarrollar, en un mismo panel, que el usuario pueda visualizar
 [![python](https://img.shields.io/badge/python-black?style=for-the-badge&logo=python&logoColor=blue&labelColor=101010)]()
 [![colab](https://img.shields.io/badge/Colab-black?style=for-the-badge&logo=Google-Colab&logoColor=orange&labelColor=101010)]()
 [![Flutter](https://img.shields.io/badge/Flutter-black?style=for-the-badge&logo=Flutter&logoColor=blue&labelColor=101010)]()
+[![Flask](https://img.shields.io/badge/Flask-black?style=for-the-badge&logo=Flask&logoColor=white&labelColor=101010)]()
 [![Github](https://img.shields.io/badge/Github-black?style=for-the-badge&logo=Github&logoColor=white&labelColor=101010)]()
 [![Notion](https://img.shields.io/badge/Notion-black?style=for-the-badge&logo=Notion&logoColor=white&labelColor=101010)]()
 [![Jira](https://img.shields.io/badge/Jira-black?style=for-the-badge&logo=Jira&logoColor=blue&labelColor=101010)]()
+[![Google](https://img.shields.io/badge/Google--Cloud-black?style=for-the-badge&logo=GoogleCloud&logoColor=orange&labelColor=101010)]()
 
 
 :chart: Analisis
@@ -327,8 +330,37 @@ Para `dict_dataframes['sklearn']['less_columns']`
 
 ![](images/images_preprocesado/less_columns_sk.png)
 
-También creo visualizaciones de correlaciones, estas se pueden ver en el colab en lazado al principio de este punto.
+También creo visualizaciones de correlaciones, estas se pueden ver en el colab enlazado al principio de este punto.
 
+## 6. Entrenamiento del modelo y comprobación del rendimiento<a name="id6"></a>
 
+En este punto lo mas importante es saber que algoritmo de machine learning se va a utilizar, en nuestro caso vamos a trabajar con arboles de decisión en vez de regresiones lineales.
+
+**¿Por que arboles de decisión?**
+
+Para responder a esta pregunta vamos a exponer los 3 puntos que nos han hecho tomar esta decisión:
+
+1. Interpretación: los árboles de decisión son fáciles de interpretar, ya que se puede seguir el árbol y entender las decisiones que se están tomando en cada nodo. Las regresiones lineales, por otro lado, pueden ser más difíciles de interpretar ya que se trata de una relación matemática compleja.
+
+2. Flexibilidad: los árboles de decisión son modelos no paramétricos, lo que significa que no hacen supuestos sobre la forma de la relación entre las variables de entrada y la variable de salida. Por lo tanto, pueden ser más flexibles y capaces de capturar patrones complejos en los datos. Las regresiones lineales, por otro lado, asumen una relación lineal y pueden ser menos flexibles en su capacidad para capturar patrones complejos.
+
+3. Manejo de variables categóricas: los árboles de decisión pueden manejar fácilmente variables categóricas, ya que las decisiones se toman en función de las categorías de las variables de entrada. Las regresiones lineales pueden requerir técnicas adicionales, como la codificación one-hot, para manejar variables categóricas.
+
+Una vez dicho esto y como se vio en el punto 5, vamos a trabajar con 3 algoritmos en concreto, que son los siguientes:
+
+[*`GradientBoostedTreesModel`*](https://www.tensorflow.org/decision_forests/api_docs/python/tfdf/keras/GradientBoostedTreesModel) de **TensoFlow**
+
+[*`RandomForestModel `*](https://www.tensorflow.org/decision_forests/api_docs/python/tfdf/keras/RandomForestModel) de **TensoFlow**
+
+[*`RandomForestRegressor`*](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html) de **Sklearn**
+
+Una vez expuesto esto pasamos a detallar el código utilizado y el rendimiento obtenido para todos los DataFrames que creamos en el punto 5.
+
+### Código utilizado
+
+**TensoFlow**
+---
+
+### Código utilizado para *`GradientBoostedTreesModel`* y *`RandomForestRegressor`*
 
     
