@@ -113,19 +113,19 @@ y en la siguiente imagen se muestran las correlaciones sobre los precios
 
 ![Correlaciones-Precio](images/images_preprocesado/corr_precio.png)
 
-Por último visualizo las correlaciones entre el precio, los kilometros y el año, puesto que estas suelen ser las variables que se suelen buscar mas a la hora de comprar un coche de segunda mano.
+Por último visualizamos las correlaciones entre el precio, los kilometros y el año, puesto que estas suelen ser las variables que se suelen buscar mas a la hora de comprar un coche de segunda mano.
 
 ![Correlacion-Visual](images/images_preprocesado/corr_vi.png)
 
 #### 3. **Eliminación de columnas que no son relevantes**
 
-Las columnas que voy a eliminar y que no considero relevantes viendo las correlaciones son las siguientes:
+Las columnas que vamos a eliminar y que no consideramos relevantes viendo las correlaciones son las siguientes:
 
-Algunas las quito por lógica y otras por que veo en las correlaciones que no influiran en el precio.
+Algunas las quitamos por lógica y otras por que vemos en las correlaciones que no influiran en el precio.
 
 `'Unnamed: 0', 'puertas', 'maletero', 'longitud', 'altura', 'anchura', 'peso max', 'vel. maxima', 'c. mixto', 'c. urbano', 'extraurbano', 'cilindros', 'par maximo', 'color', 'garantía', 'vendedor', 'transmisión', 'carroceria', 'traccion'`
 
-A este DataFrame sin las antiguas columnas lo voy a llamar `cars_pre`
+A este DataFrame sin las antiguas columnas lo vamos a llamar `cars_pre`
 
 #### 4. **Añadir columnas con las ids para las marcas, modelos, combustible, caja de cambios y localidad**
 
@@ -133,11 +133,11 @@ A este DataFrame sin las antiguas columnas lo voy a llamar `cars_pre`
 
 #### 5. **Creacción de diccionarios para poder trabajar mas comodamente en el desarrollo del frontend**
 
-Por último genero los siguientes diccionarios para poder trabajar comodamente con los datos en Flutter
+Por último generamos los siguientes diccionarios para poder trabajar comodamente con los datos en Flutter
 
 ![Diccionarios](images/images_preprocesado/diccionarios.png)
 
-Y exporto en nuevo DataFrame a drive para poder tratarlo en las visualizaciones y en el machine learning
+Y exportamos en nuevo DataFrame a drive para poder tratarlo en las visualizaciones y en el machine learning
 
 
 ## 4. Exploración y visualización de los datos.<a name="id4"></a>
@@ -197,7 +197,7 @@ Con el outlayer:
 Sin el outlayer:
 ![](images/images_preprocesado/t_roc_quit.png)
 
-Ahora bien, la limitación de kilometros la hago por que al revisar el `describe` que el máximo de kilometros es casi 3.000.000Km, por lo que creo que me puede distorsionar los datos en la parte del machine learning, pero antes de realizarlo veo a ver cuantos coches pueden ser afectados con el siguiente código:
+Ahora bien, la limitación de kilometros la hacemos por que al revisar el `describe` que el máximo de kilometros es casi 3.000.000Km, por lo que creemos que me puede distorsionar los datos en la parte del machine learning, pero antes de realizarlo veo a ver cuantos coches pueden ser afectados con el siguiente código:
 
 ![](images/images_preprocesado/cars_up_500000.png)
 
@@ -213,7 +213,7 @@ Y ahora lo muestro graficamente
 
 ![](images/images_preprocesado/less_cars.png)
 
-Viendo que la cantidad de coches afectada no es muy grande decido quitar estas marcas en la parte de preparación de los datos para machine learning que veremos mas adelante
+Viendo que la cantidad de coches afectada no es muy grande decidimos quitar estas marcas en la parte de preparación de los datos para machine learning que veremos mas adelante
 
 **Limitación de precio a 80.000€ y y kilometros a 500.000Km**
 
@@ -227,7 +227,7 @@ Limitación por kilometros.
 
 ![limitacion_kilometros](images/images_preprocesado/audi_km_limit.png)
 
-Como se puede ver los datos que mas uniformes, por que en los siguientes pasos voy aplicar lo mismo pero para el resto de coches.
+Como se puede ver los datos que mas uniformes, por que en los siguientes pasos vamos a aplicar lo mismo pero para el resto de coches.
 
 ### 3. **Visualización de los datos de las marcas con menos de 10.000 coches**
 
@@ -235,7 +235,7 @@ Empezamos mostrando la cantidad de marcas y de modelos que tenemos en el resto d
 
 ![](images/images_preprocesado/rest_cars.png)
 
-A continuación muestro 2 gráficas para marcas inferiores a 10000 coches y con la limitación de precio y kilometros ya establecida.
+A continuación mostramos 2 gráficas para marcas inferiores a 10000 coches y con la limitación de precio y kilometros ya establecida.
 
 Gráfica con limitación de precio
 
@@ -245,19 +245,19 @@ Gráfica con limitación de kilometros
 
 ![](images/images_preprocesado/dif_less_km.png)
 
-Ya para cerrar el apartado de la visualización voy a exponer 2 gráficas que he includo en el colab:
+Ya para cerrar el apartado de la visualización vamos a exponer 2 gráficas que he includo en el colab:
 
 La primera incluye un slider que permite seleccionar el año, esto es util para mostrar la cantidad de coches por año de todas las marcas
 
 ![](images/images_preprocesado/slider_price_km.png)
 
-Otra gráfica que muestro es la correlación del precio respecto al motor(KW), ya que en las correlaciones salian bastante relacionadas
+Otra gráfica que mostramos es la correlación del precio respecto al motor(KW), ya que en las correlaciones salian bastante relacionadas
 
 ![](images/images_preprocesado/engine_power.png)
 
 ### Clonclusión de la visualización
 
-Debo de limitar el $\color{orange}{precio}$ a $\color{orange}{80.000€}$, los $\color{orange}{kilometros}$ a $\color{orange}{500.000km}$ y $\color{red}{quitar}$ las $\color{orange}{marcas}$ con cantidad de coches $\color{orange}{inferior}$ a $\color{orange}{10}$.
+Debemos de limitar el $\color{orange}{precio}$ a $\color{orange}{80.000€}$, los $\color{orange}{kilometros}$ a $\color{orange}{500.000km}$ y $\color{red}{quitar}$ las $\color{orange}{marcas}$ con cantidad de coches $\color{orange}{inferior}$ a $\color{orange}{10}$.
 
 ## 5. Preparación de los datos para Machine Learning.<a name="id5"></a>
 
@@ -275,7 +275,7 @@ En este apartado vamos a realizar lo siguiente:
 
 Esta preparación se va a hacer concretamente para 3 algoritmos (2 de TensorFlow y 1 de Sklearn), y hay que prepararlos de diferente forma, ya que para TensorFlow podemos pasarle valores categorios y numericos, pero para Sklean solo podemos pasar numerios.
 
-Dicho lo anterior voy a preparar el dataset que creamos en el punto 3 ***Limpieza de datos (Preprocesado)*** tanto para TensorFlow como para Sklearn.
+Dicho lo anterior vamos a preparar el dataset que creamos en el punto 3 ***Limpieza de datos (Preprocesado)*** tanto para TensorFlow como para Sklearn.
 
 Los datasets a preparar son los siguientes:
 
@@ -284,13 +284,13 @@ Los datasets a preparar son los siguientes:
 - Dataset limitando el precio, los kilometros y las marcas con coches con cantidad inferior a 10
 - Dataset limitando el precio, los kilometros, las marcas con coches con cantidad inferior a 10 y dejando solo mas columas de `mark`, `model`, `year`, `horses`, `km`, `fuel`, `gearbox`, `price`, `displacement_engine`, `marches`
 
-Gracias a que pase variables categoricas a numéricas, como, marca, modelo, cambio, combustiable, a la hora de tratar los datasets para Sklearn será mas rápido.
+Gracias a que se pasaron las variables categoricas a numéricas, como, marca, modelo, cambio, combustiable, a la hora de tratar los datasets para Sklearn será mas rápido.
 
-Para realizar todos los puntos anteriores establezco la siguiente clase:
+Para realizar todos los puntos anteriores establecemos la siguiente clase:
 
 ![](images/images_preprocesado/clase_prepare.png)
 
-A continuación cree un diccionario el cual alberca por separado los DataFrames para trabajarlos con mas rapidez en los algoritmos de ML:
+A continuación creamos un diccionario el cual alberca por separado los DataFrames para trabajarlos con mas rapidez en los algoritmos de ML:
 
 ![](images/images_preprocesado/diccionario_prepare.png)
 
@@ -334,7 +334,7 @@ Para `dict_dataframes['sklearn']['less_columns']`
 
 ![](images/images_preprocesado/less_columns_sk.png)
 
-También creo visualizaciones de correlaciones, estas se pueden ver en el colab enlazado al principio de este punto.
+También creamos visualizaciones de correlaciones, estas se pueden ver en el colab enlazado al principio de este punto.
 
 ## 6. Entrenamiento del modelo y comprobación del rendimiento<a name="id8"></a>
 
@@ -403,7 +403,7 @@ El siguiente código lo que realiza es una preparación y entrenamiento de todos
 
 ![](images/ML/TensorFlow/entrenamiento_tf.png)
 
-Una vez realizado esto lo que hago es cargar los modelos desde Google drive, esto me permite que cada vez que quiera hacer una predicción no tener que entrenar los modelos.
+Una vez realizado esto lo que hacemos es cargar los modelos desde Google drive, esto me permite que cada vez que quiera hacer una predicción no tener que entrenar los modelos.
 
 Para los modelos de `GradientBoostedTreesModel`:
 
