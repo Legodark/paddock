@@ -14,7 +14,11 @@
 * [Limpieza de datos (Preprocesado)](#id3)
 * [Exploración y visualización de los datos](#id4)
 * [Preparación de los datos para Machine Learning](#id5)
-* [Entrenamiento del modelo y comprobación del rendimiento](#id6)
+    * [TensorFlow](#id6)
+    * [Sklearn](#id7)
+* [Entrenamiento del modelo y comprobación del rendimiento](#id8)
+    * [TensorFlow](#id9)
+    * [Sklearn](#id10)
 
 ## 1. Justificación y descripción del proyecto.<a name="id1"></a>
 
@@ -292,7 +296,7 @@ A continuación cree un diccionario el cual alberca por separado los DataFrames 
 
 Dando para cada DataFrame los siguientes resultados:
 
-***TensorFlow***
+***TensorFlow***<a name="id6"></a>
 ---
 
 Para `dict_dataframes['tensorflow']['complete']`
@@ -311,7 +315,7 @@ Para `dict_dataframes['tensorflow']['less_columns']`
 
 ![](images/images_preprocesado/less_columns_tf.png)
 
-***Sklearn***
+***Sklearn***<a name="id7"></a>
 ---
 
 Para `dict_dataframes['sklearn']['complete']`
@@ -332,7 +336,7 @@ Para `dict_dataframes['sklearn']['less_columns']`
 
 También creo visualizaciones de correlaciones, estas se pueden ver en el colab enlazado al principio de este punto.
 
-## 6. Entrenamiento del modelo y comprobación del rendimiento<a name="id6"></a>
+## 6. Entrenamiento del modelo y comprobación del rendimiento<a name="id8"></a>
 
 Puedes ver el desarrollo en el siguiente enlace:
 
@@ -360,7 +364,7 @@ Una vez dicho esto y como se vio en el punto 5, vamos a trabajar con 3 algoritmo
 
 Una vez expuesto esto pasamos a detallar el código utilizado, el rendimiento obtenido y las predicciones para todos los DataFrames que creamos en el punto 5.
 
-**TensoFlow**
+**TensoFlow**<a name="id9"></a>
 ---
 
 ### Código utilizado para **GradientBoostedTreesModel** y **RandomForestModel**
@@ -498,7 +502,7 @@ donde obtenemos el siguiente resultado, y si miramos la tabla anteriormente expu
 
 ![](images/ML/TensorFlow/pre_saab_result.png)
 
-**Sklearn**
+**Sklearn**<a name="id10"></a>
 ---
 
 En este apartado se va a explicar el desarrollo del modelo con **RandomForestRegressor**
