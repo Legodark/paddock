@@ -419,6 +419,12 @@ Una vez hecho esto, lo que se realiza es la creación de 2 funciones, una para l
 
 ![](images/ML/TensorFlow/rendimiento_tf.png)
 
+En esta función se puede ver el uso de MSE y R2_score que hacen lo siguiente:
+
+El ***MSE*** (Mean Squared Error): es una medida de la diferencia entre los valores predichos por el modelo y los valores reales. Cuanto menor sea el valor del MSE, mejor será el ajuste del modelo a los datos. El MSE se calcula como la media de los cuadrados de las diferencias entre los valores reales y los valores predichos.
+
+El ***R2_Score*** (R-squared): es una medida estadística que indica qué porcentaje de la varianza de la variable dependiente (la variable que se está tratando de predecir) se explica por las variables independientes (las variables que se están utilizando para hacer la predicción). El valor del R2_Score varía entre 0 y 1, donde 1 indica un ajuste perfecto del modelo a los datos y 0 indica que el modelo no explica nada de la varianza en los datos.
+
 Ahora pasamos a detallar los resultados de las rendimiento y predicciones con los datos de test
 
 ### Rendimiento y predicciones utilizado para **GradientBoostedTreesModel** y **RandomForestModel**
@@ -495,6 +501,119 @@ donde obtenemos el siguiente resultado, y si miramos la tabla anteriormente expu
 **Sklearn**
 ---
 
+En este apartado se va a explicar el desarrollo del modelo con **RandomForestRegressor**
+
 ### Código utilizado para **RandomForestRegressor**
 
+En la siguiente imagen lo que se realiza es un bucle for que recorre los dataframes almacenados en el diccionario que creamos en el punto 3.
+
+Una vez que se dividen los dataframes, se guarda en `dict_sklearn` tanto `X_test`, como `y_test` para ser utilizados posteriormente en las predicciones.
+
+Por último se guarda en drive los modelos entrenados, esto al igual que se explico en la parte de TensorFlow, permite no tener que reentrenar los modelos para hacer pruebas, simplemente sería importarlos a colab para usar los modelos.
+
+![](images/ML/Sklearn/train_sklearn.png)
+
+A continuación pasamos al apartado de rendimiento y predicciones
+
 ### Rendimiento y predicciones utilizado para **RandomForestRegressor**
+
+Lo primero que se realiza es la carga de los modelos, como podemos ver en la siguiente imagen:
+
+![](images/ML/Sklearn/call_modelos_sklearn.png)
+
+En la siguiente imagen lo que se muestra es una función que permite acceder a los conjuntos de test para cada modelo almacenados en el diccionario `dict_sklearn` y usar los modelos almacenados en la lista `models_sklearn_rf` para realizar predicciones.
+
+A continuación se comprueba el rendimiento sacando el MSE y el R2_Score al igual que se hizo en la función `rendimiento_tensorflow`.
+
+Ya por último se hace ques se muestre por pantalla 10 precios de coches con valores reales junto a los predichos y el error absoluto entre ambos.
+
+![](images/ML/Sklearn/rendimiento_sklearn.png)
+
+Lo siguiente que se realiza es la llamada a la función anterior:
+
+![](images/ML/Sklearn/call_rendimiento_sklearn.png)
+
+donde se pueden ver los siguientes resultados sobre los modelos usados, que al igual que se ha hecho con TensorFlow solo se van a mostrar 2 resultados, el que peor rendimiento da y el que mejor rendimiento ha dado.
+
+Resultado obtenido en el dataset `completo` en **RandomForestRegressor**, sin realizar ningún tipo de limpieza en el dataframe:
+
+Resultados:
+
+![](images/ML/Sklearn/rf_complete_pre_sklearn.png)
+
+Gráfica:
+
+![](images/ML/Sklearn/rf_sklearn_complete.png)
+
+Resultado obtenido en el dataset `less_columns` en **RandomForestRegressor**, con tratamiento en el dataframe:
+
+Resultados:
+
+![](images/ML/Sklearn/rf_less_columns_pre_sklearn.png)
+
+Gráfica:
+
+![](images/ML/Sklearn/rf_sklearn_less_columns.png)
+
+Por último realizamos la predicción:
+
+Vamos a usar el mismo vehículo pero cambiando los datos por numericos, ya que el Random Forest de Sklearn no puede trabajar con valores categoricos, solo con numericos
+
+Los datos del coche son los siguientes:
+
+`{'car_brand': 'Saab',	'model':	'Saab 9-3', 'year': 2005.0,	'horses': 150.0, 'km': 190000.0, 'fuel': 'Diesel',	'gearbox': 'Manual', 'price': 0.0, 'displ_engine': 1910.0, 'marches': 6.0}` 
+
+Que para sklearn quedarian de la siguiente manera:
+
+`[2005.0, 150.0, 190000.0, 1910.0, 6.0, 57.0, 1, 1]`
+
+En la siguiente imagen se muestra una referencia de los saab en los datos de test:
+
+![](images/ML/Sklearn/saab_sklearn.png)
+
+Para comprobar el precio que nos da la predicción de este coche se va a exponer la tabla usada para la predicción de tensorflow, ya que esta tenia los precios y nos permite comparar resultados:
+
+![](images/ML/TensorFlow/tabla_saab.png)
+
+Si nos fijamos el coche mas parecido al que vamos a realizar la predicción es el que posee la id **24172** donde al predecir obtenemos el siguiente resultado:
+
+![](images/ML/Sklearn/pre_saab_sklearn.png)
+
+Como se puede ver aquí la diferencia es un poco mayor que en el resultado obtenido en tensorflow, pero que concuerda mejor con un precio real, ya que una diferencia de 10.000km es influyente en el precio, como vimos en las visualizaciones.
+
+**Conclusiones**
+---
+
+Después de realizar las comprobaciones de rendimiento y visulización de resultados vamos a quedarnos con el modelo **rf_sk_less_limit** creado con Sklearn por los siguientes motivos:
+
+1. Facilidad de implementación.
+2. Predicciones optimas.
+3. Proceso de optimización más rápido.
+
+A diferencia de los modelos creados con tensorflow, el modelo creado con sklearn ha sido mas rápido a la hora de entrenar, dando mejores resultados con los parametros base, lo que nos permite seguir mejorandolo con el tiempo y con mas facilidad que con tensorflow.
+
+Como dato final dejo una tabla con los resultados de todos los modelos creados:
+
+| Algoritmos de Machine Learning | MSE | R2_Score | Casos |
+| --- | --- | --- | --- |
+| **TensorFlow - GradientBoostedTreesModel**
+| model_bg_complete | 12093.21 | 0.86 | 179502 |
+| model_bg_limit | 1861.69 | 0.97 | 176552 |
+| model_bg_less_limit | 1801.79 | 0.97 | 176492 |
+| model_bg_less_columns | 1827.12 | 0.97 | 176492 |
+| **TensorFlow - RandomForestModel**
+| model_rf_complete | 12003.32 | 0.86 | 179502 |
+| model_rf_limit | 2823.97 | 0.94 | 176552 |
+| model_rf_less_limit | 2813.75 | 0.94 | 176492 |
+| model_rf_less_columns | 2792.48 | 0.94 | 176492 |
+| **SkLearn - RandomForestRegressor**
+| rf_sk_complete | 11500.59 | 0.87 | 179502 |
+| rf_sk_limit | 1753.63 | 0.98 | 176552 |
+| rf_sk_less_limit | 1726.79 | 0.98 | 176492 |
+| rf_sk_less_columns | 1751.28 | 0.98 | 176492 |
+
+
+
+
+
+
