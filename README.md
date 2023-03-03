@@ -184,18 +184,18 @@ La gráfica anterior la genere con el siguiente bucle `for`, para poder mostrar 
 
 ![](images/images_preprocesado/for_no_limit_10k.png)
 
-Cosas interesante que descubrimos aquí son distintos outlayers, en este caso en relación al precio, lo que me hace pensar que si limito el precio a una cantidad mas baja puedo quitarme este tipo de outlayers, aunque también tengo en contra que elimino coches de gama alta, lo que también nos hace plantearnos que en principio nos centremos en el mercado de media-alta gama.
+Cosas interesante que descubrimos aquí son distintos outliers, en este caso en relación al precio, lo que me hace pensar que si limito el precio a una cantidad mas baja puedo quitarme este tipo de outliers, aunque también tengo en contra que elimino coches de gama alta, lo que también nos hace plantearnos que en principio nos centremos en el mercado de media-alta gama.
 
 Aquí la visualización que nos hace plantearnos el filtro:
 
-Outlayer detectado
+Outlier detectado
 
-![](images/images_preprocesado/outlayer.png)
+![](images/images_preprocesado/outlier.png)
 
-Con el outlayer:
+Con el outlier:
 ![](images/images_preprocesado/t_roc_no_limit.png)
 
-Sin el outlayer:
+Sin el outlier:
 ![](images/images_preprocesado/t_roc_quit.png)
 
 Ahora bien, la limitación de kilometros la hacemos por que al revisar el `describe` que el máximo de kilometros es casi 3.000.000Km, por lo que creemos que me puede distorsionar los datos en la parte del machine learning, pero antes de realizarlo veo a ver cuantos coches pueden ser afectados con el siguiente código:
