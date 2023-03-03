@@ -74,6 +74,41 @@ El proceso consistio en tener mas de una araña haciendo el scraping a diferente
 
 Luego se guardaron los resultados en varios csv y se terminaron uniendo dichos csv hasta tener el csv final con el que se entrenaría poco despues el modelo.
 
+A continuación se expone parte del código utilizado para realizar el escrapin:
+
+### **Declaración de variables**
+
+Declararemos las siguientes variables:
+
+* URL: Guardaremos el link de la pagina que vamos a extraer
+* header: Las cabeceras necesarias para que nuestra araña pueda scrapear sin problemas la web
+* marcas: Aqui tendremos las marcas de coches que iremos extrayendo
+* provincias: Tambien necesitaremos filtrar por provincias y asi tener resultados mas precisos.
+
+![](images/scraping/scraping_list.png)
+
+### **Creación del dataframe**
+
+Aqui crearemos la estructura de datos para nuestros datos que luego pasarán a ser analizados.
+
+![](images/scraping/scraping_dataframe.png)
+
+### **Scraping**
+
+En el siguiente bloque de código lo que se realiza sobre un bucle for el scraping en si, cada coche extraido se mete en una lista y esta a continuación se añade al dataframe que creamos en la imagen anterior.
+
+![](images/scraping/scraping.png)
+
+### **Randomizar los datos**
+
+Será necesario randomizar los datos para que en el entrenamiento se consiga un mejor resultado debido a que tendrá diferentes tipos de datos, para ello se hace lo siguiente:
+
+![](images/scraping/random_scraping.png)
+
+Por último guardamos el dataframe en un csv
+
+![](images/scraping/scraping_cars_data.png)
+
 ## 3. Limpieza de datos (Preprocesado).<a name="id3"></a>
 
 Puedes ver el desarrollo en el siguiente enlace:
