@@ -1,10 +1,10 @@
-# Paddok
+# Paddock
 
 *TFM realizado por **Oscar Pörtner Ostos** y **Juan Cerezo Serrano** del Master IA y Bigdata del Malaga Tech Park*
 
 ### Logo (prototipo)
 
-![Logo-prototipo](images/prototipo_logo.png)
+![Logo-prototipo](images/logo.png)
 
 
 ## Índice
@@ -71,7 +71,7 @@ Con esto vamos a desarrollar, en un mismo panel, que el usuario pueda visualizar
 
 Puedes ver el desarrollo en el siguiente enlace:
 
-[![colab](https://img.shields.io/badge/Scraping-black?style=for-the-badge&logo=Google-Colab&logoColor=orange&labelColor=101010)](https://github.com/Legodark/paddok/blob/main/notebooks/extraccion/Scraping_Coches.ipynb)
+[![colab](https://img.shields.io/badge/Scraping-black?style=for-the-badge&logo=Google-Colab&logoColor=orange&labelColor=101010)](https://github.com/Legodark/paddock/blob/main/notebooks/extraccion/Scraping_Coches.ipynb)
 
 La obtenición de los datos se ha realizado mediante Scraping de X página de coches donde hemos conseguido sacar unos 179000 coches de diferentes marcas y modelos con sus caracteristicas.
 
@@ -618,6 +618,8 @@ Como dato final dejo una tabla con los resultados de todos los modelos creados:
 | rf_sk_less_columns | 1751.28 | 0.98 | 176492 |
 
 ## NLP - ChatBOT(Einstein)<a name="id11"></a>
+
+cars_pre = cars.drop(['Unnamed: 0', 'puertas', 'maletero', 'longitud', 'altura', 'anchura', 'peso max', 'vel. maxima', 'c. mixto', 'c. urbano', 'extraurbano', 'cilindros', 'par maximo', 'color', 'garantía', 'vendedor', 'transmisión', 'carroceria', 'traccion'], axis=1)
 
 
 
