@@ -1,11 +1,6 @@
-# Paddock
-
-*TFM realizado por **Oscar Pörtner Ostos** y **Juan Cerezo Serrano** del Master IA y Bigdata del Malaga Tech Park*
-
-### Logo (prototipo)
-
 ![Logo-prototipo](images/logo.png)
 
+*TFM realizado por **Oscar Pörtner Ostos** y **Juan Cerezo Serrano** del Master IA y Bigdata del Malaga Tech Park*
 
 ## Índice
 
