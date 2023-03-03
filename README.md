@@ -74,7 +74,7 @@ El proceso consistio en tener mas de una araña haciendo el scraping a diferente
 
 Luego se guardaron los resultados en varios csv y se terminaron uniendo dichos csv hasta tener el csv final con el que se entrenaría poco despues el modelo.
 
-A continuación se expone parte del código utilizado para realizar el escrapin:
+A continuación se expone parte del código utilizado para realizar el scrapin:
 
 ### **Declaración de variables**
 
