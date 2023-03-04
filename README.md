@@ -649,9 +649,6 @@ Como dato final dejo una tabla con los resultados de todos los modelos creados:
 
 ## NLP - ChatBOT(Einstein)<a name="id11"></a>
 
-cars_pre = cars.drop(['Unnamed: 0', 'puertas', 'maletero', 'longitud', 'altura', 'anchura', 'peso max', 'vel. maxima', 'c. mixto', 'c. urbano', 'extraurbano', 'cilindros', 'par maximo', 'color', 'garantía', 'vendedor', 'transmisión', 'carroceria', 'traccion'], axis=1)
-
-
 
 
 
