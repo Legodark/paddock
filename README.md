@@ -93,7 +93,7 @@ Aqui crearemos la estructura de datos para nuestros datos que luego pasarán a s
 
 ![](images/scraping/scraping_dataframe.png)
 
-#### 3.**Scraping**
+#### 3. **Scraping**
 
 En el siguiente bloque de código lo que se realiza sobre un bucle for el scraping en si, cada coche extraido se mete en una lista y esta a continuación se añade al dataframe que creamos en la imagen anterior.
 
@@ -288,7 +288,7 @@ Otra gráfica que mostramos es la correlación del precio respecto al motor(KW),
 
 ### Clonclusión de la visualización
 
-Debemos de limitar el $\color{orange}{precio}$ a $\color{orange}{80.000€}$, los $\color{orange}{kilometros}$ a $\color{orange}{500.000km}$ y $\color{red}{quitar}$ las $\color{orange}{marcas}$ con cantidad de coches $\color{orange}{inferior}$ a $\color{orange}{10}$.
+Debemos de limitar el precio a 80.000€, los kilometros a 500.000km y quitar las marcas con cantidad de coches inferior a 10.
 
 ## 5. Preparación de los datos para Machine Learning.<a name="id5"></a>
 
@@ -387,15 +387,15 @@ Para responder a esta pregunta vamos a exponer los 3 puntos que nos han hecho to
 
 Una vez dicho esto y como se vio en el punto 5, vamos a trabajar con 3 algoritmos en concreto, que son los siguientes:
 
-[*`GradientBoostedTreesModel`*](https://www.tensorflow.org/decision_forests/api_docs/python/tfdf/keras/GradientBoostedTreesModel) de **TensoFlow**
+[*`GradientBoostedTreesModel`*](https://www.tensorflow.org/decision_forests/api_docs/python/tfdf/keras/GradientBoostedTreesModel) de **TensorFlow**
 
-[*`RandomForestModel`*](https://www.tensorflow.org/decision_forests/api_docs/python/tfdf/keras/RandomForestModel) de **TensoFlow**
+[*`RandomForestModel`*](https://www.tensorflow.org/decision_forests/api_docs/python/tfdf/keras/RandomForestModel) de **TensorFlow**
 
 [*`RandomForestRegressor`*](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html) de **Sklearn**
 
 Una vez expuesto esto pasamos a detallar el código utilizado, el rendimiento obtenido y las predicciones para todos los DataFrames que creamos en el punto 5.
 
-**TensoFlow**<a name="id9"></a>
+**TensorFlow**<a name="id9"></a>
 ---
 
 ### Código utilizado para **GradientBoostedTreesModel** y **RandomForestModel**
@@ -489,7 +489,7 @@ Gráfica:
 
 ![](images/ML/TensorFlow/gb_less_limit.png)
 
-Como se puede ver, gracias a tratar el dataframe se nota una mejora importante, en este caso la mejora es del $\color{green}{11}$%, donde también queda demostrado en las predicciones, en donde se puede ver que los precios predecidosb se ajustan mas a los datos reales.
+Como se puede ver, gracias a tratar el dataframe se nota una mejora importante, en este caso la mejora es del **11**, donde también queda demostrado en las predicciones, en donde se puede ver que los precios predecidosb se ajustan mas a los datos reales.
 
 Resultado obtenido en el dataset `completo` en **RandomForestModel**, sin realizar ningún tipo de limpieza en el dataframe:
 
@@ -513,7 +513,7 @@ Gráfica:
 
 En el **RandomForestModel** lo que se puede apreciar que su rendimiento es inferior a **GradientBoostedTreesModel** en parte por que este último permite parametros que mejorar su rendimiento ademas de que de por si es una mejora del **RandomForestModel**.
 
-Lo que podemos ver es que en este caso la mejora entre pasar el dataset completo a uno tratado es de un $\color{green}{8}$%, lo que supone un $\color{red}{3}$% por ciento menos que usando **GradientBoostedTreesModel**.
+Lo que podemos ver es que en este caso la mejora entre pasar el dataset completo a uno tratado es de un **8%**, lo que supone un **3%** por ciento menos que usando **GradientBoostedTreesModel**.
 
 Por último hacemos una predicción de un coche que esta fuera del dataset, para ello se realiza lo siguiente:
 
@@ -596,7 +596,7 @@ Vamos a usar el mismo vehículo pero cambiando los datos por numericos, ya que e
 
 Los datos del coche son los siguientes:
 
-`{'car_brand': 'Saab',	'model':	'Saab 9-3', 'year': 2005.0,	'horses': 150.0, 'km': 190000.0, 'fuel': 'Diesel',	'gearbox': 'Manual', 'price': 0.0, 'displ_engine': 1910.0, 'marches': 6.0}` 
+`{'car_brand': 'Saab', 'model': 'Saab 9-3', 'year': 2005.0,	'horses': 150.0, 'km': 190000.0, 'fuel': 'Diesel', 'gearbox': 'Manual', 'price': 0.0, 'displ_engine': 1910.0, 'marches': 6.0}` 
 
 Que para sklearn quedarian de la siguiente manera:
 
