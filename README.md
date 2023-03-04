@@ -76,7 +76,7 @@ Luego se guardaron los resultados en varios csv y se terminaron uniendo dichos c
 
 A continuación se expone parte del código utilizado para realizar el scrapin:
 
-### **Declaración de variables**
+#### 1. **Declaración de variables**
 
 Declararemos las siguientes variables:
 
@@ -87,13 +87,13 @@ Declararemos las siguientes variables:
 
 ![](images/scraping/scraping_list.png)
 
-### **Creación del dataframe**
+#### 2. **Creación del dataframe**
 
 Aqui crearemos la estructura de datos para nuestros datos que luego pasarán a ser analizados.
 
 ![](images/scraping/scraping_dataframe.png)
 
-### **Scraping**
+#### 3.**Scraping**
 
 En el siguiente bloque de código lo que se realiza sobre un bucle for el scraping en si, cada coche extraido se mete en una lista y esta a continuación se añade al dataframe que creamos en la imagen anterior.
 
