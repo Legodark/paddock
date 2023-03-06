@@ -321,7 +321,7 @@ Gracias a que se pasaron las variables categoricas a numéricas, como, marca, mo
 
 Para realizar todos los puntos anteriores establecemos la siguiente clase:
 
-![](images/images_preprocesado/clase_prepare.png)
+![](images/images_preprocesado/Prepare.png)
 
 A continuación creamos un diccionario el cual alberca por separado los DataFrames para trabajarlos con mas rapidez en los algoritmos de ML:
 
@@ -404,7 +404,7 @@ Una vez expuesto esto pasamos a detallar el código utilizado, el rendimiento ob
 
 Empezamos creando una clase para poder llamar comodamente a los algoritmos
 
-![Clase_algoritmos_TensorFlow](images/ML/TensorFlow/clase_selector_tf.png)
+![Clase_algoritmos_TensorFlow](images/ML/TensorFlow/Mlearn.png)
 
 En la imagen anterior se puede ver como están configurados los algoritmos para trabajar con regresión donde cada parametro significa lo siguiente:
 
