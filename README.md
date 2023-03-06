@@ -653,7 +653,7 @@ Como dato final dejo una tabla con los resultados de todos los modelos creados:
 
 ## Aplicación web<a name="id12"></a>
 
-Prototipo
+Enlace al prototipo:
 
 [![Figma](https://img.shields.io/badge/prototipo-black?style=for-the-badge&logo=Figma&logoColor=purple&labelColor=101010)](https://www.figma.com/proto/AahVTlKv5tlFWiX0rEGFaI/Paddok?node-id=1%3A2&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=1%3A2)
 
