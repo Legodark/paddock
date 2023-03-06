@@ -208,14 +208,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.4.16"
-  tflite_web:
-    dependency: "direct main"
-    description:
-      name: tflite_web
-      sha256: "8979d4d1e8ea4e8bf4e5834af6e2b11590b6648e32f1dc55567cdd3744b782e5"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.1.1"
   vector_math:
     dependency: transitive
     description:
