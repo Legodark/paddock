@@ -43,6 +43,7 @@ Con esto vamos a desarrollar, en un mismo panel, que el usuario pueda visualizar
 [![colab](https://img.shields.io/badge/Colab-black?style=for-the-badge&logo=Google-Colab&logoColor=orange&labelColor=101010)]()
 [![Flutter](https://img.shields.io/badge/Flutter-black?style=for-the-badge&logo=Flutter&logoColor=blue&labelColor=101010)]()
 [![Flask](https://img.shields.io/badge/Flask-black?style=for-the-badge&logo=Flask&logoColor=white&labelColor=101010)]()
+[![Figma](https://img.shields.io/badge/Figma-black?style=for-the-badge&logo=Figma&logoColor=purple&labelColor=101010)]()
 [![Github](https://img.shields.io/badge/Github-black?style=for-the-badge&logo=Github&logoColor=white&labelColor=101010)]()
 [![Notion](https://img.shields.io/badge/Notion-black?style=for-the-badge&logo=Notion&logoColor=white&labelColor=101010)]()
 [![Jira](https://img.shields.io/badge/Jira-black?style=for-the-badge&logo=Jira&logoColor=blue&labelColor=101010)]()
@@ -657,8 +658,3 @@ Prototipo
 [![Figma](https://img.shields.io/badge/prototipo-black?style=for-the-badge&logo=Figma&logoColor=purple&labelColor=101010)](https://www.figma.com/proto/AahVTlKv5tlFWiX0rEGFaI/Paddok?node-id=1%3A2&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=1%3A2)
 
 ![Prototipo](images/desarrollo_web/prototipo.png)
-
-
-
-
-
