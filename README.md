@@ -662,7 +662,7 @@ El desarrollo consta de los siguientes puntos:
 1. Dataset
 2. Función Tokenizadora
 3. Conversión de texto a vector numerico
-4. Entrenamiento de los modelos
+4. Entrenamiento y predicciones de los modelos:
     - Modelo MultinomialNB
     - Modelo LinealSVC
     - Modelo Random Forest
@@ -687,7 +687,7 @@ Deberemos convertir el texto a vector numerico y ver la relevancia que tiene cad
 
 ![](images/Chatbot/conversion_text.png)
 
-Por último, crea una matriz donde cada fila representa un texto y cada columna representa una palabra diferente. Los valores en la matriz son el número de veces que la palabra correspondiente aparece en el documento correspondiente.
+Por último, crea una matriz donde cada fila representa un texto y cada columna representa una palabra diferente. Los valores en la matriz son el número de veces que la palabra correspondiente aparece en el texto correspondiente.
 
 En la siguiente imagen podemos ver los datos una vez pasada la matriz de nuevo a dataframe
 
@@ -699,18 +699,43 @@ Y en la siguiente imagen se puede ver parte de la cantidad que aparece una palab
 
 #### **4. Entrenamiento de los modelos**
 
+Una vez tokenizado el texto, pasamos a la parte de entrenar modelos, en este caso vamos a probar 3 diferentes:
+
+**Modelo MultinomialNB**, **Modelo LinealSVC** y **Modelo Random Forest**
+
+Estos modelos permiten predicir si el texto tiene el contexto correcto sobre la tematica que se esta tratando, en nuestro caso permite saber si el texto que se pasa es sobre coches.
+
+Para predecir usaremos los siguientes textos:
+
+**Predicción sobre datos reales**
+
+![](images/Chatbot/pruebas_pred_text.png)
+
 **Modelo MultinomialNB**
 
 ![](images/Chatbot/Multinomial.png)
+
+**Predicciones**
+
+![](images/Chatbot/result_text.png)
 
 **Modelo LinealSVC**
 
 ![](images/Chatbot/LinealSVC.png)
 
+**Predicciones**
+
+![](images/Chatbot/result_text_2.png)
+
 **Modelo Random Forest**
 
 ![](images/Chatbot/RF.png)
 
+**Predicciones**
+
+![](images/Chatbot/result_text_3.png)
+
+Viendo los resultados de las predicciones anteriores el que mejor resultado nos da es el Random Forest, por lo que es el que vamos a exportar para utilizarlo en el chatbot.
 
 ## 8. Aplicación web<a name="id12"></a>
 
