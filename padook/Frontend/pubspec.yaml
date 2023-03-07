@@ -31,6 +31,9 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.2
+  syncfusion_flutter_gauges: ^20.4.52
+  gradient_borders: ^1.0.0
+  animated_loading_border: ^0.0.1
 
 
   # The following adds the Cupertino Icons font to your application.

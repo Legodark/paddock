@@ -5,18 +5,18 @@ part 'json_data_state.dart';
 
 class JsonDataBloc extends Cubit<JsonDataState> {
   JsonDataBloc()
-      : super(JsonDataState(marchesData: const {}, marchSelected: "0", modelsData: {}, modelSelected: "0"));
+      : super(JsonDataState(brandsData: const {}, brandSelected: "0", modelsData: {}, modelSelected: "0"));
 
   Future<void> fillData() async {
-    emit(JsonDataState(marchesData: await readMarchesJson(), marchSelected: "0", modelsData: await readModelJson("Abarth"), modelSelected: "0"));
+    emit(JsonDataState(brandsData: await readBrandsJson(), brandSelected: "0", modelsData: await readModelJson("Abarth"), modelSelected: "0"));
   }
 
-  void selectMarch(String march) {
-    emit(state.copyWith(marchSelected: march));
+  void selectMarch(String brand) {
+    emit(state.copyWith(brandSelected: brand));
   }
 
-  Future<void> filterModel(String march) async {
-    emit(state.copyWith(modelsData: await readModelJson(state.marchesData[march])));
+  Future<void> filterModel(String brand) async {
+    emit(state.copyWith(modelsData: await readModelJson(state.brandsData[brand])));
     selectModel(state.modelsData.keys.first);
   }
 

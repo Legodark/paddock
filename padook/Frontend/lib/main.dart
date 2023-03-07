@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:padook/bloc/json_bloc/json_data_bloc.dart';
-import 'package:padook/bloc/march_logo_bloc/march_logo_bloc.dart';
+import 'package:padook/bloc/brand_logo_bloc/brand_logo_bloc.dart';
 import 'package:padook/page/padook_page.dart';
 
 import 'Themes/input_decoration_theme.dart';
+import 'bloc/form_bloc/form_bloc.dart';
 
 void main() {
   runApp(MultiBlocProvider(
@@ -14,7 +15,10 @@ void main() {
         ),
         BlocProvider(
           create: (BuildContext context) => MarchLogoBloc(),
-        )
+        ),
+        BlocProvider(
+          create: (BuildContext context) => FormBloc(),
+        ),
       ],
       child: MaterialApp(
           debugShowCheckedModeBanner: false,
@@ -22,7 +26,17 @@ void main() {
               scaffoldBackgroundColor: const Color(0xFF0D0F24),
               floatingActionButtonTheme: const FloatingActionButtonThemeData(
                   backgroundColor: Color(0xFFDC9A54)),
-              inputDecorationTheme: getInputTheme()),
+              inputDecorationTheme: getInputTheme(),
+              outlinedButtonTheme: OutlinedButtonThemeData(
+                  style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all(const Color(0xFFDC9A54)),
+                      textStyle: MaterialStateProperty.all(const TextStyle(color: Colors.white)),
+                      shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)))
+                      ),
+                  ),
+              scrollbarTheme: ScrollbarThemeData(thumbVisibility: MaterialStateProperty.all(true),
+              thumbColor: MaterialStateProperty.all(Colors.white))),
           routes: {
             '/': (context) => const PadookPage(),
           })));

@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 
-Future<dynamic> readMarchesJson() async {
+Future<dynamic> readBrandsJson() async {
   final String response =
       await rootBundle.loadString('assets/json/dic_cars_marca.json');
   final data = await json.decode(response);
