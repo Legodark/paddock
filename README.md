@@ -649,9 +649,70 @@ Como dato final dejo una tabla con los resultados de todos los modelos creados:
 | rf_sk_less_limit | 1726.79 | 0.98 | 176492 |
 | rf_sk_less_columns | 1751.28 | 0.98 | 176492 |
 
-## NLP - ChatBOT(Einstein)<a name="id11"></a>
+## 7. NLP - ChatBOT(Einstein)<a name="id11"></a>
 
-## Aplicación web<a name="id12"></a>
+Puedes ver el desarrollo en el siguiente enlace:
+
+[![colab](https://img.shields.io/badge/NPL-black?style=for-the-badge&logo=Google-Colab&logoColor=orange&labelColor=101010)](https://github.com/Legodark/paddock/blob/main/notebooks/NLP_(chatBOT)/Entrenamiento_Chatbot.ipynb)
+
+En este apartado se muestra el desarrollo de Einstein, un chatbot que es capaz de interactuar con el usuario y resolver las consultas de este de manera eficiente.
+
+El desarrollo consta de los siguientes puntos:
+
+1. Dataset
+2. Función Tokenizadora
+3. Conversión de texto a vector numerico
+4. Entrenamiento de los modelos
+    - Modelo MultinomialNB
+    - Modelo LinealSVC
+    - Modelo Random Forest
+
+#### **1. Dataset**
+
+En primer lugar, recalcar que el dataset usado para el entrenamiento es de construcción propia y algunos de los textos están generados con la ayuda de ChatGPT.
+
+Dicho dataset consta de 3 columnas (Unnamed: 0, message, context)
+
+![](images/Chatbot/dataset.png)
+
+#### **2. Función Tokenizadora**
+
+El siguiente paso en el desarrollo es la creación de una función tokenizadora, esta nos permite separar las palabras del texto y así poder hacer una mejor vectorización en proxímos pasos.
+
+![](images/Chatbot/tokenizadora.png)
+
+#### **3. Conversión de texto a vector numerico**
+
+Deberemos convertir el texto a vector numerico y ver la relevancia que tiene cada palabra en un mensaje y si influye en el resultado de ser 0 o 1, para ello usamos CountVectorizer que es una herramienta que ayuda a convertir texto en números. Este tomara como entrada la columna de texto y contara cuántas veces aparece cada palabra en cada texto.
+
+![](images/Chatbot/conversion_text.png)
+
+Por último, crea una matriz donde cada fila representa un texto y cada columna representa una palabra diferente. Los valores en la matriz son el número de veces que la palabra correspondiente aparece en el documento correspondiente.
+
+En la siguiente imagen podemos ver los datos una vez pasada la matriz de nuevo a dataframe
+
+![](images/Chatbot/matriz.png)
+
+Y en la siguiente imagen se puede ver parte de la cantidad que aparece una palabra:
+
+![](images/Chatbot/result_matrix.png)
+
+#### **4. Entrenamiento de los modelos**
+
+**Modelo MultinomialNB**
+
+![](images/Chatbot/Multinomial.png)
+
+**Modelo LinealSVC**
+
+![](images/Chatbot/LinealSVC.png)
+
+**Modelo Random Forest**
+
+![](images/Chatbot/RF.png)
+
+
+## 8. Aplicación web<a name="id12"></a>
 
 Enlace al prototipo:
 
