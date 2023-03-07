@@ -707,9 +707,11 @@ Estos modelos permiten predicir si el texto tiene el contexto correcto sobre la 
 
 Para predecir usaremos los siguientes textos:
 
-**Predicción sobre datos reales**
+**Ejemplos para predecir**
 
 ![](images/Chatbot/pruebas_pred_text.png)
+
+Los resultados se muestran en las imagenes siguientes a la de los modelos.
 
 **Modelo MultinomialNB**
 
