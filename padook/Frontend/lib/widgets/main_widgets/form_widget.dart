@@ -26,7 +26,10 @@ Future<Object> getPrediction(Map controllerList, String brandSelected,
   http.Response response = await http.get(Uri.parse(url));
   if (response.statusCode == 200) {
     Map data = jsonDecode(response.body);
-    return Map.from(data).cast<String, double>();
+    Map<String, double> dataJsonified = Map.from(data).cast<String, double>();
+    return Map.from({"Precio Mínimo": dataJsonified["precio-minimo"],
+      "Predicción": dataJsonified["prediccion"],
+      "Precio Máximo": dataJsonified["precio-maximo"]}).cast<String, double>();
   }
   return {
     "error 404": 0,
@@ -96,6 +99,8 @@ AnimatedLoadingBorder carForm(BuildContext mainContext) {
                       BlocBuilder<FormBloc, FormInputState>(
                           builder: (context, state) => OutlinedButton(
                               onPressed: () {
+                                BlocProvider.of<ChartBloc>(mainContext)
+                                    .activeWidget(1);
                                 getPrediction(
                                         controllerList,
                                         jsonstate.brandSelected,
@@ -104,7 +109,7 @@ AnimatedLoadingBorder carForm(BuildContext mainContext) {
                                         state.fuelId)
                                     .then((value) {
                                   BlocProvider.of<ChartBloc>(mainContext)
-                                      .activeWidget(true);
+                                      .activeWidget(2);
                                   BlocProvider.of<ChartBloc>(mainContext)
                                       .updateMap(value as Map<String, double>);
                                 });
@@ -131,7 +136,7 @@ Container buttonToActiveForm(BuildContext mainContext) {
     child: ElevatedButton(
         onPressed: () {
           BlocProvider.of<ChartBloc>(mainContext)
-              .activeWidget(false);
+              .activeWidget(0);
           BlocProvider.of<ChartBloc>(mainContext)
               .updateMap({});
           BlocProvider.of<MainWidgetBloc>(mainContext)

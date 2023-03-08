@@ -1,8 +1,12 @@
 
 import 'package:flutter/material.dart';
+import 'package:padook/price_classifier/price_classifier.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
-SfRadialGauge priceValue(price) {
+SfRadialGauge priceValue(price, minimumPrice, maximumPrice) {
+  String priceClassified = priceClasifier(price, minimumPrice, maximumPrice);
+  double middleRight = (maximumPrice - minimumPrice) / 1.33 + minimumPrice;
+  double middleLeft = (maximumPrice - minimumPrice) / 4 + minimumPrice;
   return SfRadialGauge(
       title: const GaugeTitle(
           text: 'Precio',
@@ -11,22 +15,22 @@ SfRadialGauge priceValue(price) {
       enableLoadingAnimation: true,
       animationDuration: 2000,
       axes: <RadialAxis>[
-        RadialAxis(minimum: 0, maximum: 0.3, showLabels: false, ranges: <GaugeRange>[
+        RadialAxis(minimum: minimumPrice, maximum: maximumPrice != minimumPrice ? maximumPrice: maximumPrice + 1, showLabels: false, ranges: <GaugeRange>[
           GaugeRange(
-              startValue: 0,
-              endValue: 0.1,
+              startValue: minimumPrice,
+              endValue: middleLeft,
               color: Colors.green,
               startWidth: 10,
               endWidth: 10),
           GaugeRange(
-              startValue: 0.1,
-              endValue: 0.2,
-              color: Colors.orange,
+              startValue: middleLeft,
+              endValue: middleRight,
+              color: Colors.yellow,
               startWidth: 10,
               endWidth: 10),
           GaugeRange(
-              startValue: 0.2,
-              endValue: 0.3,
+              startValue: middleRight,
+              endValue: maximumPrice,
               color: Colors.red,
               startWidth: 10,
               endWidth: 10)
@@ -34,10 +38,9 @@ SfRadialGauge priceValue(price) {
           NeedlePointer(value: price)
         ], annotations: <GaugeAnnotation>[
           GaugeAnnotation(
-              widget: Container(
-                  child: Text(price.toString(),
-                      style: TextStyle(
-                          fontSize: 25, fontWeight: FontWeight.bold))),
+              widget: Text(priceClassified,
+                  style: const TextStyle(
+                      fontSize: 25, fontWeight: FontWeight.bold)),
               angle: 90,
               positionFactor: 0.5)
         ])

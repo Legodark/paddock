@@ -4,9 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 part "chart_state.dart";
 
 class ChartBloc extends Cubit<ChartState> {
-  ChartBloc() : super(ChartState(widgetActive: false, priceResult: {}));
+  ChartBloc() : super(ChartState(widgetActive: 0, priceResult: {}));
 
-  void activeWidget(bool widgetActive) {
+  void activeWidget(int widgetActive) {
     emit(state.copyWith(widgetActive: widgetActive));
   }
 

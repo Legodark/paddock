@@ -79,8 +79,10 @@ class _PadookPageState extends State<PadookPage> {
                         ),
                       ),
                       BlocBuilder<ChartBloc, ChartState>(
-                          builder: (context, state) =>
-                              state.widgetActive ? getChartPredictWidget(state) : Container())
+                          builder: (context, state) {
+                        return AnimatedSwitcher(duration: const Duration(milliseconds: 300),
+                        child: loadCorrectWidget(state),);
+                      })
                     ]),
               ),
             )),
