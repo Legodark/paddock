@@ -40,9 +40,10 @@ def car_api():
         collection = get_collection()
 
         # Crea un diccionario con las predicciones
-        response = {'prediccion': list(prediction)[0],
-                    'precio-minimo': get_min_price_from_model(collection,  model_dictionary[model_id], list(prediction)[0]),
+        response = {
                     'precio-maximo': get_max_price_from_model(collection, model_dictionary[model_id], list(prediction)[0]),
+                    'prediccion': list(prediction)[0],
+                    'precio-minimo': get_min_price_from_model(collection,  model_dictionary[model_id], list(prediction)[0])
                     }
     except ValueError:
         response = {"error": "No pusiste los parametros correctos"}
