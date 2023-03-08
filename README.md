@@ -35,14 +35,10 @@ El proyecto consta de lo siguiente:
 
 Con esto vamos a desarrollar, en un mismo panel, que el usuario pueda visualizar con estadísticas de manera rápida el estado del mercado de coches de segunda mano, usando filtros y con las implementaciones anteriormente mencionadas, para poder estimar cuál es el precio de venta más óptimo para vender su coche o coches.
 
-<center>
+<div align="center">
 
 :computer: Tecnologías usadas
 ---
-
-</center>
-
-<center>
 
 ### :snake: Desarrollo
 
@@ -90,7 +86,7 @@ Control de versiones
 [![Selenium](https://img.shields.io/badge/Selenium-black?style=for-the-badge&logo=Selenium&logoColor=green&labelColor=101010)]()
 [![Beatifulsoup](https://img.shields.io/badge/Beatifulsoup-black?style=for-the-badge&logo=Python&logoColor=orange&labelColor=101010)]()
 
-</center>
+</div>
 
 ## 2. Obtención de los datos.<a name="id2"></a>
 
