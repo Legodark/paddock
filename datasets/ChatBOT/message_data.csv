@@ -1,0 +1,358 @@
+,message,context
+0,¿Cuál es el precio de un coche con 200 caballos?,1
+1,¿Cuánto cuesta un coche de 2019?,1
+2,"Quiero un coche que tenga más de 300 caballos, ¿cuál me recomiendas?",1
+3,¿Hay coches de la marca Toyota disponibles?,1
+4,¿Cuánto cuesta un coche con caja de cambios automática?,1
+5,¿Qué coches tienen una cilindrada de más de 2000cc?,1
+6,"Estoy buscando un coche con menos de 50.000 km, ¿tienen alguno disponible?",1
+7,¿Cuántas marchas tienen los coches de la marca Ford?,1
+8,"Quiero un coche diésel, ¿cuáles tienen disponibles?",1
+9,¿Cuál es el precio de un coche eléctrico de la marca Tesla?,1
+10,¿Tienen algún coche con cambio manual?,1
+11,"Quiero un coche de la marca BMW, ¿cuáles tienen disponibles?",1
+12,¿Qué coches tienen una cilindrada de menos de 1500cc?,1
+13,"Estoy interesado en un coche con más de 400 caballos, ¿tienen alguno disponible?",1
+14,¿Cuánto cuesta un coche con transmisión automática?,1
+15,¿Cuántos kilómetros tienen los coches de la marca Audi?,1
+16,¿Tienen algún coche híbrido disponible?,1
+17,"Quiero un coche de la marca Mercedes, ¿cuáles tienen disponibles?",1
+18,¿Cuál es el precio de un coche con más de 6 marchas?,1
+19,¿Qué coches tienen una cilindrada de entre 1500cc y 2000cc?,1
+20,¿Cuál es el precio estimado de un coche de 2015 con 100.000 km y motor de gasolina de 2.0L?,1
+21,¿Qué coches tienes disponibles con motor diésel y caja de cambios manual?,1
+22,¿Cuál es el precio promedio de un coche de la marca BMW de 2018 con menos de 50.000 km?,1
+23,¿Tienes algún coche de la marca Audi con más de 250 caballos de fuerza?,1
+24,¿Qué coches tienes disponibles con transmisión automática y más de 150 caballos de fuerza?,1
+25,¿Cuál es el consumo promedio de un coche con motor de gasolina de 1.6L y caja de cambios manual?,1
+26,¿Tienes algún coche de la marca Mercedes con menos de 50.000 km y motor diésel?,1
+27,¿Qué coches tienes disponibles con menos de 100.000 km y motor de gasolina de 1.4L?,1
+28,¿Cuál es el precio estimado de un coche de la marca Volkswagen de 2016 con 100.000 km y transmisión automática?,1
+29,¿Tienes algún coche de la marca Ford con más de 200 caballos de fuerza y caja de cambios automática?,1
+30,¿Qué coches tienes disponibles con motor de gasolina de 2.0L y caja de cambios manual?,1
+31,¿Cuál es el consumo promedio de un coche de la marca Renault con motor diésel y caja de cambios automática?,1
+32,¿Tienes algún coche de la marca Toyota con menos de 50.000 km y motor de gasolina?,1
+33,¿Qué coches tienes disponibles con más de 6 marchas y motor diésel?,1
+34,¿Cuál es el precio promedio de un coche de la marca Seat con más de 100.000 km y motor de gasolina?,1
+35,¿Tienes algún coche de la marca Opel con más de 150 caballos de fuerza y menos de 100.000 km?,1
+36,¿Qué coches tienes disponibles con motor de gasolina de 1.6L y caja de cambios automática?,1
+37,¿Cuál es el consumo promedio de un coche de la marca Peugeot con motor diésel y más de 6 marchas?,1
+38,¿Tienes algún coche de la marca Kia con menos de 50.000 km y transmisión automática?,1
+39,¿Qué coches tienes disponibles con más de 250 caballos de fuerza y caja de cambios manual?,1
+40,¿Cuál es el precio promedio de un coche de la marca Hyundai con menos de 100.000 km y motor diésel?,1
+41,¿Tienes algún coche de la marca Citroen con motor de gasolina de 2.0L y menos de 50.000 km?,1
+42,¿Qué coches tienes disponibles con motor de gasolina de 1.2L y caja de cambios manual?,1
+43,¿Cuál es el consumo promedio de un coche de la marca Nissan con más de 100.000 km y motor de gasolina?,1
+44,¿Tienes algún coche de la marca Skoda con menos de 50.000 km y motor diésel?,1
+45,¿Qué coches tienes disponibles con transmisión automática y más de 200 caballos de fuerza?,1
+46,¿Qué coches tienes disponibles del año 2021?,1
+47,¿Tienes algún coche con más de 200 caballos?,1
+48,"Quiero un coche con menos de 100.000 kilómetros, ¿qué opciones tienes?",1
+49,¿Tienes coches con cilindrada superior a 2.0 litros?,1
+50,"Estoy buscando un coche diésel, ¿qué opciones tienes?",1
+51,¿Qué coches tienes con caja de cambios automática?,1
+52,"Quiero un coche con al menos 6 marchas, ¿qué opciones tienes?",1
+53,¿Tienes algún coche de la marca Mercedes?,1
+54,¿Qué modelos de coches tienes de la marca BMW?,1
+55,"Estoy interesado en un coche de la marca Audi, ¿tienes alguno disponible?",1
+56,¿Qué coches tienes con una cilindrada entre 1.6 y 2.0 litros?,1
+57,¿Tienes algún coche con más de 250 caballos?,1
+58,"Quiero un coche con menos de 50.000 kilómetros, ¿qué opciones tienes?",1
+59,¿Qué coches tienes disponibles de gasolina?,1
+60,"Estoy buscando un coche con caja de cambios manual, ¿qué opciones tienes?",1
+61,¿Qué coches tienes con una cilindrada superior a 3.0 litros?,1
+62,"Quiero un coche con al menos 8 marchas, ¿qué opciones tienes?",1
+63,¿Tienes algún coche de la marca Porsche?,1
+64,¿Qué modelos de coches tienes de la marca Volkswagen?,1
+65,"Estoy interesado en un coche de la marca Lexus, ¿tienes alguno disponible?",1
+66,¿Cuánto cuesta un coche con más de 200 caballos?,1
+67,"Quiero un coche con menos de 100.000 kilómetros, ¿cuáles son mis opciones?",1
+68,¿Puedes recomendarme un coche de gasolina?,1
+69,"Estoy buscando un coche con caja de cambios automática, ¿qué opciones tengo?",1
+70,"Quiero un coche con más de 150 caballos, ¿cuáles son mis opciones?",1
+71,¿Cuál es el precio promedio de un coche con cilindrada superior a 2.0?,1
+72,"Busco un coche con más de 5 marchas, ¿cuáles son mis opciones?",1
+73,¿Qué coches de la marca Toyota tienen cilindrada superior a 1.6?,1
+74,"Estoy buscando un coche diésel, ¿qué opciones tengo?",1
+75,"Quiero un coche con menos de 5 años de antigüedad, ¿cuáles son mis opciones?",1
+76,¿Cuál es el precio promedio de un coche con más de 200 caballos?,1
+77,"Estoy buscando un coche con menos de 50.000 kilómetros, ¿qué opciones tengo?",1
+78,¿Puedes recomendarme un coche con cambio manual?,1
+79,"Quiero un coche con más de 6 marchas, ¿cuáles son mis opciones?",1
+80,¿Qué coches de la marca BMW tienen más de 150 caballos?,1
+81,"Busco un coche con cilindrada superior a 1.8, ¿cuáles son mis opciones?",1
+82,¿Cuál es el precio promedio de un coche con caja de cambios automática?,1
+83,"Estoy buscando un coche gasolina, ¿qué opciones tengo?",1
+84,"Quiero un coche con menos de 3 años de antigüedad, ¿cuáles son mis opciones?",1
+85,¿Puedes recomendarme un coche con cilindrada superior a 2.5?,1
+86,¿Cuántos caballos tiene el Audi A4 del 2015?,1
+87,¿Me puedes decir el precio de un coche de segunda mano con menos de 100.000 kilómetros?,1
+88,"Estoy buscando un coche con una cilindrada de al menos 2.0, ¿qué modelos me recomiendas?",1
+89,"Quiero un coche diésel con cambio automático, ¿qué opciones tengo?",1
+90,¿Cuál es el precio de un Mercedes Benz Clase A del 2018 con menos de 50.000 km?,1
+91,¿Qué coches hay disponibles con una caja de cambios manual?,1
+92,¿Podrías decirme cuánto cuesta un coche eléctrico con más de 400 km de autonomía?,1
+93,¿Cuántas marchas tiene un Peugeot 308?,1
+94,"Estoy buscando un coche familiar de segunda mano con un presupuesto de 10.000€, ¿qué me recomiendas?",1
+95,¿Qué marcas de coches tienen modelos con una cilindrada de más de 3.0?,1
+96,¿Cuál es el consumo de combustible del Volkswagen Golf del 2019?,1
+97,¿Me puedes decir el precio de un Toyota Yaris del 2017 con menos de 50.000 km?,1
+98,"Quiero un coche con tracción a las cuatro ruedas, ¿qué opciones tengo?",1
+99,¿Podrías recomendarme un coche con una cilindrada de menos de 1.6?,1
+100,"Estoy buscando un coche de segunda mano con menos de 150.000 km, ¿qué modelos me recomiendas?",1
+101,¿Cuánto cuesta un coche de lujo con más de 500 caballos?,1
+102,¿Qué marcas de coches tienen modelos con cambio automático?,1
+103,¿Cuántas marchas tiene un Audi A3?,1
+104,"Quiero un coche gasolina con más de 150 caballos, ¿qué opciones tengo?",1
+105,¿Cuál es el precio de un coche híbrido del 2016 con menos de 100.000 km?,1
+106,"Hola, ¿cómo estás?",0
+107,¿Qué planes tienes para hoy?,0
+108,"¿Podrías decirme la hora, por favor?",0
+109,¿Has visto la última película de terror?,0
+110,¿Qué opinas del nuevo restaurante que abrió en la ciudad?,0
+111,"Me acabo de comprar una bicicleta nueva, ¡estoy emocionado!",0
+112,¿Conoces algún buen libro que pueda leer?,0
+113,¿Qué deporte te gusta practicar?,0
+114,¿Tienes algún plan para las vacaciones de verano?,0
+115,¡Feliz cumpleaños! Espero que tengas un gran día.,0
+116,¿Has probado la nueva pizza de la pizzería de la esquina?,0
+117,¿Sabes cómo se hace una tarta de manzana?,0
+118,¿Has escuchado la última canción de tu artista favorito?,0
+119,¿Qué te parece el clima hoy?,0
+120,¿Tienes algún consejo para cuidar las plantas de interior?,0
+121,"Me encanta viajar, ¿cuál es tu destino de viaje favorito?",0
+122,¿Qué opinas sobre la moda de los pantalones cortos con calcetines largos?,0
+123,¿Conoces algún buen restaurante de comida mexicana en la ciudad?,0
+124,¿Cómo te gustan tus huevos para el desayuno?,0
+125,¿Te gusta bailar salsa?,0
+126,"Hola, ¿qué tal estás?",0
+127,¿Puedes ayudarme con un problema de matemáticas?,0
+128,No entiendo cómo funciona este programa.,0
+129,¿Has visto la película que estrenaron ayer?,0
+130,¿Podrías recomendarme un buen libro de misterio?,0
+131,¡Feliz cumpleaños! ¿Qué planes tienes para celebrarlo?,0
+132,"No tengo mucho que hacer hoy, ¿tienes alguna idea de qué puedo hacer?",0
+133,¿Conoces alguna buena receta de postre?,0
+134,"Estoy buscando un buen restaurante para ir a cenar, ¿tienes alguna recomendación?",0
+135,¿Sabes cómo se llama la canción que dice 'yo te quiero dar'?,0
+136,"Me encanta esta canción, ¿tú la conoces?",0
+137,¿Has oído hablar de la última moda en ropa?,0
+138,¿Te gusta el fútbol? ¿Cuál es tu equipo favorito?,0
+139,¿Tienes algún consejo para mantener una buena salud mental?,0
+140,¿Conoces algún truco para mejorar la memoria?,0
+141,¿Qué opinas de la situación actual del país?,0
+142,¿Qué planes tienes para las vacaciones de verano?,0
+143,"Me gusta mucho tu peinado, ¿me podrías decir cómo lo hiciste?",0
+144,¿Sabes si hay alguna oferta en vuelos para viajar a Europa?,0
+145,¿Podrías recomendarme alguna película de comedia?,0
+146,¿Cuánto cuesta un café aquí?,0
+147,"Hola, ¿cómo estás?",0
+148,¿Podrías darme indicaciones para llegar a la plaza principal?,0
+149,¿Sabes qué hora es?,0
+150,"Me gusta mucho esta canción, ¿cuál es su nombre?",0
+151,¿Hay algún restaurante bueno por aquí?,0
+152,¿Tienes cambio para un billete de 50?,0
+153,¿Cuál es tu deporte favorito?,0
+154,¿Podrías recomendarme alguna película para ver?,0
+155,¿Sabes si hoy va a llover?,0
+156,¿Cómo llego al museo de arte moderno?,0
+157,No entiendo nada de lo que está hablando.,0
+158,¿Qué tal te ha ido la semana?,0
+159,¿Tienes algún pasatiempo que te guste hacer?,0
+160,"Me perdí en la ciudad, ¿puedes ayudarme a encontrar mi hotel?",0
+161,¿Podrías explicarme cómo funciona este aparato?,0
+162,¿Has estado alguna vez en este restaurante?,0
+163,¿Qué piensas de la última película de ciencia ficción?,0
+164,¿Cuál es tu libro favorito?,0
+165,¿Te gusta la comida picante?,0
+166,"Hola, ¿cómo estás?",0
+167,¿Qué tal tu día?,0
+168,¿Has visto alguna película interesante últimamente?,0
+169,¿Podrías recomendarme algún libro?,0
+170,¿Qué planes tienes para el fin de semana?,0
+171,¿Sabes de algún buen restaurante en la zona?,0
+172,¿Te gusta cocinar?,0
+173,¿Qué opinas del clima últimamente?,0
+174,¿Cuál es tu deporte favorito?,0
+175,¿Tienes alguna mascota?,0
+176,¿Has viajado a algún lugar interesante últimamente?,0
+177,¿Cuál es tu música favorita?,0
+178,¿Has visto alguna serie interesante últimamente?,0
+179,¿Qué opinas de la política actual?,0
+180,¿Qué piensas de la tecnología moderna?,0
+181,¿Cuál es tu comida favorita?,0
+182,¿Qué te gusta hacer en tu tiempo libre?,0
+183,¿Has probado algún deporte extremo alguna vez?,0
+184,¿Te gusta el arte?,0
+185,¿Cuál es tu lugar favorito para relajarte?,0
+186,"Hola, ¿qué tal estás?",0
+187,¿Me puedes ayudar con algo?,0
+188,¿Conoces algún buen restaurante por la zona?,0
+189,¿Sabes cómo puedo hacer para aprender a tocar la guitarra?,0
+190,¿Cuál es tu película favorita?,0
+191,¿Qué opinas sobre el cambio climático?,0
+192,¿Sabes dónde puedo encontrar información sobre las últimas noticias de tecnología?,0
+193,¿Cómo puedo mejorar mi inglés?,0
+194,¿Qué libros me recomiendas para leer en mis vacaciones?,0
+195,¿Podrías decirme cómo llegar al museo de arte moderno?,0
+196,¿Qué deportes te gustan practicar?,0
+197,¿Conoces algún buen lugar para ir de excursión?,0
+198,¿Tienes algún consejo para mejorar la concentración?,0
+199,¿Cuál es tu banda de música favorita?,0
+200,¿Qué crees que debería estudiar para tener más oportunidades laborales?,0
+201,¿Sabes cómo puedo hacer para mejorar mis habilidades de programación?,0
+202,¿Cómo puedo mejorar mi dieta para mantenerme saludable?,0
+203,¿Qué piensas sobre la educación a distancia?,0
+204,¿Conoces algún buen sitio web para buscar trabajo?,0
+205,¿Qué actividades te gusta hacer en tu tiempo libre?,0
+206,¿Hay alguna opción con más de 200 caballos de fuerza?,1
+207,"Estoy buscando un vehículo con menos de 100.000 kilómetros, ¿qué opciones hay?",1
+208,¿Cuál es el modelo con mayor cilindrada que tienen?,1
+209,"Estoy buscando un coche diésel, ¿cuáles son mis opciones?",1
+210,¿Hay algún modelo automático disponible?,1
+211,¿Tienen algún coche híbrido en su inventario?,1
+212,"Busco un coche con cambio manual, ¿qué opciones hay?",1
+213,¿Cuál es el modelo más reciente que tienen?,1
+214,¿Tienen algún coche con más de 6 marchas?,1
+215,"Estoy buscando un coche con más de 300 caballos de fuerza, ¿pueden mostrarme opciones?",1
+216,¿Tienen algún coche con menos de 50.000 kilómetros?,1
+217,"Estoy buscando un modelo con una cilindrada de al menos 2.0 litros, ¿qué opciones hay?",1
+218,¿Cuál es la marca de coches más popular en su inventario?,1
+219,"Estoy buscando un coche de gasolina, ¿cuáles son mis opciones?",1
+220,¿Tienen algún modelo con transmisión automática y tracción en las cuatro ruedas?,1
+221,¿Hay algún modelo con más de 7 marchas?,1
+222,"Estoy buscando un coche con menos de 5 años de antigüedad, ¿qué opciones hay?",1
+223,¿Cuál es el modelo más potente que tienen en su inventario?,1
+224,"Estoy buscando un coche con cambio automático, ¿qué opciones tienen disponibles?",1
+225,¿Tienen algún modelo con cilindrada mayor a 3.0 litros?,1
+226,Busco algo con pocos kilómetros y caja de cambios manual. ¿Qué modelos hay disponibles?,1
+227,Busco algo con algo de kilómetros y caja de cambios automática. ¿Qué modelos hay disponibles?,1
+228,Busco algo con pocos kilómetros y año mayor a 2018. ¿Qué modelos hay disponibles?,1
+229,Busco algo con algo de marchas y año mayor a 2017. ¿Qué modelos hay disponibles?,1
+230,Busco algo con pocos kilómetros y combustible híbrido. ¿Qué modelos hay disponibles?,1
+231,¿Tienes algo del año 2010 o más reciente?,1
+232,Busco algo con más de 200 caballos de fuerza.,1
+233,Quiero algo con menos de 100.000 kilómetros.,1
+234,Estoy interesado en algo con cilindrada de 2.0 o más grande.,1
+235,¿Tienes algo que funcione con gasoil como combustible?,1
+236,Quiero algo con caja de cambios automática.,1
+237,Busco algo con al menos 6 marchas.,1
+238,¿Tienes algo de marca japonesa?,1
+239,Quiero algo con modelo deportivo.,1
+240,Estoy buscando algo con año 2015 o más nuevo.,1
+241,¿Tienes algo con más de 300 caballos de fuerza?,1
+242,Quiero algo con menos de 50.000 kilómetros.,1
+243,Busco algo con cilindrada de 1.6 o menos.,1
+244,Estoy interesado en algo que funcione con gasolina como combustible.,1
+245,Quiero algo con caja de cambios manual.,1
+246,Busco algo con al menos 5 marchas.,1
+247,¿Tienes algo de marca alemana?,1
+248,Quiero algo con modelo familiar.,1
+249,Estoy buscando algo con año 2018 o más nuevo.,1
+250,¿Tienes algo con menos de 100 caballos de fuerza?,1
+251,"Un Toyota con menos de 50.000 km, del año 2018 y con caja de cambios automática.",1
+252,"Un BMW de cilindrada media, de modelo reciente y con menos de 100.000 km.",1
+253,"Un Mercedes-Benz de alta gama, con más de 300 caballos de potencia y del año 2020.",1
+254,"Un Audi con tracción a las cuatro ruedas, del año 2019 y con motor diesel.",1
+255,"Un Volkswagen con caja de cambios manual, de color rojo y con menos de 80.000 km.",1
+256,"Un Porsche deportivo, del año 2015 y con menos de 50.000 km.",1
+257,"Un Jeep 4x4, de color verde y con más de 200 caballos de potencia.",1
+258,"Un Lexus híbrido, del año 2021 y con menos de 10.000 km.",1
+259,"Un Nissan eléctrico, del año 2019 y con autonomía superior a los 300 km.",1
+260,"Un Ford con motor de gasolina, de modelo clásico y con más de 40 años de antigüedad.",1
+261,"Busco un Audi del año 2018 o superior, con menos de 50.000 kilómetros y motor diésel.",1
+262,Necesito un BMW descapotable de transmisión automática y con menos de 100.000 kilómetros.,1
+263,"Quiero un Ferrari rojo, preferiblemente con menos de 20.000 kilómetros, del año 2010 en adelante.",1
+264,Estoy buscando un Ford Mustang V8 con menos de 80.000 kilómetros y transmisión manual.,1
+265,"Me interesa un Honda Civic Type R en color blanco, con menos de 30.000 kilómetros y del año 2019 o posterior.",1
+266,"Estoy en la búsqueda de un Jaguar F-Type convertible, preferiblemente en color negro, del año 2017 o posterior.",1
+267,"Quiero un Lamborghini Aventador S, preferiblemente en color amarillo, con menos de 10.000 kilómetros y del año 2018 o posterior.",1
+268,"Busco un Mazda MX-5, preferiblemente del año 2015 en adelante, con menos de 50.000 kilómetros y transmisión manual.",1
+269,"Estoy interesado en un Mercedes-Benz S-Class Coupe, del año 2016 o posterior, con menos de 60.000 kilómetros.",1
+270,"Me gustaría un Nissan GT-R del año 2013 o posterior, con menos de 50.000 kilómetros y en color gris.",1
+271,"Busco un Porsche 911 Carrera S, preferiblemente del año 2015 en adelante, con menos de 40.000 kilómetros y transmisión manual.",1
+272,"Necesito un Range Rover Sport, preferiblemente del año 2018 o posterior, con menos de 80.000 kilómetros y motor diésel.",1
+273,"Quiero un Tesla Model S, del año 2017 o posterior, con menos de 30.000 kilómetros y en color blanco.",1
+274,"Estoy interesado en un Toyota Supra del año 2020 o posterior, con menos de 10.000 kilómetros y transmisión automática.",1
+275,"Busco un Volkswagen Golf GTI del año 2016 o posterior, con menos de 60.000 kilómetros y transmisión manual.",1
+276,"Necesito un Alfa Romeo Giulia Quadrifoglio, preferiblemente del año 2018 o posterior, con menos de 20.000 kilómetros.",1
+277,"Quiero un Bentley Continental GT, preferiblemente del año 2015 o posterior, con menos de 50.000 kilómetros y motor gasolina.",1
+278,"Me interesa un Dodge Challenger SRT Hellcat, preferiblemente en color rojo, del año 2016 o posterior y con menos de 30.000 kilómetros.",1
+279,"Estoy en la búsqueda de un Jeep Wrangler, preferiblemente del año 2017 o posterior, con menos de 50.000 kilómetros y motor diésel.",1
+280,"Busco un Lexus LC 500, preferiblemente del año 2018 o posterior, con menos de 30.000 kilómetros y en color negro.",1
+281,Tengo un amigo que busca algo de la marca BMW con menos de 50.000 kilómetros y menos de 5 años de antigüedad.,1
+282,¿Tienes algo de la marca Audi con caja de cambios automática y más de 200 caballos?,1
+283,Estoy interesado en algo de la marca Mercedes-Benz con motor diésel y tracción a las cuatro ruedas.,1
+284,Busco algo de la marca Ford con un motor gasolina de al menos 150 caballos y menos de 100.000 kilómetros.,1
+285,Me interesa algo de la marca Porsche con caja de cambios manual y menos de 50.000 kilómetros.,1
+286,¿Tienes algo de la marca Volkswagen con motor híbrido y menos de 50.000 kilómetros?,1
+287,Estoy interesado en algo de la marca Tesla con tracción a las cuatro ruedas y más de 500 caballos.,1
+288,Busco algo de la marca Ferrari con menos de 10.000 kilómetros y un diseño exclusivo.,1
+289,¿Tienes algo de la marca Lamborghini con un motor V12 y menos de 20.000 kilómetros?,1
+290,Me interesa algo de la marca McLaren con caja de cambios automática y menos de 30.000 kilómetros.,1
+291,Busco algo de la marca Jaguar con menos de 3 años de antigüedad y un motor diésel potente.,1
+292,¿Tienes algo de la marca Volvo con tracción a las cuatro ruedas y menos de 100.000 kilómetros?,1
+293,Estoy interesado en algo de la marca Maserati con menos de 50.000 kilómetros y un sistema de sonido de alta calidad.,1
+294,¿Tienes algo de la marca Bentley con un motor potente y menos de 50.000 kilómetros?.,1
+295,Busco algo de la marca Bugatti con un diseño exclusivo y menos de 10.000 kilómetros.,1
+296,Estoy interesado en algo de la marca Aston Martin con un motor V8 y menos de 50.000 kilómetros.,1
+297,Quiero un BMW de 2018 con menos de 50.000 km.,1
+298,Busco un Audi con más de 200 caballos de fuerza y caja de cambios automática.,1
+299,Necesito un Mercedes de menos de 3 años de antigüedad y motor diésel.,1
+300,Estoy buscando un Jaguar con menos de 100.000 km y caja de cambios manual.,1
+301,Quiero un Volkswagen Golf con motor de gasolina y menos de 5 años de antigüedad.,1
+302,Estoy interesado en un Porsche Boxster con más de 250 caballos de fuerza y cambio automático.,1
+303,Busco un Mini Cooper con techo solar y menos de 80.000 km.,1
+304,Quiero un Land Rover Discovery de menos de 4 años de antigüedad y motor diésel.,1
+305,Estoy buscando un Lexus con menos de 60.000 km y caja de cambios automática.,1
+306,Necesito un Ford Mustang con más de 300 caballos de fuerza y menos de 10 años de antigüedad.,1
+307,Busco un Subaru Impreza con tracción en las cuatro ruedas y menos de 100.000 km.,1
+308,Estoy interesado en un Mitsubishi Eclipse con menos de 5 años de antigüedad y motor de gasolina.,1
+309,Quiero un Jeep Wrangler con menos de 50.000 km y caja de cambios manual.,1
+310,Necesito un Nissan GT-R con más de 500 caballos de fuerza y menos de 8 años de antigüedad.,1
+311,Busco un Tesla Model S con más de 400 km de autonomía y menos de 3 años de antigüedad.,1
+312,Estoy buscando un Infiniti Q50 con menos de 70.000 km y motor diésel.,1
+313,Quiero un Volvo XC90 con menos de 6 años de antigüedad y caja de cambios automática.,1
+314,Busco un Alfa Romeo Giulia con más de 200 caballos de fuerza y menos de 4 años de antigüedad.,1
+315,Estoy interesado en un Cadillac Escalade con menos de 100.000 km y motor de gasolina.,1
+316,Necesito un Peugeot 508 con menos de 60.000 km y caja de cambios manual.,1
+317,Busco un modelo de Ferrari con menos de 30.000 km y caja de cambios automática.,1
+318,Quiero un Porsche con más de 400 caballos y menos de 5 años de antigüedad.,1
+319,Estoy interesado en un Lamborghini con motor de 12 cilindros y tracción a las cuatro ruedas.,1
+320,Necesito un Audi con capacidad para 7 pasajeros y motor diésel.,1
+321,Busco un BMW con techo solar panorámico y caja de cambios manual.,1
+322,Quiero un Mercedes-Benz con sistema de navegación GPS y tapicería de cuero.,1
+323,Estoy buscando un Jaguar con menos de 50.000 km y sistema de sonido premium.,1
+324,Busco un Tesla con autonomía de más de 500 km y sistema de carga rápida.,1
+325,Quiero un Alfa Romeo con carrocería descapotable y motor de gasolina.,1
+326,Necesito un Mini Cooper con transmisión automática y paquete de deportividad.,1
+327,Busco un Chevrolet Camaro con motor V8 y sistema de escape deportivo.,1
+328,Quiero un Dodge Challenger con pintura bicolor y llantas de aleación negras.,1
+329,Estoy interesado en un Ford Mustang con carrocería fastback y transmisión manual.,1
+330,Busco un Honda Civic Type R con sistema de frenos de alta performance y caja de cambios de 6 marchas.,1
+331,Quiero un Nissan GT-R con sistema de tracción integral y sistema de sonido BOSE.,1
+332,Necesito un Subaru Impreza WRX STI con motor de 4 cilindros y sistema de suspensión deportiva.,1
+333,Busco un Toyota Supra con carrocería coupé y motor de 6 cilindros en línea.,1
+334,Estoy buscando un Volkswagen Golf GTI con sistema de iluminación LED y caja de cambios DSG.,1
+335,Quiero un Volvo XC90 con sistema de asistencia al conductor y capacidad para 7 pasajeros.,1
+336,Necesito un Jeep Wrangler con carrocería descapotable y sistema de tracción 4x4.,1
+337,Busca un modelo de Mercedes con menos de 100.000 kilómetros y transmisión automática.,1
+338,Quiero un Porsche con más de 400 caballos de fuerza y transmisión manual.,1
+339,¿Hay algún Jaguar del año 2015 disponible con motor de gasolina y tracción en las cuatro ruedas?,1
+340,Estoy buscando un BMW de la serie 3 con cilindrada de al menos 2.0 litros y menos de 60.000 kilómetros.,1
+341,Necesito un Audi con caja de cambios automática y menos de 5 años de antigüedad.,1
+342,¿Tienen algún Volkswagen con más de 200 caballos de fuerza y sistema de navegación incorporado?,1
+343,Estoy interesado en un modelo de Ford con menos de 50.000 kilómetros y sistema de sonido de alta calidad.,1
+344,Quiero un Lexus del año 2018 o posterior con motor híbrido y cámara trasera de aparcamiento.,1
+345,¿Tienen algún modelo de Mitsubishi con más de 300 caballos de fuerza y tracción delantera?,1
+346,Estoy buscando un Nissan con menos de 100.000 kilómetros y techo solar eléctrico.,1
+347,¿Hay algún modelo de Infiniti del año 2016 o posterior con sistema de seguridad avanzado y transmisión automática?,1
+348,Necesito un Alfa Romeo con caja de cambios manual y menos de 3 años de antigüedad.,1
+349,Quiero un Volvo con motor diesel y menos de 80.000 kilómetros.,1
+350,Estoy interesado en un Tesla con autonomía de al menos 300 millas y sistema de carga rápida.,1
+351,¿Tienen algún modelo de Cadillac con más de 500 caballos de fuerza y sistema de entretenimiento trasero?,1
+352,Estoy buscando un modelo de Jeep con menos de 40.000 kilómetros y tracción en las cuatro ruedas.,1
+353,¿Hay algún Land Rover disponible con sistema de audio premium y menos de 5 años de antigüedad?,1
+354,Necesito un Honda con caja de cambios automática y menos de 70.000 kilómetros.,1
+355,Quiero un Subaru del año 2017 o posterior con sistema de tracción total y techo panorámico.,1
+356,¿Tienen algún modelo de Peugeot con motor de gasolina y menos de 90.000 kilómetros?,1
