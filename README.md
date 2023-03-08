@@ -349,7 +349,7 @@ Para `dict_dataframes['tensorflow']['less_columns']`
 
 ![](images/images_preprocesado/less_columns_tf.png)
 
-Para `dict_dataframes['tensorflow']['less_columns']`
+Para `dict_dataframes['tensorflow']['less_columns_models']`
 
 ![](images/images_preprocesado/less_columns_models_tf.png)
 
@@ -565,7 +565,7 @@ A continuación pasamos al apartado de rendimiento y predicciones
 
 Lo primero que se realiza es la carga de los modelos, como podemos ver en la siguiente imagen:
 
-![](images/ML/Sklearn/models_sk.png)
+![](images/ML/Sklearn/models_sklearn.png)
 
 En la siguiente imagen lo que se muestra es una función que permite acceder a los conjuntos de test para cada modelo almacenados en el diccionario `dict_sklearn` y usar los modelos almacenados en la lista `models_sklearn_rf` para realizar predicciones.
 
