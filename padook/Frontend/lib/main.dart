@@ -6,6 +6,7 @@ import 'package:padook/page/padook_page.dart';
 
 import 'Themes/input_decoration_theme.dart';
 import 'bloc/form_bloc/form_bloc.dart';
+import 'bloc/widget_bloc/main_widget_bloc.dart';
 
 void main() {
   runApp(MultiBlocProvider(
@@ -19,6 +20,9 @@ void main() {
         BlocProvider(
           create: (BuildContext context) => FormBloc(),
         ),
+        BlocProvider(
+          create: (BuildContext context) => MainWidgetBloc(),
+        )
       ],
       child: MaterialApp(
           debugShowCheckedModeBanner: false,
@@ -28,15 +32,21 @@ void main() {
                   backgroundColor: Color(0xFFDC9A54)),
               inputDecorationTheme: getInputTheme(),
               outlinedButtonTheme: OutlinedButtonThemeData(
+                style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all(const Color(0xFFDC9A54)),
+                    textStyle: MaterialStateProperty.all(
+                        const TextStyle(color: Colors.white)),
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30.0)))),
+              ),
+              elevatedButtonTheme: ElevatedButtonThemeData(
                   style: ButtonStyle(
                       backgroundColor:
-                          MaterialStateProperty.all(const Color(0xFFDC9A54)),
-                      textStyle: MaterialStateProperty.all(const TextStyle(color: Colors.white)),
-                      shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)))
-                      ),
-                  ),
-              scrollbarTheme: ScrollbarThemeData(thumbVisibility: MaterialStateProperty.all(true),
-              thumbColor: MaterialStateProperty.all(Colors.white))),
+                          MaterialStateProperty.all(const Color(0x664e4e4e)))),
+              scrollbarTheme: ScrollbarThemeData(
+                  thumbVisibility: MaterialStateProperty.all(true),
+                  thumbColor: MaterialStateProperty.all(Colors.white))),
           routes: {
             '/': (context) => const PadookPage(),
           })));
