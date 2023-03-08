@@ -288,7 +288,7 @@ Otra gráfica que mostramos es la correlación del precio respecto al motor(KW),
 
 ![](images/images_preprocesado/engine_power.png)
 
-### Clonclusión de la visualización
+### 4. **Clonclusión de la visualización**
 
 Debemos de limitar el precio a 80.000€, los kilometros a 500.000km y quitar las marcas con cantidad de coches inferior a 10.
 
@@ -316,12 +316,13 @@ Los datasets a preparar son los siguientes:
 - Dataset limitando el precio y los kilometros
 - Dataset limitando el precio, los kilometros y las marcas con coches con cantidad inferior a 10
 - Dataset limitando el precio, los kilometros, las marcas con coches con cantidad inferior a 10 y dejando solo mas columas de `mark`, `model`, `year`, `horses`, `km`, `fuel`, `gearbox`, `price`, `displacement_engine`, `marches`
+- Dataset donde se realiza lo anterior mas la eliminación de modelos que tienen una cantidad de coches inferior a 5.
 
 Gracias a que se pasaron las variables categoricas a numéricas, como, marca, modelo, cambio, combustiable, a la hora de tratar los datasets para Sklearn será mas rápido.
 
 Para realizar todos los puntos anteriores establecemos la siguiente clase:
 
-![](images/images_preprocesado/Prepare.png)
+![](images/images_preprocesado/mode_class_prepare.png)
 
 A continuación creamos un diccionario el cual alberca por separado los DataFrames para trabajarlos con mas rapidez en los algoritmos de ML:
 
@@ -348,6 +349,10 @@ Para `dict_dataframes['tensorflow']['less_columns']`
 
 ![](images/images_preprocesado/less_columns_tf.png)
 
+Para `dict_dataframes['tensorflow']['less_columns']`
+
+![](images/images_preprocesado/less_columns_models_tf.png)
+
 ***Sklearn***<a name="id7"></a>
 ---
 
@@ -366,6 +371,10 @@ Para `dict_dataframes['sklearn']['less_limit']`
 Para `dict_dataframes['sklearn']['less_columns']`
 
 ![](images/images_preprocesado/less_columns_sk.png)
+
+Para `dict_dataframes['sklearn']['less_columns_models']`
+
+![](images/images_preprocesado/less_columns_models_sk.png)
 
 También creamos visualizaciones de correlaciones, estas se pueden ver en el colab enlazado al principio de este punto.
 
@@ -440,11 +449,11 @@ Una vez realizado esto lo que hacemos es cargar los modelos desde Google drive, 
 
 Para los modelos de `GradientBoostedTreesModel`:
 
-![](images/ML/TensorFlow/gb_tf.png)
+![](images/ML/TensorFlow/models_bg.png)
 
 Para los modelos de `RandomForestRegressor`:
 
-![](images/ML/TensorFlow/rf_tf.png)
+![](images/ML/TensorFlow/models_rf.png)
 
 Una vez hecho esto, lo que se realiza es la creación de 2 funciones, una para la representación gráfica del rendimiento de los modelos con las predicciones y otra donde se prueban las predicciones y se muestran dichas gráficas.
 
@@ -481,15 +490,15 @@ Resultados:
 Gráfica:
 ![](images/ML/TensorFlow/gb_complete.png)
 
-Resultado obtenido en el dataset `less_limit` en **GradientBoostedTreesModel**, con tratamiento en el dataframe:
+Resultado obtenido en el dataset `less_columns_models` en **GradientBoostedTreesModel**, con tratamiento en el dataframe:
 
 Resultados:
 
-![](images/ML/TensorFlow/pre_gb_less_limit.png)
+![](images/ML/TensorFlow/gb_less_columns_models.png)
 
 Gráfica:
 
-![](images/ML/TensorFlow/gb_less_limit.png)
+![](images/ML/TensorFlow/gb_less_colums_models_grafic.png)
 
 Como se puede ver, gracias a tratar el dataframe se nota una mejora importante, en este caso la mejora es del **11**, donde también queda demostrado en las predicciones, en donde se puede ver que los precios predecidosb se ajustan mas a los datos reales.
 
@@ -503,15 +512,15 @@ Gráfica:
 
 ![](images/ML/TensorFlow/rf_complete.png)
 
-Resultado obtenido en el dataset `less_columns` en **RandomForestModel**, con tratamiento en el dataframe:
+Resultado obtenido en el dataset `less_columns_models` en **RandomForestModel**, con tratamiento en el dataframe:
 
 Resultados:
 
-![](images/ML/TensorFlow/pre_rf_less_columns.png)
+![](images/ML/TensorFlow/rf_less_columns_models.png)
 
 Gráfica:
 
-![](images/ML/TensorFlow/rf_less_columns.png)
+![](images/ML/TensorFlow/rf_less_colums_models_grafic.png)
 
 En el **RandomForestModel** lo que se puede apreciar que su rendimiento es inferior a **GradientBoostedTreesModel** en parte por que este último permite parametros que mejorar su rendimiento ademas de que de por si es una mejora del **RandomForestModel**.
 
@@ -556,7 +565,7 @@ A continuación pasamos al apartado de rendimiento y predicciones
 
 Lo primero que se realiza es la carga de los modelos, como podemos ver en la siguiente imagen:
 
-![](images/ML/Sklearn/call_modelos_sklearn.png)
+![](images/ML/Sklearn/models_sk.png)
 
 En la siguiente imagen lo que se muestra es una función que permite acceder a los conjuntos de test para cada modelo almacenados en el diccionario `dict_sklearn` y usar los modelos almacenados en la lista `models_sklearn_rf` para realizar predicciones.
 
@@ -586,11 +595,11 @@ Resultado obtenido en el dataset `less_columns` en **RandomForestRegressor**, co
 
 Resultados:
 
-![](images/ML/Sklearn/rf_less_columns_pre_sklearn.png)
+![](images/ML/Sklearn/sk_less_columns_models.png)
 
 Gráfica:
 
-![](images/ML/Sklearn/rf_sklearn_less_columns.png)
+![](images/ML/Sklearn/sk_less_columns_models_grafic.png)
 
 Por último realizamos la predicción:
 
@@ -638,16 +647,19 @@ Como dato final dejo una tabla con los resultados de todos los modelos creados:
 | model_bg_limit | 1861.69 | 0.97 | 176552 |
 | model_bg_less_limit | 1801.79 | 0.97 | 176492 |
 | model_bg_less_columns | 1827.12 | 0.97 | 176492 |
+| model_bg_less_columns_models | 1756.04 | 0.98 | 176207 |
 | **TensorFlow - RandomForestModel**
 | model_rf_complete | 12003.32 | 0.86 | 179502 |
 | model_rf_limit | 2823.97 | 0.94 | 176552 |
 | model_rf_less_limit | 2813.75 | 0.94 | 176492 |
 | model_rf_less_columns | 2792.48 | 0.94 | 176492 |
+| model_rf_less_columns_models | 2731.08 | 0.94 | 176207 |
 | **SkLearn - RandomForestRegressor**
 | rf_sk_complete | 11500.59 | 0.87 | 179502 |
 | rf_sk_limit | 1753.63 | 0.98 | 176552 |
-| rf_sk_less_limit | 1726.79 | 0.98 | 176492 |
-| rf_sk_less_columns | 1751.28 | 0.98 | 176492 |
+| rf_sk_less_limit | 1725.31 | 0.98 | 176492 |
+| rf_sk_less_columns | 1831.87 | 0.97 | 176492 |
+| rf_sk_less_columns_models | 1729.73 | 0.98 | 176207 |
 
 ## 7. NLP - ChatBOT(Einstein)<a name="id11"></a>
 
