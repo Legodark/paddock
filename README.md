@@ -35,34 +35,62 @@ El proyecto consta de lo siguiente:
 
 Con esto vamos a desarrollar, en un mismo panel, que el usuario pueda visualizar con estadísticas de manera rápida el estado del mercado de coches de segunda mano, usando filtros y con las implementaciones anteriormente mencionadas, para poder estimar cuál es el precio de venta más óptimo para vender su coche o coches.
 
-### :computer: Tecnologías usadas:
+<center>
 
-:snake: Desarrollo
+:computer: Tecnologías usadas
+---
 
-[![python](https://img.shields.io/badge/python-black?style=for-the-badge&logo=python&logoColor=blue&labelColor=101010)]()
+</center>
+
+<center>
+
+### :snake: Desarrollo
+
+Lenguajes
+
+[![python](https://img.shields.io/badge/python-black?style=for-the-badge&logo=python&logoColor=yellow&labelColor=101010)]()
+[![dart](https://img.shields.io/badge/dart-black?style=for-the-badge&logo=dart&logoColor=blue&labelColor=101010)]()
+
+Entornos
+
 [![colab](https://img.shields.io/badge/Colab-black?style=for-the-badge&logo=Google-Colab&logoColor=orange&labelColor=101010)]()
+[![visualstudio](https://img.shields.io/badge/VisualStudio-black?style=for-the-badge&logo=visualstudio&logoColor=blue&labelColor=101010)]()
+
+FrontEnd
+
 [![Flutter](https://img.shields.io/badge/Flutter-black?style=for-the-badge&logo=Flutter&logoColor=blue&labelColor=101010)]()
+
+BackEnd
+ 
+[![docker](https://img.shields.io/badge/docker-black?style=for-the-badge&logo=docker&logoColor=blue&labelColor=101010)]()
 [![Flask](https://img.shields.io/badge/Flask-black?style=for-the-badge&logo=Flask&logoColor=white&labelColor=101010)]()
+[![Google](https://img.shields.io/badge/firebase-black?style=for-the-badge&logo=Firebase&logoColor=yellow&labelColor=101010)]()
+[![mongodb](https://img.shields.io/badge/Mongodb-black?style=for-the-badge&logo=mongodb&logoColor=green&labelColor=101010)]()
+
+Diseño
+
 [![Figma](https://img.shields.io/badge/Figma-black?style=for-the-badge&logo=Figma&logoColor=purple&labelColor=101010)]()
+
+Control de versiones 
+
 [![Github](https://img.shields.io/badge/Github-black?style=for-the-badge&logo=Github&logoColor=white&labelColor=101010)]()
 [![Notion](https://img.shields.io/badge/Notion-black?style=for-the-badge&logo=Notion&logoColor=white&labelColor=101010)]()
-[![Jira](https://img.shields.io/badge/Jira-black?style=for-the-badge&logo=Jira&logoColor=blue&labelColor=101010)]()
-[![Google](https://img.shields.io/badge/Google--Cloud-black?style=for-the-badge&logo=GoogleCloud&logoColor=orange&labelColor=101010)]()
 
-
-:chart: Analisis
+### :chart: Analisis
 
 [![numpy](https://img.shields.io/badge/numpy-black?style=for-the-badge&logo=numpy&logoColor=blue&labelColor=101010)]()[![pandas](https://img.shields.io/badge/pandas-black?style=for-the-badge&logo=pandas&logoColor=purple&labelColor=101010)]()[![Plotly](https://img.shields.io/badge/Plotly-black?style=for-the-badge&logo=Plotly&logoColor=white&labelColor=101010)]()
 
-:brain: Machine Learning
+### :brain: Machine Learning
 
-[![scikit](https://img.shields.io/badge/scikit--learn-black?style=for-the-badge&logo=scikit-learn&logoColor=orange&labelColor=101010)]()
 [![Tendorflow](https://img.shields.io/badge/TensorFlow-black?style=for-the-badge&logo=TensorFlow&logoColor=orange&labelColor=101010)]()
+[![scikit](https://img.shields.io/badge/scikit--learn-black?style=for-the-badge&logo=scikit-learn&logoColor=orange&labelColor=101010)]()
 
-:spider: Scraping
+### :spider: Scraping
 
 [![Selenium](https://img.shields.io/badge/Selenium-black?style=for-the-badge&logo=Selenium&logoColor=green&labelColor=101010)]()
 [![Beatifulsoup](https://img.shields.io/badge/Beatifulsoup-black?style=for-the-badge&logo=Python&logoColor=orange&labelColor=101010)]()
+
+</center>
 
 ## 2. Obtención de los datos.<a name="id2"></a>
 
