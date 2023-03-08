@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:padook/bloc/chart_bloc/chart_bloc.dart';
 import 'package:padook/bloc/json_bloc/json_data_bloc.dart';
 import 'package:padook/bloc/brand_logo_bloc/brand_logo_bloc.dart';
 import 'package:padook/page/padook_page.dart';
 
-import 'Themes/input_decoration_theme.dart';
+import 'themes/input_decoration_theme.dart';
 import 'bloc/form_bloc/form_bloc.dart';
 import 'bloc/widget_bloc/main_widget_bloc.dart';
 
@@ -22,7 +23,10 @@ void main() {
         ),
         BlocProvider(
           create: (BuildContext context) => MainWidgetBloc(),
-        )
+        ),
+        BlocProvider(
+            create: (BuildContext context) => ChartBloc()
+        ),
       ],
       child: MaterialApp(
           debugShowCheckedModeBanner: false,

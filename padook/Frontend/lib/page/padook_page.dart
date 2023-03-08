@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:padook/bloc/chart_bloc/chart_bloc.dart';
 import 'package:padook/bloc/json_bloc/json_data_bloc.dart';
 import 'package:padook/widgets/main_widgets/form_widget.dart';
+import 'package:padook/widgets/main_widgets/predict_chart_widget.dart';
 
 import '../bloc/widget_bloc/main_widget_bloc.dart';
 
@@ -19,20 +21,22 @@ class _PadookPageState extends State<PadookPage> {
     BlocProvider.of<JsonDataBloc>(context).fillData();
   }
 
-  void setFormWidget() {
-    BlocProvider.of<MainWidgetBloc>(context).changeFormWidget(buttonToActiveForm(context));
+  Future<void> setFormWidget() async {
+    BlocProvider.of<MainWidgetBloc>(context)
+        .changeFormWidget(buttonToActiveForm(context));
   }
 
   @override
   void initState() {
     super.initState();
     readDictData();
+    setFormWidget();
   }
 
   @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    setFormWidget();
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
   }
 
   @override
@@ -54,8 +58,29 @@ class _PadookPageState extends State<PadookPage> {
                         height: 150,
                       ),
                       BlocBuilder<MainWidgetBloc, MainWidgetState>(
-                        builder: (context, state) => state.formWidget,
-                      )
+                        builder: (context, state) => AnimatedSwitcher(
+                          duration: const Duration(milliseconds: 300),
+                          switchInCurve: Curves.fastOutSlowIn,
+                          switchOutCurve: Curves.fastOutSlowIn,
+                          transitionBuilder:
+                              (Widget child, Animation<double> animation) {
+                            return SizeTransition(
+                              sizeFactor: animation,
+                              axisAlignment: 0.0,
+                              child: Align(
+                                child: Container(
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 10),
+                                    child: child),
+                              ),
+                            );
+                          },
+                          child: state.formWidget,
+                        ),
+                      ),
+                      BlocBuilder<ChartBloc, ChartState>(
+                          builder: (context, state) =>
+                              state.widgetActive ? getChartPredictWidget(state) : Container())
                     ]),
               ),
             )),
