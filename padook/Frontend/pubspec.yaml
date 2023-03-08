@@ -32,7 +32,8 @@ dependencies:
     sdk: flutter
   flutter_bloc: ^8.1.2
   syncfusion_flutter_gauges: ^20.4.52
-  gradient_borders: ^1.0.0
+  syncfusion_flutter_charts: ^20.4.53
+  http: ^0.13.5
   animated_loading_border: ^0.0.1
 
 
