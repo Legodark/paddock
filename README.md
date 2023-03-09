@@ -806,7 +806,7 @@ Enlace al prototipo:
 | Kilometros | 190000 |
 | Combustible | Diesel |
 | Cilindrada | 1910 |
-| Caballos | 2005 |
+| Caballos | 150 |
 
 </div>
 
