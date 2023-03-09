@@ -783,3 +783,33 @@ Enlace al prototipo:
 [![Figma](https://img.shields.io/badge/prototipo-black?style=for-the-badge&logo=Figma&logoColor=purple&labelColor=101010)](https://www.figma.com/proto/AahVTlKv5tlFWiX0rEGFaI/Paddok?node-id=1%3A2&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=1%3A2)
 
 ![Prototipo](images/desarrollo_web/prototipo.png)
+
+### **Capturas de la aplicación (En desarrollo)**
+
+**Main Page**
+![](images/desarrollo_web/front.jpeg)
+
+**Coche de test**
+
+<div align="center">
+
+<img width=100px src='images/desarrollo_web/saab_test.png'>
+
+| Datos | Descripción |
+| --- | --- |
+| Marca | Saab |
+| Modelo | 9-3 |
+| Año | 2005 |
+| Caja de cambios | Manual |
+| Kilometros | 190000 |
+| Combustible | Diesel |
+| Cilindrada | 1910 |
+| Caballos | 2005 |
+
+</div>
+
+**Formulario**
+![](images/desarrollo_web/predictor.jpeg)
+
+**Resultado Predicción**
+![](images/desarrollo_web/resultado.jpeg)
