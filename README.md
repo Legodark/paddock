@@ -16,6 +16,8 @@
     * [Sklearn](#id10)
 * [NPL ChatBOT Einstein](#id11)
 * [Desarrollo Web](#id12)
+    * [Prototipo](#id13)
+    * [Capturas de la aplicación](#id14)
 
 ## 1. Justificación y descripción del proyecto.<a name="id1"></a>
 
@@ -782,9 +784,9 @@ Enlace al prototipo:
 
 [![Figma](https://img.shields.io/badge/prototipo-black?style=for-the-badge&logo=Figma&logoColor=purple&labelColor=101010)](https://www.figma.com/proto/AahVTlKv5tlFWiX0rEGFaI/Paddok?node-id=1%3A2&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=1%3A2)
 
-![Prototipo](images/desarrollo_web/prototipo.png)
+![Prototipo](images/desarrollo_web/prototipo.png)<a name="id13"></a>
 
-### **Capturas de la aplicación (En desarrollo)**
+### **Capturas de la aplicación (En desarrollo)**<a name="id14"></a>
 
 **Main Page**
 ![](images/desarrollo_web/front.jpeg)
