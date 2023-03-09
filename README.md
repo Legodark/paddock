@@ -814,4 +814,4 @@ Enlace al prototipo:
 ![](images/desarrollo_web/predictor.jpeg)
 
 **Resultado Predicción**
-![](images/desarrollo_web/resultado.jpeg)
+![](images/desarrollo_web/dashboard_pred.png)
