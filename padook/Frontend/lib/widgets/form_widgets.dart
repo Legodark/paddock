@@ -29,7 +29,7 @@ Container getMarchesMenu(BuildContext context, JsonDataState state) {
     margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
     child: DropdownButtonFormField(
         style: const TextStyle(color: Colors.white),
-        dropdownColor: const Color(0xFF6e6e6e),
+        dropdownColor: const Color(0xda0f1223),
         decoration: const InputDecoration(
           labelText: 'Marca',
         ),
@@ -57,7 +57,7 @@ Container getModelMenu(BuildContext context, JsonDataState state) {
     margin: const EdgeInsets.symmetric(vertical: 10),
     child: DropdownButtonFormField(
         style: const TextStyle(color: Colors.white),
-        dropdownColor: const Color(0xFF6e6e6e),
+        dropdownColor: const Color(0xda0f1223),
         decoration: const InputDecoration(
           labelText: 'Modelo',
         ),
@@ -81,7 +81,7 @@ Container getGearBoxMenu(BuildContext context, FormInputState state, Map<String,
     margin: const EdgeInsets.symmetric(horizontal: 20),
     child: DropdownButtonFormField(
         style: const TextStyle(color: Colors.white),
-        dropdownColor: const Color(0xFF6e6e6e),
+        dropdownColor: const Color(0xda0f1223),
         decoration: const InputDecoration(
           labelText: 'Caja de cambios',
         ),
@@ -105,7 +105,7 @@ Container getFuelMenu(BuildContext context, FormInputState state, Map<String, St
     margin: const EdgeInsets.symmetric(horizontal: 20),
     child: DropdownButtonFormField(
         style: const TextStyle(color: Colors.white),
-        dropdownColor: const Color(0xFF6e6e6e),
+        dropdownColor: const Color(0xda0f1223),
         decoration: const InputDecoration(
           labelText: 'Tipo de combustible',
         ),

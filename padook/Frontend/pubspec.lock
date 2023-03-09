@@ -248,6 +248,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "20.4.53"
+  syncfusion_flutter_datagrid:
+    dependency: "direct main"
+    description:
+      name: syncfusion_flutter_datagrid
+      sha256: "894fb8d4d8291e1a2c6b62b8efc567201d138b770f075391a07a8ed14cb18fb1"
+      url: "https://pub.dev"
+    source: hosted
+    version: "20.4.53"
   syncfusion_flutter_gauges:
     dependency: "direct main"
     description:

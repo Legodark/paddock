@@ -11,7 +11,7 @@ SfRadialGauge priceValue(price, minimumPrice, maximumPrice) {
       title: const GaugeTitle(
           text: 'Precio',
           textStyle:
-          TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold)),
+          TextStyle(color: Colors.white,fontSize: 20.0, fontWeight: FontWeight.bold)),
       enableLoadingAnimation: true,
       animationDuration: 2000,
       axes: <RadialAxis>[
@@ -35,12 +35,12 @@ SfRadialGauge priceValue(price, minimumPrice, maximumPrice) {
               startWidth: 10,
               endWidth: 10)
         ], pointers: <GaugePointer>[
-          NeedlePointer(value: price)
+          NeedlePointer(value: price, needleColor: Colors.white, knobStyle: const KnobStyle(color: Colors.white),)
         ], annotations: <GaugeAnnotation>[
           GaugeAnnotation(
               widget: Text(priceClassified,
                   style: const TextStyle(
-                      fontSize: 25, fontWeight: FontWeight.bold)),
+                      fontSize: 25, fontWeight: FontWeight.bold, color: Colors.white)),
               angle: 90,
               positionFactor: 0.5)
         ])

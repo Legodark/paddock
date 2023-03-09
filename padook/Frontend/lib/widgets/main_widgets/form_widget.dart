@@ -8,13 +8,14 @@ import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 import '../../bloc/brand_logo_bloc/brand_logo_bloc.dart';
 import '../../bloc/form_bloc/form_bloc.dart';
+import '../../bloc/grid_bloc/grid_bloc.dart';
 import '../../bloc/json_bloc/json_data_bloc.dart';
 import '../../bloc/widget_bloc/main_widget_bloc.dart';
 import '../form_input_list/form_input_list.dart';
 import '../form_widgets.dart';
 import 'package:http/http.dart' as http;
 
-Future<Object> getPrediction(Map controllerList, String brandSelected,
+Future<Map> getPrediction(Map controllerList, String brandSelected,
     String modelSelected, String gearBoxId, String fuelId) async {
   String url =
       "http://127.0.0.1:5000/car_predict?year=${controllerList["year"]?.text}"
@@ -26,15 +27,15 @@ Future<Object> getPrediction(Map controllerList, String brandSelected,
   http.Response response = await http.get(Uri.parse(url));
   if (response.statusCode == 200) {
     Map data = jsonDecode(response.body);
-    Map<String, double> dataJsonified = Map.from(data).cast<String, double>();
-    return Map.from({"Precio Mínimo": dataJsonified["precio-minimo"],
-      "Predicción": dataJsonified["prediccion"],
-      "Precio Máximo": dataJsonified["precio-maximo"]}).cast<String, double>();
+    Map<String, dynamic> dataJsonified = Map.from(data).cast<String, dynamic>();
+    return dataJsonified;
   }
   return {
-    "error 404": 0,
-    "La api esta en mantenimiento": 0,
-    "Lo sentimos :(": 0
+    "precio-maximo": 0,
+    "precio-minimo": 0,
+    "prediccion": 0,
+    "coches-baratos": [],
+    "coches-caros": []
   };
 }
 
@@ -107,11 +108,28 @@ AnimatedLoadingBorder carForm(BuildContext mainContext) {
                                         jsonstate.modelSelected,
                                         state.gearBoxId,
                                         state.fuelId)
-                                    .then((value) {
+                                    .then((Map value) {
+                                  final carExpensives = value["coches-caros"]
+                                      .map((i) =>
+                                          Map.from(i).cast<String, dynamic>())
+                                      .toList()
+                                      .cast<Map<String, dynamic>>();
+                                  final carCheaps = value["coches-baratos"]
+                                      .map((i) =>
+                                          Map.from(i).cast<String, dynamic>())
+                                      .toList()
+                                      .cast<Map<String, dynamic>>();
+                                  BlocProvider.of<GridBloc>(mainContext)
+                                      .setLists(carCheaps,
+                                          carExpensives);
                                   BlocProvider.of<ChartBloc>(mainContext)
                                       .activeWidget(2);
                                   BlocProvider.of<ChartBloc>(mainContext)
-                                      .updateMap(value as Map<String, double>);
+                                      .updateMap(Map.from({
+                                    "Precio Mínimo": value["precio-minimo"],
+                                    "Predicción": value["prediccion"],
+                                    "Precio Máximo": value["precio-maximo"]
+                                  }).cast<String, double>());
                                 });
                                 BlocProvider.of<MainWidgetBloc>(context)
                                     .changeFormWidget(
@@ -127,38 +145,32 @@ AnimatedLoadingBorder carForm(BuildContext mainContext) {
       ));
 }
 
-Container buttonToActiveForm(BuildContext mainContext) {
-  return Container(
+BlocBuilder buttonToActiveForm(BuildContext mainContext) {
+  return BlocBuilder<ChartBloc, ChartState>(builder: (context, state) => Container(
     width: 700,
     decoration: BoxDecoration(
         border: Border.all(color: const Color(0xFFDC9A54)),
         borderRadius: BorderRadius.circular(10)),
     child: ElevatedButton(
         onPressed: () {
-          BlocProvider.of<ChartBloc>(mainContext)
-              .activeWidget(0);
-          BlocProvider.of<ChartBloc>(mainContext)
-              .updateMap({});
-          BlocProvider.of<MainWidgetBloc>(mainContext)
-              .changeFormWidget(carForm(mainContext));
+          if (state.widgetActive != 1) {
+            BlocProvider.of<ChartBloc>(mainContext).activeWidget(0);
+            BlocProvider.of<ChartBloc>(mainContext).updateMap({});
+            BlocProvider.of<MainWidgetBloc>(mainContext)
+                .changeFormWidget(carForm(mainContext));
+          }
         },
         child: ListTile(
-          title: Row(
-            children: [
-              GradientText(
-                "elige una marca",
-                style: const TextStyle(fontFamily: "bttf", fontSize: 13),
-                colors: const [
-                  Colors.blue,
-                  Colors.blue,
-                  Color(0xFFDC9A54),
-                  Color(0xFFDC9A54),
-                ],
-              ),
-              Image.asset(
-                "assets/images/favicon.png",
-                width: 60,
-              )
+          title: GradientText(
+            "elige una marca",
+            style: const TextStyle(fontFamily: "bttf", fontSize: 13),
+            colors: const [
+              Colors.blue,
+              Color(0xFFDC9A54),
+              Color(0xFFDC9A54),
+              Color(0xFFDC9A54),
+              Color(0xFFDC9A54),
+              Color(0xFFDC9A54)
             ],
           ),
           trailing: const Icon(
@@ -166,5 +178,5 @@ Container buttonToActiveForm(BuildContext mainContext) {
             color: Color(0xFFDC9A54),
           ),
         )),
-  );
+  ));
 }

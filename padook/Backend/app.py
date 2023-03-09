@@ -43,7 +43,9 @@ def car_api():
         response = {
                     'precio-maximo': get_max_price_from_model(collection, model_dictionary[model_id], list(prediction)[0]),
                     'prediccion': list(prediction)[0],
-                    'precio-minimo': get_min_price_from_model(collection,  model_dictionary[model_id], list(prediction)[0])
+                    'precio-minimo': get_min_price_from_model(collection,  model_dictionary[model_id], list(prediction)[0]),
+                    'coches-baratos': get_cheapest_cars(collection,  model_dictionary[model_id], list(prediction)[0]),
+                    'coches-caros': get_most_expensive_cars(collection, model_dictionary[model_id], list(prediction)[0]),
                     }
     except ValueError:
         response = {"error": "No pusiste los parametros correctos"}

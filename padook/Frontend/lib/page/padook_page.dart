@@ -81,14 +81,19 @@ class _PadookPageState extends State<PadookPage> {
                       BlocBuilder<ChartBloc, ChartState>(
                           builder: (context, state) {
                         return AnimatedSwitcher(duration: const Duration(milliseconds: 300),
-                        child: loadCorrectWidget(state),);
-                      })
+                        child: loadCorrectWidget(context, state),);
+                      }),
+                      BlocBuilder<ChartBloc, ChartState>(
+                          builder: (context, state) {
+                            return AnimatedSwitcher(duration: const Duration(milliseconds: 300),
+                              child: state.widgetActive == 2 ? getChartsWidget(context, state) : Container(),);
+                          })
                     ]),
               ),
             )),
         floatingActionButton: FloatingActionButton(
           onPressed: showChat,
-          tooltip: 'Show chatbot',
+          tooltip: 'Mostrar chatbot',
           child: const Icon(Icons.comment),
         ));
   }

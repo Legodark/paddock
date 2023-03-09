@@ -5,6 +5,7 @@ import 'package:padook/bloc/json_bloc/json_data_bloc.dart';
 import 'package:padook/bloc/brand_logo_bloc/brand_logo_bloc.dart';
 import 'package:padook/page/padook_page.dart';
 
+import 'bloc/grid_bloc/grid_bloc.dart';
 import 'themes/input_decoration_theme.dart';
 import 'bloc/form_bloc/form_bloc.dart';
 import 'bloc/widget_bloc/main_widget_bloc.dart';
@@ -26,6 +27,9 @@ void main() {
         ),
         BlocProvider(
             create: (BuildContext context) => ChartBloc()
+        ),
+        BlocProvider(
+            create: (BuildContext context) => GridBloc()
         ),
       ],
       child: MaterialApp(
