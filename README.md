@@ -18,6 +18,7 @@
 * [Desarrollo Web](#id12)
     * [Prototipo](#id13)
     * [Capturas de la aplicación](#id14)
+* [Conclusiones](#id15)
 
 ## 1. Justificación y descripción del proyecto.<a name="id1"></a>
 
@@ -815,3 +816,13 @@ Enlace al prototipo:
 
 **Resultado Predicción**
 ![](images/desarrollo_web/dashboard_pred.png)
+
+## 9. Conclusiones<a name="id13"></a>
+
+Las conclusiones que podemos sacar del TFM son las siguientes:
+
+1. Una buena organización, ha sido importante separar las tareas para cada miembro, para ello nos ayudamos con el siguiente [Notion](https://fanatical-cockatoo-63e.notion.site/Proyecto-Master-IA-Bigdata-411b70114d1e465dacf0a9ca4c352615)
+2. Una buena comunicación, importante para ver por que puntos ibamos y cumplir con los objetivos marcados.
+3. El scrapear los datos de forma estructurada nos ha ahorrado trabajo a la hora del analisis y la visualización.
+4. El crear funciones y clases para tareas repetitivas nos ha ayudado a reducir el tiempo de entrenamiento de los 15 modelos que se usan en el proyecto y a decidir de forma eficiente cual se va a usar en el despliegue.
+5. La creación de un prototipo nos ha ayudado en tiempo a desarrollar de forma eficiente la aplicación.
