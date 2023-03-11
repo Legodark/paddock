@@ -23,7 +23,7 @@ Puedes acceder a la aplicación y la presentación de la misma desde los siguien
     * [TensorFlow](#id9)
     * [Sklearn](#id10)
 * [NPL ChatBOT Einstein](#id11)
-* [Desarrollo Web](#id12)
+* [Aplicación Web](#id12)
     * [Prototipo](#id13)
     * [Capturas de la aplicación](#id14)
     * [Video explicativo](#id15)
