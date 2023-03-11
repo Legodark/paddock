@@ -87,7 +87,7 @@ Container getChartPredictWidget(BuildContext context, ChartState state) {
                       Container(
                         margin: const EdgeInsets.symmetric(horizontal: 5),
                         child: Text(
-                          "${data![1]["price"]} €",
+                          "${(data![1]["price"] as double).toInt()} €",
                           style: const TextStyle(
                               fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
                         ),

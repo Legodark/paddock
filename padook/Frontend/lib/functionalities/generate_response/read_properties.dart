@@ -28,13 +28,12 @@ String createApiUrl(String message) {
 
   String? brandFound = brands
       .firstWhere((word) => message.contains(word.toLowerCase()),
-          orElse: () => "")
+          orElse: () => "").replaceAll("mercedes-benz", "mercedes").replaceAll("mercedes", "mercedes-benz")
       .capitalize();
 
   String? modelFound = modelsReversed
       .firstWhere((word) => message.contains(word.toLowerCase()),
-          orElse: () => "")
-      .capitalize();
+          orElse: () => "").replaceAll("mercedes-benz", "mercedes").replaceAll("mercedes", "mercedes-benz");
 
   String? locationFound = locations
       .firstWhere((word) => message.contains(word.toLowerCase()),
@@ -92,6 +91,14 @@ String createApiUrl(String message) {
       fuelFound != "" ||
       locationFound != "") {
     sample = "0";
+  }
+
+  if (modelFound != "") {
+    List<String> modelFoundSplitted = modelFound.split(" ");
+    for (int i = 0; i < 2 && i < modelFoundSplitted.length; i++) {
+      modelFoundSplitted[i] = modelFoundSplitted[i].capitalize();
+    }
+    modelFound = modelFoundSplitted.join(" ");
   }
 
   if (matchYear != null) {

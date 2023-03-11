@@ -45,6 +45,7 @@ List<String> getBrandsList() {
     'maybach',
     'mazda',
     'mercedes-benz',
+    'mercedes',
     'mg',
     'mini',
     'mitsubishi',

@@ -22,6 +22,7 @@ Container getDataQueryContainer(BuildContext context, CarQueryGridState state) {
       cars: state.data);
   return Container(
     width: 1000,
+    height: 580,
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(10),
       color: const Color(0x664e4e4e),

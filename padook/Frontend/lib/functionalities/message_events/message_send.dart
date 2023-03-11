@@ -20,7 +20,7 @@ void sendFunction(BuildContext context, String message, FocusNode focusNode, Scr
           .activeWidget(1);
       BlocProvider.of<ChatBotBloc>(context)
           .turnOffTextField(true);
-      String url = createApiUrl(removeDiacritics(messageCopy));
+      String url = createApiUrl(removeDiacritics(messageCopy).replaceAll(RegExp(r'\s+'), ' '));
       getCarQueryData(url).then((value) {
         BlocProvider.of<CarQueryGridBloc>(context)
             .updateMap(value);

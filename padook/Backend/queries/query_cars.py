@@ -81,7 +81,7 @@ def get_multiple_cars(collection, brand, model, year, year_condition, horses, ho
                       "modelo": 1, "marca": 1, "precio": 1, "año": 1, "localidad": 1, "marchas": 1}},
         {'$sort': {'precio_numerico': 1, "año_numerico": 1,
                    "caballos_numerico": 1, "cilindrada_numerico": 1, "kilometros_numerico": 1}},
-        {'$limit': 5} if sample=="0" else {"$sample": {"size": 5}},
+        {'$limit': 10} if sample=="0" else {"$sample": {"size": 10}},
     ]
     print(match)
     result = collection.aggregate(pipeline)
