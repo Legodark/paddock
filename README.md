@@ -826,7 +826,22 @@ Enlace al prototipo:
 **Resultado Predicción**
 ![](images/desarrollo_web/dashboard_pred.png)
 
+**Chatbot (Einstein)**
+
+![](images/Chatbot/consulta_1.jpeg)
+
+Consulta: ***Muestrame Citroen C3***
+
+![](images/Chatbot/consulta_2.jpeg)
+
+Consulta: ***Muestrame Mercedes de Málaga con precio inferior a 50000 euros***
+
+![](images/Chatbot/consulta_3.jpeg)
+
+
 ### **Video explicativo**<a name="id15"></a>
+
+<video controls src="https://www.youtube.com/watch?v=oIYKTX-dFyw" width="800"></video>
 
 ## 9. Conclusiones<a name="id16"></a>
 
