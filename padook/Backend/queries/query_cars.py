@@ -87,7 +87,7 @@ def get_multiple_cars(collection, brand, model, year, year_condition, horses, ho
         pipeline = [{'$project': {"_id": 0, "motor (CV)": 1, "combustible": 1, "cilindrada": 1, "kilometros": 1, "cambio": 1,
                                           "modelo": 1, "marca": 1, "precio": 1, "año": 1, "localidad": 1, "marchas": 1}},
                                           {"$sample": {"size": 10}}]
-    print(pipeline)
+    print(match)
     result = collection.aggregate(pipeline)
     list = []
     for document in result:

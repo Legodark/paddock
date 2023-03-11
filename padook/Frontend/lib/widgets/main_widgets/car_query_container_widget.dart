@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:padook/bloc/car_query_grid_bloc/car_query_grid_bloc.dart';
 import 'package:padook/data/data_grid/querycar_datagrid_source.dart';
@@ -18,8 +16,7 @@ Widget loadCorrectQueryWidget(BuildContext context, CarQueryGridState state) {
 }
 
 Container getDataQueryContainer(BuildContext context, CarQueryGridState state) {
-  QueryCarDataSource dataSource = QueryCarDataSource(
-      cars: state.data);
+  QueryCarDataSource dataSource = QueryCarDataSource(cars: state.data);
   return Container(
     width: 1000,
     height: 580,
@@ -29,6 +26,11 @@ Container getDataQueryContainer(BuildContext context, CarQueryGridState state) {
       border: Border.all(color: const Color(0xFFDC9A54), width: 3),
     ),
     padding: const EdgeInsets.symmetric(vertical: 20),
-    child: getQueryDataGrid(dataSource),
+    child: (state.data.isNotEmpty)
+        ? getQueryDataGrid(dataSource)
+        : const Align(
+            alignment: Alignment.center,
+            child: Center(child: Text('No se encontraron datos', style: TextStyle(color: Colors.white, fontSize: 30),)),
+          ),
   );
 }

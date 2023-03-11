@@ -75,19 +75,19 @@ String createApiUrl(String message) {
   Match? matchYear = regexYear.firstMatch(message);
 
   RegExp regexKM =
-      RegExp(r'(mas|menos|mayor|menor)?\w*\s+(de|a)?\s*(\d+)\s+(kilometro|km)');
+      RegExp(r'(mas|menos|mayor|menor|superior|inferior)?\w*\s+(de|a)?\s*(\d+)\s+(kilometro|km)');
   Match? matchKM = regexKM.firstMatch(message);
 
   RegExp regexCV =
-      RegExp(r'(mas|menos|mayor|menor)?\w*\s+(de|a)?\s*(\d+)\s+(cv|caballo)');
+      RegExp(r'(mas|menos|mayor|menor|superior|inferior)?\w*\s+(de|a)?\s*(\d+)\s+(cv|caballo)');
   Match? matchCV = regexCV.firstMatch(message);
 
   RegExp regexPrice =
-      RegExp(r'(mas|menos|mayor|menor)?\w*\s+(de|a)?\s*(\d+)\s*(€|$|euros)');
+      RegExp(r'(mas|menos|mayor|menor|superior|inferior)?\w*\s+(de|a)?\s*(\d+)\s*(€|euros|\$)');
   Match? matchPrice = regexPrice.firstMatch(message);
 
   RegExp regexMarches =
-      RegExp(r'(mas|menos|mayor|menor)?\w*\s+(de|a)?\s*(\d+)\s*marchas');
+      RegExp(r'(mas|menos|mayor|menor|superior|inferior)?\w*\s+(de|a)?\s*(\d+)\s*marchas');
   Match? matchMarches = regexMarches.firstMatch(message);
 
   RegExp regexDisplEngine = RegExp(
@@ -125,7 +125,7 @@ String createApiUrl(String message) {
     km = matchKM.group(3)!;
     kmCondition = (matchKM.group(1) == null)
         ? "equal"
-        : ((matchKM.group(1) == "menos" || matchKM.group(1) == "menor")
+        : ((matchKM.group(1) == "menos" || matchKM.group(1) == "menor" || matchKM.group(1) == "inferior")
         ? "less"
         : "more");
   }
@@ -135,7 +135,7 @@ String createApiUrl(String message) {
     cv = matchCV.group(3)!;
     cvCondition = (matchCV.group(1) == null)
         ? "equal"
-        : ((matchCV.group(1) == "menos" || matchCV.group(1) == "menor")
+        : ((matchCV.group(1) == "menos" || matchCV.group(1) == "menor" || matchCV.group(1) == "inferior")
         ? "less"
         : "more");
   }
@@ -146,7 +146,7 @@ String createApiUrl(String message) {
     priceCondition =(matchPrice.group(1) == null)
         ? "equal"
         :
-    ((matchPrice.group(1) == "menos" || matchPrice.group(1) == "menor")
+    ((matchPrice.group(1) == "menos" || matchPrice.group(1) == "menor" || matchPrice.group(1) == "inferior")
             ? "less"
             : "more");
   }
@@ -162,10 +162,13 @@ String createApiUrl(String message) {
     displEngineCondition = (matchDisplEngine.group(1) == "")
         ? "equal"
         : ((matchDisplEngine.group(1) == "menos" ||
-            matchDisplEngine.group(1) == "menor")
+            matchDisplEngine.group(1) == "menor" || matchDisplEngine.group(1) == "inferior")
         ? "less"
         : "more");
   }
+
+  print(price);
+  print(year);
 
   return "http://127.0.0.1:5000/get_cars?brand=$brandFound&model=$modelFound"
       "&year=$year&year_condition=$yearCondition&horses=$cv&horses_condition=$cvCondition"
