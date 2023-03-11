@@ -838,4 +838,4 @@ Las conclusiones que podemos sacar del TFM son las siguientes:
 7. Al separar el frontend con el backend a pesar de que flutter puede cumplir la funcion de backend, nos ayudo a mantener y actualizar mucho mejor y mas rapido el código
 8. Darnos entre nosotros pequeñas muestras como por ejemplo un mini dataset de los coches para que uno visualice y el otro siga scrapeando o el prototipo del diseño, nos ha ayudado a agilizar el proceso en la mayoria de ocaciones.
 9. Al modularizar cada funcion y clase en un unico archivo y agruparlo en carpetas, nos ha ayudado a hacer un codigo mas accesible y legible lo cual ahorro tiempo a la hora de hacer modificacion de codigo.
-10.Seguir patrones de diseño como el patron bloc o el modelo vista controlador ha ayudado a crear una estructura del codigo en la aplicacion web.
+10. Seguir patrones de diseño como el patron bloc o el modelo vista controlador ha ayudado a crear una estructura del codigo en la aplicacion web.
