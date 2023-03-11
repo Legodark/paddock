@@ -838,10 +838,9 @@ Consulta: ***Muestrame Mercedes de Málaga con precio inferior a 50000 euros***
 
 ![](images/Chatbot/consulta_3.jpeg)
 
-
 ### **Video explicativo**<a name="id15"></a>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/oIYKTX-dFyw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+https://user-images.githubusercontent.com/29204863/224516497-f629336b-f5a1-4e68-a166-692730f1fdb3.mp4
 
 ## 9. Conclusiones<a name="id16"></a>
 
