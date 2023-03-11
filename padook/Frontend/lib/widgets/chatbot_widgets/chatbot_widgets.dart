@@ -6,13 +6,15 @@ import '../../bloc/chart_bloc/chart_bloc.dart';
 import '../../bloc/widget_bloc/main_widget_bloc.dart';
 import '../main_widgets/form_widget.dart';
 
-FloatingActionButton chatBotButton(BuildContext context) {
-  return FloatingActionButton(
+BlocBuilder chatBotButton(BuildContext mainContext) {
+  return BlocBuilder<ChartBloc, ChartState>(builder: (context, state) => FloatingActionButton(
     onPressed: () {
-      BlocProvider.of<ChatBotBloc>(context).activeChatBot(true);
-      BlocProvider.of<ChartBloc>(context).activeWidget(0);
-      BlocProvider.of<MainWidgetBloc>(context)
-          .changeFormWidget(buttonToActiveForm(context));
+      if (state.widgetActive != 1) {
+        BlocProvider.of<ChatBotBloc>(mainContext).activeChatBot(true);
+        BlocProvider.of<ChartBloc>(mainContext).activeWidget(0);
+        BlocProvider.of<MainWidgetBloc>(mainContext)
+            .changeFormWidget(buttonToActiveForm(mainContext));
+      }
     },
     tooltip: 'Mostrar chatbot',
     child: Stack(
@@ -32,7 +34,7 @@ FloatingActionButton chatBotButton(BuildContext context) {
         )
       ],
     ),
-  );
+  ));
 }
 
 Container messageWidget(Map<String, String> message) {

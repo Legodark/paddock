@@ -2,6 +2,7 @@
 import 'package:animated_loading_border/animated_loading_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:padook/bloc/car_query_grid_bloc/car_query_grid_bloc.dart';
 import 'package:padook/bloc/chart_bloc/chart_bloc.dart';
 import 'package:padook/bloc/chatbot_bloc/chatbot_bloc.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
@@ -122,15 +123,16 @@ AnimatedLoadingBorder carForm(BuildContext mainContext) {
 }
 
 BlocBuilder buttonToActiveForm(BuildContext mainContext) {
-  return BlocBuilder<ChartBloc, ChartState>(builder: (context, state) => Container(
+  return BlocBuilder<CarQueryGridBloc, CarQueryGridState>(builder: (builder, gridState) =>BlocBuilder<ChartBloc, ChartState>(builder: (context, state) => Container(
     width: 700,
     decoration: BoxDecoration(
         border: Border.all(color: const Color(0xFFDC9A54)),
         borderRadius: BorderRadius.circular(10)),
     child: ElevatedButton(
         onPressed: () {
-          if (state.widgetActive != 1) {
+          if (state.widgetActive != 1 && gridState.widgetActive != 1) {
             BlocProvider.of<ChartBloc>(mainContext).activeWidget(0);
+            BlocProvider.of<CarQueryGridBloc>(mainContext).activeWidget(0);
             BlocProvider.of<ChartBloc>(mainContext).updateMap({});
             BlocProvider.of<MainWidgetBloc>(mainContext)
                 .changeFormWidget(carForm(mainContext));
@@ -155,5 +157,5 @@ BlocBuilder buttonToActiveForm(BuildContext mainContext) {
             color: Color(0xFFDC9A54),
           ),
         )),
-  ));
+  )));
 }
