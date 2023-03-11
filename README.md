@@ -2,7 +2,7 @@
 
 *TFM realizado por **Oscar Pörtner Ostos** y **Juan Cerezo Serrano** del Master IA y Bigdata del Malaga Tech Park*
 
-Puedes acceder a la aplicación y la presentación de la misma los siguientes enlaces:
+Puedes acceder a la aplicación y la presentación de la misma desde los siguientes enlaces:
 
 <div align="center">
 
