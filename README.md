@@ -2,6 +2,14 @@
 
 *TFM realizado por **Oscar Pörtner Ostos** y **Juan Cerezo Serrano** del Master IA y Bigdata del Malaga Tech Park*
 
+Puedes acceder a la aplicación en el siguiente enlace:
+
+<div align="center">
+
+[Paddock](#8-aplicación-web)
+
+</div>
+
 ## Índice
 
 * [Justificación y descripción del proyecto](#id1)
@@ -826,3 +834,8 @@ Las conclusiones que podemos sacar del TFM son las siguientes:
 3. El scrapear los datos de forma estructurada nos ha ahorrado trabajo a la hora del analisis y la visualización.
 4. El crear funciones y clases para tareas repetitivas nos ha ayudado a reducir el tiempo de entrenamiento de los 15 modelos que se usan en el proyecto y a decidir de forma eficiente cual se va a usar en el despliegue.
 5. La creación de un prototipo nos ha ayudado en tiempo a desarrollar de forma eficiente la aplicación.
+6. Al centrarnos en sacar el contexto de un mensaje, nos ahorro tiempo a la hora de entrenar un chatbot eficiente en poco tiempo.
+7. Al separar el frontend con el backend a pesar de que flutter puede cumplir la funcion de backend, nos ayudo a mantener y actualizar mucho mejor y mas rapido el código
+8. Darnos entre nosotros pequeñas muestras como por ejemplo un mini dataset de los coches para que uno visualice y el otro siga scrapeando o el prototipo del diseño, nos ha ayudado a agilizar el proceso en la mayoria de ocaciones.
+9. Al modularizar cada funcion y clase en un unico archivo y agruparlo en carpetas, nos ha ayudado a hacer un codigo mas accesible y legible lo cual ahorro tiempo a la hora de hacer modificacion de codigo.
+10.Seguir patrones de diseño como el patron bloc o el modelo vista controlador ha ayudado a crear una estructura del codigo en la aplicacion web.
