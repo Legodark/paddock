@@ -77,40 +77,42 @@ AnimatedLoadingBorder carForm(BuildContext mainContext) {
                       BlocBuilder<FormBloc, FormInputState>(
                           builder: (context, state) => OutlinedButton(
                               onPressed: () {
-                                BlocProvider.of<ChartBloc>(mainContext)
-                                    .activeWidget(1);
-                                getCarPricePrediction(
-                                        controllerList,
-                                        jsonstate.brandSelected,
-                                        jsonstate.modelSelected,
-                                        state.gearBoxId,
-                                        state.fuelId)
-                                    .then((Map value) {
-                                  final carExpensives = value["coches-caros"]
-                                      .map((i) =>
-                                          Map.from(i).cast<String, dynamic>())
-                                      .toList()
-                                      .cast<Map<String, dynamic>>();
-                                  final carCheaps = value["coches-baratos"]
-                                      .map((i) =>
-                                          Map.from(i).cast<String, dynamic>())
-                                      .toList()
-                                      .cast<Map<String, dynamic>>();
-                                  BlocProvider.of<GridBloc>(mainContext)
-                                      .setLists(carCheaps,
-                                          carExpensives);
+                                if(formKey.currentState!.validate()) {
                                   BlocProvider.of<ChartBloc>(mainContext)
-                                      .activeWidget(2);
-                                  BlocProvider.of<ChartBloc>(mainContext)
-                                      .updateMap(Map.from({
-                                    "Precio Mínimo": value["precio-minimo"],
-                                    "Predicción": value["prediccion"],
-                                    "Precio Máximo": value["precio-maximo"]
-                                  }).cast<String, double>());
-                                });
-                                BlocProvider.of<MainWidgetBloc>(context)
-                                    .changeFormWidget(
-                                        buttonToActiveForm(mainContext));
+                                      .activeWidget(1);
+                                  getCarPricePrediction(
+                                      controllerList,
+                                      jsonstate.brandSelected,
+                                      jsonstate.modelSelected,
+                                      state.gearBoxId,
+                                      state.fuelId)
+                                      .then((Map value) {
+                                    final carExpensives = value["coches-caros"]
+                                        .map((i) =>
+                                        Map.from(i).cast<String, dynamic>())
+                                        .toList()
+                                        .cast<Map<String, dynamic>>();
+                                    final carCheaps = value["coches-baratos"]
+                                        .map((i) =>
+                                        Map.from(i).cast<String, dynamic>())
+                                        .toList()
+                                        .cast<Map<String, dynamic>>();
+                                    BlocProvider.of<GridBloc>(mainContext)
+                                        .setLists(carCheaps,
+                                        carExpensives);
+                                    BlocProvider.of<ChartBloc>(mainContext)
+                                        .activeWidget(2);
+                                    BlocProvider.of<ChartBloc>(mainContext)
+                                        .updateMap(Map.from({
+                                      "Precio Mínimo": value["precio-minimo"],
+                                      "Predicción": value["prediccion"],
+                                      "Precio Máximo": value["precio-maximo"]
+                                    }).cast<String, double>());
+                                  });
+                                  BlocProvider.of<MainWidgetBloc>(context)
+                                      .changeFormWidget(
+                                      buttonToActiveForm(mainContext));
+                                }
                               },
                               child: const Text(
                                 "Predecir",

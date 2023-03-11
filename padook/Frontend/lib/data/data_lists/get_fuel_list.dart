@@ -1,7 +1,8 @@
 List<String> getFuelList() {
   return [
     'corriente electrica',
-    'electrico'
+    'electricos',
+    'electrico',
     'diesel',
     'diesel y corriente electrica',
     'gasolina',

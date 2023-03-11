@@ -60,6 +60,7 @@ String createApiUrl(String message) {
           orElse: () => "")
       .replaceAll("electrica", "eléctrica")
       .replaceAll("electrico", "corriente eléctrica")
+      .replaceAll("electricos", "corriente eléctrica")
       .replaceAll("hibrido", "gasolina y corriente eléctrica")
       .capitalize();
 
