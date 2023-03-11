@@ -1,7 +1,8 @@
 
 import 'package:flutter/material.dart';
-import 'package:padook/price_classifier/price_classifier.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
+
+import '../../functionalities/price_classifier/price_classifier.dart';
 
 SfRadialGauge priceValue(price, minimumPrice, maximumPrice) {
   String priceClassified = priceClasifier(price, minimumPrice, maximumPrice);

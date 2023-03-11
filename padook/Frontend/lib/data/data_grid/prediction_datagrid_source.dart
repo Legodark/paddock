@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_datagrid/datagrid.dart';
 
@@ -7,10 +6,10 @@ class CarDataSource extends DataGridSource {
       {required List<Map<String, dynamic>> cars, required this.color, required this.isExpensiveTable}) {
     _cars = cars
         .map<DataGridRow>((c) => DataGridRow(cells: [
-              DataGridCell<String>(columnName: isExpensiveTable ? 'año' : 'precio', value: c[isExpensiveTable ? 'año' : 'precio']),
-              DataGridCell<String>(columnName: 'marca', value: c["marca"]),
+              DataGridCell<int>(columnName: isExpensiveTable ? 'año' : 'precio', value: double.parse(c[isExpensiveTable ? 'año' : 'precio']).toInt()),
               DataGridCell<String>(columnName: 'modelo', value: c["modelo"]),
-              DataGridCell<String>(columnName: isExpensiveTable ? 'precio' : 'año', value: c[isExpensiveTable ? 'precio' : 'año']),
+              DataGridCell<String>(columnName: 'kilometros', value: c["kilometros"]),
+              DataGridCell<int>(columnName: isExpensiveTable ? 'precio' : 'año', value: double.parse(c[isExpensiveTable ? 'precio' : 'año']).toInt()),
             ]))
         .toList();
   }
@@ -30,7 +29,7 @@ class CarDataSource extends DataGridSource {
         alignment: Alignment.center,
         padding: const EdgeInsets.all(5.0),
         child: Text(
-          dataGridCell.value.toString(),
+          "${dataGridCell.value.toString()}${(dataGridCell.columnName == "precio" ? " €" : "")}",
           style: TextStyle(
               color:
                   dataGridCell.columnName == "precio" ? color : Colors.white),

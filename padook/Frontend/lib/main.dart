@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:padook/bloc/car_query_grid_bloc/car_query_grid_bloc.dart';
 import 'package:padook/bloc/chart_bloc/chart_bloc.dart';
 import 'package:padook/bloc/json_bloc/json_data_bloc.dart';
 import 'package:padook/bloc/brand_logo_bloc/brand_logo_bloc.dart';
 import 'package:padook/page/padook_page.dart';
 
+import 'bloc/chatbot_bloc/chatbot_bloc.dart';
 import 'bloc/grid_bloc/grid_bloc.dart';
 import 'themes/input_decoration_theme.dart';
 import 'bloc/form_bloc/form_bloc.dart';
@@ -30,6 +32,12 @@ void main() {
         ),
         BlocProvider(
             create: (BuildContext context) => GridBloc()
+        ),
+        BlocProvider(
+            create: (BuildContext context) => ChatBotBloc()
+        ),
+        BlocProvider(
+            create: (BuildContext context) => CarQueryGridBloc()
         ),
       ],
       child: MaterialApp(

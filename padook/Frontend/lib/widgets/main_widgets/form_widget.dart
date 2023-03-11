@@ -1,11 +1,12 @@
-import 'dart:convert';
 
 import 'package:animated_loading_border/animated_loading_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:padook/bloc/chart_bloc/chart_bloc.dart';
+import 'package:padook/bloc/chatbot_bloc/chatbot_bloc.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
+import '../../api_requests/requests_ai_results.dart';
 import '../../bloc/brand_logo_bloc/brand_logo_bloc.dart';
 import '../../bloc/form_bloc/form_bloc.dart';
 import '../../bloc/grid_bloc/grid_bloc.dart';
@@ -13,31 +14,6 @@ import '../../bloc/json_bloc/json_data_bloc.dart';
 import '../../bloc/widget_bloc/main_widget_bloc.dart';
 import '../form_input_list/form_input_list.dart';
 import '../form_widgets.dart';
-import 'package:http/http.dart' as http;
-
-Future<Map> getPrediction(Map controllerList, String brandSelected,
-    String modelSelected, String gearBoxId, String fuelId) async {
-  String url =
-      "http://127.0.0.1:5000/car_predict?year=${controllerList["year"]?.text}"
-      "&horses=${controllerList["horses"]?.text}&km=${controllerList["km"]?.text}"
-      "&displ_engine=${controllerList["displEngine"]?.text}"
-      "&marches=${controllerList["marches"]?.text}"
-      "&card_brand_id=$brandSelected&model_id=$modelSelected"
-      "&fuel_id=$fuelId&gearbox_id=$gearBoxId";
-  http.Response response = await http.get(Uri.parse(url));
-  if (response.statusCode == 200) {
-    Map data = jsonDecode(response.body);
-    Map<String, dynamic> dataJsonified = Map.from(data).cast<String, dynamic>();
-    return dataJsonified;
-  }
-  return {
-    "precio-maximo": 0,
-    "precio-minimo": 0,
-    "prediccion": 0,
-    "coches-baratos": [],
-    "coches-caros": []
-  };
-}
 
 AnimatedLoadingBorder carForm(BuildContext mainContext) {
   final formKey = GlobalKey<FormState>();
@@ -93,7 +69,7 @@ AnimatedLoadingBorder carForm(BuildContext mainContext) {
                 margin: const EdgeInsets.only(bottom: 10),
                 width: 550,
                 child: getTextField(controllerList["year"],
-                    "El año no pueden estar vacia", "Año"),
+                    "El año no pueden estar vacio", "Año"),
               ),
               BlocBuilder<JsonDataBloc, JsonDataState>(
                   builder: (maincontext, jsonstate) =>
@@ -102,7 +78,7 @@ AnimatedLoadingBorder carForm(BuildContext mainContext) {
                               onPressed: () {
                                 BlocProvider.of<ChartBloc>(mainContext)
                                     .activeWidget(1);
-                                getPrediction(
+                                getCarPricePrediction(
                                         controllerList,
                                         jsonstate.brandSelected,
                                         jsonstate.modelSelected,
@@ -158,6 +134,7 @@ BlocBuilder buttonToActiveForm(BuildContext mainContext) {
             BlocProvider.of<ChartBloc>(mainContext).updateMap({});
             BlocProvider.of<MainWidgetBloc>(mainContext)
                 .changeFormWidget(carForm(mainContext));
+            BlocProvider.of<ChatBotBloc>(mainContext).activeChatBot(false);
           }
         },
         child: ListTile(

@@ -18,6 +18,7 @@ json_file = open('dictionary/dic_cars_modelo.json')
 model_dictionary = json.load(json_file)
 message_model, vectorizer = joblib.load('models/message_model.pkl')
 
+
 @app.route('/car_predict')
 @cross_origin()
 def car_api():
@@ -34,24 +35,26 @@ def car_api():
         gearbox_id = request.args.get('gearbox_id')
 
         # Utiliza la lista para hacer las predicciones
-        prediction = car_model.predict([[year, horses, km, displ_engine, marches, card_brand_id, model_id, fuel_id, gearbox_id]])
+        prediction = car_model.predict(
+            [[year, horses, km, displ_engine, marches, card_brand_id, model_id, fuel_id, gearbox_id]])
 
         # Consigue la coleccion de mongodb
         collection = get_collection()
 
-        # Crea un diccionario con las predicciones
+        # Crea un diccionario con la prediccion y los precios
         response = {
-                    'precio-maximo': get_max_price_from_model(collection, model_dictionary[model_id], list(prediction)[0]),
-                    'prediccion': list(prediction)[0],
-                    'precio-minimo': get_min_price_from_model(collection,  model_dictionary[model_id], list(prediction)[0]),
-                    'coches-baratos': get_cheapest_cars(collection,  model_dictionary[model_id], list(prediction)[0]),
-                    'coches-caros': get_most_expensive_cars(collection, model_dictionary[model_id], list(prediction)[0]),
-                    }
+            'precio-maximo': get_max_price_from_model(collection, model_dictionary[model_id], list(prediction)[0]),
+            'prediccion': list(prediction)[0],
+            'precio-minimo': get_min_price_from_model(collection, model_dictionary[model_id], list(prediction)[0]),
+            'coches-baratos': get_cheapest_cars(collection, model_dictionary[model_id], list(prediction)[0]),
+            'coches-caros': get_most_expensive_cars(collection, model_dictionary[model_id], list(prediction)[0]),
+        }
     except ValueError:
         response = {"error": "No pusiste los parametros correctos"}
 
     # Devuelve la respuesta en formato JSON
     return jsonify(response)
+
 
 @app.route('/message_clasify')
 @cross_origin()
@@ -64,11 +67,47 @@ def message_api():
         prediction = message_model.predict(vectorizer.transform([message]))
         print(prediction)
         # Crea un diccionario con las predicciones
-        response = {'prediccion': int(list(prediction)[0])}
+        response = {'contexto': int(list(prediction)[0])}
     except ValueError:
         response = {"error": "No pusiste los parametros correctos"}
 
     # Devuelve la respuesta en formato JSON
     return jsonify(response)
+
+
+@app.route('/get_cars')
+@cross_origin()
+def query_api():
+    try:
+        # Obtiene el parámetro de la petición GET
+        brand = request.args.get("brand")
+        model = request.args.get("model")
+        year = request.args.get("year")
+        year_condition = request.args.get("year_condition")
+        horses = request.args.get("horses")
+        horses_condition = request.args.get("horses_condition")
+        km = request.args.get("km")
+        km_condition = request.args.get("km_condition")
+        fuel = request.args.get("fuel")
+        gearbox = request.args.get("gearbox")
+        location = request.args.get("location")
+        price = request.args.get("price")
+        price_condition = request.args.get("price_condition")
+        displ_engine = request.args.get("displ_engine")
+        displ_engine_condition = request.args.get("displ_engine_condition")
+        marches = request.args.get('marches')
+        sample = request.args.get('sample')
+
+        # Utiliza la lista para hacer las predicciones
+        data = get_multiple_cars(get_collection(), brand, model, year, year_condition, horses, horses_condition, km, km_condition, fuel,
+                                 gearbox, location, price, price_condition, displ_engine, displ_engine_condition, marches, sample)
+        # Crea un diccionario con las predicciones
+        response = {'car_data': data}
+    except ValueError:
+        response = {"error": "No pusiste los parametros correctos"}
+
+    # Devuelve la respuesta en formato JSON
+    return jsonify(response)
+
 
 app.run()

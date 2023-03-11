@@ -31,7 +31,7 @@ Container getChartPredictWidget(BuildContext context, ChartState state) {
       border: Border.all(color: const Color(0xFFDC9A54), width: 3),
     ),
     padding: const EdgeInsets.symmetric(vertical: 20),
-    width: 1000,
+    width: 1050,
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -76,20 +76,20 @@ Container getChartPredictWidget(BuildContext context, ChartState state) {
                       border: Border.all(color: Colors.blue, width: 4),
                       borderRadius: BorderRadius.circular(200)),
                   padding: const EdgeInsets.all(20),
-                  width: 150,
-                  height: 150,
+                  width: 170,
+                  height: 170,
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      const Text("Predicción",
-                          style: TextStyle(color: Colors.white, fontSize: 20)),
+                      const Text("Valoración obtenida",
+                          style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold, ), textAlign: TextAlign.center,),
                       Container(
                         margin: const EdgeInsets.symmetric(horizontal: 5),
                         child: Text(
-                          data![1]["price"].toString(),
+                          "${data![1]["price"]} €",
                           style: const TextStyle(
-                              fontSize: 20, color: Colors.white),
+                              fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
                         ),
                       )
                     ],
@@ -136,7 +136,7 @@ Container getChartsWidget(BuildContext context, ChartState state) {
         border: Border.all(color: const Color(0xFFDC9A54), width: 3),
       ),
       padding: const EdgeInsets.symmetric(vertical: 20),
-      width: 1000,
+      width: 1050,
       height: 300,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
