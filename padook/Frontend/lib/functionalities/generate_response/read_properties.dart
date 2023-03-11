@@ -19,21 +19,25 @@ String createApiUrl(String message) {
       price = "",
       cv = "",
       march = "",
-      yearCondition = "",
-      kmCondition = "",
-      displEngineCondition = "",
-      priceCondition = "",
-      cvCondition = "";
+      yearCondition = "equal",
+      kmCondition = "equal",
+      displEngineCondition = "equal",
+      priceCondition = "equal",
+      cvCondition = "equal";
   String sample = "1";
 
   String? brandFound = brands
       .firstWhere((word) => message.contains(word.toLowerCase()),
-          orElse: () => "").replaceAll("mercedes-benz", "mercedes").replaceAll("mercedes", "mercedes-benz")
+          orElse: () => "")
+      .replaceAll("mercedes-benz", "mercedes")
+      .replaceAll("mercedes", "mercedes-benz")
       .capitalize();
 
   String? modelFound = modelsReversed
       .firstWhere((word) => message.contains(word.toLowerCase()),
-          orElse: () => "").replaceAll("mercedes-benz", "mercedes").replaceAll("mercedes", "mercedes-benz");
+          orElse: () => "")
+      .replaceAll("mercedes-benz", "mercedes")
+      .replaceAll("mercedes", "mercedes-benz");
 
   String? locationFound = locations
       .firstWhere((word) => message.contains(word.toLowerCase()),
@@ -66,19 +70,24 @@ String createApiUrl(String message) {
       .replaceAll("automatica", "automático")
       .capitalize();
 
-  RegExp regexYear = RegExp(r'(despues|antes)?\s+(de)?\s*(ano|del)\s+(\d{4})');
+  RegExp regexYear = RegExp(
+      r'(despues|antes|posterior|anterior)?\w*\s+(de|a)?\s*(ano|del)\s+(\d{4})');
   Match? matchYear = regexYear.firstMatch(message);
 
-  RegExp regexKM = RegExp(r'(mas|menos)?\s+(de)?\s*(\d+)\s+(kilometro|km)');
+  RegExp regexKM =
+      RegExp(r'(mas|menos|mayor|menor)?\w*\s+(de|a)?\s*(\d+)\s+(kilometro|km)');
   Match? matchKM = regexKM.firstMatch(message);
 
-  RegExp regexCV = RegExp(r'(mas|menos)?\s+(de)?\s*(\d+)\s+(cv|caballo)');
+  RegExp regexCV =
+      RegExp(r'(mas|menos|mayor|menor)?\w*\s+(de|a)?\s*(\d+)\s+(cv|caballo)');
   Match? matchCV = regexCV.firstMatch(message);
 
-  RegExp regexPrice = RegExp(r'(mas|menos)?\s+(de)?\s*(\d+)\s*(€|$|euros)');
+  RegExp regexPrice =
+      RegExp(r'(mas|menos|mayor|menor)?\w*\s+(de|a)?\s*(\d+)\s*(€|$|euros)');
   Match? matchPrice = regexPrice.firstMatch(message);
 
-  RegExp regexMarches = RegExp(r'(mas|menos)?\s+(de)?\s*(\d+)\s*marchas');
+  RegExp regexMarches =
+      RegExp(r'(mas|menos|mayor|menor)?\w*\s+(de|a)?\s*(\d+)\s*marchas');
   Match? matchMarches = regexMarches.firstMatch(message);
 
   RegExp regexDisplEngine = RegExp(
@@ -104,25 +113,42 @@ String createApiUrl(String message) {
   if (matchYear != null) {
     sample = "0";
     year = matchYear.group(4)!;
-    yearCondition = (matchYear.group(1) == "antes") ? "less" : "more";
+    yearCondition = (matchYear.group(1) == null)
+        ? "equal"
+        : ((matchYear.group(1) == "antes" || matchYear.group(1) == "anterior")
+            ? "less"
+            : "more");
   }
 
   if (matchKM != null) {
     sample = "0";
     km = matchKM.group(3)!;
-    kmCondition = (matchKM.group(1) == "menos") ? "less" : "more";
+    kmCondition = (matchKM.group(1) == null)
+        ? "equal"
+        : ((matchKM.group(1) == "menos" || matchKM.group(1) == "menor")
+        ? "less"
+        : "more");
   }
 
   if (matchCV != null) {
     sample = "0";
     cv = matchCV.group(3)!;
-    cvCondition = (matchCV.group(1) == "menos") ? "less" : "more";
+    cvCondition = (matchCV.group(1) == null)
+        ? "equal"
+        : ((matchCV.group(1) == "menos" || matchCV.group(1) == "menor")
+        ? "less"
+        : "more");
   }
 
   if (matchPrice != null) {
     sample = "0";
     price = matchPrice.group(3)!;
-    priceCondition = (matchPrice.group(1) == "menos") ? "less" : "more";
+    priceCondition =(matchPrice.group(1) == null)
+        ? "equal"
+        :
+    ((matchPrice.group(1) == "menos" || matchPrice.group(1) == "menor")
+            ? "less"
+            : "more");
   }
 
   if (matchMarches != null) {
@@ -133,8 +159,12 @@ String createApiUrl(String message) {
   if (matchDisplEngine != null) {
     sample = "0";
     displEngine = matchDisplEngine.group(3)!;
-    displEngineCondition =
-        (matchDisplEngine.group(1) == "menos") ? "less" : "more";
+    displEngineCondition = (matchDisplEngine.group(1) == "")
+        ? "equal"
+        : ((matchDisplEngine.group(1) == "menos" ||
+            matchDisplEngine.group(1) == "menor")
+        ? "less"
+        : "more");
   }
 
   return "http://127.0.0.1:5000/get_cars?brand=$brandFound&model=$modelFound"

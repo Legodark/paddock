@@ -105,13 +105,13 @@ def check_fields_is_not_empty(brand, model, year, year_condition, horses, horses
     if location != "":
         match["localidad"] = location
     if year != "":
-        match["año_numerico"] = {"$lte" if year_condition == "less" else "$gte": int(year)}
+        match["año_numerico"] = int(year) if year_condition == "equal" else {"$lt" if year_condition == "less" else "$gte": int(year)}
     if price != "":
-        match["precio_numerico"] = {"$lte" if price_condition == "less" else "$gte": int(price)}
+        match["precio_numerico"] = int(price) if price_condition == "equal" else {"$lt" if price_condition == "less" else "$gte": int(price)}
     if displ_engine != "":
-        match["cilindrada_numerico"] = {"$lte" if displ_engine_condition == "less" else "$gte": int(displ_engine)}
+        match["cilindrada_numerico"] = int(displ_engine) if displ_engine_condition == "equal" else {"$lt" if displ_engine_condition == "less" else "$gte": int(displ_engine)}
     if km != "":
-        match["kilometros_numerico"] = {"$lte" if km_condition == "less" else "$gte": int(km)}
+        match["kilometros_numerico"] = int(year) if km_condition == "equal" else {"$lt" if km_condition == "less" else "$gte": int(km)}
     if marches != "":
         match["marchas_numerico"] = int(marches)
     return match
