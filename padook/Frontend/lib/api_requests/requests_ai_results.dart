@@ -4,6 +4,8 @@ import 'dart:convert';
 import '../functionalities/message_events/transform_message.dart';
 import 'package:http/http.dart' as http;
 
+//Esta funcion se encargará de extraer el contexto del mensaje en la paddock api que tiene el modelo de IA
+
 Future<int> getContext(String message) async {
   message = replaceSubstrings(message.toLowerCase());
   String url = "https://padook-api-rrp6s7iauq-no.a.run.app/message_clasify?message=$message";
@@ -15,6 +17,9 @@ Future<int> getContext(String message) async {
     return 0;
   }
 }
+
+//Esta funcion se encargará de extraer el precio del coche segun las propiedades pasadas por parametro
+//y extraera precios minimos y maximos para las comparativas
 
 Future<Map> getCarPricePrediction(Map controllerList, String brandSelected,
     String modelSelected, String gearBoxId, String fuelId) async {

@@ -1,5 +1,7 @@
 
 
+//Aqui vemos si el precio del coche es buen precio segun las comparativas
+
 String priceClasifier(price, minimumPrice, maximumPrice) {
   String result = "";
   double middleRight = (maximumPrice - minimumPrice) / 1.33 + minimumPrice;

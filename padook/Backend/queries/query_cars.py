@@ -63,6 +63,9 @@ def get_most_expensive_cars(collection, model, price):
     return list
 
 
+# Esta funcion se usa cuando la aplicación flutter manda un mensaje del usuario y se encarga de extraer
+# Los coches segun sus propiedades
+
 def get_multiple_cars(collection, brand, model, year, year_condition, horses, horses_condition, km, km_condition, fuel,
                       gearbox, location, price, price_condition, displ_engine, displ_engine_condition, marches, sample):
     match = check_fields_is_not_empty(brand, model, year, year_condition, horses, horses_condition, km, km_condition,

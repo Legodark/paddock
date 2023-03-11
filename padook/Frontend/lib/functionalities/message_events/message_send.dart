@@ -10,6 +10,8 @@ import '../../api_requests/requests_ai_results.dart';
 import '../../bloc/chatbot_bloc/chatbot_bloc.dart';
 import '../generate_response/read_properties.dart';
 
+//Esta funcion es llamada cuando se envia un mensaje al chatbot
+
 void sendFunction(BuildContext context, String message, FocusNode focusNode, ScrollController scrollController) {
   BlocProvider.of<ChatBotBloc>(context)
       .addMessage(message, "usuario");

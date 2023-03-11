@@ -3,7 +3,7 @@ from flask_cors import CORS
 from flask_cors import cross_origin
 from tokenizer.tokenizer import Tokenizer
 from queries.query_cars import *
-from recollect_cars.recollect_cars import get_collection
+from collection_mongodb.get_collection import get_collection
 from sklearn.feature_extraction.text import CountVectorizer
 import joblib
 import json
@@ -98,10 +98,10 @@ def query_api():
         marches = request.args.get('marches')
         sample = request.args.get('sample')
 
-        # Utiliza la lista para hacer las predicciones
+        # Usamos los parametros para realizar la consulta a mongodb
         data = get_multiple_cars(get_collection(), brand, model, year, year_condition, horses, horses_condition, km, km_condition, fuel,
                                  gearbox, location, price, price_condition, displ_engine, displ_engine_condition, marches, sample)
-        # Crea un diccionario con las predicciones
+        # Crea un diccionario con los datos
         response = {'car_data': data}
     except ValueError:
         response = {"error": "No pusiste los parametros correctos"}

@@ -1,4 +1,7 @@
 import string
+
+# Este tokenizer será usado por el modelo de clasificacion de mensajes
+# para extraer las palabras de un mensaje y realizar la clasificación
 class Tokenizer:
   @staticmethod
   def tokenize(sentence):

@@ -5,6 +5,8 @@ import 'package:string_capitalize/string_capitalize.dart';
 
 import '../../data/data_lists/get_brands_list.dart';
 
+//Aqui se crea la url segun las propiedades que se consiguen del mensaje
+
 String createApiUrl(String message) {
   List<String> brands = getBrandsList();
   List<String> models = getModelsList();

@@ -1,6 +1,8 @@
 
 import pymongo
 
+# Aqui extraemos la collección de mongoDB para poco despues realizar las consultas
+
 def get_collection():
     # Crea una conexión con la base de datos MongoDB
     client = pymongo.MongoClient("No te voy a dar el link al mongoDB atlas >:)")
