@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>728889994564-3302vd2rs5ac6k28al7vm4bng6pc21b0.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.728889994564-3302vd2rs5ac6k28al7vm4bng6pc21b0</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBKOkznzN2QICsbHJfaJkLo-QVN9enD7Vs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>728889994564</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.padook</string>
+	<key>PROJECT_ID</key>
+	<string>padook-5be51</string>
+	<key>STORAGE_BUCKET</key>
+	<string>padook-5be51.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:728889994564:ios:c6b8059b5dd240c04afb11</string>
+</dict>
+</plist>

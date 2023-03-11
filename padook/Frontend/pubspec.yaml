@@ -39,6 +39,7 @@ dependencies:
   syncfusion_flutter_datagrid: ^20.4.53
   diacritic: ^0.1.3
   string_capitalize: ^0.0.10
+  firebase_core: ^2.7.1
 
 
   # The following adds the Cupertino Icons font to your application.

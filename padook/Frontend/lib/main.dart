@@ -5,14 +5,20 @@ import 'package:padook/bloc/chart_bloc/chart_bloc.dart';
 import 'package:padook/bloc/json_bloc/json_data_bloc.dart';
 import 'package:padook/bloc/brand_logo_bloc/brand_logo_bloc.dart';
 import 'package:padook/page/padook_page.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 import 'bloc/chatbot_bloc/chatbot_bloc.dart';
 import 'bloc/grid_bloc/grid_bloc.dart';
 import 'themes/input_decoration_theme.dart';
 import 'bloc/form_bloc/form_bloc.dart';
 import 'bloc/widget_bloc/main_widget_bloc.dart';
+import 'firebase_options.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(MultiBlocProvider(
       providers: [
         BlocProvider(

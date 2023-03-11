@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 
 Future<int> getContext(String message) async {
   message = replaceSubstrings(message.toLowerCase());
-  String url = "http://127.0.0.1:5000/message_clasify?message=$message";
+  String url = "https://padook-api-rrp6s7iauq-no.a.run.app/message_clasify?message=$message";
   http.Response response = await http.get(Uri.parse(url));
   if (response.statusCode == 200) {
     Map data = jsonDecode(response.body);
@@ -19,7 +19,7 @@ Future<int> getContext(String message) async {
 Future<Map> getCarPricePrediction(Map controllerList, String brandSelected,
     String modelSelected, String gearBoxId, String fuelId) async {
   String url =
-      "http://127.0.0.1:5000/car_predict?year=${controllerList["year"]?.text}"
+      "https://padook-api-rrp6s7iauq-no.a.run.app/car_predict?year=${controllerList["year"]?.text}"
       "&horses=${controllerList["horses"]?.text}&km=${controllerList["km"]?.text}"
       "&displ_engine=${controllerList["displEngine"]?.text}"
       "&marches=${controllerList["marches"]?.text}"

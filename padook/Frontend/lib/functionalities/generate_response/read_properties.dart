@@ -170,7 +170,7 @@ String createApiUrl(String message) {
   print(price);
   print(year);
 
-  return "http://127.0.0.1:5000/get_cars?brand=$brandFound&model=$modelFound"
+  return "https://padook-api-rrp6s7iauq-no.a.run.app/get_cars?brand=$brandFound&model=$modelFound"
       "&year=$year&year_condition=$yearCondition&horses=$cv&horses_condition=$cvCondition"
       "&km=$km&km_condition=$kmCondition&fuel=$fuelFound&gearbox=$gearBoxFound"
       "&location=$locationFound&price=$price&price_condition=$priceCondition"

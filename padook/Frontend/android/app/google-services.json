@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "728889994564",
+    "project_id": "padook-5be51",
+    "storage_bucket": "padook-5be51.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:728889994564:android:311c761623793ab04afb11",
+        "android_client_info": {
+          "package_name": "com.example.padook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "728889994564-u37n79dtrqa1mdjahddltir9v9dv69q4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgqHcBO7LajEAEIyPggLJ-xcEhP88LvTU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "728889994564-u37n79dtrqa1mdjahddltir9v9dv69q4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
