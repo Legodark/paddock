@@ -2,11 +2,11 @@
 
 *TFM realizado por **Oscar Pörtner Ostos** y **Juan Cerezo Serrano** del Master IA y Bigdata del Malaga Tech Park*
 
-Puedes acceder a la aplicación en el siguiente enlace:
+Puedes acceder a la aplicación y la presentación de la misma los siguientes enlaces:
 
 <div align="center">
 
-[Paddock](#8-aplicación-web)
+[Paddock](#8-aplicación-web) | [Presentación](#8-aplicación-web)
 
 </div>
 
@@ -26,7 +26,8 @@ Puedes acceder a la aplicación en el siguiente enlace:
 * [Desarrollo Web](#id12)
     * [Prototipo](#id13)
     * [Capturas de la aplicación](#id14)
-* [Conclusiones](#id15)
+    * [Video explicativo](#id15)
+* [Conclusiones](#id16)
 
 ## 1. Justificación y descripción del proyecto.<a name="id1"></a>
 
@@ -825,7 +826,9 @@ Enlace al prototipo:
 **Resultado Predicción**
 ![](images/desarrollo_web/dashboard_pred.png)
 
-## 9. Conclusiones<a name="id15"></a>
+### **Video explicativo**<a name="id15"></a>
+
+## 9. Conclusiones<a name="id16"></a>
 
 Las conclusiones que podemos sacar del TFM son las siguientes:
 
