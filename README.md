@@ -2,7 +2,7 @@
 
 *TFM realizado por **Oscar Pörtner Ostos** y **Juan Cerezo Serrano** del Master IA y Bigdata del Malaga Tech Park*
 
-Puedes acceder a la aplicación y la presentación de la misma desde los siguientes enlaces:
+Puedes acceder a la aplicación, la presentación y el video explicativo desde los siguientes enlaces:
 
 <div align="center">
 
@@ -68,12 +68,13 @@ Entornos
 FrontEnd
 
 [![Flutter](https://img.shields.io/badge/Flutter-black?style=for-the-badge&logo=Flutter&logoColor=blue&labelColor=101010)]()
+[![Firebase](https://img.shields.io/badge/firebase-black?style=for-the-badge&logo=Firebase&logoColor=yellow&labelColor=101010)]()
 
 BackEnd
  
+[![googlecloud](https://img.shields.io/badge/Google--Cloud-black?style=for-the-badge&logo=googlecloud&logoColor=red&labelColor=101010)]()
 [![docker](https://img.shields.io/badge/docker-black?style=for-the-badge&logo=docker&logoColor=blue&labelColor=101010)]()
 [![Flask](https://img.shields.io/badge/Flask-black?style=for-the-badge&logo=Flask&logoColor=white&labelColor=101010)]()
-[![Google](https://img.shields.io/badge/firebase-black?style=for-the-badge&logo=Firebase&logoColor=yellow&labelColor=101010)]()
 [![mongodb](https://img.shields.io/badge/Mongodb-black?style=for-the-badge&logo=mongodb&logoColor=green&labelColor=101010)]()
 
 Diseño
