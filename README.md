@@ -1,6 +1,6 @@
 ![Logo-prototipo](images/logo.png)
 
-*TFM realizado por **Oscar Pörtner Ostos** y **Juan Cerezo Serrano** del Master IA y Bigdata del Malaga Tech Park*
+*TFM realizado por **[Oscar Pörtner Ostos](https://github.com/OscarPOstos)** y **[Juan Cerezo Serrano](https://github.com/Legodark)** del Master IA y Bigdata del Malaga Tech Park*
 
 Puedes acceder a la aplicación, la presentación y el video explicativo desde los siguientes enlaces:
 
