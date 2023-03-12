@@ -100,6 +100,12 @@ Control de versiones
 [![Selenium](https://img.shields.io/badge/Selenium-black?style=for-the-badge&logo=Selenium&logoColor=green&labelColor=101010)]()
 [![Beatifulsoup](https://img.shields.io/badge/Beatifulsoup-black?style=for-the-badge&logo=Python&logoColor=orange&labelColor=101010)]()
 
+### :paperclip: Documentación
+
+[![chatgpt](https://img.shields.io/badge/chatgpt-black?style=for-the-badge&logo=OpenAI&logoColor=white&labelColor=101010)]()
+[![bing](https://img.shields.io/badge/chatbing-black?style=for-the-badge&logo=microsoftbing&logoColor=celest&labelColor=101010)]()
+
+
 </div>
 
 ## 2. Obtención de los datos.<a name="id2"></a>
