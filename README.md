@@ -6,7 +6,7 @@ Puedes acceder a la aplicación, la presentación y el video explicativo desde l
 
 <div align="center">
 
-[Paddock](https://padook-5be51.web.app/#/) | [Presentación](#8-aplicación-web) | [Video](#id15)
+[Paddock](https://padook-5be51.web.app/#/) | [Presentación](presentacion/Paddok.pdf) | [Video](#id15)
 
 </div>
 
