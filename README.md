@@ -104,6 +104,7 @@ Control de versiones
 
 [![chatgpt](https://img.shields.io/badge/chatgpt-black?style=for-the-badge&logo=OpenAI&logoColor=white&labelColor=101010)]()
 [![bing](https://img.shields.io/badge/chatbing-black?style=for-the-badge&logo=microsoftbing&logoColor=celest&labelColor=101010)]()
+[![stackoverflow](https://img.shields.io/badge/stackoverflow-black?style=for-the-badge&logo=stackoverflow&logoColor=celest&labelColor=101010)]()
 
 
 </div>
