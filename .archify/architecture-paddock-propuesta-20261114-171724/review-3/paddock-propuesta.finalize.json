@@ -1,0 +1,378 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "finalize",
+  "status": "fail",
+  "type": "architecture",
+  "quality": "showcase",
+  "startedAt": "2026-11-15T14:26:19.419Z",
+  "specification": {
+    "path": "/workspace/paddock/.archify/architecture-paddock-propuesta-20261114-171724/candidate.json",
+    "sha256": "b2e1b7ae553665b42feae808d21d347e42a67acf74cf3827bb3afaa8a840d2e9",
+    "bytes": 2942
+  },
+  "artifact": {
+    "path": "/workspace/paddock/.archify/architecture-paddock-propuesta-20261114-171724/paddock-propuesta.html",
+    "sha256": "c9f295c2b03ade7108f0125991e5df8a593cffe4bf17ea9fa53a880489214bc9",
+    "bytes": 838459
+  },
+  "stages": {
+    "validate": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": null,
+      "execution": "embedded-in-deliver",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "/tmp/paddock-archify/archify/bin/archify.mjs",
+        "deliver",
+        "architecture",
+        "/workspace/paddock/.archify/architecture-paddock-propuesta-20261114-171724/candidate.json",
+        "/workspace/paddock/.archify/architecture-paddock-propuesta-20261114-171724/paddock-propuesta.html",
+        "--quality",
+        "showcase",
+        "--json"
+      ],
+      "receipt": {
+        "schemaVersion": 1,
+        "ok": true,
+        "command": "validate",
+        "specification": {
+          "sha256": "b2e1b7ae553665b42feae808d21d347e42a67acf74cf3827bb3afaa8a840d2e9",
+          "bytes": 2942
+        },
+        "validation": {
+          "checksPassed": 9,
+          "checkCount": 9,
+          "compositionProfile": "showcase",
+          "compositionStatus": "pass",
+          "errors": 0,
+          "warnings": 0
+        }
+      }
+    },
+    "deliver": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": 711,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "/tmp/paddock-archify/archify/bin/archify.mjs",
+        "deliver",
+        "architecture",
+        "/workspace/paddock/.archify/architecture-paddock-propuesta-20261114-171724/candidate.json",
+        "/workspace/paddock/.archify/architecture-paddock-propuesta-20261114-171724/paddock-propuesta.html",
+        "--quality",
+        "showcase",
+        "--json"
+      ],
+      "receipt": {
+        "schemaVersion": 1,
+        "receiptId": "19cacb9a-4a44-4a11-a218-10d6f3362822",
+        "ok": true,
+        "command": "deliver",
+        "type": "architecture",
+        "input": "/workspace/paddock/.archify/architecture-paddock-propuesta-20261114-171724/candidate.json",
+        "output": "/workspace/paddock/.archify/architecture-paddock-propuesta-20261114-171724/paddock-propuesta.html",
+        "specification": {
+          "sha256": "b2e1b7ae553665b42feae808d21d347e42a67acf74cf3827bb3afaa8a840d2e9",
+          "bytes": 2942
+        },
+        "artifact": {
+          "sha256": "c9f295c2b03ade7108f0125991e5df8a593cffe4bf17ea9fa53a880489214bc9",
+          "bytes": 838459
+        },
+        "validation": {
+          "checksPassed": 9,
+          "checkCount": 9,
+          "compositionProfile": "showcase",
+          "compositionStatus": "pass",
+          "errors": 0,
+          "warnings": 0
+        },
+        "update": {
+          "status": "unavailable",
+          "installedVersion": null,
+          "availableVersion": null,
+          "releaseNotes": null,
+          "checkedAt": null,
+          "source": null,
+          "noticeRequired": false,
+          "noticeText": null,
+          "reason": "disabled"
+        }
+      }
+    },
+    "check": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": 209,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "/tmp/paddock-archify/archify/bin/archify.mjs",
+        "check",
+        "/workspace/paddock/.archify/architecture-paddock-propuesta-20261114-171724/paddock-propuesta.html",
+        "--require-provenance"
+      ],
+      "receipt": {
+        "ok": true,
+        "file": "/workspace/paddock/.archify/architecture-paddock-propuesta-20261114-171724/paddock-propuesta.html",
+        "artifact": {
+          "sha256": "c9f295c2b03ade7108f0125991e5df8a593cffe4bf17ea9fa53a880489214bc9",
+          "bytes": 838459
+        },
+        "checks": [
+          {
+            "name": "single_svg",
+            "ok": true,
+            "details": [
+              "found 1 <svg> block(s)"
+            ]
+          },
+          {
+            "name": "finite_svg",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "orthogonal_arrows",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "label_route_clearance",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "relationship_crossings",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "relationship_corridors",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "container_border_runs",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "route_rhythm",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "legend_clearance",
+            "ok": true,
+            "details": []
+          }
+        ],
+        "composition": {
+          "schemaVersion": 1,
+          "profile": "showcase",
+          "status": "pass",
+          "summary": {
+            "errors": 0,
+            "warnings": 0
+          },
+          "metrics": {
+            "properCrossings": 0,
+            "resolvedCrossovers": 0,
+            "ambiguousCorridors": 0,
+            "arrowheadCollisions": 0,
+            "containerBorderRuns": 0,
+            "labelRouteClearanceIssues": 0,
+            "labelCanvasOverflowIssues": 0,
+            "minLabelRouteClearance": 38.4,
+            "desktopReadabilityIssues": 0,
+            "viewportHeightIssues": 0,
+            "minProjectedNodeTextPx": 7.5,
+            "maxBends": 0,
+            "routesOverSuggestedBends": 0,
+            "maxStretch": 1,
+            "routesOverSuggestedStretch": 0,
+            "minSegmentPx": 140,
+            "minInteriorSegmentPx": null,
+            "shortSegmentCount": 0,
+            "shortEndpointSegmentCount": 0,
+            "shortInteriorSegmentCount": 0,
+            "microSegmentCount": 0
+          },
+          "suggestedLimits": {
+            "bendsPerRelationship": 2,
+            "stretch": 1.35,
+            "segmentPx": 16,
+            "microSegmentPx": 8
+          },
+          "routeReview": {
+            "crossings": [],
+            "detours": []
+          },
+          "leadingSpace": {
+            "measured": true,
+            "emptyTopPx": 36,
+            "emptyTopRatio": 0.079,
+            "occupiedTop": 36,
+            "viewBoxTop": 0,
+            "canvasHeight": 458,
+            "typicalNodeHeight": 64,
+            "reviewSuggested": false
+          },
+          "desktopReadability": {
+            "budgetBasis": "recognized-declared-wide",
+            "readerContract": "declared-wide-v1",
+            "availableDiagramWidth": 1035,
+            "actualBudgetPx": 1035,
+            "actualReaderWidth": 1065,
+            "desiredReaderWidth": 1065,
+            "viewportCap": 1376,
+            "limit": "source-size",
+            "requestedTargetPx": 7.5,
+            "requestedTargetMet": true,
+            "hardFloorPx": 6,
+            "hardFloorMet": true,
+            "minimumOwner": {
+              "kind": "edge",
+              "id": "visit",
+              "from": "visitor",
+              "to": "web"
+            },
+            "minimumSourceTextPx": 8,
+            "minimumProjectedTextPx": 7.5,
+            "semanticTextCount": 15
+          },
+          "issues": []
+        },
+        "provenance": "current",
+        "deliveryReceiptId": "19cacb9a-4a44-4a11-a218-10d6f3362822"
+      }
+    },
+    "browser-check": {
+      "status": "fail",
+      "exitCode": 1,
+      "durationMs": 1337,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "/tmp/paddock-archify/archify/bin/archify.mjs",
+        "browser-check",
+        "/workspace/paddock/.archify/architecture-paddock-propuesta-20261114-171724/paddock-propuesta.html",
+        "--json",
+        "--require-provenance",
+        "--out-dir",
+        "/workspace/paddock/.archify/architecture-paddock-propuesta-20261114-171724/review-3"
+      ],
+      "execution": "in-process",
+      "receipt": {
+        "schemaVersion": 1,
+        "ok": false,
+        "command": "browser-check",
+        "evidenceKind": "automated-browser",
+        "status": "fail",
+        "visualReview": "not-requested",
+        "provenance": "current",
+        "deliveryReceiptId": "19cacb9a-4a44-4a11-a218-10d6f3362822",
+        "artifact": {
+          "path": "/workspace/paddock/.archify/architecture-paddock-propuesta-20261114-171724/paddock-propuesta.html",
+          "sha256": "c9f295c2b03ade7108f0125991e5df8a593cffe4bf17ea9fa53a880489214bc9",
+          "bytes": 838459
+        },
+        "state": {
+          "detail": "read",
+          "motion": "still"
+        },
+        "chrome": {
+          "status": "available",
+          "executable": "/usr/bin/chromium"
+        },
+        "diagnostics": [
+          {
+            "code": "viewer/browser-check-runtime",
+            "severity": "error",
+            "message": "browser-check could not complete its Chrome inspection.",
+            "subject": {
+              "artifact": "/workspace/paddock/.archify/architecture-paddock-propuesta-20261114-171724/paddock-propuesta.html"
+            },
+            "evidence": {
+              "reason": "Chrome navigation failed: net::ERR_BLOCKED_BY_ADMINISTRATOR"
+            },
+            "supportedFixes": [
+              "resolve the reported Chrome inspection error, then rerun browser-check"
+            ]
+          }
+        ],
+        "containment": {
+          "status": "fail",
+          "policy": "fit-or-reader-declared-readable-vertical-scroll",
+          "viewports": []
+        },
+        "themeStates": {
+          "status": "fail",
+          "viewports": []
+        },
+        "readability": {
+          "status": "fail",
+          "minimumProjectedNodeTextPx": 6,
+          "viewports": []
+        },
+        "viewerChrome": {
+          "status": "fail",
+          "viewports": []
+        },
+        "captures": {
+          "status": "not-requested",
+          "screenshots": [],
+          "contactSheet": null
+        },
+        "sidecars": {
+          "directory": "/workspace/paddock/.archify/architecture-paddock-propuesta-20261114-171724/review-3",
+          "receipt": "paddock-propuesta.browser-check.json",
+          "files": []
+        },
+        "error": "Chrome navigation failed: net::ERR_BLOCKED_BY_ADMINISTRATOR"
+      }
+    }
+  },
+  "browserCheck": {
+    "requested": true,
+    "ran": false
+  },
+  "diagnostics": [
+    {
+      "code": "viewer/browser-check-runtime",
+      "severity": "error",
+      "message": "browser-check could not complete its Chrome inspection.",
+      "subject": {
+        "artifact": "/workspace/paddock/.archify/architecture-paddock-propuesta-20261114-171724/paddock-propuesta.html"
+      },
+      "evidence": {
+        "reason": "Chrome navigation failed: net::ERR_BLOCKED_BY_ADMINISTRATOR"
+      },
+      "supportedFixes": [
+        "resolve the reported Chrome inspection error, then rerun browser-check"
+      ]
+    }
+  ],
+  "evidence": {
+    "receipt": "/workspace/paddock/.archify/architecture-paddock-propuesta-20261114-171724/review-3/paddock-propuesta.finalize.json",
+    "summaryReceipt": "/workspace/paddock/.archify/architecture-paddock-propuesta-20261114-171724/review-3/paddock-propuesta.finalize-summary.json",
+    "browserCheckReceipt": "/workspace/paddock/.archify/architecture-paddock-propuesta-20261114-171724/review-3/paddock-propuesta.browser-check.json"
+  },
+  "visualReview": "not-requested",
+  "failedStage": "browser-check",
+  "finishedAt": "2026-11-15T14:26:21.762Z",
+  "durationMs": 2342,
+  "update": {
+    "status": "unavailable",
+    "installedVersion": null,
+    "availableVersion": null,
+    "releaseNotes": null,
+    "checkedAt": null,
+    "source": null,
+    "noticeRequired": false,
+    "noticeText": null,
+    "reason": "check-failed"
+  }
+}

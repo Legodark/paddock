@@ -79,6 +79,9 @@ if [[ -z ${PADDOCK_CHROMIUM:-} ]]; then
   PADDOCK_CHROMIUM=$(cd "$paddock_repo/web" && node -e 'process.stdout.write(require("@playwright/test").chromium.executablePath())')
 fi
 export PADDOCK_CHROMIUM
+if [[ ${PADDOCK_EXTENDED_BROWSERS:-0} == 1 ]]; then
+  (cd "$paddock_repo/web" && npm exec -- playwright install --with-deps firefox webkit)
+fi
 "$paddock_api/bin/python" - "$PADDOCK_CHROMIUM" "$paddock_reports/browser-environment.json" <<'PY'
 import json, pathlib, subprocess, sys
 version = subprocess.check_output([sys.argv[1], '--version'], text=True).strip()

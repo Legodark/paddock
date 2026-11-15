@@ -39,7 +39,34 @@ jobs:
       - name: Run reproducible checks
         env:
           PADDOCK_CI_WORK: ${{ runner.temp }}/paddock-ci
+          PADDOCK_EXTENDED_BROWSERS: '1'
         run: bash ci/check.sh
       - name: Summarize interrupted checks
         if: failure() || cancelled()
         run: python ci/summary.py --reports "$RUNNER_TEMP/paddock-ci/reports"
+
+  archify:
+    name: Frozen Archify diagrams in Chrome
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout candidate without persisted credentials
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - name: Checkout the reviewed Archify release
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          repository: tt-a1i/archify
+          ref: e37848822238e3a61b12739185cdadd49843a620
+          path: .paddock-tools/archify
+          persist-credentials: false
+      - name: Set up Node
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version-file: web/.node-version
+          package-manager-cache: false
+      - name: Finalize unchanged candidates with the original Archify CLI
+        env:
+          PADDOCK_ARCHIFY_ROOT: ${{ github.workspace }}/.paddock-tools/archify
+        run: node ci/check_archify.mjs

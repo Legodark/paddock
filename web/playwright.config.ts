@@ -9,6 +9,8 @@ const packagePointer = path.join(scratch, 'current-vercel-package');
 const packagePath = process.env.PADDOCK_PACKAGE_DIR ?? (existsSync(packagePointer)
   ? readFileSync(packagePointer, 'utf8').trim() : path.join(scratch, 'vercel-package'));
 const python = process.env.PADDOCK_PYTHON ?? path.join(scratch, 'vercel-venv/bin/python');
+const chromiumLaunch = { executablePath: process.env.PADDOCK_CHROMIUM ?? '/usr/bin/chromium', chromiumSandbox: true };
+const extraBrowsers = process.env.PADDOCK_EXTENDED_BROWSERS === '1';
 
 export default defineConfig({
   testDir: './tests',
@@ -20,12 +22,16 @@ export default defineConfig({
     baseURL: 'http://127.0.0.1:4173',
     locale: 'es-ES',
     reducedMotion: 'reduce',
-    launchOptions: { executablePath: process.env.PADDOCK_CHROMIUM ?? '/usr/bin/chromium', chromiumSandbox: true },
     trace: 'retain-on-failure',
   },
   projects: [
-    { name: 'desktop-chromium', use: { viewport: { width: 1440, height: 1000 } } },
-    { name: 'mobile-chromium', use: { ...devices['Pixel 7'], defaultBrowserType: 'chromium', viewport: { width: 390, height: 844 } } },
+    { name: 'desktop-chromium', use: { browserName: 'chromium', launchOptions: chromiumLaunch, viewport: { width: 1440, height: 1000 } } },
+    { name: 'mobile-chromium', use: { ...devices['Pixel 7'], browserName: 'chromium', launchOptions: chromiumLaunch, viewport: { width: 390, height: 844 } } },
+    ...(extraBrowsers ? [
+      { name: 'desktop-firefox', use: { browserName: 'firefox' as const, viewport: { width: 1440, height: 1000 } } },
+      { name: 'desktop-webkit', use: { browserName: 'webkit' as const, viewport: { width: 1440, height: 1000 } } },
+      { name: 'mobile-webkit', use: { ...devices['iPhone 13'], browserName: 'webkit' as const, viewport: { width: 390, height: 844 } } },
+    ] : []),
   ],
   webServer: [
     {
