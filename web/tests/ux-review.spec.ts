@@ -76,7 +76,13 @@ test('controls remain readable and usable with doubled text', async ({ page }, i
       [element, parseFloat(getComputedStyle(element).fontSize)] as const);
     for (const [element, size] of sizes) if (Number.isFinite(size)) element.style.fontSize = `${size * 2}px`;
   });
-  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
+  const geometry = await page.evaluate(() => ({
+    viewport: innerWidth, width: document.documentElement.scrollWidth,
+    overflowing: Array.from(document.querySelectorAll<HTMLElement>('body *'))
+      .filter(el => el.getBoundingClientRect().right > innerWidth + 1 && getComputedStyle(el).position !== 'absolute')
+      .slice(0, 12).map(el => ({ tag: el.tagName, className: String(el.className), text: el.innerText?.slice(0, 70), right: el.getBoundingClientRect().right })),
+  }));
+  expect(geometry.width, JSON.stringify(geometry)).toBeLessThanOrEqual(geometry.viewport + 1);
   await page.getByRole('button', { name: 'Rellenar un ejemplo' }).click();
   await prediction(page);
   await expect(page.getByLabel('Marca', { exact: true })).toBeEnabled();

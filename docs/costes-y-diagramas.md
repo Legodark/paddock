@@ -6,7 +6,7 @@ Política posterior confirmada: modelo y datos congelados, sin scraping nuevo ni
 
 ## Estado de los diagramas y fuentes
 
-Se ha localizado [Archify en GitHub](https://github.com/tt-a1i/archify) y se han generado [tres diagramas interactivos](diagramas.md) ejecutando su habilidad desde una copia local. Pasaron los gates de estructura y procedencia; el gate de navegador sigue pendiente por un bloqueo de navegación local en Chromium. Los Mermaid siguientes se conservan como esquemas textuales complementarios.
+Se ha localizado [Archify en GitHub](https://github.com/tt-a1i/archify) y se han generado [tres diagramas interactivos](diagramas.md) ejecutando su habilidad desde una copia local. Los cuatro gates originales, incluido el navegador, ya pasaron en GitHub Actions y los HTML se revisaron en claro/oscuro. Se conservan los bytes de la propuesta del 14-11-2026 y los diagnósticos locales anteriores. Los Mermaid siguientes se conservan como esquemas textuales complementarios.
 
 Actualización tras publicar el entorno: la documentación oficial es accesible y la CLI está autenticada. Se confirmó el equipo `legodarks-projects` en Hobby activo y el dominio `juancerezo.com` verificado, asociado al portfolio. Las herramientas del conector no aparecen en esta sesión; se utilizaron consultas CLI de solo lectura.
 
@@ -178,6 +178,6 @@ Orden de evaluación:
 
 ## Pendiente externo y siguiente paso
 
-El presupuesto está cerrado: **0 € adicionales**. Las cuotas oficiales, la cuenta Hobby activa y el tamaño del paquete están comprobados; la capacidad mensual y la disponibilidad real siguen pendientes de compute compartido y prueba de plataforma. Se usa la CLI autenticada porque el conector no está expuesto en esta sesión. Los diagramas de Archify ya están generados; queda pendiente completar su validación en un navegador compatible.
+El presupuesto está cerrado: **0 € adicionales**. Las cuotas oficiales, la cuenta Hobby activa y el tamaño del paquete están comprobados; la capacidad mensual y la disponibilidad real siguen pendientes de compute compartido y prueba de plataforma. Se usa la CLI autenticada porque el conector no está expuesto en esta sesión. Los diagramas de Archify ya están validados y revisados visualmente; no acreditan un despliegue real de la aplicación.
 
 La red necesaria ya está aplicada. No se han contratado servicios, activado Blob, publicado previews ni modificado DNS durante esta fase. La [revisión de las issues #8/#9](revision-pr-y-hobby.md) registra las fuentes, el barrido de historial, las licencias y el procedimiento previo a preview.

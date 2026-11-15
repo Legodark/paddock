@@ -1,6 +1,7 @@
 import { expect, test } from '@playwright/test';
 import type { Page } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
+import { accessibilityTest } from './accessibility-fixture';
 
 async function ready(page: Page) {
   await page.goto('/');
@@ -126,7 +127,7 @@ test('prevents duplicate submits while calculating', async ({ page }) => {
   expect(submissions).toBe(1);
 });
 
-test('keyboard access and automated accessibility checks on initial and result states', async ({ page }) => {
+accessibilityTest('keyboard access and automated accessibility checks on initial and result states', async ({ page }) => {
   await ready(page);
   await page.keyboard.press('Tab');
   await expect(page.getByRole('link', { name: 'Saltar al estimador' })).toBeFocused();

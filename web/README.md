@@ -31,6 +31,8 @@ npm run test:e2e
 
 `check` ejecuta los tests unitarios, el chequeo estricto de TypeScript y el build de producción. Playwright arranca y detiene la API local y `vite preview` en el puerto 4173, usa Chromium con sandbox y prueba escritorio y emulación móvil. La preview aplica las cabeceras de seguridad del documento configuradas en `deploy/vercel/vercel.json`. Vite de desarrollo necesita una política distinta para su recarga; no se considera servidor de producción.
 
+Con `PADDOCK_EXTENDED_BROWSERS=1`, los mismos recorridos incluyen Firefox de escritorio y WebKit de escritorio/móvil. La CI instala los motores y dependencias correspondientes; el entorno local necesita tenerlos disponibles. Se mantienen cero reintentos y los casos omitidos/inestables hacen fallar el resumen. La emulación WebKit no equivale a ejecutar Safari/iOS en hardware real. Las capturas opcionales de los tests de CSP usan Chromium por una inserción de estilos de Playwright al capturar otros motores; sus aserciones de funcionalidad/CSP siguen activas en todos los perfiles.
+
 Por defecto, los tests leen la ruta del paquete en `../../.paddock/current-vercel-package`, o usan `../../.paddock/vercel-package` si no existe ese puntero. Admiten `PADDOCK_PACKAGE_DIR`, `PADDOCK_ASSET_DIR`, `PADDOCK_PYTHON` y `PADDOCK_CHROMIUM` para otras máquinas. El ejecutable predeterminado de Chromium es `/usr/bin/chromium`; no se desactiva su sandbox. Se requieren puertos 5051 y 4173 libres; `CI=1` evita reutilizar servidores anteriores.
 
 Resultados y alcance medidos: [primer recorrido](../docs/frontend-react.md), [chatbot](../docs/chatbot-react.md) y [seguridad](../docs/seguridad-reactivacion.md). Los informes completos de Playwright quedan en `test-results/`, ignorado en Git.

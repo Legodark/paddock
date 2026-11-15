@@ -21,6 +21,10 @@ En GitHub, `setup-python` y `setup-node` proporcionan las versiones declaradas; 
 
 Si `PADDOCK_CHROMIUM` no está definido, se busca primero el Chrome/Chromium instalado en el runner. La imagen oficial `ubuntu-24.04` incluye Google Chrome; así se usa su integración con el sandbox del sistema. Solo si no hay navegador instalado se descarga el correspondiente a Playwright. El sandbox permanece habilitado y se registra la versión utilizada en `browser-environment.json`. La ejecución local verificada usó el Chromium del entorno; las primeras ejecuciones alojadas detectaron estas diferencias de selección de Python y arranque del Chromium descargado.
 
+La workflow define `PADDOCK_EXTENDED_BROWSERS=1` para instalar también los navegadores Firefox y WebKit fijados por Playwright, con sus dependencias del runner. Prueba cinco perfiles: escritorio Chrome, móvil Chrome, escritorio Firefox, escritorio WebKit y móvil WebKit. El modo local predeterminado mantiene los dos perfiles Chromium; activar la extensión requiere un entorno compatible con esas descargas y dependencias. Las versiones efectivas se registran mediante anotaciones. WebKit móvil es emulación, no una prueba de Safari/iPhone físicos.
+
+Las capturas opcionales dentro de las comprobaciones de CSP se limitan a Chromium: Playwright 1.65 inserta una etiqueta `<style>` para sincronizar capturas en Firefox/WebKit y provoca por sí mismo `style-src-elem`. La funcionalidad y la CSP se comprueban en todos los perfiles; no se habilitan estilos inline en la política para acomodar la herramienta. Los errores de navegador incluyen proyecto/caso y diagnóstico de procesos, con caracteres de comando escapados.
+
 ## Controles
 
 1. Verifica los SHA-256 de ambos pickle y del tokenizer antes de importar código histórico o deserializar modelos. Los cambios o enlaces simbólicos no pasan el control.
@@ -53,7 +57,9 @@ Después, la auditoría npm del constructor devuelve cero vulnerabilidades conoc
 
 Se ejecuta en push a `main` o a la rama de revisión `codex/paddock-reactivacion`, pull requests, petición manual y una vez a la semana para detectar avisos nuevos. Tiene 25 minutos de timeout y cancela ejecuciones anteriores de la misma referencia. Usa `pull_request`, permisos `contents: read` y checkout sin credenciales persistentes. No solicita secretos, permisos de escritura o acceso OIDC.
 
-Las tres acciones oficiales están fijadas a commits, verificados mediante Git y sus `action.yml`; usan Node 24. El binario de actionlint también está fijado y verificado. Los informes se publican como resumen, anotaciones y logs del job; no hay subida de binarios, artefactos de Actions ni cachés persistentes configuradas. Se usan runners estándar de este repositorio público. La [ejecución alojada verificada](../docs/entrega-github.md) pasó 144 pruebas. No se han contratado servicios.
+Las tres acciones oficiales están fijadas a commits, verificados mediante Git y sus `action.yml`; usan Node 24. El binario de actionlint también está fijado y verificado. Los informes se publican como resumen, anotaciones y logs del job; no hay subida de binarios, artefactos de Actions ni cachés persistentes configuradas. Se usan runners estándar de este repositorio público. La [ejecución alojada inicial](../docs/entrega-github.md) pasó 144 pruebas; el resumen de cada revisión cuenta los casos realmente ejecutados, incluidos los perfiles ampliados. No se han contratado servicios.
+
+Un segundo job valida los tres diagramas congelados con Archify 3.2.0 desde su commit revisado. No instala habilidades globales ni modifica la herramienta: ejecuta `finalize` en Chrome con sandbox, conserva los hashes y publica sus resúmenes originales como anotaciones. El fallo local de `file://` no se transforma en un éxito simulado. La [revisión visual](../docs/diagramas.md) queda documentada por separado.
 
 Los informes completos locales quedan bajo `PADDOCK_CI_WORK/reports`; las capturas/trazas temporales de Playwright, en `web/test-results/`, ignorado en Git. La evidencia pequeña revisable está en [docs/evidence/ci](../docs/evidence/ci/summary.json). Preparar este archivo no activa protección de ramas ni publica código: esos ajustes no se han modificado.
 
