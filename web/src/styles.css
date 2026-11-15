@@ -237,14 +237,14 @@ h1 em { font-style: normal; color: var(--accent); }
 }
 @media (max-width: 600px) {
   .page-shell, .header-inner { width: calc(100% - 36px); }
-  .header-inner { height: 72px; gap: 15px; }
+  .header-inner { min-height: 72px; height: auto; flex-wrap: wrap; padding-block: 14px; gap: 12px 15px; }
   .wordmark { font-size: 18px; letter-spacing: 1.5px; gap: 8px; }
   .brand-mark { gap: 2px; }
   .brand-mark i { width: 4px; height: 18px; }
   .brand-mark i:nth-child(2) { height: 15px; }
   .brand-mark i:first-child { height: 12px; }
   .brand-dot { margin-left: -8px; }
-  nav { gap: 16px; font-size: 11px; }
+  nav { flex-wrap: wrap; max-width: 100%; gap: 16px; font-size: 11px; }
   nav .repo-link { display: none; }
   .hero { display: block; padding-block: 34px 24px; }
   .project-label { font-size: 8px; letter-spacing: 1.25px; }

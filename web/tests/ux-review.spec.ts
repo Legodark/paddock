@@ -14,6 +14,12 @@ async function prediction(page: Page) {
 }
 const message = 'Busco coches Citroën de menos de 20.000 euros en Málaga';
 
+test.beforeAll(async ({ browser, browserName }, info) => {
+  if (process.env.GITHUB_ACTIONS === 'true') {
+    console.log(`::notice title=Paddock browser ${info.project.name}::${browserName} ${browser.version()}; emulation profile, no physical-device claim`);
+  }
+});
+
 test('prediction rate limiting preserves the vehicle and supports a deliberate retry', async ({ page }) => {
   let limited = true;
   await page.route('**/api/v1/predict', route => limited
@@ -61,8 +67,8 @@ test('portrait and landscape changes preserve the estimate, query and historical
   await expect(page.locator('#proyecto')).toContainText('no un servicio de tasación actual');
 });
 
-test('controls remain readable and usable with doubled text at desktop width', async ({ page }) => {
-  await page.setViewportSize({ width: 1440, height: 1000 });
+test('controls remain readable and usable with doubled text', async ({ page }, info) => {
+  await page.setViewportSize({ width: info.project.name.startsWith('mobile') ? 390 : 1440, height: 1000 });
   await ready(page);
   // Instrumented text-only enlargement; this does not claim a physical browser zoom or screen-reader test.
   await page.evaluate(() => {

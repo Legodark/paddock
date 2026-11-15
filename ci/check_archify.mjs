@@ -42,6 +42,10 @@ for (const diagram of manifest.candidates) {
     unchanged, passed: valid, summary };
   // Original compact Archify receipt, retrievable via the authenticated Actions logs; no artifact storage or credentials.
   console.log('PADDOCK_ARCHIFY_RESULT ' + JSON.stringify(result));
+  if (process.env.GITHUB_ACTIONS === 'true') {
+    const detail = JSON.stringify(result).replaceAll('%', '%25').replaceAll('\r', '%0D').replaceAll('\n', '%0A');
+    console.log(`::${valid ? 'notice' : 'error'} title=Paddock Archify ${diagram.type}::${detail}`);
+  }
   if (!valid) {
     console.log(run.stderr);
     passed = false;

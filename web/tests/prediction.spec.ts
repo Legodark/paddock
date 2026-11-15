@@ -19,7 +19,7 @@ async function estimate(page: Page) {
   await expect(page.getByTestId('estimated-price')).toContainText('20.155');
 }
 
-test('real prediction, comparables, filters and explicit stale-result state', async ({ page }, info) => {
+test('real prediction, comparables, filters and explicit stale-result state', async ({ page, browserName }, info) => {
   const requests: string[] = [];
   const policyViolations: unknown[] = [];
   await page.exposeFunction('reportPolicyViolation', (violation: unknown) => policyViolations.push(violation));
@@ -28,7 +28,9 @@ test('real prediction, comparables, filters and explicit stale-result state', as
   }));
   page.on('request', request => requests.push(request.url()));
   await ready(page);
-  await page.screenshot({ path: info.outputPath('initial.png'), fullPage: true });
+  // Playwright 1.65 toggles an inline <style> when capturing Firefox/WebKit, which itself violates our CSP.
+  // Keep the complete CSP/functional checks in every engine and collect these optional captures in Chromium.
+  if (browserName === 'chromium') await page.screenshot({ path: info.outputPath('initial.png'), fullPage: true });
   await page.getByLabel('Marca', { exact: true }).selectOption('10');
   await page.getByLabel('Modelo', { exact: true }).selectOption('118');
   for (const [label, value] of [['Año', '2022'], ['Kilómetros', '7119'], ['Potencia', '110'], ['Cilindrada', '1199'], ['Marchas', '6']]) {
@@ -40,7 +42,7 @@ test('real prediction, comparables, filters and explicit stale-result state', as
   await expect(page.getByRole('heading', { name: 'Estimación orientativa' })).toBeFocused();
   await expect(page.getByRole('heading', { name: 'Por debajo de la estimación' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Por encima de la estimación' })).toBeVisible();
-  await page.screenshot({ path: info.outputPath('result.png'), fullPage: true });
+  if (browserName === 'chromium') await page.screenshot({ path: info.outputPath('result.png'), fullPage: true });
   await page.getByRole('button', { name: 'Precio menor', exact: true }).click();
   await expect(page.getByRole('heading', { name: 'Por encima de la estimación' })).toHaveCount(0);
   await page.getByRole('button', { name: 'Todos', exact: true }).click();
