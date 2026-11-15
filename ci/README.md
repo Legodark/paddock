@@ -17,7 +17,9 @@ bash ci/check.sh
 
 Cada repetición requiere otra ruta. El script instala dependencias con hashes y `npm ci`, y genera sus propios modelos y snapshot. No depende de `/workspace/.paddock/current-vercel-package`, de los artefactos ya preparados ni de una sesión autenticada.
 
-En GitHub, `setup-python` y `setup-node` proporcionan las versiones declaradas; el paso de npm fija 11.9.0. Si `PADDOCK_CHROMIUM` no está definido, se instala el Chromium correspondiente a la versión de Playwright, con sus dependencias Linux. Su sandbox permanece habilitado. La ejecución local verificada usó el Chromium del entorno; todavía no se ha ejecutado el job en un runner alojado por GitHub.
+En GitHub, `setup-python` y `setup-node` proporcionan las versiones declaradas; el paso de npm fija 11.9.0. La ruta absoluta de Python se conserva antes de instalar el intérprete de conversión para que `uv` no seleccione ese Python por el alias `python3`. La API verifica además Python 3.12.14 y obtiene de ese intérprete su directorio real de paquetes para la auditoría.
+
+Si `PADDOCK_CHROMIUM` no está definido, se busca primero el Chrome/Chromium instalado en el runner. La imagen oficial `ubuntu-24.04` incluye Google Chrome; así se usa su integración con el sandbox del sistema. Solo si no hay navegador instalado se descarga el correspondiente a Playwright. El sandbox permanece habilitado y se registra la versión utilizada en `browser-environment.json`. La ejecución local verificada usó el Chromium del entorno; las primeras ejecuciones alojadas detectaron estas diferencias de selección de Python y arranque del Chromium descargado.
 
 ## Controles
 

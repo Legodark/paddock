@@ -9,6 +9,9 @@ import re
 def error_excerpt(value):
     text = value.get('message', '') if isinstance(value, dict) else str(value)
     text = re.sub(r'\x1b\[[0-?]*[ -/]*[@-~]', '', text)
+    important = [line for line in text.splitlines() if re.search(r'FATAL:|No usable sandbox|SUID sandbox|AppArmor|Operation not permitted|error while loading shared libraries', line, re.I)]
+    if important:
+        return (text.splitlines()[0] + '\n' + '\n'.join(important[:4]))[:1800]
     return text if len(text) <= 1800 else text.splitlines()[0] + '\n…\n' + text[-1600:]
 
 
@@ -79,6 +82,10 @@ def summarize(directory):
             reason = browser_error(data)
             if reason:
                 detail += ': ' + reason
+        browser_environment = directory / 'browser-environment.json'
+        if browser_environment.is_file():
+            runtime = json.loads(browser_environment.read_text())
+            detail += '; ' + runtime.get('version', 'browser version unavailable')
         results.append({'check': 'Browser tests', 'passed': successful, 'detail': detail})
     data = read('frozen-models.json')
     if data is not None:

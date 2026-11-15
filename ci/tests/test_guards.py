@@ -69,13 +69,13 @@ class GuardTests(unittest.TestCase):
     def test_browser_failure_is_reported_without_injecting_workflow_commands(self):
         with tempfile.TemporaryDirectory() as temporary, patch.dict(os.environ, {'GITHUB_ACTIONS': 'true', 'GITHUB_STEP_SUMMARY': ''}):
             root = Path(temporary)
-            report = {'stats': {'expected': 0, 'unexpected': 1, 'skipped': 0, 'flaky': 0}, 'errors': [{'message': 'No usable sandbox\n::notice title=Injected::not a command'}]}
+            report = {'stats': {'expected': 0, 'unexpected': 1, 'skipped': 0, 'flaky': 0}, 'errors': [{'message': 'Browser startup failed\n::notice title=Injected::not a command'}]}
             (root / 'browser-tests.json').write_text(json.dumps(report))
             output = io.StringIO()
             with contextlib.redirect_stdout(output):
                 self.assertFalse(summary.summarize(root))
             self.assertIn('::error title=Paddock CI - Browser tests::', output.getvalue())
-            self.assertIn('No usable sandbox%0A::notice', output.getvalue())
+            self.assertIn('Browser startup failed%0A::notice', output.getvalue())
             self.assertNotIn('\n::notice title=Injected::', output.getvalue())
 
     def test_skipped_unit_or_browser_cases_fail_the_summary(self):

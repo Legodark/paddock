@@ -16,6 +16,7 @@ if not work.is_absolute() or work.resolve().is_relative_to(repo.resolve()):
 work.mkdir(parents=True, exist_ok=False)
 (work / 'reports').mkdir()
 PY
+paddock_python=$("$paddock_python" -c 'import sys; print(sys.executable)')
 
 paddock_reports="$PADDOCK_CI_WORK/reports"
 paddock_tools="$PADDOCK_CI_WORK/tools"
@@ -46,6 +47,7 @@ paddock_uv="$paddock_tools/bin/uv"
 "$paddock_uv" venv --managed-python --python 3.10.22 "$paddock_conversion"
 "$paddock_uv" pip install --python "$paddock_conversion/bin/python" --require-hashes --only-binary=:all: -r "$paddock_repo/ci/requirements-conversion.txt"
 "$paddock_uv" venv --python "$paddock_python" "$paddock_api"
+"$paddock_api/bin/python" -c 'import sys; assert sys.version_info[:3] == (3, 12, 14), sys.version'
 "$paddock_uv" pip install --python "$paddock_api/bin/python" --require-hashes --only-binary=:all: -r "$paddock_repo/deploy/vercel/requirements.txt"
 "$paddock_conversion/bin/python" "$paddock_repo/tools/export_frozen_models.py" --output "$PADDOCK_CI_WORK/models" > "$paddock_reports/frozen-models.json"
 
@@ -61,13 +63,28 @@ export PADDOCK_ASSET_DIR="$PADDOCK_CI_WORK/package/assets"
 export PADDOCK_PACKAGE_DIR="$PADDOCK_CI_WORK/package"
 export PADDOCK_PYTHON="$paddock_api/bin/python"
 "$paddock_api/bin/python" "$paddock_repo/tools/run_python_tests.py" --report "$paddock_reports/api-tests.json"
-"$paddock_tools/bin/pip-audit" --path "$paddock_api/lib/python3.12/site-packages" --strict --progress-spinner off --desc off --format json --output "$paddock_reports/api-audit.json"
+paddock_api_packages=$("$paddock_api/bin/python" -c 'import sysconfig; print(sysconfig.get_path("purelib"))')
+"$paddock_tools/bin/pip-audit" --path "$paddock_api_packages" --strict --progress-spinner off --desc off --format json --output "$paddock_reports/api-audit.json"
 
+if [[ -z ${PADDOCK_CHROMIUM:-} ]]; then
+  for paddock_browser in google-chrome-stable google-chrome chromium chromium-browser; do
+    if command -v "$paddock_browser" >/dev/null 2>&1; then
+      PADDOCK_CHROMIUM=$(command -v "$paddock_browser")
+      break
+    fi
+  done
+fi
 if [[ -z ${PADDOCK_CHROMIUM:-} ]]; then
   (cd "$paddock_repo/web" && npm exec -- playwright install --with-deps chromium)
   PADDOCK_CHROMIUM=$(cd "$paddock_repo/web" && node -e 'process.stdout.write(require("@playwright/test").chromium.executablePath())')
-  export PADDOCK_CHROMIUM
 fi
+export PADDOCK_CHROMIUM
+"$paddock_api/bin/python" - "$PADDOCK_CHROMIUM" "$paddock_reports/browser-environment.json" <<'PY'
+import json, pathlib, subprocess, sys
+version = subprocess.check_output([sys.argv[1], '--version'], text=True).strip()
+pathlib.Path(sys.argv[2]).write_text(json.dumps({'executable': sys.argv[1], 'version': version, 'chromium_sandbox_requested': True, 'api_python': sys.version.split()[0]}, indent=2) + '\n')
+print('Browser:', version)
+PY
 rm -f "$paddock_repo/web/test-results/results.json"
 paddock_browser_status=0
 CI=1 npm --prefix "$paddock_repo/web" run test:e2e || paddock_browser_status=$?
