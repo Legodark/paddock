@@ -6,12 +6,14 @@ Estado de #10: el propietario aprobó el firewall y el primer despliegue privado
 
 ## Recuperaciones de UX solicitadas el 16-11-2026
 
-El propietario confirmó al revisar la Preview dos diferencias respecto a su versión de 2023. Quedan registradas para las próximas sesiones, pendientes de implementación y enlazadas a #12:
+El propietario confirmó al revisar la Preview tres recuperaciones de identidad y comportamiento de su versión de 2023. Quedan registradas para las próximas sesiones, pendientes de implementación y enlazadas a #12:
 
 1. **[Logos de las marcas, #18](https://github.com/Legodark/paddock/issues/18):** recuperar el logo de la marca seleccionada. Existen 73 PNG en `padook/Frontend/assets/images/marcas/`; el Flutter original los seleccionaba mediante `brand_logo_bloc` y los mostraba en `form_widget`. Reutilizar/optimizar esos recursos, mantener nombre textual y fallback, y comprobar IDs, accesibilidad y presupuestos de tamaño. No depender de Firebase o scraping.
 2. **[Chatbot desplegable, #19](https://github.com/Legodark/paddock/issues/19):** recuperar el botón de apertura y el panel con cierre del original, adaptados a React y a móvil/escritorio. La candidata lo muestra como sección completa. Conservar consulta, filtros, resultados y estados al plegarlo; revisar foco, teclado y que no tape formulario o teclado móvil.
 
-Orden recomendado de UX: resolver #18/#19 antes de la revisión manual final de #12. En paralelo pueden avanzar el enforcement de #11 y las métricas de #10 con su presupuesto específico; #17 sigue pendiente antes del acceso público. Esta anotación no cambia la app desplegada, modelos, datos o DNS.
+3. **[Logo original de Paddock con el DeLorean, #20](https://github.com/Legodark/paddock/issues/20):** usar el logo creado por el propietario como identidad principal dentro del diseño actual. Se comprobó visualmente `images/logo.png` (835 × 327 px), idéntico al asset del frontend histórico: PADDOCK naranja y DeLorean azul/morado. Conservar el original y adaptar presentación, contraste y tamaño para móvil/escritorio; no reemplazarlo por una recreación.
+
+Orden recomendado de UX: resolver #20/#18/#19 antes de la revisión manual final de #12. En paralelo pueden avanzar el enforcement de #11 y las métricas de #10 con su presupuesto específico; #17 sigue pendiente antes del acceso público. Esta anotación no cambia la app desplegada, modelos, datos o DNS.
 
 ## Objetivo y alcance
 
