@@ -1,0 +1,53 @@
+{
+  "source_url": "https://github.com/Legodark/paddock/actions/runs/43703395035",
+  "observed_at_utc": "2026-11-15T10:21:41.811311+00:00",
+  "collection": "Public GitHub run status and visible annotations; authenticated logs and complete JSON reports were not retrieved.",
+  "execution_context": "github-actions",
+  "commit": "72031fcfc44a0c3b18a6bcd7cd77ae6b4dee05db",
+  "branch": "codex/paddock-reactivacion",
+  "status": "Success",
+  "total_duration": "1m 59s",
+  "visible_annotations": [
+    {
+      "check": "Materialized function and budgets",
+      "detail": "121114042 function bytes, 290036 public bytes"
+    },
+    {
+      "check": "Frozen model reproduction",
+      "detail": "Both reviewed artifact SHA-256 checks passed"
+    },
+    {
+      "check": "Browser tests",
+      "detail": "40 passed, 0 failed, 0 skipped, 0 flaky; Google Chrome 157.0.8103.50"
+    },
+    {
+      "check": "CI guard tests",
+      "detail": "7 passed"
+    },
+    {
+      "check": "API tests",
+      "detail": "17 passed"
+    },
+    {
+      "check": "Unit tests",
+      "detail": "80 passed"
+    },
+    {
+      "check": "bundle-audit.json",
+      "detail": "8 packages, 0 advisories, 0 skipped"
+    },
+    {
+      "check": "api-audit.json",
+      "detail": "7 packages, 0 advisories, 0 skipped"
+    },
+    {
+      "check": "build-tools-audit.json",
+      "detail": "0 known vulnerabilities"
+    },
+    {
+      "check": "npm-audit.json",
+      "detail": "0 known vulnerabilities"
+    }
+  ],
+  "scope": "Hosted CI only; no application deployment, Vercel quota headroom, effective firewall enforcement, DNS, Firefox or Safari verified."
+}

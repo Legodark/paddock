@@ -25,7 +25,7 @@ Si `PADDOCK_CHROMIUM` no está definido, se busca primero el Chrome/Chromium ins
 
 1. Verifica los SHA-256 de ambos pickle y del tokenizer antes de importar código histórico o deserializar modelos. Los cambios o enlaces simbólicos no pasan el control.
 2. Valida la workflow con `actionlint 1.7.12`, cuyo binario se descarga de su release oficial y se verifica por SHA-256; ejecuta también `bash -n`. No se ejecutan ShellCheck/Pyflakes en ese paso.
-3. Prueba seis controles de CI: rechazo de modelos cambiados/symlinks, protección de la ruta directa de la función, equipo/alcance/algoritmo del firewall y rechazo de resultados incompletos u omitidos.
+3. Prueba siete controles de CI: rechazo de modelos cambiados/symlinks, protección de la ruta directa de la función, equipo/alcance/algoritmo del firewall, rechazo de resultados incompletos u omitidos y diagnóstico seguro de fallos del navegador.
 4. Convierte los modelos desde los archivos originales en un entorno mínimo Python **3.10.22** separado, con NumPy/SciPy/scikit-learn/joblib/threadpoolctl fijados y hashes. Ambos resultados deben coincidir exactamente con los SHA-256 compactos ya revisados. No genera de nuevo el gzip grande del regresor ni entrena o scrapea.
 5. Audita npm de la web y las herramientas de construcción. Ejecuta pruebas unitarias, TypeScript y build. Prepara su paquete propio con SQLite inmutable y datos fuente verificados.
 6. Ejecuta las pruebas de API y navegador contra esos recursos. Un fallo, test omitido o caso inestable no permite un resultado verde.
@@ -53,7 +53,7 @@ Después, la auditoría npm del constructor devuelve cero vulnerabilidades conoc
 
 Se ejecuta en push a `main` o a la rama de revisión `codex/paddock-reactivacion`, pull requests, petición manual y una vez a la semana para detectar avisos nuevos. Tiene 25 minutos de timeout y cancela ejecuciones anteriores de la misma referencia. Usa `pull_request`, permisos `contents: read` y checkout sin credenciales persistentes. No solicita secretos, permisos de escritura o acceso OIDC.
 
-Las tres acciones oficiales están fijadas a commits, verificados mediante Git y sus `action.yml`; usan Node 24. El binario de actionlint también está fijado y verificado. Los informes se publican como resumen y logs del job; no hay subida de binarios, artefactos de Actions ni cachés persistentes configuradas. Se usan runners estándar de un repositorio que se comprobó accesible por Git sin credenciales. No se han contratado servicios ni ejecutado jobs remotos desde esta sesión.
+Las tres acciones oficiales están fijadas a commits, verificados mediante Git y sus `action.yml`; usan Node 24. El binario de actionlint también está fijado y verificado. Los informes se publican como resumen, anotaciones y logs del job; no hay subida de binarios, artefactos de Actions ni cachés persistentes configuradas. Se usan runners estándar de este repositorio público. La [ejecución alojada verificada](../docs/entrega-github.md) pasó 144 pruebas. No se han contratado servicios.
 
 Los informes completos locales quedan bajo `PADDOCK_CI_WORK/reports`; las capturas/trazas temporales de Playwright, en `web/test-results/`, ignorado en Git. La evidencia pequeña revisable está en [docs/evidence/ci](../docs/evidence/ci/summary.json). Preparar este archivo no activa protección de ramas ni publica código: esos ajustes no se han modificado.
 

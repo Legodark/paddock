@@ -1,6 +1,6 @@
 # Plan de reactivación de Paddock
 
-Actualizado: 15 de noviembre de 2026. Estado: API, predicción, chatbot React y CI reproducible validados localmente; propuesta gratuita de firewall preparada. Pendientes las verificaciones de plataforma y ejecución alojada de CI. Sin despliegues. Aplicación histórica intacta.
+Actualizado: 15 de noviembre de 2026. Estado: API, predicción, chatbot React y CI reproducible validados localmente y en GitHub; rama de revisión y tag original publicados. Propuesta gratuita de firewall preparada. Pendientes las verificaciones de plataforma. Sin despliegues. Aplicación histórica intacta.
 
 ## Objetivo y alcance
 
@@ -14,7 +14,7 @@ Decisión acordada: reconstruir el frontend con React + TypeScript + Vite y cons
 
 Modelo y datos congelados por decisión del usuario: no volver a scrapear la web de origen ni reentrenar por ahora. La conversión compacta conserva los árboles originales. La aplicación se presentará como demo histórica del TFM, sin prometer tasaciones actuales. El [contrato de IDs y features](contrato-modelo-historico.md) está auditado y preparado para integrar; la procedencia exacta de la partición de entrenamiento sigue sin recuperarse.
 
-Avance posterior: contrato canónico integrado en [deploy/vercel](../deploy/vercel/README.md). El constructor oficial produjo una función de 115,50 MiB; predicciones HTTP locales y la prueba del bundle materializado pasaron. Tag original creado localmente. Al [primer recorrido React](frontend-react.md) se añade el [chatbot](chatbot-react.md): clasificación congelada, extracción de filtros, consultas y recuperación de errores. La [CI](../ci/README.md) regenera los modelos desde los pickle verificados y pasa 80 pruebas unitarias, 17 de API, 40 de navegador y seis guardas de CI; 143 en total, sin omitidas. La [revisión de seguridad](seguridad-reactivacion.md) cubre código, dependencias y paquete, incluidas las correcciones de las herramientas de construcción. La [propuesta de firewall](proteccion-vercel.md) usa una regla incluida en Hobby; queda aplicarla y comprobarla. Faltan ejecución en GitHub, validación de plataforma, cobertura manual de navegadores, preview autorizada, publicación del tag y DNS.
+Avance posterior: contrato canónico integrado en [deploy/vercel](../deploy/vercel/README.md). El constructor oficial produjo una función de 115,50 MiB; predicciones HTTP locales y la prueba del bundle materializado pasaron. El tag original y la rama de revisión están publicados, con `main` intacta; ver [entrega en GitHub](entrega-github.md). Al [primer recorrido React](frontend-react.md) se añade el [chatbot](chatbot-react.md): clasificación congelada, extracción de filtros, consultas y recuperación de errores. La [CI](../ci/README.md) regenera los modelos desde los pickle verificados y pasó en GitHub 80 pruebas unitarias, 17 de API, 40 de navegador y siete guardas de CI; 144 en total, sin omitidas. La [revisión de seguridad](seguridad-reactivacion.md) cubre código, dependencias y paquete, incluidas las correcciones de las herramientas de construcción. La [propuesta de firewall](proteccion-vercel.md) usa una regla incluida en Hobby; queda aplicarla y comprobarla. Faltan validación de plataforma, cobertura manual de navegadores, preview autorizada y DNS.
 
 La CLI está autenticada mediante el flujo seguro completado por el usuario. Se confirmó el equipo `legodarks-projects` en Hobby y el dominio existente del portfolio. El [estudio de costes](costes-y-diagramas.md) recoge las cuotas consultadas y las capturas de consumo compartidas. El consumo mensual de CPU, memoria provisionada e invocaciones sigue sin estar disponible mediante las capacidades gratuitas probadas; no se contratará Observability Plus ni se pedirán nuevas capturas para continuar el trabajo local.
 
@@ -157,4 +157,4 @@ No avanzar a producción con entrenamiento/runtime incompatible, vulnerabilidade
 - Verificación de límites/cuotas y de que no haya cobros adicionales; no hay autorización para contratar planes de pago.
 - Acceso de escritura a GitHub para publicar tags/PRs y, al terminar, la issue.
 
-No hace falta resolver estos puntos para revisar el trabajo local. No se han contratado servicios, modificado DNS, publicado tags remotos ni creado issues. Existe un tag original local y una API candidata probada, sin despliegue.
+No hace falta resolver estos puntos para revisar la candidata. No se han contratado servicios, modificado DNS ni creado issues. La rama de revisión y el tag original ya están publicados; la CI alojada ha pasado, sin desplegar la aplicación.
