@@ -2,6 +2,8 @@
 
 Fecha: 14-11-2026. Estado: paquete y API comprobados localmente; sin preview, proyecto nuevo ni cambios DNS en Vercel.
 
+Actualización de preparación del 15-11-2026: ya se creó Paddock como proyecto vacío, con autenticación de todos los despliegues, y se comprobó de nuevo el paquete completo. La app continúa sin desplegar y el DNS del dominio sigue intacto. El [registro de preview](preview-vercel.md) conserva configuración, dry run, 17 pruebas de API y el permiso de red pendiente para `*.vercel.app`.
+
 Actualización 15-11-2026: la [CI reproducible](../ci/README.md) confirma la generación desde los originales y el paquete con Python 3.12.14. La función final mide **121.114.042 bytes = 115,50 MiB**; la [evidencia actual](evidence/ci/package-check.json) comprueba predicción, chatbot, consultas y aislamiento. Los números de la primera tabla conservan la medición de la fase inicial.
 
 ## Resultado

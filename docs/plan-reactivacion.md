@@ -2,6 +2,8 @@
 
 Actualizado: 15 de noviembre de 2026. Estado: API, predicción, chatbot React y CI reproducible validados localmente y en GitHub; rama de revisión y tag original publicados. Propuesta gratuita de firewall preparada. Pendientes las verificaciones de plataforma. Sin despliegues. Aplicación histórica intacta.
 
+Preparación actual de #10: proyecto Paddock creado en Hobby con autenticación de todos los despliegues; paquete de la candidata comprobado y 17 pruebas de API pasadas. La red bloquea las URLs `*.vercel.app`; se guardó únicamente ese permiso adicional en el borrador, pendiente de aplicación por el propietario. La app sigue sin desplegar y el DNS sin cambios. Ver [configuración y evidencia de la preview](preview-vercel.md).
+
 ## Objetivo y alcance
 
 Recuperar el TFM como aplicación pública en `paddock.juancerezo.com` (nombre propuesto), conservar su historia, actualizar sus dependencias y mejorar seguridad, UX/UI y usabilidad en móvil y escritorio. Al terminar, crear una issue en `Legodark/ai-portfolio` para integrarlo desde otra sesión.
