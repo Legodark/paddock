@@ -1,0 +1,8 @@
+{
+  "success": true,
+  "numPassedTests": 80,
+  "numFailedTests": 0,
+  "numPendingTests": 0,
+  "numTodoTests": 0,
+  "scope": "Actual Vitest JSON report counts; full temporary report stays outside Git."
+}

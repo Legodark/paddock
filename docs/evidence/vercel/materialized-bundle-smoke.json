@@ -1,0 +1,10 @@
+{
+  "scope": "Materialized official builder output, local WSGI test client; not a provider invocation",
+  "python_site_packages_disabled": true,
+  "all_dependencies_from_function_bundle": true,
+  "readiness_seconds": 1.472,
+  "golden_price": 20155.0,
+  "real_comparables": true,
+  "message_and_catalog_checked": true,
+  "ml_dependencies_loaded": false
+}

@@ -1,0 +1,3 @@
+# Preserve generated Archify bytes so their provenance receipts remain valid.
+.archify/**/*.html linguist-generated=true -whitespace
+docs/evidence/** linguist-generated=true

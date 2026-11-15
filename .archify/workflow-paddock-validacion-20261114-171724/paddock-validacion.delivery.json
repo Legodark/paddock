@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "e10e8e5d-290c-4f64-be5c-69f228f5e4b1",
+  "status": "current",
+  "command": "deliver",
+  "type": "workflow",
+  "input": "/workspace/paddock/.archify/workflow-paddock-validacion-20261114-171724/candidate.json",
+  "output": "/workspace/paddock/.archify/workflow-paddock-validacion-20261114-171724/paddock-validacion.html",
+  "specification": {
+    "sha256": "88b30dcff531cf22af3c918d41c17de5cb99baab58b363a6ca1f71e0ed332b4c",
+    "bytes": 3889
+  },
+  "artifact": {
+    "sha256": "0e268907f214a22190ee9ff9934c33540ce39da9219fc49e2f8f4b39ecbf4336",
+    "bytes": 843330
+  }
+}

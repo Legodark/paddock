@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "components": [
+    {
+      "id": "visitor",
+      "type": "external",
+      "label": "Visitante",
+      "sublabel": "Móvil o escritorio",
+      "pos": [
+        40,
+        60
+      ],
+      "size": [
+        130,
+        64
+      ]
+    },
+    {
+      "id": "web",
+      "type": "frontend",
+      "label": "React + Vite",
+      "sublabel": "paddock.juancerezo.com",
+      "pos": [
+        310,
+        60
+      ],
+      "size": [
+        190,
+        64
+      ]
+    },
+    {
+      "id": "api",
+      "type": "backend",
+      "label": "API Python",
+      "sublabel": "Functions por validar",
+      "pos": [
+        720,
+        60
+      ],
+      "size": [
+        180,
+        64
+      ]
+    },
+    {
+      "id": "models",
+      "type": "backend",
+      "label": "Modelos compactos",
+      "sublabel": "Sin sklearn · prueba local",
+      "pos": [
+        580,
+        300
+      ],
+      "size": [
+        190,
+        70
+      ]
+    },
+    {
+      "id": "catalog",
+      "type": "database",
+      "label": "SQLite histórico",
+      "sublabel": "179.502 coches · lectura",
+      "pos": [
+        850,
+        300
+      ],
+      "size": [
+        190,
+        70
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "Vercel · despliegue propuesto, no realizado",
+      "wraps": [
+        "web",
+        "api",
+        "models",
+        "catalog"
+      ],
+      "pad": 24
+    }
+  ],
+  "connections": [
+    {
+      "id": "visit",
+      "from": "visitor",
+      "to": "web",
+      "label": "HTTPS",
+      "variant": "emphasis"
+    },
+    {
+      "id": "request",
+      "from": "web",
+      "to": "api",
+      "label": "/api/*",
+      "variant": "emphasis"
+    },
+    {
+      "id": "infer",
+      "from": "api",
+      "to": "models",
+      "label": "Inferencia local"
+    },
+    {
+      "id": "query",
+      "from": "api",
+      "to": "catalog",
+      "label": "Consulta SQL"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "Evaluación local",
+      "items": [
+        "13.500 predicciones y 1.367 mensajes sin diferencias.",
+        "Runtime compacto: unos 105 MiB tras la prueba serial."
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Presupuesto obligatorio",
+      "items": [
+        "0 € de servicios adicionales; solo se paga el dominio existente.",
+        "Cuotas y consumo de la cuenta Vercel todavía sin verificar."
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Antes de publicar",
+      "items": [
+        "Resolver los diccionarios de 542 y 719 modelos de coche.",
+        "El resultado local no acredita precisión ni despliegue en Vercel."
+      ]
+    }
+  ],
+  "meta": {
+    "title": "Paddock · arquitectura candidata a coste cero",
+    "locale": "es",
+    "quality_profile": "showcase",
+    "output": ".archify/architecture-paddock-propuesta-20261114-171724/paddock-propuesta.html"
+  }
+}

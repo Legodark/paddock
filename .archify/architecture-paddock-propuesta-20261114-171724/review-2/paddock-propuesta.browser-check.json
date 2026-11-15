@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "browser-check",
+  "evidenceKind": "automated-browser",
+  "status": "fail",
+  "visualReview": "not-requested",
+  "provenance": "current",
+  "deliveryReceiptId": "93223577-b227-4500-9754-db86ae85dfe6",
+  "artifact": {
+    "path": "/workspace/paddock/.archify/architecture-paddock-propuesta-20261114-171724/paddock-propuesta.html",
+    "sha256": "c9f295c2b03ade7108f0125991e5df8a593cffe4bf17ea9fa53a880489214bc9",
+    "bytes": 838459
+  },
+  "state": {
+    "detail": "read",
+    "motion": "still"
+  },
+  "chrome": {
+    "status": "available",
+    "executable": "/usr/bin/chromium"
+  },
+  "diagnostics": [
+    {
+      "code": "viewer/browser-check-runtime",
+      "severity": "error",
+      "message": "browser-check could not complete its Chrome inspection.",
+      "subject": {
+        "artifact": "/workspace/paddock/.archify/architecture-paddock-propuesta-20261114-171724/paddock-propuesta.html"
+      },
+      "evidence": {
+        "reason": "Chrome navigation failed: net::ERR_BLOCKED_BY_ADMINISTRATOR"
+      },
+      "supportedFixes": [
+        "resolve the reported Chrome inspection error, then rerun browser-check"
+      ]
+    }
+  ],
+  "containment": {
+    "status": "fail",
+    "policy": "fit-or-reader-declared-readable-vertical-scroll",
+    "viewports": []
+  },
+  "themeStates": {
+    "status": "fail",
+    "viewports": []
+  },
+  "readability": {
+    "status": "fail",
+    "minimumProjectedNodeTextPx": 6,
+    "viewports": []
+  },
+  "viewerChrome": {
+    "status": "fail",
+    "viewports": []
+  },
+  "captures": {
+    "status": "not-requested",
+    "screenshots": [],
+    "contactSheet": null
+  },
+  "sidecars": {
+    "directory": "/workspace/paddock/.archify/architecture-paddock-propuesta-20261114-171724/review-2",
+    "receipt": "paddock-propuesta.browser-check.json",
+    "files": []
+  },
+  "error": "Chrome navigation failed: net::ERR_BLOCKED_BY_ADMINISTRATOR"
+}

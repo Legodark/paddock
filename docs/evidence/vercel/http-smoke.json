@@ -1,0 +1,14 @@
+{
+  "scope": "Real local HTTP against Flask development server; not Vercel runtime or billing",
+  "cold_health_seconds": 1.466,
+  "serial_predictions": 20,
+  "serial_median_ms": 2.606,
+  "parallel_predictions": 20,
+  "parallel_workers": 4,
+  "all_golden_predictions_matched": true,
+  "comparables_filters_and_message_checked": true,
+  "server_memory": {
+    "VmHWM_mib": 126.0859375,
+    "VmRSS_mib": 126.0859375
+  }
+}

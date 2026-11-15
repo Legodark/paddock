@@ -1,0 +1,67 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "check": "npm-audit.json",
+      "passed": true,
+      "detail": "0 known vulnerabilities"
+    },
+    {
+      "check": "build-tools-audit.json",
+      "passed": true,
+      "detail": "0 known vulnerabilities"
+    },
+    {
+      "check": "api-audit.json",
+      "passed": true,
+      "detail": "7 packages, 0 advisories, 0 skipped"
+    },
+    {
+      "check": "bundle-audit.json",
+      "passed": true,
+      "detail": "8 packages, 0 advisories, 0 skipped"
+    },
+    {
+      "check": "Unit tests",
+      "passed": true,
+      "detail": "80 passed"
+    },
+    {
+      "check": "API tests",
+      "passed": true,
+      "detail": "17 passed"
+    },
+    {
+      "check": "CI guard tests",
+      "passed": true,
+      "detail": "6 passed"
+    },
+    {
+      "check": "Browser tests",
+      "passed": true,
+      "detail": "40 passed, no skips/retries/flaky cases"
+    },
+    {
+      "check": "Frozen model reproduction",
+      "passed": true,
+      "detail": "Both reviewed artifact SHA-256 checks passed"
+    },
+    {
+      "check": "Materialized function and budgets",
+      "passed": true,
+      "detail": "121114042 function bytes, 290036 public bytes"
+    },
+    {
+      "check": "Workflow and bash syntax",
+      "passed": true,
+      "detail": "actionlint 1.7.12"
+    },
+    {
+      "check": "Local firewall policy",
+      "passed": true,
+      "detail": "Local policy only; not applied or enforced on Vercel"
+    }
+  ],
+  "execution_context": "local",
+  "scope": "Checks on the current runner only; no deployment, Vercel quotas or firewall enforcement verified."
+}

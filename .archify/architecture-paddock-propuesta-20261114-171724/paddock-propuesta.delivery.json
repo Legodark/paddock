@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "93223577-b227-4500-9754-db86ae85dfe6",
+  "status": "current",
+  "command": "deliver",
+  "type": "architecture",
+  "input": "/workspace/paddock/.archify/architecture-paddock-propuesta-20261114-171724/candidate.json",
+  "output": "/workspace/paddock/.archify/architecture-paddock-propuesta-20261114-171724/paddock-propuesta.html",
+  "specification": {
+    "sha256": "b2e1b7ae553665b42feae808d21d347e42a67acf74cf3827bb3afaa8a840d2e9",
+    "bytes": 2942
+  },
+  "artifact": {
+    "sha256": "c9f295c2b03ade7108f0125991e5df8a593cffe4bf17ea9fa53a880489214bc9",
+    "bytes": 838459
+  }
+}

@@ -1,0 +1,189 @@
+{
+  "date": "2026-11-14",
+  "scope": "Local React/Vite preview against frozen real Python models and SQLite; Chromium desktop and mobile emulation only. No Vercel deployment or billing verification.",
+  "node": "v24.22.1",
+  "npm": "11.9.0",
+  "chromium": "Chromium 156.0.8078.79 built on Debian GNU/Linux 13 (trixie)",
+  "unit_tests": {
+    "passed": 19,
+    "failed": 0,
+    "command": "npm run check"
+  },
+  "api_tests": {
+    "passed": 13,
+    "failed": 0,
+    "command": "python -m unittest discover -s deploy/vercel/tests -v"
+  },
+  "typecheck_and_build": "passed",
+  "browser_stats": {
+    "startTime": "2026-11-14T18:31:02.621Z",
+    "duration": 19908.551,
+    "expected": 16,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "browser_cases": [
+    {
+      "name": "real prediction, comparables, filters and explicit stale-result state",
+      "project": "desktop-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "real prediction, comparables, filters and explicit stale-result state",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "validates fields and resets a model when its brand changes",
+      "project": "desktop-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "validates fields and resets a model when its brand changes",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "catalog failure offers a working retry",
+      "project": "desktop-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "catalog failure offers a working retry",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "prediction failure preserves inputs and allows retry, never showing a zero value",
+      "project": "desktop-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "prediction failure preserves inputs and allows retry, never showing a zero value",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "represents missing comparables without manufacturing a price range",
+      "project": "desktop-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "represents missing comparables without manufacturing a price range",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "prevents duplicate submits while calculating",
+      "project": "desktop-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "prevents duplicate submits while calculating",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "keyboard access and automated accessibility checks on initial and result states",
+      "project": "desktop-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "keyboard access and automated accessibility checks on initial and result states",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "fits narrow and wide viewports without horizontal overflow",
+      "project": "desktop-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "fits narrow and wide viewports without horizontal overflow",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    }
+  ],
+  "npm_audit": {
+    "exit_code": 0,
+    "includes_dev_dependencies": true,
+    "vulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0,
+      "total": 0
+    }
+  },
+  "automated_accessibility": "axe WCAG 2 A/AA, 2.1 AA, 2.2 AA: zero detected violations in initial and result states in both profiles. Not a complete accessibility audit.",
+  "visual_inspection": [
+    "Desktop full-page result",
+    "Mobile full-page result; skip-link clipping and SVG direction icons corrected"
+  ],
+  "viewports_without_horizontal_overflow": [
+    320,
+    360,
+    390,
+    768,
+    1024,
+    1440
+  ],
+  "production_document_csp": "No violations in real initial prediction and update in both browser profiles.",
+  "remaining_browser_coverage": [
+    "Firefox",
+    "Safari/iOS",
+    "physical mobile devices",
+    "screen reader",
+    "zoom and orientation"
+  ]
+}

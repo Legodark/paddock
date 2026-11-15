@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "finalize",
+  "status": "fail",
+  "type": "workflow",
+  "quality": "showcase",
+  "specification": {
+    "path": "/workspace/paddock/.archify/workflow-paddock-validacion-20261114-171724/candidate.json",
+    "sha256": "88b30dcff531cf22af3c918d41c17de5cb99baab58b363a6ca1f71e0ed332b4c",
+    "bytes": 3889
+  },
+  "artifact": {
+    "path": "/workspace/paddock/.archify/workflow-paddock-validacion-20261114-171724/paddock-validacion.html",
+    "sha256": "0e268907f214a22190ee9ff9934c33540ce39da9219fc49e2f8f4b39ecbf4336",
+    "bytes": 843330
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "fail"
+  },
+  "failedStage": "browser-check",
+  "diagnostics": [
+    {
+      "code": "viewer/browser-check-runtime",
+      "severity": "error",
+      "message": "browser-check could not complete its Chrome inspection.",
+      "subject": {
+        "artifact": "/workspace/paddock/.archify/workflow-paddock-validacion-20261114-171724/paddock-validacion.html"
+      },
+      "evidence": {
+        "reason": "Chrome navigation failed: net::ERR_BLOCKED_BY_ADMINISTRATOR"
+      },
+      "supportedFixes": [
+        "resolve the reported Chrome inspection error, then rerun browser-check"
+      ]
+    }
+  ],
+  "diagnosticSummary": {
+    "total": 1,
+    "shown": 1,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "/workspace/paddock/.archify/workflow-paddock-validacion-20261114-171724/review-2/paddock-validacion.finalize.json",
+    "summaryReceipt": "/workspace/paddock/.archify/workflow-paddock-validacion-20261114-171724/review-2/paddock-validacion.finalize-summary.json",
+    "browserCheckReceipt": "/workspace/paddock/.archify/workflow-paddock-validacion-20261114-171724/review-2/paddock-validacion.browser-check.json"
+  },
+  "visualReview": "not-requested",
+  "durationMs": 1121,
+  "browserCheck": {
+    "requested": true,
+    "ran": false
+  }
+}

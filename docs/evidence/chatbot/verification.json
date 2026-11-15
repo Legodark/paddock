@@ -1,0 +1,392 @@
+{
+  "date": "2026-11-15",
+  "scope": "Local real frozen message classifier, compact price model and SQLite catalog. Chromium desktop and Pixel 7 emulation; no Vercel deployment or billing verification.",
+  "unit_tests": {
+    "passed": 79,
+    "failed": 0
+  },
+  "api_tests": {
+    "passed": 17,
+    "failed": 0
+  },
+  "browser_stats": {
+    "startTime": "2026-11-15T00:34:56.643Z",
+    "duration": 53439.465000000004,
+    "expected": 40,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "browser_cases": [
+    {
+      "name": "real classifier and snapshot search preserve canonical filters and historical results",
+      "project": "desktop-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "real classifier and snapshot search preserve canonical filters and historical results",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "power, strict mileage and fuel conditions reach the real query",
+      "project": "desktop-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "power, strict mileage and fuel conditions reach the real query",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "model and province with the same name remain separate filters",
+      "project": "desktop-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "model and province with the same name remain separate filters",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "unrelated requests use the frozen classifier without querying cars",
+      "project": "desktop-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "unrelated requests use the frozen classifier without querying cars",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "unsupported, conflicting or negated constraints never become partial searches",
+      "project": "desktop-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "unsupported, conflicting or negated constraints never become partial searches",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "short valid filters rejected by the real classifier require explicit confirmation",
+      "project": "desktop-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "short valid filters rejected by the real classifier require explicit confirmation",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "an unfiltered request is confirmed and real empty results stay explicit",
+      "project": "desktop-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "an unfiltered request is confirmed and real empty results stay explicit",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "classification and query failures preserve the message and support a real retry",
+      "project": "desktop-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "classification and query failures preserve the message and support a real retry",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "search catalog failure recovers without disabling the prediction form",
+      "project": "desktop-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "search catalog failure recovers without disabling the prediction form",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "duplicate submits and cancellation cannot overwrite a newer search",
+      "project": "desktop-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "duplicate submits and cancellation cannot overwrite a newer search",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "user markup stays text and clearing removes the local conversation",
+      "project": "desktop-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "user markup stays text and clearing removes the local conversation",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "chat states pass automated accessibility and fit narrow screens",
+      "project": "desktop-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "chat states pass automated accessibility and fit narrow screens",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "real prediction, comparables, filters and explicit stale-result state",
+      "project": "desktop-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "real prediction, comparables, filters and explicit stale-result state",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "validates fields and resets a model when its brand changes",
+      "project": "desktop-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "validates fields and resets a model when its brand changes",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "catalog failure offers a working retry",
+      "project": "desktop-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "catalog failure offers a working retry",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "prediction failure preserves inputs and allows retry, never showing a zero value",
+      "project": "desktop-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "prediction failure preserves inputs and allows retry, never showing a zero value",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "represents missing comparables without manufacturing a price range",
+      "project": "desktop-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "represents missing comparables without manufacturing a price range",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "prevents duplicate submits while calculating",
+      "project": "desktop-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "prevents duplicate submits while calculating",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "keyboard access and automated accessibility checks on initial and result states",
+      "project": "desktop-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "keyboard access and automated accessibility checks on initial and result states",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "fits narrow and wide viewports without horizontal overflow",
+      "project": "desktop-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    },
+    {
+      "name": "fits narrow and wide viewports without horizontal overflow",
+      "project": "mobile-chromium",
+      "status": "expected",
+      "runs": [
+        "passed"
+      ]
+    }
+  ],
+  "typecheck_and_build": "passed",
+  "npm_audit": {
+    "exit_code": 0,
+    "includes_dev_dependencies": true,
+    "vulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0,
+      "total": 0
+    }
+  },
+  "accessibility": "axe WCAG 2 A/AA, 2.1 AA, 2.2 AA: zero detected violations in tested initial/result states; not a complete audit.",
+  "viewports_without_horizontal_overflow": [
+    320,
+    360,
+    390,
+    768,
+    1024,
+    1440
+  ],
+  "real_classifier_false_negative": {
+    "message": "Málaga",
+    "contexto": 0,
+    "query_only_after_explicit_confirmation": true
+  },
+  "real_search": {
+    "brand_id": "10",
+    "location": "Málaga",
+    "price_lt": 20000,
+    "result_limit": 10
+  },
+  "security_checks": [
+    "No raw messages in request URLs",
+    "No DOM creation from user markup",
+    "No model/database/CSV requests from browser in real flow",
+    "No CSP violations in real chat flow",
+    "Client cancellation/duplicate guards",
+    "No local/session storage from chat"
+  ],
+  "remaining_coverage": [
+    "Firefox",
+    "Safari/iOS",
+    "physical devices",
+    "screen readers",
+    "zoom/orientation",
+    "platform routing/headers/TLS",
+    "global abuse and shared Vercel compute quota"
+  ]
+}

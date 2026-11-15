@@ -1,0 +1,113 @@
+{
+  "rows_checked": 179502,
+  "mapping_conflicts": 0,
+  "raw_and_ml_semantic_alignment": {
+    "rows": 179502,
+    "fields": [
+      "localidad",
+      "marca",
+      "modelo",
+      "año",
+      "motor (CV)",
+      "kilometros",
+      "combustible",
+      "cambio",
+      "precio",
+      "cilindrada",
+      "marchas"
+    ],
+    "differences": 0
+  },
+  "category_counts": {
+    "brands": 70,
+    "models": 719,
+    "fuels": 8,
+    "gearboxes": 2
+  },
+  "model_to_brand_conflicts": 0,
+  "legacy_ids_requiring_translation": {
+    "brands": 0,
+    "models": 542,
+    "fuels": 3,
+    "gearboxes": 0
+  },
+  "legacy_selector_eligible_rows": 179152,
+  "legacy_selector_unsupported_reason_counts": {
+    "model_not_in_legacy_selector": 349,
+    "fuel_not_in_legacy_selector": 1
+  },
+  "fuel_row_counts": {
+    "Gasolina": 71201,
+    "Diesel": 97378,
+    "Gasolina y corriente eléctrica": 7298,
+    "Gasolina/gas": 984,
+    "Corriente eléctrica": 2525,
+    "Diesel y corriente eléctrica": 97,
+    "Gasolina Super": 1,
+    "Mixto Gasolina/Etanol": 18
+  },
+  "thresholds": {
+    "year": {
+      "split_count": 251499,
+      "minimum": 1993.5,
+      "maximum": 2022.5
+    },
+    "horses": {
+      "split_count": 218994,
+      "minimum": 43.0,
+      "maximum": 717.5
+    },
+    "km": {
+      "split_count": 2126909,
+      "minimum": 0.5,
+      "maximum": 480555.5
+    },
+    "displ_engine": {
+      "split_count": 222277,
+      "minimum": 323.5,
+      "maximum": 6198.5
+    },
+    "marches": {
+      "split_count": 59514,
+      "minimum": 0.5,
+      "maximum": 9.5
+    },
+    "card_brand_id": {
+      "split_count": 192223,
+      "minimum": 0.5,
+      "maximum": 68.5
+    },
+    "model_id": {
+      "split_count": 504818,
+      "minimum": 1.5,
+      "maximum": 717.5
+    },
+    "fuel_id": {
+      "split_count": 62202,
+      "minimum": 0.5,
+      "maximum": 5.5
+    },
+    "gearbox_id": {
+      "split_count": 56962,
+      "minimum": 0.5,
+      "maximum": 0.5
+    }
+  },
+  "legacy_reduced_model_id_maximum": 541,
+  "fitted_tree_model_id_threshold_maximum": 717.5,
+  "root_bootstrap_weights": [
+    140965
+  ],
+  "notebook_filtered_rows": 176492,
+  "notebook_expected_training_rows": 141193,
+  "exact_training_population_recovered": false,
+  "input_reencoding_comparison": {
+    "seed": 20261114,
+    "cases": 2000,
+    "cases_with_different_predictions": 1953,
+    "median_absolute_price_change": 788.9349999999995,
+    "maximum_absolute_price_change": 24942.769999999997,
+    "compact_vs_original_maximum_difference": 0.0,
+    "warning": "Change caused by correcting categorical encoding, not retraining. This is not an accuracy evaluation or held-out validation."
+  }
+}

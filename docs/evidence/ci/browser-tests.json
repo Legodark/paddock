@@ -1,0 +1,11 @@
+{
+  "stats": {
+    "startTime": "2026-11-15T01:15:36.468Z",
+    "duration": 49327.259000000005,
+    "expected": 40,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "scope": "Actual Playwright counts for Chromium desktop and Pixel 7 emulation; no GitHub hosted execution."
+}

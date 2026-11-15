@@ -1,0 +1,30 @@
+{
+  "seed": 20261114,
+  "price_cases": 13500,
+  "csv_cases": 10000,
+  "synthetic_cases": 2000,
+  "boundary_cases": 1500,
+  "max_absolute_difference": 0.0,
+  "price_cases_above_1e_9": 0,
+  "original_batch_seconds": 0.896,
+  "candidate_scalar_total_seconds": 4.862,
+  "message_cases": 1367,
+  "message_label_differences": 0,
+  "message_probability_max_difference": 0.0,
+  "export_seconds": 82.949,
+  "artifacts": {
+    "cars.compact.bin": {
+      "bytes": 96082072,
+      "sha256": "862e15962e6866b34a36d9f13906dcdcaf8aba6b9023fd028a47290a8c7984b7"
+    },
+    "cars.compact.bin.gz": {
+      "bytes": 23677591,
+      "sha256": "323dc112cf2cf8ee908dc1c459a9c2058b6e144cf711e896520accd85c2ed610"
+    },
+    "message.compact.json.gz": {
+      "bytes": 46725,
+      "sha256": "820505cfffa425d4c8502e7dcfe08aff37de25e6ad029a546daa9cd6376d0470"
+    }
+  },
+  "quality_warning": "Equivalence to legacy predictions only; CSV/app category IDs differ; no out-of-sample accuracy measured."
+}

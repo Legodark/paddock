@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "diagram_type": "sequence",
+  "participants": [
+    {
+      "id": "web",
+      "type": "frontend",
+      "label": "Navegador",
+      "sublabel": "React"
+    },
+    {
+      "id": "api",
+      "type": "backend",
+      "label": "API Python",
+      "sublabel": "Functions candidata"
+    },
+    {
+      "id": "model",
+      "type": "backend",
+      "label": "Modelo compacto",
+      "sublabel": "Artefacto local"
+    },
+    {
+      "id": "db",
+      "type": "database",
+      "label": "SQLite",
+      "sublabel": "Solo lectura"
+    }
+  ],
+  "messages": [
+    {
+      "id": "input",
+      "from": "web",
+      "to": "api",
+      "y": 160,
+      "label": "Enviar vehículo",
+      "variant": "emphasis",
+      "note": "Propuesto: validar entradas y limitar peticiones; si no son válidas, devolver un error."
+    },
+    {
+      "id": "predict",
+      "from": "api",
+      "to": "model",
+      "y": 265,
+      "label": "Inferir precio",
+      "note": "Reutilizar el artefacto local verificado; sin descargarlo por cada petición."
+    },
+    {
+      "id": "price",
+      "from": "model",
+      "to": "api",
+      "y": 365,
+      "label": "Precio estimado",
+      "variant": "return"
+    },
+    {
+      "id": "comparables",
+      "from": "api",
+      "to": "db",
+      "y": 420,
+      "label": "Consultar comparables"
+    },
+    {
+      "id": "rows",
+      "from": "db",
+      "to": "api",
+      "y": 475,
+      "label": "Coches y precios",
+      "variant": "return"
+    },
+    {
+      "id": "reply",
+      "from": "api",
+      "to": "web",
+      "y": 530,
+      "label": "JSON de resultados",
+      "variant": "return"
+    }
+  ],
+  "activations": [
+    {
+      "participant": "api",
+      "from": 160,
+      "to": 540,
+      "type": "backend"
+    },
+    {
+      "participant": "model",
+      "from": 265,
+      "to": 370,
+      "type": "backend"
+    },
+    {
+      "participant": "db",
+      "from": 420,
+      "to": 480,
+      "type": "database"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Flujo diseñado",
+      "items": [
+        "No representa una API nueva ya implementada.",
+        "El bundle incluiría modelos y catálogo, si cabe en el plan gratuito."
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Presupuesto obligatorio",
+      "items": [
+        "0 € de servicios adicionales; solo se paga el dominio existente.",
+        "Cuotas y consumo de la cuenta Vercel todavía sin verificar."
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Antes de publicar",
+      "items": [
+        "Resolver los diccionarios de 542 y 719 modelos de coche.",
+        "El resultado local no acredita precisión ni despliegue en Vercel."
+      ]
+    }
+  ],
+  "meta": {
+    "title": "Paddock · petición propuesta sin Blob",
+    "locale": "es",
+    "quality_profile": "showcase",
+    "output": ".archify/sequence-paddock-prediccion-20261114-171724/paddock-prediccion.html"
+  }
+}

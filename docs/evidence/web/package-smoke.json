@@ -1,0 +1,38 @@
+{
+  "scope": "Final local materialized WSGI function and public file inventory; no Vercel deployment or platform routing test.",
+  "health_status": 200,
+  "catalog_models": 542,
+  "prediction": 20155.0,
+  "comparables_lower": 5,
+  "comparables_higher": 5,
+  "static_files_in_function": 0,
+  "public_files": [
+    {
+      "path": "assets/index-DM9g6fdV.css",
+      "bytes": 20459,
+      "gzip_bytes": 5242,
+      "sha256": "bb3d0845dabecf8ff848042f337d27f74df1e802b9660ea5c632a532a14609e2"
+    },
+    {
+      "path": "assets/index-EJeoK4tn.js",
+      "bytes": 244483,
+      "gzip_bytes": 75376,
+      "sha256": "1d1069673896c0174c33d5961421307a6a87443ab4e9b8fa29a417a267a9265a"
+    },
+    {
+      "path": "index.html",
+      "bytes": 718,
+      "gzip_bytes": 434,
+      "sha256": "e23013112d0eb59107ab403f35b7df2cad145deec257000db06088829b442d7c"
+    },
+    {
+      "path": "robots.txt",
+      "bytes": 26,
+      "gzip_bytes": 46,
+      "sha256": "331ea9090db0c9f6f597bd9840fd5b171830f6e0b3ba1cb24dfa91f0c95aedc1"
+    }
+  ],
+  "public_bytes": 265686,
+  "public_gzip_bytes": 81098,
+  "public_model_or_dataset_files": 0
+}

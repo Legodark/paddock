@@ -1,0 +1,57 @@
+{
+  "date": "2026-11-15",
+  "scope": "Final local materialized WSGI function and public inventory only; no Vercel deployment or platform routing test.",
+  "health_status": 200,
+  "search_models": 719,
+  "locations": 50,
+  "classifier_example_context": 1,
+  "classifier_short_location_context": 0,
+  "real_query_rows": 10,
+  "query_filters": {
+    "brand_id": "10",
+    "location": "Málaga",
+    "price_lt": 20000
+  },
+  "price_regression": 20155.0,
+  "private_artifact_routes_status": 404,
+  "public_model_or_dataset_files": 0,
+  "static_public_files_in_function": 0,
+  "bundle_dependency_audit_matches": {
+    "markupsafe": "3.0.4",
+    "vercel-runtime": "0.24.3",
+    "blinker": "1.9.0",
+    "jinja2": "3.1.6",
+    "click": "8.5.1",
+    "werkzeug": "3.1.9",
+    "itsdangerous": "2.2.0",
+    "flask": "3.1.3"
+  },
+  "public_files": [
+    {
+      "path": "assets/index-BvwoIhws.js",
+      "bytes": 263209,
+      "gzip_bytes": 80879,
+      "sha256": "a6a6be2d71d33dc183dd302fbac646a4adaae7f088b5f99c954269097b53633b"
+    },
+    {
+      "path": "assets/index-DbcHYQ1G.css",
+      "bytes": 26083,
+      "gzip_bytes": 6240,
+      "sha256": "e0ae1e818e006fc7a48f92b1b24dfc11795b99accfa631ee41de0fc12b5ca8b8"
+    },
+    {
+      "path": "index.html",
+      "bytes": 718,
+      "gzip_bytes": 435,
+      "sha256": "27fbd93dacbd96fb18f361dcae5d9928e4e0db013fb6976277bf66dfe75e98e7"
+    },
+    {
+      "path": "robots.txt",
+      "bytes": 26,
+      "gzip_bytes": 46,
+      "sha256": "331ea9090db0c9f6f597bd9840fd5b171830f6e0b3ba1cb24dfa91f0c95aedc1"
+    }
+  ],
+  "public_bytes": 290036,
+  "public_gzip_bytes": 87600
+}
