@@ -140,7 +140,7 @@ Contexto comprobado del portfolio: contenido en `src/profile.js`, navegación po
 
 Criterios de aceptación de la issue: proyecto visible en móvil/escritorio y comando de proyectos, enlaces HTTPS válidos, atribución correcta, capturas optimizadas, texto fiel y validación del repositorio superada. La issue solicitará implementación desde otra sesión, sin lanzar agentes desde esta planificación.
 
-Acceso pendiente: `api.github.com` devuelve Forbidden. Cuando llegue el momento, verificar red y autenticación existente antes de solicitar acceso adicional; no pedir un token por chat. Si continúa bloqueado, conservar el cuerpo de la issue listo para publicación y comunicar el bloqueo.
+Acceso actualizado: `api.github.com` está permitido y la CLI autenticada creó el [PR #6 de Paddock](https://github.com/Legodark/paddock/pull/6). Cuando llegue el momento de crear la issue del portfolio, comprobar el permiso específico de ese repositorio con la autenticación existente; no pedir un token por chat. La issue sigue pendiente de URL pública y release verificadas.
 
 ## Orden de ejecución y controles de avance
 
