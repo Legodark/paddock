@@ -1,6 +1,6 @@
 # API candidata para Vercel
 
-Paquete técnico para comprobar el despliegue gratuito de los modelos congelados de Paddock. El primer recorrido React está en [web](../../web/README.md) y se puede incorporar con `--web-dist web/dist` al generar el paquete. No es una versión publicada. El backend y Flutter históricos permanecen intactos en `padook/`.
+Paquete de los modelos congelados de Paddock, ya publicado como [Preview privada verificada en Hobby](../../docs/preview-vercel.md). El frontend React está en [web](../../web/README.md) y se incorpora con `--web-dist web/dist`. La release pública y el dominio propio siguen pendientes. El backend y Flutter históricos permanecen intactos en `padook/`.
 
 Usa Python 3.12, Flask con dependencias fijadas y hashes, los bosques compactos y SQLite inmutable. No requiere MongoDB, Blob, NumPy, SciPy, scikit-learn, joblib ni APIs de IA de pago en producción. No hace scraping ni entrenamiento.
 

@@ -1,8 +1,8 @@
 # Plan de reactivación de Paddock
 
-Actualizado: 15 de noviembre de 2026. Estado: API, predicción, chatbot React y CI reproducible validados localmente y en GitHub; rama de revisión y tag original publicados. Propuesta gratuita de firewall preparada. Pendientes las verificaciones de plataforma. Sin despliegues. Aplicación histórica intacta.
+Actualizado: 15 de noviembre de 2026. Estado: [Preview privada disponible](https://paddock-ba93thzc9-legodarks-projects.vercel.app), con modelos congelados, autenticación de Vercel y una regla de rate limiting activa en Hobby. Veinte peticiones de API y trece comprobaciones estáticas documentadas; defectos de rewrite y cabeceras corregidos. La release pública, el dominio y las verificaciones restantes siguen pendientes. `main`, el tag y la aplicación histórica permanecen intactos.
 
-Preparación actual de #10: Paddock creado en Hobby con autenticación de todos los despliegues; paquete comprobado y 17 pruebas de API pasadas. El propietario ya publicó `*.vercel.app` y se verificó el acceso. La regla gratuita está en borrador remoto, pendiente de la aprobación humana que exige la CLI. Vercel rechazó la primera publicación como Preview porque exige destino Production para el primer despliegue; se propone `--prod --skip-domain` con autenticación obligatoria, pendiente de decisión. La app sigue sin desplegar y el DNS sin cambios. Ver [configuración y evidencia](preview-vercel.md).
+Estado de #10: el propietario aprobó el firewall y el primer despliegue privado con destino obligatorio Production, sin promoción de dominios. La revisión vigente ya usa destino Preview y fuente `fbb6082`. La predicción de 20.155 €, clasificación y consultas reales funcionan en Vercel. El último cambio añade únicamente cabeceras estáticas; conserva byte a byte el backend ensayado y no consume más llamadas de API. Quedan desconocidos el arranque frío confirmado, la memoria/CPU efectivos y el margen mensual; #11/#12/#17 siguen abiertos. Ver [configuración, resultados y límites](preview-vercel.md).
 
 ## Objetivo y alcance
 

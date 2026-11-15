@@ -1,8 +1,8 @@
 # Validación local del paquete candidato para Vercel
 
-Fecha: 14-11-2026. Estado: paquete y API comprobados localmente; sin preview, proyecto nuevo ni cambios DNS en Vercel.
+Registro inicial: 14-11-2026. Las mediciones iniciales de este documento preceden a la publicación privada; el estado actual está en el siguiente párrafo.
 
-Actualización de preparación del 15-11-2026: Paddock existe como proyecto vacío, protegido en todos los despliegues, y el paquete pasó de nuevo sus comprobaciones. La red `*.vercel.app` ya está aplicada. La CLI exige aprobación humana para activar la regla de firewall y destino Production para el primer despliegue; se prepara la alternativa privada `--prod --skip-domain`, pendiente de decisión. La app sigue sin desplegar y el DNS intacto. El [registro de preview](preview-vercel.md) conserva configuración, dry run, 17 pruebas de API y las respuestas reales de la plataforma.
+Actualización de plataforma del 15-11-2026: la [Preview privada](preview-vercel.md) está READY en Hobby y exige autenticación. El propietario aprobó y se activó la regla 60/min/IP. El proveedor aceptó el paquete con `--archive=tgz`; la función local final mide **121.114.317 bytes = 115,50 MiB** y la web 292.855 bytes. Las pruebas de API en Vercel y trece comprobaciones estáticas tienen evidencia; el presupuesto se mantuvo en veinte solicitudes de API. Se corrigieron un parámetro añadido por el rewrite y cabeceras ausentes en HTML. El backend de la última publicación es idéntico al ensayado. Sin dominio propio, fusión de `main`, Blob o servicios de pago.
 
 Actualización 15-11-2026: la [CI reproducible](../ci/README.md) confirma la generación desde los originales y el paquete con Python 3.12.14. La función final mide **121.114.042 bytes = 115,50 MiB**; la [evidencia actual](evidence/ci/package-check.json) comprueba predicción, chatbot, consultas y aislamiento. Los números de la primera tabla conservan la medición de la fase inicial.
 

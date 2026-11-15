@@ -44,6 +44,8 @@ El entorno de conversión utiliza scikit-learn 1.2.1 para reproducir archivos co
 
 ## Herramientas de construcción
 
+La CI también ejecuta `check_vercel_routing.cjs` con el compilador oficial `@vercel/routing-utils@6.6.1`. Detecta el parámetro `path` que el rewrite nombrado antiguo añadía a consultas estrictas, comprueba cobertura de rutas sin enviar estáticos a Python y exige las cabeceras comunes en la regla específica del documento. Incluye controles negativos para ambas regresiones detectadas en Vercel. El override de `path-to-regexp` a **6.3.0** evita la versión 6.1.0 vulnerable que incorpora la herramienta; la auditoría completa de build volvió a cero avisos conocidos. Estas dependencias solo se usan en CI, no en la función Python.
+
 [vercel-tooling/package.json](vercel-tooling/package.json) fija `@vercel/python 32.0.0` y `@vercel/build-utils 15.4.0`, con lockfile. La auditoría ampliada detectó seis paquetes marcados en el árbol del constructor; la API Python y la web continuaban sin avisos. El último constructor oficial consultado todavía fijaba versiones antiguas en `@vercel/python-analysis 0.15.3`.
 
 Se actualizan explícitamente estas dependencias de análisis:

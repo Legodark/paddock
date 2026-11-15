@@ -1,76 +1,66 @@
-# Preparación de la preview protegida
+# Preview privada verificada en Vercel
 
-15-11-2026. Seguimiento: [#10](https://github.com/Legodark/paddock/issues/10); candidata: [PR #6](https://github.com/Legodark/paddock/pull/6). **Red aplicada, proyecto protegido y paquete verificado; aplicación todavía sin desplegar.** Pendientes: aprobación explícita del firewall y decisión sobre el destino obligatorio del primer despliegue.
+15-11-2026. Seguimiento: [#10](https://github.com/Legodark/paddock/issues/10); candidata: [PR #6](https://github.com/Legodark/paddock/pull/6).
 
-## Configuración confirmada
+**[Abrir la Preview privada](https://paddock-ba93thzc9-legodarks-projects.vercel.app)** con la cuenta de Vercel autorizada. La app está disponible para revisión; el acceso anónimo redirige a autenticación. El dominio propio y `main` permanecen intactos.
 
-| Campo | Valor comprobado |
+## Estado publicado
+
+| Campo | Resultado |
 | --- | --- |
-| Cuenta y equipo | `legodark`, `legodarks-projects` |
-| Plan | Hobby activo, sin trial declarado |
-| Proyecto | [`paddock`](https://vercel.com/legodarks-projects/paddock), `prj_j0CAZebO2M3BsMtBR41PPbYJo8Rk` |
-| Protección | Vercel Authentication, `deploymentType: all` |
-| Framework y salida | Other (`framework: null`), `public` |
-| Recursos predeterminados | Fluid compute, región `iad1`, build básico |
-| Integración Git | Ninguna; sin despliegues automáticos al hacer push |
-| Despliegues de Paddock | Cero |
-| Dominio automático reservado | `paddock-phi-hazel.vercel.app`, sin app desplegada |
-| Dominio propio | Sin asociar `paddock.juancerezo.com` ni modificar su DNS |
+| Equipo y plan | `legodarks-projects`, Hobby activo |
+| Proyecto | [`paddock`](https://vercel.com/legodarks-projects/paddock), separado del portfolio |
+| Despliegue vigente para revisión | `dpl_ys9CpWow2Hx4x8aAAQEWb3WqKU2G`, READY, Preview |
+| Fuente desplegada | `fbb6082ec7454bc39a0d2e4d6695ffbb57a2e32e` |
+| Protección | Vercel Authentication en todas las URLs (`all`) |
+| Firewall | Una regla activa: prefijo `/api`, 60 solicitudes/60 s/IP, ventana fija, rechazo 429 |
+| Función local con constructor oficial | **121.114.317 bytes = 115,50 MiB**, Python 3.12 |
+| Web pública del paquete | **292.855 bytes**, cinco archivos; sin modelos o SQLite |
+| Dominio propio | Sin asociar `paddock.juancerezo.com`; DNS sin cambios |
+| Extras de pago | Ninguno; sin Blob, Redis, base gestionada ni Observability Plus |
 
-La [petición de creación](../deploy/preview/project-create.json) se ejecutó en el equipo explícito y se verificó después mediante GET. Según las fuentes oficiales de [Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication) y [Deployment Protection](https://vercel.com/docs/deployment-protection), la autenticación de **todos** los despliegues está incluida en todos los planes. Mantiene la revisión privada mientras se decide el alcance público del catálogo (#17). No se activa Password Protection, Passport ni una prueba Pro.
+La [evidencia saneada](evidence/preview/verified.json) contiene las respuestas observadas, hashes, cuenta, presupuesto y límites. No incluye credenciales ni respuestas completas del catálogo. Las cuotas siguen compartidas con el portfolio; el margen mensual de compute no está certificado.
 
-El proyecto está separado del portfolio; las cuotas de equipo siguen compartidas. El margen mensual de CPU, memoria e invocaciones continúa sin certificar. **0 € adicionales es la restricción de configuración; no demuestra margen de cuota ni disponibilidad ilimitada.**
+## Publicación y correcciones
 
-## Paquete comprobado
+El propietario aprobó expresamente la regla de firewall y el primer despliegue privado. La CLI publicó exactamente el cambio revisado de Paddock con el digest de efectos y confirmó después la regla en configuración **live**. La activación no acredita todavía el umbral real, la recuperación o la exclusión de invocaciones de #11.
 
-Fuente: commit `ad60e5b196a4091e72a94c3de99c2e99ecfb4a99`. Directorio fuera de Git: `/workspace/.paddock/preview-preparation-20261115/package`. Los assets congelados y SQLite ya están incluidos; no basta con desplegar directamente `deploy/vercel` desde Git.
+Vercel obliga a que el primer despliegue de un proyecto tenga destino Production. Se creó con `--prod --skip-domain`, autenticación obligatoria y cero alias promovidos. Esa primera versión de `ad60e5b` se conserva como diagnóstico: no usarla para rollback porque contiene el defecto de consultas descrito debajo. Las versiones posteriores se publicaron como Preview; no se fusionó el PR ni se conectó Git para desplegar automáticamente.
 
-- React compilado con Node 24.22.1/npm 11.9.0; Python 3.12.14 y requisitos con hashes.
-- CLI 65.16.0 en **dry run**, sin subir archivos: Other, 20 archivos, **117.469.499 bytes de fuentes**.
-- Constructor fijado `@vercel/python@32.0.0`, con los overrides auditados de `ci/vercel-tooling`: **121.114.042 bytes = 115,50 MiB** de función.
-- `public/`: **292.855 bytes**, 88.650 bytes gzip, cinco archivos. Modelos y SQLite quedan fuera de esa salida pública.
-- Prueba aislada `python -I -S` de la función: readiness, predicción de **20.155 €**, clasificación, 719 modelos, 50 provincias, diez resultados reales y rutas privadas con 404.
-- **17 pruebas de API pasadas**, cero fallos, errores u omitidos. La política local de firewall también pasó su comprobación de forma y cobertura.
+La primera comprobación real detectó que `/api/:path*` compila a `/api/index.py?path=$1`. El parámetro añadido por Vercel hacía que `/cars` rechazase incluso consultas válidas. Se corrigió el rewrite a `/api(/.*)?`, conservando la validación estricta del backend. El control de CI usa `@vercel/routing-utils@6.6.1` y rechaza una reversión al patrón defectuoso. Se fija `path-to-regexp` a 6.3.0 en esa herramienta de CI para evitar la dependencia vulnerable 6.1.0; la auditoría ampliada vuelve a dar cero avisos conocidos.
 
-Los modelos no cambian; no hay scraping, entrenamiento, Blob, Redis, MongoDB ni almacenamiento adicional. La [evidencia saneada](evidence/preview/preparation.json) conserva inventario, hashes y resultados, sin credenciales.
+También se detectó que el documento principal no recibía tres cabeceras generales. Se incluyeron explícitamente en su regla específica y se verificaron en Vercel. Se desactivó la Toolbar del proyecto para conservar la CSP de la aplicación; la Preview final no contiene el script inyectado de `vercel.live`.
 
-Las [cuotas de subida](https://vercel.com/docs/limits#static-file-uploads) indican 100 MB en Hobby. Las fuentes sin comprimir superan esa cifra: se propone [`--archive=tgz`](https://vercel.com/docs/cli/deploy#archive). Un tar.gz local de los veinte archivos mide **30.121.547 bytes**; es una estimación de compresión, no el archivo real de subida de la CLI. La aceptación del upload/build sigue pendiente de prueba en Vercel.
+## Comprobaciones realizadas
 
-## Acceso de red resuelto
+- **20 peticiones de API en total**, incluyendo el diagnóstico inicial: concurrencia máxima uno, sin reintentos automáticos. No son veinte éxitos: las dos consultas rechazadas de la primera versión permitieron localizar el defecto y quedaron corregidas.
+- En la Preview con el rewrite corregido: readiness, predicción de **20.155 €** con comparables, clasificador, catálogo de 719 modelos/50 provincias y tres coches Citroën de Málaga por debajo de 20.000 €, con filtros reales.
+- Contrato inválido → 400; cuerpo superior al límite → 413; entrada directa, raíz API y ruta desconocida → 404. La ruta codificada ensayada se rechaza con 404 y no se interpreta como otro endpoint válido.
+- API con `Cache-Control: no-store`, cabeceras de seguridad y sin CORS abierto. Acceso anónimo a la API → 302 de autenticación.
+- La última publicación cambia únicamente `vercel.json` para las cabeceras del documento. Código Python, requisitos, modelos, SQLite y web son **idénticos byte a byte** a la versión cuya API se probó. No se volvió a invocar la API tras agotar el presupuesto.
+- En la publicación final: **13 comprobaciones estáticas**, incluyendo documento/JS/CSS idénticos al build, licencias, robots, cabeceras y autenticación anónima. CSP restrictiva, `nosniff`, `DENY` y `no-referrer` efectivos.
+- Modelos, SQLite, manifest privado, requirements, fuente Python, source map y `.env` → 404. Se usaron rangos y límite de descarga al comprobar recursos privados.
+- El CDN puede devolver CORS `*` en archivos estáticos: se distingue de la ausencia de CORS abierto en la API, que no cambió.
+- Localmente: 17 pruebas de API y siete guardas pasadas; dos regresiones de compilación de rutas/cabeceras comprobadas; función oficial materializada lista, con la misma predicción, clasificación y consultas.
 
-El propietario publicó el permiso `*.vercel.app`. La nueva instancia confirmó la política aplicada y una conexión HTTPS a `paddock-phi-hazel.vercel.app` llegó a Vercel: **404 `DEPLOYMENT_NOT_FOUND`**. Es el resultado esperado para un proyecto sin despliegues y resuelve el rechazo previo del túnel (403). No es una prueba funcional de la app.
+El primer health observado en la Preview corregida tardó 3,706 s; las respuestas funcionales siguientes estuvieron aproximadamente entre 0,21 y 0,38 s. Son tiempos HTTP del cliente y no prueban un arranque frío real, CPU facturada o memoria consumida. Los logs gratuitos consultados no aportaron esas métricas. No se contrató otro producto para obtenerlas.
 
-Se confirmó también Hobby activo, `ssoProtection: all`, ausencia de integración Git y los SHA-256 de los veinte archivos preparados. No se volvió a modificar o publicar el entorno. [Evidencia de plataforma y requisitos de la CLI](evidence/preview/platform-readiness.json).
+## Acceso de herramientas y reproducibilidad
 
-## Requisitos concretos detectados en la CLI
+La red `*.vercel.app` ya está aplicada y comprobada. El paquete completo y sus assets se generan fuera de Git y se suben con `--archive=tgz`; el proveedor aceptó upload y build en Hobby. La integración Git del proyecto permanece desactivada: no basta con conectar `deploy/vercel` sin generar los assets.
 
-La regla gratuita de 60/min/IP ya está **preparada como un único cambio de borrador remoto** para Paddock. La publicación sin confirmación devolvió `confirmation_required`: «Can't publish firewall changes for project paddock without approval». El efecto revisable es hacer efectivo ese único cambio de Paddock. No se han modificado las reglas de otros proyectos. La CLI exige aprobación humana y el digest de efectos; no se ha ejecutado el comando de confirmación ni usado una API alternativa para evitar esa aprobación.
+La CLI creó y gestionó un secreto de **Protection Bypass for Automation** para las pruebas autorizadas del proyecto. Sus valores no se leyeron ni publicaron; el acceso anónimo se comprobó por separado y continúa protegido. No se modificaron los bypass del firewall.
 
-La publicación de la app como Preview fue rechazada antes de crear un despliegue: **el primer despliegue de un proyecto debe tener destino Production**; las versiones posteriores pueden usar Preview. Además, `--skip-domain` solo se admite con Production. El comando propuesto anteriormente con `--environment preview --skip-domain` era incompatible y se corrige abajo.
+La CLI 65.16.0 reenviaba `--global-config` a curl como argumento no reconocido. Se seleccionó el perfil existente mediante `XDG_DATA_HOME=/workspace/.paddock/vercel-curl-data`, con un enlace de directorio hacia su ubicación original; no se copiaron ni inspeccionaron credenciales. El mecanismo usa el cliente oficial y conserva proxy, certificados y verificación TLS.
 
-La alternativa pendiente de decisión es crear el primer despliegue con `--prod --skip-domain`, manteniendo Vercel Authentication para todas las URLs. No se asociaría el dominio del usuario, no se fusionaría el PR y no se activaría acceso público. El nombre técnico del destino sería Production. **No se ha ejecutado esa alternativa.** Una consulta posterior confirmó cero despliegues y cero peticiones de smoke a la API.
+Directorios de trabajo: `/workspace/.paddock/preview-preparation-20261115` (primera publicación), `preview-routing-fix-20261115` (pruebas de API) y `preview-headers-fix-20261115` (publicación y estáticos finales), bajo `/workspace/.paddock`.
 
-## Publicación y prueba previstas
+## Pendientes antes de acceso público
 
-1. Red, cuenta, Hobby, proyecto, protección e inventario ya están comprobados. Revalidar los estados que puedan cambiar antes de publicar.
-2. Tras la aprobación humana del efecto, publicar solo el borrador de Paddock y comprobar la regla activa. **La regla 60/min/IP todavía no está aplicada ni probada**. Detenerse ante cambios en el digest o requisitos de pago.
-3. Si el propietario acepta el destino obligatorio del primer despliegue, ejecutar el siguiente comando, **todavía no ejecutado**:
+- **#11:** probar umbral 60/min/IP, 429, recuperación y exclusión de invocaciones con otro presupuesto acotado. No certificar seguridad completa por la configuración activa.
+- **#10:** documentar o medir, si las opciones gratuitas lo permiten, arranque frío y memoria/CPU efectivos; permanecen desconocidos. No realizar más llamadas de API dentro del presupuesto agotado.
+- **#12:** interacción real en navegador, móvil, teclado, zoom nativo y lector de pantalla. No se ha ejecutado la matriz de CI contra Vercel.
+- **#17:** decidir y documentar las condiciones de reutilización pública del catálogo histórico.
+- **#14/#15:** release, rollback y subdominio; después, issue en AI-Portfolio con URL/release públicas verificadas.
 
-   ```bash
-   /workspace/.paddock/vercel-cli/node_modules/.bin/vercel deploy \
-     /workspace/.paddock/preview-preparation-20261115/package \
-     --project prj_j0CAZebO2M3BsMtBR41PPbYJo8Rk \
-     --scope legodarks-projects \
-     --global-config /workspace/.paddock/vercel-cli-config \
-     --prod --skip-domain --archive=tgz \
-     --meta paddockSourceCommit=ad60e5b196a4091e72a94c3de99c2e99ecfb4a99 \
-     --yes
-   ```
-
-4. Registrar ID, URL, target y build, indicando expresamente Production si se usa la alternativa anterior. Comprobar acceso anónimo protegido antes del smoke con acceso autorizado de Vercel. No guardar credenciales de automatización en informes ni URLs compartidas. Las versiones posteriores podrán usar `--environment preview`, sin `--skip-domain`.
-5. Primer smoke: **máximo veinte peticiones de API**, concurrencia máxima dos, sin reintentos, `maxDuration: 10`. Cubrir health frío/caliente, predicción, clasificación/consulta, routing y archivos privados. Reservar parte del presupuesto para el recorrido web; la matriz completa de CI no se ejecuta contra Vercel.
-6. Detenerse ante cuotas agotadas, 429/503 de plataforma, build fallido o requisito de pago. Registrar únicamente consumos observados; desconocido no significa cero.
-
-Probar el umbral **60/min/IP y su recuperación** de #11 requiere un procedimiento posterior con presupuesto revisado: no cabe en veinte solicitudes permitidas. Aplicar una regla no acredita su enforcement ni la exclusión de invocaciones.
-
-Si falla el despliegue, cancelar el build o retirar únicamente el ID de despliegue de Paddock y verificar su retirada. No borrar el proyecto ni modificar el portfolio. La release pública, el subdominio, la fusión del PR y la issue de AI-Portfolio permanecen en sus fases. La preview privada no cierra #11/#12/#17.
+Si es necesario retirar una versión, identificar el ID exacto de Paddock, usar la retirada normal de Vercel con la aprobación que solicite y verificarla. No se ha ejecutado una retirada o rollback como parte de este smoke. Ninguna de las pruebas autoriza por sí sola el acceso público al catálogo.
