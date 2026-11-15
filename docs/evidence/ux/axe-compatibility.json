@@ -1,0 +1,27 @@
+{
+  "tool": "axe-core",
+  "installed_version": "4.14.0",
+  "registry_latest_checked": "4.14.0",
+  "integration": "@axe-core/playwright 4.14.0",
+  "affected_browser": "Firefox 159.0",
+  "upstream_issue": "https://github.com/dequelabs/axe-core/issues/5549",
+  "upstream_proposed_fix": "https://github.com/dequelabs/axe-core/pull/5561",
+  "upstream_patch_commit": "144ca88481b1d87fc557f928501cb6db8b75385d",
+  "upstream_patch_status_when_reviewed": "OPEN, not released",
+  "local_scope": "Tests only. The Firefox axeSource adapter changes only getIdrefsValue to prefer a nonempty attribute before reading a reflected element property. No app DOM, getter or runtime dependency is patched.",
+  "original_function_sha256": "c1db9f8f27bf047cf1869b455dc66beb554200c25766fe0ae2cfcd4931abab43",
+  "source_guards": [
+    "Exact axe-core version",
+    "Exact SHA-256 of original function",
+    "Re-review/removal required on upgrade"
+  ],
+  "rules_disabled": [],
+  "regression": [
+    "Valid attribute ref is accepted without reading the failing getter",
+    "Missing attribute target is still reported as aria-dialog-name violation",
+    "Empty attribute with a valid reflected-element list remains supported"
+  ],
+  "license": "MPL-2.0",
+  "license_file": "ci/licenses/axe-core-MPL-2.0.txt",
+  "removal_condition": "Use an official release containing the fix and remove the adapter after verifying all browser profiles."
+}

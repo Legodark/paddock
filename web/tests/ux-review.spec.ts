@@ -14,10 +14,8 @@ async function prediction(page: Page) {
 }
 const message = 'Busco coches Citroën de menos de 20.000 euros en Málaga';
 
-test.beforeAll(async ({ browser, browserName }, info) => {
-  if (process.env.GITHUB_ACTIONS === 'true') {
-    console.log(`::notice title=Paddock browser ${info.project.name}::${browserName} ${browser.version()}; emulation profile, no physical-device claim`);
-  }
+test.beforeEach(async ({ browser, browserName }, info) => {
+  info.annotations.push({ type: 'browser-version', description: `${browserName} ${browser.version()}` });
 });
 
 test('prediction rate limiting preserves the vehicle and supports a deliberate retry', async ({ page }) => {

@@ -1,0 +1,50 @@
+{
+  "run_url": "https://github.com/Legodark/paddock/actions/runs/43729562784",
+  "job_url": "https://github.com/Legodark/paddock/actions/runs/43729562784/job/132858782319",
+  "commit": "f0a772b5f58dfa52acd16272e5b92a1cefe753fd",
+  "observed_at": "2026-11-15T15:28:11.093637+00:00",
+  "status": "success",
+  "source": "Authenticated GitHub check annotations, original values. No raw credentials or provider logs.",
+  "annotations": [
+    {
+      "title": "Paddock CI - Unit tests",
+      "message": "80 passed"
+    },
+    {
+      "title": "Paddock CI - bundle-audit.json",
+      "message": "8 packages, 0 advisories, 0 skipped"
+    },
+    {
+      "title": "Paddock CI - api-audit.json",
+      "message": "7 packages, 0 advisories, 0 skipped"
+    },
+    {
+      "title": "Paddock CI - build-tools-audit.json",
+      "message": "0 known vulnerabilities"
+    },
+    {
+      "title": "Paddock CI - npm-audit.json",
+      "message": "0 known vulnerabilities"
+    },
+    {
+      "title": "Paddock browser mobile-webkit",
+      "message": "webkit 27.2; emulation profile, no physical-device claim"
+    },
+    {
+      "title": "Paddock browser desktop-webkit",
+      "message": "webkit 27.2; emulation profile, no physical-device claim"
+    },
+    {
+      "title": "Paddock browser desktop-firefox",
+      "message": "firefox 159.0; emulation profile, no physical-device claim"
+    },
+    {
+      "title": "Paddock browser mobile-chromium",
+      "message": "chromium 157.0.8103.50; emulation profile, no physical-device claim"
+    },
+    {
+      "title": "Paddock browser desktop-chromium",
+      "message": "chromium 157.0.8103.50; emulation profile, no physical-device claim"
+    }
+  ]
+}

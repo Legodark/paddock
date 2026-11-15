@@ -23,7 +23,11 @@ Si `PADDOCK_CHROMIUM` no está definido, se busca primero el Chrome/Chromium ins
 
 La workflow define `PADDOCK_EXTENDED_BROWSERS=1` para instalar también los navegadores Firefox y WebKit fijados por Playwright, con sus dependencias del runner. Prueba cinco perfiles: escritorio Chrome, móvil Chrome, escritorio Firefox, escritorio WebKit y móvil WebKit. El modo local predeterminado mantiene los dos perfiles Chromium; activar la extensión requiere un entorno compatible con esas descargas y dependencias. Las versiones efectivas se registran mediante anotaciones. WebKit móvil es emulación, no una prueba de Safari/iPhone físicos.
 
+El resumen incluye el recuento y versión de cada perfil y publica primero una anotación JSON completa, porque GitHub limita las anotaciones individuales por paso. Las versiones proceden de las anotaciones de Playwright, sin consumir un aviso de GitHub por caso. La revisión ampliada pasó 239 pruebas; el [informe UX](../docs/ux-y-accesibilidad.md) conserva el resultado, los fallos previos y las limitaciones pendientes.
+
 Las capturas opcionales dentro de las comprobaciones de CSP se limitan a Chromium: Playwright 1.65 inserta una etiqueta `<style>` para sincronizar capturas en Firefox/WebKit y provoca por sí mismo `style-src-elem`. La funcionalidad y la CSP se comprueban en todos los perfiles; no se habilitan estilos inline en la política para acomodar la herramienta. Los errores de navegador incluyen proyecto/caso y diagnóstico de procesos, con caracteres de comando escapados.
+
+El analizador axe 4.14.0 se adapta únicamente en las pruebas Firefox al fallo de reflexión ARIA del navegador documentado en [#5549](https://github.com/dequelabs/axe-core/issues/5549), mediante la propuesta [#5561](https://github.com/dequelabs/axe-core/pull/5561), aún no publicada por el proveedor. Se fija y comprueba el hash de la función antes de aplicar el cambio; la regresión conserva la detección de etiquetas erróneas y las propiedades válidas. No se omiten reglas ni se modifica el runtime web. La licencia MPL-2.0 está en [licenses](licenses/axe-core-MPL-2.0.txt); retirar la adaptación tras revisar una versión oficial correctora.
 
 ## Controles
 

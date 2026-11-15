@@ -32,6 +32,7 @@ def browser_error(data):
 
 def summarize(directory):
     results = []
+    profiles = {}
     def read(name):
         path = directory / name
         if not path.is_file():
@@ -72,6 +73,24 @@ def summarize(directory):
             results.append({'check': label, 'passed': passed > 0 and data.get('failures') == data.get('errors') == data.get('skipped') == 0, 'detail': f'{passed} passed'})
     data = read('browser-tests.json')
     if data is not None:
+        def browser_profiles(suites):
+            for suite in suites:
+                for spec in suite.get('specs', []):
+                    for test in spec.get('tests', []):
+                        name = test.get('projectName', test.get('projectId', 'unknown'))
+                        profile = profiles.setdefault(name, {'project': name, 'version': None, 'passed': 0, 'failed': 0, 'skipped': 0})
+                        for annotation in test.get('annotations', []):
+                            if annotation.get('type') == 'browser-version':
+                                profile['version'] = annotation.get('description')
+                        status = (test.get('results') or [{}])[-1].get('status')
+                        if status == 'passed':
+                            profile['passed'] += 1
+                        elif status == 'skipped':
+                            profile['skipped'] += 1
+                        else:
+                            profile['failed'] += 1
+                browser_profiles(suite.get('suites', []))
+        browser_profiles(data.get('suites', []))
         stats = data.get('stats', {})
         passed = stats.get('expected', 0)
         successful = passed > 0 and stats.get('unexpected') == stats.get('skipped') == stats.get('flaky') == 0 and not data.get('errors')
@@ -106,6 +125,7 @@ def summarize(directory):
         results.append({'check': 'Local firewall policy', 'passed': data.get('valid_local_policy') is True and data.get('remote_applied') is False, 'detail': 'Local policy only; not applied or enforced on Vercel'})
     passed = all(row['passed'] for row in results)
     result = {'passed': passed, 'checks': results, 'execution_context': 'github-actions' if os.environ.get('GITHUB_ACTIONS') == 'true' else 'local', 'scope': 'Checks on the current runner only; no deployment, Vercel quotas or firewall enforcement verified.'}
+    result['browser_profiles'] = list(profiles.values())
     directory.mkdir(parents=True, exist_ok=True)
     (directory / 'summary.json').write_text(json.dumps(result, indent=2) + '\n')
     markdown = ['## Paddock CI', '', '| Check | Result | Detail |', '| --- | --- | --- |']
@@ -121,6 +141,8 @@ def summarize(directory):
     if os.environ.get('GITHUB_ACTIONS') == 'true':
         def command_escape(value):
             return str(value).replace('%', '%25').replace('\r', '%0D').replace('\n', '%0A')
+        # GitHub limits notices per step. Preserve all checks in one complete, escaped annotation first.
+        print('::notice title=Paddock CI complete::' + command_escape(json.dumps(result, ensure_ascii=False)))
         for row in results:
             level = 'notice' if row['passed'] else 'error'
             title = command_escape('Paddock CI - ' + row['check']).replace(',', '%2C').replace(':', '%3A')
