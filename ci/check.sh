@@ -68,8 +68,15 @@ if [[ -z ${PADDOCK_CHROMIUM:-} ]]; then
   PADDOCK_CHROMIUM=$(cd "$paddock_repo/web" && node -e 'process.stdout.write(require("@playwright/test").chromium.executablePath())')
   export PADDOCK_CHROMIUM
 fi
-CI=1 npm --prefix "$paddock_repo/web" run test:e2e
-cp "$paddock_repo/web/test-results/results.json" "$paddock_reports/browser-tests.json"
+rm -f "$paddock_repo/web/test-results/results.json"
+paddock_browser_status=0
+CI=1 npm --prefix "$paddock_repo/web" run test:e2e || paddock_browser_status=$?
+if [[ -f "$paddock_repo/web/test-results/results.json" ]]; then
+  cp "$paddock_repo/web/test-results/results.json" "$paddock_reports/browser-tests.json"
+fi
+if [[ $paddock_browser_status -ne 0 ]]; then
+  exit "$paddock_browser_status"
+fi
 
 export PADDOCK_VERCEL_TOOLING="$paddock_repo/ci/vercel-tooling"
 # The official builder invokes uv through PATH. This change is scoped to this process.

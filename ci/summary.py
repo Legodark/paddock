@@ -3,6 +3,30 @@ import argparse
 import json
 import os
 from pathlib import Path
+import re
+
+
+def error_excerpt(value):
+    text = value.get('message', '') if isinstance(value, dict) else str(value)
+    text = re.sub(r'\x1b\[[0-?]*[ -/]*[@-~]', '', text)
+    return text if len(text) <= 1800 else text.splitlines()[0] + '\n…\n' + text[-1600:]
+
+
+def browser_error(data):
+    for error in data.get('errors', []):
+        return error_excerpt(error)
+    def visit(suites):
+        for suite in suites:
+            for spec in suite.get('specs', []):
+                for test in spec.get('tests', []):
+                    for result in test.get('results', []):
+                        if result.get('error'):
+                            return spec.get('title', 'Browser case') + ': ' + error_excerpt(result['error'])
+            nested = visit(suite.get('suites', []))
+            if nested:
+                return nested
+        return ''
+    return visit(data.get('suites', []))
 
 
 def summarize(directory):
@@ -12,7 +36,14 @@ def summarize(directory):
         if not path.is_file():
             results.append({'check': name, 'passed': False, 'detail': 'Not completed'})
             return None
-        return json.loads(path.read_text())
+        try:
+            data = json.loads(path.read_text())
+            if not isinstance(data, dict):
+                raise ValueError('Expected a report object')
+            return data
+        except (ValueError, OSError):
+            results.append({'check': name, 'passed': False, 'detail': 'Invalid or incomplete JSON report'})
+            return None
     for name in ['npm-audit.json', 'build-tools-audit.json']:
         data = read(name)
         if data is not None:
@@ -42,7 +73,13 @@ def summarize(directory):
     if data is not None:
         stats = data.get('stats', {})
         passed = stats.get('expected', 0)
-        results.append({'check': 'Browser tests', 'passed': passed > 0 and stats.get('unexpected') == stats.get('skipped') == stats.get('flaky') == 0, 'detail': f'{passed} passed, no skips/retries/flaky cases'})
+        successful = passed > 0 and stats.get('unexpected') == stats.get('skipped') == stats.get('flaky') == 0 and not data.get('errors')
+        detail = f"{passed} passed, {stats.get('unexpected', 0)} failed, {stats.get('skipped', 0)} skipped, {stats.get('flaky', 0)} flaky"
+        if not successful:
+            reason = browser_error(data)
+            if reason:
+                detail += ': ' + reason
+        results.append({'check': 'Browser tests', 'passed': successful, 'detail': detail})
     data = read('frozen-models.json')
     if data is not None:
         results.append({'check': 'Frozen model reproduction', 'passed': len(data.get('artifacts', {})) == 2, 'detail': 'Both reviewed artifact SHA-256 checks passed'})
@@ -60,7 +97,7 @@ def summarize(directory):
     directory.mkdir(parents=True, exist_ok=True)
     (directory / 'summary.json').write_text(json.dumps(result, indent=2) + '\n')
     markdown = ['## Paddock CI', '', '| Check | Result | Detail |', '| --- | --- | --- |']
-    escape = lambda text: str(text).replace('|', '\\|').replace('\n', ' ').replace('<', '&lt;').replace('>', '&gt;')
+    escape = lambda text: str(text).replace('|', '\\|').replace('\n', ' ').replace('\r', ' ').replace('<', '&lt;').replace('>', '&gt;').replace('::', '&#58;&#58;')
     markdown += [f"| {escape(row['check'])} | {'PASS' if row['passed'] else 'FAIL'} | {escape(row['detail'])} |" for row in results]
     markdown += ['', 'No deployment or provider credentials are used by this workflow.', '']
     text = '\n'.join(markdown)
@@ -69,6 +106,13 @@ def summarize(directory):
         with Path(os.environ['GITHUB_STEP_SUMMARY']).open('a') as stream:
             stream.write(text)
     print(text)
+    if os.environ.get('GITHUB_ACTIONS') == 'true':
+        def command_escape(value):
+            return str(value).replace('%', '%25').replace('\r', '%0D').replace('\n', '%0A')
+        for row in results:
+            level = 'notice' if row['passed'] else 'error'
+            title = command_escape('Paddock CI - ' + row['check']).replace(',', '%2C').replace(':', '%3A')
+            print(f"::{level} title={title}::{command_escape(row['detail'])}")
     return passed
 
 
