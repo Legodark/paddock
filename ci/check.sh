@@ -53,6 +53,7 @@ paddock_uv="$paddock_tools/bin/uv"
 
 npm --prefix "$paddock_repo/web" ci
 npm --prefix "$paddock_repo/ci/vercel-tooling" ci --ignore-scripts
+node "$paddock_repo/ci/check_vercel_routing.cjs" > "$paddock_reports/routing.json"
 npm --prefix "$paddock_repo/web" audit --json > "$paddock_reports/npm-audit.json"
 npm --prefix "$paddock_repo/ci/vercel-tooling" audit --json > "$paddock_reports/build-tools-audit.json"
 npm --prefix "$paddock_repo/web" test -- --reporter=default --reporter=json --outputFile="$paddock_reports/unit-tests.json"
