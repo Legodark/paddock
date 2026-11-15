@@ -53,7 +53,7 @@ nav a:hover, nav .nav-active { color: #fff; }
 .project-label, .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 10px; letter-spacing: 1.65px; font-weight: 650; color: var(--muted); }
 .project-label { color: var(--accent-light); }
 .status-dot { width: 6px; height: 6px; background: var(--accent); display: inline-block; flex-shrink: 0; border-radius: 50%; box-shadow: 0 0 0 4px #f0ae6b12; }
-h1 { font-size: clamp(42px, 5.1vw, 66px); font-weight: 650; letter-spacing: -2.8px; line-height: 1.05; margin-block: 21px 17px; }
+h1 { font-size: clamp(42px, 5.1vw, 66px); font-weight: 650; letter-spacing: -2.8px; line-height: 1.05; margin-block: 21px 17px; overflow-wrap: anywhere; }
 h1 em { font-style: normal; color: var(--accent); }
 .hero-copy > p { color: var(--muted); max-width: 475px; font-size: 14px; margin-bottom: 0; }
 .historical-note { display: flex; gap: 16px; align-items: flex-start; padding: 24px 0 24px 26px; border-left: 1px solid #46516a; max-width: 370px; justify-self: end; }

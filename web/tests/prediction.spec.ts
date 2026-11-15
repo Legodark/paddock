@@ -1,7 +1,6 @@
 import { expect, test } from '@playwright/test';
 import type { Page } from '@playwright/test';
-import AxeBuilder from '@axe-core/playwright';
-import { accessibilityTest } from './accessibility-fixture';
+import { accessibilityScanner } from './axe-compat';
 
 async function ready(page: Page) {
   await page.goto('/');
@@ -127,7 +126,7 @@ test('prevents duplicate submits while calculating', async ({ page }) => {
   expect(submissions).toBe(1);
 });
 
-accessibilityTest('keyboard access and automated accessibility checks on initial and result states', async ({ page }) => {
+test('keyboard access and automated accessibility checks on initial and result states', async ({ page, browserName }) => {
   await ready(page);
   await page.keyboard.press('Tab');
   await expect(page.getByRole('link', { name: 'Saltar al estimador' })).toBeFocused();
@@ -137,11 +136,11 @@ accessibilityTest('keyboard access and automated accessibility checks on initial
   await page.keyboard.press('Tab');
   await expect(page.getByLabel('Marca', { exact: true })).toBeFocused();
   await expect(page.getByRole('link', { name: 'Saltar al estimador' })).toHaveCSS('clip-path', 'inset(50%)');
-  const initial = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa']).analyze();
+  const initial = await accessibilityScanner(page, browserName).withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa']).analyze();
   expect(initial.violations).toEqual([]);
   await page.getByRole('button', { name: 'Rellenar un ejemplo' }).click();
   await estimate(page);
-  const result = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa']).analyze();
+  const result = await accessibilityScanner(page, browserName).withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa']).analyze();
   expect(result.violations).toEqual([]);
 });
 

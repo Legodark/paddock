@@ -1,7 +1,6 @@
 import { expect, test } from '@playwright/test';
 import type { Page } from '@playwright/test';
-import AxeBuilder from '@axe-core/playwright';
-import { accessibilityTest } from './accessibility-fixture';
+import { accessibilityScanner } from './axe-compat';
 
 const example = 'Busco coches Citroën de menos de 20.000 euros en Málaga';
 async function ready(page: Page) {
@@ -199,11 +198,11 @@ test('user markup stays text and clearing removes the local conversation', async
   expect(await page.evaluate(() => ({ local: localStorage.length, session: sessionStorage.length }))).toEqual({ local: 0, session: 0 });
 });
 
-accessibilityTest('chat states pass automated accessibility and fit narrow screens', async ({ page }, info) => {
+test('chat states pass automated accessibility and fit narrow screens', async ({ page, browserName }, info) => {
   await ready(page);
   for (const state of ['initial', 'results']) {
     if (state === 'results') await realSearch(page);
-    const result = await new AxeBuilder({ page }).include('#consultar').withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa']).analyze();
+    const result = await accessibilityScanner(page, browserName).include('#consultar').withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa']).analyze();
     expect(result.violations).toEqual([]);
   }
   const widths = info.project.name.startsWith('mobile') ? [390, 360, 320] : [1440, 1024, 768];
