@@ -4,6 +4,8 @@ Fecha: 14-11-2026. Estado: funcional y comprobado localmente; sin despliegue ni 
 
 Actualización del 15-11-2026: el [chatbot](chatbot-react.md) ya está integrado y la [revisión de seguridad local](seguridad-reactivacion.md) está documentada. Las métricas y capturas de este informe conservan la línea base del primer recorrido.
 
+La [revisión UX posterior](ux-y-accesibilidad.md) recoge las correcciones de navegación y texto ampliado, y la CI de 239 pruebas con cinco perfiles de navegador. La evidencia siguiente sigue siendo la línea base del 14-11-2026; no se presenta como una prueba de Safari/iOS físico o un lector de pantalla.
+
 ## Resultado
 
 La nueva interfaz en [web](../web/README.md) permite seleccionar un vehículo, validar sus características, consultar la API de inferencia y comparar el resultado con registros reales del mismo modelo. Mantiene los IDs canónicos auditados; el ejemplo Citroën C3 aircross usa `model_id=118` y devuelve **20.155 €**, igual que el modelo original. No hay scraping, entrenamiento ni predicciones prefabricadas.

@@ -1,50 +1,111 @@
 {
-  "run_url": "https://github.com/Legodark/paddock/actions/runs/43729562784",
-  "job_url": "https://github.com/Legodark/paddock/actions/runs/43729562784/job/132858782319",
-  "commit": "f0a772b5f58dfa52acd16272e5b92a1cefe753fd",
-  "observed_at": "2026-11-15T15:28:11.093637+00:00",
-  "status": "success",
-  "source": "Authenticated GitHub check annotations, original values. No raw credentials or provider logs.",
-  "annotations": [
-    {
-      "title": "Paddock CI - Unit tests",
-      "message": "80 passed"
-    },
-    {
-      "title": "Paddock CI - bundle-audit.json",
-      "message": "8 packages, 0 advisories, 0 skipped"
-    },
-    {
-      "title": "Paddock CI - api-audit.json",
-      "message": "7 packages, 0 advisories, 0 skipped"
-    },
-    {
-      "title": "Paddock CI - build-tools-audit.json",
-      "message": "0 known vulnerabilities"
-    },
-    {
-      "title": "Paddock CI - npm-audit.json",
-      "message": "0 known vulnerabilities"
-    },
-    {
-      "title": "Paddock browser mobile-webkit",
-      "message": "webkit 27.2; emulation profile, no physical-device claim"
-    },
-    {
-      "title": "Paddock browser desktop-webkit",
-      "message": "webkit 27.2; emulation profile, no physical-device claim"
-    },
-    {
-      "title": "Paddock browser desktop-firefox",
-      "message": "firefox 159.0; emulation profile, no physical-device claim"
-    },
-    {
-      "title": "Paddock browser mobile-chromium",
-      "message": "chromium 157.0.8103.50; emulation profile, no physical-device claim"
-    },
-    {
-      "title": "Paddock browser desktop-chromium",
-      "message": "chromium 157.0.8103.50; emulation profile, no physical-device claim"
-    }
-  ]
+  "run_url": "https://github.com/Legodark/paddock/actions/runs/43730435190",
+  "job_url": "https://github.com/Legodark/paddock/actions/runs/43730435190/job/132861449787",
+  "commit": "61aba14ce71b7d93287f02f2364694f2550aec0d",
+  "observed_at": "2026-11-15T15:38:13.451576+00:00",
+  "source": "Original complete CI summary from the authenticated GitHub check annotation. No provider credentials or raw logs.",
+  "summary": {
+    "passed": true,
+    "checks": [
+      {
+        "check": "npm-audit.json",
+        "passed": true,
+        "detail": "0 known vulnerabilities"
+      },
+      {
+        "check": "build-tools-audit.json",
+        "passed": true,
+        "detail": "0 known vulnerabilities"
+      },
+      {
+        "check": "api-audit.json",
+        "passed": true,
+        "detail": "7 packages, 0 advisories, 0 skipped"
+      },
+      {
+        "check": "bundle-audit.json",
+        "passed": true,
+        "detail": "8 packages, 0 advisories, 0 skipped"
+      },
+      {
+        "check": "Unit tests",
+        "passed": true,
+        "detail": "80 passed"
+      },
+      {
+        "check": "API tests",
+        "passed": true,
+        "detail": "17 passed"
+      },
+      {
+        "check": "CI guard tests",
+        "passed": true,
+        "detail": "7 passed"
+      },
+      {
+        "check": "Browser tests",
+        "passed": true,
+        "detail": "135 passed, 0 failed, 0 skipped, 0 flaky; Google Chrome 157.0.8103.50"
+      },
+      {
+        "check": "Frozen model reproduction",
+        "passed": true,
+        "detail": "Both reviewed artifact SHA-256 checks passed"
+      },
+      {
+        "check": "Materialized function and budgets",
+        "passed": true,
+        "detail": "121114042 function bytes, 292855 public bytes"
+      },
+      {
+        "check": "Workflow and bash syntax",
+        "passed": true,
+        "detail": "actionlint 1.7.12"
+      },
+      {
+        "check": "Local firewall policy",
+        "passed": true,
+        "detail": "Local policy only; not applied or enforced on Vercel"
+      }
+    ],
+    "execution_context": "github-actions",
+    "scope": "Checks on the current runner only; no deployment, Vercel quotas or firewall enforcement verified.",
+    "browser_profiles": [
+      {
+        "project": "desktop-chromium",
+        "version": "chromium 157.0.8103.50",
+        "passed": 27,
+        "failed": 0,
+        "skipped": 0
+      },
+      {
+        "project": "mobile-chromium",
+        "version": "chromium 157.0.8103.50",
+        "passed": 27,
+        "failed": 0,
+        "skipped": 0
+      },
+      {
+        "project": "desktop-firefox",
+        "version": "firefox 159.0",
+        "passed": 27,
+        "failed": 0,
+        "skipped": 0
+      },
+      {
+        "project": "desktop-webkit",
+        "version": "webkit 27.2",
+        "passed": 27,
+        "failed": 0,
+        "skipped": 0
+      },
+      {
+        "project": "mobile-webkit",
+        "version": "webkit 27.2",
+        "passed": 27,
+        "failed": 0,
+        "skipped": 0
+      }
+    ]
+  }
 }
