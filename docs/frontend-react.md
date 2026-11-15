@@ -52,6 +52,6 @@ Evidencias: [resumen de navegador y dependencias](evidence/web/verification.json
 1. Chatbot y extracción de filtros ya integrados y probados; ver [chatbot](chatbot-react.md). Las cifras anteriores conservan la línea base del primer recorrido.
 2. Cerrar la revisión profunda de seguridad, dependencias históricas, protección contra abuso y la revisión manual pendiente de UX/accesibilidad y navegadores.
 3. El flujo reproducible y la CI alojada ya pasaron 144 pruebas. Validar una preview real después de resolver sus condiciones de publicación y comprobar límites/consumo compartido sin contratar extras.
-4. El tag original ya está publicado y el PR #6 está en borrador. Quedan el subdominio y la issue del portfolio cuando existan versión y URL verificadas. Ver [seguimiento #7](https://github.com/Legodark/paddock/issues/7) y [revisión actual](revision-pr-y-hobby.md).
+4. El tag original ya está publicado y el PR #6 está abierto para revisión. Quedan el subdominio y la issue del portfolio cuando existan versión y URL verificadas. Ver [seguimiento #7](https://github.com/Legodark/paddock/issues/7) y [revisión actual](revision-pr-y-hobby.md).
 
 No se han reconfigurado los ajustes ya publicados del entorno ni se han creado servicios de Vercel, Blob o planes de pago.

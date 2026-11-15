@@ -73,4 +73,4 @@ npm --prefix web audit
 
 Para el bundle, usar `--path <funcion-materializada>/_vendor`. Para el original reconstruido, `--path /workspace/.paddock/venv/lib/python3.10/site-packages`; su salida 1 por los avisos es un resultado esperado y debe conservarse, no ocultarse como éxito.
 
-La CI alojada ya pasó y el PR permanece en borrador. Queda verificar SEC-01/SEC-08 sin contratar extras ni alterar otros proyectos. También faltan Firefox, Safari/iOS, lectores de pantalla, zoom y orientación. La [revisión de licencias y coste compartido](revision-pr-y-hobby.md) recoge las condiciones abiertas antes de publicar; no se ha desplegado la aplicación ni modificado DNS.
+La CI alojada ya pasó y el PR está abierto para revisión, sin fusionar. Queda verificar SEC-01/SEC-08 sin contratar extras ni alterar otros proyectos. También faltan Firefox, Safari/iOS, lectores de pantalla, zoom y orientación. La [revisión de licencias y coste compartido](revision-pr-y-hobby.md) recoge las condiciones abiertas antes de publicar; no se ha desplegado la aplicación ni modificado DNS.
