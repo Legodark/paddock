@@ -1,6 +1,6 @@
 # Protección de la API en Vercel Hobby
 
-Comprobado el 15-11-2026. Resultado: existe una opción de rate limiting incluida en Hobby y la regla está preparada localmente. **No está aplicada ni se ha probado su enforcement real**. La CLI autenticada confirmó que `legodarks-projects` sigue en `hobby` y que no existe todavía el proyecto `paddock`; no se ha cambiado la configuración del portfolio.
+Comprobado el 15-11-2026. La regla incluida en Hobby está preparada localmente y como **un único cambio de borrador remoto de Paddock**. **No está aplicada ni se ha probado su enforcement real**. El proyecto existe y `legodarks-projects` continúa en Hobby. La CLI exige aprobación humana explícita para publicar el borrador; no se ha cambiado la configuración del portfolio. Ver [estado y evidencia actual](preview-vercel.md).
 
 ## Opción gratuita verificada
 
@@ -46,16 +46,16 @@ python3 tools/inspect_firewall_policy.py
 
 La propuesta no puede convertirse en una regla de equipo ni seleccionar Token Bucket, que la documentación reserva a Enterprise. Los tests comprueban también que `/api/index.py` quede cubierto; una condición limitada solo a `/api/v1/` se rechaza. La CI marca esta comprobación explícitamente como **política local, no aplicada**.
 
-El comando generado tiene equipo y proyecto explícitos. La CLI consultada distingue crear un borrador de regla de publicar los cambios; **no se han ejecutado esas operaciones**. No se han creado reglas para el portfolio ni modificado protecciones globales del equipo.
+El comando generado tiene equipo y proyecto explícitos. Se ejecutó la creación del borrador únicamente para Paddock: la CLI confirmó ruta `/api`, 60 solicitudes/60 s, ventana fija e IP. La publicación sin confirmación devolvió `confirmation_required` y el efecto «Makes 1 draft change live for paddock immediately». **La publicación no se ha ejecutado**. El digest protege frente a cambios posteriores en el borrador. No se han creado reglas para el portfolio ni modificado protecciones globales del equipo.
 
 Evidencia: [regla y rutas](evidence/ci/firewall-policy.json), [consulta de cuenta de solo lectura](evidence/ci/account-check.json) y [fuentes/versiones](evidence/ci/sources.json).
 
 ## Cierre pendiente en la plataforma
 
-Cuando se levante la instrucción de no publicar y exista el proyecto candidato:
+Con el proyecto y el borrador existentes, antes de abrir tráfico:
 
 1. Confirmar Hobby y el tramo gratuito en el diálogo de precios de ese proyecto. Si pide contratar uso adicional o cambiar de plan, detener esa activación; no aceptarlo automáticamente.
-2. Revisar el borrador de la regla exclusivamente para Paddock y, con la publicación autorizada, aplicarlo antes de abrir el acceso público.
+2. Obtener la confirmación humana que exige la CLI para el único cambio de Paddock; comprobar de nuevo el digest y aplicarlo antes de abrir el acceso. No eludir la confirmación mediante otra API.
 3. En una preview controlada, comprobar peticiones permitidas, 429 por encima del umbral y recuperación al cambiar de ventana. Verificar también la entrada directa, rutas codificadas/normalizadas y que el bloqueo sucede antes de invocar la función.
 4. Comprobar el efecto sobre el consumo y la cuota compartida. No usar el panel de las últimas 12 horas como sustituto del consumo mensual.
 5. Documentar el comportamiento al agotar cuotas. La [documentación Hobby](https://vercel.com/docs/plans/hobby) advierte que, en la mayoría de los casos, al superar límites hay que esperar hasta 30 días para volver a usar la función. Las fuentes consultadas no concretan aquí el comportamiento específico de esta regla al agotar su millón incluido; no se ha probado ni se garantiza disponibilidad ilimitada.

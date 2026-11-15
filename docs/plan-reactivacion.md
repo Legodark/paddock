@@ -2,7 +2,7 @@
 
 Actualizado: 15 de noviembre de 2026. Estado: API, predicción, chatbot React y CI reproducible validados localmente y en GitHub; rama de revisión y tag original publicados. Propuesta gratuita de firewall preparada. Pendientes las verificaciones de plataforma. Sin despliegues. Aplicación histórica intacta.
 
-Preparación actual de #10: proyecto Paddock creado en Hobby con autenticación de todos los despliegues; paquete de la candidata comprobado y 17 pruebas de API pasadas. La red bloquea las URLs `*.vercel.app`; se guardó únicamente ese permiso adicional en el borrador, pendiente de aplicación por el propietario. La app sigue sin desplegar y el DNS sin cambios. Ver [configuración y evidencia de la preview](preview-vercel.md).
+Preparación actual de #10: Paddock creado en Hobby con autenticación de todos los despliegues; paquete comprobado y 17 pruebas de API pasadas. El propietario ya publicó `*.vercel.app` y se verificó el acceso. La regla gratuita está en borrador remoto, pendiente de la aprobación humana que exige la CLI. Vercel rechazó la primera publicación como Preview porque exige destino Production para el primer despliegue; se propone `--prod --skip-domain` con autenticación obligatoria, pendiente de decisión. La app sigue sin desplegar y el DNS sin cambios. Ver [configuración y evidencia](preview-vercel.md).
 
 ## Objetivo y alcance
 
