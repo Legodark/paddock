@@ -1,6 +1,15 @@
 # Revisión de UX, accesibilidad y navegadores
 
-15 de noviembre de 2026. Seguimiento: [#12](https://github.com/Legodark/paddock/issues/12); diagramas en [#13](https://github.com/Legodark/paddock/issues/13). No se ha desplegado la aplicación ni modificado DNS. Las pruebas usan el modelo y catálogo congelados.
+Revisión inicial del 15 de noviembre de 2026. Seguimiento: [#12](https://github.com/Legodark/paddock/issues/12); diagramas en [#13](https://github.com/Legodark/paddock/issues/13). Posteriormente se publicó la [Preview privada verificada](preview-vercel.md); el DNS sigue intacto. Las pruebas usan el modelo y catálogo congelados.
+
+## Feedback del propietario · 16-11-2026
+
+Pendientes de implementación antes de cerrar la revisión visual:
+
+- **#18:** recuperar los logos de las marcas presentes en 2023. Los 73 PNG originales siguen disponibles localmente en `padook/Frontend/assets/images/marcas/`; `brand_logo_bloc` y `form_widget` muestran la selección y uso originales. Validar correspondencia de marca, alternativa textual, carga y tamaño en móvil/escritorio.
+- **#19:** recuperar el chatbot desplegable. El Flutter original alterna un botón flotante y un panel con botón de cierre (`chatbot_widgets`, `padook_page`, `chatbot_container_widget`); React lo muestra actualmente como sección completa. Adaptar apertura/cierre conservando consulta, resultados, foco y accesibilidad, sin tapar controles o teclado móvil.
+
+Estos puntos proceden de la revisión del propietario de la Preview y no están cubiertos por el resultado verde de las pruebas anteriores. Se registran en issues independientes y en el plan para las próximas sesiones; no se implementan como parte de esta anotación.
 
 ## Cambios encontrados en la revisión
 
