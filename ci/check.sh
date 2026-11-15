@@ -90,7 +90,7 @@ print('Browser:', version)
 PY
 rm -f "$paddock_repo/web/test-results/results.json"
 paddock_browser_status=0
-CI=1 npm --prefix "$paddock_repo/web" run test:e2e || paddock_browser_status=$?
+CI=1 DEBUG=pw:browser npm --prefix "$paddock_repo/web" run test:e2e 2> >(tee "$paddock_reports/browser-stderr.log" >&2) || paddock_browser_status=$?
 if [[ -f "$paddock_repo/web/test-results/results.json" ]]; then
   cp "$paddock_repo/web/test-results/results.json" "$paddock_reports/browser-tests.json"
 fi

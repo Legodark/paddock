@@ -9,7 +9,13 @@ import Comparables from './Comparables';
 import Icon from './Icon';
 import CatalogChat from './CatalogChat';
 
+const NAV_SECTIONS = [['estimador', 'Estimar'], ['consultar', 'Consultar'], ['proyecto', 'Proyecto']] as const;
+function sectionFromHash() {
+  return NAV_SECTIONS.find(([id]) => window.location.hash === `#${id}`)?.[0] ?? 'estimador';
+}
+
 export default function App() {
+  const [activeSection, setActiveSection] = useState(sectionFromHash);
   const [catalog, setCatalog] = useState<Catalog | null>(null);
   const [catalogError, setCatalogError] = useState<string | null>(null);
   const [attempt, setAttempt] = useState(0);
@@ -23,6 +29,12 @@ export default function App() {
   const resultHeading = useRef<HTMLHeadingElement>(null);
   const errorBox = useRef<HTMLDivElement>(null);
   const activePrediction = useRef<AbortController | null>(null);
+
+  useEffect(() => {
+    const syncSection = () => setActiveSection(sectionFromHash());
+    window.addEventListener('hashchange', syncSection);
+    return () => window.removeEventListener('hashchange', syncSection);
+  }, []);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -95,7 +107,7 @@ export default function App() {
     <a className="skip-link" href="#estimador">Saltar al estimador</a>
     <header className="site-header"><div className="header-inner">
       <a className="wordmark" href="#inicio" aria-label="Paddock, inicio"><span className="brand-mark" aria-hidden="true"><i /><i /><i /></span>PADDOCK<span className="brand-dot">.</span></a>
-      <nav aria-label="Navegación principal"><a className="nav-active" href="#estimador">Estimar</a><a href="#consultar">Consultar</a><a href="#proyecto">Proyecto</a><a className="repo-link" href="https://github.com/Legodark/paddock" target="_blank" rel="noopener noreferrer"><Icon name="github" /><span>GitHub</span><span className="sr-only"> (abre otra pestaña)</span></a></nav>
+      <nav aria-label="Navegación principal">{NAV_SECTIONS.map(([id, label]) => <a key={id} href={`#${id}`} className={activeSection === id ? 'nav-active' : undefined} aria-current={activeSection === id ? 'location' : undefined}>{label}</a>)}<a className="repo-link" href="https://github.com/Legodark/paddock" target="_blank" rel="noopener noreferrer"><Icon name="github" /><span>GitHub</span><span className="sr-only"> (abre otra pestaña)</span></a></nav>
     </div></header>
     <main id="inicio" className="page-shell">
       <section className="hero" aria-labelledby="page-title">

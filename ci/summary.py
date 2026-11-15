@@ -16,20 +16,18 @@ def error_excerpt(value):
 
 
 def browser_error(data):
-    for error in data.get('errors', []):
-        return error_excerpt(error)
+    failures = [error_excerpt(error) for error in data.get('errors', [])]
     def visit(suites):
         for suite in suites:
             for spec in suite.get('specs', []):
                 for test in spec.get('tests', []):
                     for result in test.get('results', []):
                         if result.get('error'):
-                            return spec.get('title', 'Browser case') + ': ' + error_excerpt(result['error'])
-            nested = visit(suite.get('suites', []))
-            if nested:
-                return nested
-        return ''
-    return visit(data.get('suites', []))
+                            project = test.get('projectName', test.get('projectId', 'unknown project'))
+                            failures.append(f"[{project}] {spec.get('title', 'Browser case')}: " + error_excerpt(result['error']))
+            visit(suite.get('suites', []))
+    visit(data.get('suites', []))
+    return '\n'.join(failures[:8])
 
 
 def summarize(directory):
@@ -82,6 +80,13 @@ def summarize(directory):
             reason = browser_error(data)
             if reason:
                 detail += ': ' + reason
+            native_log = directory / 'browser-stderr.log'
+            if native_log.is_file():
+                lines = native_log.read_text(errors='replace').splitlines()
+                native = [re.sub(r'\x1b\[[0-?]*[ -/]*[@-~]', '', line) for line in lines
+                          if re.search(r'CRASH|FATAL:|SIGSEGV|SIGABRT|segmentation|process did exit.*exitCode=[1-9]|error while loading|Out of memory', line, re.I)]
+                if native:
+                    detail += '\nBrowser process diagnostics:\n' + '\n'.join(native[-12:])[:6000]
         browser_environment = directory / 'browser-environment.json'
         if browser_environment.is_file():
             runtime = json.loads(browser_environment.read_text())

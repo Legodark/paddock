@@ -94,3 +94,20 @@ test('visible touch controls meet the 24 CSS pixel target minimum', async ({ pag
     expect(box!.height, await target.innerText()).toBeGreaterThanOrEqual(24);
   }
 });
+
+test('section navigation follows anchor history and preserves the vehicle', async ({ page }) => {
+  await ready(page);
+  await page.getByRole('button', { name: 'Rellenar un ejemplo' }).click();
+  const nav = page.getByRole('navigation', { name: 'Navegación principal' });
+  await nav.getByRole('link', { name: 'Consultar', exact: true }).click();
+  await expect(page).toHaveURL(/#consultar$/);
+  await expect(nav.getByRole('link', { name: 'Consultar', exact: true })).toHaveAttribute('aria-current', 'location');
+  await expect(nav.getByRole('link', { name: 'Estimar', exact: true })).not.toHaveAttribute('aria-current', 'location');
+  await nav.getByRole('link', { name: 'Proyecto', exact: true }).focus();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL(/#proyecto$/);
+  await expect(nav.getByRole('link', { name: 'Proyecto', exact: true })).toHaveAttribute('aria-current', 'location');
+  await page.goBack();
+  await expect(nav.getByRole('link', { name: 'Consultar', exact: true })).toHaveAttribute('aria-current', 'location');
+  await expect(page.getByLabel('Kilómetros', { exact: true })).toHaveValue('7119');
+});
