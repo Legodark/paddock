@@ -20,6 +20,20 @@ function check(configuration) {
   for (const url of ['/', '/assets/index.js', '/robots.txt', '/THIRD_PARTY_NOTICES.txt', '/apiculture']) {
     assert.ok(!matches.test(url), `Static route sent to Python: ${url}`);
   }
+  // Vercel's root-specific header rule must carry the common protections too.
+  // The provider smoke found them missing on HTML while API/assets had them.
+  const rootRules = result.routes.filter(item => item.headers && new RegExp(item.src).test('/'));
+  const rootHeaders = Object.fromEntries(Object.entries(rootRules.at(-1).headers).map(([k, v]) => [k.toLowerCase(), v]));
+  for (const [key, value] of Object.entries({
+    'x-content-type-options': 'nosniff',
+    'x-frame-options': 'DENY',
+    'referrer-policy': 'no-referrer',
+    'permissions-policy': 'camera=(), microphone=(), geolocation=()',
+    'cache-control': 'no-cache',
+  })) {
+    assert.equal(rootHeaders[key], value, `Root security header missing: ${key}`);
+  }
+  assert.ok(rootHeaders['content-security-policy'].includes("frame-ancestors 'none'"));
   return route;
 }
 
@@ -30,11 +44,16 @@ assert.throws(() => check({
   ...config,
   rewrites: [{ source: '/api/:path*', destination: '/api/index.py' }],
 }), /injects route parameters/);
+const missingRootHeader = structuredClone(config);
+missingRootHeader.headers.find(item => item.source === '/').headers =
+  missingRootHeader.headers.find(item => item.source === '/').headers.filter(item => item.key !== 'X-Content-Type-Options');
+assert.throws(() => check(missingRootHeader), /Root security header missing/);
 
 console.log(JSON.stringify({
   compiler: '@vercel/routing-utils@' + load('@vercel/routing-utils/package.json').version,
   valid: true,
   api_route: route,
   named_capture_regression_rejected: true,
+  root_security_header_regression_rejected: true,
   scope: 'Official route compilation and path coverage; provider execution is tested separately.',
 }, null, 2));
