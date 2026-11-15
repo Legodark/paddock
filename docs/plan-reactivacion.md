@@ -18,6 +18,8 @@ Avance posterior: contrato canónico integrado en [deploy/vercel](../deploy/verc
 
 La CLI está autenticada mediante el flujo seguro completado por el usuario. Se confirmó el equipo `legodarks-projects` en Hobby y el dominio existente del portfolio. El [estudio de costes](costes-y-diagramas.md) recoge las cuotas consultadas y las capturas de consumo compartidas. El consumo mensual de CPU, memoria provisionada e invocaciones sigue sin estar disponible mediante las capacidades gratuitas probadas; no se contratará Observability Plus ni se pedirán nuevas capturas para continuar el trabajo local.
 
+La [revisión del PR y Hobby](revision-pr-y-hobby.md) amplía el barrido a los 116 commits alcanzables, añade avisos de licencia y confirma Hobby activo sin trial. Quedan pendientes la evidencia de reutilización pública del catálogo y la comprobación de plataforma. La documentación actual advierte que una pausa por cuota puede afectar a todos los despliegues del equipo y no reactivarse automáticamente; el presupuesto de prueba no se confunde con un límite de gasto. El [seguimiento #7](https://github.com/Legodark/paddock/issues/7) enlaza las tareas y el PR; Projects sigue bloqueado por permiso de la integración en #16.
+
 Antes de escribir código de aplicación, comprobar alojamiento, datos, recursos de inferencia, costes y dominio. Las pruebas de viabilidad se ejecutan fuera del código de aplicación. Ver el [informe de arquitectura](arquitectura-reactivacion.md).
 
 ## Evidencia inicial

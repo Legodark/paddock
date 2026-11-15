@@ -31,7 +31,9 @@ El plan Hobby consultado incluye los siguientes recursos. Son cuotas compartidas
 
 Functions Python admite un bundle de hasta 500 MB según la documentación consultada. Con Fluid compute, Hobby usa un máximo de 2 GB de memoria y una CPU; la memoria asignada predeterminada es 2 GB. Los **126 MiB de RSS locales no equivalen a 126 MiB facturados**: el cálculo de memoria provisionada usa la memoria asignada y su tiempo facturable. Por ejemplo, 360 GB-h / 2 GB son 180 horas agregadas teóricas, antes de descontar otros proyectos y sin garantizar una capacidad de peticiones.
 
-No se pudo recuperar el consumo mensual de compute con las consultas gratuitas probadas. La API de métricas requiere Observability Plus y no se contratará. «Sin suscripción» en la API de facturación no significa consumo cero. Esta incertidumbre no bloquea la implementación y pruebas locales, que no consumen Functions del equipo.
+No se pudo recuperar el consumo mensual de compute con las consultas gratuitas probadas. La API de métricas requiere Observability Plus y no se contratará. «Sin suscripción» en la API de facturación no significa consumo cero. La consulta se repitió el 15-11-2026 con el mismo resultado; ver [revisión actual y evidencia de cuenta](revision-pr-y-hobby.md). Esta incertidumbre no bloquea la implementación y pruebas locales, que no consumen Functions del equipo.
+
+La documentación de Functions advierte además que, al pausarse un equipo Hobby por cuota, pueden quedar pausados **todos sus despliegues** y la reactivación puede necesitar una acción del propietario o soporte. No se garantiza recuperación automática al pasar 30 días. Crear Paddock como proyecto separado no aísla al portfolio de ese riesgo compartido. La [prueba inicial propuesta](revision-pr-y-hobby.md#condiciones-de-la-siguiente-prueba) limita solicitudes y conserva esta incertidumbre explícita.
 
 **Coste incremental previsto de la arquitectura elegida: 0 €/mes dentro de Hobby y sus límites.** No se necesita Blob: el modelo compacto y SQLite ya caben en la función. No se ha creado ningún almacenamiento, proyecto ni plan de pago. El coste de renovación del dominio sigue siendo el actual del usuario. La validación final requiere comprobar el funcionamiento real en la plataforma y conservar Hobby sin extras; el margen de compute compartido no está certificado.
 
@@ -51,7 +53,7 @@ Esta tabla define el presupuesto permitido; no constituye una confirmación del 
 | Renovación de `juancerezo.com` | Importe actual del usuario | Gasto existente, no cotizado ni modificado en esta tarea |
 | **Servicios nuevos en total** | **0 €** | **Todas las condiciones anteriores deben cumplirse** |
 
-Actualización 15-11-2026: el [firewall de Hobby](proteccion-vercel.md) incluye una regla de rate limiting por proyecto y el primer millón de solicitudes permitidas al mes. La propuesta local protege `/api` con 60 solicitudes/minuto por IP, sin KV/Redis ni servicios nuevos. La CLI confirmó que el equipo sigue en Hobby y que Paddock todavía no existe como proyecto; la regla no se ha aplicado. Se mantienen pendientes su enforcement y el comportamiento específico al agotar el tramo incluido. La [CI](../ci/README.md) se comprueba localmente y no invoca Functions de Vercel.
+Actualización 15-11-2026: el [firewall de Hobby](proteccion-vercel.md) incluye una regla de rate limiting por proyecto y el primer millón de solicitudes permitidas al mes. La propuesta local protege `/api` con 60 solicitudes/minuto por IP, sin KV/Redis ni servicios nuevos. La CLI confirmó que el equipo sigue en Hobby y que Paddock todavía no existe como proyecto; la regla no se ha aplicado. Se mantienen pendientes su enforcement y el comportamiento específico al agotar el tramo incluido. La [CI](../ci/README.md) pasó localmente y en GitHub; no invoca Functions de Vercel.
 
 No hay presupuesto para Vercel Pro, ampliaciones de Blob, planes con pago por uso sin límite duro, contenedores de pago, bases gestionadas de pago o servicios externos adicionales. No introducir una tarjeta ni aceptar un trial que se convierta en pago como parte de esta solución.
 
@@ -176,6 +178,6 @@ Orden de evaluación:
 
 ## Pendiente externo y siguiente paso
 
-El presupuesto está cerrado: **0 € adicionales**. Sigue abierta la comprobación de si la aplicación completa cabe en él. Para aportar cifras vigentes de cuotas y una capacidad mensual verificable hacen falta el conector Vercel en esta sesión y acceso a su documentación oficial. Los diagramas de Archify ya están generados; queda pendiente completar su validación en un navegador compatible.
+El presupuesto está cerrado: **0 € adicionales**. Las cuotas oficiales, la cuenta Hobby activa y el tamaño del paquete están comprobados; la capacidad mensual y la disponibilidad real siguen pendientes de compute compartido y prueba de plataforma. Se usa la CLI autenticada porque el conector no está expuesto en esta sesión. Los diagramas de Archify ya están generados; queda pendiente completar su validación en un navegador compatible.
 
-Ya existe un borrador de red con los destinos necesarios. Aplicarlo permite reintentar las consultas públicas, pero no habilita por sí solo conectores ni acceso a la cuenta privada. No se han contratado servicios, activado Blob, publicado previews ni modificado DNS durante esta fase.
+La red necesaria ya está aplicada. No se han contratado servicios, activado Blob, publicado previews ni modificado DNS durante esta fase. La [revisión de las issues #8/#9](revision-pr-y-hobby.md) registra las fuentes, el barrido de historial, las licencias y el procedimiento previo a preview.

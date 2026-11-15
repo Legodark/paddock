@@ -49,9 +49,9 @@ Evidencias: [resumen de navegador y dependencias](evidence/web/verification.json
 
 ## Siguientes pasos del plan
 
-1. Portar y probar la extracción de filtros del chatbot de Dart y su integración con clasificación/consulta, preservando el modelo congelado y evitando servicios de pago.
+1. Chatbot y extracción de filtros ya integrados y probados; ver [chatbot](chatbot-react.md). Las cifras anteriores conservan la línea base del primer recorrido.
 2. Cerrar la revisión profunda de seguridad, dependencias históricas, protección contra abuso y la revisión manual pendiente de UX/accesibilidad y navegadores.
-3. Preparar el flujo reproducible de artefactos y CI; después, validar una preview real cuando se autorice publicar. Comprobar límites y consumo del equipo sin contratar extras.
-4. Publicar el tag original, asociar el subdominio y crear la issue del portfolio cuando existan versión y URL verificadas. El tag continúa siendo local.
+3. El flujo reproducible y la CI alojada ya pasaron 144 pruebas. Validar una preview real después de resolver sus condiciones de publicación y comprobar límites/consumo compartido sin contratar extras.
+4. El tag original ya está publicado y el PR #6 está en borrador. Quedan el subdominio y la issue del portfolio cuando existan versión y URL verificadas. Ver [seguimiento #7](https://github.com/Legodark/paddock/issues/7) y [revisión actual](revision-pr-y-hobby.md).
 
 No se han reconfigurado los ajustes ya publicados del entorno ni se han creado servicios de Vercel, Blob o planes de pago.
