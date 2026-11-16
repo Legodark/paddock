@@ -67,7 +67,7 @@ test('the assistant starts collapsed and keyboard opening loads its catalogue on
   expect(counts).toEqual({ catalog: 1, classify: 0, search: 0 });
 });
 
-test('the floating assistant stays anchored and scrolls its conversation without moving the page', async ({ page }) => {
+test('the floating assistant stays anchored and scrolls its conversation without moving the page', async ({ page }, info) => {
   await page.goto('/');
   await expect(page.getByLabel('Marca', { exact: true })).toBeEnabled();
   const viewport = page.viewportSize()!;
@@ -104,8 +104,13 @@ test('the floating assistant stays anchored and scrolls its conversation without
   await scroller.evaluate(element => { element.scrollTop = 0; });
   const scrollBounds = await scroller.boundingBox();
   expect(scrollBounds).not.toBeNull();
-  await page.mouse.move(scrollBounds!.x + 8, scrollBounds!.y + 20);
-  await page.mouse.wheel(0, 450);
+  if (info.project.name === 'mobile-webkit') {
+    info.annotations.push({ type: 'scroll-transport', description: 'Programmatic DOM scroll: Playwright mobile WebKit does not support mouse.wheel; this does not test a physical touch gesture.' });
+    await scroller.evaluate(element => { element.scrollTop += 450; });
+  } else {
+    await page.mouse.move(scrollBounds!.x + 8, scrollBounds!.y + 20);
+    await page.mouse.wheel(0, 450);
+  }
   await expect.poll(() => scroller.evaluate(element => element.scrollTop)).toBeGreaterThan(0);
   expect(await page.evaluate(() => window.scrollY)).toBe(backgroundScroll);
   expect(await dialog.boundingBox()).toEqual(bounds);

@@ -23,3 +23,15 @@ Se verifican posición fija, apertura sin alterar la altura/scroll del documento
 Las capturas muestran el contexto de la página: [cerrado escritorio](evidence/ux/chat-floating-closed-desktop.jpg), [abierto escritorio](evidence/ux/chat-floating-open-desktop.jpg), [cerrado móvil](evidence/ux/chat-floating-closed-mobile.jpg) y [abierto móvil](evidence/ux/chat-floating-open-mobile.jpg).
 
 Backend, requisitos, modelos, SQLite y routing permanecen idénticos a la publicación anterior. El modelo histórico y los logos no cambian; el ajuste fino del DeLorean continúa aplazado en #20. La verificación de Vercel se limita a estáticos/autenticación, sin nuevas invocaciones de la API de aplicación, cambios de DNS o fusión de `main`.
+
+## Resultado y Preview
+
+**[Preview privada vigente](https://paddock-mehm2xkbx-legodarks-projects.vercel.app)**, fuente `861d41bec36cea9d8c15091dc31648d0e9f3720a`, despliegue `dpl_4PADSnX3JsMfywyM4N3dn3r7w7Za`, READY y autenticación de Vercel obligatoria.
+
+82 pruebas unitarias, build y **80 casos de navegador locales pasados**, incluidos los 20 de apertura/cierre flotante. [Evidencia local](evidence/ux/chat-floating-local.json). Paquete completo: **500.457 bytes públicos / 288.055 bytes gzip**, dentro de los presupuestos existentes; función oficial sin cambios (115,50 MiB) y 16 archivos de backend/recursos idénticos.
+
+Se comprobaron seis recursos estáticos y acceso anónimo a raíz (302); los archivos y cabeceras coinciden con el build. [Evidencia de entrega](evidence/ux/chat-floating-provider.json). Cero llamadas nuevas a la API de aplicación en Vercel; no se cambia `main` ni DNS.
+
+## Ajustes de validación entre motores
+
+La primera matriz ampliada pasó 198/200 casos. Firefox calculó una diferencia de 0,000015 px en la posición del selector y la comparación exacta falló; la guarda de geometría ahora admite 0,005 px. Playwright rechaza `mouse.wheel` en WebKit móvil: ese perfil comprueba el mismo scroll interno mediante `scrollTop`, identificado como transporte DOM instrumentado y no gesto táctil físico; los demás perfiles mantienen la rueda real. Todas las comprobaciones de límites, foco y desplazamiento del fondo se conservan, sin omisiones ni reintentos automáticos. [Evidencia inicial](evidence/ux/chat-floating-ci-first.json). Estos ajustes solo cambian pruebas/documentación; la Preview sigue sirviendo los archivos de producción de `861d41b`.

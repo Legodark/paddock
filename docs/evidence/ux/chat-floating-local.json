@@ -21,5 +21,13 @@
     "chat-floating-open-desktop.jpg": "a3fd78752fdf7124e10d874ddd40fb38ad8cc9740b625eb9d8b2866f1510beb2",
     "chat-floating-closed-mobile.jpg": "2a9b60921826be6ec2b22eb7137d4d796c22f37b18cb68caae9d173e396d39db",
     "chat-floating-open-mobile.jpg": "74284a7e10e2a4f8d2e278b938ac5319838b203cf68687c301e5bba32492d974"
+  },
+  "final_regression_suite": {
+    "startTime": "2026-11-16T12:42:55.385Z",
+    "duration": 97533.936,
+    "expected": 80,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
   }
 }

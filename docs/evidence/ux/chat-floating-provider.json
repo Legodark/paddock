@@ -1,0 +1,89 @@
+{
+  "deployment": {
+    "id": "dpl_4PADSnX3JsMfywyM4N3dn3r7w7Za",
+    "url": "https://paddock-mehm2xkbx-legodarks-projects.vercel.app",
+    "readyState": "READY",
+    "environment": "preview"
+  },
+  "source_commit": "861d41bec36cea9d8c15091dc31648d0e9f3720a",
+  "static_checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "ssl_verify": 0,
+      "bytes": 718,
+      "sha256": "8d96efa7e6c0ef953d56ecd971936a9e3deb9df67ff1259279b8ea8625cc3a0c",
+      "matches_build": true,
+      "nosniff": "nosniff",
+      "frame": "DENY",
+      "referrer": "no-referrer",
+      "csp": "default-src 'none'; script-src 'self'; style-src 'self'; style-src-attr 'unsafe-inline'; img-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'"
+    },
+    {
+      "path": "/assets/index-BjyiVId1.js",
+      "status": 200,
+      "ssl_verify": 0,
+      "bytes": 271945,
+      "sha256": "aa8153e9f56b6cac4c7e00b007600547028e4b4398d72737ab454baafab5c518",
+      "matches_build": true,
+      "nosniff": "nosniff",
+      "frame": "DENY",
+      "referrer": "no-referrer",
+      "csp": ""
+    },
+    {
+      "path": "/assets/index-fD6_WWW_.css",
+      "status": 200,
+      "ssl_verify": 0,
+      "bytes": 29038,
+      "sha256": "5f677b5b34266b6281b21882c1ac7dcf055303cdf555aa15770bc0f399af8f63",
+      "matches_build": true,
+      "nosniff": "nosniff",
+      "frame": "DENY",
+      "referrer": "no-referrer",
+      "csp": ""
+    },
+    {
+      "path": "/brand-logos/citroen.7fd5dad7678a.webp",
+      "status": 200,
+      "ssl_verify": 0,
+      "bytes": 3000,
+      "sha256": "7fd5dad7678ad2d7c002cdf4af0c7dbf8e5d2ad75183abd1675e8055d400e010",
+      "matches_build": true,
+      "nosniff": "nosniff",
+      "frame": "DENY",
+      "referrer": "no-referrer",
+      "csp": ""
+    },
+    {
+      "path": "/paddock-delorean.png",
+      "status": 200,
+      "ssl_verify": 0,
+      "bytes": 38217,
+      "sha256": "c13355d2fb89e8a8112d063455291f12bf55a3492b9498fcd33b501effeb4195",
+      "matches_build": true,
+      "nosniff": "nosniff",
+      "frame": "DENY",
+      "referrer": "no-referrer",
+      "csp": ""
+    },
+    {
+      "path": "/THIRD_PARTY_NOTICES.txt",
+      "status": 200,
+      "ssl_verify": 0,
+      "bytes": 2895,
+      "sha256": "b7829899bf07cd9c92adff9b76354d0d46482fe6723750a24f5e7194fc9c5792",
+      "matches_build": true,
+      "nosniff": "nosniff",
+      "frame": "DENY",
+      "referrer": "no-referrer",
+      "csp": ""
+    }
+  ],
+  "anonymous_document_status": 302,
+  "original_png_preserved": true,
+  "backend_unchanged": true,
+  "backend_source_files_compared": 16,
+  "additional_application_api_requests": 0,
+  "scope": "Authenticated static delivery and anonymous root only; local browser evidence is separate."
+}

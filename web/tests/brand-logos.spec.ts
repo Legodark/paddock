@@ -17,7 +17,11 @@ test('brand images load on selection, follow reset and preserve the submitted es
   await page.getByRole('button', { name: 'Rellenar un ejemplo' }).click();
   await expect(marker.locator('img')).toHaveAttribute('src', /^\/brand-logos\/citroen\.[a-f0-9]+\.webp$/);
   await expect.poll(() => marker.locator('img').evaluate((image: HTMLImageElement) => image.complete && image.naturalWidth > 0)).toBe(true);
-  expect(await geometry()).toEqual(initialBox);
+  const selectedBox = await geometry();
+  // Preserve the layout guard while allowing floating-point scroll-coordinate rounding.
+  expect(selectedBox.width).toBeCloseTo(initialBox.width, 2);
+  expect(selectedBox.height).toBeCloseTo(initialBox.height, 2);
+  expect(selectedBox.documentTop).toBeCloseTo(initialBox.documentTop, 2);
   expect(requests).toHaveLength(1);
   await expect(marker).toHaveAttribute('aria-hidden', 'true');
   await expect(select).toHaveAccessibleName('Marca');

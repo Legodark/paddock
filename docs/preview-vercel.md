@@ -2,11 +2,17 @@
 
 16-11-2026. Seguimiento: [#10](https://github.com/Legodark/paddock/issues/10); candidata: [PR #6](https://github.com/Legodark/paddock/pull/6).
 
-**[Abrir la Preview privada](https://paddock-bzdg112ii-legodarks-projects.vercel.app)** con la cuenta de Vercel autorizada. La app está disponible para revisión; el acceso anónimo redirige a autenticación. El dominio propio y `main` permanecen intactos.
+**[Abrir la Preview privada](https://paddock-mehm2xkbx-legodarks-projects.vercel.app)** con la cuenta de Vercel autorizada. La app está disponible para revisión; el acceso anónimo redirige a autenticación. El dominio propio y `main` permanecen intactos.
+
+## Chatbot flotante · corrección de #19
+
+La revisión vigente es **[Paddock con botón flotante abajo a la derecha](https://paddock-mehm2xkbx-legodarks-projects.vercel.app)**, despliegue `dpl_4PADSnX3JsMfywyM4N3dn3r7w7Za`, fuente `861d41bec36cea9d8c15091dc31648d0e9f3720a`. Abre un popup sobre la página con cierre visible y scroll interno; corrige la sección en flujo que no correspondía a la disposición solicitada. [Informe y capturas](chatbot-flotante.md).
+
+82 pruebas unitarias y 80 casos locales de navegador pasados. Web completa **500.457 bytes / 288.055 gzip**, dentro del presupuesto. Backend/recursos idénticos en 16 archivos; se verificaron seis estáticos y raíz anónima protegida (302), sin nuevas llamadas a la API de aplicación. [Evidencia](evidence/ux/chat-floating-provider.json). El ajuste fino del DeLorean sigue aplazado en #20 y la sesión física/manual sigue en #12.
 
 ## Chatbot desplegable · 16-11-2026
 
-La revisión vigente es **[Paddock con asistente plegable](https://paddock-bzdg112ii-legodarks-projects.vercel.app)**, despliegue `dpl_7s2kqzArGGnR29WLmZD3pRoVeX2A`, fuente `184ef4b36903f3eea9f250e43e2f4afca1f219d3`. El asistente empieza cerrado, se abre desde su control o Consultar y conserva la conversación al cerrarlo. Catálogo de consulta al primer uso, sin solicitudes nuevas al alternar. Respuestas tardías sin cambios de foco/scroll con el panel oculto. [Informe y capturas](chatbot-desplegable.md).
+La revisión anterior en flujo fue **[Paddock con asistente plegable](https://paddock-bzdg112ii-legodarks-projects.vercel.app)**, despliegue `dpl_7s2kqzArGGnR29WLmZD3pRoVeX2A`, fuente `184ef4b36903f3eea9f250e43e2f4afca1f219d3`. El asistente empieza cerrado, se abre desde su control o Consultar y conserva la conversación al cerrarlo. Catálogo de consulta al primer uso, sin solicitudes nuevas al alternar. Respuestas tardías sin cambios de foco/scroll con el panel oculto. [Informe y capturas](chatbot-desplegable.md).
 
 Web completa: **497.376 bytes**, **287.216 bytes gzip**, dentro del presupuesto. 82 pruebas unitarias y 76 casos locales de navegador pasados. La [CI ampliada final](https://github.com/Legodark/paddock/actions/runs/43836207667) está en verde; se verificó que los archivos de producción son idénticos al despliegue. Backend/recursos idénticos en los 16 archivos comparados. Verificación en Vercel exclusivamente estática y de autenticación, sin nuevas llamadas a la API de aplicación; [evidencia](evidence/ux/chat-disclosure-provider.json). El ajuste fino del DeLorean permanece aplazado en #20. La revisión manual conjunta sigue en #12.
 
@@ -30,12 +36,12 @@ Las mediciones de API conservan la publicación anterior como referencia; las li
 | --- | --- |
 | Equipo y plan | `legodarks-projects`, Hobby activo |
 | Proyecto | [`paddock`](https://vercel.com/legodarks-projects/paddock), separado del portfolio |
-| Despliegue vigente para revisión | `dpl_7s2kqzArGGnR29WLmZD3pRoVeX2A`, READY, Preview |
-| Fuente desplegada | `184ef4b36903f3eea9f250e43e2f4afca1f219d3` |
+| Despliegue vigente para revisión | `dpl_4PADSnX3JsMfywyM4N3dn3r7w7Za`, READY, Preview |
+| Fuente desplegada | `861d41bec36cea9d8c15091dc31648d0e9f3720a` |
 | Protección | Vercel Authentication en todas las URLs (`all`) |
 | Firewall | Una regla activa: prefijo `/api`, 60 solicitudes/60 s/IP, ventana fija, rechazo 429 |
 | Función local con constructor oficial | **121.114.317 bytes = 115,50 MiB**, Python 3.12 |
-| Web pública del paquete | **497.376 bytes**, 76 archivos; sin modelos o SQLite |
+| Web pública del paquete | **500.457 bytes**, 76 archivos; sin modelos o SQLite |
 | Dominio propio | Sin asociar `paddock.juancerezo.com`; DNS sin cambios |
 | Extras de pago | Ninguno; sin Blob, Redis, base gestionada ni Observability Plus |
 
