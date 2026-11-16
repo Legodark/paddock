@@ -2,11 +2,17 @@
 
 16-11-2026. Seguimiento: [#10](https://github.com/Legodark/paddock/issues/10); candidata: [PR #6](https://github.com/Legodark/paddock/pull/6).
 
-**[Abrir la Preview privada](https://paddock-mehm2xkbx-legodarks-projects.vercel.app)** con la cuenta de Vercel autorizada. La app está disponible para revisión; el acceso anónimo redirige a autenticación. El dominio propio y `main` permanecen intactos.
+**[Abrir la Preview privada](https://paddock-jd7a8siqc-legodarks-projects.vercel.app)** con la cuenta de Vercel autorizada. La app está disponible para revisión; el acceso anónimo redirige a autenticación. El dominio propio y `main` permanecen intactos.
+
+## Medidor de precio recuperado · #23
+
+La revisión vigente es **[Paddock con medidor de precio](https://paddock-jd7a8siqc-legodarks-projects.vercel.app)**, despliegue `dpl_9PXY5N878VVNqdJBj2JD9kF5fVxw`, fuente `2b8b7608341663fc5852220d3460cd33d2195cc2`. Recupera el indicador original solicitado tras probar desde iPhone, adaptado al diseño y a móvil/escritorio. [Informe y capturas](medidor-precio.md).
+
+100 unitarias y 96 casos locales de navegador pasados. La [CI ampliada del código desplegado](https://github.com/Legodark/paddock/actions/runs/43881880027) está en verde. Web **504.608 bytes / 289.202 gzip**, dentro del presupuesto; 16 archivos de backend/configuración/recursos idénticos a la versión anterior. Seis recursos estáticos, cabeceras y autenticación (raíz anónima 302) verificados, sin nuevas invocaciones de la API de aplicación. [Evidencia](evidence/ux/price-gauge-provider.json). La revisión física/manual sigue en #12; modelo, DNS y `main` no cambian.
 
 ## Chatbot flotante · corrección de #19
 
-La revisión vigente es **[Paddock con botón flotante abajo a la derecha](https://paddock-mehm2xkbx-legodarks-projects.vercel.app)**, despliegue `dpl_4PADSnX3JsMfywyM4N3dn3r7w7Za`, fuente `861d41bec36cea9d8c15091dc31648d0e9f3720a`. Abre un popup sobre la página con cierre visible y scroll interno; corrige la sección en flujo que no correspondía a la disposición solicitada. [Informe y capturas](chatbot-flotante.md).
+La revisión anterior del chatbot fue **[Paddock con botón flotante abajo a la derecha](https://paddock-mehm2xkbx-legodarks-projects.vercel.app)**, despliegue `dpl_4PADSnX3JsMfywyM4N3dn3r7w7Za`, fuente `861d41bec36cea9d8c15091dc31648d0e9f3720a`. Abre un popup sobre la página con cierre visible y scroll interno; corrige la sección en flujo que no correspondía a la disposición solicitada. [Informe y capturas](chatbot-flotante.md).
 
 82 pruebas unitarias y 80 casos locales de navegador pasados. La [CI ampliada del código desplegado](https://github.com/Legodark/paddock/actions/runs/43870309044) también está en verde. Web completa **500.457 bytes / 288.055 gzip**, dentro del presupuesto. Backend/recursos idénticos en 16 archivos; se verificaron seis estáticos y raíz anónima protegida (302), sin nuevas llamadas a la API de aplicación. [Evidencia](evidence/ux/chat-floating-provider.json). El ajuste fino del DeLorean sigue aplazado en #20 y la sesión física/manual sigue en #12.
 
@@ -36,12 +42,12 @@ Las mediciones de API conservan la publicación anterior como referencia; las li
 | --- | --- |
 | Equipo y plan | `legodarks-projects`, Hobby activo |
 | Proyecto | [`paddock`](https://vercel.com/legodarks-projects/paddock), separado del portfolio |
-| Despliegue vigente para revisión | `dpl_4PADSnX3JsMfywyM4N3dn3r7w7Za`, READY, Preview |
-| Fuente desplegada | `861d41bec36cea9d8c15091dc31648d0e9f3720a` |
+| Despliegue vigente para revisión | `dpl_9PXY5N878VVNqdJBj2JD9kF5fVxw`, READY, Preview |
+| Fuente desplegada | `2b8b7608341663fc5852220d3460cd33d2195cc2` |
 | Protección | Vercel Authentication en todas las URLs (`all`) |
 | Firewall | Una regla activa: prefijo `/api`, 60 solicitudes/60 s/IP, ventana fija, rechazo 429 |
 | Función local con constructor oficial | **121.114.317 bytes = 115,50 MiB**, Python 3.12 |
-| Web pública del paquete | **500.457 bytes**, 76 archivos; sin modelos o SQLite |
+| Web pública del paquete | **504.608 bytes**, 76 archivos; sin modelos o SQLite |
 | Dominio propio | Sin asociar `paddock.juancerezo.com`; DNS sin cambios |
 | Extras de pago | Ninguno; sin Blob, Redis, base gestionada ni Observability Plus |
 

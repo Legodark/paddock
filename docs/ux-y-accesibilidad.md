@@ -13,6 +13,12 @@ Estado de las recuperaciones solicitadas antes de cerrar la revisión visual:
 
 #18/#19 están implementadas; el ajuste fino de #20 está aplazado. Esto no sustituye la revisión conjunta ni las pruebas con dispositivos físicos, lector de pantalla o zoom nativo de #12.
 
+## Medidor de precio informado desde iPhone · #23
+
+El propietario ha probado la Preview desde su iPhone y echaba en falta el gráfico original de Buen precio/Promedio/Caro. Se recupera el velocímetro SVG, con etiquetas en HTML y referencias explícitas de 2023. La clasificación es una regla orientativa de posición entre comparables; los datos incompletos quedan neutros y sin aguja. No se añade un precio de anuncio ni se cambia el modelo/API.
+
+[Preview de la corrección](https://paddock-jd7a8siqc-legodarks-projects.vercel.app) · [Criterio, pruebas y capturas](medidor-precio.md). 100 pruebas unitarias y 96 casos locales de navegador pasados. Se registra la prueba aportada por el propietario sin atribuir navegador o versión de iOS no indicados; falta confirmar este ajuste en el teléfono y completar el resto de #12.
+
 ## Cambios encontrados en la revisión
 
 | Hallazgo | Evidencia | Corrección |

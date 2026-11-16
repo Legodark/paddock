@@ -23,3 +23,9 @@ SVG ligero decorativo, con aguja, tres zonas y separadores. El nombre, estado, l
 Paquete completo: **504.608 bytes públicos / 289.202 bytes gzip**, dentro del presupuesto vigente. Los 16 archivos de backend/configuración/recursos coinciden con la publicación anterior; la función materializada mantiene 115,50 MiB y el resultado 20.155 €. Se verificará la entrega estática en Vercel, sin nuevas invocaciones de la API de aplicación. Modelo, datos, DNS y `main` intactos.
 
 La prueba en iPhone está informada por el propietario, sin inventar navegador o versión de iOS. La corrección debe revisarse en la nueva Preview; la cobertura física de lector de pantalla, teclado y zoom nativo continúa abierta en #12. El ajuste fino del DeLorean y el modo transparente mantienen su planificación previa.
+
+## Preview verificada
+
+[Abrir la nueva revisión](https://paddock-jd7a8siqc-legodarks-projects.vercel.app), fuente `2b8b7608341663fc5852220d3460cd33d2195cc2`, despliegue `dpl_9PXY5N878VVNqdJBj2JD9kF5fVxw`. Entrega estática y autenticación verificadas; [evidencia](evidence/ux/price-gauge-provider.json). Sin nuevas peticiones a la API de aplicación en Vercel.
+
+La [CI del código desplegado](https://github.com/Legodark/paddock/actions/runs/43881880027) ha terminado en verde, incluyendo web/API/modelos/paquete y Archify. [Evidencia completa](evidence/ux/price-gauge-ci.json).
