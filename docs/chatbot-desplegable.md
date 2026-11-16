@@ -25,3 +25,7 @@ La implementación se ha repartido entre tres agentes de esta sesión: código y
 Los dispositivos físicos, lector de pantalla y zoom nativo siguen pendientes en #12. El ajuste fino del DeLorean permanece aplazado por el propietario en #20; no se cambia en esta fase.
 
 **Resultado local:** 82 pruebas unitarias, build TypeScript/Vite y 76 casos de navegador Chromium pasados. Doce comprobaciones de geometría (abierto/cerrado en seis anchos de 320 a 1440 px) sin scroll horizontal. [Evidencia](evidence/ux/chat-disclosure-local.json) y capturas [plegado escritorio](evidence/ux/chat-collapsed-desktop.jpg), [abierto escritorio](evidence/ux/chat-expanded-desktop.jpg), [plegado móvil](evidence/ux/chat-collapsed-mobile.jpg) y [abierto móvil](evidence/ux/chat-expanded-mobile.jpg).
+
+## Preview privada verificada
+
+[Abrir el asistente desplegable](https://paddock-bzdg112ii-legodarks-projects.vercel.app). Fuente `184ef4b36903f3eea9f250e43e2f4afca1f219d3`, despliegue `dpl_7s2kqzArGGnR29WLmZD3pRoVeX2A`, READY. Se comprobaron seis recursos estáticos (HTML, JS, CSS, Citroën, DeLorean y avisos de terceros), sus hashes y cabeceras; todos coinciden con el build. Raíz anónima →302 de autenticación. [Evidencia de entrega](evidence/ux/chat-disclosure-provider.json). Cero nuevas llamadas a la API de aplicación en Vercel; sin cambios de DNS o `main`.

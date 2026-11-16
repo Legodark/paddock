@@ -2,11 +2,17 @@
 
 16-11-2026. Seguimiento: [#10](https://github.com/Legodark/paddock/issues/10); candidata: [PR #6](https://github.com/Legodark/paddock/pull/6).
 
-**[Abrir la Preview privada](https://paddock-ni6uimkps-legodarks-projects.vercel.app)** con la cuenta de Vercel autorizada. La app está disponible para revisión; el acceso anónimo redirige a autenticación. El dominio propio y `main` permanecen intactos.
+**[Abrir la Preview privada](https://paddock-bzdg112ii-legodarks-projects.vercel.app)** con la cuenta de Vercel autorizada. La app está disponible para revisión; el acceso anónimo redirige a autenticación. El dominio propio y `main` permanecen intactos.
+
+## Chatbot desplegable · 16-11-2026
+
+La revisión vigente es **[Paddock con asistente plegable](https://paddock-bzdg112ii-legodarks-projects.vercel.app)**, despliegue `dpl_7s2kqzArGGnR29WLmZD3pRoVeX2A`, fuente `184ef4b36903f3eea9f250e43e2f4afca1f219d3`. El asistente empieza cerrado, se abre desde su control o Consultar y conserva la conversación al cerrarlo. Catálogo de consulta al primer uso, sin solicitudes nuevas al alternar. Respuestas tardías sin cambios de foco/scroll con el panel oculto. [Informe y capturas](chatbot-desplegable.md).
+
+Web completa: **497.376 bytes**, **287.216 bytes gzip**, dentro del presupuesto. 82 pruebas unitarias y 76 casos locales de navegador pasados. Backend/recursos idénticos en los 16 archivos comparados. Verificación en Vercel exclusivamente estática y de autenticación, sin nuevas llamadas a la API de aplicación; [evidencia](evidence/ux/chat-disclosure-provider.json). El ajuste fino del DeLorean permanece aplazado en #20. La revisión manual conjunta sigue en #12.
 
 ## Logos de fabricantes · 16-11-2026
 
-La revisión vigente es **[Paddock con logos de las marcas](https://paddock-ni6uimkps-legodarks-projects.vercel.app)**, despliegue `dpl_9x9NRjfco3FiKRGYbMLGabsuSFaT`, fuente `4f7b6543c0f301967262c25ee9f7a2a7862f14f0`. Los logos aparecen junto al selector y al vehículo calculado. Las 70 marcas canónicas usan derivados locales del archivo de 2023; sus recursos pesan 157.644 bytes. El [informe](logos-marcas.md) registra correspondencias, respaldo, procedencia y pruebas.
+La revisión anterior de marcas fue **[Paddock con logos de las marcas](https://paddock-ni6uimkps-legodarks-projects.vercel.app)**, despliegue `dpl_9x9NRjfco3FiKRGYbMLGabsuSFaT`, fuente `4f7b6543c0f301967262c25ee9f7a2a7862f14f0`. Los logos aparecen junto al selector y al vehículo calculado. Las 70 marcas canónicas usan derivados locales del archivo de 2023; sus recursos pesan 157.644 bytes. El [informe](logos-marcas.md) registra correspondencias, respaldo, procedencia y pruebas.
 
 Web completa: **495.019 bytes**, **286.669 bytes gzip**, dentro de los presupuestos existentes. Pasan 82 pruebas unitarias y 60 casos locales de navegador. La [CI del código desplegado](https://github.com/Legodark/paddock/actions/runs/43831661810) también ha terminado en verde. Se han decodificado todos los logos y revisado seis anchos. En Vercel se verificaron **siete recursos estáticos**: HTML, JS, CSS, tres logos representativos y avisos de terceros, idénticos al build y con sus cabeceras. La raíz anónima devuelve 302 de autenticación. [Evidencia de entrega](evidence/ux/brands-provider.json).
 
@@ -24,12 +30,12 @@ Las mediciones de API conservan la publicación anterior como referencia; las li
 | --- | --- |
 | Equipo y plan | `legodarks-projects`, Hobby activo |
 | Proyecto | [`paddock`](https://vercel.com/legodarks-projects/paddock), separado del portfolio |
-| Despliegue vigente para revisión | `dpl_9x9NRjfco3FiKRGYbMLGabsuSFaT`, READY, Preview |
-| Fuente desplegada | `4f7b6543c0f301967262c25ee9f7a2a7862f14f0` |
+| Despliegue vigente para revisión | `dpl_7s2kqzArGGnR29WLmZD3pRoVeX2A`, READY, Preview |
+| Fuente desplegada | `184ef4b36903f3eea9f250e43e2f4afca1f219d3` |
 | Protección | Vercel Authentication en todas las URLs (`all`) |
 | Firewall | Una regla activa: prefijo `/api`, 60 solicitudes/60 s/IP, ventana fija, rechazo 429 |
 | Función local con constructor oficial | **121.114.317 bytes = 115,50 MiB**, Python 3.12 |
-| Web pública del paquete | **495.019 bytes**, 76 archivos; sin modelos o SQLite |
+| Web pública del paquete | **497.376 bytes**, 76 archivos; sin modelos o SQLite |
 | Dominio propio | Sin asociar `paddock.juancerezo.com`; DNS sin cambios |
 | Extras de pago | Ninguno; sin Blob, Redis, base gestionada ni Observability Plus |
 
