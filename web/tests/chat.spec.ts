@@ -32,7 +32,7 @@ test('real classifier and snapshot search preserve canonical filters and histori
   await ready(page);
   const chat = page.locator('#consultar');
   // Firefox/WebKit screenshot synchronization injects an inline <style>; do not contaminate the CSP measurement.
-  if (browserName === 'chromium') await chat.screenshot({ path: info.outputPath('chat-initial.png') });
+  if (browserName === 'chromium') await chat.locator('.chat-panel').screenshot({ path: info.outputPath('chat-initial.png') });
   const classification = page.waitForResponse(r => r.url().endsWith('/api/v1/message'));
   const response = await realSearch(page);
   const context = await classification;
@@ -50,7 +50,7 @@ test('real classifier and snapshot search preserve canonical filters and histori
   await expect(chat.getByRole('list', { name: 'Coches del catálogo histórico' }).locator(':scope > li')).toHaveCount(data.car_data.length);
   await expect(chat.getByRole('list', { name: 'Filtros interpretados' })).toContainText('menos de');
   await expect(chat.getByRole('heading', { name: 'Resultados del catálogo' })).toBeFocused();
-  if (browserName === 'chromium') await chat.screenshot({ path: info.outputPath('chat-results.png') });
+  if (browserName === 'chromium') await chat.locator('.chat-panel').screenshot({ path: info.outputPath('chat-results.png') });
   expect(requests.some(url => /\.(?:bin|pkl|sqlite3|csv)(?:\?|$)/.test(url))).toBe(false);
   expect(policyViolations).toEqual([]);
   await page.getByRole('button', { name: 'Editar consulta' }).click();

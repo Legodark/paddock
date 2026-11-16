@@ -4,6 +4,8 @@ import type { Page } from '@playwright/test';
 async function ready(page: Page) {
   await page.goto('/');
   await expect(page.getByLabel('Marca', { exact: true })).toBeEnabled();
+}
+async function openChat(page: Page) {
   await page.getByRole('button', { name: 'Abrir asistente', exact: true }).click();
   await expect(page.getByLabel('Tu consulta sobre coches')).toBeEnabled();
 }
@@ -38,6 +40,7 @@ test('chat rate limiting preserves the query and never becomes an empty result',
   await page.route('**/api/v1/message', route => limited
     ? route.fulfill({ status: 429, contentType: 'text/html', body: '<h1>Too many requests</h1>' }) : route.continue());
   await ready(page);
+  await openChat(page);
   await page.getByLabel('Tu consulta sobre coches').fill(message);
   await page.getByRole('button', { name: 'Buscar en el catálogo', exact: true }).click();
   await expect(page.locator('#chat-error')).toContainText('Hay muchas solicitudes');
@@ -53,6 +56,7 @@ test('portrait and landscape changes preserve the estimate, query and historical
   await ready(page);
   await page.getByRole('button', { name: 'Rellenar un ejemplo' }).click();
   await prediction(page);
+  await openChat(page);
   await page.getByLabel('Tu consulta sobre coches').fill(message);
   for (const viewport of [{ width: 390, height: 844 }, { width: 844, height: 390 }, { width: 768, height: 1024 }]) {
     await page.setViewportSize(viewport);
@@ -86,6 +90,15 @@ test('controls remain readable and usable with doubled text', async ({ page }, i
   await prediction(page);
   await expect(page.getByLabel('Marca', { exact: true })).toBeEnabled();
   await expect(page.getByTestId('estimated-price')).toBeVisible();
+  await openChat(page);
+  const dialog = page.getByRole('dialog', { name: 'Eistein, asistente del catálogo', exact: true });
+  const bounds = await dialog.boundingBox();
+  expect(bounds).not.toBeNull();
+  expect(bounds!.x).toBeGreaterThanOrEqual(0);
+  expect(bounds!.x + bounds!.width).toBeLessThanOrEqual(page.viewportSize()!.width);
+  await page.getByLabel('Tu consulta sobre coches').scrollIntoViewIfNeeded();
+  await expect(page.getByLabel('Tu consulta sobre coches')).toBeInViewport();
+  await expect(page.getByRole('button', { name: 'Cerrar asistente', exact: true })).toBeInViewport();
 });
 
 test('visible touch controls meet the 24 CSS pixel target minimum', async ({ page }) => {
@@ -93,6 +106,13 @@ test('visible touch controls meet the 24 CSS pixel target minimum', async ({ pag
   await ready(page);
   const targets = page.locator('button:visible, .gearbox-option');
   for (const target of await targets.all()) {
+    const box = await target.boundingBox();
+    expect(box, await target.innerText()).not.toBeNull();
+    expect(box!.width, await target.innerText()).toBeGreaterThanOrEqual(24);
+    expect(box!.height, await target.innerText()).toBeGreaterThanOrEqual(24);
+  }
+  await openChat(page);
+  for (const target of await page.getByRole('dialog').locator('button:visible').all()) {
     const box = await target.boundingBox();
     expect(box, await target.innerText()).not.toBeNull();
     expect(box!.width, await target.innerText()).toBeGreaterThanOrEqual(24);
@@ -108,6 +128,7 @@ test('section navigation follows anchor history and preserves the vehicle', asyn
   await expect(page).toHaveURL(/#consultar$/);
   await expect(nav.getByRole('link', { name: 'Consultar', exact: true })).toHaveAttribute('aria-current', 'location');
   await expect(nav.getByRole('link', { name: 'Estimar', exact: true })).not.toHaveAttribute('aria-current', 'location');
+  await page.getByRole('button', { name: 'Cerrar asistente', exact: true }).click();
   await nav.getByRole('link', { name: 'Proyecto', exact: true }).focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL(/#proyecto$/);

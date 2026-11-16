@@ -198,7 +198,7 @@ h1 em { font-style: normal; color: var(--accent); }
 .about-copy p { color: var(--muted); font-size: 12px; margin-bottom: 12px; }
 .about-copy strong { color: #d4dce8; font-weight: 500; }
 .about-copy .text-button { padding-block: 4px; }
-.site-footer { border-top: 1px solid var(--line); padding-block: 23px; color: var(--muted); }
+.site-footer { border-top: 1px solid var(--line); padding-block: 23px 92px; color: var(--muted); }
 .site-footer > div { display: flex; gap: 24px; justify-content: space-between; align-items: center; }
 .footer-brand { font-size: 13px; letter-spacing: 1.8px; font-weight: 750; color: #dce3ed; font-style: italic; }
 .footer-brand > span { color: var(--accent); }

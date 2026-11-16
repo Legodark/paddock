@@ -1,4 +1,6 @@
-# Asistente del catálogo desplegable
+# Asistente del catálogo desplegable (referencia anterior)
+
+**Sustituido por el [chatbot flotante](chatbot-flotante.md)** tras aclarar el propietario la disposición esperada. Este documento conserva la evidencia de la sección plegable anterior.
 
 16-11-2026. Implementación de [#19](https://github.com/Legodark/paddock/issues/19) en [PR #6](https://github.com/Legodark/paddock/pull/6). Revisión conjunta en #12.
 

@@ -67,6 +67,113 @@ test('the assistant starts collapsed and keyboard opening loads its catalogue on
   expect(counts).toEqual({ catalog: 1, classify: 0, search: 0 });
 });
 
+test('the floating assistant stays anchored and scrolls its conversation without moving the page', async ({ page }) => {
+  await page.goto('/');
+  await expect(page.getByLabel('Marca', { exact: true })).toBeEnabled();
+  const viewport = page.viewportSize()!;
+  const initialLauncher = await opener(page).boundingBox();
+  expect(initialLauncher).not.toBeNull();
+  expect(viewport.width - initialLauncher!.x - initialLauncher!.width).toBeGreaterThanOrEqual(0);
+  expect(viewport.width - initialLauncher!.x - initialLauncher!.width).toBeLessThanOrEqual(32);
+  expect(viewport.height - initialLauncher!.y - initialLauncher!.height).toBeGreaterThanOrEqual(0);
+  expect(viewport.height - initialLauncher!.y - initialLauncher!.height).toBeLessThanOrEqual(32);
+
+  await page.evaluate(() => window.scrollTo({ top: 350, behavior: 'instant' }));
+  expect(await page.evaluate(() => window.scrollY)).toBeGreaterThan(0);
+  expect(await opener(page).boundingBox()).toEqual(initialLauncher);
+  const beforeOpening = await page.evaluate(() => ({ scroll: window.scrollY, height: document.documentElement.scrollHeight }));
+  await open(page);
+  const dialog = page.getByRole('dialog', { name: 'Eistein, asistente del catálogo', exact: true });
+  await expect(dialog).toHaveAttribute('aria-modal', 'false');
+  await expect(dialog).toBeVisible();
+  expect(await page.evaluate(() => ({ scroll: window.scrollY, height: document.documentElement.scrollHeight }))).toEqual(beforeOpening);
+  const bounds = await dialog.boundingBox();
+  expect(bounds).not.toBeNull();
+  expect(bounds!.x).toBeGreaterThanOrEqual(0);
+  expect(bounds!.y).toBeGreaterThanOrEqual(0);
+  expect(bounds!.x + bounds!.width).toBeLessThanOrEqual(viewport.width);
+  expect(bounds!.y + bounds!.height).toBeLessThanOrEqual(initialLauncher!.y);
+
+  await page.evaluate(() => window.scrollBy({ top: 120, behavior: 'instant' }));
+  expect(await dialog.boundingBox()).toEqual(bounds);
+  const backgroundScroll = await page.evaluate(() => window.scrollY);
+  await search(page);
+  expect(await page.evaluate(() => window.scrollY)).toBe(backgroundScroll);
+  const scroller = page.locator('.chat-panel-body');
+  await expect.poll(() => scroller.evaluate(element => element.scrollHeight > element.clientHeight)).toBe(true);
+  await scroller.evaluate(element => { element.scrollTop = 0; });
+  const scrollBounds = await scroller.boundingBox();
+  expect(scrollBounds).not.toBeNull();
+  await page.mouse.move(scrollBounds!.x + 8, scrollBounds!.y + 20);
+  await page.mouse.wheel(0, 450);
+  await expect.poll(() => scroller.evaluate(element => element.scrollTop)).toBeGreaterThan(0);
+  expect(await page.evaluate(() => window.scrollY)).toBe(backgroundScroll);
+  expect(await dialog.boundingBox()).toEqual(bounds);
+  await expect(panelHeading(page)).toBeInViewport();
+  await expect(closer(page)).toBeInViewport();
+  await closer(page).click();
+  await expect(opener(page)).toBeFocused();
+  await expect(dialog).toBeHidden();
+  expect(await page.evaluate(() => window.scrollY)).toBe(backgroundScroll);
+});
+
+test('instrumented short visual viewports keep the input and close control reachable', async ({ page }, info) => {
+  info.annotations.push({ type: 'scope', description: 'Synthetic visualViewport resize/offsets only; no physical keyboard or native zoom coverage.' });
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.addInitScript(() => {
+    const viewport = Object.assign(new EventTarget(), { width: 360, height: 240, offsetLeft: 15, offsetTop: 24, scale: 1 });
+    Object.defineProperty(window, 'visualViewport', { configurable: true, value: viewport });
+    (window as unknown as { chatTestVisualViewport: typeof viewport }).chatTestVisualViewport = viewport;
+  });
+  const counts = calls(page);
+  await page.goto('/');
+  await open(page);
+  const dialog = page.getByRole('dialog', { name: 'Eistein, asistente del catálogo', exact: true });
+  const toolbar = page.locator('.chat-panel-toolbar');
+  const body = page.locator('.chat-panel-body');
+  for (const height of [240, 180]) {
+    await page.evaluate(height => {
+      const viewport = (window as unknown as { chatTestVisualViewport: EventTarget & { height: number } }).chatTestVisualViewport;
+      viewport.height = height;
+      viewport.dispatchEvent(new Event('resize'));
+    }, height);
+    const bounds = { left: 15, top: 24, right: 375, bottom: 24 + height };
+    await expect.poll(async () => {
+      const box = await dialog.boundingBox();
+      return Boolean(box && box.x >= bounds.left && box.y >= bounds.top &&
+        box.x + box.width <= bounds.right && box.y + box.height <= bounds.bottom);
+    }, { message: `The dialog must fit the simulated ${height}px visual viewport` }).toBe(true);
+    await expect(page.locator('.chat-toggle')).toBeHidden();
+    const toolbarBox = await toolbar.boundingBox(), bodyBox = await body.boundingBox(), closeBox = await closer(page).boundingBox();
+    expect(toolbarBox).not.toBeNull(); expect(bodyBox).not.toBeNull(); expect(closeBox).not.toBeNull();
+    for (const box of [toolbarBox!, bodyBox!, closeBox!]) {
+      expect(box.x).toBeGreaterThanOrEqual(bounds.left);
+      expect(box.y).toBeGreaterThanOrEqual(bounds.top);
+      expect(box.x + box.width).toBeLessThanOrEqual(bounds.right);
+      expect(box.y + box.height).toBeLessThanOrEqual(bounds.bottom);
+    }
+    expect(closeBox!.width).toBeGreaterThanOrEqual(44);
+    expect(closeBox!.height).toBeGreaterThanOrEqual(44);
+    expect(bodyBox!.height).toBeGreaterThanOrEqual(32);
+    await input(page).scrollIntoViewIfNeeded();
+    await expect(input(page)).toBeInViewport();
+    const inputBox = await input(page).boundingBox();
+    expect(inputBox).not.toBeNull();
+    // Allow only border/subpixel rounding when comparing the input and scroll viewport.
+    expect(inputBox!.y).toBeGreaterThanOrEqual(bodyBox!.y - 2);
+    expect(inputBox!.y + inputBox!.height).toBeLessThanOrEqual(bodyBox!.y + bodyBox!.height + 2);
+    await input(page).fill('Málaga');
+    await closer(page).click();
+    await expect(opener(page)).toBeVisible();
+    await expect(opener(page)).toBeFocused();
+    if (height === 240) {
+      await open(page);
+      await expect(input(page)).toHaveValue('Málaga');
+    }
+  }
+  expect(counts).toEqual({ catalog: 1, classify: 0, search: 0 });
+});
+
 test('closing and Escape preserve a draft and return focus to the opener', async ({ page }) => {
   await page.goto('/');
   await open(page);
@@ -77,9 +184,14 @@ test('closing and Escape preserve a draft and return focus to the opener', async
   await expect(input(page)).toBeHidden();
   await open(page);
   await expect(input(page)).toHaveValue(example);
-  await page.getByLabel('Marca', { exact: true }).focus();
+  await opener(page).focus();
   await page.keyboard.press('Escape');
   await expect(opener(page)).toHaveAttribute('aria-expanded', 'true');
+  await page.getByLabel('Marca', { exact: true }).focus();
+  await expect(opener(page)).toHaveAttribute('aria-expanded', 'false');
+  await expect(page.getByLabel('Marca', { exact: true })).toBeFocused();
+  await open(page);
+  await expect(input(page)).toHaveValue(example);
   await input(page).focus();
   // dispatchEvent resolves selectors in the main world: avoid Firefox 159's
   // crashing ariaLabelledByElements getter in getByLabel for this dispatch only.
@@ -231,6 +343,7 @@ test('direct catalogue links and repeated navigation reopen the assistant withou
   await nav.getByRole('link', { name: 'Consultar', exact: true }).click();
   await expect(input(page)).toBeVisible();
   await expect(input(page)).toHaveValue(example);
+  await closer(page).click();
   await nav.getByRole('link', { name: 'Estimar', exact: true }).click();
   await nav.getByRole('link', { name: 'Consultar', exact: true }).click();
   await expect(input(page)).toHaveValue(example);

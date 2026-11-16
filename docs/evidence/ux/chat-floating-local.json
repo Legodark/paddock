@@ -1,0 +1,25 @@
+{
+  "scope": "Local production build. Mobile viewport and visualViewport heights 240/180 are instrumented; no physical keyboard or native-zoom certification.",
+  "unit_tests_passed": 82,
+  "initial_regression_suite": {
+    "passed": 78,
+    "failed": 2,
+    "cause": "Textarea border geometry exceeded 1px tolerance by a fractional pixel."
+  },
+  "final_floating_suite": {
+    "passed": 20,
+    "failed": 0,
+    "includes": "Fixed launcher, nonmodal dialog, independent scroll, compact viewport, preservation, keyboard, async guards and navigation."
+  },
+  "backend_unchanged": true,
+  "backend_files_compared": 16,
+  "public_bytes": 500457,
+  "public_gzip_bytes": 288055,
+  "vercel_application_api_requests": 0,
+  "screenshots_sha256": {
+    "chat-floating-closed-desktop.jpg": "0896b24c5091ae7fbb19411392add4f44cddbe50b471cbfa36ef09d70eaaf018",
+    "chat-floating-open-desktop.jpg": "a3fd78752fdf7124e10d874ddd40fb38ad8cc9740b625eb9d8b2866f1510beb2",
+    "chat-floating-closed-mobile.jpg": "2a9b60921826be6ec2b22eb7137d4d796c22f37b18cb68caae9d173e396d39db",
+    "chat-floating-open-mobile.jpg": "74284a7e10e2a4f8d2e278b938ac5319838b203cf68687c301e5bba32492d974"
+  }
+}

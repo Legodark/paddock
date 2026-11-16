@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import type { FormEvent } from 'react';
+import type { FormEvent, MouseEvent } from 'react';
 import { getCatalog, predictVehicle } from './api';
 import type { Catalog, Estimate, FormErrors, VehicleForm } from './types';
 import { EMPTY_FORM, EXAMPLE_FORM, makePredictionRequest, validateVehicle, vehicleLabel } from './vehicle';
@@ -30,6 +30,14 @@ export default function App() {
   const resultHeading = useRef<HTMLHeadingElement>(null);
   const errorBox = useRef<HTMLDivElement>(null);
   const activePrediction = useRef<AbortController | null>(null);
+
+  function openChatFromNavigation(event: MouseEvent<HTMLAnchorElement>) {
+    if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    if (window.location.hash !== '#consultar') window.history.pushState(null, '', '#consultar');
+    setActiveSection('consultar');
+    setChatOpenRequest(value => value + 1);
+  }
 
   useEffect(() => {
     const syncSection = () => setActiveSection(sectionFromHash());
@@ -115,7 +123,7 @@ export default function App() {
           <image href="/paddock-delorean.png" width="835" height="327" clipPath="url(#paddock-original-car)" />
         </svg>
       </a>
-      <nav aria-label="Navegación principal">{NAV_SECTIONS.map(([id, label]) => <a key={id} href={`#${id}`} onClick={id === 'consultar' ? () => setChatOpenRequest(value => value + 1) : undefined} className={activeSection === id ? 'nav-active' : undefined} aria-current={activeSection === id ? 'location' : undefined}>{label}</a>)}<a className="repo-link" href="https://github.com/Legodark/paddock" target="_blank" rel="noopener noreferrer"><Icon name="github" /><span>GitHub</span><span className="sr-only"> (abre otra pestaña)</span></a></nav>
+      <nav aria-label="Navegación principal">{NAV_SECTIONS.map(([id, label]) => <a key={id} href={`#${id}`} onClick={id === 'consultar' ? openChatFromNavigation : undefined} className={activeSection === id ? 'nav-active' : undefined} aria-current={activeSection === id ? 'location' : undefined}>{label}</a>)}<a className="repo-link" href="https://github.com/Legodark/paddock" target="_blank" rel="noopener noreferrer"><Icon name="github" /><span>GitHub</span><span className="sr-only"> (abre otra pestaña)</span></a></nav>
     </div></header>
     <main id="inicio" className="page-shell">
       <section className="hero" aria-labelledby="page-title">

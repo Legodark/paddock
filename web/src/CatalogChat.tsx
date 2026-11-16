@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import type { FormEvent } from 'react';
+import type { CSSProperties, FormEvent } from 'react';
 import { classifyMessage, getSearchCatalog, searchCars } from './api';
 import { classifierText, interpretMessage } from './chat-interpreter';
 import type { Interpretation } from './chat-interpreter';
@@ -56,17 +56,21 @@ export default function CatalogChat({ openRequest = 0 }: { openRequest?: number 
   const isOpen = useRef(open);
   const toggle = useRef<HTMLButtonElement>(null);
   const panelHeading = useRef<HTMLHeadingElement>(null);
+  const scrollArea = useRef<HTMLDivElement>(null);
+  const savedScrollTop = useRef(0);
+  const restoreLauncherFocus = useRef(false);
+  const [viewport, setViewport] = useState({ width: window.innerWidth, height: window.innerHeight, right: 0, bottom: 0 });
 
   function show() {
     isOpen.current = true;
     setHasOpened(true);
     setOpen(true);
   }
-  function close() {
+  function close(restoreFocus = true) {
+    savedScrollTop.current = scrollArea.current?.scrollTop ?? 0;
     isOpen.current = false;
+    restoreLauncherFocus.current = restoreFocus;
     setOpen(false);
-    toggle.current?.focus({ preventScroll: true });
-    toggle.current?.scrollIntoView({ block: 'nearest' });
   }
 
   useEffect(() => {
@@ -77,11 +81,33 @@ export default function CatalogChat({ openRequest = 0 }: { openRequest?: number 
   // The explicit request also handles clicking Consultar when that hash is already current.
   useEffect(() => { if (openRequest > 0) show(); }, [openRequest]);
   useEffect(() => {
-    if (!open) return;
+    if (!open) {
+      if (restoreLauncherFocus.current) { restoreLauncherFocus.current = false; toggle.current?.focus({ preventScroll: true }); }
+      return;
+    }
     // Focus the heading, so opening the assistant does not summon the mobile keyboard.
     panelHeading.current?.focus({ preventScroll: true });
-    panelHeading.current?.scrollIntoView({ block: 'nearest' });
+    if (scrollArea.current) scrollArea.current.scrollTop = savedScrollTop.current;
   }, [open, openRequest]);
+  useEffect(() => {
+    const visible = window.visualViewport;
+    const sync = () => {
+      const width = visible?.width ?? window.innerWidth;
+      const height = visible?.height ?? window.innerHeight;
+      setViewport({ width, height,
+        right: Math.max(0, window.innerWidth - width - (visible?.offsetLeft ?? 0)),
+        bottom: Math.max(0, window.innerHeight - height - (visible?.offsetTop ?? 0)) });
+    };
+    sync();
+    window.addEventListener('resize', sync);
+    visible?.addEventListener('resize', sync);
+    visible?.addEventListener('scroll', sync);
+    return () => {
+      window.removeEventListener('resize', sync);
+      visible?.removeEventListener('resize', sync);
+      visible?.removeEventListener('scroll', sync);
+    };
+  }, []);
 
   useEffect(() => {
     if (!hasOpened) return;
@@ -96,12 +122,20 @@ export default function CatalogChat({ openRequest = 0 }: { openRequest?: number 
   useEffect(() => {
     if (!isOpen.current || !outcome || phase) return;
     outcomeHeading.current?.focus({ preventScroll: true });
-    outcomeHeading.current?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'nearest' });
+    if (scrollArea.current && outcomeHeading.current) {
+      scrollArea.current.scrollTo({ top: outcomeHeading.current.offsetTop - 12,
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+    }
   }, [outcome, phase]);
 
   function append(question: string, answer: string) {
     const id = exchangeSequence.current++;
     setHistory(current => [...current, { id, question, answer }].slice(-6));
+  }
+  function focusInput() {
+    if (!isOpen.current) return;
+    input.current?.focus({ preventScroll: true });
+    if (scrollArea.current && input.current) scrollArea.current.scrollTo({ top: input.current.offsetTop - 12 });
   }
   function cancel() {
     active.current?.abort(); active.current = null; setPhase(null);
@@ -110,19 +144,18 @@ export default function CatalogChat({ openRequest = 0 }: { openRequest?: number 
   function clear() {
     active.current?.abort(); active.current = null;
     setPhase(null); setMessage(''); setHistory([]); setOutcome(null); setError(null);
-    setStatus('Conversación eliminada de esta página.'); input.current?.focus();
+    setStatus('Conversación eliminada de esta página.'); focusInput();
   }
   function fillExample(value: string) {
     setMessage(value); setError(null); setOutcome(null); setStatus('Ejemplo cargado. Puedes editarlo antes de consultar.');
-    input.current?.focus();
+    focusInput();
   }
   function editLast() {
     const last = history.at(-1);
     if (!last) return;
     setMessage(last.question); setOutcome(null); setError(null);
     requestAnimationFrame(() => {
-      if (!isOpen.current) return;
-      input.current?.focus(); input.current?.scrollIntoView({ block: 'nearest' });
+      focusInput();
     });
   }
 
@@ -130,14 +163,14 @@ export default function CatalogChat({ openRequest = 0 }: { openRequest?: number 
     if (!catalog || active.current) return;
     const question = message.trim();
     if (!question || question.length > 2000) {
-      setError('Escribe una consulta de entre 1 y 2.000 caracteres.'); input.current?.focus(); return;
+      setError('Escribe una consulta de entre 1 y 2.000 caracteres.'); focusInput(); return;
     }
     // Parse again after edits; confirmation never reuses a previous hidden filter set.
     const interpretation = interpretMessage(question, catalog);
     const hasFilters = Object.keys(interpretation.filters).length > 0;
     const prepared = classifierText(question, catalog);
     if (!confirmed && prepared.length > 2000) {
-      setError('Acorta la consulta: su versión normalizada supera el límite del clasificador.'); input.current?.focus(); return;
+      setError('Acorta la consulta: su versión normalizada supera el límite del clasificador.'); focusInput(); return;
     }
     const controller = new AbortController(); active.current = controller;
     setPhase('classify'); setError(null); setOutcome(null); setStatus('');
@@ -168,7 +201,7 @@ export default function CatalogChat({ openRequest = 0 }: { openRequest?: number 
     } catch (error) {
       if (!controller.signal.aborted) {
         setError(error instanceof Error ? error.message : 'No se pudo completar la consulta.');
-        if (isOpen.current) input.current?.focus();
+        focusInput();
       }
     } finally {
       if (active.current === controller) { active.current = null; setPhase(null); }
@@ -186,12 +219,18 @@ export default function CatalogChat({ openRequest = 0 }: { openRequest?: number 
       <button type="button" className="text-button" onClick={clear}><Icon name="reset" />Limpiar conversación</button></div>
   </form>;
 
-  return <section id="consultar" className="chat-section" aria-labelledby="chat-heading">
-    <div className="section-heading chat-disclosure"><div><span className="eyebrow">EL ASISTENTE DEL TFM</span><h2 id="chat-heading">Busca en el catálogo original.</h2><p id="chat-toggle-help">Abre el asistente para describir el coche que buscas. Puedes plegarlo sin perder la conversación en esta página.</p></div><button ref={toggle} type="button" className="secondary-button chat-toggle" aria-expanded={open} aria-controls="catalog-chat-panel" aria-describedby="chat-toggle-help" onClick={() => open ? close() : show()}>{open ? 'Plegar asistente' : 'Abrir asistente'}<Icon name="chevron" /></button></div>
-    <div id="catalog-chat-panel" className="chat-panel" hidden={!open} role="region" aria-labelledby="chat-panel-heading" onKeyDown={event => {
+  const viewportStyle = { '--chat-visible-width': `${viewport.width}px`, '--chat-visible-height': `${viewport.height}px`,
+    '--chat-right-gap': `${viewport.right}px`, '--chat-bottom-gap': `${viewport.bottom}px` } as CSSProperties;
+
+  return <section id="consultar" className={`chat-section${open && viewport.height < 360 ? ' chat-section--compact' : ''}`} aria-label="Asistente del catálogo" style={viewportStyle} onBlur={event => {
+    if (isOpen.current && event.relatedTarget && !event.currentTarget.contains(event.relatedTarget as Node)) close(false);
+  }}>
+    <button ref={toggle} type="button" className="chat-toggle" aria-label={open ? 'Plegar asistente' : 'Abrir asistente'} title={open ? 'Plegar asistente' : 'Abrir asistente'} aria-haspopup="dialog" aria-expanded={open} aria-controls="catalog-chat-panel" onClick={() => open ? close() : show()}><Icon name={open ? 'close' : 'message'} /><span className="chat-launcher-label">Asistente</span></button>
+    <div id="catalog-chat-panel" className="chat-panel" hidden={!open} role="dialog" aria-modal="false" aria-labelledby="chat-panel-heading" onKeyDown={event => {
       if (event.key === 'Escape' && !event.nativeEvent.isComposing) { event.preventDefault(); event.stopPropagation(); close(); }
     }}>
-      <div className="chat-panel-toolbar"><h3 id="chat-panel-heading" ref={panelHeading} tabIndex={-1}>Eistein, asistente del catálogo</h3><button type="button" className="text-button" onClick={close}>Cerrar asistente<Icon name="chevron" /></button></div>
+      <div className="chat-panel-toolbar"><div><span className="eyebrow">CATÁLOGO DE 2023</span><h2 id="chat-panel-heading" ref={panelHeading} tabIndex={-1}>Eistein, asistente del catálogo</h2></div><button type="button" className="chat-close" aria-label="Cerrar asistente" title="Cerrar asistente" onClick={() => close()}><Icon name="close" /></button></div>
+      <div className="chat-panel-body" ref={scrollArea}>
       <div className="chat-intro"><span className="chat-avatar" aria-hidden="true">E</span><div><strong>Eistein</strong><p>Uso el clasificador original y reglas de búsqueda. Puedes indicar marca, modelo, provincia, combustible, cambio, año, precio, km, CV, cilindrada y marchas.</p></div></div>
       <div className="chat-examples" aria-label="Ejemplos de consulta">{examples.map(example => <button key={example} type="button" disabled={!catalog || phase !== null} onClick={() => fillExample(example)}>{example}<Icon name="arrow" /></button>)}</div>
       {catalogError ? <div className="chat-catalog-error" role="alert"><p>No hemos podido cargar el catálogo de consulta. {catalogError}</p><button type="button" className="secondary-button" onClick={() => setCatalogAttempt(value => value + 1)}>Reintentar catálogo de consulta</button></div>
@@ -207,6 +246,7 @@ export default function CatalogChat({ openRequest = 0 }: { openRequest?: number 
         {outcome.cars !== undefined && <><p className="chat-result-count">{outcome.cars.length} registros · Hasta 10, ordenados por precio</p><SearchResults cars={outcome.cars} /><p className="comparison-note">Son datos del TFM, no anuncios disponibles ni precios actuales.</p></>}
       </div>}
       <p className="sr-only" role="status">{status}</p>
+      </div>
     </div>
   </section>;
 }

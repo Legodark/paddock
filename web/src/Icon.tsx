@@ -1,7 +1,9 @@
 import type { ReactNode } from 'react';
 
-export type IconName = 'arrow' | 'car' | 'check' | 'info' | 'github' | 'clock' | 'database' | 'chevron' | 'reset' | 'sliders';
+export type IconName = 'arrow' | 'car' | 'check' | 'info' | 'github' | 'clock' | 'database' | 'chevron' | 'reset' | 'sliders' | 'message' | 'close';
 const paths: Record<IconName, ReactNode> = {
+  message: <path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5Z" />,
+  close: <path d="m6 6 12 12M6 18 18 6" />,
   arrow: <><path d="M4 12h15M13 5l7 7-7 7" /></>,
   car: <><path d="m4 10 2-5h12l2 5M3 10h18v8H3zM6 18v2M18 18v2M6 14h2M16 14h2" /></>,
   check: <path d="m5 12 4 4L19 6" />,
