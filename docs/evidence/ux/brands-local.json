@@ -1,0 +1,54 @@
+{
+  "browser": "156.0.8078.79",
+  "scope": "Local production web build against real frozen local API; no Vercel application API calls or physical-device/native-zoom claims.",
+  "unit_tests": 82,
+  "geometry": [
+    {
+      "viewport": 320,
+      "documentWidth": 320
+    },
+    {
+      "viewport": 360,
+      "documentWidth": 360
+    },
+    {
+      "viewport": 390,
+      "documentWidth": 390
+    },
+    {
+      "viewport": 768,
+      "documentWidth": 768
+    },
+    {
+      "viewport": 1024,
+      "documentWidth": 1024
+    },
+    {
+      "viewport": 1440,
+      "documentWidth": 1440
+    }
+  ],
+  "decoded_images": 70,
+  "decode_errors": 0,
+  "logo_source_bytes": 2925162,
+  "logo_public_bytes": 157644,
+  "public_bytes": 495019,
+  "public_gzip_bytes": 286669,
+  "backend_unchanged": true,
+  "backend_files_compared": 16,
+  "original_logo_and_header_unchanged": true,
+  "screenshot_sha256": {
+    "brands-mobile.jpg": "c8c38efbce90aeb113ba1616e65b925ae06f6893038ac7e1fdf7f1028d7f9b49",
+    "brands-desktop.jpg": "a324b4d9f990ff849f1e2e40920e79eefae2b797b541de2668bd8a940c544999"
+  },
+  "browser_tests": 60,
+  "browser_profiles": [
+    "desktop-chromium",
+    "mobile-chromium"
+  ],
+  "new_browser_scenarios": [
+    "On-demand image loading, reset/example and submitted estimate identity",
+    "Failed image fallback and recovery after brand change",
+    "Unrecognised ID or mismatched canonical name fallback"
+  ]
+}

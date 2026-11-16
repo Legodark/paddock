@@ -82,7 +82,7 @@ export default function App() {
     setPending(true);
     try {
       const prediction = await predictVehicle(makePredictionRequest(form, catalog), controller.signal);
-      setEstimate({ prediction, form: { ...form }, vehicle: vehicleLabel(form, catalog) });
+      setEstimate({ prediction, form: { ...form }, vehicle: vehicleLabel(form, catalog), brand: catalog.brands[form.brand_id] });
       setEstimateNumber(current => current + 1);
       setNotice('Estimación calculada. Los resultados corresponden al modelo histórico del TFM.');
     } catch (error) {

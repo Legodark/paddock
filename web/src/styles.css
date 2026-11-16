@@ -91,6 +91,11 @@ h1 em { font-style: normal; color: var(--accent); }
 .field input[aria-invalid=true], .field select[aria-invalid=true] { border-color: var(--error); }
 .input-unit { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); font-size: 11px; color: #a6b1c4; pointer-events: none; }
 .select-wrap > .icon { position: absolute; right: 12px; top: 15px; width: 15px; height: 15px; transform: rotate(90deg); color: #a6b1c4; pointer-events: none; }
+.brand-logo { display: inline-flex; align-items: center; justify-content: center; flex: none; width: 32px; height: 32px; padding: 4px; border-radius: 5px; background: #fff; }
+.brand-logo img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.brand-logo--fallback { color: var(--muted); background: #172130; border: 1px solid var(--line); }
+.select-wrap--brand > .brand-logo { position: absolute; left: 7px; top: 7px; pointer-events: none; }
+.select-wrap--brand select { padding-left: 49px; }
 .field-error { color: var(--error); font-size: 11px; display: block; line-height: 1.5; margin-top: 7px; }
 .gearbox { margin: 0; padding: 0; border: 0; }
 .gearbox legend { padding: 0; }
@@ -118,7 +123,9 @@ h1 em { font-style: normal; color: var(--accent); }
 .estimate-topline { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; }
 .model-pill { border: 1px solid #566275; border-radius: 5px; padding: 4px 7px; color: #c1c9d7; font-size: 9px; letter-spacing: .6px; }
 .estimate-card h2 { font-size: 20px; letter-spacing: -.4px; margin-top: 24px; margin-bottom: 10px; font-weight: 550; scroll-margin-top: 25px; }
-.estimate-vehicle { color: #f3f4f7; font-size: 15px; margin-bottom: 11px; }
+.estimate-identity { display: flex; align-items: center; gap: 12px; margin-bottom: 11px; }
+.estimate-identity > .brand-logo { width: 44px; height: 44px; padding: 6px; }
+.estimate-vehicle { min-width: 0; color: #f3f4f7; font-size: 15px; margin: 0; }
 .vehicle-tags { display: flex; flex-wrap: wrap; gap: 7px; }
 .vehicle-tags span { font-size: 10px; color: #b9c3d4; border: 1px solid #38465b; border-radius: 4px; padding: 4px 7px; }
 .estimated-value { color: var(--accent-light); font-size: clamp(40px,4.6vw,60px); line-height: 1.1; font-weight: 550; letter-spacing: -2px; margin-block: 28px 7px; font-variant-numeric: tabular-nums; }

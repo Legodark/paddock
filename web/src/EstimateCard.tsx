@@ -2,6 +2,7 @@ import { forwardRef } from 'react';
 import type { Estimate } from './types';
 import { euro, integer } from './vehicle';
 import Icon from './Icon';
+import BrandLogo from './BrandLogo';
 
 function CarDrawing() {
   return <svg className="car-drawing" viewBox="0 0 360 170" fill="none" aria-hidden="true" focusable="false">
@@ -40,7 +41,7 @@ const EstimateCard = forwardRef<HTMLHeadingElement, { estimate: Estimate | null;
     return <aside className={`estimate-card ${dirty ? 'estimate-card--dirty' : ''}`} aria-labelledby="estimate-heading" aria-busy={pending}>
       <div className="estimate-topline"><span className="eyebrow"><span className="status-dot" />RESULTADO HISTÓRICO</span><span className="model-pill">TFM · 2023</span></div>
       <h2 id="estimate-heading" ref={ref} tabIndex={-1}>Estimación orientativa</h2>
-      <p className="estimate-vehicle">{estimate.vehicle}</p>
+      <div className="estimate-identity"><BrandLogo brandId={estimate.form.brand_id} brandName={estimate.brand} /><p className="estimate-vehicle">{estimate.vehicle}</p></div>
       <div className="vehicle-tags"><span>{estimate.form.year}</span><span>{integer(Number(estimate.form.km))} km</span><span>{estimate.form.horses} CV</span></div>
       <p className="estimated-value" data-testid="estimated-price">{euro(prediction.prediccion)}</p>
       <p className="rounding-note">Cifra redondeada al euro · Modelo original del TFM</p>

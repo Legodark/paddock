@@ -1,5 +1,13 @@
 Paddock — third-party notices
 
+Manufacturer artwork
+The manufacturer logos in /brand-logos/ are web derivatives of the local PNG
+assets archived in padook/Frontend/assets/images/marcas/ in the 2023 TFM.
+The mapping, original checksums and processing recipe are recorded in
+docs/evidence/ux/brand-assets.json in the source repository. No new artwork
+was downloaded. Brand names and logos belong to their respective owners;
+the software licenses below do not grant rights over those trademarks.
+
 React, React DOM and Scheduler
 https://github.com/facebook/react
 Versions are fixed in package-lock.json.

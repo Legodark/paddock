@@ -79,4 +79,5 @@ export interface Estimate {
   prediction: Prediction;
   form: VehicleForm;
   vehicle: string;
+  brand: string;
 }

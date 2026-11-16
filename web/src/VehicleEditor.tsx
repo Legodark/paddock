@@ -2,6 +2,7 @@ import type { FormEvent } from 'react';
 import type { Catalog, FormErrors, VehicleForm } from './types';
 import { displayBrand, NUMERIC_FIELDS, shortModel } from './vehicle';
 import Icon from './Icon';
+import BrandLogo from './BrandLogo';
 
 interface Props {
   catalog: Catalog;
@@ -23,7 +24,8 @@ export default function VehicleEditor({ catalog, values, errors, pending, hasEst
   function selection(field: 'brand_id' | 'model_id' | 'fuel_id', label: string, options: [string, string][], placeholder: string, className = '') {
     return <div className={`field field--half ${className}`}>
       <label htmlFor={`vehicle-${field}`}>{label}</label>
-      <div className="select-wrap">
+      <div className={`select-wrap${field === 'brand_id' ? ' select-wrap--brand' : ''}`}>
+        {field === 'brand_id' && <BrandLogo brandId={values.brand_id} brandName={catalog.brands[values.brand_id]} />}
         <select id={`vehicle-${field}`} name={field} value={values[field]} required
           onChange={event => onChange(field, event.target.value)}
           disabled={field === 'model_id' && !values.brand_id}
