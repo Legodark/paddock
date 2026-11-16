@@ -1,12 +1,12 @@
 # Preview privada verificada en Vercel
 
-15-11-2026. Seguimiento: [#10](https://github.com/Legodark/paddock/issues/10); candidata: [PR #6](https://github.com/Legodark/paddock/pull/6).
+16-11-2026. Seguimiento: [#10](https://github.com/Legodark/paddock/issues/10); candidata: [PR #6](https://github.com/Legodark/paddock/pull/6).
 
-**[Abrir la Preview privada](https://paddock-ba93thzc9-legodarks-projects.vercel.app)** con la cuenta de Vercel autorizada. La app está disponible para revisión; el acceso anónimo redirige a autenticación. El dominio propio y `main` permanecen intactos.
+**[Abrir la Preview privada](https://paddock-g4updlcd1-legodarks-projects.vercel.app)** con la cuenta de Vercel autorizada. La app está disponible para revisión; el acceso anónimo redirige a autenticación. El dominio propio y `main` permanecen intactos.
 
 ## Actualización visual · 16-11-2026
 
-La revisión vigente es **[Paddock con el DeLorean original](https://paddock-obmoyab24-legodarks-projects.vercel.app)**, despliegue `dpl_78UW4KyJQ5LCGK3W3YPvKjhzSZVH`, fuente `ebc9b7b17b05eb61d4c2a298c5ee52227b6aff08`. El propietario autorizó modernizar las letras conservando el coche; el PNG original permanece intacto y local. El backend, routing, modelos y datos coinciden byte a byte con la versión anterior (16 archivos comparados). La web mide **331.141 bytes**, 125.054 bytes gzip, dentro del presupuesto. No se hicieron nuevas llamadas a la API de aplicación: se verificaron HTML, JS, CSS, PNG y acceso anónimo a la raíz. La CI del código desplegado pasó; ver [evidencia](evidence/ux/delorean-provider.json).
+La revisión vigente es **[Paddock con la K unida a la estela del DeLorean](https://paddock-g4updlcd1-legodarks-projects.vercel.app)**, despliegue `dpl_GBfCQ2LKio1khpnm8y7WzB1vDYFi`, fuente `ae7072388432f7107407e604ff4107630b3ca2b4`. A petición del propietario, PADDOCK va primero y el coche a la derecha, solapando la estela con la K. El PNG original permanece intacto y local. El backend, routing, modelos y datos coinciden byte a byte con la versión anterior (16 archivos comparados). La web mide **331.057 bytes**, 125.006 bytes gzip, dentro del presupuesto. Se han pasado 28 pruebas locales de navegador, incluidos accesibilidad, teclado y texto ampliado, y comprobado seis anchos. No se hicieron nuevas llamadas a la API de aplicación en Vercel: se verificaron HTML, JS, CSS, PNG y acceso anónimo a la raíz. Ver [evidencia](evidence/ux/delorean-provider.json). El propietario revisará el logo antes de continuar con #18/#19.
 
 Las mediciones de API y la tabla siguientes conservan la publicación anterior como referencia; las limitaciones de #10/#11/#12/#17 siguen vigentes.
 
@@ -16,12 +16,12 @@ Las mediciones de API y la tabla siguientes conservan la publicación anterior c
 | --- | --- |
 | Equipo y plan | `legodarks-projects`, Hobby activo |
 | Proyecto | [`paddock`](https://vercel.com/legodarks-projects/paddock), separado del portfolio |
-| Despliegue vigente para revisión | `dpl_ys9CpWow2Hx4x8aAAQEWb3WqKU2G`, READY, Preview |
-| Fuente desplegada | `fbb6082ec7454bc39a0d2e4d6695ffbb57a2e32e` |
+| Despliegue vigente para revisión | `dpl_GBfCQ2LKio1khpnm8y7WzB1vDYFi`, READY, Preview |
+| Fuente desplegada | `ae7072388432f7107407e604ff4107630b3ca2b4` |
 | Protección | Vercel Authentication en todas las URLs (`all`) |
 | Firewall | Una regla activa: prefijo `/api`, 60 solicitudes/60 s/IP, ventana fija, rechazo 429 |
 | Función local con constructor oficial | **121.114.317 bytes = 115,50 MiB**, Python 3.12 |
-| Web pública del paquete | **292.855 bytes**, cinco archivos; sin modelos o SQLite |
+| Web pública del paquete | **331.057 bytes**, seis archivos; sin modelos o SQLite |
 | Dominio propio | Sin asociar `paddock.juancerezo.com`; DNS sin cambios |
 | Extras de pago | Ninguno; sin Blob, Redis, base gestionada ni Observability Plus |
 
@@ -43,8 +43,8 @@ También se detectó que el documento principal no recibía tres cabeceras gener
 - En la Preview con el rewrite corregido: readiness, predicción de **20.155 €** con comparables, clasificador, catálogo de 719 modelos/50 provincias y tres coches Citroën de Málaga por debajo de 20.000 €, con filtros reales.
 - Contrato inválido → 400; cuerpo superior al límite → 413; entrada directa, raíz API y ruta desconocida → 404. La ruta codificada ensayada se rechaza con 404 y no se interpreta como otro endpoint válido.
 - API con `Cache-Control: no-store`, cabeceras de seguridad y sin CORS abierto. Acceso anónimo a la API → 302 de autenticación.
-- La última publicación cambia únicamente `vercel.json` para las cabeceras del documento. Código Python, requisitos, modelos, SQLite y web son **idénticos byte a byte** a la versión cuya API se probó. No se volvió a invocar la API tras agotar el presupuesto.
-- En la publicación final: **13 comprobaciones estáticas**, incluyendo documento/JS/CSS idénticos al build, licencias, robots, cabeceras y autenticación anónima. CSP restrictiva, `nosniff`, `DENY` y `no-referrer` efectivos.
+- La publicación de cabeceras cambió únicamente `vercel.json` para las cabeceras del documento. Código Python, requisitos, modelos, SQLite y web son **idénticos byte a byte** a la versión cuya API se probó. No se volvió a invocar la API tras agotar el presupuesto.
+- En la publicación de cabeceras: **13 comprobaciones estáticas**, incluyendo documento/JS/CSS idénticos al build, licencias, robots, cabeceras y autenticación anónima. CSP restrictiva, `nosniff`, `DENY` y `no-referrer` efectivos.
 - Modelos, SQLite, manifest privado, requirements, fuente Python, source map y `.env` → 404. Se usaron rangos y límite de descarga al comprobar recursos privados.
 - El CDN puede devolver CORS `*` en archivos estáticos: se distingue de la ausencia de CORS abierto en la API, que no cambió.
 - Localmente: 17 pruebas de API y siete guardas pasadas; dos regresiones de compilación de rutas/cabeceras comprobadas; función oficial materializada lista, con la misma predicción, clasificación y consultas.

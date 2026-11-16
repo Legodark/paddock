@@ -1,63 +1,59 @@
 {
   "deployment": {
-    "id": "dpl_78UW4KyJQ5LCGK3W3YPvKjhzSZVH",
-    "url": "https://paddock-obmoyab24-legodarks-projects.vercel.app",
+    "id": "dpl_GBfCQ2LKio1khpnm8y7WzB1vDYFi",
+    "url": "https://paddock-g4updlcd1-legodarks-projects.vercel.app",
     "readyState": "READY",
     "environment": "preview"
   },
-  "source_commit": "ebc9b7b17b05eb61d4c2a298c5ee52227b6aff08",
+  "source_commit": "ae7072388432f7107407e604ff4107630b3ca2b4",
   "static_checks": [
     {
       "path": "/",
       "status": 200,
       "ssl_verify": 0,
-      "type": "text/html; charset=utf-8",
-      "nosniff": "nosniff",
-      "frame": "DENY",
-      "referrer": "no-referrer",
-      "csp": "default-src 'none'; script-src 'self'; style-src 'self'; style-src-attr 'unsafe-inline'; img-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'",
       "bytes": 718,
-      "sha256": "708a2bbf9323674d507295c67bdd489c47929b0ab603868c02ace054ae984959",
-      "matches_build": true
-    },
-    {
-      "path": "/assets/index-DI2nIcu4.js",
-      "status": 200,
-      "ssl_verify": 0,
-      "type": "application/javascript; charset=utf-8",
+      "sha256": "ab345b6c4dbab775c8ae9c6d98d8f3ad2bac02ee1384bd12f328c13bf98023f9",
+      "matches_build": true,
       "nosniff": "nosniff",
       "frame": "DENY",
       "referrer": "no-referrer",
-      "csp": "",
-      "bytes": 263877,
-      "sha256": "eb3f5e987805d0525159d11b232bac4938dd5ac9e3d004fd1f05b8bec5c19a62",
-      "matches_build": true
+      "csp": "default-src 'none'; script-src 'self'; style-src 'self'; style-src-attr 'unsafe-inline'; img-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'"
     },
     {
-      "path": "/assets/index-D16tYHSW.css",
+      "path": "/assets/index-BTsMdZBp.js",
       "status": 200,
       "ssl_verify": 0,
-      "type": "text/css; charset=utf-8",
+      "bytes": 263814,
+      "sha256": "0c1961038ad5662731b1d85470ec5b94d73c65766b6e39ee27181c9a759af6fc",
+      "matches_build": true,
       "nosniff": "nosniff",
       "frame": "DENY",
       "referrer": "no-referrer",
-      "csp": "",
-      "bytes": 25871,
-      "sha256": "261fb3d2c0842d95f8c4ad64863b99e22a4bfecb694f7484ab774878c5e75fcc",
-      "matches_build": true
+      "csp": ""
+    },
+    {
+      "path": "/assets/index-BsFQvHjF.css",
+      "status": 200,
+      "ssl_verify": 0,
+      "bytes": 25876,
+      "sha256": "65268c394aaaa2a8c502ddc36aed81f03424285bbc17add4f72a1bca0eadc921",
+      "matches_build": true,
+      "nosniff": "nosniff",
+      "frame": "DENY",
+      "referrer": "no-referrer",
+      "csp": ""
     },
     {
       "path": "/paddock-delorean.png",
       "status": 200,
       "ssl_verify": 0,
-      "type": "image/png",
+      "bytes": 38217,
+      "sha256": "c13355d2fb89e8a8112d063455291f12bf55a3492b9498fcd33b501effeb4195",
+      "matches_build": true,
       "nosniff": "nosniff",
       "frame": "DENY",
       "referrer": "no-referrer",
-      "csp": "",
-      "bytes": 38217,
-      "sha256": "c13355d2fb89e8a8112d063455291f12bf55a3492b9498fcd33b501effeb4195",
-      "matches_build": true
+      "csp": ""
     }
   ],
   "anonymous_document_status": 302,
