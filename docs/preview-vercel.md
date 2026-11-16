@@ -6,6 +6,8 @@
 
 ## Revisión gratuita de plataforma · 16-11-2026
 
+Después de esta consulta, el propietario autorizó el procedimiento de firewall de hasta 67 HTTP. Se enviaron **61 health**, todos 200, y se detuvo la ejecución: el proveedor contó dos IP de origen con 40 y 21 solicitudes, sin alcanzar 60/IP. Cero variantes, estático, recuperación o reintentos. Los 61 casos corresponden a registros `allow`/`streaming_func`; configuración idéntica antes/después. Resultado inconcluso para #11, sin nuevas mediciones de CPU/memoria o arranque frío. [Procedimiento y siguiente propuesta sin ejecutar](prueba-firewall-preview.md) · [evidencia saneada](evidence/preview/firewall-experiment-20261116.json). Son adicionales a las veinte solicitudes del smoke funcional histórico.
+
 Nueva consulta de solo lectura, sin llamadas a la API de aplicación: Hobby activo, Fluid compute y autenticación para todos los despliegues confirmados. Los logs gratuitos de los últimos 30 minutos muestran dos cargas de catálogo y una predicción con HTTP 200, entre las 14:58 y 14:59 UTC, en `cdg1`, con acción WAF `allow`. Su agente de usuario declara iPhone/iOS 18.7/Safari 27.2; se registra como dato HTTP y no como certificación del dispositivo o aprobación del medidor.
 
 Los logs de peticiones están disponibles sin contratar Observability Plus. Los de runtime no aportan aquí CPU, memoria o arranque frío; la consulta de 24 horas es rechazada por la retención Hobby. `billing usage` tampoco devuelve datos del 1–16 de noviembre. **El consumo y margen mensual siguen desconocidos; no equivalen a cero.** #10 permanece abierta. [Evidencia saneada](evidence/preview/free-platform-review-20261116.json).

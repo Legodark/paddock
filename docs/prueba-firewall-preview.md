@@ -1,6 +1,16 @@
 # Prueba acotada del firewall de la Preview
 
-Preparada el 16-11-2026 para [#11](https://github.com/Legodark/paddock/issues/11). **Procedimiento sin ejecutar**: las consultas de configuración y de registros descritas abajo son de solo lectura; no se ha enviado una ráfaga ni generado un 429. El primer presupuesto de veinte llamadas de API está agotado. Este documento permite revisar un segundo presupuesto concreto antes de usarlo.
+Preparada y ejecutada el 16-11-2026 para [#11](https://github.com/Legodark/paddock/issues/11), tras aprobar expresamente el propietario el presupuesto de 67 HTTP. **Resultado inconcluso:** 61 health devolvieron 200; Vercel los distribuyó entre dos IP de origen con 40 y 21 peticiones. Ninguna alcanzó 60/IP. El ejecutor se detuvo sin variantes, estático, recuperación o reintentos. [Evidencia saneada y 61 casos](evidence/preview/firewall-experiment-20261116.json).
+
+Las instrucciones siguientes conservan el procedimiento aprobado. Una repetición requiere un presupuesto nuevo; no utilizar las seis peticiones sobrantes para otra ráfaga ni modificar la regla para obtener un resultado.
+
+## Resultado observado
+
+- Ráfaga: 15:17:02–15:17:15 UTC, 13,562 segundos incluyendo el arranque del cliente; 61 respuestas HTTP 200, región `cle1`.
+- Las 61 respuestas coinciden uno a uno con los registros del proveedor por el sufijo único del identificador de solicitud: `wafAction: allow`, `pathType: streaming_func`, `cacheResult: MISS`, ruta `/api/index`. Todas alcanzaron la función; no hubo un 429 cuyo rechazo anterior a la función se pueda verificar.
+- La consulta gratuita de tráfico, filtrada por host y User-Agent exclusivo del experimento, suma 61 solicitudes y dos IP distintas: **40 y 21**, ambas por debajo del umbral. Se publican solo estos recuentos; ninguna IP o hash.
+- Regla y estado del firewall idénticos antes/después; Hobby activo, sin borradores, cambios de bypass, plan, aplicación o DNS. CPU/memoria y arranque frío siguen sin medir; los tiempos HTTP no los acreditan.
+- #11 sigue abierta. No se deduce un fallo de la regla ni una exclusión de Preview: esta ejecución no ejercitó el límite por IP. No se ha repetido el experimento.
 
 ## Objetivo y alcance
 
@@ -9,12 +19,12 @@ Comprobar la regla existente, sin recrearla, publicarla otra vez o reducir su um
 - Proyecto `paddock` / `prj_j0CAZebO2M3BsMtBR41PPbYJo8Rk`, equipo `legodarks-projects` / `team_tAZz33yNmdc18LwiG8xTDOzz`.
 - Preview `https://paddock-jd7a8siqc-legodarks-projects.vercel.app`, despliegue `dpl_9PXY5N878VVNqdJBj2JD9kF5fVxw`.
 - Regla `rule_paddock_api_60_requests_per_minute_per_ip_LdESSE`: prefijo `/api`, ventana fija de 60 segundos, límite de 60 solicitudes por IP y región, acción `rate_limit`.
-- Autenticación obligatoria en todas las URLs. El acceso de automatización de la CLI evita únicamente Deployment Protection; no se añade un bypass del firewall, una IP de confianza ni una cabecera IP simulada.
+- Autenticación obligatoria en todas las URLs. La CLI utiliza Protection Bypass for Automation. La documentación indica que también omite ciertas mitigaciones de sistema y controles de bots; no describirlo como un mecanismo exclusivamente de autenticación. No se añade una regla de bypass, IP de confianza o cabecera IP simulada. La aplicación efectiva de la regla personalizada debe observarse; el token no la demuestra. [Fuentes y fragmentos exactos](evidence/preview/firewall-sources-20261116.json).
 - Cero nuevas predicciones, clasificaciones o búsquedas. El endpoint de la ráfaga es `GET /api/v1/health`. Sus respuestas permitidas sí pueden invocar la función y consumir cuotas.
 
 La consulta real `firewall rules inspect` confirmó `active: true`, `valid: true`, `fixed_window`, `limit: 60`, `window: 60` y `keys: ["ip"]`. La consulta `firewall status` sitúa `custom-rules` antes de `deployment-routing`. Son configuración y orden publicados por el proveedor, no una prueba de ejecución del bloqueo.
 
-## Presupuesto propuesto
+## Presupuesto aprobado de esta ejecución
 
 **Máximo: 66 solicitudes candidatas a API y una solicitud estática; 67 HTTP en total**, concurrencia uno, una sola ejecución y ningún reintento o seguimiento de redirecciones. Las consultas de metadatos/registros al plano de control no invocan la API de Paddock y se registran aparte.
 
@@ -90,3 +100,17 @@ Conservar estados y cronología del cliente, región y correspondencias del prov
 La ausencia de líneas de `console.log` o de logs de runtime **no basta**: un health puede no emitir mensajes. Un gráfico agregado de `rate_limit` tampoco certifica por sí solo que ninguna función se invocó. Si el esquema gratuito no permite distinguirlo, dejar ese criterio abierto con su limitación exacta; no contratar observabilidad, añadir telemetría pública o certificar una propiedad no medida.
 
 El informe deberá indicar solicitudes realmente enviadas frente al máximo, abortos, rutas pendientes, regla y configuración anteriores/posteriores, retrasos de ingesta y cualquier falta de granularidad. El umbral observado sigue siendo por IP y región; no se convierte en un control global contra abuso distribuido ni en un tope de consumo compartido con el portfolio. Las métricas mensuales de CPU/memoria y el arranque frío real de #10 son una verificación distinta.
+
+## Siguiente ejecución preparada: pendiente de aprobación
+
+Para continuar desde Cloud sin pedir al propietario que configure otra terminal, se propone un **nuevo máximo de 127 HTTP: hasta 121 health para la ráfaga, cuatro variantes, un estático y un health de recuperación**. Son 126 candidatas a API y un estático. No se ha autorizado ni ejecutado esta ampliación; las seis solicitudes no utilizadas antes no la financian ni se reasignan.
+
+La cifra responde a las **dos IP observadas**, no a rebajar la regla: si siguen siendo solo dos dentro de la misma ventana/región, 121 solicitudes bastan para que alguna reciba al menos 61. No se garantiza que el proxy mantenga ese conjunto de IP; si cambia, el resultado puede seguir siendo inconcluso. No fijar direcciones, alterar cabeceras IP, eludir el proxy o cambiar la configuración del firewall.
+
+Se mantienen concurrencia uno, cero reintentos, ventana limpia de 65 segundos y una única ejecución, con plazo máximo de 40 segundos para la ráfaga. Usar un marcador propio nuevo y una lista fija de 121 URL del mismo host. En esa fase, añadir **`--fail --fail-early`** a curl para terminar automáticamente al primer HTTP 429; registrar ese estado y el código de salida 22 como resultado esperado, sin continuar consumiendo el resto de la lista. Cualquier otro error HTTP/transporte detiene la prueba. Si las 121 respuestas son 200, detenerse sin variantes, recuperación o repetición.
+
+Solo tras observar un 429, ejecutar las cuatro variantes y el estático si aún caben en la ventana bloqueada; después esperar 65 segundos y hacer un único health de recuperación. No interpretar el índice global del primer 429 como el umbral por IP: consultar el tráfico filtrado por marcador/host y verificar en privado los recuentos por IP y acción. Para acreditar el valor exacto se necesitan 60 permitidas y el rechazo posterior para una misma IP, región y ventana; si no se puede acreditar, registrar únicamente la mitigación observada.
+
+Consultar hasta 200 registros gratuitos para no truncar la nueva ejecución. Correlacionar el sufijo de `x-vercel-id` con `requestId`, como se verificó en los 61 casos anteriores. Para un 429, contrastar acción WAF, regla y tipo de ruta con la petición permitida: la ausencia de mensajes de runtime no demuestra exclusión de invocaciones. Guardar IP e identificadores únicamente para correlación privada y publicar recuentos/casos saneados.
+
+Este nuevo límite acota tráfico, no CPU/memoria ni continuidad del equipo. Sigue sin habilitar servicios de pago o modificar la protección de la Preview. Como alternativa, puede realizarse un procedimiento nuevo desde un equipo con salida estable, pero requeriría igualmente presupuesto revisado y evidencia de IP; no se ha trasladado ninguna ejecución al propietario.

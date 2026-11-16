@@ -1,0 +1,118 @@
+{
+  "checked_at": "2026-11-16T15:21:01.724162+00:00",
+  "scope": "Public official documentation only; no application requests, no configuration or deployment changes.",
+  "sources": [
+    {
+      "id": "automation-bypass",
+      "url": "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation",
+      "resolved_url": "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation",
+      "checked_at": "2026-11-16T15:21:00.609334+00:00",
+      "response_content_type": "text/markdown; charset=utf-8",
+      "response_bytes": 11448,
+      "response_sha256": "004b218d525aeb44e71da9d08492c6500995c7b9822150efbdd8a15db6b632bc",
+      "exact_excerpts": [
+        {
+          "anchor": "## How it works",
+          "text": "## How it works\n\nWhen you provide a valid bypass token, Vercel allows your request to access the deployment without authentication. The bypass applies to both [Deployment Protection](/docs/deployment-protection) and certain security checks.\n\n### What gets bypassed\n\nYour automation bypass token will skip:\n\n- **Deployment protection:** [Password Protection](/docs/deployment-protection/methods-to-protect-deployments/password-protection), [Vercel Authentication](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication), and [Trusted IPs](/docs/deployment-protection/methods-to-protect-deployments/trusted-ips) checks.\n- **System mitigations:** The bypass allows requests that the [Vercel Firewall](/docs/vercel-firewall/ddos-mitigation) normally blocks\n- **Bot protection:** Your requests won't trigger [Bot protection](/docs/bot-management) challenges\n\n### What doesn't get bypassed\n\nYour automation bypass token **cannot** override:\n\n- **Active DDoS mitigations:** If attackers target a deployment and Vercel blocks an IP address, subnet, or pattern, those blocks remain in effect even with a valid bypass token\n- **Rate limits during attacks:** Rate limiting applied during detected attacks will still apply\n- **Security challenges during attacks:** Challenge requirements triggered by attack patterns cannot be bypassed\n\nThis design lets you test protected deployments reliably while maintaining critical protections during real attacks."
+        },
+        {
+          "anchor": "### What gets bypassed",
+          "text": "### What gets bypassed\n\nYour automation bypass token will skip:\n\n- **Deployment protection:** [Password Protection](/docs/deployment-protection/methods-to-protect-deployments/password-protection), [Vercel Authentication](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication), and [Trusted IPs](/docs/deployment-protection/methods-to-protect-deployments/trusted-ips) checks.\n- **System mitigations:** The bypass allows requests that the [Vercel Firewall](/docs/vercel-firewall/ddos-mitigation) normally blocks\n- **Bot protection:** Your requests won't trigger [Bot protection](/docs/bot-management) challenges\n\n### What doesn't get bypassed\n\nYour automation bypass token **cannot** override:\n\n- **Active DDoS mitigations:** If attackers target a deployment and Vercel blocks an IP address, subnet, or pattern, those blocks remain in effect even with a valid bypass token\n- **Rate limits during attacks:** Rate limiting applied during detected attacks will still apply\n- **Security challenges during attacks:** Challenge requirements triggered by attack patterns cannot be bypassed\n\nThis design lets you test protected deployments reliably while maintaining critical protections during real attacks."
+        },
+        {
+          "anchor": "### What doesn't get bypassed",
+          "text": "### What doesn't get bypassed\n\nYour automation bypass token **cannot** override:\n\n- **Active DDoS mitigations:** If attackers target a deployment and Vercel blocks an IP address, subnet, or pattern, those blocks remain in effect even with a valid bypass token\n- **Rate limits during attacks:** Rate limiting applied during detected attacks will still apply\n- **Security challenges during attacks:** Challenge requirements triggered by attack patterns cannot be bypassed\n\nThis design lets you test protected deployments reliably while maintaining critical protections during real attacks."
+        }
+      ]
+    },
+    {
+      "id": "rate-limiting",
+      "url": "https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting",
+      "resolved_url": "https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting",
+      "checked_at": "2026-11-16T15:21:00.919759+00:00",
+      "response_content_type": "text/markdown; charset=utf-8",
+      "response_bytes": 8688,
+      "response_sha256": "3102a9a02e66906a5c0f3110266f4016514a6dba2ffa227242ee93ad162e1b7d",
+      "exact_excerpts": [
+        {
+          "anchor": "Rate limit counters are tracked on a per-region basis",
+          "text": "Rate limit counters are tracked on a per-region basis; traffic matching a given rate limit key in multiple regions can exceed the limit you configure for any single region."
+        },
+        {
+          "anchor": "The **Request Limit** defines",
+          "text": "The **Request Limit** defines the maximum number of requests allowed in the selected time window from a common source"
+        },
+        {
+          "anchor": "Select **Publish** to apply",
+          "text": "Select **Publish** to apply the changes to your production deployment"
+        }
+      ]
+    },
+    {
+      "id": "custom-rules",
+      "url": "https://vercel.com/docs/vercel-firewall/vercel-waf/custom-rules",
+      "resolved_url": "https://vercel.com/docs/vercel-firewall/vercel-waf/custom-rules",
+      "checked_at": "2026-11-16T15:21:01.195506+00:00",
+      "response_content_type": "text/markdown; charset=utf-8",
+      "response_bytes": 15429,
+      "response_sha256": "86b2477894e0a642ad6ee7950e5c1e66278b555818b53cbfb6393463eb171d87",
+      "exact_excerpts": [
+        {
+          "anchor": "## Custom Rule execution",
+          "text": "## Custom Rule execution\n\nWhen a rule denies or challenges the traffic to your site and the client has not previously solved the challenge (in the case of challenge mode), the rule execution stops and blocks or challenges the request.\n\nAfter a **Log** rule runs, the rule execution continues. If no other rule matches and acts on the request, the **Log** rule that is last matched is reported.\n\nWhen you apply a [rate limiting](/docs/vercel-firewall/vercel-waf/rate-limiting) rule, include a follow-up action that logs, denies, challenges, or returns a 429 response.\n\nCustom rules can also match the requests Vercel sends to invoke your [Cron Jobs](/docs/cron-jobs). When a deny or challenge rule matches a cron request, the rule blocks the job before it reaches your function. To keep a cron job running, exclude its path from rules that deny or challenge traffic, for example with a **Request Path** condition that uses the **Does not start with** [operator](/docs/vercel-firewall/vercel-waf/rule-configuration#operators). For other reasons a cron job might not run, see [Troubleshooting cron jobs](/docs/cron-jobs/manage-cron-jobs#troubleshooting-cron-jobs)."
+        },
+        {
+          "anchor": "Select **Publish** to apply",
+          "text": "Select **Publish** to apply the changes to your production deployment"
+        }
+      ]
+    },
+    {
+      "id": "rate-limiting-sdk",
+      "url": "https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting-sdk",
+      "resolved_url": "https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting-sdk",
+      "checked_at": "2026-11-16T15:21:01.468530+00:00",
+      "response_content_type": "text/markdown; charset=utf-8",
+      "response_bytes": 12651,
+      "response_sha256": "fc49a6567c2076969415c2f93837e85bf57e78d583ae4d63bf8b2ad611a4f530",
+      "exact_excerpts": [
+        {
+          "anchor": "### Test in a preview deployment",
+          "text": "### Test in a preview deployment\n  For your code to run when deployed in a preview deployment, you need to:\n  - Enable [Protection Bypass for Automation](/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation) in your project\n  - Ensure [System Environment Variables are automatically exposed](/docs/environment-variables/system-environment-variables#system-environment-variables)"
+        }
+      ]
+    },
+    {
+      "id": "firewall-concepts",
+      "url": "https://vercel.com/docs/vercel-firewall/firewall-concepts",
+      "resolved_url": "https://vercel.com/docs/vercel-firewall/firewall-concepts",
+      "checked_at": "2026-11-16T15:21:01.724138+00:00",
+      "response_content_type": "text/markdown; charset=utf-8",
+      "response_bytes": 15604,
+      "response_sha256": "2c70aa168d47e6367f609875c96e1334da4f27de397ae9cfb52182cb3156e62c",
+      "exact_excerpts": [
+        {
+          "anchor": "first line of defense",
+          "text": "first line of defense, inspecting requests as they arrive at Vercel's CDN. Once a request passes this layer, [deployment protection](/docs/deployment-protection) checks whether it can continue based on access rules set at the level of your project."
+        },
+        {
+          "anchor": "### Bypass",
+          "text": "### Bypass\n\nThe bypass action allows specific traffic to skip any subsequent firewall rules. When a request matches a bypass rule:\n\n- For custom rule bypasses, the request is allowed through any custom or managed rules.\n- For system bypasses, the request is allowed through any system-level mitigations.\n- The request proceeds directly to your application.\n\nThis is useful for trusted traffic sources, internal tools, or critical services that should never be blocked."
+        }
+      ]
+    }
+  ],
+  "conclusions": [
+    "Protection Bypass for Automation applies to Deployment Protection and certain security checks. The documentation explicitly includes system mitigations and bot protection. Describing it as exclusively an authentication bypass is inaccurate.",
+    "The same documentation says active DDoS mitigations, rate limits during detected attacks and security challenges during attacks cannot be overridden. It does not explicitly settle the treatment of the custom WAF rate-limit rule used in this experiment.",
+    "Custom-rule and rate-limiting setup instructions say publishing applies changes to a production deployment. These words alone do not establish that Preview is excluded. No explicit production-only restriction was established from the reviewed pages.",
+    "The SDK documentation describes testing SDK rate limits in Preview using Protection Bypass for Automation and exposed system variables. This is not proof of the behavior of the route-matching WAF rule used here.",
+    "The independent request-log correlation matched all 61 client response IDs by private suffix comparison: 61 HTTP 200, WAF allow, streaming_func, cle1, /api/index. The request-log fields do not contain the client IP, only its country.",
+    "The principal agent separately obtained filtered firewall traffic with two client-IP buckets, 40 and 21 requests. Neither reached the configured 60/IP threshold. This supports an inconclusive threshold experiment under rotating Cloud egress, rather than demonstrating WAF failure. Do not publish the IP values or their hashes."
+  ],
+  "next_step_options": [
+    "Keep the existing rule and Preview protection unchanged. Do not consume the remaining request allowance on another threshold attempt.",
+    "If a new experiment is approved, use a client on a known stable outbound network, such as the owner's Windows computer with curl.exe and the official Vercel CLI, and validate the provider IP aggregation privately. A reused curl connection or stable edge region alone does not prove a stable public IP.",
+    "An additional full threshold test needs its own explicit request budget. Do not spoof forwarding/IP headers, change rate-limit keys, disable protection or use alternate hosts to work around Cloud network behavior."
+  ]
+}

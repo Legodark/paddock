@@ -52,7 +52,9 @@ Evidencia: [regla y rutas](evidence/ci/firewall-policy.json), [consulta de cuent
 
 ## Cierre pendiente en la plataforma
 
-Está preparado el [procedimiento acotado para la Preview](prueba-firewall-preview.md): máximo **66 solicitudes candidatas a API y una estática (67 HTTP)**, una sola ejecución, concurrencia uno y sin reintentos. Incluye umbral, cuatro variantes, estático y recuperación, con consultas gratuitas de logs/tráfico. No se ha ejecutado ni ampliado automáticamente el primer presupuesto agotado.
+El [procedimiento aprobado de 67 HTTP](prueba-firewall-preview.md) se ejecutó el 16-11-2026: **61 health 200**, distribuidos por Vercel entre dos IP de origen (**40 y 21**); ninguna llegó a 60/IP. Se detuvo sin consumir las otras seis solicitudes. Regla y configuración idénticas antes/después. [Evidencia de los 61 casos](evidence/preview/firewall-experiment-20261116.json). El resultado es inconcluso, no demuestra un fallo del firewall. Quedan pendientes umbral, 429, variantes y recuperación.
+
+Se ha preparado en el mismo documento una siguiente ejecución de **hasta 127 HTTP**, con parada al primer 429, para cubrir las dos IP observadas sin cambiar la regla. **Pendiente de aprobación del nuevo presupuesto, sin ejecutar**; no asumir que el conjunto de IP permanecerá estable ni reasignar automáticamente las seis solicitudes sobrantes.
 
 Con el proyecto y el borrador existentes, antes de abrir tráfico:
 
