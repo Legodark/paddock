@@ -4,6 +4,12 @@
 
 **[Abrir la Preview privada](https://paddock-ba93thzc9-legodarks-projects.vercel.app)** con la cuenta de Vercel autorizada. La app está disponible para revisión; el acceso anónimo redirige a autenticación. El dominio propio y `main` permanecen intactos.
 
+## Actualización visual · 16-11-2026
+
+La revisión vigente es **[Paddock con el DeLorean original](https://paddock-obmoyab24-legodarks-projects.vercel.app)**, despliegue `dpl_78UW4KyJQ5LCGK3W3YPvKjhzSZVH`, fuente `ebc9b7b17b05eb61d4c2a298c5ee52227b6aff08`. El propietario autorizó modernizar las letras conservando el coche; el PNG original permanece intacto y local. El backend, routing, modelos y datos coinciden byte a byte con la versión anterior (16 archivos comparados). La web mide **331.141 bytes**, 125.054 bytes gzip, dentro del presupuesto. No se hicieron nuevas llamadas a la API de aplicación: se verificaron HTML, JS, CSS, PNG y acceso anónimo a la raíz. La CI del código desplegado pasó; ver [evidencia](evidence/ux/delorean-provider.json).
+
+Las mediciones de API y la tabla siguientes conservan la publicación anterior como referencia; las limitaciones de #10/#11/#12/#17 siguen vigentes.
+
 ## Estado publicado
 
 | Campo | Resultado |

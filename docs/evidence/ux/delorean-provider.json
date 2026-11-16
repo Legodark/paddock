@@ -1,0 +1,69 @@
+{
+  "deployment": {
+    "id": "dpl_78UW4KyJQ5LCGK3W3YPvKjhzSZVH",
+    "url": "https://paddock-obmoyab24-legodarks-projects.vercel.app",
+    "readyState": "READY",
+    "environment": "preview"
+  },
+  "source_commit": "ebc9b7b17b05eb61d4c2a298c5ee52227b6aff08",
+  "static_checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "ssl_verify": 0,
+      "type": "text/html; charset=utf-8",
+      "nosniff": "nosniff",
+      "frame": "DENY",
+      "referrer": "no-referrer",
+      "csp": "default-src 'none'; script-src 'self'; style-src 'self'; style-src-attr 'unsafe-inline'; img-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'",
+      "bytes": 718,
+      "sha256": "708a2bbf9323674d507295c67bdd489c47929b0ab603868c02ace054ae984959",
+      "matches_build": true
+    },
+    {
+      "path": "/assets/index-DI2nIcu4.js",
+      "status": 200,
+      "ssl_verify": 0,
+      "type": "application/javascript; charset=utf-8",
+      "nosniff": "nosniff",
+      "frame": "DENY",
+      "referrer": "no-referrer",
+      "csp": "",
+      "bytes": 263877,
+      "sha256": "eb3f5e987805d0525159d11b232bac4938dd5ac9e3d004fd1f05b8bec5c19a62",
+      "matches_build": true
+    },
+    {
+      "path": "/assets/index-D16tYHSW.css",
+      "status": 200,
+      "ssl_verify": 0,
+      "type": "text/css; charset=utf-8",
+      "nosniff": "nosniff",
+      "frame": "DENY",
+      "referrer": "no-referrer",
+      "csp": "",
+      "bytes": 25871,
+      "sha256": "261fb3d2c0842d95f8c4ad64863b99e22a4bfecb694f7484ab774878c5e75fcc",
+      "matches_build": true
+    },
+    {
+      "path": "/paddock-delorean.png",
+      "status": 200,
+      "ssl_verify": 0,
+      "type": "image/png",
+      "nosniff": "nosniff",
+      "frame": "DENY",
+      "referrer": "no-referrer",
+      "csp": "",
+      "bytes": 38217,
+      "sha256": "c13355d2fb89e8a8112d063455291f12bf55a3492b9498fcd33b501effeb4195",
+      "matches_build": true
+    }
+  ],
+  "anonymous_document_status": 302,
+  "original_png_preserved": true,
+  "backend_unchanged": true,
+  "backend_source_files_compared": 16,
+  "additional_application_api_requests": 0,
+  "scope": "Authenticated static delivery and anonymous root only; local browser evidence is separate."
+}
