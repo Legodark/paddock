@@ -37,7 +37,9 @@ function SearchResults({ cars }: { cars: HistoricalCar[] }) {
     </li>)}</ul>;
 }
 
-export default function CatalogChat() {
+export default function CatalogChat({ openRequest = 0 }: { openRequest?: number }) {
+  const [open, setOpen] = useState(() => window.location.hash === '#consultar');
+  const [hasOpened, setHasOpened] = useState(open);
   const [catalog, setCatalog] = useState<SearchCatalog | null>(null);
   const [catalogError, setCatalogError] = useState<string | null>(null);
   const [catalogAttempt, setCatalogAttempt] = useState(0);
@@ -51,18 +53,48 @@ export default function CatalogChat() {
   const outcomeHeading = useRef<HTMLHeadingElement>(null);
   const active = useRef<AbortController | null>(null);
   const exchangeSequence = useRef(0);
+  const isOpen = useRef(open);
+  const toggle = useRef<HTMLButtonElement>(null);
+  const panelHeading = useRef<HTMLHeadingElement>(null);
+
+  function show() {
+    isOpen.current = true;
+    setHasOpened(true);
+    setOpen(true);
+  }
+  function close() {
+    isOpen.current = false;
+    setOpen(false);
+    toggle.current?.focus({ preventScroll: true });
+    toggle.current?.scrollIntoView({ block: 'nearest' });
+  }
 
   useEffect(() => {
+    const openFromHash = () => { if (window.location.hash === '#consultar') show(); };
+    window.addEventListener('hashchange', openFromHash);
+    return () => window.removeEventListener('hashchange', openFromHash);
+  }, []);
+  // The explicit request also handles clicking Consultar when that hash is already current.
+  useEffect(() => { if (openRequest > 0) show(); }, [openRequest]);
+  useEffect(() => {
+    if (!open) return;
+    // Focus the heading, so opening the assistant does not summon the mobile keyboard.
+    panelHeading.current?.focus({ preventScroll: true });
+    panelHeading.current?.scrollIntoView({ block: 'nearest' });
+  }, [open, openRequest]);
+
+  useEffect(() => {
+    if (!hasOpened) return;
     const controller = new AbortController();
     setCatalogError(null);
     getSearchCatalog(controller.signal).then(setCatalog).catch(error => {
       if (!controller.signal.aborted) setCatalogError(error instanceof Error ? error.message : 'No se pudo cargar el catálogo de consulta.');
     });
     return () => controller.abort();
-  }, [catalogAttempt]);
+  }, [hasOpened, catalogAttempt]);
   useEffect(() => () => active.current?.abort(), []);
   useEffect(() => {
-    if (!outcome || phase) return;
+    if (!isOpen.current || !outcome || phase) return;
     outcomeHeading.current?.focus({ preventScroll: true });
     outcomeHeading.current?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'nearest' });
   }, [outcome, phase]);
@@ -88,7 +120,10 @@ export default function CatalogChat() {
     const last = history.at(-1);
     if (!last) return;
     setMessage(last.question); setOutcome(null); setError(null);
-    requestAnimationFrame(() => { input.current?.focus(); input.current?.scrollIntoView({ block: 'nearest' }); });
+    requestAnimationFrame(() => {
+      if (!isOpen.current) return;
+      input.current?.focus(); input.current?.scrollIntoView({ block: 'nearest' });
+    });
   }
 
   async function run(confirmed = false) {
@@ -133,7 +168,7 @@ export default function CatalogChat() {
     } catch (error) {
       if (!controller.signal.aborted) {
         setError(error instanceof Error ? error.message : 'No se pudo completar la consulta.');
-        input.current?.focus();
+        if (isOpen.current) input.current?.focus();
       }
     } finally {
       if (active.current === controller) { active.current = null; setPhase(null); }
@@ -152,8 +187,11 @@ export default function CatalogChat() {
   </form>;
 
   return <section id="consultar" className="chat-section" aria-labelledby="chat-heading">
-    <div className="section-heading"><div><span className="eyebrow">EL ASISTENTE DEL TFM</span><h2 id="chat-heading">Busca en el catálogo original.</h2><p>Describe un coche y consulta el catálogo original. Cada mensaje inicia una búsqueda nueva.</p></div><span className="records-badge"><Icon name="database" />Catálogo de 2023</span></div>
-    <div className="chat-panel">
+    <div className="section-heading chat-disclosure"><div><span className="eyebrow">EL ASISTENTE DEL TFM</span><h2 id="chat-heading">Busca en el catálogo original.</h2><p id="chat-toggle-help">Abre el asistente para describir el coche que buscas. Puedes plegarlo sin perder la conversación en esta página.</p></div><button ref={toggle} type="button" className="secondary-button chat-toggle" aria-expanded={open} aria-controls="catalog-chat-panel" aria-describedby="chat-toggle-help" onClick={() => open ? close() : show()}>{open ? 'Plegar asistente' : 'Abrir asistente'}<Icon name="chevron" /></button></div>
+    <div id="catalog-chat-panel" className="chat-panel" hidden={!open} role="region" aria-labelledby="chat-panel-heading" onKeyDown={event => {
+      if (event.key === 'Escape' && !event.nativeEvent.isComposing) { event.preventDefault(); event.stopPropagation(); close(); }
+    }}>
+      <div className="chat-panel-toolbar"><h3 id="chat-panel-heading" ref={panelHeading} tabIndex={-1}>Eistein, asistente del catálogo</h3><button type="button" className="text-button" onClick={close}>Cerrar asistente<Icon name="chevron" /></button></div>
       <div className="chat-intro"><span className="chat-avatar" aria-hidden="true">E</span><div><strong>Eistein</strong><p>Uso el clasificador original y reglas de búsqueda. Puedes indicar marca, modelo, provincia, combustible, cambio, año, precio, km, CV, cilindrada y marchas.</p></div></div>
       <div className="chat-examples" aria-label="Ejemplos de consulta">{examples.map(example => <button key={example} type="button" disabled={!catalog || phase !== null} onClick={() => fillExample(example)}>{example}<Icon name="arrow" /></button>)}</div>
       {catalogError ? <div className="chat-catalog-error" role="alert"><p>No hemos podido cargar el catálogo de consulta. {catalogError}</p><button type="button" className="secondary-button" onClick={() => setCatalogAttempt(value => value + 1)}>Reintentar catálogo de consulta</button></div>

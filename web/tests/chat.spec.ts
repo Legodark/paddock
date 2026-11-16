@@ -5,6 +5,7 @@ import { accessibilityScanner } from './axe-compat';
 const example = 'Busco coches Citroën de menos de 20.000 euros en Málaga';
 async function ready(page: Page) {
   await page.goto('/');
+  await page.getByRole('button', { name: 'Abrir asistente', exact: true }).click();
   await expect(page.getByLabel('Tu consulta sobre coches')).toBeEnabled();
 }
 async function submit(page: Page, message: string) {
@@ -147,6 +148,7 @@ test('search catalog failure recovers without disabling the prediction form', as
   let fail = true;
   await page.route('**/api/v1/search-catalog', route => fail ? route.fulfill({ status: 503, json: { error: { message: 'Unavailable' } } }) : route.continue());
   await page.goto('/');
+  await page.getByRole('button', { name: 'Abrir asistente', exact: true }).click();
   await expect(page.getByRole('button', { name: 'Reintentar catálogo de consulta' })).toBeVisible();
   await expect(page.getByLabel('Marca', { exact: true })).toBeEnabled();
   await expect(page.getByLabel('Tu consulta sobre coches')).toBeDisabled();

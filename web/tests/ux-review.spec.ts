@@ -4,6 +4,7 @@ import type { Page } from '@playwright/test';
 async function ready(page: Page) {
   await page.goto('/');
   await expect(page.getByLabel('Marca', { exact: true })).toBeEnabled();
+  await page.getByRole('button', { name: 'Abrir asistente', exact: true }).click();
   await expect(page.getByLabel('Tu consulta sobre coches')).toBeEnabled();
 }
 async function prediction(page: Page) {

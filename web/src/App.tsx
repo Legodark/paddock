@@ -16,6 +16,7 @@ function sectionFromHash() {
 
 export default function App() {
   const [activeSection, setActiveSection] = useState(sectionFromHash);
+  const [chatOpenRequest, setChatOpenRequest] = useState(0);
   const [catalog, setCatalog] = useState<Catalog | null>(null);
   const [catalogError, setCatalogError] = useState<string | null>(null);
   const [attempt, setAttempt] = useState(0);
@@ -114,7 +115,7 @@ export default function App() {
           <image href="/paddock-delorean.png" width="835" height="327" clipPath="url(#paddock-original-car)" />
         </svg>
       </a>
-      <nav aria-label="Navegación principal">{NAV_SECTIONS.map(([id, label]) => <a key={id} href={`#${id}`} className={activeSection === id ? 'nav-active' : undefined} aria-current={activeSection === id ? 'location' : undefined}>{label}</a>)}<a className="repo-link" href="https://github.com/Legodark/paddock" target="_blank" rel="noopener noreferrer"><Icon name="github" /><span>GitHub</span><span className="sr-only"> (abre otra pestaña)</span></a></nav>
+      <nav aria-label="Navegación principal">{NAV_SECTIONS.map(([id, label]) => <a key={id} href={`#${id}`} onClick={id === 'consultar' ? () => setChatOpenRequest(value => value + 1) : undefined} className={activeSection === id ? 'nav-active' : undefined} aria-current={activeSection === id ? 'location' : undefined}>{label}</a>)}<a className="repo-link" href="https://github.com/Legodark/paddock" target="_blank" rel="noopener noreferrer"><Icon name="github" /><span>GitHub</span><span className="sr-only"> (abre otra pestaña)</span></a></nav>
     </div></header>
     <main id="inicio" className="page-shell">
       <section className="hero" aria-labelledby="page-title">
@@ -134,7 +135,7 @@ export default function App() {
       </div>
       <p className="sr-only" role="status" aria-live="polite">{notice}</p>
       {estimate && <Comparables key={estimateNumber} estimate={estimate} />}
-      <CatalogChat />
+      <CatalogChat openRequest={chatOpenRequest} />
       <section id="proyecto" className="about-section" aria-labelledby="about-heading"><div><span className="eyebrow">DE DÓNDE VENIMOS</span><h2 id="about-heading">Un proyecto académico.<br />Una historia que continúa.</h2></div><div className="about-copy"><p>Paddock nació como TFM de <strong>Juan Cerezo Serrano</strong> y <strong>Oscar Pörtner Ostos</strong>, en el Máster de IA y Big Data de Málaga Tech Park.</p><p>Esta versión recupera el modelo original y el catálogo publicado en 2023. El dataset permanece congelado: una demostración del proyecto, no un servicio de tasación actual.</p><a className="text-button" href="https://github.com/Legodark/paddock" target="_blank" rel="noopener noreferrer">Explorar el proyecto original<Icon name="arrow" /><span className="sr-only"> (abre otra pestaña)</span></a></div></section>
     </main>
     <footer className="site-footer"><div className="page-shell"><span className="footer-brand">PADDOCK<span>.</span></span><p>Datos históricos. Curiosidad intacta.</p><span>TFM · Proyecto original de 2023</span></div></footer>
