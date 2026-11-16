@@ -8,7 +8,7 @@
 
 La revisión vigente es **[Paddock con asistente plegable](https://paddock-bzdg112ii-legodarks-projects.vercel.app)**, despliegue `dpl_7s2kqzArGGnR29WLmZD3pRoVeX2A`, fuente `184ef4b36903f3eea9f250e43e2f4afca1f219d3`. El asistente empieza cerrado, se abre desde su control o Consultar y conserva la conversación al cerrarlo. Catálogo de consulta al primer uso, sin solicitudes nuevas al alternar. Respuestas tardías sin cambios de foco/scroll con el panel oculto. [Informe y capturas](chatbot-desplegable.md).
 
-Web completa: **497.376 bytes**, **287.216 bytes gzip**, dentro del presupuesto. 82 pruebas unitarias y 76 casos locales de navegador pasados. Backend/recursos idénticos en los 16 archivos comparados. Verificación en Vercel exclusivamente estática y de autenticación, sin nuevas llamadas a la API de aplicación; [evidencia](evidence/ux/chat-disclosure-provider.json). El ajuste fino del DeLorean permanece aplazado en #20. La revisión manual conjunta sigue en #12.
+Web completa: **497.376 bytes**, **287.216 bytes gzip**, dentro del presupuesto. 82 pruebas unitarias y 76 casos locales de navegador pasados. La [CI ampliada final](https://github.com/Legodark/paddock/actions/runs/43836207667) está en verde; se verificó que los archivos de producción son idénticos al despliegue. Backend/recursos idénticos en los 16 archivos comparados. Verificación en Vercel exclusivamente estática y de autenticación, sin nuevas llamadas a la API de aplicación; [evidencia](evidence/ux/chat-disclosure-provider.json). El ajuste fino del DeLorean permanece aplazado en #20. La revisión manual conjunta sigue en #12.
 
 ## Logos de fabricantes · 16-11-2026
 
