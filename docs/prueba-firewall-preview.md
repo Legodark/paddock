@@ -1,6 +1,6 @@
 # Prueba acotada del firewall de la Preview
 
-**Estado actual · 16-11-2026:** segunda ejecución autorizada de hasta 127 HTTP finalizada con **98 solicitudes**. Acreditados 60 health permitidos y el siguiente rechazado para una misma IP/región, atribución del 429 a la regla y rechazo anterior a la función según los registros del proveedor. Más tarde esa misma IP volvió a responder 200 sin cambiar configuración. Quedan incompletas las variantes y la entrega positiva del estático. [Evidencia de los 98 casos](evidence/preview/firewall-recheck-20261116.json). #11 permanece abierta; no se consumirá el margen restante automáticamente.
+**Estado actual · 16-11-2026:** segunda ejecución autorizada de hasta 127 HTTP finalizada con **98 solicitudes**. Acreditados 60 health permitidos y el siguiente rechazado para una misma IP/región, atribución del 429 a la regla y rechazo anterior a la función según los registros del proveedor. Más tarde esa misma IP volvió a responder 200 sin cambiar configuración. Quedan incompletas las variantes y el destino del 308. La entrega estática positiva tiene seis controles previos del mismo despliegue, sin simultaneidad con el bloqueo. [Evidencia de los 98 casos](evidence/preview/firewall-recheck-20261116.json). #11 permanece abierta; no se consumirá el margen restante automáticamente.
 
 ## Primera ejecución: máximo 67 HTTP
 
@@ -136,4 +136,8 @@ Este nuevo límite acota tráfico, no CPU/memoria ni continuidad del equipo. Sig
 
 Los primeros datos de tráfico de los tres casos posteriores aún no estaban ingeridos; se actualizaron mediante consultas de **solo lectura**, sin nuevas solicitudes de aplicación. El informe correlaciona **97 de 98 casos por identificador**; el 308 carece de registro de solicitud archivado y se conserva su observación de cliente/agregado sin inventarlo.
 
-Hobby activo, regla/configuración iguales antes/después, sin publicación de IP, hashes de IP o identificadores de solicitud. **29 solicitudes autorizadas sin consumir**. No cerrar toda #11 hasta completar variantes y una comprobación positiva con un estático existente. #10 mantiene CPU/memoria, arranque frío y margen mensual desconocidos.
+Hobby activo, regla/configuración iguales antes/después, sin publicación de IP, hashes de IP o identificadores de solicitud. **29 solicitudes autorizadas sin consumir**. #10 mantiene CPU/memoria, arranque frío y margen mensual desconocidos.
+
+### Reconciliación del control estático sin repetir tráfico
+
+La [evidencia previa del mismo despliegue](evidence/ux/price-gauge-provider.json) ya acredita seis recursos estáticos 200 con hash idéntico al build: documento, JS, CSS, logo de marca, PNG de identidad y avisos. Se puede cerrar la **entrega estática positiva** con esa evidencia. El 404 de `/robots.txt` y su selección inválida se conservan; no se convierte esa prueba previa en simultaneidad con el bloqueo por IP. Quedan las variantes bajo bloqueo y el destino del 308, además de la limitación explícita de no haber comprobado simultaneidad estática durante el límite.

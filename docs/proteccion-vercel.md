@@ -1,6 +1,6 @@
 # Protección de la API en Vercel Hobby
 
-Actualizado el 16-11-2026. La regla incluida en Hobby está activa **únicamente para Paddock**. La segunda prueba autorizada acredita **60 health permitidos y el siguiente 429 por una misma IP/región**, rechazo anterior a la función según los registros de Vercel y recuperación posterior de esa IP sin cambiar la regla. Las variantes y el control estático siguen incompletos. El equipo sigue en Hobby y no se modificaron reglas del portfolio. [Resultados y evidencia](prueba-firewall-preview.md).
+Actualizado el 16-11-2026. La regla incluida en Hobby está activa **únicamente para Paddock**. La segunda prueba autorizada acredita **60 health permitidos y el siguiente 429 por una misma IP/región**, rechazo anterior a la función según los registros de Vercel y recuperación posterior de esa IP sin cambiar la regla. Quedan variantes y destino del 308; la entrega estática positiva tiene seis controles previos del mismo despliegue, sin simultaneidad con el bloqueo. El equipo sigue en Hobby y no se modificaron reglas del portfolio. [Resultados y evidencia](prueba-firewall-preview.md).
 
 ## Opción gratuita verificada
 
@@ -54,7 +54,7 @@ Evidencia: [regla y rutas](evidence/ci/firewall-policy.json), [consulta de cuent
 
 El [procedimiento aprobado de 67 HTTP](prueba-firewall-preview.md) se ejecutó el 16-11-2026: **61 health 200**, distribuidos por Vercel entre dos IP de origen (**40 y 21**); ninguna llegó a 60/IP. Se detuvo sin consumir las otras seis solicitudes. Regla y configuración idénticas antes/después. [Evidencia de los 61 casos](evidence/preview/firewall-experiment-20261116.json). El resultado es inconcluso, no demuestra un fallo del firewall. Quedan pendientes umbral, 429, variantes y recuperación.
 
-El propietario aprobó después **hasta 127 HTTP**. La ejecución finalizó con **98 solicitudes**, una sola ráfaga detenida al primer 429 y tres comprobaciones posteriores dentro del mismo techo para identificar recuperación de la IP limitada. Umbral y rechazo acreditados; recuperación posterior observada, instante exacto no medido. [Evidencia de 98 casos](evidence/preview/firewall-recheck-20261116.json). Las otras 29 solicitudes no se consumirán automáticamente. Quedan variantes y un control estático existente; el `/robots.txt` elegido devolvió 404 y no existe en el paquete.
+El propietario aprobó después **hasta 127 HTTP**. La ejecución finalizó con **98 solicitudes**, una sola ráfaga detenida al primer 429 y tres comprobaciones posteriores dentro del mismo techo para identificar recuperación de la IP limitada. Umbral y rechazo acreditados; recuperación posterior observada, instante exacto no medido. [Evidencia de 98 casos](evidence/preview/firewall-recheck-20261116.json). Las otras 29 solicitudes no se consumirán automáticamente. Quedan variantes y destino del 308; el `/robots.txt` elegido devolvió 404 y no existe en el paquete. La entrega estática positiva se acredita por [seis recursos previos del mismo despliegue](evidence/preview/reconciled-static-delivery-20261116.json), sin afirmar simultaneidad con el bloqueo.
 
 Con el proyecto y el borrador existentes, antes de abrir tráfico:
 
