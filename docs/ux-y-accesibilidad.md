@@ -6,12 +6,12 @@ Revisión inicial del 15 de noviembre de 2026. Seguimiento: [#12](https://github
 
 Estado de las recuperaciones solicitadas antes de cerrar la revisión visual:
 
-- **#18:** recuperar los logos de las marcas presentes en 2023. Los 73 PNG originales siguen disponibles localmente en `padook/Frontend/assets/images/marcas/`; `brand_logo_bloc` y `form_widget` muestran la selección y uso originales. Validar correspondencia de marca, alternativa textual, carga y tamaño en móvil/escritorio.
+- **#18, implementada:** logos de los 70 fabricantes canónicos en el selector y la estimación, derivados de los PNG históricos. Carga a demanda, espacio reservado, nombre textual y respaldo ante fallo/ID desconocido. Se conserva la identidad del resultado anterior al editar el formulario. [Preview](https://paddock-ni6uimkps-legodarks-projects.vercel.app), [revisión](logos-marcas.md) y [evidencia local](evidence/ux/brands-local.json): 82 pruebas unitarias, 60 casos locales de navegador y seis anchos comprobados.
 - **#19:** recuperar el chatbot desplegable. El Flutter original alterna un botón flotante y un panel con botón de cierre (`chatbot_widgets`, `padook_page`, `chatbot_container_widget`); React lo muestra actualmente como sección completa. Adaptar apertura/cierre conservando consulta, resultados, foco y accesibilidad, sin tapar controles o teclado móvil.
 
 - **#20, implementada, composición ajustada:** PADDOCK precede al DeLorean y la K se une a su estela mediante un solapamiento de 8 px. El PNG original permanece intacto; se conserva el enlace accesible. Sin desbordamiento en seis anchos de 320 a 1440 px y 28 casos de navegador locales pasados, incluidos axe, teclado y texto ampliado; el coche puede reducirse al ampliar el texto para conservar PADDOCK completo. [Preview](https://paddock-g4updlcd1-legodarks-projects.vercel.app); capturas [escritorio](evidence/ux/delorean-desktop.jpg) y [móvil](evidence/ux/delorean-mobile.jpg). [Evidencia local](evidence/ux/delorean-logo.json) y [entrega autenticada](evidence/ux/delorean-provider.json). El propietario ha revisado la composición y autoriza continuar con #18/#19; aplaza reducir un poco el DeLorean y pegar las líneas azules a la K.
 
-#18/#19 permanecen pendientes. #20 ya se ha implementado y comprobado; no sustituye la revisión conjunta ni las pruebas con dispositivos físicos, lector de pantalla o zoom nativo de #12.
+#19 sigue pendiente; el ajuste fino de #20 está aplazado. #18 está implementada; no sustituye la revisión conjunta ni las pruebas con dispositivos físicos, lector de pantalla o zoom nativo de #12.
 
 ## Cambios encontrados en la revisión
 

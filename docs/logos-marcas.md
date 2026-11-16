@@ -35,3 +35,9 @@ Se conserva el nombre textual del fabricante. Las imágenes son decorativas (`al
 - Paquete completo: **495.019 bytes públicos**, **286.669 bytes gzip**, dentro de los presupuestos existentes de 1.000.000/300.000 bytes. Se reutiliza la función oficial ya materializada: backend, requisitos, modelos, SQLite y rutas coinciden byte a byte en los 16 archivos no públicos comparados; el smoke local del bundle sigue listo y devuelve 20.155 €.
 
 Estas pruebas no acreditan dispositivos físicos, zoom nativo ni lector de pantalla real. No se modifica el modelo, no se vuelve a scrapear y no se añaden servicios de pago. La cabecera mantiene el DeLorean de la Preview anterior: su ajuste fino queda aplazado en #20. El siguiente punto de UX es el chatbot desplegable de #19.
+
+## Preview verificada
+
+[Abrir la revisión privada](https://paddock-ni6uimkps-legodarks-projects.vercel.app) con la cuenta de Vercel autorizada. Fuente `4f7b6543c0f301967262c25ee9f7a2a7862f14f0`, despliegue `dpl_9x9NRjfco3FiKRGYbMLGabsuSFaT`. Se verificaron siete recursos estáticos y sus cabeceras; todos coinciden con el paquete local. Acceso anónimo a raíz → 302. [Evidencia de entrega](evidence/ux/brands-provider.json). No hubo nuevas llamadas a la API de aplicación. Sin cambios de DNS o `main`.
+
+La [CI del código desplegado](https://github.com/Legodark/paddock/actions/runs/43831661810) ha terminado en verde, incluidos el trabajo reproducible de web/API/modelos/paquete y los diagramas Archify. [Registro saneado](evidence/ux/brands-ci.json).

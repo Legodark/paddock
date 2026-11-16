@@ -1,0 +1,101 @@
+{
+  "deployment": {
+    "id": "dpl_9x9NRjfco3FiKRGYbMLGabsuSFaT",
+    "url": "https://paddock-ni6uimkps-legodarks-projects.vercel.app",
+    "readyState": "READY",
+    "environment": "preview"
+  },
+  "source_commit": "4f7b6543c0f301967262c25ee9f7a2a7862f14f0",
+  "static_checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "ssl_verify": 0,
+      "bytes": 718,
+      "sha256": "395fdd63e6cd261b768c9b87512921c93562f8b379c78122f38c00d27f1adbaa",
+      "matches_build": true,
+      "nosniff": "nosniff",
+      "frame": "DENY",
+      "referrer": "no-referrer",
+      "csp": "default-src 'none'; script-src 'self'; style-src 'self'; style-src-attr 'unsafe-inline'; img-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'"
+    },
+    {
+      "path": "/assets/index-CJgvOcS6.js",
+      "status": 200,
+      "ssl_verify": 0,
+      "bytes": 269050,
+      "sha256": "5c87f8353e3cd75c87161716eba7f72b66b5887d4f2bb8bd95be0ee902719e69",
+      "matches_build": true,
+      "nosniff": "nosniff",
+      "frame": "DENY",
+      "referrer": "no-referrer",
+      "csp": ""
+    },
+    {
+      "path": "/assets/index-BoaEizWW.css",
+      "status": 200,
+      "ssl_verify": 0,
+      "bytes": 26469,
+      "sha256": "e95e91f23d85bc15cdfe7ba2ffa50a8bf0817dde8be1a4cb433344e62ded168c",
+      "matches_build": true,
+      "nosniff": "nosniff",
+      "frame": "DENY",
+      "referrer": "no-referrer",
+      "csp": ""
+    },
+    {
+      "path": "/brand-logos/citroen.7fd5dad7678a.webp",
+      "status": 200,
+      "ssl_verify": 0,
+      "bytes": 3000,
+      "sha256": "7fd5dad7678ad2d7c002cdf4af0c7dbf8e5d2ad75183abd1675e8055d400e010",
+      "matches_build": true,
+      "nosniff": "nosniff",
+      "frame": "DENY",
+      "referrer": "no-referrer",
+      "csp": ""
+    },
+    {
+      "path": "/brand-logos/mercedes_benz.e8e687288740.webp",
+      "status": 200,
+      "ssl_verify": 0,
+      "bytes": 2772,
+      "sha256": "e8e6872887409e1e2ba91ea48154b0fcb7f9dea88e793dce9a8ef0babcc3301f",
+      "matches_build": true,
+      "nosniff": "nosniff",
+      "frame": "DENY",
+      "referrer": "no-referrer",
+      "csp": ""
+    },
+    {
+      "path": "/brand-logos/lynkco.7a665251f0cd.webp",
+      "status": 200,
+      "ssl_verify": 0,
+      "bytes": 754,
+      "sha256": "7a665251f0cdeed1d85a5621aceb29f3cfd8e6801785c4349cfc9f7b28258af8",
+      "matches_build": true,
+      "nosniff": "nosniff",
+      "frame": "DENY",
+      "referrer": "no-referrer",
+      "csp": ""
+    },
+    {
+      "path": "/THIRD_PARTY_NOTICES.txt",
+      "status": 200,
+      "ssl_verify": 0,
+      "bytes": 2895,
+      "sha256": "b7829899bf07cd9c92adff9b76354d0d46482fe6723750a24f5e7194fc9c5792",
+      "matches_build": true,
+      "nosniff": "nosniff",
+      "frame": "DENY",
+      "referrer": "no-referrer",
+      "csp": ""
+    }
+  ],
+  "anonymous_document_status": 302,
+  "original_png_preserved": true,
+  "backend_unchanged": true,
+  "backend_source_files_compared": 16,
+  "additional_application_api_requests": 0,
+  "scope": "Authenticated static delivery and anonymous root only; local browser evidence is separate."
+}

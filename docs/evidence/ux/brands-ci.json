@@ -1,0 +1,20 @@
+{
+  "source_commit": "4f7b6543c0f301967262c25ee9f7a2a7862f14f0",
+  "run_id": 43831661810,
+  "url": "https://github.com/Legodark/paddock/actions/runs/43831661810",
+  "event": "pull_request",
+  "status": "completed",
+  "conclusion": "success",
+  "jobs": [
+    {
+      "name": "Frozen Archify diagrams in Chrome",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Web, API, frozen models and package",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ]
+}

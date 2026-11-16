@@ -2,13 +2,21 @@
 
 16-11-2026. Seguimiento: [#10](https://github.com/Legodark/paddock/issues/10); candidata: [PR #6](https://github.com/Legodark/paddock/pull/6).
 
-**[Abrir la Preview privada](https://paddock-g4updlcd1-legodarks-projects.vercel.app)** con la cuenta de Vercel autorizada. La app está disponible para revisión; el acceso anónimo redirige a autenticación. El dominio propio y `main` permanecen intactos.
+**[Abrir la Preview privada](https://paddock-ni6uimkps-legodarks-projects.vercel.app)** con la cuenta de Vercel autorizada. La app está disponible para revisión; el acceso anónimo redirige a autenticación. El dominio propio y `main` permanecen intactos.
+
+## Logos de fabricantes · 16-11-2026
+
+La revisión vigente es **[Paddock con logos de las marcas](https://paddock-ni6uimkps-legodarks-projects.vercel.app)**, despliegue `dpl_9x9NRjfco3FiKRGYbMLGabsuSFaT`, fuente `4f7b6543c0f301967262c25ee9f7a2a7862f14f0`. Los logos aparecen junto al selector y al vehículo calculado. Las 70 marcas canónicas usan derivados locales del archivo de 2023; sus recursos pesan 157.644 bytes. El [informe](logos-marcas.md) registra correspondencias, respaldo, procedencia y pruebas.
+
+Web completa: **495.019 bytes**, **286.669 bytes gzip**, dentro de los presupuestos existentes. Pasan 82 pruebas unitarias y 60 casos locales de navegador. La [CI del código desplegado](https://github.com/Legodark/paddock/actions/runs/43831661810) también ha terminado en verde. Se han decodificado todos los logos y revisado seis anchos. En Vercel se verificaron **siete recursos estáticos**: HTML, JS, CSS, tres logos representativos y avisos de terceros, idénticos al build y con sus cabeceras. La raíz anónima devuelve 302 de autenticación. [Evidencia de entrega](evidence/ux/brands-provider.json).
+
+Backend, requisitos, modelos, SQLite, routing y CSP siguen idénticos en los 16 archivos comparados; **cero nuevas llamadas a la API de aplicación en Vercel**. El DeLorean no cambia en esta iteración. Su ajuste de tamaño/unión queda aplazado en #20; el siguiente paso es #19.
 
 ## Actualización visual · 16-11-2026
 
-La revisión vigente es **[Paddock con la K unida a la estela del DeLorean](https://paddock-g4updlcd1-legodarks-projects.vercel.app)**, despliegue `dpl_GBfCQ2LKio1khpnm8y7WzB1vDYFi`, fuente `ae7072388432f7107407e604ff4107630b3ca2b4`. A petición del propietario, PADDOCK va primero y el coche a la derecha, solapando la estela con la K. El PNG original permanece intacto y local. El backend, routing, modelos y datos coinciden byte a byte con la versión anterior (16 archivos comparados). La web mide **331.057 bytes**, 125.006 bytes gzip, dentro del presupuesto. Se han pasado 28 pruebas locales de navegador, incluidos accesibilidad, teclado y texto ampliado, y comprobado seis anchos. No se hicieron nuevas llamadas a la API de aplicación en Vercel: se verificaron HTML, JS, CSS, PNG y acceso anónimo a la raíz. Ver [evidencia](evidence/ux/delorean-provider.json). El propietario ha revisado el logo y autoriza continuar con #18/#19; queda aplazado hacerlo un poco más pequeño y pegar las líneas azules a la K.
+La revisión anterior de identidad fue **[Paddock con la K unida a la estela del DeLorean](https://paddock-g4updlcd1-legodarks-projects.vercel.app)**, despliegue `dpl_GBfCQ2LKio1khpnm8y7WzB1vDYFi`, fuente `ae7072388432f7107407e604ff4107630b3ca2b4`. A petición del propietario, PADDOCK va primero y el coche a la derecha, solapando la estela con la K. El PNG original permanece intacto y local. El backend, routing, modelos y datos coinciden byte a byte con la versión anterior (16 archivos comparados). La web mide **331.057 bytes**, 125.006 bytes gzip, dentro del presupuesto. Se han pasado 28 pruebas locales de navegador, incluidos accesibilidad, teclado y texto ampliado, y comprobado seis anchos. No se hicieron nuevas llamadas a la API de aplicación en Vercel: se verificaron HTML, JS, CSS, PNG y acceso anónimo a la raíz. Ver [evidencia](evidence/ux/delorean-provider.json). El propietario ha revisado el logo y autoriza continuar con #18/#19; queda aplazado hacerlo un poco más pequeño y pegar las líneas azules a la K.
 
-Las mediciones de API y la tabla siguientes conservan la publicación anterior como referencia; las limitaciones de #10/#11/#12/#17 siguen vigentes.
+Las mediciones de API conservan la publicación anterior como referencia; las limitaciones de #10/#11/#12/#17 siguen vigentes.
 
 ## Estado publicado
 
@@ -16,12 +24,12 @@ Las mediciones de API y la tabla siguientes conservan la publicación anterior c
 | --- | --- |
 | Equipo y plan | `legodarks-projects`, Hobby activo |
 | Proyecto | [`paddock`](https://vercel.com/legodarks-projects/paddock), separado del portfolio |
-| Despliegue vigente para revisión | `dpl_GBfCQ2LKio1khpnm8y7WzB1vDYFi`, READY, Preview |
-| Fuente desplegada | `ae7072388432f7107407e604ff4107630b3ca2b4` |
+| Despliegue vigente para revisión | `dpl_9x9NRjfco3FiKRGYbMLGabsuSFaT`, READY, Preview |
+| Fuente desplegada | `4f7b6543c0f301967262c25ee9f7a2a7862f14f0` |
 | Protección | Vercel Authentication en todas las URLs (`all`) |
 | Firewall | Una regla activa: prefijo `/api`, 60 solicitudes/60 s/IP, ventana fija, rechazo 429 |
 | Función local con constructor oficial | **121.114.317 bytes = 115,50 MiB**, Python 3.12 |
-| Web pública del paquete | **331.057 bytes**, seis archivos; sin modelos o SQLite |
+| Web pública del paquete | **495.019 bytes**, 76 archivos; sin modelos o SQLite |
 | Dominio propio | Sin asociar `paddock.juancerezo.com`; DNS sin cambios |
 | Extras de pago | Ninguno; sin Blob, Redis, base gestionada ni Observability Plus |
 
