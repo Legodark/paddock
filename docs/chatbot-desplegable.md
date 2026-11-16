@@ -29,3 +29,11 @@ Los dispositivos físicos, lector de pantalla y zoom nativo siguen pendientes en
 ## Preview privada verificada
 
 [Abrir el asistente desplegable](https://paddock-bzdg112ii-legodarks-projects.vercel.app). Fuente `184ef4b36903f3eea9f250e43e2f4afca1f219d3`, despliegue `dpl_7s2kqzArGGnR29WLmZD3pRoVeX2A`, READY. Se comprobaron seis recursos estáticos (HTML, JS, CSS, Citroën, DeLorean y avisos de terceros), sus hashes y cabeceras; todos coinciden con el build. Raíz anónima →302 de autenticación. [Evidencia de entrega](evidence/ux/chat-disclosure-provider.json). Cero nuevas llamadas a la API de aplicación en Vercel; sin cambios de DNS o `main`.
+
+## Diagnóstico de automatización entre navegadores
+
+La primera CI ampliada del código desplegado ejecutó 190 casos: 188 pasados, un cierre nativo de Firefox 159 en la prueba de composición y un timeout de WebKit al crear la página. La ejecución de push del mismo SHA pasó 189 casos y repitió el cierre de Firefox. Se conserva la [evidencia inicial](evidence/ux/chat-disclosure-ci-first.json); no se presenta ese intento como aprobado. Se canceló la repetición redundante al confirmar que Firefox repetía el mismo fallo.
+
+Playwright 1.65.1 resuelve el selector de `dispatchEvent` en el contexto principal. La búsqueda por etiqueta lee allí `ariaLabelledByElements`, el getter nativo relacionado con el diagnóstico de Firefox 159 ya documentado en la compatibilidad de axe. Un [fixture aislado en Chromium](evidence/ux/chat-disclosure-selector-world.json) confirmó cinco accesos al getter al usar la etiqueta y ninguno adicional al usar CSS; ambos eventos conservan `Escape` e `isComposing: true`. No reproduce el cierre nativo de Firefox: su instalación local oficial fue rechazada con 403 por la red.
+
+Se cambia únicamente el selector de ese dispatch a `#chat-message`. Se mantienen el evento, las búsquedas accesibles del resto del caso y todas las aserciones; sin omisiones, reintentos automáticos o cambios en el código servido. La nueva CI debe confirmar la corrección. Los archivos de producción y el paquete publicado permanecen idénticos al SHA `184ef4b36903f3eea9f250e43e2f4afca1f219d3`.

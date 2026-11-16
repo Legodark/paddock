@@ -81,7 +81,10 @@ test('closing and Escape preserve a draft and return focus to the opener', async
   await page.keyboard.press('Escape');
   await expect(opener(page)).toHaveAttribute('aria-expanded', 'true');
   await input(page).focus();
-  await input(page).dispatchEvent('keydown', { key: 'Escape', isComposing: true });
+  // dispatchEvent resolves selectors in the main world: avoid Firefox 159's
+  // crashing ariaLabelledByElements getter in getByLabel for this dispatch only.
+  // Labelled lookups and every behavioral assertion remain unchanged.
+  await page.locator('#chat-message').dispatchEvent('keydown', { key: 'Escape', isComposing: true });
   await expect(opener(page)).toHaveAttribute('aria-expanded', 'true');
   await page.keyboard.press('Escape');
   await expect(opener(page)).toBeFocused();
