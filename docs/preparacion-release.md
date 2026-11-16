@@ -9,7 +9,7 @@
 | Código e historia | `tfm-original-2023` y `main` históricos preservados; candidata revisada en rama separada |
 | Auditoría de fuentes #24 | [Completada sobre `5e8091b`](evidence/security-audit-20261116/REPORT.md): 47 unidades de fuentes, dos históricas fuera de alcance, cero candidatos supervivientes; dos críticos independientes y validadores pasados. Un cambio posterior de comportamiento necesita revalidar sus unidades |
 | Plataforma #10 | Hobby activo; función Python 3.12, 2.048 MB asignados, timeout 10 s, región de función `iad1`. Consumo real de CPU/RAM, arranque frío y saldo mensual compartido aún desconocidos |
-| Firewall #11 | Umbral canónico, 429 anterior a función según proveedor y recuperación posterior probados. Variantes bajo bloqueo y destino del 308 siguen pendientes |
+| Firewall #11 | Umbral canónico, 429 anterior a función según proveedor y recuperación posterior probados. Destino del 308 confirmado al health canónico; variantes bajo bloqueo pendientes |
 | UX #12 | Automatización amplia y prueba inicial del propietario en iPhone. Confirmación del medidor y controles físicos pendientes según el recorrido manual |
 | Catálogo #17 | Decisión pendiente entre el alcance de la demo pública y conservar la aplicación completa privada; no modificar fichas/chat silenciosamente |
 | Coste | Cero servicios adicionales; no activar Pro, Observability Plus, Blob o base gestionada |
@@ -26,7 +26,7 @@ El control `/robots.txt` del ensayo devolvió 404 porque ese archivo no existe e
 
 Sí existe evidencia anterior de **seis recursos 200 en este mismo despliegue**, con hashes idénticos al build: HTML, JS, CSS, logo de marca, PNG de identidad y avisos de licencia. [Evidencia](evidence/ux/price-gauge-provider.json). Esto acredita entrega estática; no acredita que se repitiera mientras esa IP estaba limitada. La política y el compilador local excluyen estas rutas de Python. Conservar ambas afirmaciones separadas permite cerrar la comprobación de entrega sin fabricar simultaneidad ni repetir llamadas.
 
-Las variantes 404/308 no demostraron acceso funcional fuera del límite. Tampoco demostraron todas la política desde una IP ya limitada. Resolver esa parte con un procedimiento revisado o una decisión explícita sobre la limitación residual; no usar las 29 solicitudes sobrantes para otra ráfaga sin revisión.
+Las variantes 404/308 no demostraron acceso funcional fuera del límite. Tampoco demostraron todas la política desde una IP ya limitada. Resolver esa parte con un procedimiento revisado o una decisión explícita sobre la limitación residual; el destino del 308 ya se observó sin seguirlo. No usar las 28 solicitudes sobrantes para otra ráfaga sin revisión.
 
 ## Secuencia de entrega
 

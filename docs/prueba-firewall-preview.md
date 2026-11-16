@@ -1,6 +1,6 @@
 # Prueba acotada del firewall de la Preview
 
-**Estado actual · 16-11-2026:** segunda ejecución autorizada de hasta 127 HTTP finalizada con **98 solicitudes**. Acreditados 60 health permitidos y el siguiente rechazado para una misma IP/región, atribución del 429 a la regla y rechazo anterior a la función según los registros del proveedor. Más tarde esa misma IP volvió a responder 200 sin cambiar configuración. Quedan incompletas las variantes y el destino del 308. La entrega estática positiva tiene seis controles previos del mismo despliegue, sin simultaneidad con el bloqueo. [Evidencia de los 98 casos](evidence/preview/firewall-recheck-20261116.json). #11 permanece abierta; no se consumirá el margen restante automáticamente.
+**Estado actual · 16-11-2026:** segunda ejecución autorizada de hasta 127 HTTP finalizada con **98 solicitudes**. Acreditados 60 health permitidos y el siguiente rechazado para una misma IP/región, atribución del 429 a la regla y rechazo anterior a la función según los registros del proveedor. Más tarde esa misma IP volvió a responder 200 sin cambiar configuración. Quedan incompletas las variantes desde una IP limitada. El destino del 308 se capturó después con una petición de lectura, llevando el total a 99/127. La entrega estática positiva tiene seis controles previos del mismo despliegue, sin simultaneidad con el bloqueo. [Evidencia de los 98 casos](evidence/preview/firewall-recheck-20261116.json). #11 permanece abierta; no se consumirá el margen restante automáticamente.
 
 ## Primera ejecución: máximo 67 HTTP
 
@@ -140,4 +140,11 @@ Hobby activo, regla/configuración iguales antes/después, sin publicación de I
 
 ### Reconciliación del control estático sin repetir tráfico
 
-La [evidencia previa del mismo despliegue](evidence/ux/price-gauge-provider.json) ya acredita seis recursos estáticos 200 con hash idéntico al build: documento, JS, CSS, logo de marca, PNG de identidad y avisos. Se puede cerrar la **entrega estática positiva** con esa evidencia. El 404 de `/robots.txt` y su selección inválida se conservan; no se convierte esa prueba previa en simultaneidad con el bloqueo por IP. Quedan las variantes bajo bloqueo y el destino del 308, además de la limitación explícita de no haber comprobado simultaneidad estática durante el límite.
+La [evidencia previa del mismo despliegue](evidence/ux/price-gauge-provider.json) ya acredita seis recursos estáticos 200 con hash idéntico al build: documento, JS, CSS, logo de marca, PNG de identidad y avisos. Se puede cerrar la **entrega estática positiva** con esa evidencia. El 404 de `/robots.txt` y su selección inválida se conservan; no se convierte esa prueba previa en simultaneidad con el bloqueo por IP. Quedan las variantes bajo bloqueo; el destino del 308 se comprobó en la continuación documentada abajo, además de la limitación explícita de no haber comprobado simultaneidad estática durante el límite.
+
+
+### Continuación: destino del 308 observado
+
+Tras la instrucción del propietario de continuar, se hizo una única petición `GET /api//v1/health`, sin reintentos o seguimiento. Vercel respondió **308** con destino **`https://paddock-jd7a8siqc-legodarks-projects.vercel.app/api/v1/health`**, mismo origen y sin query. El dato procede de la respuesta real, no de inferir el comportamiento local. [Evidencia saneada](evidence/preview/alias-location-20261116.json).
+
+Esta observación no se realizó desde una IP bloqueada y no sustituye esa parte de la comprobación. Se conserva intacto el informe histórico de los 98 casos: con esta lectura posterior son **99 solicitudes dentro del techo 127, 28 sin consumir**, una sola ráfaga en total y sin cambios de regla, despliegue o DNS.

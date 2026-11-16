@@ -75,5 +75,22 @@
         "Deployments previously aliased to a production domain are eligible for Instant Rollback. Deployments that have never been aliased to production a domain, e.g., most [preview deployments](/docs/deployments/environments#preview-environment-pre-production), are not eligible."
       ]
     }
-  ]
+  ],
+  "followup_free_usage_discovery": {
+    "checked_at": "2026-11-16T19:20:18.989933+00:00",
+    "authenticated_queries": 0,
+    "result": "No alternative official CLI/SDK resourceUsage method located; this is not a claim that no such API can ever exist.",
+    "cli_implementation": "billing usage uses /v2/billing/costs with gross_cost and quantity; not another operational usage endpoint.",
+    "sdk": "Public SDK exposes the same observability query/schema family.",
+    "sources": [
+      "https://vercel.com/docs/cli/metrics",
+      "https://vercel.com/docs/pricing/manage-and-optimize-usage",
+      "https://github.com/vercel/sdk/blob/main/docs/sdks/vercel/README.md"
+    ],
+    "free_metrics_exceptions": [
+      "Web Analytics",
+      "Speed Insights"
+    ],
+    "actual_cpu_memory_usage_obtained": false
+  }
 }
