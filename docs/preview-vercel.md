@@ -4,9 +4,13 @@
 
 **[Abrir la Preview privada](https://paddock-jd7a8siqc-legodarks-projects.vercel.app)** con la cuenta de Vercel autorizada. La app está disponible para revisión; el acceso anónimo redirige a autenticación. El dominio propio y `main` permanecen intactos.
 
+## Ensayo privado de Production y rollback · 16-11-2026
+
+[Resultado y evidencia](preparacion-release.md#resultado-observado--16-11-2026): dos builds mantenidos y protegidos, B → A → B comprobado por ID y desde el alias activo, 22/22 HTTP correctas. Candidata Production privada final: [paddock-l9io99hnr-legodarks-projects.vercel.app](https://paddock-l9io99hnr-legodarks-projects.vercel.app), `dpl_GPrbbbEGDV1zXQ2ZTz5Y5sNQWJAp`, misma fuente `2b8b760`. La Preview anterior sigue disponible. Sin dominio propio, merge, tag nuevo o productos de pago. El ensayo tiene techo propio de 22; acumulado conservador con la segunda prueba de firewall y su observación posterior: 121 frente a 127, seis sin consumir. No resuelve consumo mensual, UX física o alcance público.
+
 ## Revisión gratuita de plataforma · 16-11-2026
 
-La segunda prueba de firewall autorizada terminó con **98 de 127 HTTP**: ráfaga de 88 health 200 y el primero 429, parada automática; cuatro variantes, un estático y comprobación posterior de recuperación. El proveedor acredita 60 health permitidos y el siguiente rechazado para la misma IP/región, atribución a la regla y rechazo anterior a función según su clasificación. El primer 200 posterior salió por la otra IP; al reanudar la sesión se añadieron tres health identificados dentro del mismo techo y dos respondieron 200 desde la IP limitada, sin cambiar la regla. No se mide el instante exacto del desbloqueo. Quedan variantes desde una IP limitada. En una continuación posterior se capturó el 308 al health canónico del mismo origen con una petición: total 99/127, 28 sin consumir. [Evidencia](evidence/preview/alias-location-20261116.json). `/robots.txt` devolvió 404 y no existe en el paquete vigente; la [entrega estática positiva se acredita por seis recursos previos del mismo despliegue](evidence/preview/reconciled-static-delivery-20261116.json), sin simultaneidad con el bloqueo. [98 casos y límites](evidence/preview/firewall-recheck-20261116.json). Ninguna publicación, cambio DNS o servicio contratado.
+La segunda prueba de firewall autorizada terminó con **98 de 127 HTTP**: ráfaga de 88 health 200 y el primero 429, parada automática; cuatro variantes, un estático y comprobación posterior de recuperación. El proveedor acredita 60 health permitidos y el siguiente rechazado para la misma IP/región, atribución a la regla y rechazo anterior a función según su clasificación. El primer 200 posterior salió por la otra IP; al reanudar la sesión se añadieron tres health identificados dentro del mismo techo y dos respondieron 200 desde la IP limitada, sin cambiar la regla. No se mide el instante exacto del desbloqueo. Quedan variantes desde una IP limitada. En una continuación posterior se capturó el 308 al health canónico del mismo origen con una petición: subtotal de esa observación 99/127; el ensayo privado posterior se contabiliza arriba. [Evidencia](evidence/preview/alias-location-20261116.json). `/robots.txt` devolvió 404 y no existe en el paquete vigente; la [entrega estática positiva se acredita por seis recursos previos del mismo despliegue](evidence/preview/reconciled-static-delivery-20261116.json), sin simultaneidad con el bloqueo. [98 casos y límites](evidence/preview/firewall-recheck-20261116.json). Ninguna publicación, cambio DNS o servicio contratado.
 
 Después de esta consulta, el propietario autorizó el procedimiento de firewall de hasta 67 HTTP. Se enviaron **61 health**, todos 200, y se detuvo la ejecución: el proveedor contó dos IP de origen con 40 y 21 solicitudes, sin alcanzar 60/IP. Cero variantes, estático, recuperación o reintentos. Los 61 casos corresponden a registros `allow`/`streaming_func`; configuración idéntica antes/después. Resultado inconcluso para #11, sin nuevas mediciones de CPU/memoria o arranque frío. [Procedimiento y siguiente propuesta sin ejecutar](prueba-firewall-preview.md) · [evidencia saneada](evidence/preview/firewall-experiment-20261116.json). Son adicionales a las veinte solicitudes del smoke funcional histórico.
 
@@ -55,6 +59,7 @@ Las mediciones de API conservan la publicación anterior como referencia; las li
 | Equipo y plan | `legodarks-projects`, Hobby activo |
 | Proyecto | [`paddock`](https://vercel.com/legodarks-projects/paddock), separado del portfolio |
 | Despliegue vigente para revisión | `dpl_9PXY5N878VVNqdJBj2JD9kF5fVxw`, READY, Preview |
+| Production privada tras ensayo | `dpl_GPrbbbEGDV1zXQ2ZTz5Y5sNQWJAp`, READY; recuperación probada |
 | Fuente desplegada | `2b8b7608341663fc5852220d3460cd33d2195cc2` |
 | Protección | Vercel Authentication en todas las URLs (`all`) |
 | Firewall | Una regla activa: prefijo `/api`, 60 solicitudes/60 s/IP, ventana fija, rechazo 429 |
@@ -69,7 +74,7 @@ La [evidencia saneada](evidence/preview/verified.json) contiene las respuestas o
 
 El propietario aprobó expresamente la regla de firewall y el primer despliegue privado. La CLI publicó exactamente el cambio revisado de Paddock con el digest de efectos y confirmó después la regla en configuración **live**. La activación no acredita todavía el umbral real, la recuperación o la exclusión de invocaciones de #11.
 
-Vercel obliga a que el primer despliegue de un proyecto tenga destino Production. Se creó con `--prod --skip-domain`, autenticación obligatoria y cero alias promovidos. Esa primera versión de `ad60e5b` se conserva como diagnóstico: no usarla para rollback porque contiene el defecto de consultas descrito debajo. Las versiones posteriores se publicaron como Preview; no se fusionó el PR ni se conectó Git para desplegar automáticamente.
+Vercel obliga a que el primer despliegue de un proyecto tenga destino Production. Se creó con `--prod --skip-domain`, autenticación obligatoria y cero alias promovidos. Esa primera versión de `ad60e5b` se conserva como diagnóstico: no usarla para rollback porque contiene el defecto de consultas descrito debajo. Las versiones posteriores hasta la recuperación del medidor se publicaron como Preview; no se fusionó el PR ni se conectó Git para desplegar automáticamente.
 
 La primera comprobación real detectó que `/api/:path*` compila a `/api/index.py?path=$1`. El parámetro añadido por Vercel hacía que `/cars` rechazase incluso consultas válidas. Se corrigió el rewrite a `/api(/.*)?`, conservando la validación estricta del backend. El control de CI usa `@vercel/routing-utils@6.6.1` y rechaza una reversión al patrón defectuoso. Se fija `path-to-regexp` a 6.3.0 en esa herramienta de CI para evitar la dependencia vulnerable 6.1.0; la auditoría ampliada vuelve a dar cero avisos conocidos.
 
@@ -101,10 +106,10 @@ Directorios de trabajo: `/workspace/.paddock/preview-preparation-20261115` (prim
 
 ## Pendientes antes de acceso público
 
-- **#11:** probar umbral 60/min/IP, 429, recuperación y exclusión de invocaciones con otro presupuesto acotado. No certificar seguridad completa por la configuración activa.
-- **#10:** documentar o medir, si las opciones gratuitas lo permiten, arranque frío y memoria/CPU efectivos; permanecen desconocidos. No realizar más llamadas de API dentro del presupuesto agotado.
+- **#11:** completar las variantes desde IP limitada. El umbral, 429 anterior a función según proveedor y recuperación posterior ya tienen evidencia; no volver a tratarlos como pruebas sin ejecutar.
+- **#10:** documentar o medir, si las opciones gratuitas lo permiten, arranque frío, memoria/CPU efectivos y margen mensual compartido; permanecen desconocidos. No iniciar tráfico adicional sin fijar su alcance y techo.
 - **#12:** interacción real en navegador, móvil, teclado, zoom nativo y lector de pantalla. No se ha ejecutado la matriz de CI contra Vercel.
 - **#17:** decidir y documentar las condiciones de reutilización pública del catálogo histórico.
-- **#14/#15:** release, rollback y subdominio; después, issue en AI-Portfolio con URL/release públicas verificadas.
+- **#14/#15:** integración, release/tag y subdominio; el mecanismo de rollback privado ya pasó y la baseline pública deberá respetar el alcance acordado. Después, issue en AI-Portfolio con URL/release públicas verificadas.
 
-Si es necesario retirar una versión, identificar el ID exacto de Paddock, usar la retirada normal de Vercel con la aprobación que solicite y verificarla. No se ha ejecutado una retirada o rollback como parte de este smoke. Ninguna de las pruebas autoriza por sí sola el acceso público al catálogo.
+Si es necesario retirar una versión, identificar el ID exacto de Paddock, usar la retirada normal de Vercel con la aprobación que solicite y verificarla. El smoke funcional histórico no incluyó rollback; el ensayo privado posterior de recuperación se registra arriba. Ninguna de las pruebas autoriza por sí sola el acceso público al catálogo.

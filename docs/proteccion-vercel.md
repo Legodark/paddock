@@ -56,7 +56,7 @@ El [procedimiento aprobado de 67 HTTP](prueba-firewall-preview.md) se ejecutó e
 
 El propietario aprobó después **hasta 127 HTTP**. La ejecución finalizó con **98 solicitudes**, una sola ráfaga detenida al primer 429 y tres comprobaciones posteriores dentro del mismo techo para identificar recuperación de la IP limitada. Umbral y rechazo acreditados; recuperación posterior observada, instante exacto no medido. [Evidencia de 98 casos](evidence/preview/firewall-recheck-20261116.json). Las otras 29 solicitudes no se consumirán automáticamente. Quedan variantes desde una IP limitada; el destino del 308 ya se comprobó al health canónico del mismo origen; el `/robots.txt` elegido devolvió 404 y no existe en el paquete. La entrega estática positiva se acredita por [seis recursos previos del mismo despliegue](evidence/preview/reconciled-static-delivery-20261116.json), sin afirmar simultaneidad con el bloqueo.
 
-Después de la instrucción de continuar se capturó el destino del 308 mediante **una** petición de lectura, sin seguirla o reintentar: health canónico del mismo dominio y sin query. [Observación posterior](evidence/preview/alias-location-20261116.json). Total acumulado dentro de ese techo: **99/127, 28 sin consumir**. La prueba histórica de 98 casos permanece intacta y la observación posterior no se presenta como una petición desde IP bloqueada.
+Después de la instrucción de continuar se capturó el destino del 308 mediante **una** petición de lectura, sin seguirla o reintentar: health canónico del mismo dominio y sin query. [Observación posterior](evidence/preview/alias-location-20261116.json). Subtotal en esa observación: **99/127**. La prueba histórica de 98 casos permanece intacta y la observación posterior no se presenta como una petición desde IP bloqueada.
 
 Con el proyecto y el borrador existentes, antes de abrir tráfico:
 
@@ -67,3 +67,7 @@ Con el proyecto y el borrador existentes, antes de abrir tráfico:
 5. Documentar el comportamiento al agotar cuotas. La [documentación Hobby](https://vercel.com/docs/plans/hobby) advierte que, en la mayoría de los casos, al superar límites hay que esperar hasta 30 días para volver a usar la función. Las fuentes consultadas no concretan aquí el comportamiento específico de esta regla al agotar su millón incluido; no se ha probado ni se garantiza disponibilidad ilimitada.
 
 El presupuesto sigue siendo cero euros adicionales y la continuidad del servicio queda sujeta a cuotas. La protección y las pruebas de plataforma siguen abiertas en SEC-01/SEC-08; la elegibilidad gratuita y la propuesta técnica ya tienen evidencia. No se solicitan más capturas ni un producto de observabilidad de pago para continuar.
+
+### Ensayo de recuperación posterior
+
+Se completó un [ensayo privado de Production/rollback](preparacion-release.md#resultado-observado--16-11-2026), separado del firewall, con techo propio de 22 HTTP y dos builds. Sus 22 casos pasaron sin ráfagas o cambios de regla. La contabilidad conjunta conservadora es 98 + 1 + 22 = **121 frente a 127**, seis sin consumir; las observaciones históricas permanecen intactas. No se probaron aquí variantes desde IP limitada ni se midió CPU/RAM o saldo mensual. No utilizar el remanente como permiso abierto para carga adicional.

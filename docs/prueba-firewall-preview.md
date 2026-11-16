@@ -2,6 +2,8 @@
 
 **Estado actual · 16-11-2026:** segunda ejecución autorizada de hasta 127 HTTP finalizada con **98 solicitudes**. Acreditados 60 health permitidos y el siguiente rechazado para una misma IP/región, atribución del 429 a la regla y rechazo anterior a la función según los registros del proveedor. Más tarde esa misma IP volvió a responder 200 sin cambiar configuración. Quedan incompletas las variantes desde una IP limitada. El destino del 308 se capturó después con una petición de lectura, llevando el total a 99/127. La entrega estática positiva tiene seis controles previos del mismo despliegue, sin simultaneidad con el bloqueo. [Evidencia de los 98 casos](evidence/preview/firewall-recheck-20261116.json). #11 permanece abierta; no se consumirá el margen restante automáticamente.
 
+El [ensayo privado de recuperación posterior](preparacion-release.md#resultado-observado--16-11-2026) tuvo su propio techo de 22 HTTP, todos correctos, sin nueva ráfaga. Contabilidad conjunta conservadora: 98 + 1 + 22 = **121 frente a 127**, seis sin consumir. No cambia el resultado ni las limitaciones del experimento de firewall.
+
 ## Primera ejecución: máximo 67 HTTP
 
 Preparada y ejecutada el 16-11-2026 para [#11](https://github.com/Legodark/paddock/issues/11), tras aprobar expresamente el propietario el presupuesto de 67 HTTP. **Resultado inconcluso:** 61 health devolvieron 200; Vercel los distribuyó entre dos IP de origen con 40 y 21 peticiones. Ninguna alcanzó 60/IP. El ejecutor se detuvo sin variantes, estático, recuperación o reintentos. [Evidencia saneada y 61 casos](evidence/preview/firewall-experiment-20261116.json).
