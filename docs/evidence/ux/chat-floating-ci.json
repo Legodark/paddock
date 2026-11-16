@@ -1,0 +1,125 @@
+{
+  "source_commit": "efdc6936df15aaf48ab8bbd9bb01195d71255606",
+  "deployment_source_commit": "861d41bec36cea9d8c15091dc31648d0e9f3720a",
+  "runtime_source_identical": true,
+  "run_id": 43870309044,
+  "url": "https://github.com/Legodark/paddock/actions/runs/43870309044",
+  "status": "completed",
+  "conclusion": "success",
+  "jobs": [
+    {
+      "name": "Web, API, frozen models and package",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Frozen Archify diagrams in Chrome",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "summary": {
+    "passed": true,
+    "checks": [
+      {
+        "check": "npm-audit.json",
+        "passed": true,
+        "detail": "0 known vulnerabilities"
+      },
+      {
+        "check": "build-tools-audit.json",
+        "passed": true,
+        "detail": "0 known vulnerabilities"
+      },
+      {
+        "check": "api-audit.json",
+        "passed": true,
+        "detail": "7 packages, 0 advisories, 0 skipped"
+      },
+      {
+        "check": "bundle-audit.json",
+        "passed": true,
+        "detail": "8 packages, 0 advisories, 0 skipped"
+      },
+      {
+        "check": "Unit tests",
+        "passed": true,
+        "detail": "82 passed"
+      },
+      {
+        "check": "API tests",
+        "passed": true,
+        "detail": "17 passed"
+      },
+      {
+        "check": "CI guard tests",
+        "passed": true,
+        "detail": "7 passed"
+      },
+      {
+        "check": "Browser tests",
+        "passed": true,
+        "detail": "200 passed, 0 failed, 0 skipped, 0 flaky; Google Chrome 157.0.8103.50"
+      },
+      {
+        "check": "Frozen model reproduction",
+        "passed": true,
+        "detail": "Both reviewed artifact SHA-256 checks passed"
+      },
+      {
+        "check": "Materialized function and budgets",
+        "passed": true,
+        "detail": "121114317 function bytes, 500483 public bytes"
+      },
+      {
+        "check": "Workflow and bash syntax",
+        "passed": true,
+        "detail": "actionlint 1.7.12"
+      },
+      {
+        "check": "Local firewall policy",
+        "passed": true,
+        "detail": "Local policy only; not applied or enforced on Vercel"
+      }
+    ],
+    "execution_context": "github-actions",
+    "scope": "Checks on the current runner only; no deployment, Vercel quotas or firewall enforcement verified.",
+    "browser_profiles": [
+      {
+        "project": "desktop-chromium",
+        "version": "chromium 157.0.8103.50",
+        "passed": 40,
+        "failed": 0,
+        "skipped": 0
+      },
+      {
+        "project": "mobile-chromium",
+        "version": "chromium 157.0.8103.50",
+        "passed": 40,
+        "failed": 0,
+        "skipped": 0
+      },
+      {
+        "project": "desktop-firefox",
+        "version": "firefox 159.0",
+        "passed": 40,
+        "failed": 0,
+        "skipped": 0
+      },
+      {
+        "project": "desktop-webkit",
+        "version": "webkit 27.2",
+        "passed": 40,
+        "failed": 0,
+        "skipped": 0
+      },
+      {
+        "project": "mobile-webkit",
+        "version": "webkit 27.2",
+        "passed": 40,
+        "failed": 0,
+        "skipped": 0
+      }
+    ]
+  }
+}

@@ -35,3 +35,7 @@ Se comprobaron seis recursos estáticos y acceso anónimo a raíz (302); los arc
 ## Ajustes de validación entre motores
 
 La primera matriz ampliada pasó 198/200 casos. Firefox calculó una diferencia de 0,000015 px en la posición del selector y la comparación exacta falló; la guarda de geometría ahora admite 0,005 px. Playwright rechaza `mouse.wheel` en WebKit móvil: ese perfil comprueba el mismo scroll interno mediante `scrollTop`, identificado como transporte DOM instrumentado y no gesto táctil físico; los demás perfiles mantienen la rueda real. Todas las comprobaciones de límites, foco y desplazamiento del fondo se conservan, sin omisiones ni reintentos automáticos. [Evidencia inicial](evidence/ux/chat-floating-ci-first.json). Estos ajustes solo cambian pruebas/documentación; la Preview sigue sirviendo los archivos de producción de `861d41b`.
+
+## CI ampliada
+
+[CI del código desplegado](https://github.com/Legodark/paddock/actions/runs/43870309044) completada en verde, incluidos los trabajos de web/API/modelos/paquete y Archify. [Evidencia completa](evidence/ux/chat-floating-ci.json). Los archivos de producción validados son idénticos al despliegue. No hay casos omitidos o reintentos automáticos.

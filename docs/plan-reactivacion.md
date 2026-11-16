@@ -15,6 +15,10 @@ El propietario confirmó tres recuperaciones de identidad y comportamiento de 20
 
 Orden recomendado de UX: el ajuste fino de #20 queda aplazado por el propietario; continuar con la revisión manual final de #12, una vez integradas #18/#19. En paralelo pueden avanzar el enforcement de #11 y las métricas de #10 con su presupuesto específico; #17 sigue pendiente antes del acceso público. La recuperación de marcas actualiza la interfaz; modelos, datos y DNS permanecen intactos.
 
+## Trabajo paralelo y cierre de auxiliares
+
+Preferencia del propietario: paralelizar cuando sea seguro, con alcance y archivos separados para cada agente. El agente principal integra los cambios y gestiona GitHub/despliegues. Al entregar su tarea, el auxiliar finaliza; no mantener agentes ejecutándose sin trabajo. Detener también servidores y terminales auxiliares cuando ya no sean necesarios. Las revisiones de solo lectura pueden avanzar en paralelo con implementación y pruebas.
+
 ## Objetivo y alcance
 
 Recuperar el TFM como aplicación pública en `paddock.juancerezo.com` (nombre propuesto), conservar su historia, actualizar sus dependencias y mejorar seguridad, UX/UI y usabilidad en móvil y escritorio. Al terminar, crear una issue en `Legodark/ai-portfolio` para integrarlo desde otra sesión.

@@ -8,7 +8,7 @@
 
 La revisión vigente es **[Paddock con botón flotante abajo a la derecha](https://paddock-mehm2xkbx-legodarks-projects.vercel.app)**, despliegue `dpl_4PADSnX3JsMfywyM4N3dn3r7w7Za`, fuente `861d41bec36cea9d8c15091dc31648d0e9f3720a`. Abre un popup sobre la página con cierre visible y scroll interno; corrige la sección en flujo que no correspondía a la disposición solicitada. [Informe y capturas](chatbot-flotante.md).
 
-82 pruebas unitarias y 80 casos locales de navegador pasados. Web completa **500.457 bytes / 288.055 gzip**, dentro del presupuesto. Backend/recursos idénticos en 16 archivos; se verificaron seis estáticos y raíz anónima protegida (302), sin nuevas llamadas a la API de aplicación. [Evidencia](evidence/ux/chat-floating-provider.json). El ajuste fino del DeLorean sigue aplazado en #20 y la sesión física/manual sigue en #12.
+82 pruebas unitarias y 80 casos locales de navegador pasados. La [CI ampliada del código desplegado](https://github.com/Legodark/paddock/actions/runs/43870309044) también está en verde. Web completa **500.457 bytes / 288.055 gzip**, dentro del presupuesto. Backend/recursos idénticos en 16 archivos; se verificaron seis estáticos y raíz anónima protegida (302), sin nuevas llamadas a la API de aplicación. [Evidencia](evidence/ux/chat-floating-provider.json). El ajuste fino del DeLorean sigue aplazado en #20 y la sesión física/manual sigue en #12.
 
 ## Chatbot desplegable · 16-11-2026
 
