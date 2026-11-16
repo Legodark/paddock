@@ -52,6 +52,8 @@ Evidencia: [regla y rutas](evidence/ci/firewall-policy.json), [consulta de cuent
 
 ## Cierre pendiente en la plataforma
 
+Está preparado el [procedimiento acotado para la Preview](prueba-firewall-preview.md): máximo **66 solicitudes candidatas a API y una estática (67 HTTP)**, una sola ejecución, concurrencia uno y sin reintentos. Incluye umbral, cuatro variantes, estático y recuperación, con consultas gratuitas de logs/tráfico. No se ha ejecutado ni ampliado automáticamente el primer presupuesto agotado.
+
 Con el proyecto y el borrador existentes, antes de abrir tráfico:
 
 1. Confirmar Hobby y el tramo gratuito en el diálogo de precios de ese proyecto. Si pide contratar uso adicional o cambiar de plan, detener esa activación; no aceptarlo automáticamente.

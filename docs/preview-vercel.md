@@ -4,6 +4,14 @@
 
 **[Abrir la Preview privada](https://paddock-jd7a8siqc-legodarks-projects.vercel.app)** con la cuenta de Vercel autorizada. La app está disponible para revisión; el acceso anónimo redirige a autenticación. El dominio propio y `main` permanecen intactos.
 
+## Revisión gratuita de plataforma · 16-11-2026
+
+Nueva consulta de solo lectura, sin llamadas a la API de aplicación: Hobby activo, Fluid compute y autenticación para todos los despliegues confirmados. Los logs gratuitos de los últimos 30 minutos muestran dos cargas de catálogo y una predicción con HTTP 200, entre las 14:58 y 14:59 UTC, en `cdg1`, con acción WAF `allow`. Su agente de usuario declara iPhone/iOS 18.7/Safari 27.2; se registra como dato HTTP y no como certificación del dispositivo o aprobación del medidor.
+
+Los logs de peticiones están disponibles sin contratar Observability Plus. Los de runtime no aportan aquí CPU, memoria o arranque frío; la consulta de 24 horas es rechazada por la retención Hobby. `billing usage` tampoco devuelve datos del 1–16 de noviembre. **El consumo y margen mensual siguen desconocidos; no equivalen a cero.** #10 permanece abierta. [Evidencia saneada](evidence/preview/free-platform-review-20261116.json).
+
+Para #12 se ha preparado un [recorrido manual breve](comprobacion-manual-preview.md). Los logs confirman respuestas, pero no observan teclado virtual, gestos, zoom, lectura o foco. Las peticiones existentes no son una prueba de umbral/recuperación de #11.
+
 ## Medidor de precio recuperado · #23
 
 La revisión vigente es **[Paddock con medidor de precio](https://paddock-jd7a8siqc-legodarks-projects.vercel.app)**, despliegue `dpl_9PXY5N878VVNqdJBj2JD9kF5fVxw`, fuente `2b8b7608341663fc5852220d3460cd33d2195cc2`. Recupera el indicador original solicitado tras probar desde iPhone, adaptado al diseño y a móvil/escritorio. [Informe y capturas](medidor-precio.md).

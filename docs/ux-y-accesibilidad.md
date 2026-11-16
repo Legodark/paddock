@@ -56,6 +56,8 @@ La reducción instrumentada de la ventana móvil a 390×480 verifica el espacio 
 
 ## Límites pendientes antes de cerrar #12
 
+El [recorrido manual preparado para la Preview vigente](comprobacion-manual-preview.md) permite registrar estas comprobaciones sin repetir toda la matriz de CI ni provocar límites de tráfico desde el teléfono. La última CI de la rama pasó 240 casos de navegador y 100 unitarias; las cifras anteriores de este informe corresponden a sus revisiones históricas.
+
 - Ejecutar una sesión real con lector de pantalla: VoiceOver, TalkBack o NVDA, identificando versión y plataforma. Comprobar orden de lectura, controles, errores, cambios de foco y anuncios del resultado/chat.
 - Probar Safari/iPhone y Chrome/Android físicos cuando estén disponibles: teclado virtual, orientación y gestos, además de zoom nativo del navegador. La emulación no acredita estas pruebas.
 - Repetir smoke sobre la preview Vercel de #10 para verificar tiempos y respuestas reales de plataforma. Los 429 de esta revisión son escenarios controlados, no evidencia de enforcement del firewall.

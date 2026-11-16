@@ -15,7 +15,17 @@ El propietario confirmó las recuperaciones de identidad y comportamiento de 202
 
 4. **[Medidor de precio, #23](https://github.com/Legodark/paddock/issues/23), recuperado tras la prueba del propietario en iPhone:** velocímetro verde/ámbar/rojo con aguja y estado textual Buen precio/Promedio/Caro. Conserva el criterio histórico, queda neutro si faltan comparables y se adapta a móvil/escritorio. 100 unitarias y 96 casos locales pasados. [Preview](https://paddock-jd7a8siqc-legodarks-projects.vercel.app) y [criterio/evidencia](medidor-precio.md). Validar la corrección desde el iPhone dentro de #12.
 
-Orden recomendado de UX: el ajuste fino de #20 queda aplazado por el propietario; continuar con la revisión manual final de #12, una vez integradas #18/#19. En paralelo pueden avanzar el enforcement de #11 y las métricas de #10 con su presupuesto específico; #17 sigue pendiente antes del acceso público. La recuperación de marcas actualiza la interfaz; modelos, datos y DNS permanecen intactos.
+Orden recomendado de UX: el ajuste fino de #20 queda aplazado por el propietario; continuar con la [sesión manual final de #12](comprobacion-manual-preview.md), con #18/#19/#23 ya integradas. En paralelo avanzan la comprobación efectiva del firewall de #11 y las métricas gratuitas de #10; #17 sigue pendiente antes del acceso público. La recuperación de marcas actualiza la interfaz; modelos, datos y DNS permanecen intactos.
+
+## Siguiente tramo antes de la release
+
+1. **#10/#11:** configuración, tráfico y logs gratuitos consultados en lectura. [Prueba preparada](prueba-firewall-preview.md): máximo 67 HTTP (66 candidatas a API y un estático), concurrencia uno y sin reintentos, pendiente de aprobación del nuevo presupuesto. Verificar 429, recuperación y rechazo anterior a la función; el primer presupuesto de veinte peticiones está agotado. [Métricas consultadas y límites](evidence/preview/free-platform-review-20261116.json): CPU/memoria y margen mensual siguen desconocidos.
+2. **#12:** confirmar el medidor en el iPhone y completar el recorrido de teclado, orientación, zoom y lector de pantalla que esté disponible. Registrar dispositivo/navegador y límites reales; no repetir toda la matriz de CI contra Vercel.
+3. **#17:** el propietario confirma scraping sin permiso específico y finalidad educativa. Se ha [revisado qué datos expone la API y el impacto de minimizar su salida](catalogo-publico.md); falta decidir el alcance público. Omitir el portal en la interfaz no acredita derechos de reutilización. Sin scraping nuevo ni cambios silenciosos en el catálogo.
+4. **#14:** con los resultados anteriores, preparar la integración de #6, versión/tag, rollback y asociación exclusiva de `paddock.juancerezo.com`. La publicación pública sigue pendiente.
+5. **#15:** crear la issue de AI-Portfolio después de comprobar URL y release públicas.
+
+La rama pasó [CI 43883101524](https://github.com/Legodark/paddock/actions/runs/43883101524): 100 unitarias, 17 de API, siete guardas y 240 casos de navegador, sin fallos, omitidos o inestables. No acredita cuotas, firewall remoto o interacción física. La Preview mantiene el código de aplicación `2b8b760`; los commits posteriores hasta `3c1eefb` documentan su verificación.
 
 ## Trabajo paralelo y cierre de auxiliares
 
@@ -44,6 +54,8 @@ La [revisión UX posterior](ux-y-accesibilidad.md) corrige la navegación móvil
 Antes de escribir código de aplicación, comprobar alojamiento, datos, recursos de inferencia, costes y dominio. Las pruebas de viabilidad se ejecutan fuera del código de aplicación. Ver el [informe de arquitectura](arquitectura-reactivacion.md).
 
 ## Evidencia inicial
+
+Registro histórico de la investigación, anterior a la Preview y a las verificaciones posteriores. Para el estado vigente, usar el inicio de este documento y las issues enlazadas.
 
 - HEAD original: `d43ea99461ab8d2457f4ccf8552822d34d6dfd52` (12-03-2023). No había tags locales ni cambios en el checkout antes de redactar este plan. Hay que consultar tags remotos antes de reservar nombres.
 - Backend Flask; modelos entrenados con scikit-learn 1.2.1. El entorno preparado usa Python 3.10.22 y versiones compatibles de NumPy/SciPy. Arranque, clasificación HTTP de dos mensajes y predicción directa del modelo comprobados.
