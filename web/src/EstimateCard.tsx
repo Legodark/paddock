@@ -3,6 +3,7 @@ import type { Estimate } from './types';
 import { euro, integer } from './vehicle';
 import Icon from './Icon';
 import BrandLogo from './BrandLogo';
+import PriceGauge from './PriceGauge';
 
 function CarDrawing() {
   return <svg className="car-drawing" viewBox="0 0 360 170" fill="none" aria-hidden="true" focusable="false">
@@ -37,7 +38,6 @@ const EstimateCard = forwardRef<HTMLHeadingElement, { estimate: Estimate | null;
     const hasHigh = prediction['coches-caros'].length > 0;
     const low = prediction['precio-minimo'];
     const high = prediction['precio-maximo'];
-    const position = high > low ? Math.max(5, Math.min(95, (prediction.prediccion - low) / (high - low) * 100)) : 50;
     return <aside className={`estimate-card ${dirty ? 'estimate-card--dirty' : ''}`} aria-labelledby="estimate-heading" aria-busy={pending}>
       <div className="estimate-topline"><span className="eyebrow"><span className="status-dot" />RESULTADO HISTÓRICO</span><span className="model-pill">TFM · 2023</span></div>
       <h2 id="estimate-heading" ref={ref} tabIndex={-1}>Estimación orientativa</h2>
@@ -47,8 +47,7 @@ const EstimateCard = forwardRef<HTMLHeadingElement, { estimate: Estimate | null;
       <p className="rounding-note">Cifra redondeada al euro · Modelo original del TFM</p>
       {dirty && <p className="stale-notice" role="status"><Icon name="info" />Has cambiado los datos. Actualiza la estimación para ver el nuevo resultado.</p>}
       <div className="reference-range">
-        <div className="reference-range-label">Referencias del catálogo<Icon name="sliders" /></div>
-        {(hasLow || hasHigh) && <div className="range-track" aria-hidden="true"><span className="range-point" style={{ left: `${position}%` }} /></div>}
+        <PriceGauge value={prediction.prediccion} minimum={low} maximum={high} hasLower={hasLow} hasUpper={hasHigh} />
         <div className="reference-values">
           <div><span>Referencia inferior</span><strong>{hasLow ? euro(low) : 'Sin referencias'}</strong></div>
           <div><span>Referencia superior</span><strong>{hasHigh ? euro(high) : 'Sin referencias'}</strong></div>
