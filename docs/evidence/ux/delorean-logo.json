@@ -1,7 +1,8 @@
 {
   "browser": "156.0.8078.79",
-  "variant": "Original DeLorean plus interface-styled PADDOCK wordmark",
+  "variant": "Modern PADDOCK lettering joined at K to original DeLorean trails; car at right",
   "owner_authorized_lettering_adaptation": true,
+  "owner_requested_K_trail_connection": true,
   "asset": "web/public/paddock-delorean.png",
   "asset_sha256": "c13355d2fb89e8a8112d063455291f12bf55a3492b9498fcd33b501effeb4195",
   "served_asset_matches_original": true,
@@ -11,7 +12,7 @@
   },
   "car_viewbox": "586 145 125 34",
   "clip_polygon": "594,145 711,145 711,179 594,179 594,158 586,158 586,150 594,150",
-  "framing": "Original car and motion trails selected using SVG; PNG pixels untouched.",
+  "framing": "Original car and trails selected using SVG; PNG pixels untouched. Negative margin overlaps the K by 8 CSS pixels.",
   "geometry": [
     {
       "viewport": 320,
@@ -19,9 +20,18 @@
       "logoLink": {
         "x": 18,
         "y": 14,
-        "width": 267.3125,
+        "width": 238.265625,
         "height": 44
-      }
+      },
+      "lettering": {
+        "x": 18,
+        "right": 160.265625
+      },
+      "car": {
+        "x": 152.265625,
+        "right": 256.265625
+      },
+      "overlap": 8
     },
     {
       "viewport": 360,
@@ -29,9 +39,18 @@
       "logoLink": {
         "x": 18,
         "y": 14,
-        "width": 267.3125,
+        "width": 238.265625,
         "height": 44
-      }
+      },
+      "lettering": {
+        "x": 18,
+        "right": 160.265625
+      },
+      "car": {
+        "x": 152.265625,
+        "right": 256.265625
+      },
+      "overlap": 8
     },
     {
       "viewport": 390,
@@ -39,9 +58,18 @@
       "logoLink": {
         "x": 18,
         "y": 14,
-        "width": 267.3125,
+        "width": 238.265625,
         "height": 44
-      }
+      },
+      "lettering": {
+        "x": 18,
+        "right": 160.265625
+      },
+      "car": {
+        "x": 152.265625,
+        "right": 256.265625
+      },
+      "overlap": 8
     },
     {
       "viewport": 768,
@@ -49,9 +77,18 @@
       "logoLink": {
         "x": 24,
         "y": 22,
-        "width": 267.3125,
+        "width": 238.265625,
         "height": 44
-      }
+      },
+      "lettering": {
+        "x": 24,
+        "right": 166.265625
+      },
+      "car": {
+        "x": 158.265625,
+        "right": 262.265625
+      },
+      "overlap": 8
     },
     {
       "viewport": 1024,
@@ -59,9 +96,18 @@
       "logoLink": {
         "x": 24,
         "y": 22,
-        "width": 267.3125,
+        "width": 238.265625,
         "height": 44
-      }
+      },
+      "lettering": {
+        "x": 24,
+        "right": 166.265625
+      },
+      "car": {
+        "x": 158.265625,
+        "right": 262.265625
+      },
+      "overlap": 8
     },
     {
       "viewport": 1440,
@@ -69,14 +115,28 @@
       "logoLink": {
         "x": 128,
         "y": 22,
-        "width": 267.3125,
+        "width": 238.265625,
         "height": 44
-      }
+      },
+      "lettering": {
+        "x": 128,
+        "right": 270.265625
+      },
+      "car": {
+        "x": 262.265625,
+        "right": 366.265625
+      },
+      "overlap": 8
     }
   ],
   "home_keyboard_navigation": true,
-  "unit_tests": 80,
+  "scope": "Local built frontend and real local API. No physical-device or native browser zoom test. No provider API requests.",
   "post_adaptation_browser_tests": 28,
-  "earlier_full_browser_matrix_tests": 54,
-  "scope": "Local built frontend and real local API. No physical-device or native browser zoom test. No provider API requests."
+  "checks": [
+    "TypeScript and production build",
+    "Six widths: 320, 360, 390, 768, 1024, 1440",
+    "Keyboard home navigation and accessible name",
+    "Automated axe checks, doubled text and responsive layout",
+    "Original PNG SHA-256 verified"
+  ]
 }

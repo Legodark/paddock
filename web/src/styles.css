@@ -36,10 +36,9 @@ h1, h2, h3, p { margin-top: 0; }
 .skip-link:focus { clip-path: none; }
 .site-header { border-bottom: 1px solid #252e3c; }
 .header-inner { min-height: 88px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; padding-block: 16px; }
-.wordmark { display: inline-flex; flex: none; flex-wrap: wrap; align-items: center; gap: 10px 12px; max-width: 100%; min-height: 44px; }
-.brand-car { display: block; flex: none; width: 104px; height: auto; overflow: hidden; }
-.brand-name { color: #f3f4f7; font-size: 26px; font-weight: 850; font-style: italic; letter-spacing: .07em; line-height: 1.15; }
-.brand-logo-dot { color: var(--accent); }
+.wordmark { display: inline-flex; flex: none; align-items: center; max-width: 100%; min-height: 44px; }
+.brand-name { position: relative; z-index: 1; flex: none; color: #f3f4f7; font-size: 26px; font-weight: 850; font-style: italic; letter-spacing: .07em; line-height: 1.15; }
+.brand-car { display: block; flex: 0 1 104px; min-width: 0; width: 104px; height: auto; margin-left: -8px; overflow: hidden; }
 nav { display: flex; flex-wrap: wrap; align-items: center; max-width: 100%; gap: 34px; color: var(--muted); font-size: 13px; font-weight: 550; }
 nav a { padding-block: 12px; transition: color .15s; }
 nav a:hover, nav .nav-active { color: #fff; }

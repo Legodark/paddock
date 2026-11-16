@@ -107,12 +107,12 @@ export default function App() {
     <a className="skip-link" href="#estimador">Saltar al estimador</a>
     <header className="site-header"><div className="header-inner">
       <a className="wordmark" href="#inicio" aria-label="Paddock, inicio">
-        {/* Preserve the original car and trails; frame out the old lettering without editing its PNG. */}
+        <span className="brand-name" aria-hidden="true">PADDOCK</span>
+        {/* Join the K to the original trails, with the car following the wordmark. The PNG stays untouched. */}
         <svg className="brand-car" viewBox="586 145 125 34" width="125" height="34" aria-hidden="true" focusable="false">
           <defs><clipPath id="paddock-original-car"><polygon points="594,145 711,145 711,179 594,179 594,158 586,158 586,150 594,150" /></clipPath></defs>
           <image href="/paddock-delorean.png" width="835" height="327" clipPath="url(#paddock-original-car)" />
         </svg>
-        <span className="brand-name" aria-hidden="true">PADDOCK<span className="brand-logo-dot">.</span></span>
       </a>
       <nav aria-label="Navegación principal">{NAV_SECTIONS.map(([id, label]) => <a key={id} href={`#${id}`} className={activeSection === id ? 'nav-active' : undefined} aria-current={activeSection === id ? 'location' : undefined}>{label}</a>)}<a className="repo-link" href="https://github.com/Legodark/paddock" target="_blank" rel="noopener noreferrer"><Icon name="github" /><span>GitHub</span><span className="sr-only"> (abre otra pestaña)</span></a></nav>
     </div></header>
