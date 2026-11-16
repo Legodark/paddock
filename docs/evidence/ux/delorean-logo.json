@@ -1,0 +1,82 @@
+{
+  "browser": "156.0.8078.79",
+  "variant": "Original DeLorean plus interface-styled PADDOCK wordmark",
+  "owner_authorized_lettering_adaptation": true,
+  "asset": "web/public/paddock-delorean.png",
+  "asset_sha256": "c13355d2fb89e8a8112d063455291f12bf55a3492b9498fcd33b501effeb4195",
+  "served_asset_matches_original": true,
+  "original_dimensions": {
+    "width": 835,
+    "height": 327
+  },
+  "car_viewbox": "586 145 125 34",
+  "clip_polygon": "594,145 711,145 711,179 594,179 594,158 586,158 586,150 594,150",
+  "framing": "Original car and motion trails selected using SVG; PNG pixels untouched.",
+  "geometry": [
+    {
+      "viewport": 320,
+      "documentWidth": 320,
+      "logoLink": {
+        "x": 18,
+        "y": 14,
+        "width": 267.3125,
+        "height": 44
+      }
+    },
+    {
+      "viewport": 360,
+      "documentWidth": 360,
+      "logoLink": {
+        "x": 18,
+        "y": 14,
+        "width": 267.3125,
+        "height": 44
+      }
+    },
+    {
+      "viewport": 390,
+      "documentWidth": 390,
+      "logoLink": {
+        "x": 18,
+        "y": 14,
+        "width": 267.3125,
+        "height": 44
+      }
+    },
+    {
+      "viewport": 768,
+      "documentWidth": 768,
+      "logoLink": {
+        "x": 24,
+        "y": 22,
+        "width": 267.3125,
+        "height": 44
+      }
+    },
+    {
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "logoLink": {
+        "x": 24,
+        "y": 22,
+        "width": 267.3125,
+        "height": 44
+      }
+    },
+    {
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "logoLink": {
+        "x": 128,
+        "y": 22,
+        "width": 267.3125,
+        "height": 44
+      }
+    }
+  ],
+  "home_keyboard_navigation": true,
+  "unit_tests": 80,
+  "post_adaptation_browser_tests": 28,
+  "earlier_full_browser_matrix_tests": 54,
+  "scope": "Local built frontend and real local API. No physical-device or native browser zoom test. No provider API requests."
+}
