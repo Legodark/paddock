@@ -163,6 +163,17 @@ Criterios de aceptación de la issue: proyecto visible en móvil/escritorio y co
 
 Acceso actualizado: `api.github.com` está permitido y la CLI autenticada creó el [PR #6 de Paddock](https://github.com/Legodark/paddock/pull/6). Cuando llegue el momento de crear la issue del portfolio, comprobar el permiso específico de ese repositorio con la autenticación existente; no pedir un token por chat. La issue sigue pendiente de URL pública y release verificadas.
 
+## 8. Después del despliegue: modo transparente
+
+Petición del propietario: añadir diagramas dinámicos que permitan ver el interior de la aplicación, como una «carcasa transparente». Se planifica después de completar y verificar la publicación de #14, en el [milestone posterior al despliegue](https://github.com/Legodark/paddock/milestone/2).
+
+1. **[Entrenamiento histórico, #21](https://github.com/Legodark/paddock/issues/21):** reconstrucción animada, documentada y didáctica de las etapas originales, manteniendo visibles las incertidumbres de procedencia. Sin scraping o reentrenamiento.
+2. **[Recorrido de una predicción, #22](https://github.com/Legodark/paddock/issues/22):** visualizar las acciones reales de esa petición en cliente/backend. Evaluar traza opcional en la misma respuesta y distinguir su reproducción de progreso incremental; no inventar etapas, tiempos o éxitos.
+
+Compartir un control «Modo transparente», inicialmente apagado como propuesta, que el usuario pueda activar/desactivar. Ubicación por decidir entre portada o sección propia. Animación pausable y accesible, compatible con móvil y movimiento reducido, sin reenviar solicitudes al reproducirla. Mantener Hobby y 0 € adicionales; medir coste de payload/CPU y presupuesto total de assets. [Alcance y criterios](modo-transparente.md).
+
+Estas mejoras quedan separadas de v1.0 y de la entrega al portfolio #15. La implementación actual y su Preview continúan sin cambios.
+
 ## Orden de ejecución y controles de avance
 
 `Comprobación de arquitectura/coste/dominio y línea base → tag original → entorno del nuevo stack → datos/modelos/API → frontend React → cierre de auditorías → preview → subdominio/producción → issue del portfolio`.
