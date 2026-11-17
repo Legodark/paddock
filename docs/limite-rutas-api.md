@@ -18,11 +18,11 @@ La regla WAF existente no cambia. Esta defensa evita resolver entradas desconoci
 
 La aplicación, frontend, modelos y SQLite permanecen idénticos: 87 de los 88 archivos seleccionados del paquete anterior conservan sus hashes; solo cambia `vercel.json`. Los 75 estáticos históricos pesan 504.608 bytes; el paquete canónico añade los 26 bytes del `robots.txt` existente en las fuentes (504.634 bytes en total). La auditoría Cloudflare del 16-11 y sus artefactos no se modifican ni se presentan como una auditoría completa de este commit nuevo.
 
-## Comprobación en proveedor preparada
+## Comprobación en proveedor completada
 
 Una Preview privada, sin cambiar Production, DNS, autenticación o plan. Techo propio de **seis HTTP**, concurrencia uno, cero reintentos/redirecciones seguidas y ninguna ráfaga:
 
-| Ruta | Resultado esperado | Comprobación |
+| Ruta | Observado | Comprobación |
 | --- | --- | --- |
 | `/api/v1/health` | 200 | API lista, modelo congelado |
 | `/` | 200 | HTML idéntico y cabeceras/CSP |
@@ -35,7 +35,9 @@ Un 404 por sí solo no demuestra ausencia de función: correlacionar los identif
 
 Contabilidad conservadora previa: 121 frente a 127. El plan suma hasta seis, sin utilizar otra ráfaga de 66 ni reasignar el margen del primer ensayo de 67. Si falla una comprobación, detener el smoke sin repetirlo automáticamente. La consulta de metadatos y las pruebas locales no invocan Paddock.
 
-Estado al preparar este documento: revisión y guardas locales pasados; smoke remoto todavía sin ejecutar. El acceso público continúa pendiente.
+[Resultado del proveedor y revisión independiente](evidence/preview/routing-boundary-provider-20261117.json): **6/6 HTTP correctas y seis correlaciones únicas**. La API es `streaming_func`; HTML/JS son `static` con hashes iguales; los tres aliases son `not_found`, sin seleccionar `/api/index`. La regla WAF sigue activa/válida con 60/60 s/IP y autenticación `all`. No se deduce CPU facturada cero ni arranque frío; tampoco se hizo otra prueba desde IP limitada.
+
+Preview verificada: [paddock-nl7ur2oq5-legodarks-projects.vercel.app](https://paddock-nl7ur2oq5-legodarks-projects.vercel.app), `dpl_8zdUGZ4KKhi4BpT6uazzFSFAgGK8`, fuente `219d87b`. La CI de esa fuente está en verde en [PR](https://github.com/Legodark/paddock/actions/runs/44062033486) y [push](https://github.com/Legodark/paddock/actions/runs/44062023720). El presupuesto terminó en **127/127**, sin remanente; no se reintenta o repite automáticamente. Production privada anterior, dominio y protección no cambian. El acceso público continúa pendiente.
 
 ### Adaptación del servidor local de pruebas
 

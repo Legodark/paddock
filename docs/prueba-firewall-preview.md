@@ -166,3 +166,9 @@ El proxy actual reparte solicitudes entre dos IP y no garantiza esa condición d
 La revisión del ejecutor confirma que la ráfaga anterior ya utilizó un solo proceso curl con varios `--url`. Repetir keep-alive no demostraría una salida estable; no se ejecuta el lote de 66 como si esa condición estuviese resuelta.
 
 En su lugar se prepara el [límite explícito de rutas hacia Python](limite-rutas-api.md): rechazar entradas no canónicas antes de seleccionar función, sin depender de que se haya llenado su contador. Tiene revisión independiente y pruebas locales; su comprobación privada propuesta usa hasta seis HTTP, incluyendo HTML/JS positivos y tres alias críticos. No se afirma por ello que se haya probado la regla desde una IP limitada. El resultado remoto se registrará separado de los ensayos históricos.
+
+## Resultado del control alternativo · 17-11-2026
+
+El [límite explícito de routing](limite-rutas-api.md) ya se verificó en una Preview privada: seis HTTP y seis registros correlacionados. Health 200 de función; HTML/JS 200 estáticos idénticos; `/api/index.py`, `/%61pi/v1/health` y `/API/v1/health` 404 `not_found`, sin seleccionar función. [Evidencia saneada](evidence/preview/routing-boundary-provider-20261117.json). La regla continúa activa/válida y no se cambió su umbral o bypass.
+
+Se cierra el alcance revisado de #11 mediante esta defensa independiente del contador, conservando expresamente la limitación del método anterior: no se ejecutaron todas las variantes desde IP bloqueada, no se certifica normalización exhaustiva ni un presupuesto global. Los otros aliases tienen controles locales y evidencia histórica; no se inventan nuevas respuestas remotas. Contabilidad: 98 + 1 + 22 + 6 = **127/127**, sin remanente y sin otra ráfaga.

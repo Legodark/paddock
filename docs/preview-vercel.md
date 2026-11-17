@@ -2,7 +2,13 @@
 
 16-11-2026. Seguimiento: [#10](https://github.com/Legodark/paddock/issues/10); candidata: [PR #6](https://github.com/Legodark/paddock/pull/6).
 
-**[Abrir la Preview privada](https://paddock-jd7a8siqc-legodarks-projects.vercel.app)** con la cuenta de Vercel autorizada. La app está disponible para revisión; el acceso anónimo redirige a autenticación. El dominio propio y `main` permanecen intactos.
+**[Abrir la Preview privada vigente](https://paddock-nl7ur2oq5-legodarks-projects.vercel.app)** con la cuenta de Vercel autorizada. La app está disponible para revisión; el acceso anónimo redirige a autenticación. El dominio propio y `main` permanecen intactos.
+
+## Preview con límite de rutas · 17-11-2026
+
+[Abrir la candidata protegida](https://paddock-nl7ur2oq5-legodarks-projects.vercel.app), `dpl_8zdUGZ4KKhi4BpT6uazzFSFAgGK8`, fuente `219d87b`. [Resultado y límites](limite-rutas-api.md): seis HTTP y seis logs correlacionados, sin ráfaga. Solo API canónica hacia Python; HTML/JS idénticos servidos como estáticos y tres aliases críticos rechazados como `not_found`. CI del código en verde. Paquete canónico: 76 estáticos, 504.634 bytes; incluye los 26 bytes de robots ya presentes en las fuentes, ausentes del snapshot anterior.
+
+La Production privada B no cambia, tampoco DNS o autenticación `all`. #11 se cierra como revisión acotada con limitaciones documentadas; no como nueva prueba desde IP limitada. Contabilidad conservadora 127/127, sin remanente. Coste Hobby y capacidad se distinguen en la [revisión actualizada](costes-y-diagramas.md#revisión-de-coste-y-capacidad--17-11-2026).
 
 ## Ensayo privado de Production y rollback · 16-11-2026
 
@@ -58,13 +64,13 @@ Las mediciones de API conservan la publicación anterior como referencia; las li
 | --- | --- |
 | Equipo y plan | `legodarks-projects`, Hobby activo |
 | Proyecto | [`paddock`](https://vercel.com/legodarks-projects/paddock), separado del portfolio |
-| Despliegue vigente para revisión | `dpl_9PXY5N878VVNqdJBj2JD9kF5fVxw`, READY, Preview |
+| Despliegue vigente para revisión | `dpl_8zdUGZ4KKhi4BpT6uazzFSFAgGK8`, READY, Preview con límite explícito de rutas |
 | Production privada tras ensayo | `dpl_GPrbbbEGDV1zXQ2ZTz5Y5sNQWJAp`, READY; recuperación probada |
-| Fuente desplegada | `2b8b7608341663fc5852220d3460cd33d2195cc2` |
+| Fuente desplegada | `219d87b249307bd67da51c0f9a6a6cb1ab55ed88`; núcleo de aplicación y modelos anteriores intactos |
 | Protección | Vercel Authentication en todas las URLs (`all`) |
 | Firewall | Una regla activa: prefijo `/api`, 60 solicitudes/60 s/IP, ventana fija, rechazo 429 |
-| Función local con constructor oficial | **121.114.317 bytes = 115,50 MiB**, Python 3.12 |
-| Web pública del paquete | **504.608 bytes**, 75 archivos; sin modelos o SQLite |
+| Última medición local anterior de función | **121.114.317 bytes = 115,50 MiB**, Python 3.12 |
+| Web pública del paquete canónico | **504.634 bytes**, 76 archivos (incluido robots); sin modelos o SQLite |
 | Dominio propio | Sin asociar `paddock.juancerezo.com`; DNS sin cambios |
 | Extras de pago | Ninguno; sin Blob, Redis, base gestionada ni Observability Plus |
 
@@ -106,7 +112,7 @@ Directorios de trabajo: `/workspace/.paddock/preview-preparation-20261115` (prim
 
 ## Pendientes antes de acceso público
 
-- **#11:** completar las variantes desde IP limitada. El umbral, 429 anterior a función según proveedor y recuperación posterior ya tienen evidencia; no volver a tratarlos como pruebas sin ejecutar.
+- **#11:** alcance revisado cerrado con el control alternativo anterior. La prueba original desde IP limitada no se presenta como ejecutada; conservar sus límites y no repetirla por defecto.
 - **#10:** documentar o medir, si las opciones gratuitas lo permiten, arranque frío, memoria/CPU efectivos y margen mensual compartido; permanecen desconocidos. No iniciar tráfico adicional sin fijar su alcance y techo.
 - **#12:** interacción real en navegador, móvil, teclado, zoom nativo y lector de pantalla. No se ha ejecutado la matriz de CI contra Vercel.
 - **#17:** alcance resuelto el 17-11-2026: [catálogo histórico completo](catalogo-publico.md), sin cambios de aplicación ni atribución de derechos no acreditados.

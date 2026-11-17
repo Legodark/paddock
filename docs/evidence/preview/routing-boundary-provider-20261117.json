@@ -1,0 +1,278 @@
+{
+  "checked_at": "2026-11-17T10:17:21.610676+00:00",
+  "deployment": {
+    "id": "dpl_8zdUGZ4KKhi4BpT6uazzFSFAgGK8",
+    "url": "https://paddock-nl7ur2oq5-legodarks-projects.vercel.app",
+    "state": "READY",
+    "target": "preview",
+    "source": "219d87b249307bd67da51c0f9a6a6cb1ab55ed88",
+    "metadata": {
+      "paddockSourceCommit": "219d87b249307bd67da51c0f9a6a6cb1ab55ed88",
+      "paddockRoutingBoundary": "explicit-20261117"
+    },
+    "plan": "hobby",
+    "protection": "all",
+    "production_unchanged": true,
+    "production_id": "dpl_GPrbbbEGDV1zXQ2ZTz5Y5sNQWJAp",
+    "metadata_query_application_http_requests": 0
+  },
+  "package_identity": {
+    "selected_files_unchanged": 87,
+    "only_selected_changed_file": "vercel.json",
+    "public_files": 76,
+    "public_bytes": 504634,
+    "private_models_dataset_unchanged": true,
+    "extra_public_file": {
+      "path": "robots.txt",
+      "source": "deploy/vercel/public/robots.txt",
+      "bytes": 26,
+      "sha256": "331ea9090db0c9f6f597bd9840fd5b171830f6e0b3ba1cb24dfa91f0c95aedc1"
+    },
+    "new_vercel_config_sha256": "74f8b82cc1b3919351952d95bdb3fbb3c68cd34c2a114e9b449f462b6614864c"
+  },
+  "smoke_plan": {
+    "maximum_http": 6,
+    "previous_reference_accounting": 121,
+    "reference_ceiling": 127,
+    "paths": [
+      "/api/v1/health",
+      "/",
+      "/assets/index-TX-N8QC5.js",
+      "/api/index.py",
+      "/%61pi/v1/health",
+      "/API/v1/health"
+    ],
+    "concurrency": 1,
+    "retries": 0,
+    "redirects_followed": 0,
+    "burst": false,
+    "purpose": "Positive canonical health, exact remote HTML/JavaScript hashes, and rejection of three critical function-entry aliases; independent of per-IP counters, not an enforcement test from a blocked IP."
+  },
+  "http_actual": 6,
+  "client_checks_passed": 6,
+  "provider_records_correlated": 6,
+  "cases": [
+    {
+      "case": 1,
+      "path": "/api/v1/health",
+      "attempted_at": "2026-11-17T10:16:40.176023+00:00",
+      "passed": true,
+      "status": 200,
+      "duration_seconds": 3.611749,
+      "provider_error": "",
+      "transport_exit": 0,
+      "effective_path_verified": true,
+      "headers": {
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer"
+      },
+      "health": {
+        "ready": true,
+        "frozen_model": true
+      },
+      "finished_at": "2026-11-17T10:16:44.809044+00:00",
+      "provider": {
+        "httpStatus": 200,
+        "requestPath": "/api/v1/health",
+        "pathType": "streaming_func",
+        "route": "/api/index",
+        "wafAction": "allow",
+        "cacheResult": "MISS"
+      }
+    },
+    {
+      "case": 2,
+      "path": "/",
+      "attempted_at": "2026-11-17T10:16:44.809371+00:00",
+      "passed": true,
+      "status": 200,
+      "duration_seconds": 0.462152,
+      "provider_error": "",
+      "transport_exit": 0,
+      "effective_path_verified": true,
+      "headers": {
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer"
+      },
+      "sha256": "41e76755bd37fae99f1329b7fdf7dbeacee913a30e2437b64d32026c4ad4b19d",
+      "matches_maintained_build": true,
+      "finished_at": "2026-11-17T10:16:46.565362+00:00",
+      "provider": {
+        "httpStatus": 200,
+        "requestPath": "/",
+        "pathType": "static",
+        "route": "/index.html",
+        "wafAction": "allow",
+        "cacheResult": "MISS"
+      }
+    },
+    {
+      "case": 3,
+      "path": "/assets/index-TX-N8QC5.js",
+      "attempted_at": "2026-11-17T10:16:46.565825+00:00",
+      "passed": true,
+      "status": 200,
+      "duration_seconds": 0.432991,
+      "provider_error": "",
+      "transport_exit": 0,
+      "effective_path_verified": true,
+      "headers": {
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer"
+      },
+      "sha256": "a8de581ec8a1132692ba7f3edca6f62532e735bb6d8235a1d670c29d644dd258",
+      "matches_maintained_build": true,
+      "finished_at": "2026-11-17T10:16:48.012883+00:00",
+      "provider": {
+        "httpStatus": 200,
+        "requestPath": "/assets/index-TX-N8QC5.js",
+        "pathType": "static",
+        "route": "/assets/index-TX-N8QC5.js",
+        "wafAction": "allow",
+        "cacheResult": "MISS"
+      }
+    },
+    {
+      "case": 4,
+      "path": "/api/index.py",
+      "attempted_at": "2026-11-17T10:16:48.013186+00:00",
+      "passed": true,
+      "status": 404,
+      "duration_seconds": 0.273603,
+      "provider_error": "NOT_FOUND",
+      "transport_exit": 0,
+      "effective_path_verified": true,
+      "headers": {
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer"
+      },
+      "finished_at": "2026-11-17T10:16:49.263449+00:00",
+      "provider": {
+        "httpStatus": 404,
+        "requestPath": "/api/index.py",
+        "pathType": "not_found",
+        "route": "/api/index.py",
+        "wafAction": "allow",
+        "cacheResult": ""
+      }
+    },
+    {
+      "case": 5,
+      "path": "/%61pi/v1/health",
+      "attempted_at": "2026-11-17T10:16:49.264121+00:00",
+      "passed": true,
+      "status": 404,
+      "duration_seconds": 0.358088,
+      "provider_error": "NOT_FOUND",
+      "transport_exit": 0,
+      "effective_path_verified": true,
+      "headers": {
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer"
+      },
+      "finished_at": "2026-11-17T10:16:50.664588+00:00",
+      "provider": {
+        "httpStatus": 404,
+        "requestPath": "/%61pi/v1/health",
+        "pathType": "not_found",
+        "route": "/404.html",
+        "wafAction": "allow",
+        "cacheResult": ""
+      }
+    },
+    {
+      "case": 6,
+      "path": "/API/v1/health",
+      "attempted_at": "2026-11-17T10:16:50.664980+00:00",
+      "passed": true,
+      "status": 404,
+      "duration_seconds": 0.154218,
+      "provider_error": "NOT_FOUND",
+      "transport_exit": 0,
+      "effective_path_verified": true,
+      "headers": {
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer"
+      },
+      "finished_at": "2026-11-17T10:16:51.852476+00:00",
+      "provider": {
+        "httpStatus": 404,
+        "requestPath": "/API/v1/health",
+        "pathType": "not_found",
+        "route": "/API/v1/health",
+        "wafAction": "allow",
+        "cacheResult": ""
+      }
+    }
+  ],
+  "reference_accounting": {
+    "previous": 121,
+    "this_smoke": 6,
+    "total": 127,
+    "ceiling": 127,
+    "remaining": 0,
+    "meaning": "Conservative accounting for second firewall sequence and subsequent private checks; first 61/67 experiment and original20 API remain separate."
+  },
+  "no_burst": true,
+  "no_application_retries": true,
+  "no_dns_or_protection_changes": true,
+  "rate_limit_under_blocked_ip_retested": false,
+  "remaining_unknown": [
+    "Actual CPU/RAM billing and verified cold start",
+    "Current shared monthly allowance",
+    "Other normalization variants not re-probed on this new build"
+  ],
+  "final_control_plane": {
+    "checked_at": "2026-11-17T10:18:15.211991+00:00",
+    "rule": {
+      "id": "rule_paddock_api_60_requests_per_minute_per_ip_LdESSE",
+      "active": true,
+      "valid": true,
+      "action": {
+        "mitigate": {
+          "action": "rate_limit",
+          "actionDuration": null,
+          "rateLimit": {
+            "action": "rate_limit",
+            "algo": "fixed_window",
+            "keys": [
+              "ip"
+            ],
+            "limit": 60,
+            "window": 60
+          },
+          "redirect": null
+        }
+      },
+      "conditionGroup": [
+        {
+          "conditions": [
+            {
+              "op": "pre",
+              "type": "path",
+              "value": "/api"
+            }
+          ]
+        }
+      ]
+    },
+    "project_protection": "all",
+    "git_connected": false,
+    "production_id": "dpl_GPrbbbEGDV1zXQ2ZTz5Y5sNQWJAp",
+    "production_unchanged": true,
+    "dns_mutations": 0,
+    "application_http_requests": 0
+  },
+  "independent_evidence_review": {
+    "completed": true,
+    "unique_correlations_rechecked": 6,
+    "private_ip_request_id_and_user_agent_values_absent_from_public_artifact": true,
+    "scope": "Read-only local review, no provider traffic."
+  }
+}
