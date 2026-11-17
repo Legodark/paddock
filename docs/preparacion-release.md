@@ -11,12 +11,12 @@
 | Plataforma #10 | Hobby activo; función Python 3.12, 2.048 MB asignados, timeout 10 s, región de función `iad1`. Consumo real de CPU/RAM, arranque frío y saldo mensual compartido aún desconocidos |
 | Firewall #11 | Umbral canónico, 429 anterior a función según proveedor y recuperación posterior probados. Destino del 308 confirmado al health canónico; variantes bajo bloqueo pendientes |
 | UX #12 | Automatización amplia y prueba inicial del propietario en iPhone. Confirmación del medidor y controles físicos pendientes según el recorrido manual |
-| Catálogo #17 | Decisión pendiente entre el alcance de la demo pública y conservar la aplicación completa privada; no modificar fichas/chat silenciosamente |
+| Catálogo #17 | Catálogo completo elegido expresamente el 17-11-2026: búsqueda, filtros, comparables y medidor históricos. Alcance documentado; no se acredita licencia o autorización de terceros |
 | Coste | Cero servicios adicionales; no activar Pro, Observability Plus, Blob o base gestionada |
 
 Los parámetros de memoria y timeout proceden del plano de control: no miden memoria usada o CPU facturada. La región CDN `cle1` observada durante pruebas tampoco identifica la región de función `iad1`. [Evidencia de plataforma y fuentes](evidence/preview/release-platform-review-20261116.json).
 
-Está preparado el [inventario verificable de la candidata privada](evidence/preview/candidate-artifacts-20261116.json): 88 archivos seleccionados, 504.608 bytes públicos y hashes de los modelos, SQLite, manifiesto y código/configuración del paquete. Los hashes de los assets se contrastaron con su manifiesto; no se publican los binarios o filas del dataset. Ese inventario identifica la candidata completa actual; los IDs del ensayo privado se registran abajo. La release pública final sigue pendiente de la decisión de catálogo y de su referencia/build definitivos.
+Está preparado el [inventario verificable de la candidata privada](evidence/preview/candidate-artifacts-20261116.json): 88 archivos seleccionados, 504.608 bytes públicos y hashes de los modelos, SQLite, manifiesto y código/configuración del paquete. Los hashes de los assets se contrastaron con su manifiesto; el documento de inventario no incluye binarios o filas del dataset. Ese inventario identifica la candidata completa elegida; los IDs del ensayo privado se registran abajo. La referencia/build definitivos de la release pública siguen pendientes; la decisión de alcance ya está [registrada](catalogo-publico.md).
 
 El panel gratuito **Usage** del equipo es una vía para leer el consumo mensual. En esta sesión el escritorio está habilitado pero no están expuestas las herramientas de control del navegador compartido ni de apertura de su visor; la consulta de Usage no se ha realizado. La CLI rechaza los datos de métricas con `payment_required` y billing no ofrece datos. No se interpreta esto como saldo completo ni se solicita contratar observabilidad.
 
@@ -30,7 +30,7 @@ Las variantes 404/308 no demostraron acceso funcional fuera del límite. Tampoco
 
 ## Secuencia de entrega
 
-1. Registrar la decisión de catálogo y resolver las comprobaciones pendientes de seguridad/UX. Si cambia la salida de API o interfaz, implementar el cambio acordado, probar contratos y revalidar las unidades de auditoría afectadas antes de entregar.
+1. El alcance de catálogo completo ya está registrado. Resolver las comprobaciones pendientes de seguridad/UX. Si cambia la salida de API o interfaz, probar contratos y revalidar las unidades de auditoría afectadas antes de entregar.
 2. Fijar el commit candidato final, verificar su CI y preparar el paquete con sus modelos/datos congelados. Registrar hashes SHA-256 del paquete público, manifiesto, modelos y SQLite, además de runtime y dependencias. Una compilación de CI no demuestra que se desplegó ese resultado.
 3. El ensayo privado descrito abajo ya pasó manteniendo autenticación `all`, sin asociar `paddock.juancerezo.com`. Si cambia el alcance público o el código final, revisar la compatibilidad de sus destinos antes de reutilizarlos.
 4. Tras ese ensayo, revisar el resultado, el presupuesto de smoke y las limitaciones de consumo. Preparar la integración de #6 y el nuevo tag/versionado conservando intacto el tag original. Los identificadores, hashes y referencia deben corresponder al código final, no a una Preview antigua por conveniencia.
@@ -51,7 +51,7 @@ La [documentación de Instant Rollback](https://vercel.com/docs/instant-rollback
 
 Por tanto, preparar una **baseline mantenida y compatible** y una candidata como destinos de producción privada verificables. La primera Production defectuosa del diagnóstico inicial y el original archivado no son respaldos públicos válidos. Una baseline puede tener el mismo código mantenido que la candidata para ensayar el mecanismo sin reintroducir defectos; deben existir dos IDs y antecedentes de alias realmente elegibles, no solo dos carpetas locales.
 
-La baseline debe respetar también el **alcance público del catálogo finalmente acordado**: si se elige no publicar fichas individuales, un rollback no puede reintroducirlas aunque esa versión funcione técnicamente. No usar la Preview completa actual como respaldo público sin comprobar esa condición.
+La baseline debe respetar también el **alcance público del catálogo acordado**. El propietario eligió catálogo completo el 17-11-2026: A y B contienen ese alcance y no hace falta recrearlas por minimización de fichas. Si el alcance cambia en el futuro, revisar de nuevo la compatibilidad; una versión técnicamente funcional no debe reintroducir salidas excluidas.
 
 Ensayo realizado: baseline privada verificada → candidata privada verificada → rollback a baseline → restauración de la candidata mantenida. Antes de cada transición se verificaron IDs, protección y dominios del proyecto. Se mantuvo autenticación obligatoria sin tocar el dominio del portfolio.
 
@@ -72,7 +72,7 @@ El techo propio fue de **dos builds y 22 HTTP**, cumplido: nueve casos en A, sie
 
 La protección `all` se conservó y las seis muestras anónimas devolvieron 302. Vercel [incluye autenticación de Production sin coste adicional en todos los planes](https://vercel.com/changelog/protect-production-deployments-for-free-on-every-plan); el equipo siguió Hobby. No se habilitaron productos de pago. El rollback desactivó autoasignación y la restauración la reactivó, manteniendo Git desconectado y solo aliases `vercel.app`.
 
-El ensayo no mide arranque frío, CPU/RAM usados ni margen mensual; sus tiempos HTTP no sustituyen esas métricas. Tampoco resuelve la decisión de catálogo: **estos destinos completos privados no sirven como respaldo público si se acuerda excluir fichas individuales**. La comprobación física del iPhone, variantes WAF desde IP limitada y entrega final siguen pendientes.
+El ensayo no mide arranque frío, CPU/RAM usados ni margen mensual; sus tiempos HTTP no sustituyen esas métricas. Su evidencia del 16-11 conserva como pendiente la decisión de catálogo, resuelta después el 17-11 a favor del catálogo completo sin cambios de aplicación. La comprobación física del iPhone, variantes WAF desde IP limitada y entrega final siguen pendientes.
 
 ## Registro mínimo de release
 

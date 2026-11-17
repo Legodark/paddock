@@ -150,3 +150,13 @@ La [evidencia previa del mismo despliegue](evidence/ux/price-gauge-provider.json
 Tras la instrucción del propietario de continuar, se hizo una única petición `GET /api//v1/health`, sin reintentos o seguimiento. Vercel respondió **308** con destino **`https://paddock-jd7a8siqc-legodarks-projects.vercel.app/api/v1/health`**, mismo origen y sin query. El dato procede de la respuesta real, no de inferir el comportamiento local. [Evidencia saneada](evidence/preview/alias-location-20261116.json).
 
 Esta observación no se realizó desde una IP bloqueada y no sustituye esa parte de la comprobación. Se conserva intacto el informe histórico de los 98 casos: con esta lectura posterior son **99 solicitudes dentro del techo 127, 28 sin consumir**, una sola ráfaga en total y sin cambios de regla, despliegue o DNS.
+
+## Revisión del cierre pendiente · 17-11-2026
+
+La revisión independiente de la evidencia existente confirma que no hace falta repetir umbral, rechazo anterior a función, recuperación o entrega estática. No permite cerrar las variantes desde IP limitada: tres solicitudes salieron por la IP que no estaba bloqueada. No se ha demostrado evasión funcional.
+
+Propuesta concreta, **sin ejecutar**: una salida estable mediante transporte normal, techo propio de 66 HTTP (hasta 61 health hasta el primer 429, cuatro variantes y un health final todavía rechazado). Una ejecución, concurrencia uno, cero reintentos o redirecciones seguidas. Detener el llenado al primer 429; no gastar solicitudes de relleno. No repetir estáticos ni recuperación ya acreditados. La fase de llenado se limitaría a 40 segundos; las variantes solo sirven como prueba si los registros confirman que siguen en la misma ventana del bloqueo.
+
+Correlacionar IP, región y ventana en privado. Cada variante necesita mitigación atribuida o rechazo de plataforma sin función; una respuesta de función desde la IP limitada exige investigar cobertura. Para el 308, registrar destino saneado al health canónico y comprobar que el health final sigue limitado desde esa misma IP. Si cambia IP/ventana o falta granularidad de registros, dejar inconcluso y detenerse, sin repetir el ciclo.
+
+El proxy actual reparte solicitudes entre dos IP y no garantiza esa condición de salida. No fijar IP, simular cabeceras de origen, eludir el proxy o debilitar la regla para forzar el resultado. No se ejecuta otra ráfaga ni se consumen las seis solicitudes del remanente anterior. La elección de catálogo completo no cambia ese presupuesto o el estado de #11.

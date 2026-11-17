@@ -109,7 +109,7 @@ Directorios de trabajo: `/workspace/.paddock/preview-preparation-20261115` (prim
 - **#11:** completar las variantes desde IP limitada. El umbral, 429 anterior a función según proveedor y recuperación posterior ya tienen evidencia; no volver a tratarlos como pruebas sin ejecutar.
 - **#10:** documentar o medir, si las opciones gratuitas lo permiten, arranque frío, memoria/CPU efectivos y margen mensual compartido; permanecen desconocidos. No iniciar tráfico adicional sin fijar su alcance y techo.
 - **#12:** interacción real en navegador, móvil, teclado, zoom nativo y lector de pantalla. No se ha ejecutado la matriz de CI contra Vercel.
-- **#17:** decidir y documentar las condiciones de reutilización pública del catálogo histórico.
-- **#14/#15:** integración, release/tag y subdominio; el mecanismo de rollback privado ya pasó y la baseline pública deberá respetar el alcance acordado. Después, issue en AI-Portfolio con URL/release públicas verificadas.
+- **#17:** alcance resuelto el 17-11-2026: [catálogo histórico completo](catalogo-publico.md), sin cambios de aplicación ni atribución de derechos no acreditados.
+- **#14/#15:** integración, release/tag y subdominio; el mecanismo de rollback privado ya pasó y sus dos versiones conservan el alcance completo elegido. Después, issue en AI-Portfolio con URL/release públicas verificadas.
 
 Si es necesario retirar una versión, identificar el ID exacto de Paddock, usar la retirada normal de Vercel con la aprobación que solicite y verificarla. El smoke funcional histórico no incluyó rollback; el ensayo privado posterior de recuperación se registra arriba. Ninguna de las pruebas autoriza por sí sola el acceso público al catálogo.
