@@ -36,3 +36,7 @@ Un 404 por sí solo no demuestra ausencia de función: correlacionar los identif
 Contabilidad conservadora previa: 121 frente a 127. El plan suma hasta seis, sin utilizar otra ráfaga de 66 ni reasignar el margen del primer ensayo de 67. Si falla una comprobación, detener el smoke sin repetirlo automáticamente. La consulta de metadatos y las pruebas locales no invocan Paddock.
 
 Estado al preparar este documento: revisión y guardas locales pasados; smoke remoto todavía sin ejecutar. El acceso público continúa pendiente.
+
+### Adaptación del servidor local de pruebas
+
+La primera CI de este cambio detectó que `web/vite.config.ts` todavía leía el formato anterior de cabeceras. Se corrigió para seleccionar las reglas que alcanzan la raíz y detenerse en su destino terminal, sin aplicar la CSP restrictiva del fallback 404 al documento. [Revisión y prueba local](evidence/preview/routing-preview-header-review-20261117.json): 100 unitarias, TypeScript/build y los 75 archivos públicos reconstruidos idénticos al paquete de la Preview. Es una corrección de infraestructura de pruebas; no modifica el contenido web o el runtime ya preparado. La CI alojada debe volver a pasar antes de completar la entrega.

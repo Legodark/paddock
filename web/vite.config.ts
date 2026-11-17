@@ -3,10 +3,16 @@ import react from '@vitejs/plugin-react';
 import { readFileSync } from 'node:fs';
 
 const deployment = JSON.parse(readFileSync(new URL('../deploy/vercel/vercel.json', import.meta.url), 'utf8')) as {
-  headers: { source: string; headers: { key: string; value: string }[] }[];
+  routes: { src: string; headers?: Record<string, string>; continue?: boolean }[];
 };
 // Exercise production document headers in the local preview used by browser tests.
-const previewHeaders = Object.fromEntries(deployment.headers.flatMap(rule => rule.headers.map(({ key, value }) => [key, value])));
+// Stop at the root's terminal route: the later 404 policy must not replace its CSP.
+const previewHeaders: Record<string, string> = {};
+for (const route of deployment.routes) {
+  if (!new RegExp(route.src, 'i').test('/')) continue;
+  Object.assign(previewHeaders, route.headers);
+  if (!route.continue) break;
+}
 
 export default defineConfig({
   plugins: [react()],
