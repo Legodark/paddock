@@ -1,0 +1,7 @@
+{
+  "verified_frozen_inputs": {
+    "padook/Backend/models/cars_model.pkl": "1c36a9dca5b7ac0076d6fef0f1c6db9952aba5b42fae92db647b1f4750a11b87",
+    "padook/Backend/models/message_model.pkl": "d56b8604ad35cd4815ec0ec3c3b706a715ee7fbe736d8e55b281786d791ee58d",
+    "padook/Backend/tokenizer/tokenizer.py": "605a5a378d3553f29d84d0b4789e3b1833f0fa91c3bea47be4297596e274952c"
+  }
+}

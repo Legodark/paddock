@@ -1,0 +1,12 @@
+{
+  "official_builder": "@vercel/python@32.0.0",
+  "runtime": "python3.12",
+  "handler": "vc__handler__python.vc_handler",
+  "uncompressed_bytes": 121114042,
+  "uncompressed_mib": 115.50335121154785,
+  "file_count": 369,
+  "elapsed_seconds": 2.88,
+  "materialized_function": "/workspace/.paddock/ci-delivery-20261115/build-function",
+  "forbidden_ml_packages": [],
+  "scope": "Local official runtime builder only; no Vercel project/account/deployment or billing verification."
+}

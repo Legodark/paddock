@@ -1,0 +1,48 @@
+# Límite explícito de rutas hacia la función
+
+17-11-2026. Seguimiento: [#11](https://github.com/Legodark/paddock/issues/11), [PR #6](https://github.com/Legodark/paddock/pull/6).
+
+## Motivo y cambio
+
+El ensayo anterior observó 404 de función para algunas rutas no canónicas. No demostró evasión funcional ni su comportamiento desde IP limitada. El compilador oficial situaba la búsqueda de filesystem antes del rewrite amplio: limitar solo ese rewrite no impediría acceder a la entrada directa de la función.
+
+Se reemplaza esa resolución por rutas explícitas. Solo `/api/v1/health`, `/api/v1/catalog`, `/api/v1/search-catalog`, `/api/v1/predict`, `/api/v1/message` y `/api/v1/cars` pueden seleccionar `/api/index.py`. La coincidencia distingue mayúsculas con `(?-i:...)`, comprobado incluso bajo un matcher externo insensible a mayúsculas. No se restringen métodos en routing: Flask conserva HEAD/OPTIONS y la validación de métodos de cada endpoint. Las queries se mantienen separadas del pathname, sin añadir capturas como parámetros a la API.
+
+La raíz, `index.html`, avisos de terceros, DeLorean y los directorios de assets/logos tienen destinos estáticos explícitos. No hay búsqueda implícita de filesystem. Lo demás termina en 404 sin seleccionar una función. Las cabeceras comunes se conservan y la CSP del documento también se aplica al acceso directo a `index.html`. Los errores de rutas desconocidas pasan a ser del router, no JSON de Flask; los errores de rutas canónicas siguen en la API.
+
+La regla WAF existente no cambia. Esta defensa evita resolver entradas desconocidas hacia Python independientemente de su contador por IP; no se presenta como una nueva prueba del rate limit desde una IP bloqueada, como cobertura exhaustiva de normalizaciones o como un límite global de cuota.
+
+## Validación local y revisión
+
+[Revisión acotada independiente](evidence/preview/routing-boundary-review-20261117.json): configuración, guard y etapa de CI. Esquema y compilación oficiales `routing-utils@6.6.1`, cobertura de las seis rutas, mayúsculas, rutas codificadas, traversal, destinos privados y controles negativos. Los 75 archivos del snapshot de Preview y los **76 archivos del paquete canónico completo** quedan cubiertos; el guard se ejecuta también sobre el paquete recién preparado en CI para detectar futuros archivos sin ruta.
+
+La aplicación, frontend, modelos y SQLite permanecen idénticos: 87 de los 88 archivos seleccionados del paquete anterior conservan sus hashes; solo cambia `vercel.json`. Los 75 estáticos históricos pesan 504.608 bytes; el paquete canónico añade los 26 bytes del `robots.txt` existente en las fuentes (504.634 bytes en total). La auditoría Cloudflare del 16-11 y sus artefactos no se modifican ni se presentan como una auditoría completa de este commit nuevo.
+
+## Comprobación en proveedor completada
+
+Una Preview privada, sin cambiar Production, DNS, autenticación o plan. Techo propio de **seis HTTP**, concurrencia uno, cero reintentos/redirecciones seguidas y ninguna ráfaga:
+
+| Ruta | Observado | Comprobación |
+| --- | --- | --- |
+| `/api/v1/health` | 200 | API lista, modelo congelado |
+| `/` | 200 | HTML idéntico y cabeceras/CSP |
+| `/assets/index-TX-N8QC5.js` | 200 | JavaScript idéntico |
+| `/api/index.py` | 404 | Entrada directa rechazada sin función |
+| `/%61pi/v1/health` | 404 | Prefijo codificado no alcanza una API legítima |
+| `/API/v1/health` | 404 | Mayúsculas no alcanzan Python |
+
+Un 404 por sí solo no demuestra ausencia de función: correlacionar los identificadores en privado con los registros del proveedor y publicar solo el resultado saneado. Las variantes restantes mantienen evidencia histórica y controles locales; no se inventa observación simultánea desde una IP limitada.
+
+Contabilidad conservadora previa: 121 frente a 127. El plan suma hasta seis, sin utilizar otra ráfaga de 66 ni reasignar el margen del primer ensayo de 67. Si falla una comprobación, detener el smoke sin repetirlo automáticamente. La consulta de metadatos y las pruebas locales no invocan Paddock.
+
+[Resultado del proveedor y revisión independiente](evidence/preview/routing-boundary-provider-20261117.json): **6/6 HTTP correctas y seis correlaciones únicas**. La API es `streaming_func`; HTML/JS son `static` con hashes iguales; los tres aliases son `not_found`, sin seleccionar `/api/index`. La regla WAF sigue activa/válida con 60/60 s/IP y autenticación `all`. No se deduce CPU facturada cero ni arranque frío; tampoco se hizo otra prueba desde IP limitada.
+
+Preview verificada: [paddock-nl7ur2oq5-legodarks-projects.vercel.app](https://paddock-nl7ur2oq5-legodarks-projects.vercel.app), `dpl_8zdUGZ4KKhi4BpT6uazzFSFAgGK8`, fuente `219d87b`. La CI de esa fuente está en verde en [PR](https://github.com/Legodark/paddock/actions/runs/44062033486) y [push](https://github.com/Legodark/paddock/actions/runs/44062023720). El presupuesto terminó en **127/127**, sin remanente; no se reintenta o repite automáticamente. Production privada anterior, dominio y protección no cambian. El acceso público continúa pendiente.
+
+### Adaptación del servidor local de pruebas
+
+La primera CI de este cambio detectó que `web/vite.config.ts` todavía leía el formato anterior de cabeceras. Se corrigió para seleccionar las reglas que alcanzan la raíz y detenerse en su destino terminal, sin aplicar la CSP restrictiva del fallback 404 al documento. [Revisión y prueba local](evidence/preview/routing-preview-header-review-20261117.json): 100 unitarias, TypeScript/build y los 75 archivos públicos reconstruidos idénticos al paquete de la Preview. Es una corrección de infraestructura de pruebas; no modifica el contenido web o el runtime ya preparado. La CI alojada debe volver a pasar antes de completar la entrega.
+
+### Cobertura del paquete canónico
+
+La segunda CI detectó una diferencia real entre el paquete de Preview histórico y el preparador completo: este último incluye el `robots.txt` ya existente en `deploy/vercel/public`, además de los 75 archivos de la web. Se añadió su ruta estática literal, sin ampliar la API o volver a introducir filesystem implícito. No se usa robots como protección de acceso. [Reproducción local y revisión](evidence/preview/routing-source-package-review-20261117.json): 76 archivos públicos, 504.634 bytes; los 87 archivos seleccionados distintos de `vercel.json` conservan su hash, incluidos todos los modelos y SQLite. La Preview inicial `f099a1e` es diagnóstica de la migración; la comprobación remota usará el paquete canónico corregido.

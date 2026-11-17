@@ -1,0 +1,185 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "lanes": [
+    {
+      "id": "model",
+      "label": "Modelo"
+    },
+    {
+      "id": "checks",
+      "label": "Comprobaciones"
+    },
+    {
+      "id": "deploy",
+      "label": "Publicación"
+    }
+  ],
+  "mainPath": [
+    "original",
+    "export",
+    "equal",
+    "memory",
+    "ids",
+    "limits",
+    "preview",
+    "domain"
+  ],
+  "nodes": [
+    {
+      "id": "original",
+      "lane": "model",
+      "col": 0,
+      "type": "database",
+      "label": "Modelo original",
+      "sublabel": "Conservado intacto"
+    },
+    {
+      "id": "export",
+      "lane": "model",
+      "col": 1,
+      "type": "backend",
+      "label": "Exportar árboles",
+      "sublabel": "Sin reentrenamiento"
+    },
+    {
+      "id": "equal",
+      "lane": "model",
+      "col": 2,
+      "type": "backend",
+      "label": "Comparar resultados",
+      "sublabel": "13.500 + 1.367 casos"
+    },
+    {
+      "id": "memory",
+      "lane": "checks",
+      "col": 2,
+      "type": "backend",
+      "label": "Medir runtime",
+      "sublabel": "105 MiB local"
+    },
+    {
+      "id": "ids",
+      "lane": "checks",
+      "col": 3,
+      "type": "security",
+      "label": "Resolver IDs",
+      "sublabel": "Pendiente: 542 / 719"
+    },
+    {
+      "id": "limits",
+      "lane": "checks",
+      "col": 4,
+      "type": "security",
+      "label": "Comprobar plan",
+      "sublabel": "Vercel · 0 €"
+    },
+    {
+      "id": "blocked",
+      "lane": "checks",
+      "col": 5,
+      "type": "security",
+      "label": "No publicar",
+      "sublabel": "Sin contratar extras"
+    },
+    {
+      "id": "preview",
+      "lane": "deploy",
+      "col": 4,
+      "type": "cloud",
+      "label": "Validar preview",
+      "sublabel": "API, UX y seguridad"
+    },
+    {
+      "id": "domain",
+      "lane": "deploy",
+      "col": 5,
+      "type": "cloud",
+      "label": "Vincular dominio",
+      "sublabel": "paddock.juancerezo.com"
+    }
+  ],
+  "edges": [
+    {
+      "id": "start",
+      "from": "original",
+      "to": "export"
+    },
+    {
+      "id": "compare",
+      "from": "export",
+      "to": "equal"
+    },
+    {
+      "id": "measure",
+      "from": "equal",
+      "to": "memory",
+      "label": "Equivalencia OK"
+    },
+    {
+      "id": "provenance",
+      "from": "memory",
+      "to": "ids"
+    },
+    {
+      "id": "coherent",
+      "from": "ids",
+      "to": "limits",
+      "label": "IDs coherentes"
+    },
+    {
+      "id": "free",
+      "from": "limits",
+      "to": "preview",
+      "label": "Solo coste cero",
+      "variant": "emphasis"
+    },
+    {
+      "id": "blocked_cost",
+      "from": "limits",
+      "to": "blocked",
+      "label": "No cabe",
+      "variant": "security",
+      "role": "error"
+    },
+    {
+      "id": "publish",
+      "from": "preview",
+      "to": "domain",
+      "label": "Validación OK",
+      "variant": "emphasis"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "Ya evaluado localmente",
+      "items": [
+        "Conversión de ambos bosques y comparación con el original.",
+        "Python 3.12 sin dependencias ML; entradas inválidas rechazadas."
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Presupuesto obligatorio",
+      "items": [
+        "0 € de servicios adicionales; solo se paga el dominio existente.",
+        "Cuotas y consumo de la cuenta Vercel todavía sin verificar."
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Antes de publicar",
+      "items": [
+        "Resolver los diccionarios de 542 y 719 modelos de coche.",
+        "El resultado local no acredita precisión ni despliegue en Vercel."
+      ]
+    }
+  ],
+  "meta": {
+    "title": "Paddock · evaluación y puerta de publicación",
+    "locale": "es",
+    "quality_profile": "showcase",
+    "output": ".archify/workflow-paddock-validacion-20261114-171724/paddock-validacion.html"
+  }
+}

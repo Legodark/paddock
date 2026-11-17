@@ -1,0 +1,111 @@
+{
+  "browser": "156.0.8078.79",
+  "unit_tests": 82,
+  "geometry": [
+    {
+      "viewport": 320,
+      "documentWidth": 320,
+      "expanded": false,
+      "toggleHeight": 48,
+      "textareaFocused": false
+    },
+    {
+      "viewport": 320,
+      "documentWidth": 320,
+      "expanded": true,
+      "toggleHeight": 48,
+      "textareaFocused": false
+    },
+    {
+      "viewport": 360,
+      "documentWidth": 360,
+      "expanded": false,
+      "toggleHeight": 48,
+      "textareaFocused": false
+    },
+    {
+      "viewport": 360,
+      "documentWidth": 360,
+      "expanded": true,
+      "toggleHeight": 48,
+      "textareaFocused": false
+    },
+    {
+      "viewport": 390,
+      "documentWidth": 390,
+      "expanded": false,
+      "toggleHeight": 48,
+      "textareaFocused": false
+    },
+    {
+      "viewport": 390,
+      "documentWidth": 390,
+      "expanded": true,
+      "toggleHeight": 48,
+      "textareaFocused": false
+    },
+    {
+      "viewport": 768,
+      "documentWidth": 768,
+      "expanded": false,
+      "toggleHeight": 48,
+      "textareaFocused": false
+    },
+    {
+      "viewport": 768,
+      "documentWidth": 768,
+      "expanded": true,
+      "toggleHeight": 48,
+      "textareaFocused": false
+    },
+    {
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "expanded": false,
+      "toggleHeight": 48,
+      "textareaFocused": false
+    },
+    {
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "expanded": true,
+      "toggleHeight": 48,
+      "textareaFocused": false
+    },
+    {
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "expanded": false,
+      "toggleHeight": 48,
+      "textareaFocused": false
+    },
+    {
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "expanded": true,
+      "toggleHeight": 48,
+      "textareaFocused": false
+    }
+  ],
+  "backend_unchanged": true,
+  "backend_files_compared": 16,
+  "additional_application_api_requests_in_vercel": 0,
+  "scope": "Local production web build and real frozen local API. Chromium mobile emulation; no physical devices, virtual keyboard or native zoom certification.",
+  "collaboration": {
+    "implementation_and_integrated_verification": "root",
+    "tests": "chat_tests",
+    "independent_accessibility_review": "chat_accessibility_review"
+  },
+  "screenshots": {
+    "chat-collapsed-desktop.jpg": "fe4ca15699f02d488a0cdc90e355554cd9236047d80256b4ecce53be0e952cce",
+    "chat-collapsed-mobile.jpg": "33e6e3e314c49a610e99a2d11510ebba7071aeb9650ac321e3cc812e66575b64",
+    "chat-expanded-desktop.jpg": "e9f4ec9618e48d031ea9593300b8fdf2d21d1023196869407462df9ef667dc46",
+    "chat-expanded-mobile.jpg": "ce5cd415b5c278816fa488e3a9799f7340aa120a496a091cd62c0334ccd55a89"
+  },
+  "browser_tests": 76,
+  "browser_profiles": [
+    "desktop-chromium",
+    "mobile-chromium"
+  ],
+  "disclosure_scenarios": 8
+}

@@ -1,0 +1,76 @@
+{
+  "tool": "gitleaks",
+  "version": "8.30.1",
+  "archive_sha256": "551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb",
+  "checksum_source": "https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_checksums.txt",
+  "exit_code": 1,
+  "scope": "All reachable refs and full Git history; default Gitleaks rules, redaction 100%. No credentials validated against external services.",
+  "commits_reachable": 116,
+  "findings": [
+    {
+      "RuleID": "generic-api-key",
+      "File": "docs/evidence/ci/frozen-inputs.json",
+      "StartLine": 5,
+      "EndLine": 5,
+      "Commit": "a7cb69a74ae388572e7dbba9edbf6de9f68596e0",
+      "Fingerprint": "a7cb69a74ae388572e7dbba9edbf6de9f68596e0:docs/evidence/ci/frozen-inputs.json:generic-api-key:5",
+      "classification": "False positive: SHA-256 of the frozen tokenizer, not an authentication credential."
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "tools/export_frozen_models.py",
+      "StartLine": 19,
+      "EndLine": 19,
+      "Commit": "a7cb69a74ae388572e7dbba9edbf6de9f68596e0",
+      "Fingerprint": "a7cb69a74ae388572e7dbba9edbf6de9f68596e0:tools/export_frozen_models.py:generic-api-key:19",
+      "classification": "False positive: SHA-256 of the frozen tokenizer, not an authentication credential."
+    },
+    {
+      "RuleID": "gcp-api-key",
+      "File": "padook/Frontend/android/app/google-services.json",
+      "StartLine": 23,
+      "EndLine": 23,
+      "Commit": "3d7b977aa58587689ed8cb49276eab734011d1b9",
+      "Fingerprint": "3d7b977aa58587689ed8cb49276eab734011d1b9:padook/Frontend/android/app/google-services.json:gcp-api-key:23",
+      "classification": "Firebase client SDK API key configuration in archived Flutter client; not used by the new runtime. No service-account private key in these findings. Restrictions and current activity not verified."
+    },
+    {
+      "RuleID": "gcp-api-key",
+      "File": "padook/Frontend/lib/firebase_options.dart",
+      "StartLine": 47,
+      "EndLine": 47,
+      "Commit": "3d7b977aa58587689ed8cb49276eab734011d1b9",
+      "Fingerprint": "3d7b977aa58587689ed8cb49276eab734011d1b9:padook/Frontend/lib/firebase_options.dart:gcp-api-key:47",
+      "classification": "Firebase client SDK API key configuration in archived Flutter client; not used by the new runtime. No service-account private key in these findings. Restrictions and current activity not verified."
+    },
+    {
+      "RuleID": "gcp-api-key",
+      "File": "padook/Frontend/lib/firebase_options.dart",
+      "StartLine": 57,
+      "EndLine": 57,
+      "Commit": "3d7b977aa58587689ed8cb49276eab734011d1b9",
+      "Fingerprint": "3d7b977aa58587689ed8cb49276eab734011d1b9:padook/Frontend/lib/firebase_options.dart:gcp-api-key:57",
+      "classification": "Firebase client SDK API key configuration in archived Flutter client; not used by the new runtime. No service-account private key in these findings. Restrictions and current activity not verified."
+    },
+    {
+      "RuleID": "gcp-api-key",
+      "File": "padook/Frontend/lib/firebase_options.dart",
+      "StartLine": 65,
+      "EndLine": 65,
+      "Commit": "3d7b977aa58587689ed8cb49276eab734011d1b9",
+      "Fingerprint": "3d7b977aa58587689ed8cb49276eab734011d1b9:padook/Frontend/lib/firebase_options.dart:gcp-api-key:65",
+      "classification": "Firebase client SDK API key configuration in archived Flutter client; not used by the new runtime. No service-account private key in these findings. Restrictions and current activity not verified."
+    },
+    {
+      "RuleID": "gcp-api-key",
+      "File": "padook/Frontend/lib/firebase_options.dart",
+      "StartLine": 75,
+      "EndLine": 75,
+      "Commit": "3d7b977aa58587689ed8cb49276eab734011d1b9",
+      "Fingerprint": "3d7b977aa58587689ed8cb49276eab734011d1b9:padook/Frontend/lib/firebase_options.dart:gcp-api-key:75",
+      "classification": "Firebase client SDK API key configuration in archived Flutter client; not used by the new runtime. No service-account private key in these findings. Restrictions and current activity not verified."
+    }
+  ],
+  "interpretation": "Seven raw findings: two checksum false positives and five Firebase client-config occurrences. No credential activity checks were performed. This scan does not certify the absence of secrets.",
+  "local_git_shallow": false
+}

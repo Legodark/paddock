@@ -1,0 +1,17 @@
+{
+  "scope": "Isolated Chromium DOM diagnostic; does not reproduce Firefox native crash. Main-world getters instrumented only in this throwaway fixture.",
+  "browser": "156.0.8078.79",
+  "afterFocus": 0,
+  "afterLabelDispatch": 5,
+  "afterCssDispatch": 5,
+  "observed": [
+    {
+      "key": "Escape",
+      "isComposing": true
+    },
+    {
+      "key": "Escape",
+      "isComposing": true
+    }
+  ]
+}

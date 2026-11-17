@@ -1,0 +1,96 @@
+{
+  "checked_at": "2026-11-16T18:44:24.419233+00:00",
+  "scope": "Read-only provider metadata/documentation, no application requests or mutations. Separate from source-only Cloudflare audit.",
+  "project": "paddock",
+  "deployment": "dpl_9PXY5N878VVNqdJBj2JD9kF5fVxw",
+  "plan": "hobby",
+  "status": "active",
+  "preview_access": "all",
+  "source_commit": "2b8b7608341663fc5852220d3460cd33d2195cc2",
+  "assigned_function": {
+    "runtime": "python3.12",
+    "memory_mb": 2048,
+    "timeout_seconds": 10,
+    "region": "iad1",
+    "fluid_compute": true,
+    "meaning": "Assigned configuration, not observed resource use; CDN edge cle1 is not the function region."
+  },
+  "metrics": {
+    "schema_visible": true,
+    "data_query_result": "payment_required",
+    "requires": "Observability Plus on Pro/Enterprise",
+    "purchased": false
+  },
+  "billing_usage": {
+    "available": false,
+    "period": "2026-11-01 through 2026-11-16",
+    "meaning": "No inference of zero usage or remaining allowance"
+  },
+  "shared_browser": {
+    "environment_id": "ccarenv_b64_Y2NhcmVudl84ZTAyOGYyMTI5YWM4MTkxYWQ5Y2YzNDIzMzc3OTc5MQ",
+    "remote_desktop_enabled": true,
+    "state": "unknown",
+    "desktop_javascript_tool_exposed_in_this_turn": false,
+    "viewer_open_tool_exposed_in_this_turn": false,
+    "current_team_usage_not_read": true,
+    "blocked_interaction": "Control the existing signed-in Chrome tab to read team Usage; no credential/cookie extraction attempted."
+  },
+  "existing_static_evidence": {
+    "file": "docs/evidence/ux/price-gauge-provider.json",
+    "count_positive_resources": 6,
+    "same_deployment": true,
+    "simultaneous_with_rate_limit": false
+  },
+  "rollback": {
+    "preview_only_not_eligible": true,
+    "hobby_previous_eligible_only": true,
+    "production_alias_history_required": true,
+    "preview_promotion_rebuilds_for_production": true,
+    "exercise_executed": false
+  },
+  "unknown": [
+    "Billed/actual CPU",
+    "Used/provisioned-memory consumption",
+    "Verified cold start",
+    "Remaining shared monthly compute allowance"
+  ],
+  "sources": [
+    {
+      "url": "https://vercel.com/docs/deployments/promote-preview-to-production",
+      "checked_at": "2026-11-16T18:44:24.141696+00:00",
+      "sha256": "878cd30beadfcab4edca4f4b8ccf0f683e52dd4139d359c1178530516db411e9",
+      "exact_excerpts": [
+        "> **💡 Note:** Promoting a preview deployment to production triggers a complete rebuild with\n> production [environment variables](/docs/environment-variables). If you have\n> different variables set for preview and production, the production values will\n> be used in the new build.",
+        "When you promote a preview deployment, the CLI creates the new production deployment and exits. It does not wait for the build to complete. The `--timeout` option applies only when you promote a deployment that was built for the production environment. In that case, the CLI waits up to three minutes by default for the promotion to complete. To change the timeout:"
+      ]
+    },
+    {
+      "url": "https://vercel.com/docs/instant-rollback",
+      "checked_at": "2026-11-16T18:44:24.419203+00:00",
+      "sha256": "8faece0392b8b5ded4193d44f026870e1380c164b07682deeec47dbdd5f28288",
+      "exact_excerpts": [
+        "After a rollback, Vercel turns off auto-assignment of production domains. This means new pushes to your production branch won't replace the rolled-back deployment. To restore normal deployment behavior, see [Undo a rollback](#undo-a-rollback).",
+        "After a rollback, Vercel turns off [auto-assignment of production domains](/docs/deployments/promoting-a-deployment#staging-and-promoting-a-production-deployment). This means new pushes to your production branch won't go live automatically. To restore normal deployment behavior, you need to undo the rollback by promoting a different deployment.",
+        "- **Hobby** plan: On the hobby plan you can roll back to the previous deployment\n- **Pro** and **Enterprise** plan: Owners, Members, and Developers on these plans can roll back to any [eligible deployment](#eligible-deployments).",
+        "Deployments previously aliased to a production domain are eligible for Instant Rollback. Deployments that have never been aliased to production a domain, e.g., most [preview deployments](/docs/deployments/environments#preview-environment-pre-production), are not eligible."
+      ]
+    }
+  ],
+  "followup_free_usage_discovery": {
+    "checked_at": "2026-11-16T19:20:18.989933+00:00",
+    "authenticated_queries": 0,
+    "result": "No alternative official CLI/SDK resourceUsage method located; this is not a claim that no such API can ever exist.",
+    "cli_implementation": "billing usage uses /v2/billing/costs with gross_cost and quantity; not another operational usage endpoint.",
+    "sdk": "Public SDK exposes the same observability query/schema family.",
+    "sources": [
+      "https://vercel.com/docs/cli/metrics",
+      "https://vercel.com/docs/pricing/manage-and-optimize-usage",
+      "https://github.com/vercel/sdk/blob/main/docs/sdks/vercel/README.md"
+    ],
+    "free_metrics_exceptions": [
+      "Web Analytics",
+      "Speed Insights"
+    ],
+    "actual_cpu_memory_usage_obtained": false
+  }
+}

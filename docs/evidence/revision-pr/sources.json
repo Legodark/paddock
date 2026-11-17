@@ -1,0 +1,45 @@
+{
+  "checked_at": "2026-11-15T13:10:01.662046+00:00",
+  "documentation": [
+    {
+      "url": "https://vercel.com/docs/plans/hobby",
+      "retrieved_body_sha256": "77c5c712d6bbaecdaf82c01d6042ef1c78be3d8a67fadad33e7f5863fdaef1fb"
+    },
+    {
+      "url": "https://vercel.com/docs/functions/limitations",
+      "retrieved_body_sha256": "974d0b3d8ab17fec3d669bbe924fa2490177aa08b7b0bdbc8def7ccdbc6abd4d"
+    },
+    {
+      "url": "https://vercel.com/docs/vercel-firewall/vercel-waf/usage-and-pricing",
+      "retrieved_body_sha256": "9eadc97d8790c9ad9a6753b9bf71644b6dade8292af421db465169a260dba597"
+    },
+    {
+      "url": "https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting",
+      "retrieved_body_sha256": "3102a9a02e66906a5c0f3110266f4016514a6dba2ffa227242ee93ad162e1b7d"
+    },
+    {
+      "url": "https://vercel.com/docs/limits/fair-use-guidelines",
+      "retrieved_body_sha256": "8e4490d4b475ce69b8d9cd5ba0d3fe395f9b170beb4505501cd550f467f9b1c3"
+    },
+    {
+      "url": "https://vercel.com/docs/functions/usage-and-pricing",
+      "retrieved_body_sha256": "c8cf427c002c8cc6e5cb64efc78e37042b861d1ca450bf271fa2e3bd44efcc55"
+    },
+    {
+      "url": "https://vercel.com/changelog/rate-limiting-now-available-on-hobby-with-higher-included-usage-on-pro",
+      "retrieved_body_sha256": "9a106de57ce10b45e449aef757d56b22a4dd81c85be35b5cb0eee70d444ab312"
+    },
+    {
+      "url": "https://vercel.com/pricing",
+      "retrieved_body_sha256": "ade850ac223324c467f368f950bbeb0752e6460180832004b276be3b37aea5a2"
+    },
+    {
+      "url": "https://vercel.com/docs/plans",
+      "retrieved_body_sha256": "c746971cccdc70eb542d5882721f1c059a7bf7927e87725edab0bccae7a00420"
+    }
+  ],
+  "notes": [
+    "No provider credentials, full team responses, raw secret matches or paid usage queries are published.",
+    "All account queries used existing CLI authentication and were read-only."
+  ]
+}

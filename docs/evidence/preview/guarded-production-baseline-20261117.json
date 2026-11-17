@@ -1,0 +1,314 @@
+{
+  "checked_at": "2026-11-17T11:37:15.381555+00:00",
+  "scope": "One protected Production baseline with the explicit routing boundary; no public release, domain mutation or new rollback execution.",
+  "baseline": {
+    "id": "dpl_Gbw7hDo9r6u71J8Cz1K1rFQ6auLt",
+    "url": "https://paddock-7fxt0bibv-legodarks-projects.vercel.app",
+    "ready_state": "READY",
+    "target": "production",
+    "source": "ecf91777b213efd674c639ec9f908e327a355f17",
+    "active_aliases": {
+      "paddock-phi-hazel.vercel.app": "dpl_Gbw7hDo9r6u71J8Cz1K1rFQ6auLt",
+      "paddock-legodarks-projects.vercel.app": "dpl_Gbw7hDo9r6u71J8Cz1K1rFQ6auLt"
+    },
+    "before_active": "dpl_GPrbbbEGDV1zXQ2ZTz5Y5sNQWJAp",
+    "project_after": {
+      "plan": "hobby",
+      "status": "active",
+      "auth": "all",
+      "git_connected": false,
+      "project_domains": [
+        "paddock-phi-hazel.vercel.app"
+      ],
+      "auto_assign_custom_domains": true
+    },
+    "has_had_production_alias": true,
+    "max_http": 10,
+    "metadata_queries_application_http": 0,
+    "baseline_status": "Active protected baseline, eligible as rollback destination after a later candidate replaces it; no new rollback executed."
+  },
+  "plan": {
+    "phase": "private guarded Production baseline",
+    "max_builds": 1,
+    "max_http": 10,
+    "requests": {
+      "anonymous_roots": 3,
+      "authenticated_static": 2,
+      "functional_api": 4,
+      "direct_function_alias": 1
+    },
+    "concurrency": 1,
+    "retries": 0,
+    "redirects_followed": 0,
+    "burst": false,
+    "prior_waf127_and_rollback22_not_reused": true,
+    "custom_domain_or_public_access": false
+  },
+  "http_actual": 10,
+  "http_passed": 10,
+  "authenticated_provider_correlations": 7,
+  "anonymous_root_samples_302": 3,
+  "cases": [
+    {
+      "case": 1,
+      "path": "/",
+      "host": "paddock-7fxt0bibv-legodarks-projects.vercel.app",
+      "kind": "anonymous",
+      "attempted_at": "2026-11-17T11:26:45.709406+00:00",
+      "passed": true,
+      "status": 302,
+      "duration_seconds": 0.414173,
+      "transport_exit": 0,
+      "effective_host_path_verified": true,
+      "finished_at": "2026-11-17T11:26:46.134594+00:00"
+    },
+    {
+      "case": 2,
+      "path": "/",
+      "host": "paddock-phi-hazel.vercel.app",
+      "kind": "anonymous",
+      "attempted_at": "2026-11-17T11:26:46.135117+00:00",
+      "passed": true,
+      "status": 302,
+      "duration_seconds": 0.351803,
+      "transport_exit": 0,
+      "effective_host_path_verified": true,
+      "finished_at": "2026-11-17T11:26:46.497589+00:00"
+    },
+    {
+      "case": 3,
+      "path": "/",
+      "host": "paddock-legodarks-projects.vercel.app",
+      "kind": "anonymous",
+      "attempted_at": "2026-11-17T11:26:46.498084+00:00",
+      "passed": true,
+      "status": 302,
+      "duration_seconds": 0.3754,
+      "transport_exit": 0,
+      "effective_host_path_verified": true,
+      "finished_at": "2026-11-17T11:26:46.883526+00:00"
+    },
+    {
+      "case": 4,
+      "path": "/",
+      "host": "paddock-phi-hazel.vercel.app",
+      "kind": "static",
+      "attempted_at": "2026-11-17T11:26:46.884100+00:00",
+      "passed": true,
+      "status": 200,
+      "duration_seconds": 0.253752,
+      "transport_exit": 0,
+      "effective_host_path_verified": true,
+      "security_headers": {
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer"
+      },
+      "sha256": "41e76755bd37fae99f1329b7fdf7dbeacee913a30e2437b64d32026c4ad4b19d",
+      "finished_at": "2026-11-17T11:26:48.572927+00:00",
+      "provider": {
+        "httpStatus": 200,
+        "requestPath": "/",
+        "pathType": "static",
+        "route": "/index.html",
+        "wafAction": "allow",
+        "cacheResult": "MISS"
+      }
+    },
+    {
+      "case": 5,
+      "path": "/assets/index-TX-N8QC5.js",
+      "host": "paddock-phi-hazel.vercel.app",
+      "kind": "static",
+      "attempted_at": "2026-11-17T11:26:48.574358+00:00",
+      "passed": true,
+      "status": 200,
+      "duration_seconds": 0.470163,
+      "transport_exit": 0,
+      "effective_host_path_verified": true,
+      "security_headers": {
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer"
+      },
+      "sha256": "a8de581ec8a1132692ba7f3edca6f62532e735bb6d8235a1d670c29d644dd258",
+      "finished_at": "2026-11-17T11:26:50.224638+00:00",
+      "provider": {
+        "httpStatus": 200,
+        "requestPath": "/assets/index-TX-N8QC5.js",
+        "pathType": "static",
+        "route": "/assets/index-TX-N8QC5.js",
+        "wafAction": "allow",
+        "cacheResult": "MISS"
+      }
+    },
+    {
+      "case": 6,
+      "path": "/api/v1/health",
+      "host": "paddock-phi-hazel.vercel.app",
+      "kind": "api",
+      "attempted_at": "2026-11-17T11:26:50.225242+00:00",
+      "passed": true,
+      "status": 200,
+      "duration_seconds": 0.406999,
+      "transport_exit": 0,
+      "effective_host_path_verified": true,
+      "security_headers": {
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer"
+      },
+      "response": {
+        "ready": true,
+        "frozen_model": true
+      },
+      "finished_at": "2026-11-17T11:26:52.053283+00:00",
+      "provider": {
+        "httpStatus": 200,
+        "requestPath": "/api/v1/health",
+        "pathType": "streaming_func",
+        "route": "/api/index",
+        "wafAction": "allow",
+        "cacheResult": "MISS"
+      }
+    },
+    {
+      "case": 7,
+      "path": "/api/v1/predict",
+      "host": "paddock-phi-hazel.vercel.app",
+      "kind": "api",
+      "attempted_at": "2026-11-17T11:26:52.054766+00:00",
+      "passed": true,
+      "status": 200,
+      "duration_seconds": 0.354549,
+      "transport_exit": 0,
+      "effective_host_path_verified": true,
+      "security_headers": {
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer"
+      },
+      "response": {
+        "prediction": 20155.0,
+        "historical": true,
+        "cheap_rows": 5,
+        "expensive_rows": 5
+      },
+      "finished_at": "2026-11-17T11:26:53.504291+00:00",
+      "provider": {
+        "httpStatus": 200,
+        "requestPath": "/api/v1/predict",
+        "pathType": "streaming_func",
+        "route": "/api/index",
+        "wafAction": "allow",
+        "cacheResult": "MISS"
+      }
+    },
+    {
+      "case": 8,
+      "path": "/api/v1/message",
+      "host": "paddock-phi-hazel.vercel.app",
+      "kind": "api",
+      "attempted_at": "2026-11-17T11:26:53.505204+00:00",
+      "passed": true,
+      "status": 200,
+      "duration_seconds": 0.357036,
+      "transport_exit": 0,
+      "effective_host_path_verified": true,
+      "security_headers": {
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer"
+      },
+      "response": {
+        "context": 1,
+        "historical": true
+      },
+      "finished_at": "2026-11-17T11:26:55.032700+00:00",
+      "provider": {
+        "httpStatus": 200,
+        "requestPath": "/api/v1/message",
+        "pathType": "streaming_func",
+        "route": "/api/index",
+        "wafAction": "allow",
+        "cacheResult": "MISS"
+      }
+    },
+    {
+      "case": 9,
+      "path": "/api/v1/cars?limit=1",
+      "host": "paddock-phi-hazel.vercel.app",
+      "kind": "api",
+      "attempted_at": "2026-11-17T11:26:55.034809+00:00",
+      "passed": true,
+      "status": 200,
+      "duration_seconds": 0.362688,
+      "transport_exit": 0,
+      "effective_host_path_verified": true,
+      "security_headers": {
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer"
+      },
+      "response": {
+        "rows": 1,
+        "historical": true
+      },
+      "finished_at": "2026-11-17T11:26:56.430286+00:00",
+      "provider": {
+        "httpStatus": 200,
+        "requestPath": "/api/v1/cars",
+        "pathType": "streaming_func",
+        "route": "/api/index",
+        "wafAction": "allow",
+        "cacheResult": "MISS"
+      }
+    },
+    {
+      "case": 10,
+      "path": "/api/index.py",
+      "host": "paddock-phi-hazel.vercel.app",
+      "kind": "alias",
+      "attempted_at": "2026-11-17T11:26:56.431618+00:00",
+      "passed": true,
+      "status": 404,
+      "duration_seconds": 0.300304,
+      "transport_exit": 0,
+      "effective_host_path_verified": true,
+      "security_headers": {
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer"
+      },
+      "finished_at": "2026-11-17T11:26:57.884771+00:00",
+      "provider": {
+        "httpStatus": 404,
+        "requestPath": "/api/index.py",
+        "pathType": "not_found",
+        "route": "/api/index.py",
+        "wafAction": "allow",
+        "cacheResult": ""
+      }
+    }
+  ],
+  "final_aliases": {
+    "paddock-phi-hazel.vercel.app": "dpl_Gbw7hDo9r6u71J8Cz1K1rFQ6auLt",
+    "paddock-legodarks-projects.vercel.app": "dpl_Gbw7hDo9r6u71J8Cz1K1rFQ6auLt"
+  },
+  "protection_preserved": "all",
+  "plan_preserved": "hobby",
+  "previous_test_budgets_reused": false,
+  "previous_production_record_preserved": "dpl_GPrbbbEGDV1zXQ2ZTz5Y5sNQWJAp",
+  "future_rollback": {
+    "candidate_must_replace_baseline_first": true,
+    "baseline_has_production_alias_history": true,
+    "rollback_exercised_in_this_phase": false,
+    "currently_previous_production_still_uses_old_routing": true
+  },
+  "limits": [
+    "HTTP durations do not measure cold start, memory/CPU billing or monthly headroom.",
+    "No exhaustive normalization or blocked-IP test repeated.",
+    "Public catalogue scope is complete, not evidence of third-party permission/license.",
+    "Physical feedback covers gauge/chat keyboard on iPhone, not all native accessibility checks."
+  ]
+}

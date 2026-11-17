@@ -1,0 +1,721 @@
+{
+  "recorded_at": "2026-11-16T19:55:15.552499+00:00",
+  "scope": "Private Production rehearsal outside the source-only security audit; no public release or custom-domain change.",
+  "project": "paddock",
+  "team": "legodarks-projects",
+  "application_source_ref": "2b8b7608341663fc5852220d3460cd33d2195cc2",
+  "audited_source_ref": "5e8091b6fb8a88ec4c4550b9356dd7026d44b42e",
+  "public_scope_decision_pending": true,
+  "physical_iphone_confirmation_pending": true,
+  "builds": {
+    "maximum": 2,
+    "actual": 2,
+    "baseline": {
+      "id": "dpl_5oin9KLGrYBndgUijQS8Dr2ikM3R",
+      "url": "paddock-2esuw26nz-legodarks-projects.vercel.app",
+      "target": "production",
+      "readyState": "READY",
+      "alias": [
+        "paddock-phi-hazel.vercel.app",
+        "paddock-legodarks-projects.vercel.app"
+      ],
+      "aliasAssigned": true,
+      "aliasError": null,
+      "regions": [
+        "iad1"
+      ],
+      "meta": {
+        "paddockSourceCommit": "2b8b7608341663fc5852220d3460cd33d2195cc2",
+        "paddockAuditSource": "5e8091b6fb8a88ec4c4550b9356dd7026d44b42e",
+        "paddockRehearsalRole": "private-baseline-20261116"
+      }
+    },
+    "candidate": {
+      "id": "dpl_GPrbbbEGDV1zXQ2ZTz5Y5sNQWJAp",
+      "url": "paddock-l9io99hnr-legodarks-projects.vercel.app",
+      "target": "production",
+      "readyState": "READY",
+      "alias": [
+        "paddock-phi-hazel.vercel.app",
+        "paddock-legodarks-projects.vercel.app"
+      ],
+      "aliasAssigned": true,
+      "aliasError": null,
+      "regions": [
+        "iad1"
+      ],
+      "meta": {
+        "paddockSourceCommit": "2b8b7608341663fc5852220d3460cd33d2195cc2",
+        "paddockAuditSource": "5e8091b6fb8a88ec4c4550b9356dd7026d44b42e",
+        "paddockRehearsalRole": "private-candidate-20261116"
+      }
+    },
+    "same_maintained_source": true,
+    "same_source_builds_exercise_platform_recovery_not_semantic_version_regression": true
+  },
+  "transitions": [
+    {
+      "operation": "rollback",
+      "finished_at": "2026-11-16T19:50:40.264765+00:00",
+      "before": {
+        "deployment_id": "dpl_GPrbbbEGDV1zXQ2ZTz5Y5sNQWJAp",
+        "deployment_url": "paddock-l9io99hnr-legodarks-projects.vercel.app",
+        "source_commit": "2b8b7608341663fc5852220d3460cd33d2195cc2",
+        "auth": "all",
+        "git_connected": false,
+        "domains": [
+          "paddock-phi-hazel.vercel.app"
+        ],
+        "job_status": null,
+        "auto_assign_custom_domains": true
+      },
+      "after": {
+        "deployment_id": "dpl_5oin9KLGrYBndgUijQS8Dr2ikM3R",
+        "deployment_url": "paddock-2esuw26nz-legodarks-projects.vercel.app",
+        "source_commit": "2b8b7608341663fc5852220d3460cd33d2195cc2",
+        "auth": "all",
+        "git_connected": false,
+        "domains": [
+          "paddock-phi-hazel.vercel.app"
+        ],
+        "job_status": "succeeded",
+        "auto_assign_custom_domains": false
+      },
+      "target_verified": true,
+      "command_exit": 0,
+      "new_build": false,
+      "custom_domain_changes": false,
+      "protection_preserved": true
+    },
+    {
+      "operation": "restore",
+      "finished_at": "2026-11-16T19:53:25.014960+00:00",
+      "before": {
+        "deployment_id": "dpl_5oin9KLGrYBndgUijQS8Dr2ikM3R",
+        "deployment_url": "paddock-2esuw26nz-legodarks-projects.vercel.app",
+        "source_commit": "2b8b7608341663fc5852220d3460cd33d2195cc2",
+        "auth": "all",
+        "git_connected": false,
+        "domains": [
+          "paddock-phi-hazel.vercel.app"
+        ],
+        "job_status": "succeeded",
+        "auto_assign_custom_domains": false
+      },
+      "after": {
+        "deployment_id": "dpl_GPrbbbEGDV1zXQ2ZTz5Y5sNQWJAp",
+        "deployment_url": "paddock-l9io99hnr-legodarks-projects.vercel.app",
+        "source_commit": "2b8b7608341663fc5852220d3460cd33d2195cc2",
+        "auth": "all",
+        "git_connected": false,
+        "domains": [
+          "paddock-phi-hazel.vercel.app"
+        ],
+        "job_status": "succeeded",
+        "auto_assign_custom_domains": true
+      },
+      "target_verified": true,
+      "command_exit": 0,
+      "new_build": false,
+      "custom_domain_changes": false,
+      "protection_preserved": true
+    }
+  ],
+  "final_control_plane": {
+    "checked_at": "2026-11-16T19:54:28.701778+00:00",
+    "plan": "hobby",
+    "status": "active",
+    "project_id": "prj_j0CAZebO2M3BsMtBR41PPbYJo8Rk",
+    "auth": "all",
+    "git_connected": false,
+    "project_domains": [
+      "paddock-phi-hazel.vercel.app"
+    ],
+    "production_aliases": {
+      "paddock-phi-hazel.vercel.app": {
+        "id": "dpl_GPrbbbEGDV1zXQ2ZTz5Y5sNQWJAp",
+        "ready_state": "READY",
+        "source_commit": "2b8b7608341663fc5852220d3460cd33d2195cc2"
+      },
+      "paddock-legodarks-projects.vercel.app": {
+        "id": "dpl_GPrbbbEGDV1zXQ2ZTz5Y5sNQWJAp",
+        "ready_state": "READY",
+        "source_commit": "2b8b7608341663fc5852220d3460cd33d2195cc2"
+      }
+    },
+    "auto_assign_custom_domains": true,
+    "application_http_requests": 0
+  },
+  "http": {
+    "maximum": 22,
+    "actual": 22,
+    "passed": 22,
+    "by_stage": {
+      "baseline": 9,
+      "candidate": 7,
+      "rollback": 3,
+      "restore": 3
+    },
+    "by_kind": {
+      "anonymous": 6,
+      "static": 6,
+      "api": 10
+    },
+    "concurrency": 1,
+    "retries": 0,
+    "redirects_followed": 0,
+    "new_bursts": 0,
+    "cases": [
+      {
+        "stage": "baseline",
+        "path": "/",
+        "kind": "anonymous",
+        "url_host": "paddock-2esuw26nz-legodarks-projects.vercel.app",
+        "attempted_at": "2026-11-16T19:44:14.325261+00:00",
+        "global_smoke_case": 1,
+        "passed": true,
+        "status": 302,
+        "duration_seconds": 0.331387,
+        "transport_exit": 0,
+        "finished_at": "2026-11-16T19:44:14.668698+00:00"
+      },
+      {
+        "stage": "baseline",
+        "path": "/",
+        "kind": "anonymous",
+        "url_host": "paddock-phi-hazel.vercel.app",
+        "attempted_at": "2026-11-16T19:44:14.669339+00:00",
+        "global_smoke_case": 2,
+        "passed": true,
+        "status": 302,
+        "duration_seconds": 0.308583,
+        "transport_exit": 0,
+        "finished_at": "2026-11-16T19:44:14.987972+00:00"
+      },
+      {
+        "stage": "baseline",
+        "path": "/",
+        "kind": "anonymous",
+        "url_host": "paddock-legodarks-projects.vercel.app",
+        "attempted_at": "2026-11-16T19:44:14.988441+00:00",
+        "global_smoke_case": 3,
+        "passed": true,
+        "status": 302,
+        "duration_seconds": 0.333572,
+        "transport_exit": 0,
+        "finished_at": "2026-11-16T19:44:15.332567+00:00"
+      },
+      {
+        "stage": "baseline",
+        "path": "/",
+        "kind": "static",
+        "url_host": "paddock-2esuw26nz-legodarks-projects.vercel.app",
+        "attempted_at": "2026-11-16T19:44:15.333314+00:00",
+        "global_smoke_case": 4,
+        "passed": true,
+        "status": 200,
+        "duration_seconds": 0.325292,
+        "transport_exit": 0,
+        "security_headers": {
+          "nosniff": "nosniff",
+          "frame": "DENY",
+          "referrer": "no-referrer",
+          "csp_present": true
+        },
+        "sha256": "41e76755bd37fae99f1329b7fdf7dbeacee913a30e2437b64d32026c4ad4b19d",
+        "matches_expected_build": true,
+        "finished_at": "2026-11-16T19:44:17.032791+00:00"
+      },
+      {
+        "stage": "baseline",
+        "path": "/assets/index-TX-N8QC5.js",
+        "kind": "static",
+        "url_host": "paddock-2esuw26nz-legodarks-projects.vercel.app",
+        "attempted_at": "2026-11-16T19:44:17.033953+00:00",
+        "global_smoke_case": 5,
+        "passed": true,
+        "status": 200,
+        "duration_seconds": 0.340126,
+        "transport_exit": 0,
+        "security_headers": {
+          "nosniff": "nosniff",
+          "frame": "DENY",
+          "referrer": "no-referrer",
+          "csp_present": false
+        },
+        "sha256": "a8de581ec8a1132692ba7f3edca6f62532e735bb6d8235a1d670c29d644dd258",
+        "matches_expected_build": true,
+        "finished_at": "2026-11-16T19:44:18.632199+00:00"
+      },
+      {
+        "stage": "baseline",
+        "path": "/api/v1/health",
+        "kind": "api",
+        "url_host": "paddock-2esuw26nz-legodarks-projects.vercel.app",
+        "attempted_at": "2026-11-16T19:44:18.632918+00:00",
+        "global_smoke_case": 6,
+        "passed": true,
+        "status": 200,
+        "duration_seconds": 0.333962,
+        "transport_exit": 0,
+        "security_headers": {
+          "nosniff": "nosniff",
+          "frame": "DENY",
+          "referrer": "no-referrer",
+          "csp_present": true
+        },
+        "response": {
+          "ready": true,
+          "frozen_model": true
+        },
+        "finished_at": "2026-11-16T19:44:20.150935+00:00"
+      },
+      {
+        "stage": "baseline",
+        "path": "/api/v1/predict",
+        "kind": "api",
+        "url_host": "paddock-2esuw26nz-legodarks-projects.vercel.app",
+        "attempted_at": "2026-11-16T19:44:20.155499+00:00",
+        "global_smoke_case": 7,
+        "passed": true,
+        "status": 200,
+        "duration_seconds": 0.283972,
+        "transport_exit": 0,
+        "security_headers": {
+          "nosniff": "nosniff",
+          "frame": "DENY",
+          "referrer": "no-referrer",
+          "csp_present": true
+        },
+        "response": {
+          "prediction": 20155.0,
+          "historical": true,
+          "cheap_rows": 5,
+          "expensive_rows": 5
+        },
+        "finished_at": "2026-11-16T19:44:21.567036+00:00"
+      },
+      {
+        "stage": "baseline",
+        "path": "/api/v1/message",
+        "kind": "api",
+        "url_host": "paddock-2esuw26nz-legodarks-projects.vercel.app",
+        "attempted_at": "2026-11-16T19:44:21.567813+00:00",
+        "global_smoke_case": 8,
+        "passed": true,
+        "status": 200,
+        "duration_seconds": 0.341385,
+        "transport_exit": 0,
+        "security_headers": {
+          "nosniff": "nosniff",
+          "frame": "DENY",
+          "referrer": "no-referrer",
+          "csp_present": true
+        },
+        "response": {
+          "contexto": 1,
+          "historical": true
+        },
+        "finished_at": "2026-11-16T19:44:23.075128+00:00"
+      },
+      {
+        "stage": "baseline",
+        "path": "/api/v1/cars?limit=1",
+        "kind": "api",
+        "url_host": "paddock-2esuw26nz-legodarks-projects.vercel.app",
+        "attempted_at": "2026-11-16T19:44:23.075717+00:00",
+        "global_smoke_case": 9,
+        "passed": true,
+        "status": 200,
+        "duration_seconds": 0.294925,
+        "transport_exit": 0,
+        "security_headers": {
+          "nosniff": "nosniff",
+          "frame": "DENY",
+          "referrer": "no-referrer",
+          "csp_present": true
+        },
+        "response": {
+          "rows": 1,
+          "historical": true
+        },
+        "finished_at": "2026-11-16T19:44:24.589100+00:00"
+      },
+      {
+        "stage": "candidate",
+        "path": "/",
+        "kind": "anonymous",
+        "url_host": "paddock-phi-hazel.vercel.app",
+        "attempted_at": "2026-11-16T19:47:24.444952+00:00",
+        "global_smoke_case": 10,
+        "passed": true,
+        "effective_host": "paddock-phi-hazel.vercel.app",
+        "status": 302,
+        "duration_seconds": 0.328571,
+        "transport_exit": 0,
+        "finished_at": "2026-11-16T19:47:24.788052+00:00"
+      },
+      {
+        "stage": "candidate",
+        "path": "/",
+        "kind": "static",
+        "url_host": "paddock-l9io99hnr-legodarks-projects.vercel.app",
+        "attempted_at": "2026-11-16T19:47:24.788909+00:00",
+        "global_smoke_case": 11,
+        "passed": true,
+        "effective_host": "paddock-l9io99hnr-legodarks-projects.vercel.app",
+        "status": 200,
+        "duration_seconds": 0.305278,
+        "transport_exit": 0,
+        "security_headers": {
+          "nosniff": "nosniff",
+          "frame": "DENY",
+          "referrer": "no-referrer",
+          "csp_present": true
+        },
+        "sha256": "41e76755bd37fae99f1329b7fdf7dbeacee913a30e2437b64d32026c4ad4b19d",
+        "matches_expected_build": true,
+        "finished_at": "2026-11-16T19:47:26.298211+00:00"
+      },
+      {
+        "stage": "candidate",
+        "path": "/assets/index-TX-N8QC5.js",
+        "kind": "static",
+        "url_host": "paddock-l9io99hnr-legodarks-projects.vercel.app",
+        "attempted_at": "2026-11-16T19:47:26.298824+00:00",
+        "global_smoke_case": 12,
+        "passed": true,
+        "effective_host": "paddock-l9io99hnr-legodarks-projects.vercel.app",
+        "status": 200,
+        "duration_seconds": 0.418118,
+        "transport_exit": 0,
+        "security_headers": {
+          "nosniff": "nosniff",
+          "frame": "DENY",
+          "referrer": "no-referrer",
+          "csp_present": false
+        },
+        "sha256": "a8de581ec8a1132692ba7f3edca6f62532e735bb6d8235a1d670c29d644dd258",
+        "matches_expected_build": true,
+        "finished_at": "2026-11-16T19:47:27.774935+00:00"
+      },
+      {
+        "stage": "candidate",
+        "path": "/api/v1/health",
+        "kind": "api",
+        "url_host": "paddock-l9io99hnr-legodarks-projects.vercel.app",
+        "attempted_at": "2026-11-16T19:47:27.775442+00:00",
+        "global_smoke_case": 13,
+        "passed": true,
+        "effective_host": "paddock-l9io99hnr-legodarks-projects.vercel.app",
+        "status": 200,
+        "duration_seconds": 0.370996,
+        "transport_exit": 0,
+        "security_headers": {
+          "nosniff": "nosniff",
+          "frame": "DENY",
+          "referrer": "no-referrer",
+          "csp_present": true
+        },
+        "response": {
+          "ready": true,
+          "frozen_model": true
+        },
+        "finished_at": "2026-11-16T19:47:29.131426+00:00"
+      },
+      {
+        "stage": "candidate",
+        "path": "/api/v1/predict",
+        "kind": "api",
+        "url_host": "paddock-l9io99hnr-legodarks-projects.vercel.app",
+        "attempted_at": "2026-11-16T19:47:29.132627+00:00",
+        "global_smoke_case": 14,
+        "passed": true,
+        "effective_host": "paddock-l9io99hnr-legodarks-projects.vercel.app",
+        "status": 200,
+        "duration_seconds": 0.351866,
+        "transport_exit": 0,
+        "security_headers": {
+          "nosniff": "nosniff",
+          "frame": "DENY",
+          "referrer": "no-referrer",
+          "csp_present": true
+        },
+        "response": {
+          "prediction": 20155.0,
+          "historical": true,
+          "cheap_rows": 5,
+          "expensive_rows": 5
+        },
+        "finished_at": "2026-11-16T19:47:30.550117+00:00"
+      },
+      {
+        "stage": "candidate",
+        "path": "/api/v1/message",
+        "kind": "api",
+        "url_host": "paddock-l9io99hnr-legodarks-projects.vercel.app",
+        "attempted_at": "2026-11-16T19:47:30.550539+00:00",
+        "global_smoke_case": 15,
+        "passed": true,
+        "effective_host": "paddock-l9io99hnr-legodarks-projects.vercel.app",
+        "status": 200,
+        "duration_seconds": 0.300663,
+        "transport_exit": 0,
+        "security_headers": {
+          "nosniff": "nosniff",
+          "frame": "DENY",
+          "referrer": "no-referrer",
+          "csp_present": true
+        },
+        "response": {
+          "contexto": 1,
+          "historical": true
+        },
+        "finished_at": "2026-11-16T19:47:32.242030+00:00"
+      },
+      {
+        "stage": "candidate",
+        "path": "/api/v1/cars?limit=1",
+        "kind": "api",
+        "url_host": "paddock-l9io99hnr-legodarks-projects.vercel.app",
+        "attempted_at": "2026-11-16T19:47:32.242550+00:00",
+        "global_smoke_case": 16,
+        "passed": true,
+        "effective_host": "paddock-l9io99hnr-legodarks-projects.vercel.app",
+        "status": 200,
+        "duration_seconds": 0.362722,
+        "transport_exit": 0,
+        "security_headers": {
+          "nosniff": "nosniff",
+          "frame": "DENY",
+          "referrer": "no-referrer",
+          "csp_present": true
+        },
+        "response": {
+          "rows": 1,
+          "historical": true
+        },
+        "finished_at": "2026-11-16T19:47:33.838053+00:00"
+      },
+      {
+        "stage": "rollback",
+        "path": "/",
+        "kind": "anonymous",
+        "url_host": "paddock-phi-hazel.vercel.app",
+        "attempted_at": "2026-11-16T19:50:40.314466+00:00",
+        "global_smoke_case": 17,
+        "passed": true,
+        "effective_host": "paddock-phi-hazel.vercel.app",
+        "status": 302,
+        "duration_seconds": 0.344343,
+        "transport_exit": 0,
+        "finished_at": "2026-11-16T19:50:40.671032+00:00"
+      },
+      {
+        "stage": "rollback",
+        "path": "/",
+        "kind": "static",
+        "url_host": "paddock-phi-hazel.vercel.app",
+        "attempted_at": "2026-11-16T19:50:40.672062+00:00",
+        "global_smoke_case": 18,
+        "passed": true,
+        "effective_host": "paddock-phi-hazel.vercel.app",
+        "status": 200,
+        "duration_seconds": 0.292601,
+        "transport_exit": 0,
+        "security_headers": {
+          "nosniff": "nosniff",
+          "frame": "DENY",
+          "referrer": "no-referrer",
+          "csp_present": true
+        },
+        "sha256": "41e76755bd37fae99f1329b7fdf7dbeacee913a30e2437b64d32026c4ad4b19d",
+        "matches_expected_build": true,
+        "finished_at": "2026-11-16T19:50:42.032822+00:00"
+      },
+      {
+        "stage": "rollback",
+        "path": "/api/v1/health",
+        "kind": "api",
+        "url_host": "paddock-phi-hazel.vercel.app",
+        "attempted_at": "2026-11-16T19:50:42.033457+00:00",
+        "global_smoke_case": 19,
+        "passed": true,
+        "effective_host": "paddock-phi-hazel.vercel.app",
+        "status": 200,
+        "duration_seconds": 4.464406,
+        "transport_exit": 0,
+        "security_headers": {
+          "nosniff": "nosniff",
+          "frame": "DENY",
+          "referrer": "no-referrer",
+          "csp_present": true
+        },
+        "response": {
+          "ready": true,
+          "frozen_model": true
+        },
+        "finished_at": "2026-11-16T19:50:47.686614+00:00"
+      },
+      {
+        "stage": "restore",
+        "path": "/",
+        "kind": "anonymous",
+        "url_host": "paddock-phi-hazel.vercel.app",
+        "attempted_at": "2026-11-16T19:53:25.067697+00:00",
+        "global_smoke_case": 20,
+        "passed": true,
+        "effective_host": "paddock-phi-hazel.vercel.app",
+        "status": 302,
+        "duration_seconds": 0.357073,
+        "transport_exit": 0,
+        "finished_at": "2026-11-16T19:53:25.436993+00:00"
+      },
+      {
+        "stage": "restore",
+        "path": "/",
+        "kind": "static",
+        "url_host": "paddock-phi-hazel.vercel.app",
+        "attempted_at": "2026-11-16T19:53:25.438103+00:00",
+        "global_smoke_case": 21,
+        "passed": true,
+        "effective_host": "paddock-phi-hazel.vercel.app",
+        "status": 200,
+        "duration_seconds": 0.452355,
+        "transport_exit": 0,
+        "security_headers": {
+          "nosniff": "nosniff",
+          "frame": "DENY",
+          "referrer": "no-referrer",
+          "csp_present": true
+        },
+        "sha256": "41e76755bd37fae99f1329b7fdf7dbeacee913a30e2437b64d32026c4ad4b19d",
+        "matches_expected_build": true,
+        "finished_at": "2026-11-16T19:53:26.973163+00:00"
+      },
+      {
+        "stage": "restore",
+        "path": "/api/v1/health",
+        "kind": "api",
+        "url_host": "paddock-phi-hazel.vercel.app",
+        "attempted_at": "2026-11-16T19:53:26.973893+00:00",
+        "global_smoke_case": 22,
+        "passed": true,
+        "effective_host": "paddock-phi-hazel.vercel.app",
+        "status": 200,
+        "duration_seconds": 4.526282,
+        "transport_exit": 0,
+        "security_headers": {
+          "nosniff": "nosniff",
+          "frame": "DENY",
+          "referrer": "no-referrer",
+          "csp_present": true
+        },
+        "response": {
+          "ready": true,
+          "frozen_model": true
+        },
+        "finished_at": "2026-11-16T19:53:32.541174+00:00"
+      }
+    ]
+  },
+  "accounting": {
+    "prior_firewall_recheck": 98,
+    "later_redirect_location_read": 1,
+    "this_separate_private_rehearsal": 22,
+    "combined_observed": 121,
+    "reference_ceiling": 127,
+    "unused_against_reference": 6,
+    "meaning": "Separate bounded 22-HTTP rehearsal under current prepublication task; cumulative conservative accounting, not a new firewall burst or blanket authorization to spend the remainder. Prior first firewall experiment (61/67) and original functional smoke (20) remain separate."
+  },
+  "artifact_identity": {
+    "inventory": "candidate-artifacts-20261116.json",
+    "inventory_sha256": "dc1602ab4706da3d0b9cb832abe8a48c8ce805b9458736b0f1130d3b634fb835",
+    "selected_files_rechecked_locally": 88,
+    "all_selected_local_hashes_match": true,
+    "identity": "b945b2585044d997e619bb372adc31f8dc45048ef4dc95a5f9fe3bd83cc9183c",
+    "public_bytes": 504608,
+    "private_assets": [
+      {
+        "path": "assets/cars.sqlite3",
+        "bytes": 20914176,
+        "sha256": "39335cdb513654e3d6928cdac7c960886c3ce5eb7072c68938f70320eba0272d"
+      },
+      {
+        "path": "assets/contract.json",
+        "bytes": 48079,
+        "sha256": "f8552fe589e41265d917e002fa89a9ce156ccf5789bc048fafbcd776568fba2e"
+      },
+      {
+        "path": "assets/legacy.json",
+        "bytes": 49229,
+        "sha256": "957e319ab0025d9d9dcfce38a3c48fe3bffe828ed94f9c6dbac555fcc4d9c909"
+      },
+      {
+        "path": "assets/manifest.json",
+        "bytes": 889,
+        "sha256": "f46c47afe1913c3769720f7ae6f06c5e838c48114f2ebf0cc5643c7698a9a439"
+      },
+      {
+        "path": "assets/message.json.gz",
+        "bytes": 46725,
+        "sha256": "820505cfffa425d4c8502e7dcfe08aff37de25e6ad029a546daa9cd6376d0470"
+      },
+      {
+        "path": "assets/price.bin",
+        "bytes": 96082072,
+        "sha256": "862e15962e6866b34a36d9f13906dcdcaf8aba6b9023fd028a47290a8c7984b7"
+      }
+    ],
+    "remote_byte_checks": [
+      "HTML on both generated deployments and the tested alias after both transitions",
+      "JavaScript on both generated deployments"
+    ],
+    "remote_entire_function_digest_verified": false
+  },
+  "protection": {
+    "setting": "all",
+    "anonymous_root_samples": 6,
+    "anonymous_root_results": "302, no redirect followed",
+    "all_endpoints_individually_probed_anonymously": false,
+    "automation": "Native Vercel Protection Bypass for Automation for authenticated smoke; can also bypass certain system/bot mitigations. Custom WAF previously observed separately."
+  },
+  "alias_verification": {
+    "transition_control_plane_and_application": "paddock-phi-hazel.vercel.app",
+    "second_alias": "paddock-legodarks-projects.vercel.app",
+    "second_alias_scope": "Anonymous 302 on baseline and control-plane target B verified after restoration; not individually tested during rollback."
+  },
+  "limits": [
+    "Public catalogue decision unresolved; if rows are minimized, these full-catalogue private builds are not valid public rollback destinations until replaced by compatible builds.",
+    "Reported HTTP durations, including 4.46/4.53-second health requests, do not prove cold starts, memory use, CPU billing or remaining monthly allowance.",
+    "Remote HTML/JS hashes and functional results do not cryptographically verify every byte of the provider-built Python function. Source metadata is descriptive.",
+    "WAF encoded/normalized variants from an already limited IP remain incomplete; no new load test here.",
+    "No actual previous-version regression exercised: both deployments use the same maintained source. External settings/secrets are not rolled back by this proof."
+  ],
+  "unchanged": {
+    "custom_domains_dns": true,
+    "portfolio": true,
+    "main_and_historical_tag": true,
+    "paid_products_not_enabled": true,
+    "git_integration_still_disabled": true
+  },
+  "sources": [
+    {
+      "url": "https://vercel.com/changelog/protect-production-deployments-for-free-on-every-plan",
+      "checked_at": "2026-11-16T19:54:30.058828+00:00",
+      "sha256": "ab436db0b43e717880d9234403a5d9fc401dd6ad58687773a05811b169322695",
+      "excerpts": [
+        "te dashboards, and sites that aren’t yet ready to launch. From your project, open Security in the sidebar, select Deployment Protection , then choose All Deployments from the dropdown. Protect preview and production URLs for free by selecting All Deployments for Vercel Authentication. You can also make this the team default , so every new project starts with Vercel Authentication enabled for all deployments. With this change: Deployment Protection Exceptions are now free on every plan. Use an exception to make a specific preview domain public while keeping the rest of the project protected. Pro teams can now enable Password Protection for ind",
+        "tect all deployments in a project, including production, at no additional cost on every plan. Previously, protecting production domains required the $150-per-month Advanced Deployment Protection add-on. When enabled, visitors must sign in with a Vercel account that has access to the project. This makes it useful for internal tools, private dashboards, and sites that aren’t yet ready to launch. From your project, open Security in the sidebar, select Deployment Protection , then choose All Deployments from the dropdown. Protect preview and production URLs for free by selecting All Deployments for Vercel Authentication. You can also make this th"
+      ]
+    },
+    {
+      "url": "https://vercel.com/docs/instant-rollback",
+      "verified_excerpts": "release-platform-review-20261116.json"
+    },
+    {
+      "url": "https://vercel.com/docs/deployments/promote-preview-to-production",
+      "verified_excerpts": "release-platform-review-20261116.json"
+    }
+  ]
+}

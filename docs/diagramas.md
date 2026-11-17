@@ -1,0 +1,17 @@
+# Diagramas interactivos de Paddock
+
+Generados con [Archify](https://github.com/tt-a1i/archify), versión 3.2.0, desde el commit `e37848822238e3a61b12739185cdadd49843a620`. No requieren instalar Archify para abrir sus HTML autónomos. Se utilizó una copia local del repositorio, sin instalar habilidades globales ni servicios externos.
+
+1. [Arquitectura propuesta a coste cero](../.archify/architecture-paddock-propuesta-20261114-171724/paddock-propuesta.html): React, API Python con modelos compactos y catálogo SQLite bajo `paddock.juancerezo.com`.
+2. [Flujo de una predicción sin Blob](../.archify/sequence-paddock-prediccion-20261114-171724/paddock-prediccion.html): validación de entradas, inferencia local y consulta de comparables.
+3. [Evaluación y pasos previos a publicación](../.archify/workflow-paddock-validacion-20261114-171724/paddock-validacion.html): pruebas ya ejecutadas y condiciones pendientes de IDs, cuotas, preview y dominio.
+
+Los tres conservan la **propuesta congelada del 14-11-2026**. Sus textos sobre IDs pendientes y cuenta aún sin verificar corresponden a ese momento: el contrato de IDs y la cuenta Hobby se comprobaron posteriormente. El estado actual está en el [plan](plan-reactivacion.md), la [revisión de Hobby](revision-pr-y-hobby.md) y el [seguimiento #7](https://github.com/Legodark/paddock/issues/7). No hay aplicación desplegada ni margen mensual de compute certificado. Los modelos y el catálogo no se entregan al navegador en esta arquitectura.
+
+## Comprobaciones realizadas
+
+Los tres HTML ya pasan **`validate`, `deliver`, `check` y `browser-check`**, con el `finalize` original de Archify 3.2.0 en [GitHub Actions](https://github.com/Legodark/paddock/actions/runs/43725248284/job/132845649559). El job usa Google Chrome 157.0.8103.50, sandbox habilitado y el commit fijado de la herramienta. La [evidencia](evidence/ux/archify-hosted.json) conserva sus resúmenes originales, hashes y enlace a la ejecución. Los candidatos y los bytes de los HTML siguen intactos.
+
+La política administrada del Chromium local permite HTTP/HTTPS pero bloquea `file://`, transporte usado por Archify. Los intentos anteriores y el diagnóstico de `review-3/` se conservan como evidencia histórica de ese entorno. La resolución consiste en ejecutar el mismo CLI sin cambios en un runner compatible; no se cambian políticas, transporte o sandbox. El nuevo job de [CI](../ci/check_archify.mjs) repite los gates y falla si cambia el hash de un candidato o HTML respecto a [su manifiesto congelado](../ci/archify-candidates.json).
+
+También se inspeccionaron visualmente los tres diagramas en claro y oscuro. Esta revisión usó HTTP local con los mismos bytes verificados, por separado de los gates oficiales del runner. Se comprobaron etiquetas, flechas, límites, leyendas y el control de tema. Capturas: [arquitectura clara](evidence/ux/diagram-architecture.jpg), [oscura](evidence/ux/diagram-architecture-dark.jpg), [secuencia clara](evidence/ux/diagram-sequence.jpg), [oscura](evidence/ux/diagram-sequence-dark.jpg), [flujo claro](evidence/ux/diagram-workflow.jpg) y [oscuro](evidence/ux/diagram-workflow-dark.jpg). La [evidencia visual](evidence/ux/visual-review.json) distingue ambos procedimientos.

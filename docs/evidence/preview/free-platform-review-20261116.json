@@ -1,0 +1,128 @@
+{
+  "checked_at": "2026-11-16T15:05:23.910870+00:00",
+  "scope": {
+    "project": "paddock",
+    "team": "legodarks-projects",
+    "deployment": "dpl_9PXY5N878VVNqdJBj2JD9kF5fVxw",
+    "mode": "read-only control-plane and logs; no application requests"
+  },
+  "cli_version": "65.16.0",
+  "account_metadata": {
+    "plan": "hobby",
+    "status": "active",
+    "trial": null,
+    "fluid_compute": true,
+    "deployment_authentication": "all"
+  },
+  "billing_usage": {
+    "command": "vercel billing usage --scope legodarks-projects --json",
+    "exit_code": 1,
+    "period_reported": "2026-11-01 through 2026-11-16",
+    "result": "Billing cost data is unavailable",
+    "meaning": "Does not establish zero usage, zero cost, or available monthly allowance."
+  },
+  "runtime_logs": {
+    "last_30_minutes": "available",
+    "observed_application_messages": [
+      "GET /api/v1/catalog HTTP 200",
+      "POST /api/v1/predict HTTP 200"
+    ],
+    "observed_region": "cdg1",
+    "runtime": "python3.12",
+    "observed_attributes": {},
+    "system_log_query": {
+      "filter": "isSystemLog:true",
+      "records_returned": 0,
+      "time_range": {
+        "start": "2026-11-16T14:34:23.612Z",
+        "end": "2026-11-16T15:04:23.612Z"
+      }
+    },
+    "24_hour_query": {
+      "exit_code": 2,
+      "http_status": 400,
+      "reason": "invalid_arguments",
+      "server_message": "The hobby plan does not retain runtime logs for the requested time range."
+    }
+  },
+  "request_log_query": {
+    "command": "vercel logs requests --project <paddock-project> --scope legodarks-projects --query requestPath:/api* --limit 100 --json",
+    "exit_code": 0,
+    "summary": {
+      "records_returned": 3,
+      "time_range": {
+        "start": "2026-11-16T14:35:22.000Z",
+        "end": "2026-11-16T15:05:22.000Z"
+      },
+      "has_more": false,
+      "excluded_intervals": []
+    },
+    "records": [
+      {
+        "timestamp": "2026-11-16T14:59:07.516Z",
+        "path": "/api/v1/predict",
+        "method": "POST",
+        "status": 200,
+        "region": "cdg1",
+        "waf_action": "allow",
+        "browser": {
+          "device": "iPhone",
+          "os": "iOS 18.7",
+          "browser": "Safari",
+          "browser_version": "27.2",
+          "source": "HTTP user agent; no physical-device certification"
+        }
+      },
+      {
+        "timestamp": "2026-11-16T14:58:57.724Z",
+        "path": "/api/v1/catalog",
+        "method": "GET",
+        "status": 200,
+        "region": "cdg1",
+        "waf_action": "allow",
+        "browser": {
+          "device": "iPhone",
+          "os": "iOS 18.7",
+          "browser": "Safari",
+          "browser_version": "27.2",
+          "source": "HTTP user agent; no physical-device certification"
+        }
+      },
+      {
+        "timestamp": "2026-11-16T14:58:56.105Z",
+        "path": "/api/v1/catalog",
+        "method": "GET",
+        "status": 200,
+        "region": "cdg1",
+        "waf_action": "allow",
+        "browser": {
+          "device": "iPhone",
+          "os": "iOS 18.7",
+          "browser": "Safari",
+          "browser_version": "27.2",
+          "source": "HTTP user agent; no physical-device certification"
+        }
+      }
+    ],
+    "error": null
+  },
+  "api_endpoint_catalog": {
+    "command": "vercel api list --json",
+    "exit_code": 1,
+    "result": "Could not load API specification"
+  },
+  "unknown": [
+    "Actual platform active CPU usage",
+    "Actual platform provisioned-memory usage",
+    "Verified cold start and initialization duration",
+    "Current monthly remaining shared compute allowance"
+  ],
+  "limitations": [
+    "Read-only existing logs do not exercise the application or authorize additional smoke calls.",
+    "Successful Safari-user-agent requests do not prove a physical device, gauge approval, native keyboard/zoom/orientation, screen-reader testing or full accessibility conformance.",
+    "Observed wafAction allow does not prove the rate-limit threshold, recovery or rejection before function invocation.",
+    "Default project configuration is not a measurement of CPU or memory consumption.",
+    "No paid observability, trial, plan upgrade, runtime instrumentation, firewall change or application deployment was enabled.",
+    "Request IDs, IP addresses, raw user agents, query strings, message bodies, pagination cursors and account billing details are deliberately omitted."
+  ]
+}

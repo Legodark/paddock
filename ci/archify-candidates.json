@@ -1,0 +1,26 @@
+{
+  "tool_commit": "e37848822238e3a61b12739185cdadd49843a620",
+  "candidates": [
+    {
+      "type": "architecture",
+      "candidate": ".archify/architecture-paddock-propuesta-20261114-171724/candidate.json",
+      "artifact": ".archify/architecture-paddock-propuesta-20261114-171724/paddock-propuesta.html",
+      "candidate_sha256": "b2e1b7ae553665b42feae808d21d347e42a67acf74cf3827bb3afaa8a840d2e9",
+      "artifact_sha256": "c9f295c2b03ade7108f0125991e5df8a593cffe4bf17ea9fa53a880489214bc9"
+    },
+    {
+      "type": "sequence",
+      "candidate": ".archify/sequence-paddock-prediccion-20261114-171724/candidate.json",
+      "artifact": ".archify/sequence-paddock-prediccion-20261114-171724/paddock-prediccion.html",
+      "candidate_sha256": "f2b1e724ade4f3d9d8fcacf618c682d300aa21802960b976f5369a82007f72f7",
+      "artifact_sha256": "4775abb44c0fcbfa34d64abc69b6308e44d1253927d0a744a3cbbf9a52a6132a"
+    },
+    {
+      "type": "workflow",
+      "candidate": ".archify/workflow-paddock-validacion-20261114-171724/candidate.json",
+      "artifact": ".archify/workflow-paddock-validacion-20261114-171724/paddock-validacion.html",
+      "candidate_sha256": "88b30dcff531cf22af3c918d41c17de5cb99baab58b363a6ca1f71e0ed332b4c",
+      "artifact_sha256": "0e268907f214a22190ee9ff9934c33540ce39da9219fc49e2f8f4b39ecbf4336"
+    }
+  ]
+}

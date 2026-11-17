@@ -1,0 +1,65 @@
+{
+  "deployment": {
+    "id": "dpl_GBfCQ2LKio1khpnm8y7WzB1vDYFi",
+    "url": "https://paddock-g4updlcd1-legodarks-projects.vercel.app",
+    "readyState": "READY",
+    "environment": "preview"
+  },
+  "source_commit": "ae7072388432f7107407e604ff4107630b3ca2b4",
+  "static_checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "ssl_verify": 0,
+      "bytes": 718,
+      "sha256": "ab345b6c4dbab775c8ae9c6d98d8f3ad2bac02ee1384bd12f328c13bf98023f9",
+      "matches_build": true,
+      "nosniff": "nosniff",
+      "frame": "DENY",
+      "referrer": "no-referrer",
+      "csp": "default-src 'none'; script-src 'self'; style-src 'self'; style-src-attr 'unsafe-inline'; img-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'"
+    },
+    {
+      "path": "/assets/index-BTsMdZBp.js",
+      "status": 200,
+      "ssl_verify": 0,
+      "bytes": 263814,
+      "sha256": "0c1961038ad5662731b1d85470ec5b94d73c65766b6e39ee27181c9a759af6fc",
+      "matches_build": true,
+      "nosniff": "nosniff",
+      "frame": "DENY",
+      "referrer": "no-referrer",
+      "csp": ""
+    },
+    {
+      "path": "/assets/index-BsFQvHjF.css",
+      "status": 200,
+      "ssl_verify": 0,
+      "bytes": 25876,
+      "sha256": "65268c394aaaa2a8c502ddc36aed81f03424285bbc17add4f72a1bca0eadc921",
+      "matches_build": true,
+      "nosniff": "nosniff",
+      "frame": "DENY",
+      "referrer": "no-referrer",
+      "csp": ""
+    },
+    {
+      "path": "/paddock-delorean.png",
+      "status": 200,
+      "ssl_verify": 0,
+      "bytes": 38217,
+      "sha256": "c13355d2fb89e8a8112d063455291f12bf55a3492b9498fcd33b501effeb4195",
+      "matches_build": true,
+      "nosniff": "nosniff",
+      "frame": "DENY",
+      "referrer": "no-referrer",
+      "csp": ""
+    }
+  ],
+  "anonymous_document_status": 302,
+  "original_png_preserved": true,
+  "backend_unchanged": true,
+  "backend_source_files_compared": 16,
+  "additional_application_api_requests": 0,
+  "scope": "Authenticated static delivery and anonymous root only; local browser evidence is separate."
+}

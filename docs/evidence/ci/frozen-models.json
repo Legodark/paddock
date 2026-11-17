@@ -1,0 +1,17 @@
+{
+  "python": "3.10.22",
+  "zlib": "1.3.2",
+  "numpy": "1.24.4",
+  "scikit_learn": "1.2.1",
+  "artifacts": {
+    "cars.compact.bin": {
+      "bytes": 96082072,
+      "sha256": "862e15962e6866b34a36d9f13906dcdcaf8aba6b9023fd028a47290a8c7984b7"
+    },
+    "message.compact.json.gz": {
+      "bytes": 46725,
+      "sha256": "820505cfffa425d4c8502e7dcfe08aff37de25e6ad029a546daa9cd6376d0470"
+    }
+  },
+  "policy": "Frozen trusted input conversion only; no training, scraping or serving."
+}

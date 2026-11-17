@@ -1,0 +1,15 @@
+{
+  "python": "3.10.22",
+  "startup_seconds": 7.48233,
+  "price_inference": {
+    "samples": 1000,
+    "median_ms": 5.6618,
+    "p95_ms": 7.9543
+  },
+  "message_inference": {
+    "samples": 100,
+    "median_ms": 6.6489,
+    "p95_ms": 8.6251
+  },
+  "note": "Same golden input cases as standalone benchmark, local serial workload, different Python versions; no provider/network/concurrency measurement."
+}

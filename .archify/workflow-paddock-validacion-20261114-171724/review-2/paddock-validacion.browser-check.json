@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "browser-check",
+  "evidenceKind": "automated-browser",
+  "status": "fail",
+  "visualReview": "not-requested",
+  "provenance": "current",
+  "deliveryReceiptId": "e10e8e5d-290c-4f64-be5c-69f228f5e4b1",
+  "artifact": {
+    "path": "/workspace/paddock/.archify/workflow-paddock-validacion-20261114-171724/paddock-validacion.html",
+    "sha256": "0e268907f214a22190ee9ff9934c33540ce39da9219fc49e2f8f4b39ecbf4336",
+    "bytes": 843330
+  },
+  "state": {
+    "detail": "read",
+    "motion": "still"
+  },
+  "chrome": {
+    "status": "available",
+    "executable": "/usr/bin/chromium"
+  },
+  "diagnostics": [
+    {
+      "code": "viewer/browser-check-runtime",
+      "severity": "error",
+      "message": "browser-check could not complete its Chrome inspection.",
+      "subject": {
+        "artifact": "/workspace/paddock/.archify/workflow-paddock-validacion-20261114-171724/paddock-validacion.html"
+      },
+      "evidence": {
+        "reason": "Chrome navigation failed: net::ERR_BLOCKED_BY_ADMINISTRATOR"
+      },
+      "supportedFixes": [
+        "resolve the reported Chrome inspection error, then rerun browser-check"
+      ]
+    }
+  ],
+  "containment": {
+    "status": "fail",
+    "policy": "fit-or-reader-declared-readable-vertical-scroll",
+    "viewports": []
+  },
+  "themeStates": {
+    "status": "fail",
+    "viewports": []
+  },
+  "readability": {
+    "status": "fail",
+    "minimumProjectedNodeTextPx": 6,
+    "viewports": []
+  },
+  "viewerChrome": {
+    "status": "fail",
+    "viewports": []
+  },
+  "captures": {
+    "status": "not-requested",
+    "screenshots": [],
+    "contactSheet": null
+  },
+  "sidecars": {
+    "directory": "/workspace/paddock/.archify/workflow-paddock-validacion-20261114-171724/review-2",
+    "receipt": "paddock-validacion.browser-check.json",
+    "files": []
+  },
+  "error": "Chrome navigation failed: net::ERR_BLOCKED_BY_ADMINISTRATOR"
+}

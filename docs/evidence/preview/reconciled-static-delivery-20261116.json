@@ -1,0 +1,10 @@
+{
+  "source_evidence": "docs/evidence/ux/price-gauge-provider.json",
+  "same_deployment": "dpl_9PXY5N878VVNqdJBj2JD9kF5fVxw",
+  "positive_static_resources": 6,
+  "local_bytes_still_match_recorded_sha256": true,
+  "current_application_requests": 0,
+  "during_rate_limit_block": false,
+  "invalid_robots_control_preserved": true,
+  "meaning": "Positive static delivery is already verified for this deployment; simultaneous delivery during blocked-IP window remains untested."
+}

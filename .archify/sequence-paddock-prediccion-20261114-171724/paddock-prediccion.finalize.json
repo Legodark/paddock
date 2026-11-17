@@ -1,0 +1,378 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "finalize",
+  "status": "fail",
+  "type": "sequence",
+  "quality": "showcase",
+  "startedAt": "2026-11-14T16:17:31.604Z",
+  "specification": {
+    "path": "/workspace/paddock/.archify/sequence-paddock-prediccion-20261114-171724/candidate.json",
+    "sha256": "f2b1e724ade4f3d9d8fcacf618c682d300aa21802960b976f5369a82007f72f7",
+    "bytes": 2937
+  },
+  "artifact": {
+    "path": "/workspace/paddock/.archify/sequence-paddock-prediccion-20261114-171724/paddock-prediccion.html",
+    "sha256": "4775abb44c0fcbfa34d64abc69b6308e44d1253927d0a744a3cbbf9a52a6132a",
+    "bytes": 833656
+  },
+  "stages": {
+    "validate": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": null,
+      "execution": "embedded-in-deliver",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "/tmp/paddock-archify/archify/bin/archify.mjs",
+        "deliver",
+        "sequence",
+        "/workspace/paddock/.archify/sequence-paddock-prediccion-20261114-171724/candidate.json",
+        "/workspace/paddock/.archify/sequence-paddock-prediccion-20261114-171724/paddock-prediccion.html",
+        "--quality",
+        "showcase",
+        "--json"
+      ],
+      "receipt": {
+        "schemaVersion": 1,
+        "ok": true,
+        "command": "validate",
+        "specification": {
+          "sha256": "f2b1e724ade4f3d9d8fcacf618c682d300aa21802960b976f5369a82007f72f7",
+          "bytes": 2937
+        },
+        "validation": {
+          "checksPassed": 9,
+          "checkCount": 9,
+          "compositionProfile": "showcase",
+          "compositionStatus": "pass",
+          "errors": 0,
+          "warnings": 0
+        }
+      }
+    },
+    "deliver": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": 974,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "/tmp/paddock-archify/archify/bin/archify.mjs",
+        "deliver",
+        "sequence",
+        "/workspace/paddock/.archify/sequence-paddock-prediccion-20261114-171724/candidate.json",
+        "/workspace/paddock/.archify/sequence-paddock-prediccion-20261114-171724/paddock-prediccion.html",
+        "--quality",
+        "showcase",
+        "--json"
+      ],
+      "receipt": {
+        "schemaVersion": 1,
+        "receiptId": "5af7db72-07cd-49e1-a297-8184e2ab4952",
+        "ok": true,
+        "command": "deliver",
+        "type": "sequence",
+        "input": "/workspace/paddock/.archify/sequence-paddock-prediccion-20261114-171724/candidate.json",
+        "output": "/workspace/paddock/.archify/sequence-paddock-prediccion-20261114-171724/paddock-prediccion.html",
+        "specification": {
+          "sha256": "f2b1e724ade4f3d9d8fcacf618c682d300aa21802960b976f5369a82007f72f7",
+          "bytes": 2937
+        },
+        "artifact": {
+          "sha256": "4775abb44c0fcbfa34d64abc69b6308e44d1253927d0a744a3cbbf9a52a6132a",
+          "bytes": 833656
+        },
+        "validation": {
+          "checksPassed": 9,
+          "checkCount": 9,
+          "compositionProfile": "showcase",
+          "compositionStatus": "pass",
+          "errors": 0,
+          "warnings": 0
+        },
+        "update": {
+          "status": "unavailable",
+          "installedVersion": null,
+          "availableVersion": null,
+          "releaseNotes": null,
+          "checkedAt": null,
+          "source": null,
+          "noticeRequired": false,
+          "noticeText": null,
+          "reason": "disabled"
+        }
+      }
+    },
+    "check": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": 243,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "/tmp/paddock-archify/archify/bin/archify.mjs",
+        "check",
+        "/workspace/paddock/.archify/sequence-paddock-prediccion-20261114-171724/paddock-prediccion.html",
+        "--require-provenance"
+      ],
+      "receipt": {
+        "ok": true,
+        "file": "/workspace/paddock/.archify/sequence-paddock-prediccion-20261114-171724/paddock-prediccion.html",
+        "artifact": {
+          "sha256": "4775abb44c0fcbfa34d64abc69b6308e44d1253927d0a744a3cbbf9a52a6132a",
+          "bytes": 833656
+        },
+        "checks": [
+          {
+            "name": "single_svg",
+            "ok": true,
+            "details": [
+              "found 1 <svg> block(s)"
+            ]
+          },
+          {
+            "name": "finite_svg",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "orthogonal_arrows",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "label_route_clearance",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "relationship_crossings",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "relationship_corridors",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "container_border_runs",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "route_rhythm",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "legend_clearance",
+            "ok": true,
+            "details": []
+          }
+        ],
+        "composition": {
+          "schemaVersion": 1,
+          "profile": "showcase",
+          "status": "pass",
+          "summary": {
+            "errors": 0,
+            "warnings": 0
+          },
+          "metrics": {
+            "properCrossings": 0,
+            "resolvedCrossovers": 0,
+            "ambiguousCorridors": 0,
+            "arrowheadCollisions": 0,
+            "containerBorderRuns": 0,
+            "labelRouteClearanceIssues": 0,
+            "labelCanvasOverflowIssues": 0,
+            "minLabelRouteClearance": 35,
+            "desktopReadabilityIssues": 0,
+            "viewportHeightIssues": 0,
+            "minProjectedNodeTextPx": 7,
+            "maxBends": 0,
+            "routesOverSuggestedBends": 0,
+            "maxStretch": 1,
+            "routesOverSuggestedStretch": 0,
+            "minSegmentPx": 200.3,
+            "minInteriorSegmentPx": null,
+            "shortSegmentCount": 0,
+            "shortEndpointSegmentCount": 0,
+            "shortInteriorSegmentCount": 0,
+            "microSegmentCount": 0
+          },
+          "suggestedLimits": {
+            "bendsPerRelationship": 2,
+            "stretch": 1.35,
+            "segmentPx": 16,
+            "microSegmentPx": 8
+          },
+          "routeReview": {
+            "crossings": [],
+            "detours": []
+          },
+          "leadingSpace": {
+            "measured": false,
+            "reviewSuggested": false
+          },
+          "sequenceColumnSpace": {
+            "measured": true,
+            "columnFit": "spread",
+            "participantCount": 4,
+            "occupiedRight": 880,
+            "viewBoxLeft": 0,
+            "canvasWidth": 920,
+            "emptyRightPx": 40,
+            "emptyRightRatio": 0.043,
+            "typicalParticipantWidth": 175,
+            "reviewSuggested": false
+          },
+          "desktopReadability": {
+            "budgetBasis": "legacy-930",
+            "readerContract": "declared-wide-v1",
+            "availableDiagramWidth": 930,
+            "actualBudgetPx": 930,
+            "limit": "legacy",
+            "requestedTargetPx": null,
+            "requestedTargetMet": null,
+            "hardFloorPx": 6,
+            "hardFloorMet": true,
+            "minimumOwner": {
+              "kind": "edge",
+              "id": "input",
+              "from": "web",
+              "to": "api"
+            },
+            "minimumSourceTextPx": 7,
+            "minimumProjectedTextPx": 7,
+            "semanticTextCount": 16
+          },
+          "issues": []
+        },
+        "provenance": "current",
+        "deliveryReceiptId": "5af7db72-07cd-49e1-a297-8184e2ab4952"
+      }
+    },
+    "browser-check": {
+      "status": "fail",
+      "exitCode": 1,
+      "durationMs": 596,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "/tmp/paddock-archify/archify/bin/archify.mjs",
+        "browser-check",
+        "/workspace/paddock/.archify/sequence-paddock-prediccion-20261114-171724/paddock-prediccion.html",
+        "--json",
+        "--require-provenance"
+      ],
+      "execution": "in-process",
+      "receipt": {
+        "schemaVersion": 1,
+        "ok": false,
+        "command": "browser-check",
+        "evidenceKind": "automated-browser",
+        "status": "fail",
+        "visualReview": "not-requested",
+        "provenance": "current",
+        "deliveryReceiptId": "5af7db72-07cd-49e1-a297-8184e2ab4952",
+        "artifact": {
+          "path": "/workspace/paddock/.archify/sequence-paddock-prediccion-20261114-171724/paddock-prediccion.html",
+          "sha256": "4775abb44c0fcbfa34d64abc69b6308e44d1253927d0a744a3cbbf9a52a6132a",
+          "bytes": 833656
+        },
+        "state": {
+          "detail": "read",
+          "motion": "still"
+        },
+        "chrome": {
+          "status": "available",
+          "executable": "/usr/bin/chromium"
+        },
+        "diagnostics": [
+          {
+            "code": "viewer/browser-check-runtime",
+            "severity": "error",
+            "message": "browser-check could not complete its Chrome inspection.",
+            "subject": {
+              "artifact": "/workspace/paddock/.archify/sequence-paddock-prediccion-20261114-171724/paddock-prediccion.html"
+            },
+            "evidence": {
+              "reason": "Chrome DevTools read pipe failed: stream ended\nChrome process: still running.\nChrome stderr:\n[6083:6083:1114/161733.485680:ERROR:third_party/crashpad/crashpad/util/file/filesystem_posix.cc:63] mkdir : No such file or directory (2)\nchrome_crashpad_handler: --database is required\nTry 'chrome_crashpad_handler --help' for more information.\n[6083:6083:1114/161733.501071:FATAL:sandbox/linux/suid/client/setuid_sandbox_host.cc:172] The SUID sandbox helper binary was found, but is not configured correctly. Rather than run without sandboxing I'm aborting now. You need to make sure that /usr/lib/chromium/chrome-sandbox is owned by root and has mode 4755.\nChrome transport: Node v24.22.1, libuv 1.52.1, linux; pid=6083, exitCode=null, signalCode=null.\nChrome read pipe: readable=false, ended=true, destroyed=false, receivedBytes=0, messages=0, bufferedBytes=0.\nChrome write pipe: writable=true, ended=false, destroyed=false, completedWrites=1, writtenBytes=50, bufferedBytes=0."
+            },
+            "supportedFixes": [
+              "resolve the reported Chrome inspection error, then rerun browser-check"
+            ]
+          }
+        ],
+        "containment": {
+          "status": "fail",
+          "policy": "fit-or-reader-declared-readable-vertical-scroll",
+          "viewports": []
+        },
+        "themeStates": {
+          "status": "fail",
+          "viewports": []
+        },
+        "readability": {
+          "status": "fail",
+          "minimumProjectedNodeTextPx": 6,
+          "viewports": []
+        },
+        "viewerChrome": {
+          "status": "fail",
+          "viewports": []
+        },
+        "captures": {
+          "status": "not-requested",
+          "screenshots": [],
+          "contactSheet": null
+        },
+        "sidecars": {
+          "receipt": "paddock-prediccion.browser-check.json",
+          "files": []
+        },
+        "error": "Chrome DevTools read pipe failed: stream ended\nChrome process: still running.\nChrome stderr:\n[6083:6083:1114/161733.485680:ERROR:third_party/crashpad/crashpad/util/file/filesystem_posix.cc:63] mkdir : No such file or directory (2)\nchrome_crashpad_handler: --database is required\nTry 'chrome_crashpad_handler --help' for more information.\n[6083:6083:1114/161733.501071:FATAL:sandbox/linux/suid/client/setuid_sandbox_host.cc:172] The SUID sandbox helper binary was found, but is not configured correctly. Rather than run without sandboxing I'm aborting now. You need to make sure that /usr/lib/chromium/chrome-sandbox is owned by root and has mode 4755.\nChrome transport: Node v24.22.1, libuv 1.52.1, linux; pid=6083, exitCode=null, signalCode=null.\nChrome read pipe: readable=false, ended=true, destroyed=false, receivedBytes=0, messages=0, bufferedBytes=0.\nChrome write pipe: writable=true, ended=false, destroyed=false, completedWrites=1, writtenBytes=50, bufferedBytes=0."
+      }
+    }
+  },
+  "browserCheck": {
+    "requested": true,
+    "ran": false
+  },
+  "diagnostics": [
+    {
+      "code": "viewer/browser-check-runtime",
+      "severity": "error",
+      "message": "browser-check could not complete its Chrome inspection.",
+      "subject": {
+        "artifact": "/workspace/paddock/.archify/sequence-paddock-prediccion-20261114-171724/paddock-prediccion.html"
+      },
+      "evidence": {
+        "reason": "Chrome DevTools read pipe failed: stream ended\nChrome process: still running.\nChrome stderr:\n[6083:6083:1114/161733.485680:ERROR:third_party/crashpad/crashpad/util/file/filesystem_posix.cc:63] mkdir : No such file or directory (2)\nchrome_crashpad_handler: --database is required\nTry 'chrome_crashpad_handler --help' for more information.\n[6083:6083:1114/161733.501071:FATAL:sandbox/linux/suid/client/setuid_sandbox_host.cc:172] The SUID sandbox helper binary was found, but is not configured correctly. Rather than run without sandboxing I'm aborting now. You need to make sure that /usr/lib/chromium/chrome-sandbox is owned by root and has mode 4755.\nChrome transport: Node v24.22.1, libuv 1.52.1, linux; pid=6083, exitCode=null, signalCode=null.\nChrome read pipe: readable=false, ended=true, destroyed=false, receivedBytes=0, messages=0, bufferedBytes=0.\nChrome write pipe: writable=true, ended=false, destroyed=false, completedWrites=1, writtenBytes=50, bufferedBytes=0."
+      },
+      "supportedFixes": [
+        "resolve the reported Chrome inspection error, then rerun browser-check"
+      ]
+    }
+  ],
+  "evidence": {
+    "receipt": "/workspace/paddock/.archify/sequence-paddock-prediccion-20261114-171724/paddock-prediccion.finalize.json",
+    "summaryReceipt": "/workspace/paddock/.archify/sequence-paddock-prediccion-20261114-171724/paddock-prediccion.finalize-summary.json",
+    "browserCheckReceipt": "/workspace/paddock/.archify/sequence-paddock-prediccion-20261114-171724/paddock-prediccion.browser-check.json"
+  },
+  "visualReview": "not-requested",
+  "failedStage": "browser-check",
+  "finishedAt": "2026-11-14T16:17:33.539Z",
+  "durationMs": 1934,
+  "update": {
+    "status": "unavailable",
+    "installedVersion": null,
+    "availableVersion": null,
+    "releaseNotes": null,
+    "checkedAt": null,
+    "source": null,
+    "noticeRequired": false,
+    "noticeText": null,
+    "reason": "cache-unavailable"
+  }
+}

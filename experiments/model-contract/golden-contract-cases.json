@@ -1,0 +1,226 @@
+[
+  {
+    "labels": {
+      "marca": "Citroen",
+      "modelo": "Citroen C3 aircross",
+      "combustible": "Gasolina",
+      "cambio": "Manual"
+    },
+    "physical_features": {
+      "año": 2022.0,
+      "motor (CV)": 110.0,
+      "kilometros": 7119.0,
+      "cilindrada": 1199.0,
+      "marchas": 6.0
+    },
+    "expected_vector": [
+      2022.0,
+      110.0,
+      7119.0,
+      1199.0,
+      6.0,
+      10.0,
+      118.0,
+      3.0,
+      1.0
+    ],
+    "expected_original_prediction": 20155.0,
+    "warning": "Regression fixture, not an accuracy or training-coverage claim."
+  },
+  {
+    "labels": {
+      "marca": "Ford",
+      "modelo": "Ford Tourneo courier",
+      "combustible": "Diesel",
+      "cambio": "Manual"
+    },
+    "physical_features": {
+      "año": 2019.0,
+      "motor (CV)": 95.0,
+      "kilometros": 153880.0,
+      "cilindrada": 1498.0,
+      "marchas": 5.0
+    },
+    "expected_vector": [
+      2019.0,
+      95.0,
+      153880.0,
+      1498.0,
+      5.0,
+      20.0,
+      239.0,
+      1.0,
+      1.0
+    ],
+    "expected_original_prediction": 11826.4,
+    "warning": "Regression fixture, not an accuracy or training-coverage claim."
+  },
+  {
+    "labels": {
+      "marca": "Volkswagen",
+      "modelo": "Volkswagen Golf",
+      "combustible": "Gasolina y corriente eléctrica",
+      "cambio": "Automático"
+    },
+    "physical_features": {
+      "año": 2015.0,
+      "motor (CV)": 204.0,
+      "kilometros": 179000.0,
+      "cilindrada": 1395.0,
+      "marchas": 6.0
+    },
+    "expected_vector": [
+      2015.0,
+      204.0,
+      179000.0,
+      1395.0,
+      6.0,
+      68.0,
+      675.0,
+      5.0,
+      0.0
+    ],
+    "expected_original_prediction": 16545.1,
+    "warning": "Regression fixture, not an accuracy or training-coverage claim."
+  },
+  {
+    "labels": {
+      "marca": "Seat",
+      "modelo": "Seat Arona",
+      "combustible": "Gasolina/gas",
+      "cambio": "Manual"
+    },
+    "physical_features": {
+      "año": 2021.0,
+      "motor (CV)": 90.0,
+      "kilometros": 18432.0,
+      "cilindrada": 999.0,
+      "marchas": 5.0
+    },
+    "expected_vector": [
+      2021.0,
+      90.0,
+      18432.0,
+      999.0,
+      5.0,
+      58.0,
+      581.0,
+      6.0,
+      1.0
+    ],
+    "expected_original_prediction": 16938.11,
+    "warning": "Regression fixture, not an accuracy or training-coverage claim."
+  },
+  {
+    "labels": {
+      "marca": "Peugeot",
+      "modelo": "Peugeot 208",
+      "combustible": "Corriente eléctrica",
+      "cambio": "Automático"
+    },
+    "physical_features": {
+      "año": 2021.0,
+      "motor (CV)": 136.0,
+      "kilometros": 18975.0,
+      "cilindrada": 0.0,
+      "marchas": 1.0
+    },
+    "expected_vector": [
+      2021.0,
+      136.0,
+      18975.0,
+      0.0,
+      1.0,
+      51.0,
+      511.0,
+      0.0,
+      0.0
+    ],
+    "expected_original_prediction": 29639.75,
+    "warning": "Regression fixture, not an accuracy or training-coverage claim."
+  },
+  {
+    "labels": {
+      "marca": "Mercedes-benz",
+      "modelo": "Mercedes-benz Clase gle",
+      "combustible": "Diesel y corriente eléctrica",
+      "cambio": "Automático"
+    },
+    "physical_features": {
+      "año": 2021.0,
+      "motor (CV)": 320.0,
+      "kilometros": 9000.0,
+      "cilindrada": 1950.0,
+      "marchas": 9.0
+    },
+    "expected_vector": [
+      2021.0,
+      320.0,
+      9000.0,
+      1950.0,
+      9.0,
+      44.0,
+      421.0,
+      2.0,
+      0.0
+    ],
+    "expected_original_prediction": 66821.15,
+    "warning": "Regression fixture, not an accuracy or training-coverage claim."
+  },
+  {
+    "labels": {
+      "marca": "Mercedes-benz",
+      "modelo": "Mercedes-benz Clase s",
+      "combustible": "Gasolina Super",
+      "cambio": "Automático"
+    },
+    "physical_features": {
+      "año": 1993.0,
+      "motor (CV)": 394.0,
+      "kilometros": 280000.0,
+      "cilindrada": 5987.0,
+      "marchas": 4.0
+    },
+    "expected_vector": [
+      1993.0,
+      394.0,
+      280000.0,
+      5987.0,
+      4.0,
+      44.0,
+      426.0,
+      4.0,
+      0.0
+    ],
+    "expected_original_prediction": 12832.7,
+    "warning": "Regression fixture, not an accuracy or training-coverage claim."
+  },
+  {
+    "labels": {
+      "marca": "Renault",
+      "modelo": "Renault Laguna",
+      "combustible": "Mixto Gasolina/Etanol",
+      "cambio": "Manual"
+    },
+    "physical_features": {
+      "año": 2011.0,
+      "motor (CV)": 140.0,
+      "kilometros": 106749.0,
+      "cilindrada": 1997.0,
+      "marchas": 6.0
+    },
+    "expected_vector": [
+      2011.0,
+      140.0,
+      106749.0,
+      1997.0,
+      6.0,
+      54.0,
+      551.0,
+      7.0,
+      1.0
+    ],
+    "expected_original_prediction": 9414.79,
+    "warning": "Regression fixture, not an accuracy or training-coverage claim."
+  }
+]

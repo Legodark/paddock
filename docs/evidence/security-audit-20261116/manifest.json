@@ -1,0 +1,16 @@
+{
+  "methodology": "Cloudflare security-audit-skill",
+  "skill_ref": "c1c8a8c1471069fb0e188eeaff69b8e8db6564a8",
+  "target_execution": false,
+  "files_sha256": {
+    "run-metadata.json": "7d142942a83048499e30b026acde575f22cd29aaedea4024b54286158f2c2f05",
+    "architecture.md": "3afd3931f6db42aa2a36d6618bcb2cf1dc0e05a64961eeffaf47ab5712524729",
+    "coverage-ledger.json": "d52bb7983108abd6be7a7474b20e3e6bd688f53cbd9a46812a752c52bda2b2d3",
+    "findings.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "REPORT.md": "4e4b7ef90d789cb0067d8580c6a08cee81136b51553a4975c8844dc08e7b9902",
+    "FINDINGS-DETAIL.md": "aeb900d86af21fd734b09ceb852cc33054ad13dfdb1522ee969a26ae2a01a41e",
+    "NEEDS-VALIDATION.md": "cd81abea03e850ad046b6ea4fb74cd0ac65b9f5d1e35d46226b03dd53ad3cafe",
+    "validation.json": "4b85c58c7210f32ab5cb1695e56a19c8c86e956abe99b27673e357e15265c733",
+    "source-snapshot.json": "9a8450fdae1f69f8925e489b2234919156039409ec3be715b35139d0008ea54b"
+  }
+}

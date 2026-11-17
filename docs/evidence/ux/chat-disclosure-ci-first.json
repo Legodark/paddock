@@ -1,0 +1,108 @@
+{
+  "passed": false,
+  "checks": [
+    {
+      "check": "npm-audit.json",
+      "passed": true,
+      "detail": "0 known vulnerabilities"
+    },
+    {
+      "check": "build-tools-audit.json",
+      "passed": true,
+      "detail": "0 known vulnerabilities"
+    },
+    {
+      "check": "api-audit.json",
+      "passed": true,
+      "detail": "7 packages, 0 advisories, 0 skipped"
+    },
+    {
+      "check": "bundle-audit.json",
+      "passed": false,
+      "detail": "Not completed"
+    },
+    {
+      "check": "Unit tests",
+      "passed": true,
+      "detail": "82 passed"
+    },
+    {
+      "check": "API tests",
+      "passed": true,
+      "detail": "17 passed"
+    },
+    {
+      "check": "CI guard tests",
+      "passed": true,
+      "detail": "7 passed"
+    },
+    {
+      "check": "Browser tests",
+      "passed": false,
+      "detail": "188 passed, 2 failed, 0 skipped, 0 flaky: [desktop-webkit] ARIA compatibility avoids the crashing getter without accepting broken label references: Test timeout of 30000ms exceeded while setting up \"page\".\n[desktop-firefox] closing and Escape preserve a draft and return focus to the opener: Error: locator.dispatchEvent: Page crashed\nCall log:\n  - waiting for getByLabel('Tu consulta sobre coches')\n; Google Chrome 157.0.8103.50"
+    },
+    {
+      "check": "Frozen model reproduction",
+      "passed": true,
+      "detail": "Both reviewed artifact SHA-256 checks passed"
+    },
+    {
+      "check": "package-check.json",
+      "passed": false,
+      "detail": "Not completed"
+    },
+    {
+      "check": "Workflow and bash syntax",
+      "passed": true,
+      "detail": "actionlint 1.7.12"
+    },
+    {
+      "check": "Local firewall policy",
+      "passed": true,
+      "detail": "Local policy only; not applied or enforced on Vercel"
+    }
+  ],
+  "execution_context": "github-actions",
+  "scope": "Checks on the current runner only; no deployment, Vercel quotas or firewall enforcement verified.",
+  "browser_profiles": [
+    {
+      "project": "desktop-chromium",
+      "version": "chromium 157.0.8103.50",
+      "passed": 38,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "project": "mobile-chromium",
+      "version": "chromium 157.0.8103.50",
+      "passed": 38,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "project": "desktop-firefox",
+      "version": "firefox 159.0",
+      "passed": 37,
+      "failed": 1,
+      "skipped": 0
+    },
+    {
+      "project": "desktop-webkit",
+      "version": "webkit 27.2",
+      "passed": 37,
+      "failed": 1,
+      "skipped": 0
+    },
+    {
+      "project": "mobile-webkit",
+      "version": "webkit 27.2",
+      "passed": 38,
+      "failed": 0,
+      "skipped": 0
+    }
+  ],
+  "source_commit": "184ef4b36903f3eea9f250e43e2f4afca1f219d3",
+  "run_id": 43833957528,
+  "attempt": 1,
+  "url": "https://github.com/Legodark/paddock/actions/runs/43833957528/attempts/1"
+}

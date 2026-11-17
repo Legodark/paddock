@@ -1,0 +1,27 @@
+{
+  "checked_at": "2026-11-16T19:15:57.093221+00:00",
+  "deployment": "dpl_9PXY5N878VVNqdJBj2JD9kF5fVxw",
+  "source_commit": "2b8b7608341663fc5852220d3460cd33d2195cc2",
+  "purpose": "Complete previously missing redirect destination; one renewed read-only diagnostic within existing 127-HTTP ceiling.",
+  "path": "/api//v1/health",
+  "status": 308,
+  "duration_seconds": 0.298829,
+  "redirect_target": {
+    "scheme": "https",
+    "host": "paddock-jd7a8siqc-legodarks-projects.vercel.app",
+    "path": "/api/v1/health",
+    "query_present": false
+  },
+  "same_origin_canonical_health": true,
+  "followed_redirect": false,
+  "retries": 0,
+  "concurrency": 1,
+  "application_requests": 1,
+  "combined_requests_under_127_ceiling": 99,
+  "remaining": 28,
+  "provider_error": "",
+  "curl_exit_code": 0,
+  "region": "cle1",
+  "under_rate_limit_block": false,
+  "rule_changes": false
+}

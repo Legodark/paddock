@@ -1,0 +1,9 @@
+{
+  "name": "paddock",
+  "framework": null,
+  "outputDirectory": "public",
+  "ssoProtection": {
+    "deploymentType": "all"
+  },
+  "skipGitConnectDuringLink": true
+}

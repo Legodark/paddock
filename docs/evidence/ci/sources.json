@@ -1,0 +1,60 @@
+{
+  "checked_at": "2026-11-15T01:23:46.941678+00:00",
+  "documentation": [
+    {
+      "url": "https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting",
+      "retrieved_body_sha256": "3102a9a02e66906a5c0f3110266f4016514a6dba2ffa227242ee93ad162e1b7d"
+    },
+    {
+      "url": "https://vercel.com/docs/vercel-firewall/vercel-waf/custom-rules",
+      "retrieved_body_sha256": "86b2477894e0a642ad6ee7950e5c1e66278b555818b53cbfb6393463eb171d87"
+    },
+    {
+      "url": "https://vercel.com/docs/vercel-firewall/vercel-waf/usage-and-pricing",
+      "retrieved_body_sha256": "9eadc97d8790c9ad9a6753b9bf71644b6dade8292af421db465169a260dba597"
+    },
+    {
+      "url": "https://vercel.com/docs/plans/hobby",
+      "retrieved_body_sha256": "77c5c712d6bbaecdaf82c01d6042ef1c78be3d8a67fadad33e7f5863fdaef1fb"
+    },
+    {
+      "url": "https://vercel.com/changelog/rate-limiting-now-available-on-hobby-with-higher-included-usage-on-pro",
+      "retrieved_body_sha256": "5e5bc869341f6ff3c2a816e1fcae67084464fc8558cfc6c9a43ce2c5056fb35b"
+    }
+  ],
+  "actions": [
+    {
+      "repository": "https://github.com/actions/checkout",
+      "ref": "refs/tags/v6",
+      "verified_commit": "d23441a48e516b6c34aea4fa41551a30e30af803",
+      "action_manifest_sha256": "d59219cb79590abdb877deaa14e3b65a00c05318bf5a6f3b989b9162b5d08c35",
+      "runtime": "node24",
+      "verification": "git ls-remote plus HTTPS action.yml at the immutable commit"
+    },
+    {
+      "repository": "https://github.com/actions/setup-node",
+      "ref": "refs/tags/v6",
+      "verified_commit": "249970729cb0ef3589644e2896645e5dc5ba9c38",
+      "action_manifest_sha256": "ad45f1922115116fb4706651d0a9262332bc4e4f11eb2021e09789dd1af18085",
+      "runtime": "node24",
+      "verification": "git ls-remote plus HTTPS action.yml at the immutable commit"
+    },
+    {
+      "repository": "https://github.com/actions/setup-python",
+      "ref": "refs/tags/v6",
+      "verified_commit": "ece7cb06caefa5fff74198d8649806c4678c61a1",
+      "action_manifest_sha256": "a95cf5ade72699eb8a044e77a74b1e127a223759f13c42a1068bb9cf918b8830",
+      "runtime": "node24",
+      "verification": "git ls-remote plus HTTPS action.yml at the immutable commit"
+    }
+  ],
+  "public_repository": {
+    "url": "https://github.com/Legodark/paddock",
+    "head": "d43ea99461ab8d2457f4ccf8552822d34d6dfd52",
+    "verification": "git ls-remote with credential helper/extraHeader disabled and prompting disabled"
+  },
+  "notes": [
+    "Documentation links and hashes only; no full copies of external documentation.",
+    "No account tokens, billing addresses, raw team responses or runtime environments are included."
+  ]
+}

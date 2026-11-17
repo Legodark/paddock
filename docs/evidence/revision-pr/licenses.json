@@ -1,0 +1,30 @@
+{
+  "frontend": {
+    "packages": [
+      "react",
+      "react-dom",
+      "scheduler"
+    ],
+    "license": "MIT",
+    "notice_file": "web/public/THIRD_PARTY_NOTICES.txt",
+    "license_sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+  },
+  "icons": {
+    "source": "https://github.com/feathericons/feather",
+    "license": "MIT",
+    "license_sha256": "308028e93fcf84972523cdf6e616f73168546b4953895f516d01287f16fe7bee"
+  },
+  "archify": {
+    "source": "https://github.com/tt-a1i/archify/blob/e37848822238e3a61b12739185cdadd49843a620/LICENSE",
+    "license": "Apache-2.0",
+    "notice_file": ".archify/licenses/Archify-LICENSE.txt",
+    "license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  "dataset": {
+    "source_in_notebook": "Autocasion",
+    "source_url": "https://www.autocasion.com",
+    "license_in_repository": null,
+    "status": "No permission or dataset license located. User asked whether supporting evidence exists. No source website accessed."
+  },
+  "original_project_license": "No top-level license located. No blanket license added to original code, models or data."
+}

@@ -1,0 +1,25 @@
+{
+  "valid_local_policy": true,
+  "remote_applied": false,
+  "scope": "Local policy shape and path coverage only; no rate counter or Vercel account enforcement tested.",
+  "api_paths_covered": [
+    "/api",
+    "/api/",
+    "/api/index.py",
+    "/api/v1/predict",
+    "/api/v1/message",
+    "/api/v1/cars",
+    "/api/v1/health",
+    "/api/v1/catalog",
+    "/api/v1/search-catalog"
+  ],
+  "static_paths_excluded": [
+    "/",
+    "/assets/index-example.js",
+    "/assets/index-example.css",
+    "/robots.txt",
+    "/favicon.ico"
+  ],
+  "review_command": "vercel firewall rules add 'Paddock API — 60 requests per minute per IP' --scope legodarks-projects --project paddock --condition '{\"type\":\"path\",\"op\":\"pre\",\"value\":\"/api\"}' --action rate_limit --rate-limit-algo fixed_window --rate-limit-requests 60 --rate-limit-window 60 --rate-limit-keys ip --rate-limit-action rate_limit",
+  "notice": "Do not run until the correct project exists and the Hobby/pricing dialog is reviewed. This command stages a remote draft; publishing it is a separate action."
+}

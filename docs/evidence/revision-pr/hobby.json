@@ -1,0 +1,22 @@
+{
+  "checked_at": "2026-11-15T13:10:01.657995+00:00",
+  "team_slug": "legodarks-projects",
+  "billing": {
+    "plan": "hobby",
+    "status": "active",
+    "trial": null
+  },
+  "paddock_project_exists": false,
+  "billing_usage_query": {
+    "scope": "legodarks-projects",
+    "since": "2026-11-01",
+    "until": "2026-11-15",
+    "available": false,
+    "interpretation": "CLI reports billing cost data unavailable; no zero-usage inference."
+  },
+  "monthly_compute_headroom": null,
+  "paid_services_enabled_by_this_review": false,
+  "application_deployed": false,
+  "dns_changed": false,
+  "other_projects_count": 3
+}

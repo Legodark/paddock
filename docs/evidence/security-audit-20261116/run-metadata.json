@@ -1,0 +1,111 @@
+{
+  "run_id": "paddock-20261116-1",
+  "repo": "Legodark/paddock",
+  "target": "/workspace/paddock",
+  "source_ref": "5e8091b6fb8a88ec4c4550b9356dd7026d44b42e",
+  "worktree_dirty": false,
+  "profile": "standard",
+  "scope_paths": [
+    "web/",
+    "deploy/vercel/",
+    "tools/",
+    "ci/",
+    ".github/workflows/",
+    "security/"
+  ],
+  "budget": 32,
+  "execution_policy": "sandboxed-source-and-local-only",
+  "selected_companion_files": [
+    "CLIENT-SIDE.md",
+    "CLOUD-AND-DEPLOYMENT.md",
+    "SUPPLY-CHAIN-AND-RELEASE.md",
+    "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md",
+    "WEB-PROTOCOL-AND-AUTH.md"
+  ],
+  "prior_run_paths": [],
+  "prior_evidence_paths": [
+    "docs/seguridad-reactivacion.md",
+    "docs/evidence/preview/firewall-recheck-20261116.json"
+  ],
+  "prior_ledger_status": "No compatible coverage-ledger.json/findings.json identified in earlier project work; existing prose evidence is not assumed coverage.",
+  "shared_file_owners": {
+    "run-metadata.json": "parent",
+    "architecture.md": "parent",
+    "coverage-ledger.json": "parent",
+    "findings.json": "parent",
+    "REPORT.md": "parent",
+    "FINDINGS-DETAIL.md": "parent",
+    "NEEDS-VALIDATION.md": "parent"
+  },
+  "run_status": "complete",
+  "created_at": "2026-11-16T18:27:46.295029+00:00",
+  "skill_ref": "c1c8a8c1471069fb0e188eeaff69b8e8db6564a8",
+  "agent_invocations_spent": 13,
+  "pre_recon_budget_gate": {
+    "baseline_recon": 4,
+    "post_wave_critic_reserved": 1,
+    "final_clean_critic_reserved": 1,
+    "candidate_and_record_verification_reserved": 8,
+    "remaining_hunting_and_extra_recon": 18,
+    "passes": true
+  },
+  "scope_exclusions": [
+    "Archived padook/ Flutter/backend and training notebooks: historical context only, no dual maintenance or training.",
+    "Actual Vercel provider behavior: separate read-only platform review; no audit live traffic."
+  ],
+  "sandbox_status": "Source-only audit wave: no target execution, no target-produced scratch evidence. Basic namespace smoke previously verified; complete execution profile not used or claimed.",
+  "recon_agents": [
+    "recon_product",
+    "recon_authority",
+    "recon_inputs",
+    "recon_execution"
+  ],
+  "coverage_seed": {
+    "units": 49,
+    "hunters_planned": 5,
+    "mandatory_critic_calls": 2,
+    "validation_reserve": 8,
+    "agents_spent": 4,
+    "remaining": 28,
+    "covers_initial_plan": true
+  },
+  "hunting_priority": "Public HTTP and browser trust boundaries, frozen-loader integrity, build/CI authority, and shared resource/config handoffs; no compatible prior ledger.",
+  "wave_1_result": {
+    "covered": 47,
+    "out_of_scope": 2,
+    "candidates": 0,
+    "administrative_return_materializations": 2
+  },
+  "post_wave_critic_result": {
+    "missing_units": [],
+    "reassign_ids": [],
+    "resolved_prior_leads": [],
+    "stop": true
+  },
+  "phase_3": "No surviving candidates; candidate validation set empty.",
+  "phase_4": "Both official validators passed.",
+  "phase_5": "No retained confirmed/needs_validation records; independent record verification set empty. Distinct coverage critics both clean.",
+  "completed_at": "2026-11-16T18:49:57.769645+00:00",
+  "final_clean_critic_result": {
+    "missing_units": [],
+    "reassign_ids": [],
+    "resolved_prior_leads": [],
+    "stop": true
+  },
+  "coverage": {
+    "covered": 47,
+    "out_of_scope": 2,
+    "candidate": 0,
+    "blocked": 0,
+    "deferred": 0
+  },
+  "findings": {
+    "confirmed": 0,
+    "needs_validation": 0,
+    "rejected": 0
+  },
+  "target_execution": false,
+  "audit_network_calls": 0,
+  "source_paths_unchanged_at_completion": true,
+  "phase_6": "Reports derived from final empty findings and the validated ledger."
+}

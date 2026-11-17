@@ -1,0 +1,6 @@
+{
+  "function_uncompressed_bytes": 235929600,
+  "public_bytes": 1000000,
+  "public_gzip_bytes": 300000,
+  "note": "Local regression budgets, not provider quotas or an account spending cap."
+}

@@ -1,0 +1,542 @@
+{
+  "prepared_at": "2026-11-16T18:55:48.402423+00:00",
+  "purpose": "Read-only inventory of the existing full private candidate; not a final production release or authorization.",
+  "deployment": "dpl_9PXY5N878VVNqdJBj2JD9kF5fVxw",
+  "application_source_ref": "2b8b7608341663fc5852220d3460cd33d2195cc2",
+  "audited_source_ref": "5e8091b6fb8a88ec4c4550b9356dd7026d44b42e",
+  "code_changes_between_refs": "documentation only; production source unchanged",
+  "public_scope_decision_pending": true,
+  "new_production_build_id": null,
+  "public_bytes": 504608,
+  "artifact_identity_sha256": "b945b2585044d997e619bb372adc31f8dc45048ef4dc95a5f9fe3bd83cc9183c",
+  "entries": [
+    {
+      "path": "public/THIRD_PARTY_NOTICES.txt",
+      "bytes": 2895,
+      "sha256": "b7829899bf07cd9c92adff9b76354d0d46482fe6723750a24f5e7194fc9c5792",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/assets/index-C2TIhlb5.css",
+      "bytes": 30499,
+      "sha256": "f20bb1c64f064a0511220d19ac55e6e74eb940e5d65eb75b2527a8bd1c649326",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/assets/index-TX-N8QC5.js",
+      "bytes": 274635,
+      "sha256": "a8de581ec8a1132692ba7f3edca6f62532e735bb6d8235a1d670c29d644dd258",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/abarth.4a6853a9947b.webp",
+      "bytes": 3072,
+      "sha256": "4a6853a9947b24a7bf777a6c9bac30c9c2abe1cb1e709b75ba92af0c510ad370",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/alfa_romeo.3b4ba3c2c174.webp",
+      "bytes": 3602,
+      "sha256": "3b4ba3c2c174f37aea8dfd253416920fb0d20534e233d2b821eb8177a6412653",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/alpine.22a7572a4ce0.webp",
+      "bytes": 1688,
+      "sha256": "22a7572a4ce06eb87acbf6e444a63cb0bc520c11df9757132606abb30fd5e949",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/aston_martin.8271e1509034.webp",
+      "bytes": 968,
+      "sha256": "8271e15090348ae3b53ff130d824b537ccf44f9bc0ed305ce7a0afca1c5b4392",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/audi.fb98f085e767.webp",
+      "bytes": 3754,
+      "sha256": "fb98f085e767dc907474d4e2dcfdcfe0899dc7774d3a8ab51cc771acf02824b0",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/bentley.f09625953eb9.webp",
+      "bytes": 1416,
+      "sha256": "f09625953eb9162985efdcd9eacd77a8986ed4960b68f6a22086b80d8ad8589d",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/bmw.feafd91ec2b9.webp",
+      "bytes": 1778,
+      "sha256": "feafd91ec2b92a86a875c57e6e810b29feef268f54e671141ee4d9708497d2a5",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/cadillac.1b366f767907.webp",
+      "bytes": 1850,
+      "sha256": "1b366f76790738314fae68ddfcac21f01ea41f26cb34cd5a8b9b97edbb97f6ff",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/chevrolet.82b372e26e62.webp",
+      "bytes": 1400,
+      "sha256": "82b372e26e62b9a81308eede82f63d5a33a065ea8c2561f497cd7610996dcb89",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/chrysler.58a89eacb137.webp",
+      "bytes": 1296,
+      "sha256": "58a89eacb1373ba56675ef63e5576dfae31a1ac33b4322825f15c22e5aa64576",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/citroen.7fd5dad7678a.webp",
+      "bytes": 3000,
+      "sha256": "7fd5dad7678ad2d7c002cdf4af0c7dbf8e5d2ad75183abd1675e8055d400e010",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/cupra.8491b32d47c9.webp",
+      "bytes": 1418,
+      "sha256": "8491b32d47c9e58673b1ad698950a3b1bd0de2a2b27358989a973d239bf1b845",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/dacia.ceaa51e6e7e8.webp",
+      "bytes": 1664,
+      "sha256": "ceaa51e6e7e8dd8d7299ebacda8de580984a39db10b17758b172ad53b86a0650",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/daewoo.8f57170ffa01.webp",
+      "bytes": 3558,
+      "sha256": "8f57170ffa0146bc510f51251c6dda4f4a273c889921901b4682d9493c108186",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/daimler.f07c39ff242f.webp",
+      "bytes": 1022,
+      "sha256": "f07c39ff242f59d5079ab9381a84ec8687d9890cccb1fbeb7967c5454bce455b",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/dfsk.164ebd8342aa.webp",
+      "bytes": 1840,
+      "sha256": "164ebd8342aa231353f737da49bc6c3772184f738182831176f7e50f377e7de6",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/dodge.89ffefafbae2.webp",
+      "bytes": 4146,
+      "sha256": "89ffefafbae208327fca920579ef5ff8677d6b7ff3642ad03172385307082050",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/ds.9cc16a6b1eb2.webp",
+      "bytes": 1118,
+      "sha256": "9cc16a6b1eb23790269910ff34915a59eeb4d6050af9c2f06477ee8c0026f8c9",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/ferrari.c3fa7e5b70c6.webp",
+      "bytes": 2510,
+      "sha256": "c3fa7e5b70c64581dcf59757397fdfc1a9e24719a5c7f672ca599134883d0972",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/fiat.1d8b99f5d8c8.webp",
+      "bytes": 2336,
+      "sha256": "1d8b99f5d8c89268027d201dedeb47e68a5b8aac2db0108a1511bad7a15d2989",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/ford.676722aaa6b2.webp",
+      "bytes": 2094,
+      "sha256": "676722aaa6b2d1f1fcef065f7b5a9bb375de4409926f9bfee8e85d0318dc5437",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/galloper.222921651191.webp",
+      "bytes": 5114,
+      "sha256": "2229216511911d289f0ec98462a79b9ea6a2ff653739172aca6e4aaa0302aec6",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/honda.2d3836fc602c.webp",
+      "bytes": 1492,
+      "sha256": "2d3836fc602c642743f04c87261d024578dd16623fc7565dcffc35b1e8b4f197",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/hummer.a60dbde2f7ef.webp",
+      "bytes": 742,
+      "sha256": "a60dbde2f7eff476e1c4e999978f59af0e2598f92c00bbc17d7b397e2f7b2911",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/hyundai.d8efca03641f.webp",
+      "bytes": 2376,
+      "sha256": "d8efca03641f1b7f27e87e66a3b952f699f71abf28bd0783bf95dfaa23f2d00a",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/infiniti.6f32d91ae45a.webp",
+      "bytes": 2626,
+      "sha256": "6f32d91ae45a4006f9a22a3f19404313e30a086b00d83214103e965f6a925bc4",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/isuzu.ece82c4a018e.webp",
+      "bytes": 2970,
+      "sha256": "ece82c4a018e2bb2acb83d18716b621cd758104bf97c10374afeda24381fbf2d",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/iveco.c80308932a6a.webp",
+      "bytes": 1080,
+      "sha256": "c80308932a6aeacd33956ed8597409018ea5abe0baa1ad4dc3c9adefabdde173",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/jaguar.531818690b16.webp",
+      "bytes": 1472,
+      "sha256": "531818690b16b1bcfd140440d3019645305dc5f3c5a0597407e711715096d95e",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/jeep.cac9ecfb3671.webp",
+      "bytes": 912,
+      "sha256": "cac9ecfb3671b533537d8d5fc1a760ac8f05e4827f0fb676bffef904aa6db172",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/jiayuan.01881619c3a0.webp",
+      "bytes": 4604,
+      "sha256": "01881619c3a0dfeba3602f09ec2d72dab626ebba6562c30c99551f9d1bca2095",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/kia.80868d37fe6d.webp",
+      "bytes": 2876,
+      "sha256": "80868d37fe6d1f4e1153524fc7a9a34b7b4f4904d8c271a4eb0a743c0260a26c",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/lamborghini.bbe3509791e2.webp",
+      "bytes": 2992,
+      "sha256": "bbe3509791e2349e5c276df5f531529089606e03851e21f6c0e7b620fc78e0e0",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/lancia.fe839887306f.webp",
+      "bytes": 2816,
+      "sha256": "fe839887306f69f639b6cb97577f7e8ab2f31b00d7ffbe0b8c932b6e18905126",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/land_rover.603b42868fb6.webp",
+      "bytes": 2510,
+      "sha256": "603b42868fb698372edf89d9eeff03d4f9a8926a7a31f9902a0e47434847e8e4",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/levc.238fe2b305d6.webp",
+      "bytes": 1712,
+      "sha256": "238fe2b305d6e15a1d85b993b1dc54caa0cc2f7ec76fe2722bb35a7ceb405adb",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/lexus.0865f2134f83.webp",
+      "bytes": 1920,
+      "sha256": "0865f2134f83faaa45842f6bff2ce6d8d07c2b0ab2b5d4d8548981a6c6912e6f",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/lotus.ad01e0379c52.webp",
+      "bytes": 3360,
+      "sha256": "ad01e0379c5233e608fdc3c228ee1fb8ff317a93f39334d65e65c1c4d4881247",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/lynkco.7a665251f0cd.webp",
+      "bytes": 754,
+      "sha256": "7a665251f0cdeed1d85a5621aceb29f3cfd8e6801785c4349cfc9f7b28258af8",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/mahindra.cf6b8f55f60d.webp",
+      "bytes": 1708,
+      "sha256": "cf6b8f55f60d8f915a563932ef75bba5fdf76d472279c2f8cd50dcc083c0c0da",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/maserati.18a662b095a3.webp",
+      "bytes": 1948,
+      "sha256": "18a662b095a34ae10a17122365fd16ec539f29664efb37085565197284cdabac",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/maxus.2e99fc6efcdb.webp",
+      "bytes": 4000,
+      "sha256": "2e99fc6efcdb9532e330eff3d4dddf6a5be6c73ffc14765aeda51ecb2ffcbd4b",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/maybach.9e144c5a9c62.webp",
+      "bytes": 4430,
+      "sha256": "9e144c5a9c6278a4540b099e38c4add40df479acda42a92167ac6f34b0bfe5b8",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/mazda.13034e5ca6ac.webp",
+      "bytes": 2556,
+      "sha256": "13034e5ca6ace4314bc709ec41e422a41ed94fc4f0d17442fcaa8c0b54044eb9",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/mercedes_benz.e8e687288740.webp",
+      "bytes": 2772,
+      "sha256": "e8e6872887409e1e2ba91ea48154b0fcb7f9dea88e793dce9a8ef0babcc3301f",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/mg.53840adc0d43.webp",
+      "bytes": 2614,
+      "sha256": "53840adc0d43162fe8350332723a5d6356d50884d0509e19365b418b75efbb7d",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/mini.d80b4ed6c048.webp",
+      "bytes": 1374,
+      "sha256": "d80b4ed6c048582cfabded1139e3975609b78a058465806c3d5ded67e9a3d101",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/mitsubishi.7e3061f27ba8.webp",
+      "bytes": 1480,
+      "sha256": "7e3061f27ba8ff4a979a72548fe95dde9a6f2b202349640252eb0cde0caa73cd",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/morgan.e1ee0e0d45f4.webp",
+      "bytes": 1620,
+      "sha256": "e1ee0e0d45f4373de0942dfc8bdf6d09ecc26f1bf59c0db2865481bd7a66b038",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/nissan.1f351e24f884.webp",
+      "bytes": 2634,
+      "sha256": "1f351e24f8840ffcbfda06167f72ed9fbe8532d33d0f2711aa89c2bcc9176213",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/opel.141be1f72208.webp",
+      "bytes": 3708,
+      "sha256": "141be1f72208fa6d5bd22f2b2a725428e1f1f139bdd07ee31e7cfb1b523a12b5",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/peugeot.4871d2abaf82.webp",
+      "bytes": 2278,
+      "sha256": "4871d2abaf82cc0c638e554e8a6e47b0cd635cbded95ea1e919b9e50fc058c81",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/polestar.29311a22ba4d.webp",
+      "bytes": 330,
+      "sha256": "29311a22ba4d984a8427d5e6b9be8c5a7b34c287c78cb75b10c59bceebf23c39",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/porsche.a4377711b528.webp",
+      "bytes": 3090,
+      "sha256": "a4377711b528b95dde0c2461936a30fc16d2fb2a81fdd0f35490e0e5c3f2181b",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/renault.38a3ae4fd108.webp",
+      "bytes": 1046,
+      "sha256": "38a3ae4fd108d8797487cc867b9dcf8bea61b1b14c0a78a1c99a04b071783df9",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/rolls_royce.064eacb9723d.webp",
+      "bytes": 1892,
+      "sha256": "064eacb9723d212b85f8531913d1efd02f1e46c4a29ecf5cc05b893caff8dde8",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/rover.0f672e8f0a73.webp",
+      "bytes": 3614,
+      "sha256": "0f672e8f0a73b863defe2313b59aed08b99c3a8391df8ad240a366cc80e7a7cd",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/saab.07f1d0c566b9.webp",
+      "bytes": 3414,
+      "sha256": "07f1d0c566b96a7cd54183ef7a6c84cee0d42158d427a02c7453d268758f61f9",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/seat.fb4dfc7360a4.webp",
+      "bytes": 1542,
+      "sha256": "fb4dfc7360a4f5adee46ea4878223511697fb5d1c995e1b89a25711357df0821",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/skoda.47c2206df9c2.webp",
+      "bytes": 1736,
+      "sha256": "47c2206df9c262588489b603ae7ad28b088df37b481d64969d72dc3023ad1275",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/smart.6e5e4cb4fcee.webp",
+      "bytes": 1558,
+      "sha256": "6e5e4cb4fceee2cecef8813b5de8e60d5c7409df080272ec6ea23b4b72a26aec",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/ssangyong.1c4fac190fc2.webp",
+      "bytes": 2824,
+      "sha256": "1c4fac190fc2774bed525eb073de6ca2130faa380827e8ecf3e57591b14abfa7",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/subaru.dc2441a34bdc.webp",
+      "bytes": 2084,
+      "sha256": "dc2441a34bdc5b9249e9052e436adf3c38870600584d00821719b2106af3036e",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/suzuki.06c3bfd0621f.webp",
+      "bytes": 1828,
+      "sha256": "06c3bfd0621f3401f152db9fb6819e56226ebe44fff347119c890b05791fef05",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/swm.4d9d31518c6c.webp",
+      "bytes": 778,
+      "sha256": "4d9d31518c6c3c24c0060f0453594e650c33fa3032bb8721909461738e8cd1fe",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/tata.07df03eb5dcf.webp",
+      "bytes": 752,
+      "sha256": "07df03eb5dcf10f76e2dd0a1f1d0f2c62f8fff39dd66f75e5a2c5fa490cbae24",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/tesla.d8d345360371.webp",
+      "bytes": 2472,
+      "sha256": "d8d345360371a0111a14716ba48151fc071692133cdf67106920197c4d8913c7",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/toyota.ac834e758380.webp",
+      "bytes": 2794,
+      "sha256": "ac834e758380358048d5cec41f1d7b0605f8634867c3f60dba560b668322b6a7",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/volkswagen.24e5bd6a8347.webp",
+      "bytes": 2482,
+      "sha256": "24e5bd6a83475d0ac727148a0f9a16ff0d96e897bfbe61c6de3f27a5b50676a2",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/brand-logos/volvo.3aa08ec6fb30.webp",
+      "bytes": 2428,
+      "sha256": "3aa08ec6fb30cbeb7eab603abb6b4a377d3ad5b52456eadf360fbd8e435fb0bf",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/index.html",
+      "bytes": 718,
+      "sha256": "41e76755bd37fae99f1329b7fdf7dbeacee913a30e2437b64d32026c4ad4b19d",
+      "visibility": "public static"
+    },
+    {
+      "path": "public/paddock-delorean.png",
+      "bytes": 38217,
+      "sha256": "c13355d2fb89e8a8112d063455291f12bf55a3492b9498fcd33b501effeb4195",
+      "visibility": "public static"
+    },
+    {
+      "path": "assets/cars.sqlite3",
+      "bytes": 20914176,
+      "sha256": "39335cdb513654e3d6928cdac7c960886c3ce5eb7072c68938f70320eba0272d",
+      "visibility": "private function asset"
+    },
+    {
+      "path": "assets/contract.json",
+      "bytes": 48079,
+      "sha256": "f8552fe589e41265d917e002fa89a9ce156ccf5789bc048fafbcd776568fba2e",
+      "visibility": "private function asset"
+    },
+    {
+      "path": "assets/legacy.json",
+      "bytes": 49229,
+      "sha256": "957e319ab0025d9d9dcfce38a3c48fe3bffe828ed94f9c6dbac555fcc4d9c909",
+      "visibility": "private function asset"
+    },
+    {
+      "path": "assets/manifest.json",
+      "bytes": 889,
+      "sha256": "f46c47afe1913c3769720f7ae6f06c5e838c48114f2ebf0cc5643c7698a9a439",
+      "visibility": "private function asset"
+    },
+    {
+      "path": "assets/message.json.gz",
+      "bytes": 46725,
+      "sha256": "820505cfffa425d4c8502e7dcfe08aff37de25e6ad029a546daa9cd6376d0470",
+      "visibility": "private function asset"
+    },
+    {
+      "path": "assets/price.bin",
+      "bytes": 96082072,
+      "sha256": "862e15962e6866b34a36d9f13906dcdcaf8aba6b9023fd028a47290a8c7984b7",
+      "visibility": "private function asset"
+    },
+    {
+      "path": "api/index.py",
+      "bytes": 133,
+      "sha256": "78ed9d9c122491db1cec27d22c1600a2cc487cf7d472e5b7ad1c170d7d313bc4",
+      "visibility": "deployment/runtime configuration"
+    },
+    {
+      "path": "paddock_service/app.py",
+      "bytes": 13369,
+      "sha256": "8c9cc2094419365c496429191711b244974d2a68d02058db0164f72eea1d4f10",
+      "visibility": "deployment/runtime configuration"
+    },
+    {
+      "path": "paddock_service/forest.py",
+      "bytes": 6427,
+      "sha256": "b6fb184149029c48adf2e7eefe17a61995b0063812ab415cc198004056416549",
+      "visibility": "deployment/runtime configuration"
+    },
+    {
+      "path": "paddock_service/__init__.py",
+      "bytes": 61,
+      "sha256": "07fec144027c196e5ae1823a4001ffa6c5ac4b7e76bd77c13cb63e2511f31f55",
+      "visibility": "deployment/runtime configuration"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 14330,
+      "sha256": "2c1b30a32364ee23da10b3ad7ea533ff2d36c29efd8f2204b92822123ddee8eb",
+      "visibility": "deployment/runtime configuration"
+    },
+    {
+      "path": "vercel.json",
+      "bytes": 1378,
+      "sha256": "a1e2086d079e73c5067d2a1295387f05d5e35724f6c578f69ba27468fcc661ac",
+      "visibility": "deployment/runtime configuration"
+    },
+    {
+      "path": ".python-version",
+      "bytes": 8,
+      "sha256": "f50159fad3f4319868eb38717b91d55843c41e9803014c8de05e116a6d0bcfdc",
+      "visibility": "deployment/runtime configuration"
+    }
+  ]
+}

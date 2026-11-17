@@ -1,0 +1,6 @@
+# Compatibility tools only: never bundled or served. Trusted SHA-256 model inputs.
+numpy==1.24.4
+scipy==1.10.1
+scikit-learn==1.2.1
+joblib==1.2.0
+threadpoolctl==3.8.0

@@ -1,0 +1,70 @@
+{
+  "checked_at": "2026-11-15T22:15:09.802147+00:00",
+  "source_commit": "ad60e5b196a4091e72a94c3de99c2e99ecfb4a99",
+  "project_id": "prj_j0CAZebO2M3BsMtBR41PPbYJo8Rk",
+  "team_slug": "legodarks-projects",
+  "team_plan": "hobby",
+  "team_status": "active",
+  "vercel_authentication": {
+    "deploymentType": "all"
+  },
+  "source_inventory_sha256_verified": 20,
+  "network": {
+    "allowed_pattern": "*.vercel.app",
+    "state": "enforced",
+    "test_url": "https://paddock-phi-hazel.vercel.app/",
+    "http_status": 404,
+    "vercel_error": "DEPLOYMENT_NOT_FOUND",
+    "interpretation": "HTTPS now reaches Vercel; no application has been deployed."
+  },
+  "firewall": {
+    "rule_name": "Paddock API — 60 requests per minute per IP",
+    "condition": {
+      "type": "path",
+      "op": "pre",
+      "value": "/api"
+    },
+    "requests": 60,
+    "window_seconds": 60,
+    "algorithm": "fixed_window",
+    "keys": [
+      "ip"
+    ],
+    "draft_staged": true,
+    "draft_changes": 1,
+    "published": false,
+    "enforcement_tested": false,
+    "cli_reason": "confirmation_required",
+    "effects": [
+      "Makes 1 draft change live for paddock immediately."
+    ],
+    "effects_digest": "4b47e12c6dc65729",
+    "human_approval_pending": true
+  },
+  "deployment_attempts": [
+    {
+      "environment": "preview",
+      "skip_domain": true,
+      "outcome": "CLI validation rejected: --skip-domain can only be used with production deployments."
+    },
+    {
+      "environment": "preview",
+      "skip_domain": false,
+      "outcome": "CLI rejected: the first deployment is assigned to Production; later deployments can use Preview."
+    }
+  ],
+  "project_deployment_count": 0,
+  "platform_api_requests": 0,
+  "proposed_initial_deployment": {
+    "environment": "production",
+    "skip_domain": true,
+    "sso_protection": "all",
+    "git_integration": false,
+    "custom_domain_assignment": false,
+    "human_decision_pending": true
+  },
+  "custom_dns_changed": false,
+  "paid_services_enabled": false,
+  "monthly_compute_headroom": null,
+  "scope": "Readiness and concrete CLI approval requirements. No application deployment or provider smoke test."
+}

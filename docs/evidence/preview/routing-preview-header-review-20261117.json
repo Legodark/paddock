@@ -1,0 +1,15 @@
+{
+  "checked_at": "2026-11-17T10:01:23.220782+00:00",
+  "scope": "Test-preview header adapter after the explicit route migration; no production application or provider requests.",
+  "file": "web/vite.config.ts",
+  "sha256": "9ba021cf0f25eff1bc1206b6a722aabc99396be6a49c667c0b7a6dc0062b472e",
+  "independent_source_review": true,
+  "root_headers_equal_previous_configuration": true,
+  "fallback_404_headers_not_applied_to_root": true,
+  "local_unit_tests_passed": 100,
+  "typescript_and_vite_build_passed": true,
+  "rebuilt_public_files_identical_to_private_preview_package": 75,
+  "deployed_runtime_source": "f099a1ed98ec34674a46df23f0fd1474833bca78",
+  "runtime_redeployment_required_for_this_test_only_fix": false,
+  "historical_failed_ci": "https://github.com/Legodark/paddock/actions/runs/44059896804"
+}

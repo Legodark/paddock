@@ -1,0 +1,230 @@
+{
+  "browser": "156.0.8078.79",
+  "sandboxRequested": true,
+  "mode": "Instrumented visual/keyboard review; no physical device or screen-reader session",
+  "diagrams": [
+    {
+      "type": "architecture",
+      "reviewTransport": "HTTP with original HTML bytes; separate from official Archify CI gates",
+      "size": {
+        "scrollWidth": 1440,
+        "viewport": 1440,
+        "scrollHeight": 1138
+      }
+    },
+    {
+      "type": "sequence",
+      "reviewTransport": "HTTP with original HTML bytes; separate from official Archify CI gates",
+      "size": {
+        "scrollWidth": 1440,
+        "viewport": 1440,
+        "scrollHeight": 1255
+      }
+    },
+    {
+      "type": "workflow",
+      "reviewTransport": "HTTP with original HTML bytes; separate from official Archify CI gates",
+      "size": {
+        "scrollWidth": 1440,
+        "viewport": 1440,
+        "scrollHeight": 1432
+      }
+    }
+  ],
+  "app": {
+    "skipLinkFocused": true,
+    "formFirstFocus": "vehicle-brand_id",
+    "initialPrediction": "20.155 €",
+    "reflow": [
+      {
+        "width": 320,
+        "scrollWidth": 320,
+        "viewport": 320
+      },
+      {
+        "width": 360,
+        "scrollWidth": 360,
+        "viewport": 360
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "viewport": 390
+      },
+      {
+        "width": 768,
+        "scrollWidth": 768,
+        "viewport": 768
+      },
+      {
+        "width": 1024,
+        "scrollWidth": 1024,
+        "viewport": 1024
+      },
+      {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "viewport": 1440
+      }
+    ],
+    "textEnlargement": [
+      {
+        "text": "Automático",
+        "width": 156,
+        "scrollWidth": 156,
+        "height": 44,
+        "scrollHeight": 44
+      },
+      {
+        "text": "Manual",
+        "width": 142,
+        "scrollWidth": 142,
+        "height": 44,
+        "scrollHeight": 44
+      }
+    ],
+    "reducedViewport": {
+      "x": 35,
+      "y": 376.46875,
+      "width": 320,
+      "height": 104.390625
+    }
+  },
+  "perceptual_review": {
+    "completed": true,
+    "scope": "Screenshots of Chromium estimate/chat desktop/mobile, doubled desktop text, corrected mobile header and three diagrams in light/dark themes inspected by the reviewer.",
+    "limitations": [
+      "No screen-reader session",
+      "No physical Android/iOS device",
+      "No native browser zoom test",
+      "Firefox/WebKit screenshots not visually inspected; functional tests run separately"
+    ]
+  },
+  "mobile_enlargement": {
+    "before": {
+      "viewport": 390,
+      "scrollWidth": 568,
+      "overflow": [
+        {
+          "tag": "NAV",
+          "selector": "",
+          "text": "Estimar\nConsultar\nProyecto",
+          "right": 567.921875
+        },
+        {
+          "tag": "A",
+          "selector": "",
+          "text": "Consultar",
+          "right": 457.765625
+        },
+        {
+          "tag": "A",
+          "selector": "",
+          "text": "Proyecto",
+          "right": 567.921875
+        }
+      ],
+      "targets": [
+        {
+          "text": "Automático",
+          "width": 158,
+          "scrollWidth": 158,
+          "height": 44,
+          "scrollHeight": 44
+        },
+        {
+          "text": "Manual",
+          "width": 146,
+          "scrollWidth": 146,
+          "height": 44,
+          "scrollHeight": 44
+        }
+      ]
+    },
+    "after": {
+      "viewport": 390,
+      "scrollWidth": 390,
+      "headerHeight": 132,
+      "navRight": 327.5625
+    }
+  },
+  "diagram_theme_review": [
+    {
+      "type": "architecture",
+      "themeControl": "Oscuro",
+      "scrollWidth": 1440
+    },
+    {
+      "type": "sequence",
+      "themeControl": "Oscuro",
+      "scrollWidth": 1440
+    },
+    {
+      "type": "workflow",
+      "themeControl": "Oscuro",
+      "scrollWidth": 1440
+    }
+  ],
+  "captures": [
+    {
+      "file": "estimate-desktop.jpg",
+      "bytes": 70689,
+      "sha256": "a396e7d65d9489c2379c8789746d3c251a4824da320c990e823923017e7d45ab"
+    },
+    {
+      "file": "estimate-mobile.jpg",
+      "bytes": 223801,
+      "sha256": "f10d69e869813440eeb544788b5725b759d43bedf14a6b3309b95b101f93fc68"
+    },
+    {
+      "file": "chat-desktop.jpg",
+      "bytes": 143026,
+      "sha256": "ac9bc76850b6f0454eb45d0151a5bf86b39dc00f21d2d0a5c7981ceffe61eb2f"
+    },
+    {
+      "file": "chat-mobile.jpg",
+      "bytes": 508715,
+      "sha256": "41abc7f2d64aaee50112d6cfefbdef8ae2605f27497b3d61a18f5ba7da94fbfd"
+    },
+    {
+      "file": "text-200-desktop.jpg",
+      "bytes": 137318,
+      "sha256": "becaa38c7a5679a8047423d95ba0739bfb1362a5b22d894d02ab9c14e1257a36"
+    },
+    {
+      "file": "header-text-200-mobile-after.jpg",
+      "bytes": 8115,
+      "sha256": "aec6c8cedc04bb264c5d1deae07b944445cb63b1156c23980d58254ae2a6b80e"
+    },
+    {
+      "file": "diagram-architecture.jpg",
+      "bytes": 138802,
+      "sha256": "80c14c0c9d22b1b3060a3cd8bc5d7bd435d6f6087b7311daf5ca1f825fd837b9"
+    },
+    {
+      "file": "diagram-sequence.jpg",
+      "bytes": 149208,
+      "sha256": "ee2a9f3e0bf41eed3c40bf48fec7ca860ed2bebe91044644887852a29ac3361a"
+    },
+    {
+      "file": "diagram-workflow.jpg",
+      "bytes": 174700,
+      "sha256": "1bd744d52b4181b2a43070b06f50190a7f97f348b09bb643137f5591637f4229"
+    },
+    {
+      "file": "diagram-architecture-dark.jpg",
+      "bytes": 141123,
+      "sha256": "f92bfe2a10910694a526381e28f23c60291d55a6bf04675e091acb16e451e25e"
+    },
+    {
+      "file": "diagram-sequence-dark.jpg",
+      "bytes": 139239,
+      "sha256": "34b1b590f415bf778fdd3e3b1c69353bcc6c0d5a9cbabb2475f23308a301db4f"
+    },
+    {
+      "file": "diagram-workflow-dark.jpg",
+      "bytes": 188533,
+      "sha256": "8a67c0a07325127eedeb246ed61589ab5f8d778344a42192f830a1e04a0817cc"
+    }
+  ]
+}

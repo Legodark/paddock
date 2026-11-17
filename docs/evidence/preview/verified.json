@@ -1,0 +1,747 @@
+{
+  "checked_at": "2026-11-15T23:00:42.392356+00:00",
+  "account": {
+    "checked_at": "2026-11-15T22:57:26.238257+00:00",
+    "team_slug": "legodarks-projects",
+    "plan": "hobby",
+    "billing_status": "active",
+    "project_id": "prj_j0CAZebO2M3BsMtBR41PPbYJo8Rk",
+    "sso_protection": {
+      "deploymentType": "all"
+    },
+    "toolbar_opt_out": {
+      "preview": false,
+      "production": false
+    },
+    "automation_access_managed_by": "Vercel CLI Protection Bypass for Automation; no credential values included.",
+    "deployment": {
+      "id": "dpl_ys9CpWow2Hx4x8aAAQEWb3WqKU2G",
+      "url": "paddock-ba93thzc9-legodarks-projects.vercel.app",
+      "target": null,
+      "readyState": "READY",
+      "readySubstate": "STAGED",
+      "regions": [
+        "iad1"
+      ],
+      "createdAt": 1794783186358,
+      "buildingAt": 1794783187509,
+      "ready": 1794783202580,
+      "alias": []
+    },
+    "project_domains": [
+      "paddock-phi-hazel.vercel.app"
+    ],
+    "custom_dns_changed": false,
+    "paid_services_enabled": false,
+    "monthly_compute_headroom": null,
+    "actual_memory_or_cpu_billing": null
+  },
+  "deployed_source_commit": "fbb6082ec7454bc39a0d2e4d6695ffbb57a2e32e",
+  "backend_verified_source_commit": "06ddb974692334296f92650711af29590d2097e4",
+  "backend_verified_deployment": "dpl_48D4d5pfLNm7Gmz5vFar6T2uNqMV",
+  "backend_byte_equivalence": {
+    "changed_package_files": [
+      "vercel.json"
+    ],
+    "backend_assets_and_public_files_byte_identical": true
+  },
+  "api_verification": {
+    "passed": true,
+    "requests": [
+      {
+        "name": "fixed-health",
+        "method": "GET",
+        "path": "/api/v1/health",
+        "status": 200,
+        "seconds": 3.706339,
+        "ssl_verify": 0,
+        "content_type": "application/json",
+        "cache_control": "no-store",
+        "cors": "",
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer",
+        "csp": "default-src 'none'; frame-ancestors 'none'",
+        "vercel_cache": "MISS",
+        "bytes": 75,
+        "passed": true
+      },
+      {
+        "name": "fixed-filtered-cars",
+        "method": "GET",
+        "path": "/api/v1/cars?brand_id=10&location=M%C3%A1laga&price_lt=20000&limit=3",
+        "status": 200,
+        "seconds": 0.381384,
+        "ssl_verify": 0,
+        "content_type": "application/json",
+        "cache_control": "no-store",
+        "cors": "",
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer",
+        "csp": "default-src 'none'; frame-ancestors 'none'",
+        "vercel_cache": "MISS",
+        "bytes": 605,
+        "passed": true,
+        "filtered_rows": 3
+      },
+      {
+        "name": "fixed-prediction",
+        "method": "POST",
+        "path": "/api/v1/predict",
+        "status": 200,
+        "seconds": 0.359049,
+        "ssl_verify": 0,
+        "content_type": "application/json",
+        "cache_control": "no-store",
+        "cors": "",
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer",
+        "csp": "default-src 'none'; frame-ancestors 'none'",
+        "vercel_cache": "MISS",
+        "bytes": 1050,
+        "passed": true,
+        "prediction": 20155.0,
+        "comparable_counts": {
+          "coches-baratos": 5,
+          "coches-caros": 5
+        }
+      },
+      {
+        "name": "invalid-contract",
+        "method": "POST",
+        "path": "/api/v1/predict",
+        "status": 400,
+        "seconds": 0.291389,
+        "ssl_verify": 0,
+        "content_type": "application/json",
+        "cache_control": "no-store",
+        "cors": "",
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer",
+        "csp": "default-src 'none'; frame-ancestors 'none'",
+        "vercel_cache": "MISS",
+        "bytes": 80,
+        "passed": true
+      },
+      {
+        "name": "direct-entry",
+        "method": "GET",
+        "path": "/api/index.py",
+        "status": 404,
+        "seconds": 0.317475,
+        "ssl_verify": 0,
+        "content_type": "application/json",
+        "cache_control": "no-store",
+        "cors": "",
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer",
+        "csp": "default-src 'none'; frame-ancestors 'none'",
+        "vercel_cache": "MISS",
+        "bytes": 58,
+        "passed": true
+      },
+      {
+        "name": "api-root",
+        "method": "GET",
+        "path": "/api",
+        "status": 404,
+        "seconds": 0.284832,
+        "ssl_verify": 0,
+        "content_type": "application/json",
+        "cache_control": "no-store",
+        "cors": "",
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer",
+        "csp": "default-src 'none'; frame-ancestors 'none'",
+        "vercel_cache": "MISS",
+        "bytes": 58,
+        "passed": true
+      },
+      {
+        "name": "unknown-api-route",
+        "method": "GET",
+        "path": "/api/v1/not-a-route",
+        "status": 404,
+        "seconds": 0.384783,
+        "ssl_verify": 0,
+        "content_type": "application/json",
+        "cache_control": "no-store",
+        "cors": "",
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer",
+        "csp": "default-src 'none'; frame-ancestors 'none'",
+        "vercel_cache": "MISS",
+        "bytes": 58,
+        "passed": true
+      },
+      {
+        "name": "oversized-body",
+        "method": "POST",
+        "path": "/api/v1/message",
+        "status": 413,
+        "seconds": 0.300327,
+        "ssl_verify": 0,
+        "content_type": "application/json",
+        "cache_control": "no-store",
+        "cors": "",
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer",
+        "csp": "default-src 'none'; frame-ancestors 'none'",
+        "vercel_cache": "MISS",
+        "bytes": 58,
+        "passed": true
+      },
+      {
+        "name": "encoded-health",
+        "method": "GET",
+        "path": "/%61pi/v1/health",
+        "status": 404,
+        "seconds": 0.264077,
+        "ssl_verify": 0,
+        "content_type": "text/plain; charset=utf-8",
+        "cache_control": "public, max-age=0, must-revalidate",
+        "cors": "",
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer",
+        "csp": "",
+        "vercel_cache": "",
+        "bytes": 79,
+        "passed": true,
+        "interpretation": "Encoded alias is rejected with 404; no requirement that encoded aliases succeed. Initial harness expected 200 and stopped for review."
+      },
+      {
+        "name": "fixed-classifier",
+        "method": "POST",
+        "path": "/api/v1/message",
+        "status": 200,
+        "seconds": 0.288933,
+        "ssl_verify": 0,
+        "content_type": "application/json",
+        "cache_control": "no-store",
+        "cors": "",
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer",
+        "csp": "default-src 'none'; frame-ancestors 'none'",
+        "vercel_cache": "MISS",
+        "bytes": 33,
+        "passed": true
+      },
+      {
+        "name": "fixed-search-catalog",
+        "method": "GET",
+        "path": "/api/v1/search-catalog",
+        "status": 200,
+        "seconds": 0.214505,
+        "ssl_verify": 0,
+        "content_type": "application/json",
+        "cache_control": "no-store",
+        "cors": "",
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer",
+        "csp": "default-src 'none'; frame-ancestors 'none'",
+        "vercel_cache": "MISS",
+        "bytes": 36621,
+        "passed": true
+      },
+      {
+        "name": "anonymous-api",
+        "path": "/api/v1/health",
+        "status": 302,
+        "redirect_host": "vercel.com",
+        "passed": true
+      }
+    ],
+    "coverage": "Provider requests on the routing-fixed preview. Final redeploy changes document headers only; no further API invocation after the twenty-request budget."
+  },
+  "static_verification": {
+    "deployment_url": "https://paddock-ba93thzc9-legodarks-projects.vercel.app",
+    "static_verification_passed": true,
+    "requests": [
+      {
+        "name": "document",
+        "path": "/",
+        "status": 200,
+        "seconds": 0.359134,
+        "ssl_verify": 0,
+        "content_type": "text/html; charset=utf-8",
+        "cache_control": "no-cache",
+        "cors": "*",
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer",
+        "csp": "default-src 'none'; script-src 'self'; style-src 'self'; style-src-attr 'unsafe-inline'; img-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'",
+        "vercel_cache": "MISS",
+        "bytes": 718,
+        "passed": true
+      },
+      {
+        "name": "public-asset-0",
+        "path": "/assets/index-DFRDMWmQ.js",
+        "status": 200,
+        "seconds": 0.37826,
+        "ssl_verify": 0,
+        "content_type": "application/javascript; charset=utf-8",
+        "cache_control": "public, max-age=0, must-revalidate",
+        "cors": "*",
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer",
+        "csp": "",
+        "vercel_cache": "MISS",
+        "bytes": 263488,
+        "passed": true
+      },
+      {
+        "name": "public-asset-1",
+        "path": "/assets/index-DOKZLyPp.css",
+        "status": 200,
+        "seconds": 0.310633,
+        "ssl_verify": 0,
+        "content_type": "text/css; charset=utf-8",
+        "cache_control": "public, max-age=0, must-revalidate",
+        "cors": "*",
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer",
+        "csp": "",
+        "vercel_cache": "MISS",
+        "bytes": 26191,
+        "passed": true
+      },
+      {
+        "name": "license-notices",
+        "path": "/THIRD_PARTY_NOTICES.txt",
+        "status": 200,
+        "seconds": 0.367775,
+        "ssl_verify": 0,
+        "content_type": "text/plain; charset=utf-8",
+        "cache_control": "public, max-age=0, must-revalidate",
+        "cors": "*",
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer",
+        "csp": "",
+        "vercel_cache": "MISS",
+        "bytes": 2432,
+        "passed": true
+      },
+      {
+        "name": "robots",
+        "path": "/robots.txt",
+        "status": 200,
+        "seconds": 0.303005,
+        "ssl_verify": 0,
+        "content_type": "text/plain; charset=utf-8",
+        "cache_control": "public, max-age=0, must-revalidate",
+        "cors": "*",
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer",
+        "csp": "",
+        "vercel_cache": "MISS",
+        "bytes": 26,
+        "passed": true
+      },
+      {
+        "name": "private-artifact-0",
+        "path": "/assets/price.bin",
+        "status": 404,
+        "seconds": 0.266414,
+        "ssl_verify": 0,
+        "content_type": "text/plain; charset=utf-8",
+        "cache_control": "public, max-age=0, must-revalidate",
+        "cors": "",
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer",
+        "csp": "",
+        "vercel_cache": "",
+        "bytes": 79,
+        "passed": true
+      },
+      {
+        "name": "private-artifact-1",
+        "path": "/assets/cars.sqlite3",
+        "status": 404,
+        "seconds": 0.247858,
+        "ssl_verify": 0,
+        "content_type": "text/plain; charset=utf-8",
+        "cache_control": "public, max-age=0, must-revalidate",
+        "cors": "",
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer",
+        "csp": "",
+        "vercel_cache": "",
+        "bytes": 79,
+        "passed": true
+      },
+      {
+        "name": "private-artifact-2",
+        "path": "/assets/manifest.json",
+        "status": 404,
+        "seconds": 0.285014,
+        "ssl_verify": 0,
+        "content_type": "text/plain; charset=utf-8",
+        "cache_control": "public, max-age=0, must-revalidate",
+        "cors": "",
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer",
+        "csp": "",
+        "vercel_cache": "",
+        "bytes": 79,
+        "passed": true
+      },
+      {
+        "name": "private-artifact-3",
+        "path": "/requirements.txt",
+        "status": 404,
+        "seconds": 0.319958,
+        "ssl_verify": 0,
+        "content_type": "text/plain; charset=utf-8",
+        "cache_control": "public, max-age=0, must-revalidate",
+        "cors": "",
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer",
+        "csp": "",
+        "vercel_cache": "",
+        "bytes": 79,
+        "passed": true
+      },
+      {
+        "name": "private-artifact-4",
+        "path": "/paddock_service/app.py",
+        "status": 404,
+        "seconds": 0.270857,
+        "ssl_verify": 0,
+        "content_type": "text/plain; charset=utf-8",
+        "cache_control": "public, max-age=0, must-revalidate",
+        "cors": "",
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer",
+        "csp": "",
+        "vercel_cache": "",
+        "bytes": 79,
+        "passed": true
+      },
+      {
+        "name": "private-artifact-5",
+        "path": "/assets/index-DFRDMWmQ.js.map",
+        "status": 404,
+        "seconds": 0.240366,
+        "ssl_verify": 0,
+        "content_type": "text/plain; charset=utf-8",
+        "cache_control": "public, max-age=0, must-revalidate",
+        "cors": "",
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer",
+        "csp": "",
+        "vercel_cache": "",
+        "bytes": 79,
+        "passed": true
+      },
+      {
+        "name": "private-artifact-6",
+        "path": "/.env",
+        "status": 404,
+        "seconds": 0.092788,
+        "ssl_verify": 0,
+        "content_type": "text/plain; charset=utf-8",
+        "cache_control": "public, max-age=0, must-revalidate",
+        "cors": "",
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer",
+        "csp": "",
+        "vercel_cache": "",
+        "bytes": 79,
+        "passed": true
+      },
+      {
+        "name": "anonymous-document",
+        "path": "/",
+        "status": 302,
+        "passed": true
+      }
+    ],
+    "application_html_and_assets_match_build": true,
+    "toolbar_script_absent": true,
+    "additional_api_requests": 0,
+    "total_api_budget_used": 20,
+    "backend_verification_deployment": "dpl_48D4d5pfLNm7Gmz5vFar6T2uNqMV",
+    "backend_byte_equivalence": {
+      "changed_package_files": [
+        "vercel.json"
+      ],
+      "backend_assets_and_public_files_byte_identical": true
+    },
+    "limits": [
+      "Final redeploy changed only document security headers; API was not invoked again after its twenty-request budget.",
+      "No browser interaction, physical-device or screen-reader test.",
+      "No 60/min threshold, recovery, invocation-exclusion or monthly quota headroom proof."
+    ]
+  },
+  "total_api_request_budget": {
+    "limit": 20,
+    "used": 20,
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/api/v1/health",
+        "kind": "authorized-cold-health"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/health",
+        "kind": "warm-health"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/catalog",
+        "kind": "catalog"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/search-catalog",
+        "kind": "search-catalog"
+      },
+      {
+        "method": "POST",
+        "path": "/api/v1/predict",
+        "kind": "golden-prediction"
+      },
+      {
+        "method": "POST",
+        "path": "/api/v1/message",
+        "kind": "classifier"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/cars?brand_id=10&location=M%C3%A1laga&price_lt=20000&limit=3",
+        "kind": "filtered-cars"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/cars",
+        "kind": "diagnostic-no-query"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/health",
+        "kind": "fixed-health"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/cars?brand_id=10&location=M%C3%A1laga&price_lt=20000&limit=3",
+        "kind": "fixed-filtered-cars"
+      },
+      {
+        "method": "POST",
+        "path": "/api/v1/predict",
+        "kind": "fixed-prediction"
+      },
+      {
+        "method": "POST",
+        "path": "/api/v1/predict",
+        "kind": "invalid-contract"
+      },
+      {
+        "method": "GET",
+        "path": "/api/index.py",
+        "kind": "direct-entry"
+      },
+      {
+        "method": "GET",
+        "path": "/api",
+        "kind": "api-root"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/not-a-route",
+        "kind": "unknown-api-route"
+      },
+      {
+        "method": "POST",
+        "path": "/api/v1/message",
+        "kind": "oversized-body"
+      },
+      {
+        "method": "GET",
+        "path": "/%61pi/v1/health",
+        "kind": "encoded-health"
+      },
+      {
+        "method": "POST",
+        "path": "/api/v1/message",
+        "kind": "fixed-classifier"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/search-catalog",
+        "kind": "fixed-search-catalog"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/health",
+        "kind": "anonymous-authentication-gate"
+      }
+    ]
+  },
+  "initial_failures_resolved": [
+    {
+      "source_commit": "ad60e5b196a4091e72a94c3de99c2e99ecfb4a99",
+      "symptom": "Filtered and unfiltered /api/v1/cars returned 400",
+      "cause": "Named rewrite capture compiles to /api/index.py?path=$1; strict query validation rejects the injected path field.",
+      "fix_commit": "06ddb974692334296f92650711af29590d2097e4"
+    },
+    {
+      "symptom": "HTML lacked three common security headers and contained the injected Vercel Toolbar script",
+      "fix": "Repeat common headers in the root-specific header rule; opt out of project toolbar and verify fresh deployment HTML byte-for-byte.",
+      "fix_commit": "fbb6082ec7454bc39a0d2e4d6695ffbb57a2e32e"
+    }
+  ],
+  "firewall": {
+    "project": "paddock",
+    "rule_id": "rule_paddock_api_60_requests_per_minute_per_ip_LdESSE",
+    "active": true,
+    "scope": "project",
+    "path_prefix": "/api",
+    "algorithm": "fixed_window",
+    "requests": 60,
+    "window_seconds": 60,
+    "keys": [
+      "ip"
+    ],
+    "excess_action": "rate_limit",
+    "human_approval_received": true,
+    "effects_digest_confirmed": "4b47e12c6dc65729",
+    "threshold_recovery_or_invocation_exclusion_tested": false
+  },
+  "local_validation": {
+    "api_tests": {
+      "suite": "api",
+      "tests": 17,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 17
+    },
+    "guards": {
+      "suite": "guards",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 7
+    },
+    "routing": {
+      "compiler": "@vercel/routing-utils@6.6.1",
+      "valid": true,
+      "api_route": {
+        "src": "^/api(/.*)?$",
+        "dest": "/api/index.py",
+        "check": true
+      },
+      "named_capture_regression_rejected": true,
+      "root_security_header_regression_rejected": true,
+      "scope": "Official route compilation and path coverage; provider execution is tested separately."
+    },
+    "build_tools_audit": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0,
+      "total": 0
+    },
+    "official_bundle_check": {
+      "scope": "Local official bundle + WSGI only; not platform routing, rate limiting or billing.",
+      "ready": true,
+      "prediction": 20155.0,
+      "query_rows": 10,
+      "catalog_models": 719,
+      "locations": 50,
+      "function_uncompressed_bytes": 121114317,
+      "public_bytes": 292855,
+      "public_gzip_bytes": 88650,
+      "public_files": [
+        {
+          "path": "THIRD_PARTY_NOTICES.txt",
+          "bytes": 2432,
+          "gzip_bytes": 862,
+          "sha256": "1e5b68b05899a5f00662d00e729d5e14dbeefbabc71424cc9a92ad7999bfd938"
+        },
+        {
+          "path": "assets/index-DFRDMWmQ.js",
+          "bytes": 263488,
+          "gzip_bytes": 81047,
+          "sha256": "7adc104f4081acaecc61454e1118de83cfda2d7de6503afbaf8b261933e6e3f0"
+        },
+        {
+          "path": "assets/index-DOKZLyPp.css",
+          "bytes": 26191,
+          "gzip_bytes": 6259,
+          "sha256": "88db9a71872de6cbcd6e28fd0d7f626ea2432da4fda8ea6e0b90ed29b1ff33a0"
+        },
+        {
+          "path": "index.html",
+          "bytes": 718,
+          "gzip_bytes": 436,
+          "sha256": "1f92e974c0db519474feb11ad0e6d3d09611cccfc370c2a3b10723ceab360b26"
+        },
+        {
+          "path": "robots.txt",
+          "bytes": 26,
+          "gzip_bytes": 46,
+          "sha256": "331ea9090db0c9f6f597bd9840fd5b171830f6e0b3ba1cb24dfa91f0c95aedc1"
+        }
+      ],
+      "installed_packages": {
+        "werkzeug": "3.1.9",
+        "blinker": "1.9.0",
+        "flask": "3.1.3",
+        "vercel-runtime": "0.24.3",
+        "click": "8.5.1",
+        "jinja2": "3.1.6",
+        "markupsafe": "3.0.4",
+        "itsdangerous": "2.2.0"
+      },
+      "private_artifact_routes_status": 404,
+      "budgets": {
+        "function_uncompressed_bytes": 235929600,
+        "public_bytes": 1000000,
+        "public_gzip_bytes": 300000,
+        "note": "Local regression budgets, not provider quotas or an account spending cap."
+      }
+    }
+  },
+  "application_public": false,
+  "custom_domain_assigned": false,
+  "main_merged": false,
+  "platform_security_complete": false,
+  "cold_start_confirmed": false,
+  "runtime_memory_cpu_measurement": null,
+  "monthly_shared_compute_headroom": null,
+  "limitations": [
+    "Actual HTTP timing is not billed CPU duration or a cold-start certificate.",
+    "Request budget applies to this smoke procedure, not all team or project traffic.",
+    "No WAF threshold/recovery or pre-invocation-exclusion proof; issue #11 remains open.",
+    "No browser interaction, physical-device, native zoom or screen-reader test; issue #12 remains open.",
+    "Public reuse conditions of the 2023 catalogue remain unresolved in #17.",
+    "No domain promotion, paid service, Blob, database service, scraping or retraining."
+  ]
+}

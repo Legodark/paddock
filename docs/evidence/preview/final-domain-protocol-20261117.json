@@ -1,0 +1,343 @@
+{
+  "scope": "Official public deployment-protection/domain contract review; not account state or app/usage measurement.",
+  "sources": [
+    {
+      "name": "authentication",
+      "url": "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication",
+      "final_url": "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication",
+      "file": "authentication.md",
+      "bytes": 13946,
+      "sha256": "f9ee1e9835e1ca3f8243ff2a24360e3abb14759a34e1280948d2b398e9af89b7",
+      "retrieved_at": "2026-11-17T13:57:31.046390+00:00",
+      "content_type": null
+    },
+    {
+      "name": "protection",
+      "url": "https://vercel.com/docs/deployment-protection",
+      "final_url": "https://vercel.com/docs/deployment-protection",
+      "file": "protection.md",
+      "bytes": 14049,
+      "sha256": "73124007cd31e62b6c6c7ff799f9eee3e39b2bec353ef74337f7783c3c36f699",
+      "retrieved_at": "2026-11-17T13:57:31.127376+00:00",
+      "content_type": null
+    },
+    {
+      "name": "update-project",
+      "url": "https://vercel.com/docs/rest-api/reference/endpoints/projects/update-an-existing-project",
+      "final_url": "https://vercel.com/docs/rest-api/projects/update-an-existing-project",
+      "file": "update-project.md",
+      "bytes": 350327,
+      "sha256": "4a2d226891a8447b2cfdde07c7402260b47f1fcf6f334abc08a1b873aa52640e",
+      "retrieved_at": "2026-11-17T13:57:31.745697+00:00",
+      "content_type": null
+    },
+    {
+      "name": "add-domain",
+      "url": "https://vercel.com/docs/rest-api/reference/endpoints/projects/add-a-domain-to-a-project",
+      "final_url": "https://vercel.com/docs/rest-api/projects/add-a-domain-to-a-project",
+      "file": "add-domain.md",
+      "bytes": 8736,
+      "sha256": "312cd85b05ddef5332db9c3815e51d30a9decfcabc19af4f328146a0362f857f",
+      "retrieved_at": "2026-11-17T13:57:31.518817+00:00",
+      "content_type": null
+    },
+    {
+      "name": "verify-domain",
+      "url": "https://vercel.com/docs/rest-api/reference/endpoints/projects/verify-project-domain",
+      "final_url": "https://vercel.com/docs/rest-api/projects/verify-project-domain",
+      "file": "verify-domain.md",
+      "bytes": 5146,
+      "sha256": "bad73acb1cebf652cf12063b023840941c8a1f9ea1c8e0ec13d889f513070e55",
+      "retrieved_at": "2026-11-17T13:57:31.844682+00:00",
+      "content_type": null
+    },
+    {
+      "name": "domain-config",
+      "url": "https://vercel.com/docs/rest-api/reference/endpoints/domains/get-a-domain-s-configuration",
+      "final_url": "https://vercel.com/docs/rest-api/domains/get-a-domain-s-configuration",
+      "file": "domain-config.md",
+      "bytes": 6429,
+      "sha256": "fd5fbb1962bff3e9c0f984a43c6c3ac58d6b57a90c8c72f05eae493cb1cf600b",
+      "retrieved_at": "2026-11-17T13:57:31.532601+00:00",
+      "content_type": null
+    },
+    {
+      "name": "add-domain-guide",
+      "url": "https://vercel.com/docs/domains/working-with-domains/add-a-domain",
+      "final_url": "https://vercel.com/docs/domains/working-with-domains/add-a-domain",
+      "file": "add-domain-guide.md",
+      "bytes": 15258,
+      "sha256": "8aa708c9bb12eefa384370dddde51217f72c128d983f72f6f7a3efae1555fbba",
+      "retrieved_at": "2026-11-17T13:57:31.103939+00:00",
+      "content_type": null
+    },
+    {
+      "name": "openapi-vercel",
+      "url": "https://vercel.com/openapi.json",
+      "final_url": "https://vercel.com/openapi.json",
+      "file": "openapi.json",
+      "bytes": 12353447,
+      "sha256": "b53f70b5b81350a27f85c7fefc66ff644d161ae3306a9a3e3240333217051c8b",
+      "retrieved_at": "2026-11-17T13:58:08.889156+00:00"
+    },
+    {
+      "name": "locking-down-deployments",
+      "url": "https://vercel.com/kb/guide/locking-down-deployments",
+      "final_url": "https://vercel.com/kb/guide/locking-down-deployments",
+      "file": "locking-down-deployments.md",
+      "bytes": 6910,
+      "sha256": "d7a65b93956db454a364af656c117f28f122ee1a9183ceb29391bfc5eed7a092",
+      "retrieved_at": "2026-11-17T13:58:19.876683+00:00"
+    },
+    {
+      "name": "generated-urls",
+      "url": "https://vercel.com/docs/deployments/generated-urls",
+      "final_url": "https://vercel.com/docs/deployments/generated-urls",
+      "file": "generated-urls.md",
+      "bytes": 10418,
+      "sha256": "49f0656ea47584171cd27e2e8ffa4347af542347bb02bef5e57d7ca036fda1ae",
+      "retrieved_at": "2026-11-17T13:58:19.679539+00:00"
+    }
+  ],
+  "exact_quotes": [
+    {
+      "source_file": "authentication.md",
+      "source_url": "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication",
+      "source_sha256": "f9ee1e9835e1ca3f8243ff2a24360e3abb14759a34e1280948d2b398e9af89b7",
+      "retrieved_at": "2026-11-17T13:57:31.046390+00:00",
+      "line_start": 24,
+      "line_end": 28,
+      "exact_quote": "> Vercel Authentication is available on all plans\n>\n> Those with the owner, member and admin roles can manage Vercel Authentication\n\nVercel Authentication lets you restrict access to your public and non-public deployments. It is the **recommended** approach to protecting your deployments. When enabled, it allows only users with deployment access to view and comment on your site."
+    },
+    {
+      "source_file": "authentication.md",
+      "source_url": "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication",
+      "source_sha256": "f9ee1e9835e1ca3f8243ff2a24360e3abb14759a34e1280948d2b398e9af89b7",
+      "retrieved_at": "2026-11-17T13:57:31.046390+00:00",
+      "line_start": 112,
+      "line_end": 112,
+      "exact_quote": "Admins and members can enable or disable Vercel Authentication for their team. Hobby teams can also enable or disable for their own projects. Vercel Authentication is managed on a **per-project** basis."
+    },
+    {
+      "source_file": "authentication.md",
+      "source_url": "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication",
+      "source_sha256": "f9ee1e9835e1ca3f8243ff2a24360e3abb14759a34e1280948d2b398e9af89b7",
+      "retrieved_at": "2026-11-17T13:57:31.046390+00:00",
+      "line_start": 132,
+      "line_end": 149,
+      "exact_quote": "### How to manage Vercel Authentication with the API\n\nYou can manage Vercel Authentication using the Vercel API endpoint to [update an existing project](/docs/rest-api/projects/update-an-existing-project) with the following body. Set `deploymentType` to one of these values:\n\n- `all_except_custom_domains`: Standard Protection\n- `prod_deployment_urls_and_all_previews`: (Legacy) Standard Protection\n- `all`: All Deployments\n- `preview`: (Legacy) Pre-Production Deployments\n\nTo enable or update Vercel Authentication, send the `ssoProtection` object:\n\n```json\n{\n  \"ssoProtection\": {\n    \"deploymentType\": \"all_except_custom_domains\"\n  }\n}\n```"
+    },
+    {
+      "source_file": "protection.md",
+      "source_url": "https://vercel.com/docs/deployment-protection",
+      "source_sha256": "73124007cd31e62b6c6c7ff799f9eee3e39b2bec353ef74337f7783c3c36f699",
+      "retrieved_at": "2026-11-17T13:57:31.127376+00:00",
+      "line_start": 60,
+      "line_end": 65,
+      "exact_quote": "The protection scope determines which URLs you protect:\n\n- [**Standard Protection**](#standard-protection): Protects all deployments **except** production domains\n- [**All Deployments**](#all-deployments): Protects **all** URLs, including production domains\n- [**(Legacy) Standard Protection**](#legacy-standard-protection): Protects all preview URLs and deployment URLs. All up-to-date production URLs remain unprotected.\n- [**(Legacy) Pre-Production Deployments**](#legacy-pre-production-deployments): Protects only preview URLs. Does not protect past production deployments."
+    },
+    {
+      "source_file": "protection.md",
+      "source_url": "https://vercel.com/docs/deployment-protection",
+      "source_sha256": "73124007cd31e62b6c6c7ff799f9eee3e39b2bec353ef74337f7783c3c36f699",
+      "retrieved_at": "2026-11-17T13:57:31.127376+00:00",
+      "line_start": 88,
+      "line_end": 105,
+      "exact_quote": "## Standard Protection\n\n> Standard Protection is available on all plans\n\n**Standard Protection** is the recommended option for most projects. It protects all domains except [production domains](/docs/domains/working-with-domains/add-a-domain \"Production Domains\").\n\n![Selecting Standard Protection in the Vercel Dashboard.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/contentful/image/e5382hct74si/7LHNvuRkcDlKMWswY7c8xd/858a8627a82bcec2c456bcd42618b3f5/Screenshot_2025-07-09_at_5.05.58%C3%A2__pm.png)\n\nYou can combine Standard Protection with any of the following methods:\n\n- [Vercel Authentication](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication)\n- [Passport](/docs/passport)\n- [Password Protection](/docs/deployment-protection/methods-to-protect-deployments/password-protection)\n- [Trusted IPs](/docs/deployment-protection/methods-to-protect-deployments/trusted-ips)\n\n### How to migrate to Standard Protection\n\nWhen you enable Standard Protection, the production [generated deployment URL](/docs/deployments/generated-urls) becomes restricted. Update any fetch requests that use `VERCEL_URL` or `VERCEL_BRANCH_URL` from [System Environment Variables](/docs/environment-variables/system-environment-variables#system-environment-variables) to target the same domain the user requested, since those variables will no longer be publicly accessible."
+    },
+    {
+      "source_file": "protection.md",
+      "source_url": "https://vercel.com/docs/deployment-protection",
+      "source_sha256": "73124007cd31e62b6c6c7ff799f9eee3e39b2bec353ef74337f7783c3c36f699",
+      "retrieved_at": "2026-11-17T13:57:31.127376+00:00",
+      "line_start": 141,
+      "line_end": 145,
+      "exact_quote": "> Protecting all deployments is available on all plans\n\nSelect **All Deployments** to secure all deployments (both preview and production), restricting public access entirely.\n\nWith this configuration, all URLs are protected, including your production domain `example.com` and [generated URLs](/docs/deployments/generated-urls) like `my-project-1234.vercel.app`."
+    },
+    {
+      "source_file": "protection.md",
+      "source_url": "https://vercel.com/docs/deployment-protection",
+      "source_sha256": "73124007cd31e62b6c6c7ff799f9eee3e39b2bec353ef74337f7783c3c36f699",
+      "retrieved_at": "2026-11-17T13:57:31.127376+00:00",
+      "line_start": 166,
+      "line_end": 168,
+      "exact_quote": "## (Legacy) Standard Protection\n\n**(Legacy) Standard Protection** protects all preview URLs and [deployment URLs](/docs/deployments/generated-urls \"Deployment URLs\"). All [up to date production URLs](/docs/deployments/generated-urls \"Up to date Production URLs\") remain unprotected."
+    },
+    {
+      "source_file": "update-project.md",
+      "source_url": "https://vercel.com/docs/rest-api/projects/update-an-existing-project",
+      "source_sha256": "4a2d226891a8447b2cfdde07c7402260b47f1fcf6f334abc08a1b873aa52640e",
+      "retrieved_at": "2026-11-17T13:57:31.745697+00:00",
+      "line_start": 18,
+      "line_end": 23,
+      "exact_quote": "\n```http\nPATCH /v9/projects/{idOrName}\n```\n\nUpdate the fields of a project using either its `name` or `id`."
+    },
+    {
+      "source_file": "update-project.md",
+      "source_url": "https://vercel.com/docs/rest-api/projects/update-an-existing-project",
+      "source_sha256": "4a2d226891a8447b2cfdde07c7402260b47f1fcf6f334abc08a1b873aa52640e",
+      "retrieved_at": "2026-11-17T13:57:31.745697+00:00",
+      "line_start": 38,
+      "line_end": 41,
+      "exact_quote": "| Name | Type | Required | Description |\n|---|---|---|---|\n| `teamId` | string | No | The Team identifier to perform the request on behalf of. |\n| `slug` | string | No | The Team slug to perform the request on behalf of. |"
+    },
+    {
+      "source_file": "update-project.md",
+      "source_url": "https://vercel.com/docs/rest-api/projects/update-an-existing-project",
+      "source_sha256": "4a2d226891a8447b2cfdde07c7402260b47f1fcf6f334abc08a1b873aa52640e",
+      "retrieved_at": "2026-11-17T13:57:31.745697+00:00",
+      "line_start": 622,
+      "line_end": 642,
+      "exact_quote": "    \"ssoProtection\": {\n      \"type\": \"object\",\n      \"description\": \"Ensures visitors to your Preview Deployments are logged into Vercel and have a minimum of Viewer access on your team\",\n      \"nullable\": true,\n      \"required\": [\n        \"deploymentType\"\n      ],\n      \"properties\": {\n        \"deploymentType\": {\n          \"type\": \"string\",\n          \"description\": \"Specify if the Vercel Authentication (SSO Protection) will apply to every Deployment Target or just Preview\",\n          \"enum\": [\n            \"all\",\n            \"preview\",\n            \"prod_deployment_urls_and_all_previews\",\n            \"all_except_custom_domains\"\n          ],\n          \"default\": \"preview\"\n        }\n      }\n    },"
+    },
+    {
+      "source_file": "add-domain.md",
+      "source_url": "https://vercel.com/docs/rest-api/projects/add-a-domain-to-a-project",
+      "source_sha256": "312cd85b05ddef5332db9c3815e51d30a9decfcabc19af4f328146a0362f857f",
+      "retrieved_at": "2026-11-17T13:57:31.518817+00:00",
+      "line_start": 18,
+      "line_end": 23,
+      "exact_quote": "\n```http\nPOST /v10/projects/{idOrName}/domains\n```\n\nAdd a domain to the project by passing its domain name and by specifying the project by either passing the project `id` or `name` in the URL. If the domain is not yet verified to be used on this project, the request will return `verified = false`, and the domain will need to be verified according to the `verification` challenge via `POST /projects/:idOrName/domains/:domain/verify`. If the domain already exists on the project, the request will fail with a `400` status code."
+    },
+    {
+      "source_file": "add-domain.md",
+      "source_url": "https://vercel.com/docs/rest-api/projects/add-a-domain-to-a-project",
+      "source_sha256": "312cd85b05ddef5332db9c3815e51d30a9decfcabc19af4f328146a0362f857f",
+      "retrieved_at": "2026-11-17T13:57:31.518817+00:00",
+      "line_start": 51,
+      "line_end": 69,
+      "exact_quote": "{\n  \"type\": \"object\",\n  \"required\": [\n    \"name\"\n  ],\n  \"properties\": {\n    \"name\": {\n      \"type\": \"string\",\n      \"description\": \"The project domain name\"\n    },\n    \"gitBranch\": {\n      \"type\": \"string\",\n      \"description\": \"Git branch to link the project domain\",\n      \"maxLength\": 250,\n      \"nullable\": true\n    },\n    \"customEnvironmentId\": {\n      \"type\": \"string\",\n      \"description\": \"The unique custom environment identifier within the project\""
+    },
+    {
+      "source_file": "add-domain.md",
+      "source_url": "https://vercel.com/docs/rest-api/projects/add-a-domain-to-a-project",
+      "source_sha256": "312cd85b05ddef5332db9c3815e51d30a9decfcabc19af4f328146a0362f857f",
+      "retrieved_at": "2026-11-17T13:57:31.518817+00:00",
+      "line_start": 268,
+      "line_end": 271,
+      "exact_quote": "    \"verified\": {\n      \"type\": \"boolean\",\n      \"description\": \"`true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.\",\n      \"enum\": ["
+    },
+    {
+      "source_file": "verify-domain.md",
+      "source_url": "https://vercel.com/docs/rest-api/projects/verify-project-domain",
+      "source_sha256": "bad73acb1cebf652cf12063b023840941c8a1f9ea1c8e0ec13d889f513070e55",
+      "retrieved_at": "2026-11-17T13:57:31.844682+00:00",
+      "line_start": 18,
+      "line_end": 23,
+      "exact_quote": "\n```http\nPOST /v9/projects/{idOrName}/domains/{domain}/verify\n```\n\nAttempts to verify a project domain with `verified = false` by checking the correctness of the project domain's `verification` challenge."
+    },
+    {
+      "source_file": "verify-domain.md",
+      "source_url": "https://vercel.com/docs/rest-api/projects/verify-project-domain",
+      "source_sha256": "bad73acb1cebf652cf12063b023840941c8a1f9ea1c8e0ec13d889f513070e55",
+      "retrieved_at": "2026-11-17T13:57:31.844682+00:00",
+      "line_start": 112,
+      "line_end": 113,
+      "exact_quote": "### 200: The project domain was verified successfully\nDomain is already verified"
+    },
+    {
+      "source_file": "verify-domain.md",
+      "source_url": "https://vercel.com/docs/rest-api/projects/verify-project-domain",
+      "source_sha256": "bad73acb1cebf652cf12063b023840941c8a1f9ea1c8e0ec13d889f513070e55",
+      "retrieved_at": "2026-11-17T13:57:31.844682+00:00",
+      "line_start": 165,
+      "line_end": 168,
+      "exact_quote": "    \"verified\": {\n      \"type\": \"boolean\",\n      \"description\": \"`true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.\",\n      \"enum\": ["
+    },
+    {
+      "source_file": "domain-config.md",
+      "source_url": "https://vercel.com/docs/rest-api/domains/get-a-domain-s-configuration",
+      "source_sha256": "fd5fbb1962bff3e9c0f984a43c6c3ac58d6b57a90c8c72f05eae493cb1cf600b",
+      "retrieved_at": "2026-11-17T13:57:31.532601+00:00",
+      "line_start": 18,
+      "line_end": 23,
+      "exact_quote": "\n```http\nGET /v6/domains/{domain}/config\n```\n\nGet a Domain's configuration."
+    },
+    {
+      "source_file": "domain-config.md",
+      "source_url": "https://vercel.com/docs/rest-api/domains/get-a-domain-s-configuration",
+      "source_sha256": "fd5fbb1962bff3e9c0f984a43c6c3ac58d6b57a90c8c72f05eae493cb1cf600b",
+      "retrieved_at": "2026-11-17T13:57:31.532601+00:00",
+      "line_start": 36,
+      "line_end": 43,
+      "exact_quote": "## Query parameters\n\n| Name | Type | Required | Description |\n|---|---|---|---|\n| `projectIdOrName` | string | No | The project id or name that will be associated with the domain. Use this when the domain is not yet associated with a project. |\n| `strict` | object. enum: true, false | No | When true, the response will only include the nameservers assigned directly to the specified domain. When false and there are no nameservers assigned directly to the specified domain, the response will include the nameservers of the domain's parent zone. |\n| `teamId` | string | No | The Team identifier to perform the request on behalf of. |\n| `slug` | string | No | The Team slug to perform the request on behalf of. |"
+    },
+    {
+      "source_file": "domain-config.md",
+      "source_url": "https://vercel.com/docs/rest-api/domains/get-a-domain-s-configuration",
+      "source_sha256": "fd5fbb1962bff3e9c0f984a43c6c3ac58d6b57a90c8c72f05eae493cb1cf600b",
+      "retrieved_at": "2026-11-17T13:57:31.532601+00:00",
+      "line_start": 157,
+      "line_end": 162,
+      "exact_quote": "    \"recommendedCNAME\": {\n      \"type\": \"array\",\n      \"description\": \"Recommended CNAMEs for the domain. rank=1 is the preferred value to use.\",\n      \"items\": {\n        \"type\": \"object\",\n        \"description\": \"Recommended CNAMEs for the domain. rank=1 is the preferred value to use.\","
+    },
+    {
+      "source_file": "domain-config.md",
+      "source_url": "https://vercel.com/docs/rest-api/domains/get-a-domain-s-configuration",
+      "source_sha256": "fd5fbb1962bff3e9c0f984a43c6c3ac58d6b57a90c8c72f05eae493cb1cf600b",
+      "retrieved_at": "2026-11-17T13:57:31.532601+00:00",
+      "line_start": 197,
+      "line_end": 204,
+      "exact_quote": "    \"misconfigured\": {\n      \"type\": \"boolean\",\n      \"description\": \"Whether or not the domain is configured AND we can automatically generate a TLS certificate.\",\n      \"enum\": [\n        false,\n        true\n      ]\n    }"
+    },
+    {
+      "source_file": "add-domain-guide.md",
+      "source_url": "https://vercel.com/docs/domains/working-with-domains/add-a-domain",
+      "source_sha256": "8aa708c9bb12eefa384370dddde51217f72c128d983f72f6f7a3efae1555fbba",
+      "retrieved_at": "2026-11-17T13:57:31.103939+00:00",
+      "line_start": 47,
+      "line_end": 49,
+      "exact_quote": "You can manage all domain settings related to a project from **Settings** and then **Domains** in the sidebar, regardless of whether you are using [apex domains](#apex-domains) or [subdomains](#subdomains) in your project. This document will guide you through both options.\n\nHobby teams have a limit of 50 custom domains per project."
+    },
+    {
+      "source_file": "add-domain-guide.md",
+      "source_url": "https://vercel.com/docs/domains/working-with-domains/add-a-domain",
+      "source_sha256": "8aa708c9bb12eefa384370dddde51217f72c128d983f72f6f7a3efae1555fbba",
+      "retrieved_at": "2026-11-17T13:57:31.103939+00:00",
+      "line_start": 120,
+      "line_end": 129,
+      "exact_quote": "  Once you have added your custom domain, you will need to configure the DNS records of your domain with your registrar so it can be used with your Project. The dashboard will automatically display different methods for configuring it:\n  - **If the domain is in use by another Vercel account**, you will need to [verify access to the domain](#verify-domain-access), with a **TXT** record\n  - If you're using an [**Apex domain**](#apex-domains) (e.g. example.com), you will need to configure it with an **A** record\n  - If you're using a [**Subdomain**](#subdomains) (e.g. docs.example.com), you will need to configure it with a **CNAME** record\n  Both **apex domains** and **subdomains** can also be configured using the [**Nameservers**](#vercel-nameservers) method.\n  > **⚠️ Warning:** Before changing nameservers, [copy your existing DNS\n  > records](/docs/domains/managing-dns-records#migrating-dns-records-from-an-external-registrar)\n  > to Vercel, including MX records for email and any verification TXT records.\n  > Changing only the website's A or CNAME record at your current DNS provider\n  > does not require moving the rest of your DNS records."
+    },
+    {
+      "source_file": "add-domain-guide.md",
+      "source_url": "https://vercel.com/docs/domains/working-with-domains/add-a-domain",
+      "source_sha256": "8aa708c9bb12eefa384370dddde51217f72c128d983f72f6f7a3efae1555fbba",
+      "retrieved_at": "2026-11-17T13:57:31.103939+00:00",
+      "line_start": 134,
+      "line_end": 135,
+      "exact_quote": "  #### Subdomains\n  You can configure **subdomains** with a **CNAME** record. Each project has a unique CNAME record e.g. `d1d4fc829fe7bc7c.vercel-dns-017.com`."
+    },
+    {
+      "source_file": "add-domain-guide.md",
+      "source_url": "https://vercel.com/docs/domains/working-with-domains/add-a-domain",
+      "source_sha256": "8aa708c9bb12eefa384370dddde51217f72c128d983f72f6f7a3efae1555fbba",
+      "retrieved_at": "2026-11-17T13:57:31.103939+00:00",
+      "line_start": 142,
+      "line_end": 149,
+      "exact_quote": "\n- ### Verify domain access\n  If the domain is in use by another Vercel account or team, you may be prompted to verify access to the domain with a `TXT` record. This will not move the domain into your account, but will allow you to use it in your project.\n\n  This also lets you use a subdomain whose apex domain belongs to another team, sometimes called subdomain delegation. For example, to use `ai.example.com` in one team while `example.com` stays with another:\n  1. In your project's **Settings** > **Domains**, add only the subdomain (`ai.example.com`). You don't need to add or move the apex domain.\n  2. Copy the `TXT` record Vercel shows. It is always created at `_vercel` on the apex domain (`_vercel.example.com`).\n  3. Add the record wherever DNS for the apex domain is managed. If the apex uses Vercel DNS, a member of the team that owns it adds the record from that team's **Domains** page."
+    },
+    {
+      "source_file": "generated-urls.md",
+      "source_url": "https://vercel.com/docs/deployments/generated-urls",
+      "source_sha256": "49f0656ea47584171cd27e2e8ffa4347af542347bb02bef5e57d7ca036fda1ae",
+      "retrieved_at": "2026-11-17T13:58:19.679539+00:00",
+      "line_start": 50,
+      "line_end": 59,
+      "exact_quote": "A Vercel deployment can have several URLs because each URL serves a different purpose. The deployment overview and Git integration comments can list generated URLs alongside your custom domains.\n\n| URL | Purpose |\n| --- | --- |\n| Unique deployment URL | Points to a specific deployment so you can share that version of your project. |\n| Git branch URL | Points to the latest deployment from that branch and stays the same when you push new commits. |\n| Production URL | Points to the project's production deployment. |\n| Custom domain | A domain you assign to a production or preview environment. |\n\nAdding a [custom domain](/docs/domains/working-with-domains/add-a-domain) gives the deployment another address alongside its generated URLs."
+    },
+    {
+      "source_file": "generated-urls.md",
+      "source_url": "https://vercel.com/docs/deployments/generated-urls",
+      "source_sha256": "49f0656ea47584171cd27e2e8ffa4347af542347bb02bef5e57d7ca036fda1ae",
+      "retrieved_at": "2026-11-17T13:58:19.679539+00:00",
+      "line_start": 101,
+      "line_end": 108,
+      "exact_quote": "To access the URL for a successful deployment from Vercel CLI, you can save the [standard output of the deploy command](/docs/cli/deploy#standard-output-usage). The standard output is the unique URL of the deployment. It has the structure `<project-name>-<unique-hash>-<scope-slug>.vercel.app`. When you deploy to production, Vercel also generates a URL with the following structure:\n\n```bash filename=\"url-structure\"\n<project-name>-<scope-slug>.vercel.app\n```\n\n> **💡 Note:** Once you deploy to the production environment, the above URL will point to the\n> production deployment."
+    }
+  ],
+  "target_domain": "paddock.juancerezo.com",
+  "standard_value": "all_except_custom_domains",
+  "legacy_value_not_to_use": "prod_deployment_urls_and_all_previews",
+  "dns_project_parameter": "projectIdOrName",
+  "no_paid_products_required_for_hobby": true
+}

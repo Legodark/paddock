@@ -1,0 +1,14 @@
+{
+  "run_url": "https://github.com/Legodark/paddock/actions/runs/43726037867",
+  "commit": "1394d8cfdf54fe681b744f6abe2cc4b79022e699",
+  "source": "Public GitHub check annotations; all reachable results retained without treating failures as skips.",
+  "status": "failure",
+  "browser_tests": {
+    "passed": 127,
+    "failed": 3,
+    "skipped": 0,
+    "flaky": 0
+  },
+  "diagnostic": "127 passed, 3 failed, 0 skipped, 0 flaky: [desktop-firefox] chat states pass automated accessibility and fit narrow screens: Error: frame.evaluate: Page crashed\n[desktop-firefox] keyboard access and automated accessibility checks on initial and result states: Error: frame.evaluate: Page crashed\n[mobile-webkit] controls remain readable and usable with doubled text: Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: true\nReceived: false; Google Chrome 157.0.8103.50",
+  "scope": "Failures are open; isolated Firefox diagnostic fixture is tested in Chromium only and has not yet run in hosted Firefox/WebKit."
+}

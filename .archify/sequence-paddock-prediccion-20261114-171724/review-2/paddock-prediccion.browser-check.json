@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "browser-check",
+  "evidenceKind": "automated-browser",
+  "status": "fail",
+  "visualReview": "not-requested",
+  "provenance": "current",
+  "deliveryReceiptId": "c6b2a8b2-66cf-49d3-83db-4dab44f6d1b2",
+  "artifact": {
+    "path": "/workspace/paddock/.archify/sequence-paddock-prediccion-20261114-171724/paddock-prediccion.html",
+    "sha256": "4775abb44c0fcbfa34d64abc69b6308e44d1253927d0a744a3cbbf9a52a6132a",
+    "bytes": 833656
+  },
+  "state": {
+    "detail": "read",
+    "motion": "still"
+  },
+  "chrome": {
+    "status": "available",
+    "executable": "/usr/bin/chromium"
+  },
+  "diagnostics": [
+    {
+      "code": "viewer/browser-check-runtime",
+      "severity": "error",
+      "message": "browser-check could not complete its Chrome inspection.",
+      "subject": {
+        "artifact": "/workspace/paddock/.archify/sequence-paddock-prediccion-20261114-171724/paddock-prediccion.html"
+      },
+      "evidence": {
+        "reason": "Chrome navigation failed: net::ERR_BLOCKED_BY_ADMINISTRATOR"
+      },
+      "supportedFixes": [
+        "resolve the reported Chrome inspection error, then rerun browser-check"
+      ]
+    }
+  ],
+  "containment": {
+    "status": "fail",
+    "policy": "fit-or-reader-declared-readable-vertical-scroll",
+    "viewports": []
+  },
+  "themeStates": {
+    "status": "fail",
+    "viewports": []
+  },
+  "readability": {
+    "status": "fail",
+    "minimumProjectedNodeTextPx": 6,
+    "viewports": []
+  },
+  "viewerChrome": {
+    "status": "fail",
+    "viewports": []
+  },
+  "captures": {
+    "status": "not-requested",
+    "screenshots": [],
+    "contactSheet": null
+  },
+  "sidecars": {
+    "directory": "/workspace/paddock/.archify/sequence-paddock-prediccion-20261114-171724/review-2",
+    "receipt": "paddock-prediccion.browser-check.json",
+    "files": []
+  },
+  "error": "Chrome navigation failed: net::ERR_BLOCKED_BY_ADMINISTRATOR"
+}

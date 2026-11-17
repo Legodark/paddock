@@ -1,0 +1,187 @@
+{
+  "run_url": "https://github.com/Legodark/paddock/actions/runs/43725248284",
+  "job_url": "https://github.com/Legodark/paddock/actions/runs/43725248284/job/132845649559",
+  "source": "Original Archify compact summaries emitted by the read-only CI job as check annotations. No artifact uploads or browser-policy changes.",
+  "results": [
+    {
+      "type": "workflow",
+      "toolCommit": "e37848822238e3a61b12739185cdadd49843a620",
+      "browserVersion": "Google Chrome 157.0.8103.50",
+      "sandboxRequested": true,
+      "exitCode": 0,
+      "unchanged": true,
+      "passed": true,
+      "summary": {
+        "schemaVersion": 1,
+        "ok": true,
+        "command": "finalize",
+        "status": "pass",
+        "type": "workflow",
+        "quality": "showcase",
+        "specification": {
+          "path": "/home/runner/work/paddock/paddock/.archify/workflow-paddock-validacion-20261114-171724/candidate.json",
+          "sha256": "88b30dcff531cf22af3c918d41c17de5cb99baab58b363a6ca1f71e0ed332b4c",
+          "bytes": 3889
+        },
+        "artifact": {
+          "path": "/home/runner/work/paddock/paddock/.archify/workflow-paddock-validacion-20261114-171724/paddock-validacion.html",
+          "sha256": "0e268907f214a22190ee9ff9934c33540ce39da9219fc49e2f8f4b39ecbf4336",
+          "bytes": 843330
+        },
+        "gates": {
+          "validate": "pass",
+          "deliver": "pass",
+          "check": "pass",
+          "browser-check": "pass"
+        },
+        "diagnostics": [],
+        "diagnosticSummary": {
+          "total": 0,
+          "shown": 0,
+          "truncated": false
+        },
+        "evidence": {
+          "receipt": "/home/runner/work/_temp/paddock-archify-review/workflow/paddock-validacion.finalize.json",
+          "summaryReceipt": "/home/runner/work/_temp/paddock-archify-review/workflow/paddock-validacion.finalize-summary.json",
+          "browserCheckReceipt": "/home/runner/work/_temp/paddock-archify-review/workflow/paddock-validacion.browser-check.json"
+        },
+        "update": {
+          "status": "current",
+          "installedVersion": "3.2.0",
+          "availableVersion": "3.2.0",
+          "releaseNotes": null,
+          "checkedAt": "2026-11-15T14:36:28.711Z",
+          "source": "cache",
+          "noticeRequired": false,
+          "noticeText": null
+        },
+        "visualReview": "not-requested",
+        "durationMs": 3330,
+        "browserCheck": {
+          "requested": true,
+          "ran": true
+        }
+      }
+    },
+    {
+      "type": "sequence",
+      "toolCommit": "e37848822238e3a61b12739185cdadd49843a620",
+      "browserVersion": "Google Chrome 157.0.8103.50",
+      "sandboxRequested": true,
+      "exitCode": 0,
+      "unchanged": true,
+      "passed": true,
+      "summary": {
+        "schemaVersion": 1,
+        "ok": true,
+        "command": "finalize",
+        "status": "pass",
+        "type": "sequence",
+        "quality": "showcase",
+        "specification": {
+          "path": "/home/runner/work/paddock/paddock/.archify/sequence-paddock-prediccion-20261114-171724/candidate.json",
+          "sha256": "f2b1e724ade4f3d9d8fcacf618c682d300aa21802960b976f5369a82007f72f7",
+          "bytes": 2937
+        },
+        "artifact": {
+          "path": "/home/runner/work/paddock/paddock/.archify/sequence-paddock-prediccion-20261114-171724/paddock-prediccion.html",
+          "sha256": "4775abb44c0fcbfa34d64abc69b6308e44d1253927d0a744a3cbbf9a52a6132a",
+          "bytes": 833656
+        },
+        "gates": {
+          "validate": "pass",
+          "deliver": "pass",
+          "check": "pass",
+          "browser-check": "pass"
+        },
+        "diagnostics": [],
+        "diagnosticSummary": {
+          "total": 0,
+          "shown": 0,
+          "truncated": false
+        },
+        "evidence": {
+          "receipt": "/home/runner/work/_temp/paddock-archify-review/sequence/paddock-prediccion.finalize.json",
+          "summaryReceipt": "/home/runner/work/_temp/paddock-archify-review/sequence/paddock-prediccion.finalize-summary.json",
+          "browserCheckReceipt": "/home/runner/work/_temp/paddock-archify-review/sequence/paddock-prediccion.browser-check.json"
+        },
+        "update": {
+          "status": "current",
+          "installedVersion": "3.2.0",
+          "availableVersion": "3.2.0",
+          "releaseNotes": null,
+          "checkedAt": "2026-11-15T14:36:28.711Z",
+          "source": "cache",
+          "noticeRequired": false,
+          "noticeText": null
+        },
+        "visualReview": "not-requested",
+        "durationMs": 2847,
+        "browserCheck": {
+          "requested": true,
+          "ran": true
+        }
+      }
+    },
+    {
+      "type": "architecture",
+      "toolCommit": "e37848822238e3a61b12739185cdadd49843a620",
+      "browserVersion": "Google Chrome 157.0.8103.50",
+      "sandboxRequested": true,
+      "exitCode": 0,
+      "unchanged": true,
+      "passed": true,
+      "summary": {
+        "schemaVersion": 1,
+        "ok": true,
+        "command": "finalize",
+        "status": "pass",
+        "type": "architecture",
+        "quality": "showcase",
+        "specification": {
+          "path": "/home/runner/work/paddock/paddock/.archify/architecture-paddock-propuesta-20261114-171724/candidate.json",
+          "sha256": "b2e1b7ae553665b42feae808d21d347e42a67acf74cf3827bb3afaa8a840d2e9",
+          "bytes": 2942
+        },
+        "artifact": {
+          "path": "/home/runner/work/paddock/paddock/.archify/architecture-paddock-propuesta-20261114-171724/paddock-propuesta.html",
+          "sha256": "c9f295c2b03ade7108f0125991e5df8a593cffe4bf17ea9fa53a880489214bc9",
+          "bytes": 838459
+        },
+        "gates": {
+          "validate": "pass",
+          "deliver": "pass",
+          "check": "pass",
+          "browser-check": "pass"
+        },
+        "diagnostics": [],
+        "diagnosticSummary": {
+          "total": 0,
+          "shown": 0,
+          "truncated": false
+        },
+        "evidence": {
+          "receipt": "/home/runner/work/_temp/paddock-archify-review/architecture/paddock-propuesta.finalize.json",
+          "summaryReceipt": "/home/runner/work/_temp/paddock-archify-review/architecture/paddock-propuesta.finalize-summary.json",
+          "browserCheckReceipt": "/home/runner/work/_temp/paddock-archify-review/architecture/paddock-propuesta.browser-check.json"
+        },
+        "update": {
+          "status": "current",
+          "installedVersion": "3.2.0",
+          "availableVersion": "3.2.0",
+          "releaseNotes": null,
+          "checkedAt": "2026-11-15T14:36:28.711Z",
+          "source": "network",
+          "noticeRequired": false,
+          "noticeText": null
+        },
+        "visualReview": "not-requested",
+        "durationMs": 8161,
+        "browserCheck": {
+          "requested": true,
+          "ran": true
+        }
+      }
+    }
+  ]
+}

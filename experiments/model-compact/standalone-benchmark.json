@@ -1,0 +1,30 @@
+{
+  "python": "3.12.14",
+  "site_packages_disabled": true,
+  "third_party_model_dependencies": [],
+  "startup_seconds": 0.01291,
+  "memory_after_load": {
+    "VmHWM_mib": 12.953,
+    "VmRSS_mib": 12.676
+  },
+  "memory_after_inference": {
+    "VmHWM_mib": 104.895,
+    "VmRSS_mib": 104.895
+  },
+  "peak_rss_mib": 104.734,
+  "price_inference": {
+    "samples": 1000,
+    "first_ms": 2.9454,
+    "median_ms": 0.2833,
+    "p95_ms": 0.4673
+  },
+  "message_inference": {
+    "samples": 100,
+    "first_ms": 0.5272,
+    "median_ms": 0.1637,
+    "p95_ms": 0.4601
+  },
+  "max_price_difference": 0,
+  "invalid_inputs_rejected": 5,
+  "limits": "Warm local filesystem, serial requests, existing legacy model; no provider/network/concurrency or accuracy validation."
+}

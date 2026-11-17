@@ -1,0 +1,246 @@
+{
+  "checked_at": "2026-11-15T22:00:14.595214+00:00",
+  "source_commit": "ad60e5b196a4091e72a94c3de99c2e99ecfb4a99",
+  "team_slug": "legodarks-projects",
+  "team_plan": "hobby",
+  "team_status": "active",
+  "project": {
+    "id": "prj_j0CAZebO2M3BsMtBR41PPbYJo8Rk",
+    "name": "paddock",
+    "accountId": "team_tAZz33yNmdc18LwiG8xTDOzz",
+    "framework": null,
+    "outputDirectory": "public",
+    "ssoProtection": {
+      "deploymentType": "all"
+    },
+    "link": null,
+    "createdAt": 1794779823316,
+    "resourceConfig": {
+      "fluid": true,
+      "functionDefaultRegions": [
+        "iad1"
+      ],
+      "buildMachineType": "basic",
+      "buildMachineSelection": "fixed"
+    },
+    "application_deployed": false,
+    "dns_changed": false,
+    "git_auto_deployments_enabled": false
+  },
+  "deployment_target": "preview",
+  "vercel_authentication_scope": "all",
+  "protected_project_default_domain": "paddock-phi-hazel.vercel.app",
+  "project_deployment_count": 0,
+  "project_custom_domain_count": 0,
+  "git_repository_linked": false,
+  "dry_run": {
+    "framework": {
+      "name": "Other",
+      "slug": null
+    },
+    "files": 20,
+    "source_bytes": 117469499,
+    "uploads_performed": false,
+    "source_inventory": [
+      {
+        "path": ".python-version",
+        "bytes": 8,
+        "sha256": "f50159fad3f4319868eb38717b91d55843c41e9803014c8de05e116a6d0bcfdc"
+      },
+      {
+        "path": ".vercelignore",
+        "bytes": 30,
+        "sha256": "828026584389f22fd48aea89928d83a4ac9f77191e11c02eccdfab02aa9678df"
+      },
+      {
+        "path": "api/index.py",
+        "bytes": 133,
+        "sha256": "78ed9d9c122491db1cec27d22c1600a2cc487cf7d472e5b7ad1c170d7d313bc4"
+      },
+      {
+        "path": "assets/cars.sqlite3",
+        "bytes": 20914176,
+        "sha256": "39335cdb513654e3d6928cdac7c960886c3ce5eb7072c68938f70320eba0272d"
+      },
+      {
+        "path": "assets/contract.json",
+        "bytes": 48079,
+        "sha256": "f8552fe589e41265d917e002fa89a9ce156ccf5789bc048fafbcd776568fba2e"
+      },
+      {
+        "path": "assets/legacy.json",
+        "bytes": 49229,
+        "sha256": "957e319ab0025d9d9dcfce38a3c48fe3bffe828ed94f9c6dbac555fcc4d9c909"
+      },
+      {
+        "path": "assets/manifest.json",
+        "bytes": 889,
+        "sha256": "f46c47afe1913c3769720f7ae6f06c5e838c48114f2ebf0cc5643c7698a9a439"
+      },
+      {
+        "path": "assets/message.json.gz",
+        "bytes": 46725,
+        "sha256": "820505cfffa425d4c8502e7dcfe08aff37de25e6ad029a546daa9cd6376d0470"
+      },
+      {
+        "path": "assets/price.bin",
+        "bytes": 96082072,
+        "sha256": "862e15962e6866b34a36d9f13906dcdcaf8aba6b9023fd028a47290a8c7984b7"
+      },
+      {
+        "path": "paddock_service/__init__.py",
+        "bytes": 61,
+        "sha256": "07fec144027c196e5ae1823a4001ffa6c5ac4b7e76bd77c13cb63e2511f31f55"
+      },
+      {
+        "path": "paddock_service/app.py",
+        "bytes": 13369,
+        "sha256": "8c9cc2094419365c496429191711b244974d2a68d02058db0164f72eea1d4f10"
+      },
+      {
+        "path": "paddock_service/forest.py",
+        "bytes": 6427,
+        "sha256": "b6fb184149029c48adf2e7eefe17a61995b0063812ab415cc198004056416549"
+      },
+      {
+        "path": "public/THIRD_PARTY_NOTICES.txt",
+        "bytes": 2432,
+        "sha256": "1e5b68b05899a5f00662d00e729d5e14dbeefbabc71424cc9a92ad7999bfd938"
+      },
+      {
+        "path": "public/assets/index-DFRDMWmQ.js",
+        "bytes": 263488,
+        "sha256": "7adc104f4081acaecc61454e1118de83cfda2d7de6503afbaf8b261933e6e3f0"
+      },
+      {
+        "path": "public/assets/index-DOKZLyPp.css",
+        "bytes": 26191,
+        "sha256": "88db9a71872de6cbcd6e28fd0d7f626ea2432da4fda8ea6e0b90ed29b1ff33a0"
+      },
+      {
+        "path": "public/index.html",
+        "bytes": 718,
+        "sha256": "1f92e974c0db519474feb11ad0e6d3d09611cccfc370c2a3b10723ceab360b26"
+      },
+      {
+        "path": "public/robots.txt",
+        "bytes": 26,
+        "sha256": "331ea9090db0c9f6f597bd9840fd5b171830f6e0b3ba1cb24dfa91f0c95aedc1"
+      },
+      {
+        "path": "requirements.in",
+        "bytes": 13,
+        "sha256": "35fde835d2cdf4ccbfb67738c7e5d2f8829fd441d3cbcb34b1f4c948a0a11cd4"
+      },
+      {
+        "path": "requirements.txt",
+        "bytes": 14330,
+        "sha256": "2c1b30a32364ee23da10b3ad7ea533ff2d36c29efd8f2204b92822123ddee8eb"
+      },
+      {
+        "path": "vercel.json",
+        "bytes": 1103,
+        "sha256": "d6a20dc891d856f80625fdcbe346cb6496b0fa22d978a5a5b9268439e500e533"
+      }
+    ],
+    "local_compressed_source_estimate_bytes": 30121547,
+    "archive_estimate_scope": "Local tar.gz only; not the CLI-produced archive and not uploaded."
+  },
+  "local_validation": {
+    "scope": "Local official bundle + WSGI only; not platform routing, rate limiting or billing.",
+    "ready": true,
+    "prediction": 20155.0,
+    "query_rows": 10,
+    "catalog_models": 719,
+    "locations": 50,
+    "function_uncompressed_bytes": 121114042,
+    "public_bytes": 292855,
+    "public_gzip_bytes": 88650,
+    "public_files": [
+      {
+        "path": "THIRD_PARTY_NOTICES.txt",
+        "bytes": 2432,
+        "gzip_bytes": 862,
+        "sha256": "1e5b68b05899a5f00662d00e729d5e14dbeefbabc71424cc9a92ad7999bfd938"
+      },
+      {
+        "path": "assets/index-DFRDMWmQ.js",
+        "bytes": 263488,
+        "gzip_bytes": 81047,
+        "sha256": "7adc104f4081acaecc61454e1118de83cfda2d7de6503afbaf8b261933e6e3f0"
+      },
+      {
+        "path": "assets/index-DOKZLyPp.css",
+        "bytes": 26191,
+        "gzip_bytes": 6259,
+        "sha256": "88db9a71872de6cbcd6e28fd0d7f626ea2432da4fda8ea6e0b90ed29b1ff33a0"
+      },
+      {
+        "path": "index.html",
+        "bytes": 718,
+        "gzip_bytes": 436,
+        "sha256": "1f92e974c0db519474feb11ad0e6d3d09611cccfc370c2a3b10723ceab360b26"
+      },
+      {
+        "path": "robots.txt",
+        "bytes": 26,
+        "gzip_bytes": 46,
+        "sha256": "331ea9090db0c9f6f597bd9840fd5b171830f6e0b3ba1cb24dfa91f0c95aedc1"
+      }
+    ],
+    "installed_packages": {
+      "blinker": "1.9.0",
+      "vercel-runtime": "0.24.3",
+      "jinja2": "3.1.6",
+      "werkzeug": "3.1.9",
+      "flask": "3.1.3",
+      "click": "8.5.1",
+      "markupsafe": "3.0.4",
+      "itsdangerous": "2.2.0"
+    },
+    "private_artifact_routes_status": 404,
+    "budgets": {
+      "function_uncompressed_bytes": 235929600,
+      "public_bytes": 1000000,
+      "public_gzip_bytes": 300000,
+      "note": "Local regression budgets, not provider quotas or an account spending cap."
+    }
+  },
+  "api_tests": {
+    "suite": "api",
+    "tests": 17,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 17
+  },
+  "platform_api_requests": 0,
+  "first_platform_smoke_budget": {
+    "api_requests_max": 20,
+    "concurrency_max": 2,
+    "retries": 0,
+    "max_duration_seconds": 10
+  },
+  "monthly_compute_headroom": null,
+  "firewall": {
+    "policy": "security/vercel-firewall.json",
+    "applied": false,
+    "tested": false,
+    "remote_status": "Not configured; system mitigations active"
+  },
+  "network": {
+    "vercel_api_reachable": true,
+    "deployment_hostname_reachable": false,
+    "observed_error": "Tunnel connection failed: 403 Forbidden",
+    "additional_host_pattern_required": "*.vercel.app",
+    "draft_saved": true,
+    "runtime_applied": false,
+    "saved_draft_id": "817a67f3975d0ad9d6fbe674c7639c93c3f6f9c5ec39863cee2054647612f6d5~cecfgdraft_2716948071048199bd7645d4fa3c4dcb"
+  },
+  "application_deployed": false,
+  "custom_dns_changed": false,
+  "paid_services_enabled": false,
+  "public_catalog_decision_pending_issue": 17,
+  "scope": "Protected empty project and local preparation; no deployed application or platform smoke test.",
+  "upload_method_proposed": "--archive=tgz"
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "validator": "validate-findings.cjs",
+    "skill_ref": "c1c8a8c1471069fb0e188eeaff69b8e8db6564a8",
+    "file": "findings.json",
+    "passed": true,
+    "output": "PASS: 0 findings valid"
+  },
+  {
+    "validator": "validate-coverage-ledger.cjs",
+    "skill_ref": "c1c8a8c1471069fb0e188eeaff69b8e8db6564a8",
+    "file": "coverage-ledger.json",
+    "passed": true,
+    "output": "PASS: 49 coverage units valid"
+  }
+]

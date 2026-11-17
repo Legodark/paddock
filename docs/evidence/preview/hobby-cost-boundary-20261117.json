@@ -1,0 +1,148 @@
+{
+  "checked_at": "2026-11-17T09:29:49.373443+00:00",
+  "scope": "Public official documentation only; no authenticated usage query, browser/cookies/credentials, application HTTP, provider mutation or repo edits.",
+  "sources": [
+    {
+      "name": "hobby",
+      "url": "https://vercel.com/docs/plans/hobby",
+      "resolved_url": "https://vercel.com/docs/plans/hobby",
+      "checked_at": "2026-11-17T09:27:31.836933+00:00",
+      "sha256": "768b91b8d26c8804c46deddff2a76eedb26d11d0b6149d93b30f119068761a79",
+      "content_type": "text/markdown; charset=utf-8",
+      "exact_excerpts": [
+        "The Hobby plan is **free** and includes a generous set of features on a **per month** basis:",
+        "As the Hobby plan is a free tier there are no billing cycles. In most cases, if you exceed your usage limits on the Hobby plan, you will have to wait until 30 days have passed before you can use the feature again.",
+        "| Spend Management | N/A | [Configurable](/docs/spend-management) |"
+      ],
+      "source_last_updated": "2026-11-12"
+    },
+    {
+      "name": "functions",
+      "url": "https://vercel.com/docs/functions/usage-and-pricing",
+      "resolved_url": "https://vercel.com/docs/functions/usage-and-pricing",
+      "checked_at": "2026-11-17T09:27:31.901158+00:00",
+      "sha256": "c8cf427c002c8cc6e5cb64efc78e37042b861d1ca450bf271fa2e3bd44efcc55",
+      "content_type": "text/markdown; charset=utf-8",
+      "exact_excerpts": [
+        "Vercel prices Functions on fluid compute based on your plan and resource usage. Hobby includes monthly allowances for Active CPU, Provisioned Memory, and Invocations. Vercel bills Pro usage on demand, and your monthly Pro usage credit can offset those charges:",
+        "| *On-demand Active CPU* | - | Costs vary by region |",
+        "| *On-demand Provisioned Memory* | - | Costs vary by region |",
+        "Exceeding the usage limits of your plan is one cause of a paused deployment. A paused production deployment stops serving traffic, and visitors see a `503 DEPLOYMENT_PAUSED` error.",
+        "In most cases, a Hobby team that exceeds its usage limits must wait until 30 days have passed before it can use fluid compute again, as described in [Hobby billing cycle](/docs/plans/hobby#hobby-billing-cycle). A paused Hobby team doesn't resume on its own when that period ends.",
+        "When your [Hobby team](/docs/plans/hobby) is set to **paused**, it remains in this state indefinitely unless you take action. This means **all** new and existing [deployments](/docs/deployments) will be paused.",
+        "- **Contact Support**: You can reach out to our [support team](/help) to discuss the reason for the pause and potential resolutions"
+      ],
+      "source_last_updated": "2026-06-16"
+    },
+    {
+      "name": "usage",
+      "url": "https://vercel.com/docs/pricing/manage-and-optimize-usage",
+      "resolved_url": "https://vercel.com/docs/pricing/manage-and-optimize-usage",
+      "checked_at": "2026-11-17T09:27:31.912908+00:00",
+      "sha256": "b82de778a80833f33f4dec84778ce382f89063447471292fd845da170cb28326",
+      "content_type": "text/markdown; charset=utf-8",
+      "exact_excerpts": [
+        "- **Usage Notifications**: Usage notifications are set up automatically. Pro teams can also [configure the threshold](/docs/notifications#on-demand-usage-notifications) for usage alerts to notify you when you're approaching your usage limits"
+      ],
+      "source_last_updated": "2026-09-18"
+    },
+    {
+      "name": "spend",
+      "url": "https://vercel.com/docs/pricing/spend-management",
+      "resolved_url": "https://vercel.com/docs/spend-management",
+      "checked_at": "2026-11-17T09:27:32.480342+00:00",
+      "sha256": "018c48db5d6e333532f54c1116198d6ea85fdc562ce410e2d461981ae7e13c13",
+      "content_type": "text/markdown; charset=utf-8",
+      "exact_excerpts": [
+        "> Spend Management is available on Enterprise and Pro plans (Enterprise teams require the Flexible Commitment plan)"
+      ],
+      "source_last_updated": "2026-09-18"
+    },
+    {
+      "name": "firewall",
+      "url": "https://vercel.com/docs/vercel-firewall/vercel-waf/usage-and-pricing",
+      "resolved_url": "https://vercel.com/docs/vercel-firewall/vercel-waf/usage-and-pricing",
+      "checked_at": "2026-11-17T09:27:31.891240+00:00",
+      "sha256": "9eadc97d8790c9ad9a6753b9bf71644b6dade8292af421db465169a260dba597",
+      "content_type": "text/markdown; charset=utf-8",
+      "exact_excerpts": [
+        "WAF deny, challenge, or rate-limit mitigated traffic does not incur [CDN Requests](/docs/manage-cdn-usage#cdn-requests) or [Fast Data Transfer (FDT)](/docs/manage-cdn-usage#fast-data-transfer). Requests that pass a challenge and continue to your application count toward normal usage."
+      ],
+      "source_last_updated": "2026-06-16"
+    },
+    {
+      "name": "rate-limit",
+      "url": "https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting",
+      "resolved_url": "https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting",
+      "checked_at": "2026-11-17T09:28:06.574107+00:00",
+      "sha256": "3102a9a02e66906a5c0f3110266f4016514a6dba2ffa227242ee93ad162e1b7d",
+      "content_type": "text/markdown; charset=utf-8",
+      "exact_excerpts": [
+        "| Included requests      | 1,000,000 Allowed requests            | Usage-based                           | Custom                                               |"
+      ],
+      "source_last_updated": "2026-08-28"
+    },
+    {
+      "name": "fair-use",
+      "url": "https://vercel.com/docs/limits/fair-use-guidelines",
+      "resolved_url": "https://vercel.com/docs/limits/fair-use-guidelines",
+      "checked_at": "2026-11-17T09:28:24.013234+00:00",
+      "sha256": "f4b1ca1ded277e7a67141c8c902f304ee0a6b541e7c447b0db9e3bfa946b9531",
+      "content_type": "text/markdown; charset=utf-8",
+      "exact_excerpts": [
+        "For Teams on the Pro plan, you can pay for [additional usage](/docs/limits/fair-use-guidelines#additional-resources) as you go."
+      ],
+      "source_last_updated": "2026-11-12"
+    }
+  ],
+  "conclusions": {
+    "hobby_base_plan_free": true,
+    "functions_hobby_on_demand_price_not_offered_in_table": true,
+    "automatic_upgrade_or_automatic_functions_overage_not_documented_for_hobby": true,
+    "hobby_free_configurable_spend_limit_available": false,
+    "usage_notifications_automatic_documented": true,
+    "notification_threshold_customization_hobby_proven": false,
+    "notification_is_spend_cap": false,
+    "hobby_compute_exhaustion_can_pause_all_team_deployments": true,
+    "automatic_resume_after_30_days_guaranteed": false,
+    "zero_extra_service_cost_supported_conditionally": "Keep the verified Hobby plan and only included features, no paid add-ons/storage/plans; documentation supports no on-demand Functions tier for Hobby. This does not certify the current remaining allowance, guarantee unlimited availability or constitute a universal billing guarantee.",
+    "current_remaining_shared_monthly_allowance": "UNKNOWN; not queried",
+    "what_happens_after_waf_included_million": "Not specified in sources inspected; do not assert fail-closed, indefinite protection or automatic recovery.",
+    "exact_cdn_specific_exhaustion_mechanism": "Generic Hobby pause/wait documented; no per-CDN-product deterministic mechanism verified here."
+  },
+  "actionable": [
+    "Close plan/free-feature eligibility separately from monthly capacity evidence; do not require Observability Plus to establish the plan pricing.",
+    "Keep CPU/RAM billed use, verified cold start and current shared allowance explicitly UNKNOWN.",
+    "Do not configure or claim a free 0-euro Spend Management cap: Hobby lists N/A.",
+    "Treat emails as notices only, not a hard cutoff or guarantee of early intervention.",
+    "If quota pause occurs, stop adding workload; do not upgrade or purchase capacity automatically. Docs say Support is a recovery path; never promise that merely waiting 30 days restores all deployments.",
+    "The portfolio shares the team risk; another Paddock project is not isolation.",
+    "No source-backed guarantee for behavior after exhausting rate-limit included usage; leave it as a specific operational limitation."
+  ],
+  "local_observation": {
+    "queried_at": "2026-11-17T09:37:04.981072+00:00",
+    "monthly_traffic": {
+      "queried_at": "2026-11-17T09:31:42Z",
+      "requested_from": "2026-11-01T00:00:00Z",
+      "requested_until": "2026-11-17T09:31:42Z",
+      "exit": 1,
+      "application_http_requests": 0,
+      "scope": "Paddock firewall aggregate, not CPU/RAM/remaining quota",
+      "error_category": "observability_plus_required",
+      "provider_message": "Observability Plus is required for this query.",
+      "status": "error",
+      "reason": "api_error"
+    },
+    "shared_desktop": {
+      "capability_enabled": true,
+      "desktop_control_tool_exposed": false,
+      "viewer_open_tool_exposed": false,
+      "display_environment_variable_present": false,
+      "x11_sockets_present": false,
+      "browser_process_present": false,
+      "credentials_or_cookies_read": false
+    },
+    "application_http_requests": 0,
+    "paid_features_enabled": false
+  }
+}
