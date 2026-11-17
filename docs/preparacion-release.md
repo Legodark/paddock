@@ -1,6 +1,6 @@
 # Preparación de la publicación y del rollback
 
-16-11-2026. Seguimiento: [#14](https://github.com/Legodark/paddock/issues/14), candidata [PR #6](https://github.com/Legodark/paddock/pull/6). **Ensayo privado de Production/rollback completado: 22/22 comprobaciones.** Se restauró la candidata y se conservó la autenticación obligatoria. La entrega pública, integración, nueva release/tag y DNS siguen pendientes.
+Actualizado el 17-11-2026. Seguimiento: [#14](https://github.com/Legodark/paddock/issues/14), candidata [PR #6](https://github.com/Legodark/paddock/pull/6). **Ensayo histórico de rollback: 22/22; baseline Production con el nuevo límite de rutas: 10/10.** Se restauró la candidata y se conservó la autenticación obligatoria. La entrega pública, integración, nueva release/tag y DNS siguen pendientes.
 
 ## Entradas verificadas y decisiones pendientes
 
@@ -16,17 +16,17 @@
 
 Los parámetros de memoria y timeout proceden del plano de control: no miden memoria usada o CPU facturada. La región CDN `cle1` observada durante pruebas tampoco identifica la región de función `iad1`. [Evidencia de plataforma y fuentes](evidence/preview/release-platform-review-20261116.json).
 
-Está preparado el [inventario verificable de la candidata privada](evidence/preview/candidate-artifacts-20261116.json): 88 archivos seleccionados, 504.608 bytes públicos y hashes de los modelos, SQLite, manifiesto y código/configuración del paquete. Los hashes de los assets se contrastaron con su manifiesto; el documento de inventario no incluye binarios o filas del dataset. Ese inventario identifica la candidata completa elegida; los IDs del ensayo privado se registran abajo. La referencia/build definitivos de la release pública siguen pendientes; la decisión de alcance ya está [registrada](catalogo-publico.md).
+Está preparado el [inventario verificable de la candidata privada](evidence/preview/candidate-artifacts-20261116.json): 88 archivos seleccionados, 504.608 bytes públicos y hashes de los modelos, SQLite, manifiesto y código/configuración del paquete. Los hashes de los assets se contrastaron con su manifiesto; el documento de inventario no incluye binarios o filas del dataset. Ese inventario de 75 estáticos identifica el snapshot anterior; el paquete canónico posterior tiene 76 archivos/504.634 bytes, incluidos los 26 bytes del robots existente en fuentes. La [baseline protegida actual](evidence/preview/guarded-production-baseline-20261117.json) conserva los 87 archivos seleccionados distintos de vercel.json y la nueva configuración de rutas. Los IDs históricos y actuales se distinguen abajo. La referencia/build definitivos de la release pública siguen pendientes; la decisión de alcance ya está [registrada](catalogo-publico.md).
 
 El panel gratuito **Usage** del equipo es una vía para leer el consumo mensual. En esta sesión el escritorio está habilitado pero no están expuestas las herramientas de control del navegador compartido ni de apertura de su visor; la consulta de Usage no se ha realizado. La CLI rechaza los datos de métricas con `payment_required` y billing no ofrece datos. No se interpreta esto como saldo completo ni se solicita contratar observabilidad.
 
 ## Separar entrega estática de bloqueo simultáneo
 
-El control `/robots.txt` del ensayo devolvió 404 porque ese archivo no existe en el paquete vigente. No es una prueba positiva de entrega de un archivo existente.
+En el ensayo histórico, `/robots.txt` devolvió 404 porque no existía en aquel paquete de Preview. El paquete canónico actual sí incluye el archivo que ya estaba en las fuentes. No es una prueba positiva de entrega de un archivo existente.
 
 Sí existe evidencia anterior de **seis recursos 200 en este mismo despliegue**, con hashes idénticos al build: HTML, JS, CSS, logo de marca, PNG de identidad y avisos de licencia. [Evidencia](evidence/ux/price-gauge-provider.json). Esto acredita entrega estática; no acredita que se repitiera mientras esa IP estaba limitada. La política y el compilador local excluyen estas rutas de Python. Conservar ambas afirmaciones separadas permite cerrar la comprobación de entrega sin fabricar simultaneidad ni repetir llamadas.
 
-Las variantes 404/308 no demostraron acceso funcional fuera del límite. Tampoco demostraron todas la política desde una IP ya limitada. Resolver esa parte con un procedimiento revisado o una decisión explícita sobre la limitación residual; el destino del 308 ya se observó sin seguirlo. El ensayo de recuperación posterior tuvo su propio techo de 22 HTTP: la contabilidad conjunta conservadora queda en 121 frente a 127, seis sin consumir; no permite otra ráfaga.
+Las variantes 404/308 no demostraron acceso funcional fuera del límite. Tampoco demostraron todas la política desde una IP ya limitada. Resolver esa parte con un procedimiento revisado o una decisión explícita sobre la limitación residual; el destino del 308 ya se observó sin seguirlo. El ensayo de recuperación posterior tuvo su propio techo de 22 HTTP: aquella contabilidad quedó en 121 frente a 127 y la prueba posterior de seis casos la cerró en 127/127, sin remanente; no permite otra ráfaga.
 
 ## Secuencia de entrega
 
@@ -81,3 +81,13 @@ Conservar: commit/tag, CI, source ref auditado y cambios revalidados, hashes, ID
 ## Compatibilidad del rollback tras el endurecimiento de rutas
 
 El ensayo privado anterior acredita el mecanismo y el alcance completo del catálogo. Su código precede al límite explícito de rutas: para la entrega final, fijar una baseline mantenida que incluya también ese límite y registrar sus nuevos IDs de Production. No presentar automáticamente los IDs históricos como respaldo de la nueva política. No se ha vuelto a promover Production o modificar DNS durante la prueba de seis HTTP de la Preview.
+
+## Baseline con límite de rutas · 17-11-2026
+
+[Diez comprobaciones y siete registros autenticados correlacionados](evidence/preview/guarded-production-baseline-20261117.json). Se creó una única Production protegida: `dpl_Gbw7hDo9r6u71J8Cz1K1rFQ6auLt`, fuente `ecf91777b213efd674c639ec9f908e327a355f17`, [URL privada](https://paddock-7fxt0bibv-legodarks-projects.vercel.app). Ambos aliases Production apuntan a ese ID y las pruebas autenticadas se hicieron a través del alias activo.
+
+Tres raíces anónimas (URL única y ambos aliases) devolvieron 302; HTML/JS conservaron sus hashes, health quedó listo/modelo congelado, predicción 20.155 €, clasificación contexto 1 y búsqueda limitada correctas. La entrada directa devolvió 404 `not_found`, correlacionada con logs sin seleccionar función. Hobby, autenticación `all`, Git desconectado y ausencia de dominio personalizado se conservaron.
+
+Fue una fase nueva de **una construcción y diez HTTP**, sin reutilizar los techos cerrados de WAF/rollback, sin ráfagas, reintentos o redirecciones seguidas. No se repitió el rollback: esta baseline tiene historial real de alias y será el destino anterior mantenido cuando una candidata posterior la reemplace. Inmediatamente después de crearla, la Production anterior sigue siendo la que no incorpora el endurecimiento; no usarla como respaldo equivalente de esa política.
+
+La siguiente candidata debe conservar los hashes y el routing de esta baseline. No se midieron CPU/RAM, arranque frío o margen mensual; la etapa no abrió acceso público ni modificó DNS, `main`, tags o el portfolio.
