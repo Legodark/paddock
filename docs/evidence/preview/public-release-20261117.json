@@ -1,0 +1,527 @@
+{
+  "checked_at": "2026-11-17T14:51:27.694428+00:00",
+  "scope": "Public release verification using anonymous plain HTTPS, no bypass or cookies, no redirects followed, no API retries or bursts.",
+  "url": "https://paddock.juancerezo.com",
+  "source": "9a38be8848cbf601988614b01381758c99ae86f6",
+  "version": "v2026.11.17",
+  "deployment_id": "dpl_5G9aPw9k49MnFN79VAPsVbKz1S1y",
+  "baseline_id": "dpl_Gbw7hDo9r6u71J8Cz1K1rFQ6auLt",
+  "rollback_baseline_has_production_alias_history": true,
+  "new_rollback_execution_in_this_phase": false,
+  "project_after": {
+    "plan": "hobby",
+    "status": "active",
+    "protection": "all_except_custom_domains",
+    "git_connected": false,
+    "project_domains": [
+      "paddock.juancerezo.com",
+      "paddock-phi-hazel.vercel.app"
+    ]
+  },
+  "domain_verified": true,
+  "dns_config": {
+    "misconfigured": false,
+    "configuredBy": "A",
+    "recommendedCNAME": [
+      {
+        "rank": 1,
+        "value": "89736152b68d837e.vercel-dns-017.com."
+      },
+      {
+        "rank": 2,
+        "value": "cname.vercel-dns.com."
+      }
+    ],
+    "recommendedIPv4": [
+      {
+        "rank": 1,
+        "value": [
+          "216.198.79.1",
+          "64.29.17.1"
+        ]
+      },
+      {
+        "rank": 2,
+        "value": [
+          "76.76.21.21"
+        ]
+      }
+    ]
+  },
+  "dns_writes_performed": false,
+  "http_actual": 16,
+  "http_ceiling": 18,
+  "public_provider_correlations": 10,
+  "unique_deployment_roots_protected": 3,
+  "canonical_production_alias_status": 200,
+  "canonical_alias_policy": "Standard can leave canonical Production aliases public; observed public HTML matches the same release. Unique deployment URLs are separately protected.",
+  "cases": [
+    {
+      "case": 1,
+      "key": "portfolio-before",
+      "origin": "https://juancerezo.com",
+      "path": "/",
+      "method": "HEAD",
+      "attempted_at": "2026-11-17T14:14:48.130611+00:00",
+      "status": 200,
+      "tls_verify_result": 0,
+      "duration_seconds": 0.400991,
+      "transport_exit": 0,
+      "headers": {
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer",
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://vitals.vercel-insights.com https://va.vercel-scripts.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src 'none'; frame-ancestors 'none'; worker-src 'none'; media-src 'none'; manifest-src 'self'; upgrade-insecure-requests"
+      },
+      "finished_at": "2026-11-17T14:14:48.545233+00:00"
+    },
+    {
+      "case": 2,
+      "key": "private-domain-readiness-1",
+      "origin": "https://paddock.juancerezo.com",
+      "path": "/",
+      "method": "HEAD",
+      "attempted_at": "2026-11-17T14:14:53.522166+00:00",
+      "status": 302,
+      "tls_verify_result": 0,
+      "duration_seconds": 0.362175,
+      "transport_exit": 0,
+      "headers": {
+        "nosniff": "",
+        "frame": "DENY",
+        "referrer": "",
+        "csp": ""
+      },
+      "finished_at": "2026-11-17T14:14:53.904249+00:00"
+    },
+    {
+      "case": 3,
+      "key": "public-html",
+      "origin": "https://paddock.juancerezo.com",
+      "path": "/",
+      "method": "GET",
+      "attempted_at": "2026-11-17T14:50:46.235120+00:00",
+      "status": 200,
+      "tls_verify_result": 0,
+      "duration_seconds": 0.484987,
+      "transport_exit": 0,
+      "redirect_host": null,
+      "headers": {
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer",
+        "csp": "default-src 'none'; script-src 'self'; style-src 'self'; style-src-attr 'unsafe-inline'; img-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'"
+      },
+      "finished_at": "2026-11-17T14:50:46.744943+00:00",
+      "passed": true,
+      "kind": "static",
+      "sha256": "41e76755bd37fae99f1329b7fdf7dbeacee913a30e2437b64d32026c4ad4b19d",
+      "provider": {
+        "httpStatus": 200,
+        "requestPath": "/",
+        "pathType": "static",
+        "route": "/index.html",
+        "wafAction": "allow",
+        "cacheResult": "MISS"
+      }
+    },
+    {
+      "case": 4,
+      "key": "public-js",
+      "origin": "https://paddock.juancerezo.com",
+      "path": "/assets/index-TX-N8QC5.js",
+      "method": "GET",
+      "attempted_at": "2026-11-17T14:50:46.745944+00:00",
+      "status": 200,
+      "tls_verify_result": 0,
+      "duration_seconds": 0.486238,
+      "transport_exit": 0,
+      "redirect_host": null,
+      "headers": {
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer",
+        "csp": ""
+      },
+      "finished_at": "2026-11-17T14:50:47.261159+00:00",
+      "passed": true,
+      "kind": "static",
+      "sha256": "a8de581ec8a1132692ba7f3edca6f62532e735bb6d8235a1d670c29d644dd258",
+      "provider": {
+        "httpStatus": 200,
+        "requestPath": "/assets/index-TX-N8QC5.js",
+        "pathType": "static",
+        "route": "/assets/index-TX-N8QC5.js",
+        "wafAction": "allow",
+        "cacheResult": "MISS"
+      }
+    },
+    {
+      "case": 5,
+      "key": "public-css",
+      "origin": "https://paddock.juancerezo.com",
+      "path": "/assets/index-C2TIhlb5.css",
+      "method": "GET",
+      "attempted_at": "2026-11-17T14:50:47.274873+00:00",
+      "status": 200,
+      "tls_verify_result": 0,
+      "duration_seconds": 0.467816,
+      "transport_exit": 0,
+      "redirect_host": null,
+      "headers": {
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer",
+        "csp": ""
+      },
+      "finished_at": "2026-11-17T14:50:47.763241+00:00",
+      "passed": true,
+      "kind": "static",
+      "sha256": "f20bb1c64f064a0511220d19ac55e6e74eb940e5d65eb75b2527a8bd1c649326",
+      "provider": {
+        "httpStatus": 200,
+        "requestPath": "/assets/index-C2TIhlb5.css",
+        "pathType": "static",
+        "route": "/assets/index-C2TIhlb5.css",
+        "wafAction": "allow",
+        "cacheResult": "MISS"
+      }
+    },
+    {
+      "case": 6,
+      "key": "public-health",
+      "origin": "https://paddock.juancerezo.com",
+      "path": "/api/v1/health",
+      "method": "GET",
+      "attempted_at": "2026-11-17T14:50:47.764799+00:00",
+      "status": 200,
+      "tls_verify_result": 0,
+      "duration_seconds": 4.405941,
+      "transport_exit": 0,
+      "redirect_host": null,
+      "headers": {
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer",
+        "csp": "default-src 'none'; frame-ancestors 'none'"
+      },
+      "finished_at": "2026-11-17T14:50:52.183778+00:00",
+      "passed": true,
+      "kind": "api",
+      "response": {
+        "ready": true,
+        "frozen_model": true
+      },
+      "provider": {
+        "httpStatus": 200,
+        "requestPath": "/api/v1/health",
+        "pathType": "streaming_func",
+        "route": "/api/index",
+        "wafAction": "allow",
+        "cacheResult": "MISS"
+      }
+    },
+    {
+      "case": 7,
+      "key": "public-predict",
+      "origin": "https://paddock.juancerezo.com",
+      "path": "/api/v1/predict",
+      "method": "POST",
+      "attempted_at": "2026-11-17T14:50:52.185064+00:00",
+      "status": 200,
+      "tls_verify_result": 0,
+      "duration_seconds": 0.381499,
+      "transport_exit": 0,
+      "redirect_host": null,
+      "headers": {
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer",
+        "csp": "default-src 'none'; frame-ancestors 'none'"
+      },
+      "finished_at": "2026-11-17T14:50:52.587643+00:00",
+      "passed": true,
+      "kind": "api",
+      "response": {
+        "prediction": 20155.0,
+        "historical": true,
+        "cheap_rows": 5,
+        "expensive_rows": 5
+      },
+      "provider": {
+        "httpStatus": 200,
+        "requestPath": "/api/v1/predict",
+        "pathType": "streaming_func",
+        "route": "/api/index",
+        "wafAction": "allow",
+        "cacheResult": "MISS"
+      }
+    },
+    {
+      "case": 8,
+      "key": "public-message",
+      "origin": "https://paddock.juancerezo.com",
+      "path": "/api/v1/message",
+      "method": "POST",
+      "attempted_at": "2026-11-17T14:50:52.589793+00:00",
+      "status": 200,
+      "tls_verify_result": 0,
+      "duration_seconds": 0.182682,
+      "transport_exit": 0,
+      "redirect_host": null,
+      "headers": {
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer",
+        "csp": "default-src 'none'; frame-ancestors 'none'"
+      },
+      "finished_at": "2026-11-17T14:50:52.788734+00:00",
+      "passed": true,
+      "kind": "api",
+      "response": {
+        "context": 1,
+        "historical": true
+      },
+      "provider": {
+        "httpStatus": 200,
+        "requestPath": "/api/v1/message",
+        "pathType": "streaming_func",
+        "route": "/api/index",
+        "wafAction": "allow",
+        "cacheResult": "MISS"
+      }
+    },
+    {
+      "case": 9,
+      "key": "public-cars",
+      "origin": "https://paddock.juancerezo.com",
+      "path": "/api/v1/cars?limit=1",
+      "method": "GET",
+      "attempted_at": "2026-11-17T14:50:52.789607+00:00",
+      "status": 200,
+      "tls_verify_result": 0,
+      "duration_seconds": 0.45603,
+      "transport_exit": 0,
+      "redirect_host": null,
+      "headers": {
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer",
+        "csp": "default-src 'none'; frame-ancestors 'none'"
+      },
+      "finished_at": "2026-11-17T14:50:53.274547+00:00",
+      "passed": true,
+      "kind": "api",
+      "response": {
+        "rows": 1,
+        "historical": true
+      },
+      "provider": {
+        "httpStatus": 200,
+        "requestPath": "/api/v1/cars",
+        "pathType": "streaming_func",
+        "route": "/api/index",
+        "wafAction": "allow",
+        "cacheResult": "MISS"
+      }
+    },
+    {
+      "case": 10,
+      "key": "public-direct-entry",
+      "origin": "https://paddock.juancerezo.com",
+      "path": "/api/index.py",
+      "method": "GET",
+      "attempted_at": "2026-11-17T14:50:53.284460+00:00",
+      "status": 404,
+      "tls_verify_result": 0,
+      "duration_seconds": 0.344091,
+      "transport_exit": 0,
+      "redirect_host": null,
+      "headers": {
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer",
+        "csp": "default-src 'none'; frame-ancestors 'none'"
+      },
+      "finished_at": "2026-11-17T14:50:53.664920+00:00",
+      "passed": true,
+      "kind": "rejected-route",
+      "provider": {
+        "httpStatus": 404,
+        "requestPath": "/api/index.py",
+        "pathType": "not_found",
+        "route": "/api/index.py",
+        "wafAction": "allow",
+        "cacheResult": ""
+      }
+    },
+    {
+      "case": 11,
+      "key": "public-encoded-prefix",
+      "origin": "https://paddock.juancerezo.com",
+      "path": "/%61pi/v1/health",
+      "method": "GET",
+      "attempted_at": "2026-11-17T14:50:53.666169+00:00",
+      "status": 404,
+      "tls_verify_result": 0,
+      "duration_seconds": 0.136978,
+      "transport_exit": 0,
+      "redirect_host": null,
+      "headers": {
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer",
+        "csp": "default-src 'none'; frame-ancestors 'none'"
+      },
+      "finished_at": "2026-11-17T14:50:53.814512+00:00",
+      "passed": true,
+      "kind": "rejected-route",
+      "provider": {
+        "httpStatus": 404,
+        "requestPath": "/%61pi/v1/health",
+        "pathType": "not_found",
+        "route": "/404.html",
+        "wafAction": "allow",
+        "cacheResult": ""
+      }
+    },
+    {
+      "case": 12,
+      "key": "canonical-production-alias",
+      "origin": "https://paddock-phi-hazel.vercel.app",
+      "path": "/",
+      "method": "GET",
+      "attempted_at": "2026-11-17T14:50:53.815970+00:00",
+      "status": 200,
+      "tls_verify_result": 0,
+      "duration_seconds": 0.290875,
+      "transport_exit": 0,
+      "redirect_host": null,
+      "headers": {
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer",
+        "csp": "default-src 'none'; script-src 'self'; style-src 'self'; style-src-attr 'unsafe-inline'; img-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'"
+      },
+      "finished_at": "2026-11-17T14:50:54.128317+00:00",
+      "passed": true,
+      "kind": "canonical-public-static",
+      "sha256": "41e76755bd37fae99f1329b7fdf7dbeacee913a30e2437b64d32026c4ad4b19d",
+      "provider": {
+        "httpStatus": 200,
+        "requestPath": "/",
+        "pathType": "static",
+        "route": "/index.html",
+        "wafAction": "allow",
+        "cacheResult": "HIT"
+      }
+    },
+    {
+      "case": 13,
+      "key": "unique-production",
+      "origin": "https://paddock-arz6cu4x3-legodarks-projects.vercel.app",
+      "path": "/",
+      "method": "GET",
+      "attempted_at": "2026-11-17T14:50:54.129904+00:00",
+      "status": 302,
+      "tls_verify_result": 0,
+      "duration_seconds": 0.25841,
+      "transport_exit": 0,
+      "redirect_host": "vercel.com",
+      "headers": {
+        "nosniff": "",
+        "frame": "DENY",
+        "referrer": "",
+        "csp": ""
+      },
+      "finished_at": "2026-11-17T14:50:54.422455+00:00",
+      "passed": true,
+      "kind": "protected-unique"
+    },
+    {
+      "case": 14,
+      "key": "unique-preview",
+      "origin": "https://paddock-nl7ur2oq5-legodarks-projects.vercel.app",
+      "path": "/",
+      "method": "GET",
+      "attempted_at": "2026-11-17T14:50:54.424031+00:00",
+      "status": 302,
+      "tls_verify_result": 0,
+      "duration_seconds": 0.385954,
+      "transport_exit": 0,
+      "redirect_host": "vercel.com",
+      "headers": {
+        "nosniff": "",
+        "frame": "DENY",
+        "referrer": "",
+        "csp": ""
+      },
+      "finished_at": "2026-11-17T14:50:54.821559+00:00",
+      "passed": true,
+      "kind": "protected-unique"
+    },
+    {
+      "case": 15,
+      "key": "unique-baseline",
+      "origin": "https://paddock-7fxt0bibv-legodarks-projects.vercel.app",
+      "path": "/",
+      "method": "GET",
+      "attempted_at": "2026-11-17T14:50:54.822682+00:00",
+      "status": 302,
+      "tls_verify_result": 0,
+      "duration_seconds": 0.285306,
+      "transport_exit": 0,
+      "redirect_host": "vercel.com",
+      "headers": {
+        "nosniff": "",
+        "frame": "DENY",
+        "referrer": "",
+        "csp": ""
+      },
+      "finished_at": "2026-11-17T14:50:55.118325+00:00",
+      "passed": true,
+      "kind": "protected-unique"
+    },
+    {
+      "case": 16,
+      "key": "portfolio-after",
+      "origin": "https://juancerezo.com",
+      "path": "/",
+      "method": "HEAD",
+      "attempted_at": "2026-11-17T14:50:55.119447+00:00",
+      "status": 200,
+      "tls_verify_result": 0,
+      "duration_seconds": 0.292412,
+      "transport_exit": 0,
+      "redirect_host": null,
+      "headers": {
+        "nosniff": "nosniff",
+        "frame": "DENY",
+        "referrer": "no-referrer",
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://vitals.vercel-insights.com https://va.vercel-scripts.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src 'none'; frame-ancestors 'none'; worker-src 'none'; media-src 'none'; manifest-src 'self'; upgrade-insecure-requests"
+      },
+      "finished_at": "2026-11-17T14:50:55.427119+00:00",
+      "passed": true,
+      "kind": "portfolio-head"
+    }
+  ],
+  "portfolio_project_preserved": true,
+  "portfolio_deployment_unchanged": true,
+  "portfolio_deployment_after": "dpl_CGA2uRWtQkjdoMqgX3ymm36Rabig",
+  "version_control": {
+    "version": "v2026.11.17",
+    "source": "9a38be8848cbf601988614b01381758c99ae86f6",
+    "tag_object": "8737c8ff0c1a07ce70c9919f064fae2a1d841ec2",
+    "annotated": true,
+    "original_tag_preserved": true,
+    "main_ci_success": true,
+    "release_published": false
+  },
+  "scope_limits": [
+    "Hobby included resources only; no paid services activated. Monthly CPU/RAM and quota headroom remain unmeasured. Exhausting shared team compute can pause Paddock and portfolio.",
+    "Complete frozen 179502-row historical catalogue selected by owner; no rescraping/retraining, no third-party permission/license accredited.",
+    "Physical iPhone feedback covers gauge and chat keyboard only; not full accessibility certification.",
+    "Selected HTML/JS/CSS responses match canonical hashes; this is not a measurement of every deployed byte or cold start.",
+    "Provider logs classify selected rejected routes as not_found; no new blocked-IP or exhaustive normalization test."
+  ]
+}
