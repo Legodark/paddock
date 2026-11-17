@@ -1,0 +1,177 @@
+{
+  "scope": "LOCAL: Chromium desktop and mobile viewport emulation; no live deployment, physical Safari or iOS hardware claims.",
+  "timestamp": "2026-11-17T14:29:04.765Z",
+  "release_source": "9a38be8848cbf601988614b01381758c99ae86f6",
+  "canonical_static_hashes_match_public_html_js_css": true,
+  "captures": [
+    {
+      "filename": "LOCAL-desktop-1440-estimation.png",
+      "scope": "LOCAL",
+      "viewport": {
+        "width": 1440,
+        "height": 1300
+      },
+      "deviceScaleFactor": 1,
+      "emulation": "Desktop Chromium",
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "estimatedPrice": "20.155 €",
+      "gauge": "Promedio",
+      "priceBox": {
+        "x": 873.25,
+        "y": 673.78125,
+        "width": 409.75,
+        "height": 66
+      },
+      "gaugeBox": {
+        "x": 873.25,
+        "y": 809.78125,
+        "width": 409.75,
+        "height": 337.28125
+      },
+      "horizontalOverflow": false,
+      "sha256": "16adf7519a229ce1bea58ab0f3ac14dc149894143fd2647edb160065034ccdc7",
+      "bytes": 236471,
+      "pngPixels": {
+        "width": 1440,
+        "height": 1300
+      },
+      "visualInspection": "Inspected with view_image on 2026-11-17; faithful UI capture, no image editing."
+    },
+    {
+      "filename": "LOCAL-desktop-1440-chat-popup.png",
+      "scope": "LOCAL",
+      "viewport": {
+        "width": 1440,
+        "height": 1300
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "chat": "Real search catalog loaded; initial popup; no fabricated response",
+      "chatBox": {
+        "x": 1004,
+        "y": 540,
+        "width": 420,
+        "height": 680
+      },
+      "sha256": "04a7cef6d5b5c65e25d14fb0262171feb0bee317acac688fda13c14536e5132c",
+      "bytes": 229133,
+      "pngPixels": {
+        "width": 1440,
+        "height": 1300
+      },
+      "visualInspection": "Inspected with view_image on 2026-11-17; faithful UI capture, no image editing."
+    },
+    {
+      "filename": "LOCAL-mobile-390-estimation.png",
+      "scope": "LOCAL",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "deviceScaleFactor": 2.625,
+      "emulation": "Pixel 7 Chromium viewport emulation",
+      "scroll": {
+        "x": 0,
+        "y": 1306
+      },
+      "estimatedPrice": "20.155 €",
+      "gauge": "Promedio",
+      "priceBox": {
+        "x": 37,
+        "y": 231.4375,
+        "width": 316,
+        "height": 61.59375
+      },
+      "gaugeBox": {
+        "x": 37,
+        "y": 363.03125,
+        "width": 316,
+        "height": 354.875
+      },
+      "horizontalOverflow": false,
+      "sha256": "dd122713b53afd661349e50fd09ddc33ccaf4cf6f196e4a94ef0f29d4ca10a25",
+      "bytes": 451801,
+      "pngPixels": {
+        "width": 1024,
+        "height": 2216
+      },
+      "visualInspection": "Inspected with view_image on 2026-11-17; faithful UI capture, no image editing."
+    }
+  ],
+  "served_static": [
+    {
+      "profile": "LOCAL-desktop-1440-estimation",
+      "path": "index.html",
+      "status": 200,
+      "bytes": 718,
+      "sha256": "41e76755bd37fae99f1329b7fdf7dbeacee913a30e2437b64d32026c4ad4b19d",
+      "matchesCanonical": true
+    },
+    {
+      "profile": "LOCAL-desktop-1440-estimation",
+      "path": "assets/index-C2TIhlb5.css",
+      "status": 200,
+      "bytes": 30499,
+      "sha256": "f20bb1c64f064a0511220d19ac55e6e74eb940e5d65eb75b2527a8bd1c649326",
+      "matchesCanonical": true
+    },
+    {
+      "profile": "LOCAL-desktop-1440-estimation",
+      "path": "assets/index-TX-N8QC5.js",
+      "status": 200,
+      "bytes": 274635,
+      "sha256": "a8de581ec8a1132692ba7f3edca6f62532e735bb6d8235a1d670c29d644dd258",
+      "matchesCanonical": true
+    },
+    {
+      "profile": "LOCAL-desktop-1440-estimation",
+      "path": "paddock-delorean.png",
+      "status": 200,
+      "bytes": 38217,
+      "sha256": "c13355d2fb89e8a8112d063455291f12bf55a3492b9498fcd33b501effeb4195",
+      "matchesCanonical": true
+    },
+    {
+      "profile": "LOCAL-mobile-390-estimation",
+      "path": "index.html",
+      "status": 200,
+      "bytes": 718,
+      "sha256": "41e76755bd37fae99f1329b7fdf7dbeacee913a30e2437b64d32026c4ad4b19d",
+      "matchesCanonical": true
+    },
+    {
+      "profile": "LOCAL-mobile-390-estimation",
+      "path": "assets/index-C2TIhlb5.css",
+      "status": 200,
+      "bytes": 30499,
+      "sha256": "f20bb1c64f064a0511220d19ac55e6e74eb940e5d65eb75b2527a8bd1c649326",
+      "matchesCanonical": true
+    },
+    {
+      "profile": "LOCAL-mobile-390-estimation",
+      "path": "assets/index-TX-N8QC5.js",
+      "status": 200,
+      "bytes": 274635,
+      "sha256": "a8de581ec8a1132692ba7f3edca6f62532e735bb6d8235a1d670c29d644dd258",
+      "matchesCanonical": true
+    },
+    {
+      "profile": "LOCAL-mobile-390-estimation",
+      "path": "paddock-delorean.png",
+      "status": 200,
+      "bytes": 38217,
+      "sha256": "c13355d2fb89e8a8112d063455291f12bf55a3492b9498fcd33b501effeb4195",
+      "matchesCanonical": true
+    }
+  ],
+  "result": "PASS: real prediction 20155 in desktop and mobile; gauge visible; served browser static bytes match canonical package; no external requests, page errors or horizontal overflow.",
+  "browser": "156.0.8078.79",
+  "no_external_requests": true,
+  "no_page_errors": true,
+  "not_a_physical_ios_or_live_session_capture": true
+}

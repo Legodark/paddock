@@ -2,6 +2,8 @@
 
 Fecha: 14-11-2026. Requisito del usuario: permanecer en Vercel sin pagar servicios adicionales; únicamente pagar el dominio que ya tiene.
 
+**Estado al 17-11-2026:** [aplicación pública verificada](https://paddock.juancerezo.com), [release `v2026.11.17`](https://github.com/Legodark/paddock/releases/tag/v2026.11.17), Hobby activo y sin servicios adicionales de pago. Modelo compacto y SQLite empaquetados en Functions, sin Blob ni base gestionada. [Evidencia de entrega](entrega-publica-20261117.md). El saldo mensual compartido de CPU/RAM sigue desconocido; esta publicación no certifica capacidad o continuidad ilimitadas.
+
 Política posterior confirmada: modelo y datos congelados, sin scraping nuevo ni reentrenamiento. El [contrato reconstruido](contrato-modelo-historico.md) corrige la traducción de las entradas sin modificar los árboles.
 
 ## Estado de los diagramas y fuentes
@@ -29,7 +31,7 @@ Al agotar compute puede pausarse todo el equipo, incluido el portfolio, con `503
 
 El escritorio figura habilitado, pero no hay herramienta de control del navegador o apertura de visor expuesta; tampoco hay display o proceso de navegador en la máquina comprobada. No se ha podido leer Usage mediante una sesión gráfica ni se han extraído cookies/credenciales. Esta limitación de observación no se convierte en saldo completo.
 
-Las secciones siguientes conservan cuotas y mediciones históricas con su fecha. La app ya tiene despliegues privados y regla activa; las referencias del 15-11 a proyecto/regla aún no creados describen aquella fase, no el estado actual.
+Las secciones siguientes conservan cuotas y mediciones históricas con su fecha. La app ya está publicada en su subdominio y mantiene la regla activa; las referencias del 15-11 a proyecto/regla aún no creados describen aquella fase, no el estado actual.
 
 ## Cuotas y margen conocido
 
@@ -50,7 +52,7 @@ No se pudo recuperar el consumo mensual de compute con las consultas gratuitas p
 
 La documentación de Functions advierte además que, al pausarse un equipo Hobby por cuota, pueden quedar pausados **todos sus despliegues** y la reactivación puede necesitar una acción del propietario o soporte. No se garantiza recuperación automática al pasar 30 días. Crear Paddock como proyecto separado no aísla al portfolio de ese riesgo compartido. La [prueba inicial propuesta](revision-pr-y-hobby.md#condiciones-de-la-siguiente-prueba) limita solicitudes y conserva esta incertidumbre explícita.
 
-**Coste incremental previsto de la arquitectura elegida: 0 €/mes dentro de Hobby y sus límites.** No se necesita Blob: el modelo compacto y SQLite ya caben en la función. No se ha creado ningún almacenamiento, proyecto ni plan de pago. El coste de renovación del dominio sigue siendo el actual del usuario. La validación final requiere comprobar el funcionamiento real en la plataforma y conservar Hobby sin extras; el margen de compute compartido no está certificado.
+**Coste incremental previsto de la arquitectura elegida: 0 €/mes dentro de Hobby y sus límites.** No se necesita Blob: el modelo compacto y SQLite ya caben en la función. No se ha contratado almacenamiento, base gestionada ni plan de pago; el proyecto Paddock funciona en Hobby. El coste de renovación del dominio sigue siendo el actual del usuario. La comprobación final acreditó predicción, clasificación y búsqueda en el subdominio real, conservando Hobby sin extras; el margen de compute compartido no está certificado.
 
 ## Presupuesto exigido
 
@@ -102,7 +104,7 @@ flowchart TB
     PORTFOLIO -.-> QUOTA
 ```
 
-Objetivo: evitar otro proveedor, una base gestionada y almacenamiento de objetos separado. El constructor oficial ya generó una función de 115,50 MiB con ambos modelos y SQLite. El funcionamiento en la plataforma y el consumo real quedan por comprobar; no se deducen del tamaño del `.pkl`.
+Objetivo: evitar otro proveedor, una base gestionada y almacenamiento de objetos separado. El constructor oficial ya generó una función de 115,50 MiB con ambos modelos y SQLite. El funcionamiento en la plataforma se verificó después en la [entrega pública](entrega-publica-20261117.md); el consumo real y el margen mensual no se deducen del tamaño del `.pkl` y siguen sin medirse.
 
 ## Diagrama 2: variante con Blob, solo si no añade coste
 

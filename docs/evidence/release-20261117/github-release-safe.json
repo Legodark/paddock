@@ -1,0 +1,10 @@
+{
+  "at": "2026-11-17T14:53:43.131464+00:00",
+  "url": "https://github.com/Legodark/paddock/releases/tag/v2026.11.17",
+  "tag": "v2026.11.17",
+  "source": "9a38be8848cbf601988614b01381758c99ae86f6",
+  "published": true,
+  "assets": [],
+  "evidence_location": "Versioned repository docs/evidence, linked from release notes",
+  "upload_limitation": "uploads.github.com blocked; no environment or network bypass; release published via official GitHub API without assets"
+}

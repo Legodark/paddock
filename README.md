@@ -6,9 +6,17 @@ Puedes acceder a la aplicación, la presentación y el video explicativo desde l
 
 <div align="center">
 
-[Paddock](https://padook-5be51.web.app/#/) | [Presentación](presentacion/Paddok.pdf) | [Video](#id15)
+[Paddock](https://paddock.juancerezo.com) | [Presentación](presentacion/Paddok.pdf) | [Video](#id15)
 
 </div>
+
+## Reactivación publicada · 17-11-2026
+
+La [aplicación pública](https://paddock.juancerezo.com) usa React/TypeScript/Vite y una API Python/Flask con modelos compactos y SQLite en Vercel Hobby. Conserva el modelo y el catálogo histórico completo de 2023 (179.502 filas), sin nuevo scraping ni reentrenamiento: las estimaciones no representan el mercado actual.
+
+La [release `v2026.11.17`](https://github.com/Legodark/paddock/releases/tag/v2026.11.17) fija la fuente `9a38be8`. El [tag `tfm-original-2023`](https://github.com/Legodark/paddock/tree/tfm-original-2023) conserva la aplicación original. [Entrega y comprobaciones](docs/entrega-publica-20261117.md) · [Costes y límites de Hobby](docs/costes-y-diagramas.md) · [Diagramas Archify](docs/diagramas.md).
+
+El resto de este README conserva la memoria del TFM y su stack original. El servicio publicado mantiene la autoría compartida y su carácter histórico; el saldo mensual de recursos compartidos y las condiciones de reutilización de terceros siguen documentados como pendientes.
 
 ## Índice
 
