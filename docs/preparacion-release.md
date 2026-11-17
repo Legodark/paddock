@@ -10,7 +10,7 @@
 | Auditoría de fuentes #24 | [Completada sobre `5e8091b`](evidence/security-audit-20261116/REPORT.md): 47 unidades de fuentes, dos históricas fuera de alcance, cero candidatos supervivientes; dos críticos independientes y validadores pasados. Un cambio posterior de comportamiento necesita revalidar sus unidades |
 | Plataforma #10 | Hobby activo; función Python 3.12, 2.048 MB asignados, timeout 10 s, región de función `iad1`. Consumo real de CPU/RAM, arranque frío y saldo mensual compartido aún desconocidos |
 | Firewall #11 | Umbral canónico, 429 anterior a función según proveedor y recuperación posterior probados. Destino del 308 confirmado al health canónico; variantes bajo bloqueo pendientes |
-| UX #12 | Automatización amplia y prueba inicial del propietario en iPhone. Confirmación del medidor y controles físicos pendientes según el recorrido manual |
+| UX #12 | El propietario confirma el 17-11 medidor y escritura/cierre del chat con teclado abierto en iPhone. Orientación, zoom, lectores de pantalla y otros recorridos físicos siguen sin certificar |
 | Catálogo #17 | Catálogo completo elegido expresamente el 17-11-2026: búsqueda, filtros, comparables y medidor históricos. Alcance documentado; no se acredita licencia o autorización de terceros |
 | Coste | Cero servicios adicionales; no activar Pro, Observability Plus, Blob o base gestionada |
 
@@ -72,7 +72,7 @@ El techo propio fue de **dos builds y 22 HTTP**, cumplido: nueve casos en A, sie
 
 La protección `all` se conservó y las seis muestras anónimas devolvieron 302. Vercel [incluye autenticación de Production sin coste adicional en todos los planes](https://vercel.com/changelog/protect-production-deployments-for-free-on-every-plan); el equipo siguió Hobby. No se habilitaron productos de pago. El rollback desactivó autoasignación y la restauración la reactivó, manteniendo Git desconectado y solo aliases `vercel.app`.
 
-El ensayo no mide arranque frío, CPU/RAM usados ni margen mensual; sus tiempos HTTP no sustituyen esas métricas. Su evidencia del 16-11 conserva como pendiente la decisión de catálogo, resuelta después el 17-11 a favor del catálogo completo sin cambios de aplicación. La comprobación física del iPhone, variantes WAF desde IP limitada y entrega final siguen pendientes.
+El ensayo no mide arranque frío, CPU/RAM usados ni margen mensual; sus tiempos HTTP no sustituyen esas métricas. Su evidencia del 16-11 conserva como pendiente la decisión de catálogo, resuelta después el 17-11 a favor del catálogo completo sin cambios de aplicación. El medidor y la escritura/cierre del chat con teclado abierto ya tienen confirmación del propietario en iPhone el 17-11; otras pruebas físicas, variantes WAF desde IP limitada y entrega final siguen pendientes.
 
 ## Registro mínimo de release
 

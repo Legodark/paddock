@@ -9,29 +9,52 @@
       "maxDuration": 10
     }
   },
-  "headers": [
+  "routes": [
     {
-      "source": "/:path*",
-      "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "no-referrer" },
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
-      ]
+      "src": "^/.*$",
+      "headers": {
+        "X-Content-Type-Options": "nosniff",
+        "Referrer-Policy": "no-referrer",
+        "X-Frame-Options": "DENY",
+        "Permissions-Policy": "camera=(), microphone=(), geolocation=()"
+      },
+      "continue": true
     },
     {
-      "source": "/",
-      "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "no-referrer" },
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" },
-        { "key": "Content-Security-Policy", "value": "default-src 'none'; script-src 'self'; style-src 'self'; style-src-attr 'unsafe-inline'; img-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'" },
-        { "key": "Cache-Control", "value": "no-cache" }
-      ]
+      "src": "^/(?:index\\.html)?$",
+      "headers": {
+        "X-Content-Type-Options": "nosniff",
+        "Referrer-Policy": "no-referrer",
+        "X-Frame-Options": "DENY",
+        "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+        "Content-Security-Policy": "default-src 'none'; script-src 'self'; style-src 'self'; style-src-attr 'unsafe-inline'; img-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'",
+        "Cache-Control": "no-cache"
+      },
+      "continue": true
+    },
+    {
+      "src": "^(?-i:/api/v1/(?:health|catalog|search-catalog|predict|message|cars))$",
+      "dest": "/api/index.py"
+    },
+    {
+      "src": "^/$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^/(index\\.html|THIRD_PARTY_NOTICES\\.txt|paddock-delorean\\.png)$",
+      "dest": "/$1"
+    },
+    {
+      "src": "^/(assets|brand-logos)/([A-Za-z0-9._-]+)$",
+      "dest": "/$1/$2"
+    },
+    {
+      "src": "^/.*$",
+      "status": 404,
+      "headers": {
+        "Content-Security-Policy": "default-src 'none'; frame-ancestors 'none'",
+        "Cache-Control": "no-store"
+      }
     }
-  ],
-  "rewrites": [
-    { "source": "/api(/.*)?", "destination": "/api/index.py" }
   ]
 }

@@ -1,0 +1,63 @@
+{
+  "reviewed_at": "2026-11-17T09:52:23.722581+00:00",
+  "scope": "Independent source/configuration delta review plus local compiler/schema/guard checks; not a rerun of the original Cloudflare audit or provider execution.",
+  "original_source_audit": "docs/evidence/security-audit-20261116/REPORT.md",
+  "original_audit_snapshot_unchanged": true,
+  "files": [
+    {
+      "path": "deploy/vercel/vercel.json",
+      "sha256": "0c6a4b9df9471054580ff08bb3d0629f43c8f654f7cb48c741a561f9e98700c4"
+    },
+    {
+      "path": "ci/check_vercel_routing.cjs",
+      "sha256": "46e0170ad1cb5bd45cc587e64dccd46bd6323f0204df487dfea611f580dfad85"
+    },
+    {
+      "path": "ci/check.sh",
+      "sha256": "9cbbca8db70b6622b7668eb5e62bfa2dec3408622f068aba30025dc500395c7f"
+    }
+  ],
+  "material_findings": 0,
+  "independent_review_completed": true,
+  "local_validation": {
+    "compiler": "@vercel/routing-utils@6.6.1",
+    "valid": true,
+    "api_route": {
+      "src": "^(?-i:/api/v1/(?:health|catalog|search-catalog|predict|message|cars))$",
+      "dest": "/api/index.py"
+    },
+    "canonical_api_paths": 6,
+    "public_paths_checked": 75,
+    "public_inventory_source": "prepared-public-directory",
+    "no_implicit_filesystem": true,
+    "named_capture_regression_rejected": true,
+    "wildcard_regression_rejected": true,
+    "case_insensitive_api_regression_rejected": true,
+    "filesystem_regression_rejected": true,
+    "root_security_header_regression_rejected": true,
+    "scope": "Official schema/route compilation and path boundary; no provider execution, rate-limit enforcement or application calls."
+  },
+  "provider_smoke_plan": {
+    "maximum_http": 6,
+    "previous_reference_accounting": 121,
+    "reference_ceiling": 127,
+    "paths": [
+      "/api/v1/health",
+      "/",
+      "/assets/index-TX-N8QC5.js",
+      "/api/index.py",
+      "/%61pi/v1/health",
+      "/API/v1/health"
+    ],
+    "concurrency": 1,
+    "retries": 0,
+    "redirects_followed": 0,
+    "burst": false,
+    "purpose": "Positive canonical health, exact remote HTML/JavaScript hashes, and rejection of three critical function-entry aliases; independent of per-IP counters, not an enforcement test from a blocked IP."
+  },
+  "limitations": [
+    "Cloud normalization, static bytes and routing classifications still need provider observations.",
+    "404 alone does not prove no function execution.",
+    "No new blocked-IP rate-limit enforcement is claimed."
+  ]
+}

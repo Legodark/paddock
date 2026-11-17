@@ -160,3 +160,9 @@ Propuesta concreta, **sin ejecutar**: una salida estable mediante transporte nor
 Correlacionar IP, región y ventana en privado. Cada variante necesita mitigación atribuida o rechazo de plataforma sin función; una respuesta de función desde la IP limitada exige investigar cobertura. Para el 308, registrar destino saneado al health canónico y comprobar que el health final sigue limitado desde esa misma IP. Si cambia IP/ventana o falta granularidad de registros, dejar inconcluso y detenerse, sin repetir el ciclo.
 
 El proxy actual reparte solicitudes entre dos IP y no garantiza esa condición de salida. No fijar IP, simular cabeceras de origen, eludir el proxy o debilitar la regla para forzar el resultado. No se ejecuta otra ráfaga ni se consumen las seis solicitudes del remanente anterior. La elección de catálogo completo no cambia ese presupuesto o el estado de #11.
+
+## Alternativa de cierre por límite de routing · 17-11-2026
+
+La revisión del ejecutor confirma que la ráfaga anterior ya utilizó un solo proceso curl con varios `--url`. Repetir keep-alive no demostraría una salida estable; no se ejecuta el lote de 66 como si esa condición estuviese resuelta.
+
+En su lugar se prepara el [límite explícito de rutas hacia Python](limite-rutas-api.md): rechazar entradas no canónicas antes de seleccionar función, sin depender de que se haya llenado su contador. Tiene revisión independiente y pruebas locales; su comprobación privada propuesta usa hasta seis HTTP, incluyendo HTML/JS positivos y tres alias críticos. No se afirma por ello que se haya probado la regla desde una IP limitada. El resultado remoto se registrará separado de los ensayos históricos.

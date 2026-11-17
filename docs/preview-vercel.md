@@ -64,7 +64,7 @@ Las mediciones de API conservan la publicación anterior como referencia; las li
 | Protección | Vercel Authentication en todas las URLs (`all`) |
 | Firewall | Una regla activa: prefijo `/api`, 60 solicitudes/60 s/IP, ventana fija, rechazo 429 |
 | Función local con constructor oficial | **121.114.317 bytes = 115,50 MiB**, Python 3.12 |
-| Web pública del paquete | **504.608 bytes**, 76 archivos; sin modelos o SQLite |
+| Web pública del paquete | **504.608 bytes**, 75 archivos; sin modelos o SQLite |
 | Dominio propio | Sin asociar `paddock.juancerezo.com`; DNS sin cambios |
 | Extras de pago | Ninguno; sin Blob, Redis, base gestionada ni Observability Plus |
 

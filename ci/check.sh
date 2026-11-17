@@ -59,6 +59,7 @@ npm --prefix "$paddock_repo/ci/vercel-tooling" audit --json > "$paddock_reports/
 npm --prefix "$paddock_repo/web" test -- --reporter=default --reporter=json --outputFile="$paddock_reports/unit-tests.json"
 npm --prefix "$paddock_repo/web" run build
 "$paddock_api/bin/python" "$paddock_repo/tools/prepare_vercel_package.py" --models "$PADDOCK_CI_WORK/models" --web-dist "$paddock_repo/web/dist" --output "$PADDOCK_CI_WORK/package" > "$paddock_reports/package.json"
+PADDOCK_ROUTING_PUBLIC_DIR="$PADDOCK_CI_WORK/package/public" node "$paddock_repo/ci/check_vercel_routing.cjs" > "$paddock_reports/routing-package.json"
 
 export PADDOCK_ASSET_DIR="$PADDOCK_CI_WORK/package/assets"
 export PADDOCK_PACKAGE_DIR="$PADDOCK_CI_WORK/package"

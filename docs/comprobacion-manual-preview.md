@@ -2,7 +2,7 @@
 
 Preparada el 16-11-2026 para [#12](https://github.com/Legodark/paddock/issues/12). [Abrir la Preview privada](https://paddock-jd7a8siqc-legodarks-projects.vercel.app), fuente `2b8b7608341663fc5852220d3460cd33d2195cc2`. Requiere la cuenta autorizada de Vercel.
 
-La prueba anterior del propietario desde iPhone detectó el medidor ausente; [#23](medidor-precio.md) lo recupera. Falta confirmar esa corrección en el teléfono. No dar por probados gestos, teclado virtual, zoom o VoiceOver por tener CI verde.
+La prueba inicial del propietario desde iPhone detectó el medidor ausente; [#23](medidor-precio.md) lo recupera. El 17-11-2026 confirmó en la [candidata privada B](https://paddock-l9io99hnr-legodarks-projects.vercel.app): «Sí, funcionan el medidor y el chatbot», respondiendo sobre ver el medidor tras calcular el ejemplo y escribir/cerrar el chat con el teclado abierto. Esos dos controles quedan comprobados por el propietario; no hace falta repetirlos. No se han aportado modelo exacto, versión de iOS o navegador. Orientación, zoom, VoiceOver y otros pasos no se dan por probados por esa respuesta o por CI.
 
 ## Un recorrido breve en el iPhone
 

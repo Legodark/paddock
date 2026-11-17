@@ -16,6 +16,21 @@ Fuentes oficiales consultadas; revisar de nuevo sus condiciones antes de publica
 - [Límites de Functions](https://vercel.com/docs/functions/limitations): Python, bundle, memoria, CPU, duración y disco temporal.
 - [Uso y precios de Blob](https://vercel.com/docs/vercel-blob/usage-and-pricing): almacenamiento, operaciones, transferencia y comportamiento al agotar la cuota.
 
+## Revisión de coste y capacidad · 17-11-2026
+
+La [revisión oficial actualizada](evidence/preview/hobby-cost-boundary-20261117.json) distingue dos conclusiones:
+
+- **Coste adicional previsto: 0 €**, manteniendo Hobby y sus funciones incluidas, sin activar extras de pago. Functions muestra cuotas incluidas en Hobby y consumo on-demand en Pro. No es necesario contratar Observability Plus para verificar que el plan es gratuito.
+- **Capacidad y continuidad: no certificadas.** CPU/RAM facturados, frío real y saldo mensual compartido permanecen desconocidos. Una consulta mensual de agregados del firewall también devuelve «Observability Plus is required for this query»; no se compra ni se repite esa consulta como si fuera gratuita. Los agregados que sí funcionaron en ventanas cortas no sustituyen el saldo mensual.
+
+Hobby no ofrece Spend Management configurable (N/A); las notificaciones automáticas de uso no son un límite de gasto. No se afirma haber configurado un presupuesto automático de cero euros.
+
+Al agotar compute puede pausarse todo el equipo, incluido el portfolio, con `503 DEPLOYMENT_PAUSED`. La documentación no promete reanudación automática tras 30 días y contempla contactar Support. Para el millón WAF incluido no se ha localizado una especificación de agotamiento que permita prometer fail-closed o protección indefinida.
+
+El escritorio figura habilitado, pero no hay herramienta de control del navegador o apertura de visor expuesta; tampoco hay display o proceso de navegador en la máquina comprobada. No se ha podido leer Usage mediante una sesión gráfica ni se han extraído cookies/credenciales. Esta limitación de observación no se convierte en saldo completo.
+
+Las secciones siguientes conservan cuotas y mediciones históricas con su fecha. La app ya tiene despliegues privados y regla activa; las referencias del 15-11 a proyecto/regla aún no creados describen aquella fase, no el estado actual.
+
 ## Cuotas y margen conocido
 
 El plan Hobby consultado incluye los siguientes recursos. Son cuotas compartidas del equipo; los consumos proceden de las capturas aportadas por el usuario para los últimos 30 días, del 15 de octubre al 14 de noviembre. No se han inferido a partir del panel de las últimas 12 horas.
