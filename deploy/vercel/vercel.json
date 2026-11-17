@@ -41,7 +41,7 @@
       "dest": "/index.html"
     },
     {
-      "src": "^/(index\\.html|THIRD_PARTY_NOTICES\\.txt|paddock-delorean\\.png)$",
+      "src": "^/(index\\.html|THIRD_PARTY_NOTICES\\.txt|robots\\.txt|paddock-delorean\\.png)$",
       "dest": "/$1"
     },
     {

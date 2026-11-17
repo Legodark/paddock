@@ -14,9 +14,9 @@ La regla WAF existente no cambia. Esta defensa evita resolver entradas desconoci
 
 ## Validación local y revisión
 
-[Revisión acotada independiente](evidence/preview/routing-boundary-review-20261117.json): configuración, guard y etapa de CI. Esquema y compilación oficiales `routing-utils@6.6.1`, cobertura de las seis rutas, mayúsculas, rutas codificadas, traversal, destinos privados y controles negativos. Los **75 archivos públicos reales** quedan cubiertos; el guard se ejecuta también sobre el paquete recién preparado en CI para detectar futuros archivos sin ruta.
+[Revisión acotada independiente](evidence/preview/routing-boundary-review-20261117.json): configuración, guard y etapa de CI. Esquema y compilación oficiales `routing-utils@6.6.1`, cobertura de las seis rutas, mayúsculas, rutas codificadas, traversal, destinos privados y controles negativos. Los 75 archivos del snapshot de Preview y los **76 archivos del paquete canónico completo** quedan cubiertos; el guard se ejecuta también sobre el paquete recién preparado en CI para detectar futuros archivos sin ruta.
 
-La aplicación, frontend, modelos y SQLite permanecen idénticos: 87 de los 88 archivos seleccionados del paquete anterior conservan sus hashes; solo cambia `vercel.json`. Los estáticos pesan 504.608 bytes. La auditoría Cloudflare del 16-11 y sus artefactos no se modifican ni se presentan como una auditoría completa de este commit nuevo.
+La aplicación, frontend, modelos y SQLite permanecen idénticos: 87 de los 88 archivos seleccionados del paquete anterior conservan sus hashes; solo cambia `vercel.json`. Los 75 estáticos históricos pesan 504.608 bytes; el paquete canónico añade los 26 bytes del `robots.txt` existente en las fuentes (504.634 bytes en total). La auditoría Cloudflare del 16-11 y sus artefactos no se modifican ni se presentan como una auditoría completa de este commit nuevo.
 
 ## Comprobación en proveedor preparada
 
@@ -40,3 +40,7 @@ Estado al preparar este documento: revisión y guardas locales pasados; smoke re
 ### Adaptación del servidor local de pruebas
 
 La primera CI de este cambio detectó que `web/vite.config.ts` todavía leía el formato anterior de cabeceras. Se corrigió para seleccionar las reglas que alcanzan la raíz y detenerse en su destino terminal, sin aplicar la CSP restrictiva del fallback 404 al documento. [Revisión y prueba local](evidence/preview/routing-preview-header-review-20261117.json): 100 unitarias, TypeScript/build y los 75 archivos públicos reconstruidos idénticos al paquete de la Preview. Es una corrección de infraestructura de pruebas; no modifica el contenido web o el runtime ya preparado. La CI alojada debe volver a pasar antes de completar la entrega.
+
+### Cobertura del paquete canónico
+
+La segunda CI detectó una diferencia real entre el paquete de Preview histórico y el preparador completo: este último incluye el `robots.txt` ya existente en `deploy/vercel/public`, además de los 75 archivos de la web. Se añadió su ruta estática literal, sin ampliar la API o volver a introducir filesystem implícito. No se usa robots como protección de acceso. [Reproducción local y revisión](evidence/preview/routing-source-package-review-20261117.json): 76 archivos públicos, 504.634 bytes; los 87 archivos seleccionados distintos de `vercel.json` conservan su hash, incluidos todos los modelos y SQLite. La Preview inicial `f099a1e` es diagnóstica de la migración; la comprobación remota usará el paquete canónico corregido.
