@@ -37,6 +37,7 @@ h1, h2, h3, p { margin-top: 0; }
 .site-header { border-bottom: 1px solid #252e3c; }
 .header-inner { min-height: 88px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; padding-block: 16px; }
 .wordmark {
+  --trip-duration: 3.6s;
   display: inline-flex;
   flex: none;
   align-items: center;
@@ -57,6 +58,40 @@ h1, h2, h3, p { margin-top: 0; }
   padding-inline-start: .34em;
 }
 .brand-car img { display: block; width: 100%; height: auto; }
+.brand-vehicle { position: relative; display: block; animation: time-jump var(--trip-duration) both; }
+.brand-speedometer {
+  position: absolute;
+  inset-inline-start: 55%;
+  inset-block-end: calc(100% + .18em);
+  display: flex;
+  align-items: baseline;
+  gap: .36em;
+  translate: -50% 0;
+  padding: .22em .38em;
+  border: 1px solid #79433b;
+  border-radius: 3px;
+  background: #180d12;
+  color: #ff9a77;
+  font: 700 .45em/1 ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 .36em #f64933b0;
+  opacity: 0;
+  animation: time-meter var(--trip-duration) both;
+}
+.brand-speed-window { display: block; height: 1em; overflow: hidden; }
+.brand-speed-values, .brand-speed-values span { display: block; }
+.brand-speed-values { animation: time-count var(--trip-duration) both; }
+.brand-speed-unit { color: #ffbda2; font-size: .69em; }
+.brand-charge {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 12% 12% at 93% 59%, #eeffff 8%, #60eaffb3 38%, transparent 86%),
+    radial-gradient(ellipse 13% 33% at 30% 42%, #d9ffff 8%, #45e5ffd9 30%, transparent 86%),
+    radial-gradient(ellipse 30% 11% at 54% 81%, #baffff 10%, #19bcff95 43%, transparent 90%);
+  opacity: 0;
+  animation: time-discharge var(--trip-duration) both;
+}
 .brand-trail {
   position: absolute;
   z-index: -1;
@@ -64,6 +99,8 @@ h1, h2, h3, p { margin-top: 0; }
   inset-block-end: -.1em;
   height: .64em;
   filter: drop-shadow(0 0 .08em #49dbff) drop-shadow(0 0 .16em #0095db);
+  opacity: 0;
+  animation: time-discharge var(--trip-duration) both;
 }
 .brand-trail::after, .brand-bolt {
   position: absolute;
@@ -80,25 +117,34 @@ h1, h2, h3, p { margin-top: 0; }
   background: linear-gradient(90deg, #539fbe, #a8faff 60%, #edffff);
   clip-path: polygon(100% 10%, 97% 25%, 94% 23%, 93% 42%, 89% 43%, 87% 59%, 75% 62%, 77% 51%, 61% 66%, 52% 63%, 43% 73%, 44% 60%, 29% 76%, 25% 71%, 11% 85%, 0 82%, 13% 79%, 24% 65%, 31% 68%, 48% 52%, 46% 65%, 53% 56%, 60% 60%, 81% 44%, 79% 56%, 86% 53%, 89% 37%, 92% 37%, 93% 16%, 97% 20%);
 }
-.brand-bolt::before, .brand-bolt::after {
+.brand-bolt::after {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(90deg, transparent 24%, #65f1ff 39%, #fff 49%, #beffff 57%, transparent 72%);
   transform: translateX(100%);
+  animation: time-trail var(--trip-duration) linear both;
 }
-.brand-bolt::after, .wordmark:is(:hover, :focus-visible) .brand-bolt::before { animation: time-trail 1.8s linear both; }
-.brand-car img, .wordmark:is(:hover, :focus-visible) .brand-car { animation: time-jump 1.8s ease-in-out both; }
+@keyframes time-meter {
+  0%, 20% { opacity: 0; transform: translateY(.3em); }
+  27%, 81% { opacity: 1; transform: translateY(0); }
+  93%, 100% { opacity: 0; transform: translateY(.3em); }
+}
+@keyframes time-count {
+  0%, 27% { transform: translateY(0); animation-timing-function: steps(8); }
+  67%, 100% { transform: translateY(calc(-100% + 1em)); }
+}
+@keyframes time-discharge {
+  0%, 67%, 100% { opacity: 0; }
+  70%, 86% { opacity: 1; }
+}
 @keyframes time-trail {
-  0%, 10% { transform: translateX(100%); opacity: 0; }
-  18% { opacity: 1; }
-  68%, 100% { transform: translateX(-100%); opacity: 0; }
+  0%, 67% { transform: translateX(100%); }
+  94%, 100% { transform: translateX(-100%); }
 }
 @keyframes time-jump {
-  0%, 12%, 64%, 100% { opacity: 1; translate: 0; }
-  20% { opacity: .65; translate: .07em; }
-  27%, 41% { opacity: 0; translate: .2em; }
-  49% { opacity: .45; translate: -.08em; }
+  0%, 81% { opacity: 1; translate: 0; }
+  94%, 100% { opacity: 0; translate: .22em; }
 }
 nav { display: flex; flex-wrap: wrap; align-items: center; max-width: 100%; gap: 34px; color: var(--muted); font-size: 13px; font-weight: 550; }
 nav a { padding-block: 12px; transition: color .15s; }

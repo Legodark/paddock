@@ -8,7 +8,7 @@ import EstimateCard from './EstimateCard';
 import Comparables from './Comparables';
 import Icon from './Icon';
 import CatalogChat from './CatalogChat';
-import deloreanImage from './assets/delorean.webp?no-inline';
+import PaddockWordmark from './PaddockWordmark';
 
 const NAV_SECTIONS = [['estimador', 'Estimar'], ['consultar', 'Consultar'], ['proyecto', 'Proyecto']] as const;
 function sectionFromHash() {
@@ -116,14 +116,7 @@ export default function App() {
   return <>
     <a className="skip-link" href="#estimador">Saltar al estimador</a>
     <header className="site-header"><div className="header-inner">
-      <a className="wordmark" href="#inicio" aria-label="Paddock, inicio">
-        <span className="brand-lockup" aria-hidden="true">
-          <span className="brand-name">PADDOCK<span className="brand-trail"><span className="brand-bolt" /></span></span>
-          <span className="brand-car">
-            <img src={deloreanImage} width="180" height="61" alt="" />
-          </span>
-        </span>
-      </a>
+      <PaddockWordmark />
       <nav aria-label="Navegación principal">{NAV_SECTIONS.map(([id, label]) => <a key={id} href={`#${id}`} onClick={id === 'consultar' ? openChatFromNavigation : undefined} className={activeSection === id ? 'nav-active' : undefined} aria-current={activeSection === id ? 'location' : undefined}>{label}</a>)}<a className="repo-link" href="https://github.com/Legodark/paddock" target="_blank" rel="noopener noreferrer"><Icon name="github" /><span>GitHub</span><span className="sr-only"> (abre otra pestaña)</span></a></nav>
     </div></header>
     <main id="inicio" className="page-shell">
