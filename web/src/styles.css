@@ -44,6 +44,7 @@ h1, h2, h3, p { margin-top: 0; }
   min-height: 44px;
   font-size: clamp(1.375rem, 1.25rem + .5vw, 1.625rem);
 }
+.brand-lockup { display: inline-flex; align-items: baseline; min-width: 0; }
 .brand-name { position: relative; z-index: 1; flex: none; color: #f3f4f7; font-weight: 850; font-style: italic; letter-spacing: .07em; line-height: 1.15; }
 .brand-car {
   display: block;
@@ -51,7 +52,6 @@ h1, h2, h3, p { margin-top: 0; }
   width: 3.6em;
   height: auto;
   margin-inline-start: -.44em;
-  translate: 0 .15em;
   overflow: hidden;
 }
 nav { display: flex; flex-wrap: wrap; align-items: center; max-width: 100%; gap: 34px; color: var(--muted); font-size: 13px; font-weight: 550; }

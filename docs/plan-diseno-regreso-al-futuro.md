@@ -41,3 +41,9 @@ La cabecera final escala la palabra, el coche y su empalme de forma conjunta. El
 | Móvil emulado, 390 px | [Cabecera y portada](evidence/ux/regreso-al-futuro/antes-390.jpg) | [Cabecera y portada](evidence/ux/regreso-al-futuro/despues-390.jpg) |
 
 [Chat en móvil emulado](evidence/ux/regreso-al-futuro/einstein-390.jpg). A 320, 390, 768, 1024 y 1440 px se comprobó la geometría de la cabecera, el foco del enlace y la ausencia de desbordamiento horizontal. La sesión de navegador local no observó solicitudes externas ni infracciones de CSP. El paquete preparado tiene 505.037 bytes públicos y 289.441 bytes gzip, 193 bytes gzip más que la referencia. La guarda de CI compara ahora las directivas completas de la política del documento y comprueba el rechazo de un origen de imágenes adicional.
+
+## Ajuste tras la revisión de la Preview
+
+El recorte del DeLorean quedaba entre 6,7 y 8,6 px por debajo de la línea base de PADDOCK. El grupo alinea ahora el borde inferior del recorte con esa línea a los cinco anchos comprobados. Conserva el ancho del coche y el solapamiento de la estela con la K. [Cabecera anterior](evidence/ux/regreso-al-futuro/antes-marca-1440.png) · [Escritorio ajustado](evidence/ux/regreso-al-futuro/despues-marca-1440.png) · [Móvil ajustado](evidence/ux/regreso-al-futuro/despues-marca-390.png).
+
+El botón cerrado y el avatar del chat usan un dibujo vectorial original inspirado en Einstein. La referencia generada por IA se simplificó a un contorno de orejas caídas, flequillo despeinado y nariz ancha. El SVG funciona en los dos colores de la interfaz y se revisó a 26 px. El botón conserva el nombre accesible, el área táctil de 52 px y la devolución del foco al cerrar con Escape. [Botón del asistente](evidence/ux/regreso-al-futuro/einstein-boton.png) · [Avatar](evidence/ux/regreso-al-futuro/einstein-avatar.png).

@@ -1,8 +1,12 @@
 import type { ReactNode } from 'react';
 
-export type IconName = 'arrow' | 'car' | 'check' | 'info' | 'github' | 'clock' | 'database' | 'chevron' | 'reset' | 'sliders' | 'message' | 'close';
+export type IconName = 'arrow' | 'car' | 'check' | 'info' | 'github' | 'clock' | 'database' | 'chevron' | 'reset' | 'sliders' | 'dog' | 'close';
 const paths: Record<IconName, ReactNode> = {
-  message: <path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5Z" />,
+  dog: <>
+    <path d="M5 8c1-1.7 2.7-2.7 4.8-2.9L8.5 3c2.5.2 4.4 1.1 5.5 2.4l2.5-1.2.2 1.9A7 7 0 0 1 19 8c1.9 2.6 3.4 6.7 2.6 9-.8 2.4-3.4 1.4-4-1.5M5 8c-1.9 2.6-3.4 6.7-2.6 9 .8 2.4 3.4 1.4 4-1.5" />
+    <path d="M6.4 15.5c.4 2.7 2.1 4.3 3.5 4.9l.6-1 1.5 1.8 1.5-1.8.6 1c1.4-.6 3.1-2.2 3.5-4.9M8 9.5c1.4-.1 2.6-.9 3.6-2l.2 2.1c1.6-.1 2.9-.7 3.8-1.5M8.5 12h.1m6.8 0h.1m-3.5 3c-.5 1.1-1.4 1.5-2.5 1.4m2.5-1.4c.5 1.1 1.4 1.5 2.5 1.4" />
+    <ellipse cx="12" cy="14.3" rx="1.6" ry="1" fill="currentColor" stroke="none" />
+  </>,
   close: <path d="m6 6 12 12M6 18 18 6" />,
   arrow: <><path d="M4 12h15M13 5l7 7-7 7" /></>,
   car: <><path d="m4 10 2-5h12l2 5M3 10h18v8H3zM6 18v2M18 18v2M6 14h2M16 14h2" /></>,
