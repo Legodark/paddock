@@ -49,3 +49,9 @@ El recorte del DeLorean quedaba entre 6,7 y 8,6 px por debajo de la línea base 
 El botón cerrado y el avatar del chat usan la silueta de la ilustración adjunta. Se recuperó el trazo con una edición de color guiada por la imagen y se exportó su máscara a un PNG de 104 px. La interfaz muestra esa máscara a 28 px y la tiñe con el color de cada superficie. El botón conserva el nombre accesible, el área táctil de 52 px y la devolución del foco al cerrar con Escape. [Botón del asistente](evidence/ux/regreso-al-futuro/einstein-boton.png) · [Avatar](evidence/ux/regreso-al-futuro/einstein-avatar.png).
 
 El último ajuste amplía el coche un 11,6 %. El recorte pasa de unos 56 a 62 px en escritorio y de 47 a 53 px en móvil. La línea base y el solapamiento con la K coinciden con la versión anterior en los cinco anchos medidos. Las capturas de la cabecera muestran esta escala.
+
+## DeLorean ilustrado y estela de fuego
+
+La cabecera usa una ilustración generada a partir del DeLorean del TFM. El coche mira a la derecha y conserva la carrocería de acero en cuña, las dos ruedas en la línea base de PADDOCK y los detalles traseros de la máquina del tiempo. El coche se sirve como WebP transparente de 180 × 61 px y 4.442 bytes.
+
+El trazo cian sale del hueco de la K, gira hacia el suelo y termina en dos líneas de fuego bajo el coche. Una luz recorre la estela durante 1,1 segundos al cargar, al pasar el puntero o al enfocar el enlace con el teclado. La preferencia de movimiento reducido conserva el trazo estático. El coche y el efecto se comprobaron en Chromium entre 320 y 1440 px. [Estela animada](evidence/ux/regreso-al-futuro/estela-animada.gif) · [Móvil con movimiento reducido](evidence/ux/regreso-al-futuro/estela-movil.png).
