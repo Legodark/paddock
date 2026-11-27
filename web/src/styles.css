@@ -75,6 +75,8 @@ h1, h2, h3, p { margin-top: 0; }
   clip-path: polygon(92% 40%, 87% 65%, 72% 72%, 74% 81%, 61% 89%, 57% 86%, 36% 100%, 56% 81%, 62% 84%, 71% 79%, 69% 69%, 86% 60%);
 }
 .brand-bolt {
+  /* Keep the moving highlight from expanding the mobile layout viewport. */
+  overflow: hidden;
   background: linear-gradient(90deg, #539fbe, #a8faff 60%, #edffff);
   clip-path: polygon(100% 10%, 97% 25%, 94% 23%, 93% 42%, 89% 43%, 87% 59%, 75% 62%, 77% 51%, 61% 66%, 52% 63%, 43% 73%, 44% 60%, 29% 76%, 25% 71%, 11% 85%, 0 82%, 13% 79%, 24% 65%, 31% 68%, 48% 52%, 46% 65%, 53% 56%, 60% 60%, 81% 44%, 79% 56%, 86% 53%, 89% 37%, 92% 37%, 93% 16%, 97% 20%);
 }
