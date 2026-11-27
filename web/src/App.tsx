@@ -117,7 +117,7 @@ export default function App() {
     <header className="site-header"><div className="header-inner">
       <a className="wordmark" href="#inicio" aria-label="Paddock, inicio">
         <span className="brand-name" aria-hidden="true">PADDOCK</span>
-        {/* Join the K to the original trails, with the car following the wordmark. The PNG stays untouched. */}
+        {/* The first pixels of the crop are the blue trail next to the K. */}
         <svg className="brand-car" viewBox="586 145 125 34" width="125" height="34" aria-hidden="true" focusable="false">
           <defs><clipPath id="paddock-original-car"><polygon points="594,145 711,145 711,179 594,179 594,158 586,158 586,150 594,150" /></clipPath></defs>
           <image href="/paddock-delorean.png" width="835" height="327" clipPath="url(#paddock-original-car)" />
@@ -127,8 +127,12 @@ export default function App() {
     </div></header>
     <main id="inicio" className="page-shell">
       <section className="hero" aria-labelledby="page-title">
-        <div className="hero-copy"><span className="project-label"><span className="status-dot" />UN TFM, DE VUELTA A LA CARRETERA</span><h1 id="page-title">El valor está en<br />los <em>detalles.</em></h1><p>Explora el valor histórico de un coche y compáralo con el catálogo original del mercado español.</p></div>
-        <div className="historical-note"><div className="note-icon"><Icon name="clock" /></div><div><strong>Una mirada a 2023</strong><p>Esta demo conserva el modelo y los datos del TFM. Sus estimaciones no representan precios actuales.</p><a href="#proyecto">Conoce el contexto<Icon name="arrow" /></a></div></div>
+        <div className="hero-copy"><span className="project-label"><span className="status-dot" />TFM DE IA Y BIG DATA</span><h1 id="page-title">El valor está en<br />los <em>detalles.</em></h1><p>Explora el valor histórico de un coche y compáralo con el catálogo original del mercado español.</p></div>
+        <div className="historical-note">
+          <strong><span className="theme-emoji" aria-hidden="true">🕰️</span><span>Una mirada a</span>{' '}<time className="historical-year" dateTime="2023">2023</time></strong>
+          <p>Esta demo conserva el modelo y los datos del TFM. Sus estimaciones no representan precios actuales.</p>
+          <a href="#proyecto">Conoce el contexto<Icon name="arrow" /></a>
+        </div>
       </section>
       <div className="dataset-strip"><span><Icon name="database" /><strong>179.502</strong> registros históricos</span><span><span className="country-dot" />Mercado español</span><span><Icon name="clock" />Modelo original conservado</span></div>
       <div className="estimator-layout">
@@ -144,7 +148,18 @@ export default function App() {
       <p className="sr-only" role="status" aria-live="polite">{notice}</p>
       {estimate && <Comparables key={estimateNumber} estimate={estimate} />}
       <CatalogChat openRequest={chatOpenRequest} />
-      <section id="proyecto" className="about-section" aria-labelledby="about-heading"><div><span className="eyebrow">DE DÓNDE VENIMOS</span><h2 id="about-heading">Un proyecto académico.<br />Una historia que continúa.</h2></div><div className="about-copy"><p>Paddock nació como TFM de <strong>Juan Cerezo Serrano</strong> y <strong>Oscar Pörtner Ostos</strong>, en el Máster de IA y Big Data de Málaga Tech Park.</p><p>Esta versión recupera el modelo original y el catálogo publicado en 2023. El dataset permanece congelado: una demostración del proyecto, no un servicio de tasación actual.</p><a className="text-button" href="https://github.com/Legodark/paddock" target="_blank" rel="noopener noreferrer">Explorar el proyecto original<Icon name="arrow" /><span className="sr-only"> (abre otra pestaña)</span></a></div></section>
+      <section id="proyecto" className="about-section" aria-labelledby="about-heading">
+        <div>
+          <span className="eyebrow"><span className="theme-emoji" aria-hidden="true">⚡</span>DE VUELTA A LA CARRETERA</span>
+          <h2 id="about-heading">Un proyecto académico.<br />Una historia que continúa.</h2>
+        </div>
+        <div className="about-copy">
+          <p>Paddock nació como TFM de <strong>Juan Cerezo Serrano</strong> y <strong>Oscar Pörtner Ostos</strong>, en el Máster de IA y Big Data de Málaga Tech Park.</p>
+          <p>Esta versión recupera el modelo original y el catálogo publicado en 2023. El dataset permanece congelado: una demostración del proyecto, no un servicio de tasación actual.</p>
+          <p>El DeLorean del logo y las <strong>88&nbsp;mph</strong> son nuestro guiño a <cite>Regreso al futuro</cite>.</p>
+          <a className="text-button" href="https://github.com/Legodark/paddock" target="_blank" rel="noopener noreferrer">Explorar el proyecto original<Icon name="arrow" /><span className="sr-only"> (abre otra pestaña)</span></a>
+        </div>
+      </section>
     </main>
     <footer className="site-footer"><div className="page-shell"><span className="footer-brand">PADDOCK<span>.</span></span><p>Datos históricos. Curiosidad intacta.</p><span>TFM · Proyecto original de 2023</span></div></footer>
   </>;

@@ -36,9 +36,24 @@ h1, h2, h3, p { margin-top: 0; }
 .skip-link:focus { clip-path: none; }
 .site-header { border-bottom: 1px solid #252e3c; }
 .header-inner { min-height: 88px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; padding-block: 16px; }
-.wordmark { display: inline-flex; flex: none; align-items: center; max-width: 100%; min-height: 44px; }
-.brand-name { position: relative; z-index: 1; flex: none; color: #f3f4f7; font-size: 26px; font-weight: 850; font-style: italic; letter-spacing: .07em; line-height: 1.15; }
-.brand-car { display: block; flex: 0 1 104px; min-width: 0; width: 104px; height: auto; margin-left: -8px; overflow: hidden; }
+.wordmark {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  max-width: 100%;
+  min-height: 44px;
+  font-size: clamp(1.375rem, 1.25rem + .5vw, 1.625rem);
+}
+.brand-name { position: relative; z-index: 1; flex: none; color: #f3f4f7; font-weight: 850; font-style: italic; letter-spacing: .07em; line-height: 1.15; }
+.brand-car {
+  display: block;
+  min-width: 0;
+  width: 3.6em;
+  height: auto;
+  margin-inline-start: -.44em;
+  translate: 0 .15em;
+  overflow: hidden;
+}
 nav { display: flex; flex-wrap: wrap; align-items: center; max-width: 100%; gap: 34px; color: var(--muted); font-size: 13px; font-weight: 550; }
 nav a { padding-block: 12px; transition: color .15s; }
 nav a:hover, nav .nav-active { color: #fff; }
@@ -53,9 +68,18 @@ nav a:hover, nav .nav-active { color: #fff; }
 h1 { font-size: clamp(42px, 5.1vw, 66px); font-weight: 650; letter-spacing: -2.8px; line-height: 1.05; margin-block: 21px 17px; overflow-wrap: anywhere; }
 h1 em { font-style: normal; color: var(--accent); }
 .hero-copy > p { color: var(--muted); max-width: 475px; font-size: 14px; margin-bottom: 0; }
-.historical-note { display: flex; gap: 16px; align-items: flex-start; padding: 24px 0 24px 26px; border-left: 1px solid #46516a; max-width: 370px; justify-self: end; }
-.note-icon { width: 36px; height: 36px; display: grid; place-items: center; border: 1px solid #5c4936; background: #f0ae6b0a; color: var(--accent); border-radius: 10px; flex-shrink: 0; }
-.historical-note strong { font-size: 14px; font-weight: 600; }
+.historical-note { padding: 24px 0 24px 26px; border-left: 1px solid #46516a; max-width: 370px; justify-self: end; }
+.historical-note strong { display: inline-flex; align-items: baseline; flex-wrap: wrap; gap: 6px; font-size: 14px; font-weight: 600; }
+.historical-year {
+  padding: 2px 5px;
+  border: 1px solid #6a5238;
+  border-radius: 4px;
+  background: #191714;
+  color: var(--accent-light);
+  font-family: ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+}
+.theme-emoji { font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif; font-style: normal; }
 .historical-note p { color: var(--muted); margin-block: 9px 12px; font-size: 12px; line-height: 1.7; }
 .historical-note a { color: var(--accent-light); font-size: 12px; display: inline-flex; align-items: center; gap: 9px; }
 .historical-note a .icon { width: 15px; height: 15px; }
@@ -237,7 +261,7 @@ h1 em { font-style: normal; color: var(--accent); }
 @media (max-width: 1050px) {
   .page-shell, .header-inner { width: calc(100% - 48px); }
   .hero { gap: 35px; }
-  .historical-note { padding-left: 20px; gap: 12px; }
+  .historical-note { padding-left: 20px; }
   .estimator-layout { grid-template-columns: minmax(0,1.4fr) minmax(0,1fr); gap: 18px; }
   .form-card, .estimate-card { padding: 22px; }
   .card-heading h2 { font-size: 17px; }
@@ -250,7 +274,6 @@ h1 em { font-style: normal; color: var(--accent); }
   .estimate-card { position: static; }
   .hero { grid-template-columns: 1.3fr 1fr; gap: 30px; }
   .historical-note { padding-left: 16px; }
-  .note-icon { display: none; }
   .form-card, .estimate-card { padding: 28px; }
   .card-heading h2 { font-size: 19px; }
   .gearbox-option { font-size: 12px; }
@@ -272,9 +295,7 @@ h1 em { font-style: normal; color: var(--accent); }
   .project-label { font-size: 8px; letter-spacing: 1.25px; }
   h1 { font-size: 47px; letter-spacing: -2px; margin-top: 19px; }
   .hero-copy > p { font-size: 13px; }
-  .historical-note { max-width: none; border: 1px solid #60503b; border-radius: 8px; margin-top: 23px; padding: 14px; gap: 11px; }
-  .note-icon { display: grid; width: 30px; height: 30px; border: 0; background: #f0ae6b0b; }
-  .note-icon .icon { width: 17px; height: 17px; }
+  .historical-note { max-width: none; border: 1px solid #60503b; border-radius: 8px; margin-top: 23px; padding: 14px; }
   .historical-note strong { font-size: 12px; }
   .historical-note p { font-size: 11px; margin-block: 5px 0; }
   .historical-note a { display: none; }

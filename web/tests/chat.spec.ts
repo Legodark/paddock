@@ -180,7 +180,7 @@ test('duplicate submits and cancellation cannot overwrite a newer search', async
   await firstSettled;
   expect(response.status()).toBe(200);
   expect(messages).toBe(2); expect(queries).toBe(1);
-  await expect(page.getByRole('log', { name: 'Conversación con Eistein' }).locator(':scope > ol > li')).toHaveCount(1);
+  await expect(page.getByRole('log', { name: 'Conversación con Einstein' }).locator(':scope > ol > li')).toHaveCount(1);
 });
 
 test('user markup stays text and clearing removes the local conversation', async ({ page }) => {
@@ -193,7 +193,7 @@ test('user markup stays text and clearing removes the local conversation', async
   expect(await page.evaluate(() => Object.hasOwn(window, 'chatInjected'))).toBe(false);
   await realSearch(page);
   await page.getByRole('button', { name: 'Limpiar conversación' }).click();
-  await expect(page.getByRole('log', { name: 'Conversación con Eistein' })).toHaveCount(0);
+  await expect(page.getByRole('log', { name: 'Conversación con Einstein' })).toHaveCount(0);
   await expect(page.locator('.chat-outcome')).toHaveCount(0);
   await expect(page.getByLabel('Tu consulta sobre coches')).toHaveValue('');
   await expect(page.getByLabel('Tu consulta sobre coches')).toBeFocused();

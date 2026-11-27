@@ -91,7 +91,7 @@ test('controls remain readable and usable with doubled text', async ({ page }, i
   await expect(page.getByLabel('Marca', { exact: true })).toBeEnabled();
   await expect(page.getByTestId('estimated-price')).toBeVisible();
   await openChat(page);
-  const dialog = page.getByRole('dialog', { name: 'Eistein, asistente del catálogo', exact: true });
+  const dialog = page.getByRole('dialog', { name: 'Einstein, asistente del catálogo', exact: true });
   const bounds = await dialog.boundingBox();
   expect(bounds).not.toBeNull();
   expect(bounds!.x).toBeGreaterThanOrEqual(0);

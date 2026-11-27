@@ -5,7 +5,7 @@ import { accessibilityScanner } from './axe-compat';
 const example = 'Busco coches Citroën de menos de 20.000 euros en Málaga';
 const opener = (page: Page) => page.getByRole('button', { name: /^(Abrir|Plegar) asistente$/ });
 const closer = (page: Page) => page.getByRole('button', { name: 'Cerrar asistente', exact: true });
-const panelHeading = (page: Page) => page.getByRole('heading', { name: 'Eistein, asistente del catálogo', exact: true });
+const panelHeading = (page: Page) => page.getByRole('heading', { name: 'Einstein, asistente del catálogo', exact: true });
 const input = (page: Page) => page.getByLabel('Tu consulta sobre coches');
 
 function calls(page: Page) {
@@ -83,7 +83,7 @@ test('the floating assistant stays anchored and scrolls its conversation without
   expect(await opener(page).boundingBox()).toEqual(initialLauncher);
   const beforeOpening = await page.evaluate(() => ({ scroll: window.scrollY, height: document.documentElement.scrollHeight }));
   await open(page);
-  const dialog = page.getByRole('dialog', { name: 'Eistein, asistente del catálogo', exact: true });
+  const dialog = page.getByRole('dialog', { name: 'Einstein, asistente del catálogo', exact: true });
   await expect(dialog).toHaveAttribute('aria-modal', 'false');
   await expect(dialog).toBeVisible();
   expect(await page.evaluate(() => ({ scroll: window.scrollY, height: document.documentElement.scrollHeight }))).toEqual(beforeOpening);
@@ -133,7 +133,7 @@ test('instrumented short visual viewports keep the input and close control reach
   const counts = calls(page);
   await page.goto('/');
   await open(page);
-  const dialog = page.getByRole('dialog', { name: 'Eistein, asistente del catálogo', exact: true });
+  const dialog = page.getByRole('dialog', { name: 'Einstein, asistente del catálogo', exact: true });
   const toolbar = page.locator('.chat-panel-toolbar');
   const body = page.locator('.chat-panel-body');
   for (const height of [240, 180]) {
@@ -226,7 +226,7 @@ test('completed results, interpreted filters and conversation survive closing wi
   await open(page);
   await expect(results).toHaveText(originalResults, { useInnerText: true });
   await expect(filters).toHaveText(originalFilters, { useInnerText: true });
-  await expect(page.getByRole('log', { name: 'Conversación con Eistein' })).toContainText(example);
+  await expect(page.getByRole('log', { name: 'Conversación con Einstein' })).toContainText(example);
   expect(counts).toEqual(originalCalls);
 });
 
