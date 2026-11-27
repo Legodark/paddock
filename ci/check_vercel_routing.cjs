@@ -19,6 +19,19 @@ const commonHeaders = {
   'referrer-policy': 'no-referrer',
   'permissions-policy': 'camera=(), microphone=(), geolocation=()',
 };
+const expectedDocumentPolicy = [
+  "default-src 'none'",
+  "script-src 'self'",
+  "style-src 'self'",
+  "style-src-attr 'unsafe-inline'",
+  "img-src 'self'",
+  "font-src 'self'",
+  "connect-src 'self'",
+  "base-uri 'none'",
+  "form-action 'self'",
+  "frame-ancestors 'none'",
+  "object-src 'none'",
+].sort();
 const forbiddenPaths = [
   '/api', '/api/', '/api/index.py', '/api/index', '/api/v1/unknown',
   '/api/v1/health/', '/api//v1/health', '/api/v1/%68ealth',
@@ -141,8 +154,9 @@ function check(configuration) {
     for (const [key, value] of Object.entries({ ...commonHeaders, 'cache-control': 'no-cache' })) {
       assert.equal(htmlHeaders[key], value, 'Root security header missing: ' + key);
     }
-    assert.ok(htmlHeaders['content-security-policy'].includes("frame-ancestors 'none'"));
-    assert.ok(htmlHeaders['content-security-policy'].includes("script-src 'self'"));
+    const policy = match.headers['content-security-policy'] ?? '';
+    const directives = policy.split(';').map(directive => directive.trim().replace(/\s+/g, ' ')).filter(Boolean).sort();
+    assert.deepEqual(directives, expectedDocumentPolicy, 'Unexpected document content security policy: ' + pathname);
   }
   return api;
 }
@@ -161,9 +175,14 @@ assert.throws(() => check(mutate(copy => {
 })), /Non-canonical pathname sent to Python/);
 assert.throws(() => check(mutate(copy => copy.routes.unshift({ handle: 'filesystem' }))), /Implicit filesystem/);
 assert.throws(() => check(mutate(copy => {
-  const htmlRule = copy.routes.find(route => route.headers && route.headers['Content-Security-Policy']?.includes("script-src 'self'"));
+  const htmlRule = copy.routes.find(route => new RegExp(route.src, 'i').test('/') && route.headers?.['Content-Security-Policy']);
   delete htmlRule.headers['X-Content-Type-Options'];
 })), /Root security header missing/);
+assert.throws(() => check(mutate(copy => {
+  const htmlRule = copy.routes.find(route => new RegExp(route.src, 'i').test('/') && route.headers?.['Content-Security-Policy']);
+  htmlRule.headers['Content-Security-Policy'] = htmlRule.headers['Content-Security-Policy']
+    .replace("img-src 'self'", "img-src 'self' https://assets.example.invalid");
+})), /Unexpected document content security policy/);
 
 console.log(JSON.stringify({
   compiler: '@vercel/routing-utils@' + load('@vercel/routing-utils/package.json').version,
@@ -178,5 +197,6 @@ console.log(JSON.stringify({
   case_insensitive_api_regression_rejected: true,
   filesystem_regression_rejected: true,
   root_security_header_regression_rejected: true,
+  extra_csp_origin_regression_rejected: true,
   scope: 'Official schema/route compilation and path boundary; no provider execution, rate-limit enforcement or application calls.',
 }, null, 2));

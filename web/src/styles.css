@@ -36,9 +36,116 @@ h1, h2, h3, p { margin-top: 0; }
 .skip-link:focus { clip-path: none; }
 .site-header { border-bottom: 1px solid #252e3c; }
 .header-inner { min-height: 88px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; padding-block: 16px; }
-.wordmark { display: inline-flex; flex: none; align-items: center; max-width: 100%; min-height: 44px; }
-.brand-name { position: relative; z-index: 1; flex: none; color: #f3f4f7; font-size: 26px; font-weight: 850; font-style: italic; letter-spacing: .07em; line-height: 1.15; }
-.brand-car { display: block; flex: 0 1 104px; min-width: 0; width: 104px; height: auto; margin-left: -8px; overflow: hidden; }
+.wordmark {
+  --trip-duration: 3.6s;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  max-width: 100%;
+  min-height: 44px;
+  font-size: clamp(1.375rem, 1.25rem + .5vw, 1.625rem);
+}
+.brand-lockup { display: inline-flex; align-items: baseline; min-width: 0; }
+.brand-name { position: relative; z-index: 1; flex: none; color: #f3f4f7; font-weight: 850; font-style: italic; letter-spacing: .07em; line-height: 1.15; }
+.brand-car {
+  position: relative;
+  z-index: 0;
+  inset-block-start: .035em;
+  display: block;
+  min-width: 0;
+  width: 2.6em;
+  margin-inline-start: -.37em;
+  padding-inline-start: .34em;
+}
+.brand-car img { display: block; width: 100%; height: auto; }
+.brand-vehicle { position: relative; display: block; animation: time-jump var(--trip-duration) both; }
+.brand-speedometer {
+  position: absolute;
+  inset-inline-start: 55%;
+  inset-block-end: calc(100% + .18em);
+  display: flex;
+  align-items: baseline;
+  gap: .36em;
+  translate: -50% 0;
+  padding: .22em .38em;
+  border: 1px solid #79433b;
+  border-radius: 3px;
+  background: #180d12;
+  color: #ff9a77;
+  font: 700 .45em/1 ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 .36em #f64933b0;
+  opacity: 0;
+  animation: time-meter var(--trip-duration) both;
+}
+.brand-speed-window { display: block; height: 1em; overflow: hidden; }
+.brand-speed-values, .brand-speed-values span { display: block; }
+.brand-speed-values { animation: time-count var(--trip-duration) both; }
+.brand-speed-unit { color: #ffbda2; font-size: .69em; }
+.brand-charge {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 12% 12% at 93% 59%, #eeffff 8%, #60eaffb3 38%, transparent 86%),
+    radial-gradient(ellipse 13% 33% at 30% 42%, #d9ffff 8%, #45e5ffd9 30%, transparent 86%),
+    radial-gradient(ellipse 30% 11% at 54% 81%, #baffff 10%, #19bcff95 43%, transparent 90%);
+  opacity: 0;
+  animation: time-discharge var(--trip-duration) both;
+}
+.brand-trail {
+  position: absolute;
+  z-index: -1;
+  inset-inline: 0 -.06em;
+  inset-block-end: -.1em;
+  height: .64em;
+  filter: drop-shadow(0 0 .08em #49dbff) drop-shadow(0 0 .16em #0095db);
+  opacity: 0;
+  animation: time-discharge var(--trip-duration) both;
+}
+.brand-trail::after, .brand-bolt {
+  position: absolute;
+  inset: 0;
+}
+.brand-trail::after {
+  content: '';
+  background: linear-gradient(90deg, #509dbd 35%, #9defff 88%);
+  clip-path: polygon(92% 40%, 87% 65%, 72% 72%, 74% 81%, 61% 89%, 57% 86%, 36% 100%, 56% 81%, 62% 84%, 71% 79%, 69% 69%, 86% 60%);
+}
+.brand-bolt {
+  /* Keep the moving highlight from expanding the mobile layout viewport. */
+  overflow: hidden;
+  background: linear-gradient(90deg, #539fbe, #a8faff 60%, #edffff);
+  clip-path: polygon(100% 10%, 97% 25%, 94% 23%, 93% 42%, 89% 43%, 87% 59%, 75% 62%, 77% 51%, 61% 66%, 52% 63%, 43% 73%, 44% 60%, 29% 76%, 25% 71%, 11% 85%, 0 82%, 13% 79%, 24% 65%, 31% 68%, 48% 52%, 46% 65%, 53% 56%, 60% 60%, 81% 44%, 79% 56%, 86% 53%, 89% 37%, 92% 37%, 93% 16%, 97% 20%);
+}
+.brand-bolt::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 24%, #65f1ff 39%, #fff 49%, #beffff 57%, transparent 72%);
+  transform: translateX(100%);
+  animation: time-trail var(--trip-duration) linear both;
+}
+@keyframes time-meter {
+  0%, 20% { opacity: 0; transform: translateY(.3em); }
+  27%, 81% { opacity: 1; transform: translateY(0); }
+  93%, 100% { opacity: 0; transform: translateY(.3em); }
+}
+@keyframes time-count {
+  0%, 27% { transform: translateY(0); animation-timing-function: steps(8); }
+  67%, 100% { transform: translateY(calc(-100% + 1em)); }
+}
+@keyframes time-discharge {
+  0%, 67%, 100% { opacity: 0; }
+  70%, 86% { opacity: 1; }
+}
+@keyframes time-trail {
+  0%, 67% { transform: translateX(100%); }
+  94%, 100% { transform: translateX(-100%); }
+}
+@keyframes time-jump {
+  0%, 81% { opacity: 1; translate: 0; }
+  94%, 100% { opacity: 0; translate: .22em; }
+}
 nav { display: flex; flex-wrap: wrap; align-items: center; max-width: 100%; gap: 34px; color: var(--muted); font-size: 13px; font-weight: 550; }
 nav a { padding-block: 12px; transition: color .15s; }
 nav a:hover, nav .nav-active { color: #fff; }
@@ -53,9 +160,18 @@ nav a:hover, nav .nav-active { color: #fff; }
 h1 { font-size: clamp(42px, 5.1vw, 66px); font-weight: 650; letter-spacing: -2.8px; line-height: 1.05; margin-block: 21px 17px; overflow-wrap: anywhere; }
 h1 em { font-style: normal; color: var(--accent); }
 .hero-copy > p { color: var(--muted); max-width: 475px; font-size: 14px; margin-bottom: 0; }
-.historical-note { display: flex; gap: 16px; align-items: flex-start; padding: 24px 0 24px 26px; border-left: 1px solid #46516a; max-width: 370px; justify-self: end; }
-.note-icon { width: 36px; height: 36px; display: grid; place-items: center; border: 1px solid #5c4936; background: #f0ae6b0a; color: var(--accent); border-radius: 10px; flex-shrink: 0; }
-.historical-note strong { font-size: 14px; font-weight: 600; }
+.historical-note { padding: 24px 0 24px 26px; border-left: 1px solid #46516a; max-width: 370px; justify-self: end; }
+.historical-note strong { display: inline-flex; align-items: baseline; flex-wrap: wrap; gap: 6px; font-size: 14px; font-weight: 600; }
+.historical-year {
+  padding: 2px 5px;
+  border: 1px solid #6a5238;
+  border-radius: 4px;
+  background: #191714;
+  color: var(--accent-light);
+  font-family: ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+}
+.theme-emoji { font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif; font-style: normal; }
 .historical-note p { color: var(--muted); margin-block: 9px 12px; font-size: 12px; line-height: 1.7; }
 .historical-note a { color: var(--accent-light); font-size: 12px; display: inline-flex; align-items: center; gap: 9px; }
 .historical-note a .icon { width: 15px; height: 15px; }
@@ -237,7 +353,7 @@ h1 em { font-style: normal; color: var(--accent); }
 @media (max-width: 1050px) {
   .page-shell, .header-inner { width: calc(100% - 48px); }
   .hero { gap: 35px; }
-  .historical-note { padding-left: 20px; gap: 12px; }
+  .historical-note { padding-left: 20px; }
   .estimator-layout { grid-template-columns: minmax(0,1.4fr) minmax(0,1fr); gap: 18px; }
   .form-card, .estimate-card { padding: 22px; }
   .card-heading h2 { font-size: 17px; }
@@ -250,7 +366,6 @@ h1 em { font-style: normal; color: var(--accent); }
   .estimate-card { position: static; }
   .hero { grid-template-columns: 1.3fr 1fr; gap: 30px; }
   .historical-note { padding-left: 16px; }
-  .note-icon { display: none; }
   .form-card, .estimate-card { padding: 28px; }
   .card-heading h2 { font-size: 19px; }
   .gearbox-option { font-size: 12px; }
@@ -272,9 +387,7 @@ h1 em { font-style: normal; color: var(--accent); }
   .project-label { font-size: 8px; letter-spacing: 1.25px; }
   h1 { font-size: 47px; letter-spacing: -2px; margin-top: 19px; }
   .hero-copy > p { font-size: 13px; }
-  .historical-note { max-width: none; border: 1px solid #60503b; border-radius: 8px; margin-top: 23px; padding: 14px; gap: 11px; }
-  .note-icon { display: grid; width: 30px; height: 30px; border: 0; background: #f0ae6b0b; }
-  .note-icon .icon { width: 17px; height: 17px; }
+  .historical-note { max-width: none; border: 1px solid #60503b; border-radius: 8px; margin-top: 23px; padding: 14px; }
   .historical-note strong { font-size: 12px; }
   .historical-note p { font-size: 11px; margin-block: 5px 0; }
   .historical-note a { display: none; }
