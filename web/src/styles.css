@@ -49,9 +49,9 @@ h1, h2, h3, p { margin-top: 0; }
 .brand-car {
   display: block;
   min-width: 0;
-  width: 3.6em;
+  width: 2.15em;
   height: auto;
-  margin-inline-start: -.44em;
+  margin-inline-start: -.37em;
   overflow: hidden;
 }
 nav { display: flex; flex-wrap: wrap; align-items: center; max-width: 100%; gap: 34px; color: var(--muted); font-size: 13px; font-weight: 550; }
