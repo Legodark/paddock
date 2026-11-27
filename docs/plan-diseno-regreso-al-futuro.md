@@ -50,8 +50,8 @@ El botón cerrado y el avatar del chat usan la silueta de la ilustración adjunt
 
 El último ajuste amplía el coche un 11,6 %. El recorte pasa de unos 56 a 62 px en escritorio y de 47 a 53 px en móvil. La línea base y el solapamiento con la K coinciden con la versión anterior en los cinco anchos medidos. Las capturas de la cabecera muestran esta escala.
 
-## DeLorean ilustrado y estela de fuego
+## DeLorean ilustrado y estela eléctrica
 
 La cabecera usa una ilustración generada a partir del DeLorean del TFM. El coche mira a la derecha y conserva la carrocería de acero en cuña, las dos ruedas en la línea base de PADDOCK y los detalles traseros de la máquina del tiempo. El coche se sirve como WebP transparente de 180 × 61 px y 4.442 bytes.
 
-La estela nace en la parte trasera del coche, cruza el hueco de la K y se extiende hacia la izquierda por debajo de PADDOCK. El coche se desvanece mientras un destello recorre las dos líneas de fuego de la K a la P, y reaparece en su sitio. La secuencia de 1,8 segundos se reproduce al cargar, al pasar el puntero o al enfocar el enlace con el teclado. La preferencia de movimiento reducido conserva el coche y el trazo estáticos. Se comprobó en Chromium entre 320 y 1440 px. [Secuencia en GIF](evidence/ux/regreso-al-futuro/estela-animada.gif) · [Móvil con movimiento reducido](evidence/ux/regreso-al-futuro/estela-movil.png).
+El rayo cian nace en la parte trasera del coche, cruza el hueco de la K y se ramifica hacia la izquierda por debajo de PADDOCK. Un destello blanco recorre la descarga de la K a la P mientras el coche se desvanece y reaparece en su sitio. La secuencia de 1,8 segundos se reproduce al cargar, al pasar el puntero o al enfocar el enlace con el teclado. La preferencia de movimiento reducido conserva el coche y el trazo estáticos. La posición del coche baja entre 0,77 y 0,91 px CSS para ajustar la línea visible de las ruedas. Se comprobó en Chromium entre 320 y 1440 px. [Secuencia en GIF](evidence/ux/regreso-al-futuro/estela-animada.gif) · [Móvil con movimiento reducido](evidence/ux/regreso-al-futuro/estela-movil.png).

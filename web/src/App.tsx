@@ -118,7 +118,7 @@ export default function App() {
     <header className="site-header"><div className="header-inner">
       <a className="wordmark" href="#inicio" aria-label="Paddock, inicio">
         <span className="brand-lockup" aria-hidden="true">
-          <span className="brand-name">PADDOCK<span className="brand-trail" /></span>
+          <span className="brand-name">PADDOCK<span className="brand-trail"><span className="brand-bolt" /></span></span>
           <span className="brand-car">
             <img src={deloreanImage} width="180" height="61" alt="" />
           </span>
